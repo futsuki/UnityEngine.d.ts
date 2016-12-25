@@ -1,0 +1,90 @@
+declare namespace UnityEngine {
+  class CanvasRenderer {
+    // constructors
+    constructor();
+    // methods
+    SetColor(color: UnityEngine.Color): any;
+    GetColor(): UnityEngine.Color;
+    GetAlpha(): number;
+    SetAlpha(alpha: number): any;
+    SetVertices(vertices: any): any;
+    SetVertices(vertices: UnityEngine.UIVertex[], size: number): any;
+    EnableRectClipping(rect: UnityEngine.Rect): any;
+    DisableRectClipping(): any;
+    SetMaterial(material: UnityEngine.Material, index: number): any;
+    SetMaterial(material: UnityEngine.Material, texture: UnityEngine.Texture): any;
+    GetMaterial(): UnityEngine.Material;
+    GetMaterial(index: number): UnityEngine.Material;
+    SetPopMaterial(material: UnityEngine.Material, index: number): any;
+    GetPopMaterial(index: number): UnityEngine.Material;
+    SetTexture(texture: UnityEngine.Texture): any;
+    SetAlphaTexture(texture: UnityEngine.Texture): any;
+    SetMesh(mesh: UnityEngine.Mesh): any;
+    Clear(): any;
+    static SplitUIVertexStreams(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any, indicies: any): any;
+    static CreateUIVertexStream(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any, indicies: any): any;
+    static AddUIVertexStream(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any): any;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): any;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any): any;
+    SendMessageUpwards(methodName: string): any;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
+    SendMessage(methodName: string, value: any): any;
+    SendMessage(methodName: string): any;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
+    BroadcastMessage(methodName: string, parameter: any): any;
+    BroadcastMessage(methodName: string): any;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    isMask: boolean;
+    readonly hasRectClipping: boolean;
+    hasPopInstruction: boolean;
+    materialCount: number;
+    popMaterialCount: number;
+    readonly relativeDepth: number;
+    cull: boolean;
+    readonly absoluteDepth: number;
+    readonly hasMoved: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}

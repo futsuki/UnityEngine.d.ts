@@ -1,0 +1,97 @@
+declare namespace UnityEditor {
+  class AssetDatabase {
+    // constructors
+    constructor();
+    // methods
+    static Contains(obj: any): boolean;
+    static Contains(instanceID: number): boolean;
+    static CreateFolder(parentFolder: string, newFolderName: string): string;
+    static IsMainAsset(obj: any): boolean;
+    static IsMainAsset(instanceID: number): boolean;
+    static IsSubAsset(obj: any): boolean;
+    static IsSubAsset(instanceID: number): boolean;
+    static IsForeignAsset(obj: any): boolean;
+    static IsForeignAsset(instanceID: number): boolean;
+    static IsNativeAsset(obj: any): boolean;
+    static IsNativeAsset(instanceID: number): boolean;
+    static GenerateUniqueAssetPath(path: string): string;
+    static StartAssetEditing(): any;
+    static StopAssetEditing(): any;
+    static ValidateMoveAsset(oldPath: string, newPath: string): string;
+    static MoveAsset(oldPath: string, newPath: string): string;
+    static RenameAsset(pathName: string, newName: string): string;
+    static MoveAssetToTrash(path: string): boolean;
+    static DeleteAsset(path: string): boolean;
+    static ImportAsset(path: string, options: UnityEditor.ImportAssetOptions): any;
+    static ImportAsset(path: string): any;
+    static CopyAsset(path: string, newPath: string): boolean;
+    static WriteImportSettingsIfDirty(path: string): boolean;
+    static GetSubFolders(path: string): string[];
+    static IsValidFolder(path: string): boolean;
+    static CreateAsset(asset: any, path: string): any;
+    static AddObjectToAsset(objectToAdd: any, path: string): any;
+    static AddObjectToAsset(objectToAdd: any, assetObject: any): any;
+    static GetAssetPath(assetObject: any): string;
+    static GetAssetPath(instanceID: number): string;
+    static GetAssetOrScenePath(assetObject: any): string;
+    static GetTextMetaFilePathFromAssetPath(path: string): string;
+    static GetAssetPathFromTextMetaFilePath(path: string): string;
+    static LoadAssetAtPath(assetPath: string, type: any): any;
+    static LoadMainAssetAtPath(assetPath: string): any;
+    static GetMainAssetTypeAtPath(assetPath: string): any;
+    static IsMainAssetAtPathLoaded(assetPath: string): boolean;
+    static LoadAllAssetRepresentationsAtPath(assetPath: string): any[];
+    static LoadAllAssetsAtPath(assetPath: string): any[];
+    static GetAllAssetPaths(): string[];
+    static RefreshDelayed(options: UnityEditor.ImportAssetOptions): any;
+    static RefreshDelayed(): any;
+    static Refresh(options: UnityEditor.ImportAssetOptions): any;
+    static Refresh(): any;
+    static OpenAsset(instanceID: number, lineNumber: number): boolean;
+    static OpenAsset(instanceID: number): boolean;
+    static OpenAsset(target: any): boolean;
+    static OpenAsset(target: any, lineNumber: number): boolean;
+    static OpenAsset(objects: any[]): boolean;
+    static AssetPathToGUID(path: string): string;
+    static GUIDToAssetPath(guid: string): string;
+    static GetAssetDependencyHash(path: string): any;
+    static SaveAssets(): any;
+    static GetCachedIcon(path: string): any;
+    static SetLabels(obj: any, labels: string[]): any;
+    static GetLabels(obj: any): string[];
+    static ClearLabels(obj: any): any;
+    static GetAllAssetBundleNames(): string[];
+    GetAssetBundleNames(): string[];
+    static GetUnusedAssetBundleNames(): string[];
+    static RemoveAssetBundleName(assetBundleName: string, forceRemove: boolean): boolean;
+    static RemoveUnusedAssetBundleNames(): any;
+    static GetAssetPathsFromAssetBundle(assetBundleName: string): string[];
+    static GetAssetPathsFromAssetBundleAndAssetName(assetBundleName: string, assetName: string): string[];
+    static GetAssetBundleDependencies(assetBundleName: string, recursive: boolean): string[];
+    static GetDependencies(pathName: string): string[];
+    static GetDependencies(pathName: string, recursive: boolean): string[];
+    static GetDependencies(pathNames: string[]): string[];
+    static GetDependencies(pathNames: string[], recursive: boolean): string[];
+    static ExportPackage(assetPathName: string, fileName: string): any;
+    static ExportPackage(assetPathName: string, fileName: string, flags: UnityEditor.ExportPackageOptions): any;
+    static ExportPackage(assetPathNames: string[], fileName: string, flags: UnityEditor.ExportPackageOptions): any;
+    static ExportPackage(assetPathNames: string[], fileName: string): any;
+    static ImportPackage(packagePath: string, interactive: boolean): any;
+    static IsOpenForEdit(assetObject: any): boolean;
+    static IsOpenForEdit(assetOrMetaFilePath: string): boolean;
+    static IsOpenForEdit(assetObject: any, message: any): boolean;
+    static IsOpenForEdit(assetOrMetaFilePath: string, message: any): boolean;
+    static IsMetaFileOpenForEdit(assetObject: any): boolean;
+    static IsMetaFileOpenForEdit(assetObject: any, message: any): boolean;
+    static GetBuiltinExtraResource(type: any, path: string): any;
+    static GetTextMetaDataPathFromAssetPath(path: string): string;
+    static FindAssets(filter: string): string[];
+    static FindAssets(filter: string, searchInFolders: string[]): string[];
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}

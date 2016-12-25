@@ -1,0 +1,93 @@
+declare namespace UnityEngine {
+  class TextEditor {
+    // constructors
+    constructor();
+    // methods
+    OnFocus(): any;
+    OnLostFocus(): any;
+    HandleKeyEvent(e: UnityEngine.Event): boolean;
+    DeleteLineBack(): boolean;
+    DeleteWordBack(): boolean;
+    DeleteWordForward(): boolean;
+    Delete(): boolean;
+    CanPaste(): boolean;
+    Backspace(): boolean;
+    SelectAll(): any;
+    SelectNone(): any;
+    DeleteSelection(): boolean;
+    ReplaceSelection(replace: string): any;
+    Insert(c: any): any;
+    MoveSelectionToAltCursor(): any;
+    MoveRight(): any;
+    MoveLeft(): any;
+    MoveUp(): any;
+    MoveDown(): any;
+    MoveLineStart(): any;
+    MoveLineEnd(): any;
+    MoveGraphicalLineStart(): any;
+    MoveGraphicalLineEnd(): any;
+    MoveTextStart(): any;
+    MoveTextEnd(): any;
+    MoveParagraphForward(): any;
+    MoveParagraphBackward(): any;
+    MoveCursorToPosition(cursorPosition: UnityEngine.Vector2): any;
+    MoveAltCursorToPosition(cursorPosition: UnityEngine.Vector2): any;
+    IsOverSelection(cursorPosition: UnityEngine.Vector2): boolean;
+    SelectToPosition(cursorPosition: UnityEngine.Vector2): any;
+    SelectLeft(): any;
+    SelectRight(): any;
+    SelectUp(): any;
+    SelectDown(): any;
+    SelectTextEnd(): any;
+    SelectTextStart(): any;
+    MouseDragSelectsWholeWords(on: boolean): any;
+    DblClickSnap(snapping: UnityEngine.TextEditor.DblClickSnapping): any;
+    MoveWordRight(): any;
+    MoveToStartOfNextWord(): any;
+    MoveToEndOfPreviousWord(): any;
+    SelectToStartOfNextWord(): any;
+    SelectToEndOfPreviousWord(): any;
+    FindStartOfNextWord(p: number): number;
+    MoveWordLeft(): any;
+    SelectWordRight(): any;
+    SelectWordLeft(): any;
+    ExpandSelectGraphicalLineStart(): any;
+    ExpandSelectGraphicalLineEnd(): any;
+    SelectGraphicalLineStart(): any;
+    SelectGraphicalLineEnd(): any;
+    SelectParagraphForward(): any;
+    SelectParagraphBackward(): any;
+    SelectCurrentWord(): any;
+    SelectCurrentParagraph(): any;
+    UpdateScrollOffsetIfNeeded(evt: UnityEngine.Event): any;
+    DrawCursor(newText: string): any;
+    SaveBackup(): any;
+    Undo(): any;
+    Cut(): boolean;
+    Copy(): any;
+    Paste(): boolean;
+    DetectFocusChange(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    content: UnityEngine.GUIContent;
+    text: string;
+    position: UnityEngine.Rect;
+    cursorIndex: number;
+    selectIndex: number;
+    readonly hasSelection: boolean;
+    readonly SelectedText: string;
+    // fields
+    keyboardOnScreen: UnityEngine.TouchScreenKeyboard;
+    controlID: number;
+    style: UnityEngine.GUIStyle;
+    multiline: boolean;
+    hasHorizontalCursorPos: boolean;
+    isPasswordField: boolean;
+    scrollOffset: UnityEngine.Vector2;
+    graphicalCursorPos: UnityEngine.Vector2;
+    graphicalSelectCursorPos: UnityEngine.Vector2;
+  }
+}

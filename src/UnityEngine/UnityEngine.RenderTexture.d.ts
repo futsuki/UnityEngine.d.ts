@@ -1,0 +1,62 @@
+declare namespace UnityEngine {
+  class RenderTexture {
+    // constructors
+    constructor(width: number, height: number, depth: number, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite);
+    constructor(width: number, height: number, depth: number, format: UnityEngine.RenderTextureFormat);
+    constructor(width: number, height: number, depth: number);
+    // methods
+    static GetTemporary(width: number, height: number, depthBuffer: number, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite, antiAliasing: number): UnityEngine.RenderTexture;
+    static GetTemporary(width: number, height: number, depthBuffer: number, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite): UnityEngine.RenderTexture;
+    static GetTemporary(width: number, height: number, depthBuffer: number, format: UnityEngine.RenderTextureFormat): UnityEngine.RenderTexture;
+    static GetTemporary(width: number, height: number, depthBuffer: number): UnityEngine.RenderTexture;
+    static GetTemporary(width: number, height: number): UnityEngine.RenderTexture;
+    static ReleaseTemporary(temp: UnityEngine.RenderTexture): any;
+    Create(): boolean;
+    Release(): any;
+    IsCreated(): boolean;
+    DiscardContents(): any;
+    DiscardContents(discardColor: boolean, discardDepth: boolean): any;
+    MarkRestoreExpected(): any;
+    GenerateMips(): any;
+    GetNativeDepthBufferPtr(): any;
+    SetGlobalShaderProperty(propertyName: string): any;
+    GetTexelOffset(): UnityEngine.Vector2;
+    static SupportsStencil(rt: UnityEngine.RenderTexture): boolean;
+    SetBorderColor(color: UnityEngine.Color): any;
+    GetNativeTexturePtr(): any;
+    GetNativeTextureID(): number;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    width: number;
+    height: number;
+    depth: number;
+    isPowerOfTwo: boolean;
+    readonly sRGB: boolean;
+    format: UnityEngine.RenderTextureFormat;
+    useMipMap: boolean;
+    autoGenerateMips: boolean;
+    dimension: UnityEngine.Rendering.TextureDimension;
+    isCubemap: boolean;
+    isVolume: boolean;
+    volumeDepth: number;
+    antiAliasing: number;
+    enableRandomWrite: boolean;
+    readonly colorBuffer: UnityEngine.RenderBuffer;
+    readonly depthBuffer: UnityEngine.RenderBuffer;
+    static active: UnityEngine.RenderTexture;
+    static enabled: boolean;
+    generateMips: boolean;
+    filterMode: UnityEngine.FilterMode;
+    anisoLevel: number;
+    wrapMode: UnityEngine.TextureWrapMode;
+    mipMapBias: number;
+    readonly texelSize: UnityEngine.Vector2;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}

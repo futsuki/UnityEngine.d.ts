@@ -1,0 +1,98 @@
+declare namespace UnityEditor.EditorGUI {
+  class DelayedTextEditor {
+    // constructors
+    constructor();
+    // methods
+    BeginGUI(): any;
+    EndGUI(type: any): any;
+    EndEditing(): any;
+    OnGUI(id: number, value: string, changed: any): string;
+    BeginEditing(id: number, newText: string, position: any, style: any, multiline: boolean, passwordField: boolean): any;
+    OnFocus(): any;
+    OnLostFocus(): any;
+    HandleKeyEvent(e: any): boolean;
+    DeleteLineBack(): boolean;
+    DeleteWordBack(): boolean;
+    DeleteWordForward(): boolean;
+    Delete(): boolean;
+    CanPaste(): boolean;
+    Backspace(): boolean;
+    SelectAll(): any;
+    SelectNone(): any;
+    DeleteSelection(): boolean;
+    ReplaceSelection(replace: string): any;
+    Insert(c: any): any;
+    MoveSelectionToAltCursor(): any;
+    MoveRight(): any;
+    MoveLeft(): any;
+    MoveUp(): any;
+    MoveDown(): any;
+    MoveLineStart(): any;
+    MoveLineEnd(): any;
+    MoveGraphicalLineStart(): any;
+    MoveGraphicalLineEnd(): any;
+    MoveTextStart(): any;
+    MoveTextEnd(): any;
+    MoveParagraphForward(): any;
+    MoveParagraphBackward(): any;
+    MoveCursorToPosition(cursorPosition: any): any;
+    MoveAltCursorToPosition(cursorPosition: any): any;
+    IsOverSelection(cursorPosition: any): boolean;
+    SelectToPosition(cursorPosition: any): any;
+    SelectLeft(): any;
+    SelectRight(): any;
+    SelectUp(): any;
+    SelectDown(): any;
+    SelectTextEnd(): any;
+    SelectTextStart(): any;
+    MouseDragSelectsWholeWords(on: boolean): any;
+    DblClickSnap(snapping: any): any;
+    MoveWordRight(): any;
+    MoveToStartOfNextWord(): any;
+    MoveToEndOfPreviousWord(): any;
+    SelectToStartOfNextWord(): any;
+    SelectToEndOfPreviousWord(): any;
+    FindStartOfNextWord(p: number): number;
+    MoveWordLeft(): any;
+    SelectWordRight(): any;
+    SelectWordLeft(): any;
+    ExpandSelectGraphicalLineStart(): any;
+    ExpandSelectGraphicalLineEnd(): any;
+    SelectGraphicalLineStart(): any;
+    SelectGraphicalLineEnd(): any;
+    SelectParagraphForward(): any;
+    SelectParagraphBackward(): any;
+    SelectCurrentWord(): any;
+    SelectCurrentParagraph(): any;
+    UpdateScrollOffsetIfNeeded(evt: any): any;
+    DrawCursor(newText: string): any;
+    SaveBackup(): any;
+    Undo(): any;
+    Cut(): boolean;
+    Copy(): any;
+    Paste(): boolean;
+    DetectFocusChange(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    content: any;
+    text: string;
+    position: any;
+    cursorIndex: number;
+    selectIndex: number;
+    readonly hasSelection: boolean;
+    readonly SelectedText: string;
+    // fields
+    keyboardOnScreen: any;
+    controlID: number;
+    style: any;
+    multiline: boolean;
+    hasHorizontalCursorPos: boolean;
+    isPasswordField: boolean;
+    scrollOffset: any;
+    graphicalCursorPos: any;
+    graphicalSelectCursorPos: any;
+  }
+}
