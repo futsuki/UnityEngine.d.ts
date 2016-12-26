@@ -12,7 +12,12 @@ declare namespace UnityEditor {
     static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): void;
     static DrawLODSlider(area: any, lods: any, selectedLevel: number): void;
     static DrawMixedValueLODSlider(area: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly Styles: UnityEditor.LODGroupGUI.GUIStyles;
     // fields
     static kLODColors: any[];
     static kCulledLODColor: any;

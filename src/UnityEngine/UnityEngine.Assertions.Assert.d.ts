@@ -21,6 +21,10 @@ declare namespace UnityEngine.Assertions {
     static AreNotEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): void;
     static IsNull(value: UnityEngine.Object, message: string): void;
     static IsNotNull(value: UnityEngine.Object, message: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static raiseExceptions: boolean;

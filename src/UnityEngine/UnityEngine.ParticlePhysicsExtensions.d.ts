@@ -10,6 +10,10 @@ declare namespace UnityEngine {
     static GetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): number;
     static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any, offset: number, count: number): void;
     static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

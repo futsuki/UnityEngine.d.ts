@@ -8,6 +8,10 @@ declare namespace UnityEditorInternal {
     static ClearCacheIfEditorVersionDiffers(builder: UnityEditorInternal.Il2CppNativeCodeBuilder, currentEditorVersion: string): void;
     static PrepareCacheDirectory(builder: UnityEditorInternal.Il2CppNativeCodeBuilder, currentEditorVersion: string): void;
     static ObjectFilePathInCacheDirectoryFor(builderCacheDirectory: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

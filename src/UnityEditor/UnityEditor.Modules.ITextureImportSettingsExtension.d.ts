@@ -3,6 +3,7 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    ShowImportSettings(baseEditor: UnityEditor.Editor, platformSettings: UnityEditor.TextureImportPlatformSettings): void;
     // properties
     // fields
   }

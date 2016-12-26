@@ -377,6 +377,8 @@ declare namespace SimpleJson {
     // constructors
     private constructor();
     // methods
+    TrySerializeNonPrimitiveObject(input: any, output: any): boolean;
+    DeserializeObject(value: any, type: any): any;
     // properties
     // fields
   }
@@ -608,7 +610,13 @@ declare namespace SimpleJson {
     static SerializeObject(json: any, jsonSerializerStrategy: SimpleJson.IJsonSerializerStrategy): string;
     static SerializeObject(json: any): string;
     static EscapeToJavascriptString(jsonString: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static CurrentJsonSerializerStrategy: SimpleJson.IJsonSerializerStrategy;
+    static readonly PocoJsonSerializerStrategy: SimpleJson.PocoJsonSerializerStrategy;
     // fields
   }
 }
@@ -826,7 +834,14 @@ declare namespace UnityEditor.Advertisements {
     static SetPlatformEnabled(platform: UnityEngine.RuntimePlatform, value: boolean): void;
     static GetGameId(platform: UnityEngine.RuntimePlatform): string;
     static SetGameId(platform: UnityEngine.RuntimePlatform, gameId: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static enabled: boolean;
+    static initializeOnStartup: boolean;
+    static testMode: boolean;
     // fields
   }
 }
@@ -1659,6 +1674,10 @@ declare namespace UnityEngine.Analytics {
     static CustomEvent(customEventName: string): UnityEngine.Analytics.AnalyticsResult;
     static CustomEvent(customEventName: string, position: UnityEngine.Vector3): UnityEngine.Analytics.AnalyticsResult;
     static CustomEvent(customEventName: string, eventData: any): UnityEngine.Analytics.AnalyticsResult;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -1868,7 +1887,15 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static GetSecondaryTouch(index: number): UnityEngine.Touch;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly touchCountSecondary: number;
+    static readonly secondaryTouchEnabled: boolean;
+    static readonly secondaryTouchWidth: number;
+    static readonly secondaryTouchHeight: number;
     // fields
   }
 }
@@ -1895,7 +1922,21 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    GetBaseException(): any;
+    GetObjectData(info: any, context: any): void;
+    ToString(): string;
+    GetType(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
     // properties
+    readonly StackTrace: string;
+    readonly InnerException: any;
+    HelpLink: string;
+    readonly Message: string;
+    Source: string;
+    readonly TargetSite: any;
+    readonly Data: any;
     // fields
   }
 }
@@ -2122,6 +2163,10 @@ declare namespace UnityEngine {
     static SetFloatArrayElement(array: any, index: number, val: number): void;
     static SetDoubleArrayElement(array: any, index: number, val: number): void;
     static SetObjectArrayElement(array: any, index: number, obj: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -2148,7 +2193,12 @@ declare namespace UnityEngine {
     static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
     static GetSignature(obj: any): string;
     static GetSignature(args: any[]): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static debug: boolean;
     // fields
   }
 }
@@ -2391,7 +2441,14 @@ declare namespace UnityEngine.Animation {
     // constructors
     private constructor();
     // methods
+    MoveNext(): boolean;
+    Reset(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly Current: any;
     // fields
   }
 }
@@ -3134,7 +3191,20 @@ declare namespace UnityEngine.Apple.ReplayKit {
     static StopBroadcasting(): void;
     static ShowCameraPreviewAt(posX: number, posY: number): boolean;
     static HideCameraPreview(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly APIAvailable: boolean;
+    static readonly recordingAvailable: boolean;
+    static readonly lastError: string;
+    static readonly isRecording: boolean;
+    static readonly broadcastingAPIAvailable: boolean;
+    static readonly isBroadcasting: boolean;
+    static readonly broadcastURL: string;
+    static cameraEnabled: boolean;
+    static microphoneEnabled: boolean;
     // fields
   }
 }
@@ -3437,6 +3507,10 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -3480,6 +3554,10 @@ declare namespace UnityEngine.Assertions {
     static AreNotEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): void;
     static IsNull(value: UnityEngine.Object, message: string): void;
     static IsNotNull(value: UnityEngine.Object, message: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static raiseExceptions: boolean;
@@ -3565,6 +3643,10 @@ declare namespace UnityEngine.Assertions.Must {
     static MustNotBeApproximatelyEqual(actual: number, expected: number, message: string): void;
     static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number): void;
     static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -3715,7 +3797,22 @@ declare namespace UnityEngine.Audio {
     // constructors
     private constructor();
     // methods
+    FindMatchingGroups(subPath: string): UnityEngine.Audio.AudioMixerGroup[];
+    FindSnapshot(name: string): UnityEngine.Audio.AudioMixerSnapshot;
+    TransitionToSnapshots(snapshots: UnityEngine.Audio.AudioMixerSnapshot[], weights: number[], timeToReach: number): void;
+    SetFloat(name: string, value: number): boolean;
+    ClearFloat(name: string): boolean;
+    GetFloat(name: string, value: any): boolean;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    outputAudioMixerGroup: UnityEngine.Audio.AudioMixerGroup;
+    updateMode: UnityEngine.Audio.AudioMixerUpdateMode;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -3724,7 +3821,15 @@ declare namespace UnityEngine.Audio {
     // constructors
     private constructor();
     // methods
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly audioMixer: UnityEngine.Audio.AudioMixer;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -3733,7 +3838,16 @@ declare namespace UnityEngine.Audio {
     // constructors
     private constructor();
     // methods
+    TransitionTo(timeToReach: number): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly audioMixer: UnityEngine.Audio.AudioMixer;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -4824,7 +4938,16 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly isValid: boolean;
+    readonly isHuman: boolean;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -6616,6 +6739,10 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -7832,6 +7959,10 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -7940,8 +8071,17 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static RemoveAll(): void;
+    Remove(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly reports: UnityEngine.CrashReport[];
+    static readonly lastReport: UnityEngine.CrashReport;
     // fields
+    time: any;
+    text: string;
   }
 }
 declare namespace UnityEngine.CrashReportHandler {
@@ -7949,7 +8089,12 @@ declare namespace UnityEngine.CrashReportHandler {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static enableCaptureExceptions: boolean;
     // fields
   }
 }
@@ -8233,7 +8378,15 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    MoveNext(): boolean;
+    Reset(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly keepWaiting: boolean;
+    readonly Current: any;
     // fields
   }
 }
@@ -8465,7 +8618,12 @@ declare namespace UnityEngine.Diagnostics {
     private constructor();
     // methods
     static SendFile(remoteFilePath: string, data: number[]): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly connected: boolean;
     // fields
   }
 }
@@ -8554,9 +8712,24 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Activate(): void;
+    Activate(width: number, height: number, refreshRate: number): void;
+    SetParams(width: number, height: number, x: number, y: number): void;
+    SetRenderingResolution(w: number, h: number): void;
     static MultiDisplayLicense(): boolean;
     static RelativeMouseAt(inputMouseCoordinates: UnityEngine.Vector3): UnityEngine.Vector3;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly renderingWidth: number;
+    readonly renderingHeight: number;
+    readonly systemWidth: number;
+    readonly systemHeight: number;
+    readonly colorBuffer: UnityEngine.RenderBuffer;
+    readonly depthBuffer: UnityEngine.RenderBuffer;
+    static readonly main: UnityEngine.Display;
     // fields
     static displays: UnityEngine.Display[];
   }
@@ -8976,7 +9149,82 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    ClearParticles(): void;
+    Emit(): void;
+    Emit(count: number): void;
+    Emit(pos: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, energy: number, color: UnityEngine.Color): void;
+    Emit(pos: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, energy: number, color: UnityEngine.Color, rotation: number, angularVelocity: number): void;
+    Simulate(deltaTime: number): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    emit: boolean;
+    minSize: number;
+    maxSize: number;
+    minEnergy: number;
+    maxEnergy: number;
+    minEmission: number;
+    maxEmission: number;
+    emitterVelocityScale: number;
+    worldVelocity: UnityEngine.Vector3;
+    localVelocity: UnityEngine.Vector3;
+    rndVelocity: UnityEngine.Vector3;
+    useWorldSpace: boolean;
+    rndRotation: boolean;
+    angularVelocity: number;
+    rndAngularVelocity: number;
+    particles: UnityEngine.Particle[];
+    readonly particleCount: number;
+    enabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -9108,6 +9356,12 @@ declare namespace UnityEngine.Events {
     // constructors
     private constructor();
     // methods
+    Invoke(args: any[]): void;
+    Find(targetObj: any, method: any): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -9274,7 +9528,16 @@ declare namespace UnityEngine.Events {
     // constructors
     private constructor();
     // methods
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
     static GetValidMethodInfo(obj: any, functionName: string, argumentTypes: any[]): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
     // properties
     // fields
   }
@@ -9299,6 +9562,1578 @@ declare namespace UnityEngine.Events {
     static Off: UnityEngine.Events.UnityEventCallState;
     static EditorAndRuntime: UnityEngine.Events.UnityEventCallState;
     static RuntimeOnly: UnityEngine.Events.UnityEventCallState;
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class AbstractEventData {
+    // constructors
+    private constructor();
+    // methods
+    Reset(): void;
+    Use(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly used: boolean;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class AxisEventData {
+    // constructors
+    constructor(eventSystem: UnityEngine.EventSystems.EventSystem);
+    // methods
+    Reset(): void;
+    Use(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    moveVector: UnityEngine.Vector2;
+    moveDir: UnityEngine.EventSystems.MoveDirection;
+    readonly currentInputModule: UnityEngine.EventSystems.BaseInputModule;
+    selectedObject: UnityEngine.GameObject;
+    readonly used: boolean;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class BaseEventData {
+    // constructors
+    constructor(eventSystem: UnityEngine.EventSystems.EventSystem);
+    // methods
+    Reset(): void;
+    Use(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly currentInputModule: UnityEngine.EventSystems.BaseInputModule;
+    selectedObject: UnityEngine.GameObject;
+    readonly used: boolean;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class BaseInput {
+    // constructors
+    constructor();
+    // methods
+    GetMouseButtonDown(button: number): boolean;
+    GetMouseButtonUp(button: number): boolean;
+    GetMouseButton(button: number): boolean;
+    GetTouch(index: number): UnityEngine.Touch;
+    GetAxisRaw(axisName: string): number;
+    GetButtonDown(buttonName: string): boolean;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly compositionString: string;
+    imeCompositionMode: UnityEngine.IMECompositionMode;
+    compositionCursorPos: UnityEngine.Vector2;
+    readonly mousePresent: boolean;
+    readonly mousePosition: UnityEngine.Vector2;
+    readonly mouseScrollDelta: UnityEngine.Vector2;
+    readonly touchSupported: boolean;
+    readonly touchCount: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class BaseInputModule {
+    // constructors
+    private constructor();
+    // methods
+    Process(): void;
+    IsPointerOverGameObject(pointerId: number): boolean;
+    ShouldActivateModule(): boolean;
+    DeactivateModule(): void;
+    ActivateModule(): void;
+    UpdateModule(): void;
+    IsModuleSupported(): boolean;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly input: UnityEngine.EventSystems.BaseInput;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class BaseRaycaster {
+    // constructors
+    private constructor();
+    // methods
+    Raycast(eventData: UnityEngine.EventSystems.PointerEventData, resultAppendList: any): void;
+    ToString(): string;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly eventCamera: UnityEngine.Camera;
+    readonly priority: number;
+    readonly sortOrderPriority: number;
+    readonly renderOrderPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class EventHandle {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Unused: UnityEngine.EventSystems.EventHandle;
+    static Used: UnityEngine.EventSystems.EventHandle;
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class EventSystem {
+    // constructors
+    private constructor();
+    // methods
+    UpdateModules(): void;
+    SetSelectedGameObject(selected: UnityEngine.GameObject, pointer: UnityEngine.EventSystems.BaseEventData): void;
+    SetSelectedGameObject(selected: UnityEngine.GameObject): void;
+    RaycastAll(eventData: UnityEngine.EventSystems.PointerEventData, raycastResults: any): void;
+    IsPointerOverGameObject(): boolean;
+    IsPointerOverGameObject(pointerId: number): boolean;
+    ToString(): string;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    static current: UnityEngine.EventSystems.EventSystem;
+    sendNavigationEvents: boolean;
+    pixelDragThreshold: number;
+    readonly currentInputModule: UnityEngine.EventSystems.BaseInputModule;
+    firstSelectedGameObject: UnityEngine.GameObject;
+    readonly currentSelectedGameObject: UnityEngine.GameObject;
+    readonly lastSelectedGameObject: UnityEngine.GameObject;
+    readonly alreadySelecting: boolean;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class EventTrigger {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnDrop(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnScroll(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    OnUpdateSelected(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnInitializePotentialDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnBeginDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnEndDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnCancel(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    triggers: any;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+    delegates: any;
+  }
+}
+declare namespace UnityEngine.EventSystems.EventTrigger {
+  class Entry {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+    eventID: UnityEngine.EventSystems.EventTriggerType;
+    callback: UnityEngine.EventSystems.EventTrigger.TriggerEvent;
+  }
+}
+declare namespace UnityEngine.EventSystems.EventTrigger {
+  class TriggerEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: UnityEngine.EventSystems.BaseEventData): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class EventTriggerType {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static PointerEnter: UnityEngine.EventSystems.EventTriggerType;
+    static PointerExit: UnityEngine.EventSystems.EventTriggerType;
+    static PointerDown: UnityEngine.EventSystems.EventTriggerType;
+    static PointerUp: UnityEngine.EventSystems.EventTriggerType;
+    static PointerClick: UnityEngine.EventSystems.EventTriggerType;
+    static Drag: UnityEngine.EventSystems.EventTriggerType;
+    static Drop: UnityEngine.EventSystems.EventTriggerType;
+    static Scroll: UnityEngine.EventSystems.EventTriggerType;
+    static UpdateSelected: UnityEngine.EventSystems.EventTriggerType;
+    static Select: UnityEngine.EventSystems.EventTriggerType;
+    static Deselect: UnityEngine.EventSystems.EventTriggerType;
+    static Move: UnityEngine.EventSystems.EventTriggerType;
+    static InitializePotentialDrag: UnityEngine.EventSystems.EventTriggerType;
+    static BeginDrag: UnityEngine.EventSystems.EventTriggerType;
+    static EndDrag: UnityEngine.EventSystems.EventTriggerType;
+    static Submit: UnityEngine.EventSystems.EventTriggerType;
+    static Cancel: UnityEngine.EventSystems.EventTriggerType;
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class ExecuteEvents {
+    // constructors
+    private constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    static readonly pointerEnterHandler: any;
+    static readonly pointerExitHandler: any;
+    static readonly pointerDownHandler: any;
+    static readonly pointerUpHandler: any;
+    static readonly pointerClickHandler: any;
+    static readonly initializePotentialDrag: any;
+    static readonly beginDragHandler: any;
+    static readonly dragHandler: any;
+    static readonly endDragHandler: any;
+    static readonly dropHandler: any;
+    static readonly scrollHandler: any;
+    static readonly updateSelectedHandler: any;
+    static readonly selectHandler: any;
+    static readonly deselectHandler: any;
+    static readonly moveHandler: any;
+    static readonly submitHandler: any;
+    static readonly cancelHandler: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IBeginDragHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnBeginDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class ICancelHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnCancel(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IDeselectHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IDragHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IDropHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnDrop(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IEndDragHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnEndDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IEventSystemHandler {
+    // constructors
+    private constructor();
+    // methods
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IInitializePotentialDragHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnInitializePotentialDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IMoveHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IPointerClickHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IPointerDownHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IPointerEnterHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IPointerExitHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IPointerUpHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IScrollHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnScroll(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class ISelectHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class ISubmitHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class IUpdateSelectedHandler {
+    // constructors
+    private constructor();
+    // methods
+    OnUpdateSelected(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class MoveDirection {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Left: UnityEngine.EventSystems.MoveDirection;
+    static Up: UnityEngine.EventSystems.MoveDirection;
+    static Right: UnityEngine.EventSystems.MoveDirection;
+    static Down: UnityEngine.EventSystems.MoveDirection;
+    static None: UnityEngine.EventSystems.MoveDirection;
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class Physics2DRaycaster {
+    // constructors
+    private constructor();
+    // methods
+    Raycast(eventData: UnityEngine.EventSystems.PointerEventData, resultAppendList: any): void;
+    ToString(): string;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly eventCamera: UnityEngine.Camera;
+    readonly depth: number;
+    readonly finalEventMask: number;
+    eventMask: UnityEngine.LayerMask;
+    readonly priority: number;
+    readonly sortOrderPriority: number;
+    readonly renderOrderPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class PhysicsRaycaster {
+    // constructors
+    private constructor();
+    // methods
+    Raycast(eventData: UnityEngine.EventSystems.PointerEventData, resultAppendList: any): void;
+    ToString(): string;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly eventCamera: UnityEngine.Camera;
+    readonly depth: number;
+    readonly finalEventMask: number;
+    eventMask: UnityEngine.LayerMask;
+    readonly priority: number;
+    readonly sortOrderPriority: number;
+    readonly renderOrderPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class PointerEventData {
+    // constructors
+    constructor(eventSystem: UnityEngine.EventSystems.EventSystem);
+    // methods
+    IsPointerMoving(): boolean;
+    IsScrolling(): boolean;
+    ToString(): string;
+    Reset(): void;
+    Use(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    pointerEnter: UnityEngine.GameObject;
+    readonly lastPress: UnityEngine.GameObject;
+    rawPointerPress: UnityEngine.GameObject;
+    pointerDrag: UnityEngine.GameObject;
+    pointerCurrentRaycast: UnityEngine.EventSystems.RaycastResult;
+    pointerPressRaycast: UnityEngine.EventSystems.RaycastResult;
+    eligibleForClick: boolean;
+    pointerId: number;
+    position: UnityEngine.Vector2;
+    delta: UnityEngine.Vector2;
+    pressPosition: UnityEngine.Vector2;
+    worldPosition: UnityEngine.Vector3;
+    worldNormal: UnityEngine.Vector3;
+    clickTime: number;
+    clickCount: number;
+    scrollDelta: UnityEngine.Vector2;
+    useDragThreshold: boolean;
+    dragging: boolean;
+    button: UnityEngine.EventSystems.PointerEventData.InputButton;
+    readonly enterEventCamera: UnityEngine.Camera;
+    readonly pressEventCamera: UnityEngine.Camera;
+    pointerPress: UnityEngine.GameObject;
+    readonly currentInputModule: UnityEngine.EventSystems.BaseInputModule;
+    selectedObject: UnityEngine.GameObject;
+    readonly used: boolean;
+    // fields
+    hovered: any;
+  }
+}
+declare namespace UnityEngine.EventSystems.PointerEventData {
+  class FramePressState {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Pressed: UnityEngine.EventSystems.PointerEventData.FramePressState;
+    static Released: UnityEngine.EventSystems.PointerEventData.FramePressState;
+    static PressedAndReleased: UnityEngine.EventSystems.PointerEventData.FramePressState;
+    static NotChanged: UnityEngine.EventSystems.PointerEventData.FramePressState;
+  }
+}
+declare namespace UnityEngine.EventSystems.PointerEventData {
+  class InputButton {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Left: UnityEngine.EventSystems.PointerEventData.InputButton;
+    static Right: UnityEngine.EventSystems.PointerEventData.InputButton;
+    static Middle: UnityEngine.EventSystems.PointerEventData.InputButton;
+  }
+}
+declare namespace UnityEngine.EventSystems.PointerInputModule {
+  class ButtonState {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    eventData: UnityEngine.EventSystems.PointerInputModule.MouseButtonEventData;
+    button: UnityEngine.EventSystems.PointerEventData.InputButton;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class PointerInputModule {
+    // constructors
+    private constructor();
+    // methods
+    IsPointerOverGameObject(pointerId: number): boolean;
+    ToString(): string;
+    Process(): void;
+    ShouldActivateModule(): boolean;
+    DeactivateModule(): void;
+    ActivateModule(): void;
+    UpdateModule(): void;
+    IsModuleSupported(): boolean;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly input: UnityEngine.EventSystems.BaseInput;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+    static kMouseLeftId: number;
+    static kMouseRightId: number;
+    static kMouseMiddleId: number;
+    static kFakeTouchesId: number;
+  }
+}
+declare namespace UnityEngine.EventSystems.PointerInputModule {
+  class MouseButtonEventData {
+    // constructors
+    constructor();
+    // methods
+    PressedThisFrame(): boolean;
+    ReleasedThisFrame(): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+    buttonState: UnityEngine.EventSystems.PointerEventData.FramePressState;
+    buttonData: UnityEngine.EventSystems.PointerEventData;
+  }
+}
+declare namespace UnityEngine.EventSystems.PointerInputModule {
+  class MouseState {
+    // constructors
+    constructor();
+    // methods
+    AnyPressesThisFrame(): boolean;
+    AnyReleasesThisFrame(): boolean;
+    GetButtonState(button: UnityEngine.EventSystems.PointerEventData.InputButton): UnityEngine.EventSystems.PointerInputModule.ButtonState;
+    SetButtonState(button: UnityEngine.EventSystems.PointerEventData.InputButton, stateForMouseButton: UnityEngine.EventSystems.PointerEventData.FramePressState, data: UnityEngine.EventSystems.PointerEventData): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class RaycasterManager {
+    // constructors
+    private constructor();
+    // methods
+    static AddRaycaster(baseRaycaster: UnityEngine.EventSystems.BaseRaycaster): void;
+    static GetRaycasters(): any;
+    static RemoveRaycasters(baseRaycaster: UnityEngine.EventSystems.BaseRaycaster): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class RaycastResult {
+    // constructors
+    private constructor();
+    // methods
+    Clear(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    gameObject: UnityEngine.GameObject;
+    readonly isValid: boolean;
+    // fields
+    module: UnityEngine.EventSystems.BaseRaycaster;
+    distance: number;
+    index: number;
+    depth: number;
+    sortingLayer: number;
+    sortingOrder: number;
+    worldPosition: UnityEngine.Vector3;
+    worldNormal: UnityEngine.Vector3;
+    screenPosition: UnityEngine.Vector2;
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class StandaloneInputModule {
+    // constructors
+    private constructor();
+    // methods
+    UpdateModule(): void;
+    IsModuleSupported(): boolean;
+    ShouldActivateModule(): boolean;
+    ActivateModule(): void;
+    DeactivateModule(): void;
+    Process(): void;
+    IsPointerOverGameObject(pointerId: number): boolean;
+    ToString(): string;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly inputMode: UnityEngine.EventSystems.StandaloneInputModule.InputMode;
+    allowActivationOnMobileDevice: boolean;
+    forceModuleActive: boolean;
+    inputActionsPerSecond: number;
+    repeatDelay: number;
+    horizontalAxis: string;
+    verticalAxis: string;
+    submitButton: string;
+    cancelButton: string;
+    readonly input: UnityEngine.EventSystems.BaseInput;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems.StandaloneInputModule {
+  class InputMode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Mouse: UnityEngine.EventSystems.StandaloneInputModule.InputMode;
+    static Buttons: UnityEngine.EventSystems.StandaloneInputModule.InputMode;
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class TouchInputModule {
+    // constructors
+    private constructor();
+    // methods
+    UpdateModule(): void;
+    IsModuleSupported(): boolean;
+    ShouldActivateModule(): boolean;
+    Process(): void;
+    DeactivateModule(): void;
+    ToString(): string;
+    IsPointerOverGameObject(pointerId: number): boolean;
+    ActivateModule(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    allowActivationOnStandalone: boolean;
+    forceModuleActive: boolean;
+    readonly input: UnityEngine.EventSystems.BaseInput;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.EventSystems {
+  class UIBehaviour {
+    // constructors
+    private constructor();
+    // methods
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
   }
 }
 declare namespace UnityEngine {
@@ -9793,7 +11628,51 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     private constructor();
     // methods
+    GetFloat(name: string): number;
+    GetFloat(id: number): number;
+    SetFloat(name: string, value: number): void;
+    SetFloat(id: number, value: number): void;
+    GetBool(name: string): boolean;
+    GetBool(id: number): boolean;
+    SetBool(name: string, value: boolean): void;
+    SetBool(id: number, value: boolean): void;
+    GetInteger(name: string): number;
+    GetInteger(id: number): number;
+    SetInteger(name: string, value: number): void;
+    SetInteger(id: number, value: number): void;
+    SetTrigger(name: string): void;
+    SetTrigger(id: number): void;
+    ResetTrigger(name: string): void;
+    ResetTrigger(id: number): void;
+    IsParameterControlledByCurve(name: string): boolean;
+    IsParameterControlledByCurve(id: number): boolean;
+    GetLayerName(layerIndex: number): string;
+    GetLayerIndex(layerName: string): number;
+    GetLayerWeight(layerIndex: number): number;
+    SetLayerWeight(layerIndex: number, weight: number): void;
+    GetCurrentAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
+    GetNextAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
+    GetAnimatorTransitionInfo(layerIndex: number): UnityEngine.AnimatorTransitionInfo;
+    GetCurrentAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
+    GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
+    GetCurrentAnimatorClipInfoCount(layerIndex: number): number;
+    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): void;
+    GetNextAnimatorClipInfoCount(layerIndex: number): number;
+    GetNextAnimatorClipInfo(layerIndex: number, clips: any): void;
+    IsInTransition(layerIndex: number): boolean;
+    GetParameter(index: number): UnityEngine.AnimatorControllerParameter;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number, fixedTime: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number, fixedTime: number): void;
+    CrossFade(stateName: string, transitionDuration: number, layer: number, normalizedTime: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number, layer: number, normalizedTime: number): void;
+    PlayInFixedTime(stateName: string, layer: number, fixedTime: number): void;
+    PlayInFixedTime(stateNameHash: number, layer: number, fixedTime: number): void;
+    Play(stateName: string, layer: number, normalizedTime: number): void;
+    Play(stateNameHash: number, layer: number, normalizedTime: number): void;
+    HasState(layerIndex: number, stateID: number): boolean;
     // properties
+    readonly layerCount: number;
+    readonly parameterCount: number;
     // fields
   }
 }
@@ -10116,7 +11995,60 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -10947,6 +12879,11 @@ declare namespace UnityEngine.GUI {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -11171,8 +13108,26 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static GetRect(contents: UnityEngine.GUIContent[], xCount: number, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    CalcWidth(): void;
+    CalcHeight(): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
     // properties
+    style: UnityEngine.GUIStyle;
+    readonly margin: UnityEngine.RectOffset;
     // fields
+    minWidth: number;
+    maxWidth: number;
+    minHeight: number;
+    maxHeight: number;
+    rect: UnityEngine.Rect;
+    stretchWidth: number;
+    stretchHeight: number;
   }
 }
 declare namespace UnityEngine {
@@ -11401,6 +13356,11 @@ declare namespace UnityEngine.GUILayout {
     // constructors
     private constructor();
     // methods
+    DoWindow(windowID: number): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -11517,6 +13477,10 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -11589,6 +13553,10 @@ declare namespace UnityEngine.GUILayoutUtility {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -12044,7 +14012,18 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly rotationRate: UnityEngine.Vector3;
+    readonly rotationRateUnbiased: UnityEngine.Vector3;
+    readonly gravity: UnityEngine.Vector3;
+    readonly userAcceleration: UnityEngine.Vector3;
+    readonly attitude: UnityEngine.Quaternion;
+    enabled: boolean;
+    updateInterval: number;
     // fields
   }
 }
@@ -12647,6 +14626,7 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    IsRaycastLocationValid(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
     // properties
     // fields
   }
@@ -12673,7 +14653,24 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    IsLogTypeAllowed(logType: UnityEngine.LogType): boolean;
+    Log(logType: UnityEngine.LogType, message: any): void;
+    Log(logType: UnityEngine.LogType, message: any, context: UnityEngine.Object): void;
+    Log(logType: UnityEngine.LogType, tag: string, message: any): void;
+    Log(logType: UnityEngine.LogType, tag: string, message: any, context: UnityEngine.Object): void;
+    Log(message: any): void;
+    Log(tag: string, message: any): void;
+    Log(tag: string, message: any, context: UnityEngine.Object): void;
+    LogWarning(tag: string, message: any): void;
+    LogWarning(tag: string, message: any, context: UnityEngine.Object): void;
+    LogError(tag: string, message: any): void;
+    LogError(tag: string, message: any, context: UnityEngine.Object): void;
+    LogFormat(logType: UnityEngine.LogType, format: string, args: any[]): void;
+    LogException(exception: any): void;
     // properties
+    logHandler: UnityEngine.ILogHandler;
+    logEnabled: boolean;
+    filterLogType: UnityEngine.LogType;
     // fields
   }
 }
@@ -12682,6 +14679,8 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): void;
+    LogException(exception: any, context: UnityEngine.Object): void;
     // properties
     // fields
   }
@@ -13451,7 +15450,12 @@ declare namespace UnityEngine.iOS {
     private constructor();
     // methods
     static PreloadAsync(tags: string[]): UnityEngine.iOS.OnDemandResourcesRequest;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly enabled: boolean;
     // fields
   }
 }
@@ -13460,7 +15464,19 @@ declare namespace UnityEngine.iOS {
     // constructors
     private constructor();
     // methods
+    GetResourcePath(resourceName: string): string;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly error: string;
+    loadingPriority: number;
+    readonly isDone: boolean;
+    readonly progress: number;
+    priority: number;
+    allowSceneActivation: boolean;
     // fields
   }
 }
@@ -13469,7 +15485,16 @@ declare namespace UnityEngine.iOS {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly alertBody: string;
+    readonly hasAction: boolean;
+    readonly applicationIconBadgeNumber: number;
+    readonly soundName: string;
+    readonly userInfo: any;
     // fields
   }
 }
@@ -13863,6 +15888,8 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
     // properties
     // fields
   }
@@ -14216,6 +16243,10 @@ declare namespace UnityEngine {
     static ToJson(obj: any, prettyPrint: boolean): string;
     static FromJson(json: string, type: any): any;
     static FromJsonOverwrite(json: string, objectToOverwrite: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -16267,7 +18298,82 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    ClearParticles(): void;
+    Emit(): void;
+    Emit(count: number): void;
+    Emit(pos: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, energy: number, color: UnityEngine.Color): void;
+    Emit(pos: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, energy: number, color: UnityEngine.Color, rotation: number, angularVelocity: number): void;
+    Simulate(deltaTime: number): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    emit: boolean;
+    minSize: number;
+    maxSize: number;
+    minEnergy: number;
+    maxEnergy: number;
+    minEmission: number;
+    maxEmission: number;
+    emitterVelocityScale: number;
+    worldVelocity: UnityEngine.Vector3;
+    localVelocity: UnityEngine.Vector3;
+    rndVelocity: UnityEngine.Vector3;
+    useWorldSpace: boolean;
+    rndRotation: boolean;
+    angularVelocity: number;
+    rndAngularVelocity: number;
+    particles: UnityEngine.Particle[];
+    readonly particleCount: number;
+    enabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -16934,7 +19040,15 @@ declare namespace UnityEngine.Networking {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly isDone: boolean;
+    readonly data: number[];
+    readonly text: string;
     // fields
   }
 }
@@ -17119,6 +19233,10 @@ declare namespace UnityEngine.Networking {
     private constructor();
     // methods
     // properties
+    readonly sectionName: string;
+    readonly sectionData: number[];
+    readonly fileName: string;
+    readonly contentType: string;
     // fields
   }
 }
@@ -17319,6 +19437,8 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     private constructor();
     // methods
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     // properties
     // fields
   }
@@ -17675,7 +19795,18 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     private constructor();
     // methods
+    IsValid(): boolean;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
     // properties
+    version: number;
+    sourceId: UnityEngine.Networking.Types.SourceID;
+    projectId: string;
+    appId: UnityEngine.Networking.Types.AppID;
+    accessTokenString: string;
+    domain: number;
     // fields
     static currentVersion: number;
   }
@@ -17685,7 +19816,26 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     private constructor();
     // methods
+    SetSuccess(): void;
+    SetFailure(info: string): void;
+    ToString(): string;
+    Parse(obj: any): void;
+    ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
+    ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONInt64(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONUInt16(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONUInt32(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONUInt64(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONBool(name: string, obj: any, dictJsonObj: any): boolean;
+    ParseJSONDateTime(name: string, obj: any, dictJsonObj: any): any;
+    ParseJSONListOfStrings(name: string, obj: any, dictJsonObj: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
     // properties
+    readonly success: boolean;
+    readonly extendedInfo: string;
     // fields
   }
 }
@@ -17694,6 +19844,21 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     private constructor();
     // methods
+    Parse(obj: any): void;
+    ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
+    ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONInt64(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONUInt16(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONUInt32(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONUInt64(name: string, obj: any, dictJsonObj: any): number;
+    ParseJSONBool(name: string, obj: any, dictJsonObj: any): boolean;
+    ParseJSONDateTime(name: string, obj: any, dictJsonObj: any): any;
+    ParseJSONListOfStrings(name: string, obj: any, dictJsonObj: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -17875,7 +20040,12 @@ declare namespace UnityEngine.Networking {
     static GetBroadcastConnectionInfo(hostId: number, port: any, error: any): string;
     static GetBroadcastConnectionInfo(hostId: number, address: any, port: any, error: any): void;
     static GetBroadcastConnectionMessage(hostId: number, buffer: number[], bufferSize: number, receivedSize: any, error: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly IsStarted: boolean;
     // fields
   }
 }
@@ -18212,7 +20382,15 @@ declare namespace UnityEngine.Networking {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly data: number[];
+    contentType: string;
+    readonly progress: number;
     // fields
   }
 }
@@ -18243,7 +20421,12 @@ declare namespace UnityEngine.Networking {
     static GetAppID(): UnityEngine.Networking.Types.AppID;
     static SetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID, accessToken: UnityEngine.Networking.Types.NetworkAccessToken): void;
     static GetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID): UnityEngine.Networking.Types.NetworkAccessToken;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static useRandomSourceID: boolean;
     // fields
   }
 }
@@ -18786,7 +20969,82 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    ClearParticles(): void;
+    Emit(): void;
+    Emit(count: number): void;
+    Emit(pos: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, energy: number, color: UnityEngine.Color): void;
+    Emit(pos: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, energy: number, color: UnityEngine.Color, rotation: number, angularVelocity: number): void;
+    Simulate(deltaTime: number): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    emit: boolean;
+    minSize: number;
+    maxSize: number;
+    minEnergy: number;
+    maxEnergy: number;
+    minEmission: number;
+    maxEmission: number;
+    emitterVelocityScale: number;
+    worldVelocity: UnityEngine.Vector3;
+    localVelocity: UnityEngine.Vector3;
+    rndVelocity: UnityEngine.Vector3;
+    useWorldSpace: boolean;
+    rndRotation: boolean;
+    angularVelocity: number;
+    rndAngularVelocity: number;
+    particles: UnityEngine.Particle[];
+    readonly particleCount: number;
+    enabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -18802,6 +21060,10 @@ declare namespace UnityEngine {
     static GetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): number;
     static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any, offset: number, count: number): void;
     static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -21416,8 +23678,132 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    GetProceduralPropertyDescriptions(): UnityEngine.ProceduralPropertyDescription[];
+    HasProceduralProperty(inputName: string): boolean;
+    GetProceduralBoolean(inputName: string): boolean;
+    IsProceduralPropertyVisible(inputName: string): boolean;
+    SetProceduralBoolean(inputName: string, value: boolean): void;
+    GetProceduralFloat(inputName: string): number;
+    SetProceduralFloat(inputName: string, value: number): void;
+    GetProceduralVector(inputName: string): UnityEngine.Vector4;
+    SetProceduralVector(inputName: string, value: UnityEngine.Vector4): void;
+    GetProceduralColor(inputName: string): UnityEngine.Color;
+    SetProceduralColor(inputName: string, value: UnityEngine.Color): void;
+    GetProceduralEnum(inputName: string): number;
+    SetProceduralEnum(inputName: string, value: number): void;
+    GetProceduralTexture(inputName: string): UnityEngine.Texture2D;
+    SetProceduralTexture(inputName: string, value: UnityEngine.Texture2D): void;
+    IsProceduralPropertyCached(inputName: string): boolean;
+    CacheProceduralProperty(inputName: string, value: boolean): void;
+    ClearCache(): void;
+    RebuildTextures(): void;
+    RebuildTexturesImmediately(): void;
     static StopRebuilds(): void;
+    GetGeneratedTextures(): UnityEngine.Texture[];
+    GetGeneratedTexture(textureName: string): UnityEngine.ProceduralTexture;
+    FreezeAndReleaseSourceData(): void;
+    SetColor(propertyName: string, color: UnityEngine.Color): void;
+    SetColor(nameID: number, color: UnityEngine.Color): void;
+    GetColor(propertyName: string): UnityEngine.Color;
+    GetColor(nameID: number): UnityEngine.Color;
+    SetVector(propertyName: string, vector: UnityEngine.Vector4): void;
+    SetVector(nameID: number, vector: UnityEngine.Vector4): void;
+    GetVector(propertyName: string): UnityEngine.Vector4;
+    GetVector(nameID: number): UnityEngine.Vector4;
+    SetTexture(propertyName: string, texture: UnityEngine.Texture): void;
+    SetTexture(nameID: number, texture: UnityEngine.Texture): void;
+    GetTexture(propertyName: string): UnityEngine.Texture;
+    GetTexture(nameID: number): UnityEngine.Texture;
+    SetTextureOffset(propertyName: string, offset: UnityEngine.Vector2): void;
+    GetTextureOffset(propertyName: string): UnityEngine.Vector2;
+    SetTextureScale(propertyName: string, scale: UnityEngine.Vector2): void;
+    GetTextureScale(propertyName: string): UnityEngine.Vector2;
+    SetMatrix(propertyName: string, matrix: UnityEngine.Matrix4x4): void;
+    SetMatrix(nameID: number, matrix: UnityEngine.Matrix4x4): void;
+    GetMatrix(propertyName: string): UnityEngine.Matrix4x4;
+    GetMatrix(nameID: number): UnityEngine.Matrix4x4;
+    SetFloat(propertyName: string, value: number): void;
+    SetFloat(nameID: number, value: number): void;
+    GetFloat(propertyName: string): number;
+    GetFloat(nameID: number): number;
+    SetFloatArray(name: string, values: any): void;
+    SetFloatArray(nameID: number, values: any): void;
+    SetFloatArray(name: string, values: number[]): void;
+    SetFloatArray(nameID: number, values: number[]): void;
+    SetVectorArray(name: string, values: any): void;
+    SetVectorArray(nameID: number, values: any): void;
+    SetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    SetColorArray(name: string, values: any): void;
+    SetColorArray(nameID: number, values: any): void;
+    SetColorArray(name: string, values: UnityEngine.Color[]): void;
+    SetColorArray(nameID: number, values: UnityEngine.Color[]): void;
+    SetMatrixArray(name: string, values: any): void;
+    SetMatrixArray(nameID: number, values: any): void;
+    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
+    GetFloatArray(name: string, values: any): void;
+    GetFloatArray(nameID: number, values: any): void;
+    GetFloatArray(name: string): number[];
+    GetFloatArray(nameID: number): number[];
+    GetVectorArray(name: string, values: any): void;
+    GetVectorArray(nameID: number, values: any): void;
+    GetVectorArray(name: string): UnityEngine.Vector4[];
+    GetVectorArray(nameID: number): UnityEngine.Vector4[];
+    GetColorArray(name: string, values: any): void;
+    GetColorArray(nameID: number, values: any): void;
+    GetColorArray(name: string): UnityEngine.Color[];
+    GetColorArray(nameID: number): UnityEngine.Color[];
+    GetMatrixArray(name: string, values: any): void;
+    GetMatrixArray(nameID: number, values: any): void;
+    GetMatrixArray(name: string): UnityEngine.Matrix4x4[];
+    GetMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
+    SetInt(propertyName: string, value: number): void;
+    SetInt(nameID: number, value: number): void;
+    GetInt(propertyName: string): number;
+    GetInt(nameID: number): number;
+    SetBuffer(propertyName: string, buffer: UnityEngine.ComputeBuffer): void;
+    HasProperty(propertyName: string): boolean;
+    HasProperty(nameID: number): boolean;
+    GetTag(tag: string, searchFallbacks: boolean, defaultValue: string): string;
+    GetTag(tag: string, searchFallbacks: boolean): string;
+    SetOverrideTag(tag: string, val: string): void;
+    Lerp(start: UnityEngine.Material, end: UnityEngine.Material, t: number): void;
+    SetPass(pass: number): boolean;
+    GetPassName(pass: number): string;
+    FindPass(passName: string): number;
+    CopyPropertiesFromMaterial(mat: UnityEngine.Material): void;
+    EnableKeyword(keyword: string): void;
+    DisableKeyword(keyword: string): void;
+    IsKeywordEnabled(keyword: string): boolean;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    cacheSize: UnityEngine.ProceduralCacheSize;
+    animationUpdateRate: number;
+    readonly isProcessing: boolean;
+    readonly isCachedDataAvailable: boolean;
+    isLoadTimeGenerated: boolean;
+    readonly loadingBehavior: UnityEngine.ProceduralLoadingBehavior;
+    static readonly isSupported: boolean;
+    static substanceProcessorUsage: UnityEngine.ProceduralProcessorUsage;
+    preset: string;
+    isReadable: boolean;
+    readonly isFrozen: boolean;
+    shader: UnityEngine.Shader;
+    color: UnityEngine.Color;
+    mainTexture: UnityEngine.Texture;
+    mainTextureOffset: UnityEngine.Vector2;
+    mainTextureScale: UnityEngine.Vector2;
+    readonly passCount: number;
+    renderQueue: number;
+    shaderKeywords: string[];
+    globalIlluminationFlags: UnityEngine.MaterialGlobalIlluminationFlags;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -21592,7 +23978,13 @@ declare namespace UnityEngine.Profiling {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly name: string;
+    enabled: boolean;
     // fields
   }
 }
@@ -21673,7 +24065,15 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    GetHashCode(): number;
+    IsDefaultAttribute(): boolean;
+    Match(obj: any): boolean;
+    Equals(obj: any): boolean;
+    GetType(): any;
+    ToString(): string;
     // properties
+    order: number;
+    readonly TypeId: any;
     // fields
   }
 }
@@ -22278,6 +24678,10 @@ declare namespace UnityEngine {
     static RectangleContainsScreenPoint(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2, cam: UnityEngine.Camera): boolean;
     static PixelAdjustPoint(point: UnityEngine.Vector2, elementTransform: UnityEngine.Transform, canvas: UnityEngine.Canvas): UnityEngine.Vector2;
     static PixelAdjustRect(rectTransform: UnityEngine.RectTransform, canvas: UnityEngine.Canvas): UnityEngine.Rect;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -24872,6 +27276,10 @@ declare namespace UnityEngine.SceneManagement {
     // methods
     static GetScenePathByBuildIndex(buildIndex: number): string;
     static GetBuildIndexByScenePath(scenePath: string): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -25028,6 +27436,10 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static firstWait: number;
@@ -25766,7 +28178,13 @@ declare namespace UnityEngine {
     static CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
     static ShowAchievementsUI(): void;
     static ShowLeaderboardUI(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static Active: UnityEngine.SocialPlatforms.ISocialPlatform;
+    static readonly localUser: UnityEngine.SocialPlatforms.ILocalUser;
     // fields
   }
 }
@@ -25775,6 +28193,10 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -25811,7 +28233,13 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
+    ReportProgress(callback: any): void;
     // properties
+    id: string;
+    percentCompleted: number;
+    readonly completed: boolean;
+    readonly hidden: boolean;
+    readonly lastReportedDate: any;
     // fields
   }
 }
@@ -25821,6 +28249,13 @@ declare namespace UnityEngine.SocialPlatforms {
     private constructor();
     // methods
     // properties
+    id: string;
+    readonly title: string;
+    readonly image: UnityEngine.Texture2D;
+    readonly achievedDescription: string;
+    readonly unachievedDescription: string;
+    readonly hidden: boolean;
+    readonly points: number;
     // fields
   }
 }
@@ -25829,7 +28264,18 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
+    SetUserFilter(userIDs: string[]): void;
+    LoadScores(callback: any): void;
     // properties
+    readonly loading: boolean;
+    id: string;
+    userScope: UnityEngine.SocialPlatforms.UserScope;
+    range: UnityEngine.SocialPlatforms.Range;
+    timeScope: UnityEngine.SocialPlatforms.TimeScope;
+    readonly localUserScore: UnityEngine.SocialPlatforms.IScore;
+    readonly maxRange: number;
+    readonly scores: UnityEngine.SocialPlatforms.IScore[];
+    readonly title: string;
     // fields
   }
 }
@@ -25838,7 +28284,13 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
+    Authenticate(callback: any): void;
+    Authenticate(callback: any): void;
+    LoadFriends(callback: any): void;
     // properties
+    readonly friends: UnityEngine.SocialPlatforms.IUserProfile[];
+    readonly authenticated: boolean;
+    readonly underage: boolean;
     // fields
   }
 }
@@ -26004,7 +28456,14 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
+    ReportScore(callback: any): void;
     // properties
+    leaderboardID: string;
+    value: number;
+    readonly date: any;
+    readonly formattedValue: string;
+    readonly userID: string;
+    readonly rank: number;
     // fields
   }
 }
@@ -26013,7 +28472,23 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
+    LoadUsers(userIDs: string[], callback: any): void;
+    ReportProgress(achievementID: string, progress: number, callback: any): void;
+    LoadAchievementDescriptions(callback: any): void;
+    LoadAchievements(callback: any): void;
+    CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
+    ReportScore(score: number, board: string, callback: any): void;
+    LoadScores(leaderboardID: string, callback: any): void;
+    CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
+    ShowAchievementsUI(): void;
+    ShowLeaderboardUI(): void;
+    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: any): void;
+    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: any): void;
+    LoadFriends(user: UnityEngine.SocialPlatforms.ILocalUser, callback: any): void;
+    LoadScores(board: UnityEngine.SocialPlatforms.ILeaderboard, callback: any): void;
+    GetLoading(board: UnityEngine.SocialPlatforms.ILeaderboard): boolean;
     // properties
+    readonly localUser: UnityEngine.SocialPlatforms.ILocalUser;
     // fields
   }
 }
@@ -26023,6 +28498,11 @@ declare namespace UnityEngine.SocialPlatforms {
     private constructor();
     // methods
     // properties
+    readonly userName: string;
+    readonly id: string;
+    readonly isFriend: boolean;
+    readonly state: UnityEngine.SocialPlatforms.UserState;
+    readonly image: UnityEngine.Texture2D;
     // fields
   }
 }
@@ -26805,7 +29285,29 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    OnStateEnter(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number): void;
+    OnStateUpdate(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number): void;
+    OnStateExit(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number): void;
+    OnStateMove(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number): void;
+    OnStateIK(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number): void;
+    OnStateMachineEnter(animator: UnityEngine.Animator, stateMachinePathHash: number): void;
+    OnStateMachineExit(animator: UnityEngine.Animator, stateMachinePathHash: number): void;
+    OnStateEnter(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    OnStateUpdate(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    OnStateExit(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    OnStateMove(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    OnStateIK(animator: UnityEngine.Animator, stateInfo: UnityEngine.AnimatorStateInfo, layerIndex: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    OnStateMachineEnter(animator: UnityEngine.Animator, stateMachinePathHash: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    OnStateMachineExit(animator: UnityEngine.Animator, stateMachinePathHash: number, controller: UnityEngine.Experimental.Director.AnimatorControllerPlayable): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -28523,6 +31025,10 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    Equals(o: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -28637,7 +31143,121 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    SetParent(parent: UnityEngine.Transform): void;
+    SetParent(parent: UnityEngine.Transform, worldPositionStays: boolean): void;
+    Translate(translation: UnityEngine.Vector3): void;
+    Translate(translation: UnityEngine.Vector3, relativeTo: UnityEngine.Space): void;
+    Translate(x: number, y: number, z: number): void;
+    Translate(x: number, y: number, z: number, relativeTo: UnityEngine.Space): void;
+    Translate(translation: UnityEngine.Vector3, relativeTo: UnityEngine.Transform): void;
+    Translate(x: number, y: number, z: number, relativeTo: UnityEngine.Transform): void;
+    Rotate(eulerAngles: UnityEngine.Vector3): void;
+    Rotate(eulerAngles: UnityEngine.Vector3, relativeTo: UnityEngine.Space): void;
+    Rotate(xAngle: number, yAngle: number, zAngle: number): void;
+    Rotate(xAngle: number, yAngle: number, zAngle: number, relativeTo: UnityEngine.Space): void;
+    Rotate(axis: UnityEngine.Vector3, angle: number): void;
+    Rotate(axis: UnityEngine.Vector3, angle: number, relativeTo: UnityEngine.Space): void;
+    RotateAround(point: UnityEngine.Vector3, axis: UnityEngine.Vector3, angle: number): void;
+    LookAt(target: UnityEngine.Transform): void;
+    LookAt(target: UnityEngine.Transform, worldUp: UnityEngine.Vector3): void;
+    LookAt(worldPosition: UnityEngine.Vector3, worldUp: UnityEngine.Vector3): void;
+    LookAt(worldPosition: UnityEngine.Vector3): void;
+    TransformDirection(direction: UnityEngine.Vector3): UnityEngine.Vector3;
+    TransformDirection(x: number, y: number, z: number): UnityEngine.Vector3;
+    InverseTransformDirection(direction: UnityEngine.Vector3): UnityEngine.Vector3;
+    InverseTransformDirection(x: number, y: number, z: number): UnityEngine.Vector3;
+    TransformVector(vector: UnityEngine.Vector3): UnityEngine.Vector3;
+    TransformVector(x: number, y: number, z: number): UnityEngine.Vector3;
+    InverseTransformVector(vector: UnityEngine.Vector3): UnityEngine.Vector3;
+    InverseTransformVector(x: number, y: number, z: number): UnityEngine.Vector3;
+    TransformPoint(position: UnityEngine.Vector3): UnityEngine.Vector3;
+    TransformPoint(x: number, y: number, z: number): UnityEngine.Vector3;
+    InverseTransformPoint(position: UnityEngine.Vector3): UnityEngine.Vector3;
+    InverseTransformPoint(x: number, y: number, z: number): UnityEngine.Vector3;
+    DetachChildren(): void;
+    SetAsFirstSibling(): void;
+    SetAsLastSibling(): void;
+    SetSiblingIndex(index: number): void;
+    GetSiblingIndex(): number;
+    Find(name: string): UnityEngine.Transform;
+    IsChildOf(parent: UnityEngine.Transform): boolean;
+    FindChild(name: string): UnityEngine.Transform;
+    GetEnumerator(): any;
+    RotateAround(axis: UnityEngine.Vector3, angle: number): void;
+    RotateAroundLocal(axis: UnityEngine.Vector3, angle: number): void;
+    GetChild(index: number): UnityEngine.Transform;
+    GetChildCount(): number;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    position: UnityEngine.Vector3;
+    localPosition: UnityEngine.Vector3;
+    eulerAngles: UnityEngine.Vector3;
+    localEulerAngles: UnityEngine.Vector3;
+    right: UnityEngine.Vector3;
+    up: UnityEngine.Vector3;
+    forward: UnityEngine.Vector3;
+    rotation: UnityEngine.Quaternion;
+    localRotation: UnityEngine.Quaternion;
+    localScale: UnityEngine.Vector3;
+    parent: UnityEngine.Transform;
+    readonly worldToLocalMatrix: UnityEngine.Matrix4x4;
+    readonly localToWorldMatrix: UnityEngine.Matrix4x4;
+    readonly root: UnityEngine.Transform;
+    readonly childCount: number;
+    readonly lossyScale: UnityEngine.Vector3;
+    hasChanged: boolean;
+    hierarchyCapacity: number;
+    readonly hierarchyCount: number;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -28646,7 +31266,14 @@ declare namespace UnityEngine.Transform {
     // constructors
     private constructor();
     // methods
+    MoveNext(): boolean;
+    Reset(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly Current: any;
     // fields
   }
 }
@@ -28797,7 +31424,4999 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static GetType(typeName: string, assemblyName: string): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class AnimationTriggers {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    normalTrigger: string;
+    highlightedTrigger: string;
+    pressedTrigger: string;
+    disabledTrigger: string;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.AspectRatioFitter {
+  class AspectMode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static None: UnityEngine.UI.AspectRatioFitter.AspectMode;
+    static WidthControlsHeight: UnityEngine.UI.AspectRatioFitter.AspectMode;
+    static HeightControlsWidth: UnityEngine.UI.AspectRatioFitter.AspectMode;
+    static FitInParent: UnityEngine.UI.AspectRatioFitter.AspectMode;
+    static EnvelopeParent: UnityEngine.UI.AspectRatioFitter.AspectMode;
+  }
+}
+declare namespace UnityEngine.UI {
+  class AspectRatioFitter {
+    // constructors
+    private constructor();
+    // methods
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    aspectMode: UnityEngine.UI.AspectRatioFitter.AspectMode;
+    aspectRatio: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class BaseMeshEffect {
+    // constructors
+    private constructor();
+    // methods
+    ModifyMesh(mesh: UnityEngine.Mesh): void;
+    ModifyMesh(vh: UnityEngine.UI.VertexHelper): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class BaseVertexEffect {
+    // constructors
+    private constructor();
+    // methods
+    ModifyVertices(vertices: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Button {
+  class ButtonClickedEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: UnityEngine.Events.UnityAction): void;
+    RemoveListener(call: UnityEngine.Events.UnityAction): void;
+    Invoke(): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Button {
+    // constructors
+    private constructor();
+    // methods
+    OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    onClick: UnityEngine.UI.Button.ButtonClickedEvent;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class CanvasScaler {
+    // constructors
+    private constructor();
+    // methods
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    uiScaleMode: UnityEngine.UI.CanvasScaler.ScaleMode;
+    referencePixelsPerUnit: number;
+    scaleFactor: number;
+    referenceResolution: UnityEngine.Vector2;
+    screenMatchMode: UnityEngine.UI.CanvasScaler.ScreenMatchMode;
+    matchWidthOrHeight: number;
+    physicalUnit: UnityEngine.UI.CanvasScaler.Unit;
+    fallbackScreenDPI: number;
+    defaultSpriteDPI: number;
+    dynamicPixelsPerUnit: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.CanvasScaler {
+  class ScaleMode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static ConstantPixelSize: UnityEngine.UI.CanvasScaler.ScaleMode;
+    static ScaleWithScreenSize: UnityEngine.UI.CanvasScaler.ScaleMode;
+    static ConstantPhysicalSize: UnityEngine.UI.CanvasScaler.ScaleMode;
+  }
+}
+declare namespace UnityEngine.UI.CanvasScaler {
+  class ScreenMatchMode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static MatchWidthOrHeight: UnityEngine.UI.CanvasScaler.ScreenMatchMode;
+    static Expand: UnityEngine.UI.CanvasScaler.ScreenMatchMode;
+    static Shrink: UnityEngine.UI.CanvasScaler.ScreenMatchMode;
+  }
+}
+declare namespace UnityEngine.UI.CanvasScaler {
+  class Unit {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Centimeters: UnityEngine.UI.CanvasScaler.Unit;
+    static Millimeters: UnityEngine.UI.CanvasScaler.Unit;
+    static Inches: UnityEngine.UI.CanvasScaler.Unit;
+    static Points: UnityEngine.UI.CanvasScaler.Unit;
+    static Picas: UnityEngine.UI.CanvasScaler.Unit;
+  }
+}
+declare namespace UnityEngine.UI {
+  class CanvasUpdate {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Prelayout: UnityEngine.UI.CanvasUpdate;
+    static Layout: UnityEngine.UI.CanvasUpdate;
+    static PostLayout: UnityEngine.UI.CanvasUpdate;
+    static PreRender: UnityEngine.UI.CanvasUpdate;
+    static LatePreRender: UnityEngine.UI.CanvasUpdate;
+    static MaxUpdateValue: UnityEngine.UI.CanvasUpdate;
+  }
+}
+declare namespace UnityEngine.UI {
+  class CanvasUpdateRegistry {
+    // constructors
+    private constructor();
+    // methods
+    static RegisterCanvasElementForLayoutRebuild(element: UnityEngine.UI.ICanvasElement): void;
+    static TryRegisterCanvasElementForLayoutRebuild(element: UnityEngine.UI.ICanvasElement): boolean;
+    static RegisterCanvasElementForGraphicRebuild(element: UnityEngine.UI.ICanvasElement): void;
+    static TryRegisterCanvasElementForGraphicRebuild(element: UnityEngine.UI.ICanvasElement): boolean;
+    static UnRegisterCanvasElementForRebuild(element: UnityEngine.UI.ICanvasElement): void;
+    static IsRebuildingLayout(): boolean;
+    static IsRebuildingGraphics(): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    static readonly instance: UnityEngine.UI.CanvasUpdateRegistry;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ClipperRegistry {
+    // constructors
+    private constructor();
+    // methods
+    Cull(): void;
+    static Register(c: UnityEngine.UI.IClipper): void;
+    static Unregister(c: UnityEngine.UI.IClipper): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    static readonly instance: UnityEngine.UI.ClipperRegistry;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Clipping {
+    // constructors
+    private constructor();
+    // methods
+    static FindCullAndClipWorldRect(rectMaskParents: any, validRect: any): UnityEngine.Rect;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ColorBlock {
+    // constructors
+    private constructor();
+    // methods
+    Equals(obj: any): boolean;
+    Equals(other: UnityEngine.UI.ColorBlock): boolean;
+    GetHashCode(): number;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    normalColor: UnityEngine.Color;
+    highlightedColor: UnityEngine.Color;
+    pressedColor: UnityEngine.Color;
+    disabledColor: UnityEngine.Color;
+    colorMultiplier: number;
+    fadeDuration: number;
+    static readonly defaultColorBlock: UnityEngine.UI.ColorBlock;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ContentSizeFitter {
+    // constructors
+    private constructor();
+    // methods
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    horizontalFit: UnityEngine.UI.ContentSizeFitter.FitMode;
+    verticalFit: UnityEngine.UI.ContentSizeFitter.FitMode;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.ContentSizeFitter {
+  class FitMode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Unconstrained: UnityEngine.UI.ContentSizeFitter.FitMode;
+    static MinSize: UnityEngine.UI.ContentSizeFitter.FitMode;
+    static PreferredSize: UnityEngine.UI.ContentSizeFitter.FitMode;
+  }
+}
+declare namespace UnityEngine.UI.CoroutineTween.ColorTween {
+  class ColorTweenCallback {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: UnityEngine.Color): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.CoroutineTween.ColorTween {
+  class ColorTweenMode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static All: UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode;
+    static RGB: UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode;
+    static Alpha: UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode;
+  }
+}
+declare namespace UnityEngine.UI.CoroutineTween {
+  class ColorTween {
+    // constructors
+    private constructor();
+    // methods
+    TweenValue(floatPercentage: number): void;
+    AddOnChangedCallback(callback: any): void;
+    GetIgnoreTimescale(): boolean;
+    GetDuration(): number;
+    ValidTarget(): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    startColor: UnityEngine.Color;
+    targetColor: UnityEngine.Color;
+    tweenMode: UnityEngine.UI.CoroutineTween.ColorTween.ColorTweenMode;
+    duration: number;
+    ignoreTimeScale: boolean;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.CoroutineTween {
+  class FloatTween {
+    // constructors
+    private constructor();
+    // methods
+    TweenValue(floatPercentage: number): void;
+    AddOnChangedCallback(callback: any): void;
+    GetIgnoreTimescale(): boolean;
+    GetDuration(): number;
+    ValidTarget(): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    startValue: number;
+    targetValue: number;
+    duration: number;
+    ignoreTimeScale: boolean;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.CoroutineTween.FloatTween {
+  class FloatTweenCallback {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: number): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.CoroutineTween {
+  class ITweenValue {
+    // constructors
+    private constructor();
+    // methods
+    TweenValue(floatPercentage: number): void;
+    ValidTarget(): boolean;
+    // properties
+    readonly ignoreTimeScale: boolean;
+    readonly duration: number;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class DefaultControls {
+    // constructors
+    private constructor();
+    // methods
+    static CreatePanel(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateButton(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateText(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateImage(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateRawImage(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateSlider(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateScrollbar(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateToggle(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateInputField(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateDropdown(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    static CreateScrollView(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.DefaultControls {
+  class Resources {
+    // constructors
+    private constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    // fields
+    standard: UnityEngine.Sprite;
+    background: UnityEngine.Sprite;
+    inputField: UnityEngine.Sprite;
+    knob: UnityEngine.Sprite;
+    checkmark: UnityEngine.Sprite;
+    dropdown: UnityEngine.Sprite;
+    mask: UnityEngine.Sprite;
+  }
+}
+declare namespace UnityEngine.UI {
+  class Dropdown {
+    // constructors
+    private constructor();
+    // methods
+    RefreshShownValue(): void;
+    AddOptions(options: any): void;
+    AddOptions(options: any): void;
+    AddOptions(options: any): void;
+    ClearOptions(): void;
+    OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnCancel(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Show(): void;
+    Hide(): void;
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    template: UnityEngine.RectTransform;
+    captionText: UnityEngine.UI.Text;
+    captionImage: UnityEngine.UI.Image;
+    itemText: UnityEngine.UI.Text;
+    itemImage: UnityEngine.UI.Image;
+    options: any;
+    onValueChanged: UnityEngine.UI.Dropdown.DropdownEvent;
+    value: number;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Dropdown {
+  class DropdownEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: number): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Dropdown {
+  class DropdownItem {
+    // constructors
+    constructor();
+    // methods
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnCancel(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    text: UnityEngine.UI.Text;
+    image: UnityEngine.UI.Image;
+    rectTransform: UnityEngine.RectTransform;
+    toggle: UnityEngine.UI.Toggle;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Dropdown {
+  class OptionData {
+    // constructors
+    constructor();
+    constructor(text: string);
+    constructor(image: UnityEngine.Sprite);
+    constructor(text: string, image: UnityEngine.Sprite);
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    text: string;
+    image: UnityEngine.Sprite;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Dropdown {
+  class OptionDataList {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    options: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class FontData {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    static readonly defaultFontData: UnityEngine.UI.FontData;
+    font: UnityEngine.Font;
+    fontSize: number;
+    fontStyle: UnityEngine.FontStyle;
+    bestFit: boolean;
+    minSize: number;
+    maxSize: number;
+    alignment: UnityEngine.TextAnchor;
+    alignByGeometry: boolean;
+    richText: boolean;
+    horizontalOverflow: UnityEngine.HorizontalWrapMode;
+    verticalOverflow: UnityEngine.VerticalWrapMode;
+    lineSpacing: number;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class FontUpdateTracker {
+    // constructors
+    private constructor();
+    // methods
+    static TrackText(t: UnityEngine.UI.Text): void;
+    static UntrackText(t: UnityEngine.UI.Text): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Graphic {
+    // constructors
+    private constructor();
+    // methods
+    SetAllDirty(): void;
+    SetLayoutDirty(): void;
+    SetVerticesDirty(): void;
+    SetMaterialDirty(): void;
+    Rebuild(update: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnRebuildRequested(): void;
+    SetNativeSize(): void;
+    Raycast(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    PixelAdjustPoint(point: UnityEngine.Vector2): UnityEngine.Vector2;
+    GetPixelAdjustedRect(): UnityEngine.Rect;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
+    CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
+    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    static readonly defaultGraphicMaterial: UnityEngine.Material;
+    color: UnityEngine.Color;
+    raycastTarget: boolean;
+    readonly depth: number;
+    readonly rectTransform: UnityEngine.RectTransform;
+    readonly canvas: UnityEngine.Canvas;
+    readonly canvasRenderer: UnityEngine.CanvasRenderer;
+    readonly defaultMaterial: UnityEngine.Material;
+    material: UnityEngine.Material;
+    readonly materialForRendering: UnityEngine.Material;
+    readonly mainTexture: UnityEngine.Texture;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.GraphicRaycaster {
+  class BlockingObjects {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static None: UnityEngine.UI.GraphicRaycaster.BlockingObjects;
+    static TwoD: UnityEngine.UI.GraphicRaycaster.BlockingObjects;
+    static ThreeD: UnityEngine.UI.GraphicRaycaster.BlockingObjects;
+    static All: UnityEngine.UI.GraphicRaycaster.BlockingObjects;
+  }
+}
+declare namespace UnityEngine.UI {
+  class GraphicRaycaster {
+    // constructors
+    private constructor();
+    // methods
+    Raycast(eventData: UnityEngine.EventSystems.PointerEventData, resultAppendList: any): void;
+    ToString(): string;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly sortOrderPriority: number;
+    readonly renderOrderPriority: number;
+    ignoreReversedGraphics: boolean;
+    blockingObjects: UnityEngine.UI.GraphicRaycaster.BlockingObjects;
+    readonly eventCamera: UnityEngine.Camera;
+    readonly priority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class GraphicRebuildTracker {
+    // constructors
+    private constructor();
+    // methods
+    static TrackGraphic(g: UnityEngine.UI.Graphic): void;
+    static UnTrackGraphic(g: UnityEngine.UI.Graphic): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class GraphicRegistry {
+    // constructors
+    private constructor();
+    // methods
+    static RegisterGraphicForCanvas(c: UnityEngine.Canvas, graphic: UnityEngine.UI.Graphic): void;
+    static UnregisterGraphicForCanvas(c: UnityEngine.Canvas, graphic: UnityEngine.UI.Graphic): void;
+    static GetGraphicsForCanvas(canvas: UnityEngine.Canvas): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    static readonly instance: UnityEngine.UI.GraphicRegistry;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.GridLayoutGroup {
+  class Axis {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Horizontal: UnityEngine.UI.GridLayoutGroup.Axis;
+    static Vertical: UnityEngine.UI.GridLayoutGroup.Axis;
+  }
+}
+declare namespace UnityEngine.UI.GridLayoutGroup {
+  class Constraint {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Flexible: UnityEngine.UI.GridLayoutGroup.Constraint;
+    static FixedColumnCount: UnityEngine.UI.GridLayoutGroup.Constraint;
+    static FixedRowCount: UnityEngine.UI.GridLayoutGroup.Constraint;
+  }
+}
+declare namespace UnityEngine.UI.GridLayoutGroup {
+  class Corner {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static UpperLeft: UnityEngine.UI.GridLayoutGroup.Corner;
+    static UpperRight: UnityEngine.UI.GridLayoutGroup.Corner;
+    static LowerLeft: UnityEngine.UI.GridLayoutGroup.Corner;
+    static LowerRight: UnityEngine.UI.GridLayoutGroup.Corner;
+  }
+}
+declare namespace UnityEngine.UI {
+  class GridLayoutGroup {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    startCorner: UnityEngine.UI.GridLayoutGroup.Corner;
+    startAxis: UnityEngine.UI.GridLayoutGroup.Axis;
+    cellSize: UnityEngine.Vector2;
+    spacing: UnityEngine.Vector2;
+    constraint: UnityEngine.UI.GridLayoutGroup.Constraint;
+    constraintCount: number;
+    padding: UnityEngine.RectOffset;
+    childAlignment: UnityEngine.TextAnchor;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class HorizontalLayoutGroup {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    spacing: number;
+    childForceExpandWidth: boolean;
+    childForceExpandHeight: boolean;
+    childControlWidth: boolean;
+    childControlHeight: boolean;
+    padding: UnityEngine.RectOffset;
+    childAlignment: UnityEngine.TextAnchor;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class HorizontalOrVerticalLayoutGroup {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    spacing: number;
+    childForceExpandWidth: boolean;
+    childForceExpandHeight: boolean;
+    childControlWidth: boolean;
+    childControlHeight: boolean;
+    padding: UnityEngine.RectOffset;
+    childAlignment: UnityEngine.TextAnchor;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ICanvasElement {
+    // constructors
+    private constructor();
+    // methods
+    Rebuild(executing: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    IsDestroyed(): boolean;
+    // properties
+    readonly transform: UnityEngine.Transform;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IClippable {
+    // constructors
+    private constructor();
+    // methods
+    RecalculateClipping(): void;
+    Cull(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    SetClipRect(value: UnityEngine.Rect, validRect: boolean): void;
+    // properties
+    readonly gameObject: UnityEngine.GameObject;
+    readonly rectTransform: UnityEngine.RectTransform;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IClipper {
+    // constructors
+    private constructor();
+    // methods
+    PerformClipping(): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IGraphicEnabledDisabled {
+    // constructors
+    private constructor();
+    // methods
+    OnSiblingGraphicEnabledDisabled(): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ILayoutController {
+    // constructors
+    private constructor();
+    // methods
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ILayoutElement {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    // properties
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ILayoutGroup {
+    // constructors
+    private constructor();
+    // methods
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ILayoutIgnorer {
+    // constructors
+    private constructor();
+    // methods
+    // properties
+    readonly ignoreLayout: boolean;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ILayoutSelfController {
+    // constructors
+    private constructor();
+    // methods
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Image {
+    // constructors
+    private constructor();
+    // methods
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    SetNativeSize(): void;
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    IsRaycastLocationValid(screenPoint: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
+    Cull(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    SetClipRect(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    ParentMaskStateChanged(): void;
+    RecalculateClipping(): void;
+    RecalculateMasking(): void;
+    SetAllDirty(): void;
+    SetLayoutDirty(): void;
+    SetVerticesDirty(): void;
+    SetMaterialDirty(): void;
+    Rebuild(update: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnRebuildRequested(): void;
+    Raycast(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    PixelAdjustPoint(point: UnityEngine.Vector2): UnityEngine.Vector2;
+    GetPixelAdjustedRect(): UnityEngine.Rect;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
+    CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
+    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    sprite: UnityEngine.Sprite;
+    overrideSprite: UnityEngine.Sprite;
+    type: UnityEngine.UI.Image.Type;
+    preserveAspect: boolean;
+    fillCenter: boolean;
+    fillMethod: UnityEngine.UI.Image.FillMethod;
+    fillAmount: number;
+    fillClockwise: boolean;
+    fillOrigin: number;
+    eventAlphaThreshold: number;
+    alphaHitTestMinimumThreshold: number;
+    static readonly defaultETC1GraphicMaterial: UnityEngine.Material;
+    readonly mainTexture: UnityEngine.Texture;
+    readonly hasBorder: boolean;
+    readonly pixelsPerUnit: number;
+    material: UnityEngine.Material;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    onCullStateChanged: UnityEngine.UI.MaskableGraphic.CullStateChangedEvent;
+    maskable: boolean;
+    color: UnityEngine.Color;
+    raycastTarget: boolean;
+    readonly depth: number;
+    readonly rectTransform: UnityEngine.RectTransform;
+    readonly canvas: UnityEngine.Canvas;
+    readonly canvasRenderer: UnityEngine.CanvasRenderer;
+    readonly defaultMaterial: UnityEngine.Material;
+    readonly materialForRendering: UnityEngine.Material;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class FillMethod {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Horizontal: UnityEngine.UI.Image.FillMethod;
+    static Vertical: UnityEngine.UI.Image.FillMethod;
+    static Radial90: UnityEngine.UI.Image.FillMethod;
+    static Radial180: UnityEngine.UI.Image.FillMethod;
+    static Radial360: UnityEngine.UI.Image.FillMethod;
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class Origin180 {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Bottom: UnityEngine.UI.Image.Origin180;
+    static Left: UnityEngine.UI.Image.Origin180;
+    static Top: UnityEngine.UI.Image.Origin180;
+    static Right: UnityEngine.UI.Image.Origin180;
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class Origin360 {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Bottom: UnityEngine.UI.Image.Origin360;
+    static Right: UnityEngine.UI.Image.Origin360;
+    static Top: UnityEngine.UI.Image.Origin360;
+    static Left: UnityEngine.UI.Image.Origin360;
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class Origin90 {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static BottomLeft: UnityEngine.UI.Image.Origin90;
+    static TopLeft: UnityEngine.UI.Image.Origin90;
+    static TopRight: UnityEngine.UI.Image.Origin90;
+    static BottomRight: UnityEngine.UI.Image.Origin90;
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class OriginHorizontal {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Left: UnityEngine.UI.Image.OriginHorizontal;
+    static Right: UnityEngine.UI.Image.OriginHorizontal;
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class OriginVertical {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Bottom: UnityEngine.UI.Image.OriginVertical;
+    static Top: UnityEngine.UI.Image.OriginVertical;
+  }
+}
+declare namespace UnityEngine.UI.Image {
+  class Type {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Simple: UnityEngine.UI.Image.Type;
+    static Sliced: UnityEngine.UI.Image.Type;
+    static Tiled: UnityEngine.UI.Image.Type;
+    static Filled: UnityEngine.UI.Image.Type;
+  }
+}
+declare namespace UnityEngine.UI {
+  class IMask {
+    // constructors
+    private constructor();
+    // methods
+    Enabled(): boolean;
+    // properties
+    readonly rectTransform: UnityEngine.RectTransform;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IMaskable {
+    // constructors
+    private constructor();
+    // methods
+    RecalculateMasking(): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IMaterialModifier {
+    // constructors
+    private constructor();
+    // methods
+    GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IMeshModifier {
+    // constructors
+    private constructor();
+    // methods
+    ModifyMesh(mesh: UnityEngine.Mesh): void;
+    ModifyMesh(verts: UnityEngine.UI.VertexHelper): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class CharacterValidation {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static None: UnityEngine.UI.InputField.CharacterValidation;
+    static Integer: UnityEngine.UI.InputField.CharacterValidation;
+    static Decimal: UnityEngine.UI.InputField.CharacterValidation;
+    static Alphanumeric: UnityEngine.UI.InputField.CharacterValidation;
+    static Name: UnityEngine.UI.InputField.CharacterValidation;
+    static EmailAddress: UnityEngine.UI.InputField.CharacterValidation;
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class ContentType {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Standard: UnityEngine.UI.InputField.ContentType;
+    static Autocorrected: UnityEngine.UI.InputField.ContentType;
+    static IntegerNumber: UnityEngine.UI.InputField.ContentType;
+    static DecimalNumber: UnityEngine.UI.InputField.ContentType;
+    static Alphanumeric: UnityEngine.UI.InputField.ContentType;
+    static Name: UnityEngine.UI.InputField.ContentType;
+    static EmailAddress: UnityEngine.UI.InputField.ContentType;
+    static Password: UnityEngine.UI.InputField.ContentType;
+    static Pin: UnityEngine.UI.InputField.ContentType;
+    static Custom: UnityEngine.UI.InputField.ContentType;
+  }
+}
+declare namespace UnityEngine.UI {
+  class InputField {
+    // constructors
+    private constructor();
+    // methods
+    MoveTextEnd(shift: boolean): void;
+    MoveTextStart(shift: boolean): void;
+    ScreenToLocal(screen: UnityEngine.Vector2): UnityEngine.Vector2;
+    OnBeginDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnEndDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    ProcessEvent(e: UnityEngine.Event): void;
+    OnUpdateSelected(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    ForceLabelUpdate(): void;
+    Rebuild(update: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    ActivateInputField(): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    DeactivateInputField(): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    shouldHideMobileInput: boolean;
+    text: string;
+    readonly isFocused: boolean;
+    caretBlinkRate: number;
+    caretWidth: number;
+    textComponent: UnityEngine.UI.Text;
+    placeholder: UnityEngine.UI.Graphic;
+    caretColor: UnityEngine.Color;
+    customCaretColor: boolean;
+    selectionColor: UnityEngine.Color;
+    onEndEdit: UnityEngine.UI.InputField.SubmitEvent;
+    onValueChange: UnityEngine.UI.InputField.OnChangeEvent;
+    onValueChanged: UnityEngine.UI.InputField.OnChangeEvent;
+    onValidateInput: UnityEngine.UI.InputField.OnValidateInput;
+    characterLimit: number;
+    contentType: UnityEngine.UI.InputField.ContentType;
+    lineType: UnityEngine.UI.InputField.LineType;
+    inputType: UnityEngine.UI.InputField.InputType;
+    keyboardType: UnityEngine.TouchScreenKeyboardType;
+    characterValidation: UnityEngine.UI.InputField.CharacterValidation;
+    readOnly: boolean;
+    readonly multiLine: boolean;
+    asteriskChar: any;
+    readonly wasCanceled: boolean;
+    readonly caretSelectPosition: number;
+    caretPosition: number;
+    selectionAnchorPosition: number;
+    selectionFocusPosition: number;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class EditState {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Continue: UnityEngine.UI.InputField.EditState;
+    static Finish: UnityEngine.UI.InputField.EditState;
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class InputType {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Standard: UnityEngine.UI.InputField.InputType;
+    static AutoCorrect: UnityEngine.UI.InputField.InputType;
+    static Password: UnityEngine.UI.InputField.InputType;
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class LineType {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static SingleLine: UnityEngine.UI.InputField.LineType;
+    static MultiLineSubmit: UnityEngine.UI.InputField.LineType;
+    static MultiLineNewline: UnityEngine.UI.InputField.LineType;
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class OnChangeEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: string): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class OnValidateInput {
+    // constructors
+    constructor(object: any, method: any);
+    // methods
+    Invoke(text: string, charIndex: number, addedChar: any): any;
+    BeginInvoke(text: string, charIndex: number, addedChar: any, callback: any, object: any): any;
+    EndInvoke(result: any): any;
+    GetObjectData(info: any, context: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetInvocationList(): any[];
+    DynamicInvoke(args: any[]): any;
+    Clone(): any;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly Method: any;
+    readonly Target: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.InputField {
+  class SubmitEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: string): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class IVertexModifier {
+    // constructors
+    private constructor();
+    // methods
+    ModifyVertices(verts: any): void;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class LayoutElement {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    ignoreLayout: boolean;
+    minWidth: number;
+    minHeight: number;
+    preferredWidth: number;
+    preferredHeight: number;
+    flexibleWidth: number;
+    flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class LayoutGroup {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    padding: UnityEngine.RectOffset;
+    childAlignment: UnityEngine.TextAnchor;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class LayoutRebuilder {
+    // constructors
+    constructor();
+    // methods
+    IsDestroyed(): boolean;
+    static ForceRebuildLayoutImmediate(layoutRoot: UnityEngine.RectTransform): void;
+    Rebuild(executing: UnityEngine.UI.CanvasUpdate): void;
+    static MarkLayoutForRebuild(rect: UnityEngine.RectTransform): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    GetHashCode(): number;
+    Equals(obj: any): boolean;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    readonly transform: UnityEngine.Transform;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class LayoutUtility {
+    // constructors
+    private constructor();
+    // methods
+    static GetMinSize(rect: UnityEngine.RectTransform, axis: number): number;
+    static GetPreferredSize(rect: UnityEngine.RectTransform, axis: number): number;
+    static GetFlexibleSize(rect: UnityEngine.RectTransform, axis: number): number;
+    static GetMinWidth(rect: UnityEngine.RectTransform): number;
+    static GetPreferredWidth(rect: UnityEngine.RectTransform): number;
+    static GetFlexibleWidth(rect: UnityEngine.RectTransform): number;
+    static GetMinHeight(rect: UnityEngine.RectTransform): number;
+    static GetPreferredHeight(rect: UnityEngine.RectTransform): number;
+    static GetFlexibleHeight(rect: UnityEngine.RectTransform): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: any, defaultValue: number): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: any, defaultValue: number, source: any): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Mask {
+    // constructors
+    private constructor();
+    // methods
+    MaskEnabled(): boolean;
+    OnSiblingGraphicEnabledDisabled(): void;
+    IsRaycastLocationValid(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly rectTransform: UnityEngine.RectTransform;
+    showMaskGraphic: boolean;
+    readonly graphic: UnityEngine.UI.Graphic;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.MaskableGraphic {
+  class CullStateChangedEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: boolean): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class MaskableGraphic {
+    // constructors
+    private constructor();
+    // methods
+    GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
+    Cull(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    SetClipRect(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    ParentMaskStateChanged(): void;
+    RecalculateClipping(): void;
+    RecalculateMasking(): void;
+    SetAllDirty(): void;
+    SetLayoutDirty(): void;
+    SetVerticesDirty(): void;
+    SetMaterialDirty(): void;
+    Rebuild(update: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnRebuildRequested(): void;
+    SetNativeSize(): void;
+    Raycast(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    PixelAdjustPoint(point: UnityEngine.Vector2): UnityEngine.Vector2;
+    GetPixelAdjustedRect(): UnityEngine.Rect;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
+    CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
+    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    onCullStateChanged: UnityEngine.UI.MaskableGraphic.CullStateChangedEvent;
+    maskable: boolean;
+    color: UnityEngine.Color;
+    raycastTarget: boolean;
+    readonly depth: number;
+    readonly rectTransform: UnityEngine.RectTransform;
+    readonly canvas: UnityEngine.Canvas;
+    readonly canvasRenderer: UnityEngine.CanvasRenderer;
+    readonly defaultMaterial: UnityEngine.Material;
+    material: UnityEngine.Material;
+    readonly materialForRendering: UnityEngine.Material;
+    readonly mainTexture: UnityEngine.Texture;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class MaskUtilities {
+    // constructors
+    constructor();
+    // methods
+    static Notify2DMaskStateChanged(mask: UnityEngine.Component): void;
+    static NotifyStencilStateChanged(mask: UnityEngine.Component): void;
+    static FindRootSortOverrideCanvas(start: UnityEngine.Transform): UnityEngine.Transform;
+    static GetStencilDepth(transform: UnityEngine.Transform, stopAfter: UnityEngine.Transform): number;
+    static IsDescendantOrSelf(father: UnityEngine.Transform, child: UnityEngine.Transform): boolean;
+    static GetRectMaskForClippable(clippable: UnityEngine.UI.IClippable): UnityEngine.UI.RectMask2D;
+    static GetRectMasksForClip(clipper: UnityEngine.UI.RectMask2D, masks: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Misc {
+    // constructors
+    private constructor();
+    // methods
+    static Destroy(obj: UnityEngine.Object): void;
+    static DestroyImmediate(obj: UnityEngine.Object): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Navigation {
+    // constructors
+    private constructor();
+    // methods
+    Equals(other: UnityEngine.UI.Navigation): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    mode: UnityEngine.UI.Navigation.Mode;
+    selectOnUp: UnityEngine.UI.Selectable;
+    selectOnDown: UnityEngine.UI.Selectable;
+    selectOnLeft: UnityEngine.UI.Selectable;
+    selectOnRight: UnityEngine.UI.Selectable;
+    static readonly defaultNavigation: UnityEngine.UI.Navigation;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Navigation {
+  class Mode {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static None: UnityEngine.UI.Navigation.Mode;
+    static Horizontal: UnityEngine.UI.Navigation.Mode;
+    static Vertical: UnityEngine.UI.Navigation.Mode;
+    static Automatic: UnityEngine.UI.Navigation.Mode;
+    static Explicit: UnityEngine.UI.Navigation.Mode;
+  }
+}
+declare namespace UnityEngine.UI {
+  class Outline {
+    // constructors
+    private constructor();
+    // methods
+    ModifyMesh(vh: UnityEngine.UI.VertexHelper): void;
+    ModifyMesh(mesh: UnityEngine.Mesh): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    effectColor: UnityEngine.Color;
+    effectDistance: UnityEngine.Vector2;
+    useGraphicAlpha: boolean;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class PositionAsUV1 {
+    // constructors
+    private constructor();
+    // methods
+    ModifyMesh(vh: UnityEngine.UI.VertexHelper): void;
+    ModifyMesh(mesh: UnityEngine.Mesh): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class RawImage {
+    // constructors
+    private constructor();
+    // methods
+    SetNativeSize(): void;
+    GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
+    Cull(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    SetClipRect(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    ParentMaskStateChanged(): void;
+    RecalculateClipping(): void;
+    RecalculateMasking(): void;
+    SetAllDirty(): void;
+    SetLayoutDirty(): void;
+    SetVerticesDirty(): void;
+    SetMaterialDirty(): void;
+    Rebuild(update: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnRebuildRequested(): void;
+    Raycast(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    PixelAdjustPoint(point: UnityEngine.Vector2): UnityEngine.Vector2;
+    GetPixelAdjustedRect(): UnityEngine.Rect;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
+    CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
+    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly mainTexture: UnityEngine.Texture;
+    texture: UnityEngine.Texture;
+    uvRect: UnityEngine.Rect;
+    onCullStateChanged: UnityEngine.UI.MaskableGraphic.CullStateChangedEvent;
+    maskable: boolean;
+    color: UnityEngine.Color;
+    raycastTarget: boolean;
+    readonly depth: number;
+    readonly rectTransform: UnityEngine.RectTransform;
+    readonly canvas: UnityEngine.Canvas;
+    readonly canvasRenderer: UnityEngine.CanvasRenderer;
+    readonly defaultMaterial: UnityEngine.Material;
+    material: UnityEngine.Material;
+    readonly materialForRendering: UnityEngine.Material;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class RectangularVertexClipper {
+    // constructors
+    constructor();
+    // methods
+    GetCanvasRect(t: UnityEngine.RectTransform, c: UnityEngine.Canvas): UnityEngine.Rect;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class RectMask2D {
+    // constructors
+    private constructor();
+    // methods
+    IsRaycastLocationValid(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    PerformClipping(): void;
+    AddClippable(clippable: UnityEngine.UI.IClippable): void;
+    RemoveClippable(clippable: UnityEngine.UI.IClippable): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly canvasRect: UnityEngine.Rect;
+    readonly rectTransform: UnityEngine.RectTransform;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ReflectionMethodsCache {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    static readonly Singleton: UnityEngine.UI.ReflectionMethodsCache;
+    // fields
+    raycast3D: UnityEngine.UI.ReflectionMethodsCache.Raycast3DCallback;
+    raycast3DAll: UnityEngine.UI.ReflectionMethodsCache.RaycastAllCallback;
+    raycast2D: UnityEngine.UI.ReflectionMethodsCache.Raycast2DCallback;
+    getRayIntersectionAll: UnityEngine.UI.ReflectionMethodsCache.GetRayIntersectionAllCallback;
+  }
+}
+declare namespace UnityEngine.UI.ReflectionMethodsCache {
+  class GetRayIntersectionAllCallback {
+    // constructors
+    constructor(object: any, method: any);
+    // methods
+    Invoke(r: UnityEngine.Ray, f: number, i: number): UnityEngine.RaycastHit2D[];
+    BeginInvoke(r: UnityEngine.Ray, f: number, i: number, callback: any, object: any): any;
+    EndInvoke(result: any): UnityEngine.RaycastHit2D[];
+    GetObjectData(info: any, context: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetInvocationList(): any[];
+    DynamicInvoke(args: any[]): any;
+    Clone(): any;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly Method: any;
+    readonly Target: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.ReflectionMethodsCache {
+  class Raycast2DCallback {
+    // constructors
+    constructor(object: any, method: any);
+    // methods
+    Invoke(p1: UnityEngine.Vector2, p2: UnityEngine.Vector2, f: number, i: number): UnityEngine.RaycastHit2D;
+    BeginInvoke(p1: UnityEngine.Vector2, p2: UnityEngine.Vector2, f: number, i: number, callback: any, object: any): any;
+    EndInvoke(result: any): UnityEngine.RaycastHit2D;
+    GetObjectData(info: any, context: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetInvocationList(): any[];
+    DynamicInvoke(args: any[]): any;
+    Clone(): any;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly Method: any;
+    readonly Target: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.ReflectionMethodsCache {
+  class Raycast3DCallback {
+    // constructors
+    constructor(object: any, method: any);
+    // methods
+    Invoke(r: UnityEngine.Ray, hit: any, f: number, i: number): boolean;
+    BeginInvoke(r: UnityEngine.Ray, hit: any, f: number, i: number, callback: any, object: any): any;
+    EndInvoke(hit: any, result: any): boolean;
+    GetObjectData(info: any, context: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetInvocationList(): any[];
+    DynamicInvoke(args: any[]): any;
+    Clone(): any;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly Method: any;
+    readonly Target: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.ReflectionMethodsCache {
+  class RaycastAllCallback {
+    // constructors
+    constructor(object: any, method: any);
+    // methods
+    Invoke(r: UnityEngine.Ray, f: number, i: number): UnityEngine.RaycastHit[];
+    BeginInvoke(r: UnityEngine.Ray, f: number, i: number, callback: any, object: any): any;
+    EndInvoke(result: any): UnityEngine.RaycastHit[];
+    GetObjectData(info: any, context: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetInvocationList(): any[];
+    DynamicInvoke(args: any[]): any;
+    Clone(): any;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly Method: any;
+    readonly Target: any;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Scrollbar {
+  class Axis {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Horizontal: UnityEngine.UI.Scrollbar.Axis;
+    static Vertical: UnityEngine.UI.Scrollbar.Axis;
+  }
+}
+declare namespace UnityEngine.UI {
+  class Scrollbar {
+    // constructors
+    private constructor();
+    // methods
+    Rebuild(executing: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnBeginDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnInitializePotentialDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    SetDirection(direction: UnityEngine.UI.Scrollbar.Direction, includeRectLayouts: boolean): void;
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    handleRect: UnityEngine.RectTransform;
+    direction: UnityEngine.UI.Scrollbar.Direction;
+    value: number;
+    size: number;
+    numberOfSteps: number;
+    onValueChanged: UnityEngine.UI.Scrollbar.ScrollEvent;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Scrollbar {
+  class Direction {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static LeftToRight: UnityEngine.UI.Scrollbar.Direction;
+    static RightToLeft: UnityEngine.UI.Scrollbar.Direction;
+    static BottomToTop: UnityEngine.UI.Scrollbar.Direction;
+    static TopToBottom: UnityEngine.UI.Scrollbar.Direction;
+  }
+}
+declare namespace UnityEngine.UI.Scrollbar {
+  class ScrollEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: number): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class ScrollRect {
+    // constructors
+    private constructor();
+    // methods
+    Rebuild(executing: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    IsActive(): boolean;
+    StopMovement(): void;
+    OnScroll(data: UnityEngine.EventSystems.PointerEventData): void;
+    OnInitializePotentialDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnBeginDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnEndDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    content: UnityEngine.RectTransform;
+    horizontal: boolean;
+    vertical: boolean;
+    movementType: UnityEngine.UI.ScrollRect.MovementType;
+    elasticity: number;
+    inertia: boolean;
+    decelerationRate: number;
+    scrollSensitivity: number;
+    viewport: UnityEngine.RectTransform;
+    horizontalScrollbar: UnityEngine.UI.Scrollbar;
+    verticalScrollbar: UnityEngine.UI.Scrollbar;
+    horizontalScrollbarVisibility: UnityEngine.UI.ScrollRect.ScrollbarVisibility;
+    verticalScrollbarVisibility: UnityEngine.UI.ScrollRect.ScrollbarVisibility;
+    horizontalScrollbarSpacing: number;
+    verticalScrollbarSpacing: number;
+    onValueChanged: UnityEngine.UI.ScrollRect.ScrollRectEvent;
+    velocity: UnityEngine.Vector2;
+    normalizedPosition: UnityEngine.Vector2;
+    horizontalNormalizedPosition: number;
+    verticalNormalizedPosition: number;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.ScrollRect {
+  class MovementType {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Unrestricted: UnityEngine.UI.ScrollRect.MovementType;
+    static Elastic: UnityEngine.UI.ScrollRect.MovementType;
+    static Clamped: UnityEngine.UI.ScrollRect.MovementType;
+  }
+}
+declare namespace UnityEngine.UI.ScrollRect {
+  class ScrollbarVisibility {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Permanent: UnityEngine.UI.ScrollRect.ScrollbarVisibility;
+    static AutoHide: UnityEngine.UI.ScrollRect.ScrollbarVisibility;
+    static AutoHideAndExpandViewport: UnityEngine.UI.ScrollRect.ScrollbarVisibility;
+  }
+}
+declare namespace UnityEngine.UI.ScrollRect {
+  class ScrollRectEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: UnityEngine.Vector2): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Selectable {
+    // constructors
+    private constructor();
+    // methods
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    static readonly allSelectables: any;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Selectable {
+  class SelectionState {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Normal: UnityEngine.UI.Selectable.SelectionState;
+    static Highlighted: UnityEngine.UI.Selectable.SelectionState;
+    static Pressed: UnityEngine.UI.Selectable.SelectionState;
+    static Disabled: UnityEngine.UI.Selectable.SelectionState;
+  }
+}
+declare namespace UnityEngine.UI.Selectable {
+  class Transition {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static None: UnityEngine.UI.Selectable.Transition;
+    static ColorTint: UnityEngine.UI.Selectable.Transition;
+    static SpriteSwap: UnityEngine.UI.Selectable.Transition;
+    static Animation: UnityEngine.UI.Selectable.Transition;
+  }
+}
+declare namespace UnityEngine.UI {
+  class SetPropertyUtility {
+    // constructors
+    private constructor();
+    // methods
+    static SetColor(currentValue: any, newValue: UnityEngine.Color): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Shadow {
+    // constructors
+    private constructor();
+    // methods
+    ModifyMesh(vh: UnityEngine.UI.VertexHelper): void;
+    ModifyMesh(mesh: UnityEngine.Mesh): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    effectColor: UnityEngine.Color;
+    effectDistance: UnityEngine.Vector2;
+    useGraphicAlpha: boolean;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Slider {
+  class Axis {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static Horizontal: UnityEngine.UI.Slider.Axis;
+    static Vertical: UnityEngine.UI.Slider.Axis;
+  }
+}
+declare namespace UnityEngine.UI {
+  class Slider {
+    // constructors
+    private constructor();
+    // methods
+    Rebuild(executing: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnInitializePotentialDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    SetDirection(direction: UnityEngine.UI.Slider.Direction, includeRectLayouts: boolean): void;
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    fillRect: UnityEngine.RectTransform;
+    handleRect: UnityEngine.RectTransform;
+    direction: UnityEngine.UI.Slider.Direction;
+    minValue: number;
+    maxValue: number;
+    wholeNumbers: boolean;
+    value: number;
+    normalizedValue: number;
+    onValueChanged: UnityEngine.UI.Slider.SliderEvent;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Slider {
+  class Direction {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static LeftToRight: UnityEngine.UI.Slider.Direction;
+    static RightToLeft: UnityEngine.UI.Slider.Direction;
+    static BottomToTop: UnityEngine.UI.Slider.Direction;
+    static TopToBottom: UnityEngine.UI.Slider.Direction;
+  }
+}
+declare namespace UnityEngine.UI.Slider {
+  class SliderEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: number): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class SpriteState {
+    // constructors
+    private constructor();
+    // methods
+    Equals(other: UnityEngine.UI.SpriteState): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    ToString(): string;
+    GetType(): any;
+    // properties
+    highlightedSprite: UnityEngine.Sprite;
+    pressedSprite: UnityEngine.Sprite;
+    disabledSprite: UnityEngine.Sprite;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class StencilMaterial {
+    // constructors
+    private constructor();
+    // methods
+    static Add(baseMat: UnityEngine.Material, stencilID: number): UnityEngine.Material;
+    static Add(baseMat: UnityEngine.Material, stencilID: number, operation: UnityEngine.Rendering.StencilOp, compareFunction: UnityEngine.Rendering.CompareFunction, colorWriteMask: UnityEngine.Rendering.ColorWriteMask): UnityEngine.Material;
+    static Add(baseMat: UnityEngine.Material, stencilID: number, operation: UnityEngine.Rendering.StencilOp, compareFunction: UnityEngine.Rendering.CompareFunction, colorWriteMask: UnityEngine.Rendering.ColorWriteMask, readMask: number, writeMask: number): UnityEngine.Material;
+    static Remove(customMat: UnityEngine.Material): void;
+    static ClearAll(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.StencilMaterial {
+  class MatEntry {
+    // constructors
+    constructor();
+    // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    // fields
+    baseMat: UnityEngine.Material;
+    customMat: UnityEngine.Material;
+    count: number;
+    stencilId: number;
+    operation: UnityEngine.Rendering.StencilOp;
+    compareFunction: UnityEngine.Rendering.CompareFunction;
+    readMask: number;
+    writeMask: number;
+    useAlphaClip: boolean;
+    colorMask: UnityEngine.Rendering.ColorWriteMask;
+  }
+}
+declare namespace UnityEngine.UI {
+  class Text {
+    // constructors
+    private constructor();
+    // methods
+    FontTextureChanged(): void;
+    GetGenerationSettings(extents: UnityEngine.Vector2): UnityEngine.TextGenerationSettings;
+    static GetTextAnchorPivot(anchor: UnityEngine.TextAnchor): UnityEngine.Vector2;
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    OnRebuildRequested(): void;
+    GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
+    Cull(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    SetClipRect(clipRect: UnityEngine.Rect, validRect: boolean): void;
+    ParentMaskStateChanged(): void;
+    RecalculateClipping(): void;
+    RecalculateMasking(): void;
+    SetAllDirty(): void;
+    SetLayoutDirty(): void;
+    SetVerticesDirty(): void;
+    SetMaterialDirty(): void;
+    Rebuild(update: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    SetNativeSize(): void;
+    Raycast(sp: UnityEngine.Vector2, eventCamera: UnityEngine.Camera): boolean;
+    PixelAdjustPoint(point: UnityEngine.Vector2): UnityEngine.Vector2;
+    GetPixelAdjustedRect(): UnityEngine.Rect;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
+    CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
+    CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
+    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    readonly cachedTextGenerator: UnityEngine.TextGenerator;
+    readonly cachedTextGeneratorForLayout: UnityEngine.TextGenerator;
+    readonly mainTexture: UnityEngine.Texture;
+    font: UnityEngine.Font;
+    text: string;
+    supportRichText: boolean;
+    resizeTextForBestFit: boolean;
+    resizeTextMinSize: number;
+    resizeTextMaxSize: number;
+    alignment: UnityEngine.TextAnchor;
+    alignByGeometry: boolean;
+    fontSize: number;
+    horizontalOverflow: UnityEngine.HorizontalWrapMode;
+    verticalOverflow: UnityEngine.VerticalWrapMode;
+    lineSpacing: number;
+    fontStyle: UnityEngine.FontStyle;
+    readonly pixelsPerUnit: number;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    onCullStateChanged: UnityEngine.UI.MaskableGraphic.CullStateChangedEvent;
+    maskable: boolean;
+    color: UnityEngine.Color;
+    raycastTarget: boolean;
+    readonly depth: number;
+    readonly rectTransform: UnityEngine.RectTransform;
+    readonly canvas: UnityEngine.Canvas;
+    readonly canvasRenderer: UnityEngine.CanvasRenderer;
+    readonly defaultMaterial: UnityEngine.Material;
+    material: UnityEngine.Material;
+    readonly materialForRendering: UnityEngine.Material;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class Toggle {
+    // constructors
+    private constructor();
+    // methods
+    Rebuild(executing: UnityEngine.UI.CanvasUpdate): void;
+    LayoutComplete(): void;
+    GraphicUpdateComplete(): void;
+    OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    IsInteractable(): boolean;
+    FindSelectable(dir: UnityEngine.Vector3): UnityEngine.UI.Selectable;
+    FindSelectableOnLeft(): UnityEngine.UI.Selectable;
+    FindSelectableOnRight(): UnityEngine.UI.Selectable;
+    FindSelectableOnUp(): UnityEngine.UI.Selectable;
+    FindSelectableOnDown(): UnityEngine.UI.Selectable;
+    OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
+    OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnPointerExit(eventData: UnityEngine.EventSystems.PointerEventData): void;
+    OnSelect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    OnDeselect(eventData: UnityEngine.EventSystems.BaseEventData): void;
+    Select(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    group: UnityEngine.UI.ToggleGroup;
+    isOn: boolean;
+    navigation: UnityEngine.UI.Navigation;
+    transition: UnityEngine.UI.Selectable.Transition;
+    colors: UnityEngine.UI.ColorBlock;
+    spriteState: UnityEngine.UI.SpriteState;
+    animationTriggers: UnityEngine.UI.AnimationTriggers;
+    targetGraphic: UnityEngine.UI.Graphic;
+    interactable: boolean;
+    image: UnityEngine.UI.Image;
+    readonly animator: UnityEngine.Animator;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+    toggleTransition: UnityEngine.UI.Toggle.ToggleTransition;
+    graphic: UnityEngine.UI.Graphic;
+    onValueChanged: UnityEngine.UI.Toggle.ToggleEvent;
+  }
+}
+declare namespace UnityEngine.UI.Toggle {
+  class ToggleEvent {
+    // constructors
+    constructor();
+    // methods
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: boolean): void;
+    GetPersistentEventCount(): number;
+    GetPersistentTarget(index: number): UnityEngine.Object;
+    GetPersistentMethodName(index: number): string;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
+    ToString(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+  }
+}
+declare namespace UnityEngine.UI.Toggle {
+  class ToggleTransition {
+    // constructors
+    private constructor();
+    // methods
+    GetTypeCode(): any;
+    CompareTo(target: any): number;
+    ToString(): string;
+    ToString(provider: any): string;
+    ToString(format: string): string;
+    ToString(format: string, provider: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    // properties
+    // fields
+    value__: number;
+    static None: UnityEngine.UI.Toggle.ToggleTransition;
+    static Fade: UnityEngine.UI.Toggle.ToggleTransition;
+  }
+}
+declare namespace UnityEngine.UI {
+  class ToggleGroup {
+    // constructors
+    private constructor();
+    // methods
+    NotifyToggleOn(toggle: UnityEngine.UI.Toggle): void;
+    UnregisterToggle(toggle: UnityEngine.UI.Toggle): void;
+    RegisterToggle(toggle: UnityEngine.UI.Toggle): void;
+    AnyTogglesOn(): boolean;
+    ActiveToggles(): any;
+    SetAllTogglesOff(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    allowSwitchOff: boolean;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class VertexHelper {
+    // constructors
+    constructor();
+    constructor(m: UnityEngine.Mesh);
+    // methods
+    Clear(): void;
+    PopulateUIVertex(vertex: any, i: number): void;
+    SetUIVertex(vertex: UnityEngine.UIVertex, i: number): void;
+    FillMesh(mesh: UnityEngine.Mesh): void;
+    Dispose(): void;
+    AddVert(position: UnityEngine.Vector3, color: UnityEngine.Color32, uv0: UnityEngine.Vector2, uv1: UnityEngine.Vector2, normal: UnityEngine.Vector3, tangent: UnityEngine.Vector4): void;
+    AddVert(position: UnityEngine.Vector3, color: UnityEngine.Color32, uv0: UnityEngine.Vector2): void;
+    AddVert(v: UnityEngine.UIVertex): void;
+    AddTriangle(idx0: number, idx1: number, idx2: number): void;
+    AddUIVertexQuad(verts: UnityEngine.UIVertex[]): void;
+    AddUIVertexStream(verts: any, indices: any): void;
+    AddUIVertexTriangleStream(verts: any): void;
+    GetUIVertexStream(stream: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
+    // properties
+    readonly currentVertCount: number;
+    readonly currentIndexCount: number;
+    // fields
+  }
+}
+declare namespace UnityEngine.UI {
+  class VerticalLayoutGroup {
+    // constructors
+    private constructor();
+    // methods
+    CalculateLayoutInputHorizontal(): void;
+    CalculateLayoutInputVertical(): void;
+    SetLayoutHorizontal(): void;
+    SetLayoutVertical(): void;
+    IsActive(): boolean;
+    IsDestroyed(): boolean;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
+    IsInvoking(methodName: string): boolean;
+    IsInvoking(): boolean;
+    StartCoroutine(routine: any): UnityEngine.Coroutine;
+    StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
+    StartCoroutine(methodName: string): UnityEngine.Coroutine;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
+    // properties
+    spacing: number;
+    childForceExpandWidth: boolean;
+    childForceExpandHeight: boolean;
+    childControlWidth: boolean;
+    childControlHeight: boolean;
+    padding: UnityEngine.RectOffset;
+    childAlignment: UnityEngine.TextAnchor;
+    readonly minWidth: number;
+    readonly preferredWidth: number;
+    readonly flexibleWidth: number;
+    readonly minHeight: number;
+    readonly preferredHeight: number;
+    readonly flexibleHeight: number;
+    readonly layoutPriority: number;
+    useGUILayout: boolean;
+    runInEditMode: boolean;
+    enabled: boolean;
+    readonly isActiveAndEnabled: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -29297,6 +36916,10 @@ declare namespace UnityEngine.VR {
     static GetLocalPosition(node: UnityEngine.VR.VRNode): UnityEngine.Vector3;
     static GetLocalRotation(node: UnityEngine.VR.VRNode): UnityEngine.Quaternion;
     static Recenter(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -29307,7 +36930,15 @@ declare namespace UnityEngine.VR {
     private constructor();
     // methods
     static GetNativePtr(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly isPresent: boolean;
+    static readonly family: string;
+    static readonly model: string;
+    static readonly refreshRate: number;
     // fields
   }
 }
@@ -29369,7 +37000,21 @@ declare namespace UnityEngine.VR {
     // methods
     static LoadDeviceByName(deviceName: string): void;
     static LoadDeviceByName(prioritizedDeviceNameList: string[]): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static enabled: boolean;
+    static readonly isDeviceActive: boolean;
+    static showDeviceView: boolean;
+    static renderScale: number;
+    static readonly eyeTextureWidth: number;
+    static readonly eyeTextureHeight: number;
+    static renderViewportScale: number;
+    static loadedDevice: UnityEngine.VR.VRDeviceType;
+    static readonly loadedDeviceName: string;
+    static readonly supportedDevices: string[];
     // fields
   }
 }
@@ -29378,7 +37023,12 @@ declare namespace UnityEngine.VR {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly gpuTimeLastFrame: number;
     // fields
   }
 }
@@ -29990,7 +37640,18 @@ declare namespace UnityEngine.VR.WSA.Persistence {
     private constructor();
     // methods
     static GetAsync(onCompleted: UnityEngine.VR.WSA.Persistence.WorldAnchorStore.GetAsyncDelegate): void;
+    Save(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
+    Load(id: string, go: UnityEngine.GameObject): UnityEngine.VR.WSA.WorldAnchor;
+    Delete(id: string): boolean;
+    Clear(): void;
+    GetAllIds(ids: string[]): number;
+    GetAllIds(): string[];
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly anchorCount: number;
     // fields
   }
 }
@@ -30338,7 +37999,18 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     private constructor();
     // methods
     static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback): void;
+    StartPhotoModeAsync(setupParams: UnityEngine.VR.WSA.WebCam.CameraParameters, onPhotoModeStartedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnPhotoModeStartedCallback): void;
+    StopPhotoModeAsync(onPhotoModeStoppedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnPhotoModeStoppedCallback): void;
+    TakePhotoAsync(filename: string, fileOutputFormat: UnityEngine.VR.WSA.WebCam.PhotoCaptureFileOutputFormat, onCapturedPhotoToDiskCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCapturedToDiskCallback): void;
+    TakePhotoAsync(onCapturedPhotoToMemoryCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCapturedToMemoryCallback): void;
+    GetUnsafePointerToVideoDeviceController(): any;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly SupportedResolutions: any;
     // fields
   }
 }
@@ -30494,7 +38166,21 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // constructors
     private constructor();
     // methods
+    TryGetCameraToWorldMatrix(cameraToWorldMatrix: any): boolean;
+    TryGetProjectionMatrix(projectionMatrix: any): boolean;
+    TryGetProjectionMatrix(nearClipPlane: number, farClipPlane: number, projectionMatrix: any): boolean;
+    UploadImageDataToTexture(targetTexture: UnityEngine.Texture2D): void;
+    GetUnsafePointerToBuffer(): any;
+    CopyRawImageDataIntoBuffer(byteBuffer: any): void;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly dataLength: number;
+    readonly hasLocationData: boolean;
+    readonly pixelFormat: UnityEngine.VR.WSA.WebCam.CapturePixelFormat;
     // fields
   }
 }
@@ -30549,7 +38235,19 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // methods
     static GetSupportedFrameRatesForResolution(resolution: UnityEngine.Resolution): any;
     static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoCaptureResourceCreatedCallback): void;
+    StartVideoModeAsync(setupParams: UnityEngine.VR.WSA.WebCam.CameraParameters, audioState: UnityEngine.VR.WSA.WebCam.VideoCapture.AudioState, onVideoModeStartedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoModeStartedCallback): void;
+    StopVideoModeAsync(onVideoModeStoppedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoModeStoppedCallback): void;
+    StartRecordingAsync(filename: string, onStartedRecordingVideoCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnStartedRecordingVideoCallback): void;
+    StopRecordingAsync(onStoppedRecordingVideoCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnStoppedRecordingVideoCallback): void;
+    GetUnsafePointerToVideoDeviceController(): any;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly SupportedResolutions: any;
+    readonly IsRecording: boolean;
     // fields
   }
 }
@@ -30684,7 +38382,12 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly Mode: UnityEngine.VR.WSA.WebCam.WebCamMode;
     // fields
   }
 }
@@ -30715,7 +38418,59 @@ declare namespace UnityEngine.VR.WSA {
     // constructors
     private constructor();
     // methods
+    GetComponent(type: any): UnityEngine.Component;
+    GetComponent(type: string): UnityEngine.Component;
+    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
+    GetComponentInChildren(t: any): UnityEngine.Component;
+    GetComponentsInChildren(t: any): UnityEngine.Component[];
+    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponentInParent(t: any): UnityEngine.Component;
+    GetComponentsInParent(t: any): UnityEngine.Component[];
+    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
+    GetComponents(type: any): UnityEngine.Component[];
+    GetComponents(type: any, results: any): void;
+    CompareTag(tag: string): boolean;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly isLocated: boolean;
+    readonly transform: UnityEngine.Transform;
+    readonly gameObject: UnityEngine.GameObject;
+    tag: string;
+    readonly rigidbody: UnityEngine.Component;
+    readonly rigidbody2D: UnityEngine.Component;
+    readonly camera: UnityEngine.Component;
+    readonly light: UnityEngine.Component;
+    readonly animation: UnityEngine.Component;
+    readonly constantForce: UnityEngine.Component;
+    readonly renderer: UnityEngine.Component;
+    readonly audio: UnityEngine.Component;
+    readonly guiText: UnityEngine.Component;
+    readonly networkView: UnityEngine.Component;
+    readonly guiElement: UnityEngine.Component;
+    readonly guiTexture: UnityEngine.Component;
+    readonly collider: UnityEngine.Component;
+    readonly collider2D: UnityEngine.Component;
+    readonly hingeJoint: UnityEngine.Component;
+    readonly particleEmitter: UnityEngine.Component;
+    readonly particleSystem: UnityEngine.Component;
+    name: string;
+    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }
@@ -31400,7 +39155,13 @@ declare namespace UnityEngine.Windows.Speech {
     // methods
     static Restart(): void;
     static Shutdown(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly isSupported: boolean;
+    static readonly Status: UnityEngine.Windows.Speech.SpeechSystemStatus;
     // fields
   }
 }
@@ -31471,7 +39232,15 @@ declare namespace UnityEngine.Windows.Speech {
     // constructors
     private constructor();
     // methods
+    Start(): void;
+    Stop(): void;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly IsRunning: boolean;
     // fields
   }
 }
@@ -31834,16 +39603,36 @@ declare namespace UnityEngine.WSA {
     private constructor();
     // methods
     static GetTemplate(templ: UnityEngine.WSA.TileTemplate): string;
+    Update(xml: string): void;
+    Update(medium: string, wide: string, large: string, text: string): void;
+    PeriodicUpdate(uri: string, interval: number): void;
+    StopPeriodicUpdate(): void;
+    UpdateBadgeImage(image: string): void;
+    UpdateBadgeNumber(number: number): void;
+    RemoveBadge(): void;
+    PeriodicBadgeUpdate(uri: string, interval: number): void;
+    StopPeriodicBadgeUpdate(): void;
     static Exists(tileId: string): boolean;
     static CreateOrUpdateSecondary(data: UnityEngine.WSA.SecondaryTileData): UnityEngine.WSA.Tile;
     static CreateOrUpdateSecondary(data: UnityEngine.WSA.SecondaryTileData, pos: UnityEngine.Vector2): UnityEngine.WSA.Tile;
     static CreateOrUpdateSecondary(data: UnityEngine.WSA.SecondaryTileData, area: UnityEngine.Rect): UnityEngine.WSA.Tile;
     static GetSecondary(tileId: string): UnityEngine.WSA.Tile;
     static GetSecondaries(): UnityEngine.WSA.Tile[];
+    Delete(): void;
     static DeleteSecondary(tileId: string): void;
+    Delete(pos: UnityEngine.Vector2): void;
     static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): void;
+    Delete(area: UnityEngine.Rect): void;
     static DeleteSecondary(tileId: string, area: UnityEngine.Rect): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly main: UnityEngine.WSA.Tile;
+    readonly id: string;
+    readonly hasUserConsent: boolean;
+    readonly exists: boolean;
     // fields
   }
 }
@@ -31979,7 +39768,17 @@ declare namespace UnityEngine.WSA {
     static GetTemplate(templ: UnityEngine.WSA.ToastTemplate): string;
     static Create(xml: string): UnityEngine.WSA.Toast;
     static Create(image: string, text: string): UnityEngine.WSA.Toast;
+    Show(): void;
+    Hide(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    "arguments": string;
+    readonly activated: boolean;
+    readonly dismissed: boolean;
+    readonly dismissedByUser: boolean;
     // fields
   }
 }
@@ -32400,6 +40199,10 @@ declare namespace UnityEngineInternal {
     // methods
     static CreateDelegate(self: any, delegateType: any, target: any): any;
     static GetMethodInfo(self: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -32463,6 +40266,10 @@ declare namespace UnityEngineInternal {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

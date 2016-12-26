@@ -3,6 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    UpdateCurves(curve: any, undoText: string): void;
     // properties
     // fields
   }

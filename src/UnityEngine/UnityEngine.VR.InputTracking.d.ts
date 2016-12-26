@@ -6,6 +6,10 @@ declare namespace UnityEngine.VR {
     static GetLocalPosition(node: UnityEngine.VR.VRNode): UnityEngine.Vector3;
     static GetLocalRotation(node: UnityEngine.VR.VRNode): UnityEngine.Quaternion;
     static Recenter(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

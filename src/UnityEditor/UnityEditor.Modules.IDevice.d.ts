@@ -3,6 +3,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    StartRemoteSupport(): UnityEditor.Modules.RemoteAddress;
+    StopRemoteSupport(): void;
+    StartPlayerConnectionSupport(): UnityEditor.Modules.RemoteAddress;
+    StopPlayerConnectionSupport(): void;
     // properties
     // fields
   }

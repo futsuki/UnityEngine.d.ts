@@ -8,7 +8,13 @@ declare namespace UnityEditor {
     static ContainsAsset(id: number): boolean;
     static Clear(): void;
     static GetFirstAsset(): UnityEditor.AssetStoreAsset;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly Count: number;
+    static readonly Empty: boolean;
     // fields
   }
 }

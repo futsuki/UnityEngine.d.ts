@@ -3,6 +3,8 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     private constructor();
     // methods
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     // properties
     // fields
   }

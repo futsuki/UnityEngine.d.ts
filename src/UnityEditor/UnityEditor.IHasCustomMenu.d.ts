@@ -3,6 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
     // properties
     // fields
   }

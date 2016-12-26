@@ -12,6 +12,10 @@ declare namespace UnityEngine.Analytics {
     static CustomEvent(customEventName: string): UnityEngine.Analytics.AnalyticsResult;
     static CustomEvent(customEventName: string, position: UnityEngine.Vector3): UnityEngine.Analytics.AnalyticsResult;
     static CustomEvent(customEventName: string, eventData: any): UnityEngine.Analytics.AnalyticsResult;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

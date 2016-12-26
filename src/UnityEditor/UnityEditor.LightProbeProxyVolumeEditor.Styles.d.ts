@@ -3,6 +3,10 @@ declare namespace UnityEditor.LightProbeProxyVolumeEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static richTextMiniLabel: any;

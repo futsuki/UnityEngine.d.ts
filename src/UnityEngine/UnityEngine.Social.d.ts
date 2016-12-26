@@ -13,7 +13,13 @@ declare namespace UnityEngine {
     static CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
     static ShowAchievementsUI(): void;
     static ShowLeaderboardUI(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static Active: UnityEngine.SocialPlatforms.ISocialPlatform;
+    static readonly localUser: UnityEngine.SocialPlatforms.ILocalUser;
     // fields
   }
 }

@@ -4,6 +4,10 @@ declare namespace UnityEditor.FlexibleMenu {
     private constructor();
     // methods
     static Show(itemIndex: number, caller: UnityEditor.FlexibleMenu): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

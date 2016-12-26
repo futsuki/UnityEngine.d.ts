@@ -12,6 +12,10 @@ declare namespace UnityEditor {
     static RemapObjectToSprite(obj: any): any;
     static TextureToSprites(tex: any): any[];
     static TextureToSprite(tex: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

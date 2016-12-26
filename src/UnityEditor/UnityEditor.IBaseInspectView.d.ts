@@ -3,6 +3,12 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    UpdateInstructions(): void;
+    DrawInstructionList(): void;
+    DrawSelectedInstructionDetails(): void;
+    Unselect(): void;
+    SelectRow(index: number): void;
+    ShowOverlay(): void;
     // properties
     // fields
   }

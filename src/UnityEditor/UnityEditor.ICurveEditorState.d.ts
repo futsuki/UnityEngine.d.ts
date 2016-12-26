@@ -4,6 +4,8 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     // properties
+    readonly syncTimeDuringDrag: boolean;
+    readonly timeFormat: UnityEditor.TimeArea.TimeFormat;
     // fields
   }
 }

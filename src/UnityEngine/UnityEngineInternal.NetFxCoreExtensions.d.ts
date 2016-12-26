@@ -5,6 +5,10 @@ declare namespace UnityEngineInternal {
     // methods
     static CreateDelegate(self: any, delegateType: any, target: any): any;
     static GetMethodInfo(self: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

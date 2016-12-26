@@ -10,7 +10,13 @@ declare namespace SimpleJson {
     static SerializeObject(json: any, jsonSerializerStrategy: SimpleJson.IJsonSerializerStrategy): string;
     static SerializeObject(json: any): string;
     static EscapeToJavascriptString(jsonString: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static CurrentJsonSerializerStrategy: SimpleJson.IJsonSerializerStrategy;
+    static readonly PocoJsonSerializerStrategy: SimpleJson.PocoJsonSerializerStrategy;
     // fields
   }
 }

@@ -6,6 +6,10 @@ declare namespace UnityEditorInternal {
     static IsAnimated(materialProp: UnityEditor.MaterialProperty, target: any): boolean;
     static SetupMaterialPropertyBlock(materialProp: UnityEditor.MaterialProperty, changedMask: number, target: any): void;
     static ApplyMaterialModificationToAnimationRecording(materialProp: UnityEditor.MaterialProperty, changedMask: number, target: any, oldValue: any): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

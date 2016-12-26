@@ -3,7 +3,11 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    SizeSelectionCallback(indexClicked: number, objectSelected: any): void;
     // properties
+    lowResolutionForAspectRatios: boolean;
+    readonly forceLowResolutionAspectRatios: boolean;
+    readonly showLowResolutionToggle: boolean;
     // fields
   }
 }

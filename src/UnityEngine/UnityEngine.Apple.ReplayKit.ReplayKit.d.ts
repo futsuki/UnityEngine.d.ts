@@ -15,7 +15,20 @@ declare namespace UnityEngine.Apple.ReplayKit {
     static StopBroadcasting(): void;
     static ShowCameraPreviewAt(posX: number, posY: number): boolean;
     static HideCameraPreview(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly APIAvailable: boolean;
+    static readonly recordingAvailable: boolean;
+    static readonly lastError: string;
+    static readonly isRecording: boolean;
+    static readonly broadcastingAPIAvailable: boolean;
+    static readonly isBroadcasting: boolean;
+    static readonly broadcastURL: string;
+    static cameraEnabled: boolean;
+    static microphoneEnabled: boolean;
     // fields
   }
 }

@@ -3,6 +3,10 @@ declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeader {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static columnHeader: any;

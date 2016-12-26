@@ -3,6 +3,7 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    OnAddedExecutable(report: UnityEditor.BuildReporting.BuildReport, fileIndex: number): void;
     // properties
     // fields
   }

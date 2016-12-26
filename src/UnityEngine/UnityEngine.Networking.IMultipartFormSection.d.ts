@@ -4,6 +4,10 @@ declare namespace UnityEngine.Networking {
     private constructor();
     // methods
     // properties
+    readonly sectionName: string;
+    readonly sectionData: number[];
+    readonly fileName: string;
+    readonly contentType: string;
     // fields
   }
 }

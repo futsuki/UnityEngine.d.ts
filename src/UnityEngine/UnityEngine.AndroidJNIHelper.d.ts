@@ -20,7 +20,12 @@ declare namespace UnityEngine {
     static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
     static GetSignature(obj: any): string;
     static GetSignature(args: any[]): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static debug: boolean;
     // fields
   }
 }

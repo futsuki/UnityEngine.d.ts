@@ -147,6 +147,10 @@ declare namespace UnityEngine {
     static SetFloatArrayElement(array: any, index: number, val: number): void;
     static SetDoubleArrayElement(array: any, index: number, val: number): void;
     static SetObjectArrayElement(array: any, index: number, obj: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

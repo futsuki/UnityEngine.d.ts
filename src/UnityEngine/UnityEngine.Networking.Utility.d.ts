@@ -8,7 +8,12 @@ declare namespace UnityEngine.Networking {
     static GetAppID(): UnityEngine.Networking.Types.AppID;
     static SetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID, accessToken: UnityEngine.Networking.Types.NetworkAccessToken): void;
     static GetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID): UnityEngine.Networking.Types.NetworkAccessToken;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static useRandomSourceID: boolean;
     // fields
   }
 }

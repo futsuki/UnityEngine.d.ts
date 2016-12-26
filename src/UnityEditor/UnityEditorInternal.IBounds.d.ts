@@ -4,6 +4,7 @@ declare namespace UnityEditorInternal {
     private constructor();
     // methods
     // properties
+    readonly boundingRect: any;
     // fields
   }
 }

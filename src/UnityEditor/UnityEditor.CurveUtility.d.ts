@@ -13,6 +13,10 @@ declare namespace UnityEditor {
     static GetClipName(clip: any): string;
     static GetBalancedColor(c: any): any;
     static GetPropertyColor(name: string): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

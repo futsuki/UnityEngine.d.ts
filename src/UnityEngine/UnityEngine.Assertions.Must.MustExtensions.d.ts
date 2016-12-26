@@ -15,6 +15,10 @@ declare namespace UnityEngine.Assertions.Must {
     static MustNotBeApproximatelyEqual(actual: number, expected: number, message: string): void;
     static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number): void;
     static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

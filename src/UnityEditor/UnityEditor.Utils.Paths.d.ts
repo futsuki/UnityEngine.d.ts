@@ -10,6 +10,10 @@ declare namespace UnityEditor.Utils {
     static NormalizePath(path: string): string;
     static UnifyDirectorySeparator(path: string): string;
     static AreEqual(pathA: string, pathB: string, ignoreCase: boolean): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

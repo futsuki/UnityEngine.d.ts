@@ -11,6 +11,10 @@ declare namespace UnityEditorInternal {
     static DrawLine(p1: any, p2: any): void;
     static BeginLines(color: any): void;
     static EndLines(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

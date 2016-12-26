@@ -6,6 +6,10 @@ declare namespace UnityEditor.Scripting.Compilers {
     static EscapeCharsQuote(input: string): string;
     static PrepareFileName(input: string): string;
     static EscapeCharsWindows(input: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

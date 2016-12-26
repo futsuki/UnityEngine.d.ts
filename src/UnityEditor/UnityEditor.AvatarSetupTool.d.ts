@@ -30,6 +30,10 @@ declare namespace UnityEditor {
     static MakeBoneAlignmentValid(bones: UnityEditor.AvatarSetupTool.BoneWrapper[], avatarOrientation: any, boneIndex: number): void;
     static AvatarComputeOrientation(bones: UnityEditor.AvatarSetupTool.BoneWrapper[]): any;
     static AvatarComputeOrientation(leftUpLeg: any, rightUpLeg: any, leftArm: any, rightArm: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

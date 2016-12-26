@@ -5,6 +5,10 @@ declare namespace UnityEngine.SceneManagement {
     // methods
     static GetScenePathByBuildIndex(buildIndex: number): string;
     static GetBuildIndexByScenePath(scenePath: string): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

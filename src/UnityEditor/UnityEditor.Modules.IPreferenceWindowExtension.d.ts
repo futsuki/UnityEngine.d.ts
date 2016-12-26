@@ -3,6 +3,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    ReadPreferences(): void;
+    WritePreferences(): void;
+    HasExternalApplications(): boolean;
+    ShowExternalApplications(): void;
     // properties
     // fields
   }

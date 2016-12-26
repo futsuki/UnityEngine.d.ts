@@ -19,6 +19,10 @@ declare namespace UnityEditor.Events {
     static RegisterBoolPersistentListener(unityEvent: any, index: number, call: any, argument: boolean): void;
     static AddStringPersistentListener(unityEvent: any, call: any, argument: string): void;
     static RegisterStringPersistentListener(unityEvent: any, index: number, call: any, argument: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

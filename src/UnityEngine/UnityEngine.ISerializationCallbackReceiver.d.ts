@@ -3,6 +3,8 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
     // properties
     // fields
   }

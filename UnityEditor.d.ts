@@ -62,6 +62,11 @@
     // constructors
     private constructor();
     // methods
+    PostProcess(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -84,6 +89,10 @@ declare namespace DesktopStandalonePostProcessor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -105,6 +114,11 @@ declare namespace DesktopStandalonePostProcessor {
     // constructors
     private constructor();
     // methods
+    Validate(userAssemblies: any, options: any[]): ValidationResult;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -113,12 +127,17 @@ declare namespace DesktopStandalonePostProcessor {
     private constructor();
     // methods
     // properties
+    readonly LibPaths: string[];
+    readonly CompilerPath: string;
+    readonly LinkerPath: string;
+    readonly MachineSpecification: string;
     // fields
   }
   class INativeCompiler {
     // constructors
     private constructor();
     // methods
+    CompileDynamicLibrary(outFile: string, sources: any, includePaths: any, libraries: any, libraryPaths: any): void;
     // properties
     // fields
   }
@@ -126,6 +145,7 @@ declare namespace DesktopStandalonePostProcessor {
     // constructors
     private constructor();
     // methods
+    Validate(userAssemblies: any, options: any[]): ValidationResult;
     // properties
     // fields
   }
@@ -147,6 +167,11 @@ declare namespace NativeCompiler {
     // constructors
     private constructor();
     // methods
+    CompileDynamicLibrary(outFile: string, sources: any, includePaths: any, libraries: any, libraryPaths: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -346,7 +371,12 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly nameChunks: string[];
     // fields
   }
 }
@@ -766,7 +796,13 @@ declare namespace UnityEditor.Analytics {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static enabled: boolean;
+    static testMode: boolean;
     // fields
   }
 }
@@ -1167,6 +1203,10 @@ declare namespace UnityEditor.AnimationClipEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static StartFrame: any;
@@ -1331,6 +1371,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -3424,6 +3468,17 @@ declare namespace UnityEditor.AssemblyTypeInfoGenerator {
     private constructor();
     // methods
     static WithSearchDirs(searchDirs: string[]): any;
+    Resolve(name: any, parameters: any): any;
+    AddSearchDirectory(directory: string): void;
+    RemoveSearchDirectory(directory: string): void;
+    GetSearchDirectories(): string[];
+    Resolve(fullName: string): any;
+    Resolve(fullName: string, parameters: any): any;
+    Resolve(name: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -3751,7 +3806,37 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnDisable(): void;
+    DrawDefaultInspector(): boolean;
+    OnInspectorGUI(): void;
+    RequiresConstantRepaint(): boolean;
+    Repaint(): void;
+    HasPreviewGUI(): boolean;
+    GetPreviewTitle(): any;
+    RenderStaticPreview(assetPath: string, subAssets: any[], width: number, height: number): any;
+    OnPreviewGUI(r: any, background: any): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
+    OnPreviewSettings(): void;
+    GetInfoString(): string;
+    ReloadPreviewInstances(): void;
+    DrawHeader(): void;
+    DrawPreview(previewArea: any): void;
+    UseDefaultMargins(): boolean;
+    Initialize(targets: any[]): void;
+    MoveNextTarget(): boolean;
+    ResetTarget(): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    target: any;
+    readonly targets: any[];
+    readonly serializedObject: UnityEditor.SerializedObject;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -3760,7 +3845,38 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnInspectorGUI(): void;
+    OnPreviewSettings(): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
+    HasPreviewGUI(): boolean;
+    OnDisable(): void;
+    DrawDefaultInspector(): boolean;
+    RequiresConstantRepaint(): boolean;
+    Repaint(): void;
+    GetPreviewTitle(): any;
+    RenderStaticPreview(assetPath: string, subAssets: any[], width: number, height: number): any;
+    OnPreviewGUI(r: any, background: any): void;
+    GetInfoString(): string;
+    ReloadPreviewInstances(): void;
+    DrawHeader(): void;
+    DrawPreview(previewArea: any): void;
+    UseDefaultMargins(): boolean;
+    Initialize(targets: any[]): void;
+    MoveNextTarget(): boolean;
+    ResetTarget(): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly activeEditor: UnityEditor.AssetImporterInspector;
+    target: any;
+    readonly targets: any[];
+    readonly serializedObject: UnityEditor.SerializedObject;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -3770,6 +3886,11 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static Get(): UnityEditor.AssetInspector;
+    OnAssetStatusGUI(r: any, id: number, target: any, style: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -4377,7 +4498,13 @@ declare namespace UnityEditor {
     static ContainsAsset(id: number): boolean;
     static Clear(): void;
     static GetFirstAsset(): UnityEditor.AssetStoreAsset;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly Count: number;
+    static readonly Empty: boolean;
     // fields
   }
 }
@@ -4386,8 +4513,15 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Parse(response: UnityEditor.AssetStoreResponse): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    error: string;
+    warnings: string;
   }
 }
 declare namespace UnityEditor.AssetStoreAssetsInfo {
@@ -4831,7 +4965,14 @@ declare namespace UnityEditor {
     static CheckRepaint(): boolean;
     static AbortSize(size: number): void;
     static AbortOlderThan(timestamp: number): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static MaxCachedImages: number;
+    static readonly CacheFull: boolean;
+    static readonly Downloading: number;
     // fields
   }
 }
@@ -5802,8 +5943,14 @@ declare namespace UnityEditor.Audio {
     // constructors
     private constructor();
     // methods
+    ResolveStringPath(getOnlyBasePath: boolean): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    parameter: UnityEditor.GUID;
   }
 }
 declare namespace UnityEditor.Audio {
@@ -5863,6 +6010,10 @@ declare namespace UnityEditor.Audio {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -6596,6 +6747,10 @@ declare namespace UnityEditor.AudioImporterInspector {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static kSampleRateStrings: string[];
@@ -6924,6 +7079,10 @@ declare namespace UnityEditor {
     // methods
     static AddColorItemsToGenericMenu(menu: UnityEditor.GenericMenu, groups: UnityEditor.Audio.AudioMixerGroupController[]): void;
     static GetColor(index: number): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -6987,6 +7146,10 @@ declare namespace UnityEditor.AudioMixerControllerInspector {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static m_EnableSuspendLabel: any;
@@ -7092,6 +7255,10 @@ declare namespace UnityEditor {
     static UnexposePopupCallback(obj: any): void;
     static ParameterTransitionOverrideCallback(obj: any): void;
     static PopupButton(label: any, buttonContent: any, style: any, buttonRect: any, options: any[]): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -7181,6 +7348,10 @@ declare namespace UnityEditor.AudioMixerEffectView {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static editInPlaymode: any;
@@ -7201,7 +7372,16 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(rect: any): void;
+    GetWindowSize(): any;
+    OnOpen(): void;
+    OnClose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }
@@ -8711,6 +8891,10 @@ declare namespace UnityEditor.AvatarMaskInspector {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static MaskDefinition: any;
@@ -9009,6 +9193,10 @@ declare namespace UnityEditor {
     static MakeBoneAlignmentValid(bones: UnityEditor.AvatarSetupTool.BoneWrapper[], avatarOrientation: any, boneIndex: number): void;
     static AvatarComputeOrientation(bones: UnityEditor.AvatarSetupTool.BoneWrapper[]): any;
     static AvatarComputeOrientation(leftUpLeg: any, rightUpLeg: any, leftArm: any, rightArm: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -9099,7 +9287,13 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Compare(lhs: any, rhs: any): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly content: any;
     // fields
   }
 }
@@ -9648,8 +9842,15 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Parse(response: UnityEditor.AssetStoreResponse): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    error: string;
+    warnings: string;
   }
 }
 declare namespace UnityEditor {
@@ -9740,8 +9941,16 @@ declare namespace UnityEditor.BuildPlayerWindow {
     // constructors
     private constructor();
     // methods
+    GetBuildTargetDisplayName(target: UnityEditor.BuildTarget): string;
+    BuildPlatformIndexFromTargetGroup(group: UnityEditor.BuildTargetGroup): number;
+    BuildPlatformFromTargetGroup(group: UnityEditor.BuildTargetGroup): UnityEditor.BuildPlayerWindow.BuildPlatform;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    buildPlatforms: UnityEditor.BuildPlayerWindow.BuildPlatform[];
   }
 }
 declare namespace UnityEditor {
@@ -9889,6 +10098,10 @@ declare namespace UnityEditor.BuildReporting {
     private constructor();
     // methods
     static OnAddedExecutable(report: UnityEditor.BuildReporting.BuildReport, fileIndex: number): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -10039,6 +10252,10 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static VerifyBuild(target: UnityEditor.BuildTarget, managedDllFolder: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -10290,7 +10507,14 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    GetHashCode(): number;
+    IsDefaultAttribute(): boolean;
+    Match(obj: any): boolean;
+    Equals(obj: any): boolean;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly TypeId: any;
     // fields
   }
 }
@@ -10385,6 +10609,11 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Update(cameraState: UnityEditor.CameraState, cam: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -10584,6 +10813,10 @@ declare namespace UnityEditor.CanvasEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static eventCamera: any;
@@ -11112,7 +11345,64 @@ declare namespace UnityEditor {
     // methods
     static ShowHistoryWindow(): UnityEditor.CollabHistoryWindow;
     static ValidateShowHistoryWindow(): boolean;
+    OnReceiveTitle(title: string): void;
+    OnInitScripting(): void;
+    OnEnable(): void;
+    OnDestroy(): void;
+    OnCollabStateChanged(info: UnityEditor.Collaboration.CollabInfo): void;
+    ToggleMaximize(): void;
+    Init(): void;
+    OnDestroy(): void;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    GetWebViewFromURL(url: string): UnityEditor.WebView;
+    OnInitScripting(): void;
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
+    Reload(): void;
+    About(): void;
+    OnLoadError(url: string): void;
+    ToggleMaximize(): void;
+    OnGUI(): void;
+    OnBatchMode(): void;
+    Refresh(): void;
+    OnFocus(): void;
+    OnLostFocus(): void;
+    OnBecameInvisible(): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    initialOpenUrl: string;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -11121,7 +11411,23 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly path: string;
+    readonly state: number;
+    readonly isRevertable: boolean;
+    readonly revertableState: number;
+    readonly relatedTo: string;
+    readonly isMeta: boolean;
+    readonly isConflict: boolean;
+    readonly isFolderMeta: boolean;
+    readonly isResolved: boolean;
+    readonly localStatus: string;
+    readonly remoteStatus: string;
+    readonly resolveStatus: string;
     // fields
   }
 }
@@ -11364,7 +11670,24 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly title: string;
+    readonly extraInfo: string;
+    readonly currentCount: number;
+    readonly totalCount: number;
+    readonly completed: boolean;
+    readonly cancelled: boolean;
+    readonly canCancel: boolean;
+    readonly lastErrorString: string;
+    readonly lastError: number;
+    readonly percentComplete: number;
+    readonly isProgressTypeCount: boolean;
+    readonly isProgressTypePercent: boolean;
+    readonly errorOccured: boolean;
     // fields
   }
 }
@@ -11396,7 +11719,17 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly authorName: string;
+    readonly author: string;
+    readonly comment: string;
+    readonly revisionID: string;
+    readonly reference: string;
+    readonly timeStamp: number;
     // fields
   }
 }
@@ -11405,7 +11738,15 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly userID: string;
+    readonly machineID: string;
+    readonly displayName: string;
+    readonly timeStamp: number;
     // fields
   }
 }
@@ -11437,6 +11778,10 @@ declare namespace UnityEditor.Collaboration {
     private constructor();
     // methods
     static LoadTextureFromApplicationContents(path: string): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -11853,6 +12198,10 @@ declare namespace UnityEditor {
     static SetColor(color: any): void;
     static HasColor(): boolean;
     static TryGetColor(allowHDR: boolean, color: any): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -12558,10 +12907,62 @@ declare namespace UnityEditor.Connect {
     // constructors
     private constructor();
     // methods
+    GetConfigurationURL(config: UnityEditor.Connect.CloudConfigUrl): string;
+    GetEnvironment(): string;
+    GetAPIVersion(): string;
+    GetUserId(): string;
+    GetUserName(): string;
+    GetAccessToken(): string;
+    GetProjectGUID(): string;
+    GetProjectName(): string;
+    GetOrganizationId(): string;
+    GetOrganizationName(): string;
+    GetOrganizationForeignKey(): string;
+    RefreshProject(): void;
+    ClearCache(): void;
+    Logout(): void;
+    WorkOffline(rememberDecision: boolean): void;
+    ShowLogin(): void;
+    OpenAuthorizedURLInWebBrowser(url: string): void;
+    BindProject(projectGUID: string, projectName: string, organizationId: string): void;
+    SetCOPPACompliance(compliance: UnityEditor.Connect.COPPACompliance): boolean;
+    ClearErrors(): void;
+    UnhandledError(request: string, responseCode: number, response: string): void;
+    ComputerGoesToSleep(): void;
+    ComputerDidWakeUp(): void;
+    ClearAccessToken(): void;
+    GoToHub(page: string): void;
+    UnbindProject(): void;
+    GetProjectInfo(): UnityEditor.Connect.ProjectInfo;
+    GetUserInfo(): UnityEditor.Connect.UserInfo;
+    GetConnectInfo(): UnityEditor.Connect.ConnectInfo;
+    GetConfigurationUrlByIndex(index: number): string;
+    GetCoreConfigurationUrl(): string;
+    DisplayDialog(title: string, message: string, okBtn: string, cancelBtn: string): boolean;
+    SetCOPPACompliance(compliance: number): boolean;
     static TestComputerGoesToSleep(): void;
     static TestComputerDidWakeUp(): void;
     static TestClearAccessToken(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly preferencesEnabled: boolean;
+    static readonly skipMissingUPID: boolean;
+    readonly online: boolean;
+    readonly loggedIn: boolean;
+    readonly projectValid: boolean;
+    readonly workingOffline: boolean;
+    readonly shouldShowServicesWindow: boolean;
+    readonly configuration: string;
+    readonly lastErrorMessage: string;
+    readonly lastErrorCode: number;
+    readonly userInfo: UnityEditor.Connect.UserInfo;
+    readonly projectInfo: UnityEditor.Connect.ProjectInfo;
+    readonly connectInfo: UnityEditor.Connect.ConnectInfo;
+    readonly canBuildWithUPID: boolean;
+    static readonly instance: UnityEditor.Connect.UnityConnect;
     // fields
   }
 }
@@ -12571,7 +12972,67 @@ declare namespace UnityEditor.Connect {
     private constructor();
     // methods
     static Create(title: string, serviceUrls: any): UnityEditor.Connect.UnityConnectEditorWindow;
+    UrlsMatch(referenceUrls: any): boolean;
+    OnEnable(): void;
+    OnInitScripting(): void;
+    ToggleMaximize(): void;
+    OnLoadError(url: string): void;
+    OnGUI(): void;
+    Init(): void;
+    OnDestroy(): void;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    GetWebViewFromURL(url: string): UnityEditor.WebView;
+    OnInitScripting(): void;
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
+    Reload(): void;
+    About(): void;
+    OnLoadError(url: string): void;
+    ToggleMaximize(): void;
+    OnGUI(): void;
+    OnBatchMode(): void;
+    Refresh(): void;
+    OnFocus(): void;
+    OnLostFocus(): void;
+    OnEnable(): void;
+    OnBecameInvisible(): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    ErrorUrl: string;
+    currentUrl: string;
+    initialOpenUrl: string;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -12622,8 +13083,29 @@ declare namespace UnityEditor.Connect {
     // constructors
     private constructor();
     // methods
+    CloseServices(): void;
+    ReloadServices(): void;
     static StaticEnableService(serviceName: string, enabled: boolean): void;
+    AddService(cloudService: UnityEditor.Connect.UnityConnectServiceData): boolean;
+    RemoveService(serviceName: string): boolean;
+    ServiceExist(serviceName: string): boolean;
+    ShowService(serviceName: string, forceFocus: boolean): boolean;
+    ShowService(serviceName: string, atPage: string, forceFocus: boolean): boolean;
+    EnableService(name: string, enabled: boolean): void;
+    GetUrlForService(serviceName: string): string;
+    GetServiceFromUrl(searchUrl: string): UnityEditor.Connect.UnityConnectServiceData;
+    GetAllServiceNames(): any;
+    GetAllServiceUrls(): any;
+    GetAllServiceInfos(): UnityEditor.Connect.UnityConnectServiceCollection.ServiceInfo[];
+    GetWebViewFromServiceName(serviceName: string): UnityEditor.WebView;
+    UnbindAllServices(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly isDrawerOpen: boolean;
+    static readonly instance: UnityEditor.Connect.UnityConnectServiceCollection;
     // fields
   }
 }
@@ -12920,6 +13402,10 @@ declare namespace UnityEditor.ContainerWindow {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static buttonClose: any;
@@ -12970,7 +13456,13 @@ declare namespace UnityEditor.CrashReporting {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static enabled: boolean;
+    static captureEditorExceptions: boolean;
     // fields
   }
 }
@@ -13146,6 +13638,10 @@ declare namespace UnityEditor.CubemapPreview {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static preButton: any;
@@ -13861,6 +14357,18 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    DrawCurve(minTime: number, maxTime: number, color: any, transform: any, wrapColor: any): void;
+    GetCurve(): any;
+    RangeStart(): number;
+    RangeEnd(): number;
+    SetWrap(wrap: any): void;
+    SetWrap(preWrap: any, postWrap: any): void;
+    SetCustomRange(start: number, end: number): void;
+    EvaluateCurveSlow(time: number): number;
+    EvaluateCurveDeltaSlow(time: number): number;
+    GetBounds(): any;
+    GetBounds(minTime: number, maxTime: number): any;
+    FlushCache(): void;
     // properties
     // fields
   }
@@ -13870,8 +14378,17 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    CompareTo(_other: any): number;
+    Equals(_other: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    curveID: number;
+    key: number;
+    semiSelected: boolean;
+    type: UnityEditor.CurveSelection.SelectionType;
   }
 }
 declare namespace UnityEditor.CurveSelection {
@@ -13902,6 +14419,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    UpdateCurves(curve: any, undoText: string): void;
     // properties
     // fields
   }
@@ -13921,6 +14439,10 @@ declare namespace UnityEditor {
     static GetClipName(clip: any): string;
     static GetBalancedColor(c: any): any;
     static GetPropertyColor(name: string): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -14232,7 +14754,14 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(position: any): void;
+    GetHeight(): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly attribute: any;
     // fields
   }
 }
@@ -14626,6 +15155,10 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static OnGUI(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -15472,6 +16005,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -15571,6 +16108,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -16253,6 +16794,10 @@ declare namespace UnityEditor.EditorGUI {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -16853,6 +17398,10 @@ declare namespace UnityEditor {
     static ToJson(obj: any): string;
     static ToJson(obj: any, prettyPrint: boolean): string;
     static FromJsonOverwrite(json: string, objectToOverwrite: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -17517,9 +18066,21 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    HasPreviewGUI(): boolean;
+    OnPreviewSettings(): void;
+    OnPreviewGUI(position: any, background: any): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
+    GetInfoString(): string;
     static Make(obj: any, requirements: UnityEditor.EditorFeatures): UnityEditor.EditorWrapper;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly name: string;
     // fields
+    OnSceneDrag: UnityEditor.EditorWrapper.VoidDelegate;
   }
 }
 declare namespace UnityEditor.EditorWrapper {
@@ -17758,6 +18319,10 @@ declare namespace UnityEditor.Events {
     static RegisterBoolPersistentListener(unityEvent: any, index: number, call: any, argument: boolean): void;
     static AddStringPersistentListener(unityEvent: any, call: any, argument: string): void;
     static RegisterStringPersistentListener(unityEvent: any, index: number, call: any, argument: string): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -18100,7 +18665,44 @@ declare namespace UnityEditor {
     static GetPickedColor(): any;
     static GetLastPickedColor(): any;
     static DrawPreview(position: any): void;
+    OnDestroy(): void;
+    SetInternalGameViewDimensions(rect: any, clippedRect: any, targetSize: any): void;
+    SetAsStartView(): void;
+    ClearStartView(): void;
+    Focus(): void;
+    Repaint(): void;
+    RepaintImmediately(): void;
+    CaptureRenderDoc(): void;
+    OnDestroy(): void;
+    IndexOfChild(child: UnityEditor.View): number;
+    OnDestroy(): void;
+    AddChild(child: UnityEditor.View): void;
+    AddChild(child: UnityEditor.View, idx: number): void;
+    RemoveChild(child: UnityEditor.View): void;
+    RemoveChild(idx: number): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly hasFocus: boolean;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    depthBufferBits: number;
+    antiAlias: number;
+    readonly minSize: any;
+    readonly maxSize: any;
+    readonly allChildren: UnityEditor.View[];
+    position: any;
+    readonly windowPosition: any;
+    readonly screenPosition: any;
+    readonly window: UnityEditor.ContainerWindow;
+    readonly parent: UnityEditor.View;
+    readonly children: UnityEditor.View[];
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -18125,7 +18727,40 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -18347,6 +18982,10 @@ declare namespace UnityEditor.FlexibleMenu {
     private constructor();
     // methods
     static Show(itemIndex: number, caller: UnityEditor.FlexibleMenu): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -18371,8 +19010,21 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnClose(): void;
+    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): void;
+    Accepted(): void;
+    IsShowing(): boolean;
+    OnGUI(rect: any): void;
+    GetWindowSize(): any;
+    OnOpen(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
+    m_Object: any;
   }
 }
 declare namespace UnityEditor.FlexibleMenuModifyItemUI {
@@ -19109,6 +19761,10 @@ declare namespace UnityEditor.GameView {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static gizmosContent: any;
@@ -19531,6 +20187,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -19909,6 +20569,10 @@ declare namespace UnityEditor.GraphicsSettingsWindow {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -20222,6 +20886,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -20783,6 +21451,10 @@ declare namespace UnityEditor.HandleUtility {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -21061,7 +21733,12 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly content: any;
     // fields
   }
 }
@@ -21403,6 +22080,10 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static DoLayout(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -21482,6 +22163,16 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    SetFloatParameter(name: string, value: number): boolean;
+    GetFloatParameter(name: string, value: any): boolean;
+    GetFloatParameterInfo(name: string, minRange: any, maxRange: any, defaultValue: any): boolean;
+    GetFloatBuffer(name: string, data: any, numsamples: number): boolean;
+    GetSampleRate(): number;
+    IsPluginEditableAndEnabled(): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -21491,7 +22182,15 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(plugin: UnityEditor.IAudioEffectPlugin): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly Name: string;
+    readonly Description: string;
+    readonly Vendor: string;
     // fields
   }
 }
@@ -21500,6 +22199,12 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    UpdateInstructions(): void;
+    DrawInstructionList(): void;
+    DrawSelectedInstructionDetails(): void;
+    Unselect(): void;
+    SelectRow(index: number): void;
+    ShowOverlay(): void;
     // properties
     // fields
   }
@@ -21509,6 +22214,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Cleanup(): void;
     // properties
     // fields
   }
@@ -21622,6 +22328,8 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     // properties
+    readonly syncTimeDuringDrag: boolean;
+    readonly timeFormat: UnityEditor.TimeArea.TimeFormat;
     // fields
   }
 }
@@ -21630,6 +22338,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -21639,6 +22351,8 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    DragOver(w: UnityEditor.EditorWindow, screenPos: any): UnityEditor.DropInfo;
+    PerformDrop(w: UnityEditor.EditorWindow, dropInfo: UnityEditor.DropInfo, screenPos: any): boolean;
     // properties
     // fields
   }
@@ -21648,7 +22362,16 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    GetPosition(idx: number): any;
+    SetPosition(idx: number, position: any): void;
+    GetDefaultColor(): any;
+    GetSelectedColor(): any;
+    GetPointScale(): number;
+    GetPositions(): any;
+    GetUnselectedPositions(): any[];
+    GetSelectedPositions(): any[];
     // properties
+    readonly Count: number;
     // fields
   }
 }
@@ -21657,6 +22380,16 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Count(): number;
+    GetItem(index: number): any;
+    Add(obj: any): number;
+    Replace(index: number, newPresetObject: any): void;
+    Remove(index: number): void;
+    Create(): any;
+    Move(index: number, destIndex: number, insertAfterDestIndex: boolean): void;
+    GetName(index: number): string;
+    IsModificationAllowed(index: number): boolean;
+    GetSeperatorIndices(): number[];
     // properties
     // fields
   }
@@ -21666,7 +22399,11 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    SizeSelectionCallback(indexClicked: number, objectSelected: any): void;
     // properties
+    lowResolutionForAspectRatios: boolean;
+    readonly forceLowResolutionAspectRatios: boolean;
+    readonly showLowResolutionToggle: boolean;
     // fields
   }
 }
@@ -21675,6 +22412,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
     // properties
     // fields
   }
@@ -21684,7 +22422,32 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Reset(): void;
+    IsExpanded(expanded: number[]): boolean;
+    Next(expanded: number[]): boolean;
+    NextWithDepthCheck(expanded: number[], minDepth: number): boolean;
+    Previous(expanded: number[]): boolean;
+    Parent(): boolean;
+    Find(instanceID: number, expanded: number[]): boolean;
+    FindAllAncestors(instanceIDs: number[]): number[];
+    Skip(count: number, expanded: number[]): boolean;
+    CountRemaining(expanded: number[]): number;
     // properties
+    readonly instanceID: number;
+    readonly pptrValue: any;
+    readonly name: string;
+    readonly hasChildren: boolean;
+    readonly depth: number;
+    readonly row: number;
+    readonly colorCode: number;
+    readonly guid: string;
+    readonly icon: any;
+    readonly isValid: boolean;
+    readonly isMainRepresentation: boolean;
+    readonly hasFullPreviewImage: boolean;
+    readonly iconDrawStyle: UnityEditor.IconDrawStyle;
+    readonly isFolder: boolean;
+    readonly ancestors: number[];
     // fields
   }
 }
@@ -21693,7 +22456,34 @@ declare namespace UnityEditor.IMGUI.Controls {
     // constructors
     private constructor();
     // methods
+    OnInitialize(): void;
+    ReloadData(): void;
+    InitIfNeeded(): void;
+    FindItem(id: number): UnityEditor.IMGUI.Controls.TreeViewItem;
+    GetRow(id: number): number;
+    GetItem(row: number): UnityEditor.IMGUI.Controls.TreeViewItem;
+    GetRows(): any;
+    IsRevealed(id: number): boolean;
+    RevealItem(id: number): void;
+    SetExpandedWithChildren(item: UnityEditor.IMGUI.Controls.TreeViewItem, expand: boolean): void;
+    SetExpanded(item: UnityEditor.IMGUI.Controls.TreeViewItem, expand: boolean): void;
+    IsExpanded(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
+    IsExpandable(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
+    SetExpandedWithChildren(id: number, expand: boolean): void;
+    GetExpandedIDs(): number[];
+    SetExpandedIDs(ids: number[]): void;
+    SetExpanded(id: number, expand: boolean): boolean;
+    IsExpanded(id: number): boolean;
+    CanBeMultiSelected(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
+    CanBeParent(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
+    IsRenamingItemAllowed(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
+    InsertFakeItem(id: number, parentID: number, name: string, icon: any): void;
+    RemoveFakeItem(): void;
+    HasFakeItem(): boolean;
+    OnSearchChanged(): void;
     // properties
+    readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
+    readonly rowCount: number;
     // fields
   }
 }
@@ -21702,7 +22492,15 @@ declare namespace UnityEditor.IMGUI.Controls {
     // constructors
     private constructor();
     // methods
+    OnInitialize(): void;
+    CanStartDrag(targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, draggedItemIDs: any, mouseDownPosition: any): boolean;
+    StartDrag(draggedItem: UnityEditor.IMGUI.Controls.TreeViewItem, draggedItemIDs: any): void;
+    DragElement(targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, targetItemRect: any, firstItem: boolean): boolean;
+    DragCleanup(revertExpanded: boolean): void;
+    GetDropTargetControlID(): number;
+    GetRowMarkerControlID(): number;
     // properties
+    drawRowMarkerAbove: boolean;
     // fields
   }
 }
@@ -21711,7 +22509,25 @@ declare namespace UnityEditor.IMGUI.Controls {
     // constructors
     private constructor();
     // methods
+    OnInitialize(): void;
+    GetTotalSize(): any;
+    GetFirstAndLastRowVisible(firstRowVisible: any, lastRowVisible: any): void;
+    GetRowRect(row: number, rowWidth: number): any;
+    GetRectForFraming(row: number): any;
+    GetNumRowsOnPageUpDown(fromItem: UnityEditor.IMGUI.Controls.TreeViewItem, pageUp: boolean, heightOfTreeView: number): number;
+    OnRowGUI(rowRect: any, item: UnityEditor.IMGUI.Controls.TreeViewItem, row: number, selected: boolean, focused: boolean): void;
+    BeginRowGUI(): void;
+    EndRowGUI(): void;
+    BeginPingItem(item: UnityEditor.IMGUI.Controls.TreeViewItem, topPixelOfRow: number, availableWidth: number): void;
+    EndPingItem(): void;
+    BeginRename(item: UnityEditor.IMGUI.Controls.TreeViewItem, delay: number): boolean;
+    EndRename(): void;
+    GetRenameRect(rowRect: any, row: number, item: UnityEditor.IMGUI.Controls.TreeViewItem): any;
+    GetContentIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     // properties
+    readonly halfDropBetweenHeight: number;
+    readonly topRowMargin: number;
+    readonly bottomRowMargin: number;
     // fields
   }
 }
@@ -21794,7 +22610,13 @@ declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeader {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly defaultHeight: number;
+    static readonly minimumHeight: number;
     // fields
   }
 }
@@ -21803,6 +22625,10 @@ declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeader {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static columnHeader: any;
@@ -21950,7 +22776,13 @@ declare namespace UnityEditor.IMGUI.Controls.TreeView {
     static LabelRightAligned(rect: any, label: string, selected: boolean, focused: boolean): void;
     static BoldLabel(rect: any, label: string, selected: boolean, focused: boolean): void;
     static BoldLabelRightAligned(rect: any, label: string, selected: boolean, focused: boolean): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly contentLeftMargin: number;
+    static readonly columnMargin: number;
     // fields
   }
 }
@@ -21959,6 +22791,10 @@ declare namespace UnityEditor.IMGUI.Controls.TreeView {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static label: any;
@@ -22560,6 +23396,10 @@ declare namespace UnityEditor.IMGUI.Controls {
     // methods
     static SetParentAndChildrenForItems(rows: any, root: UnityEditor.IMGUI.Controls.TreeViewItem): void;
     static BuildRowsUsingExpandedState(rows: any, root: UnityEditor.IMGUI.Controls.TreeViewItem, treeView: UnityEditor.IMGUI.Controls.TreeView): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -23310,7 +24150,16 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    RemoveAt(index: number): void;
+    Add(requirement: UnityEditor.iOSDeviceRequirement): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly count: number;
+    get_Item(index: number): UnityEditor.iOSDeviceRequirement;
+    set_Item(index: number, value: UnityEditor.iOSDeviceRequirement): void;
     // fields
   }
 }
@@ -23487,6 +24336,9 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    ToUniqueString(): string;
+    FromUniqueString(sstr: string): void;
+    Load(): void;
     // properties
     // fields
   }
@@ -23496,7 +24348,19 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Initialize(targets: any[]): void;
+    MoveNextTarget(): boolean;
+    ResetTarget(): void;
+    HasPreviewGUI(): boolean;
+    GetPreviewTitle(): any;
+    DrawPreview(previewArea: any): void;
+    OnPreviewGUI(r: any, background: any): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
+    OnPreviewSettings(): void;
+    GetInfoString(): string;
+    ReloadPreviewInstances(): void;
     // properties
+    readonly target: any;
     // fields
   }
 }
@@ -23506,6 +24370,12 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     // properties
+    readonly rootGameObject: any;
+    readonly animationClip: any;
+    readonly clipIsEditable: boolean;
+    readonly animationIsEditable: boolean;
+    readonly timeOffset: number;
+    readonly id: number;
     // fields
   }
 }
@@ -23576,6 +24446,10 @@ declare namespace UnityEditor {
     // methods
     static Deserialize(json: string): any;
     static Serialize(obj: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -23587,6 +24461,11 @@ declare namespace UnityEditor.Json {
     // methods
     static IsWordBreak(c: any): boolean;
     static Parse(jsonString: string): any;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -23628,6 +24507,10 @@ declare namespace UnityEditor.Json {
     private constructor();
     // methods
     static Serialize(obj: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -24064,6 +24947,10 @@ declare namespace UnityEditor.LightingEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static environmentHeader: any;
@@ -24732,6 +25619,10 @@ declare namespace UnityEditor.LightProbeGroupInspector {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static showWireframe: any;
@@ -24820,6 +25711,10 @@ declare namespace UnityEditor.LightProbeProxyVolumeEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static richTextMiniLabel: any;
@@ -25248,6 +26143,14 @@ declare namespace UnityEditor.ListViewShared {
     // constructors
     private constructor();
     // methods
+    MoveNext(): boolean;
+    Reset(): void;
+    GetEnumerator(): any;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -25436,7 +26339,12 @@ declare namespace UnityEditor {
     static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): void;
     static DrawLODSlider(area: any, lods: any, selectedLevel: number): void;
     static DrawMixedValueLODSlider(area: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly Styles: UnityEditor.LODGroupGUI.GUIStyles;
     // fields
     static kLODColors: any[];
     static kCulledLODColor: any;
@@ -26278,6 +27186,10 @@ declare namespace UnityEditor.Macros {
     private constructor();
     // methods
     static Eval(macro: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -26319,6 +27231,10 @@ declare namespace UnityEditor.Macros {
     // methods
     static Eval(assemblyFile: string, typeName: string, methodName: string, paramTypes: any[], args: any[]): any;
     static ExecuteExternalCode(parcel: string): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -26407,6 +27323,11 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    ToolGUI(view: UnityEditor.SceneView, handlePosition: any, isStatic: boolean): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -26460,6 +27381,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -26671,6 +27596,10 @@ declare namespace UnityEditor.MaterialEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static kReflectionProbePickerStyle: any;
@@ -26917,6 +27846,14 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(position: any, prop: UnityEditor.MaterialProperty, label: any, editor: UnityEditor.MaterialEditor): void;
+    OnGUI(position: any, prop: UnityEditor.MaterialProperty, label: string, editor: UnityEditor.MaterialEditor): void;
+    GetPropertyHeight(prop: UnityEditor.MaterialProperty, label: string, editor: UnityEditor.MaterialEditor): number;
+    Apply(prop: UnityEditor.MaterialProperty): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -27218,6 +28155,10 @@ declare namespace UnityEditor.MemoryProfiler {
     private constructor();
     // methods
     static RequestNewSnapshot(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -27241,7 +28182,18 @@ declare namespace UnityEditor.MemoryProfiler {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly nativeTypes: UnityEditor.MemoryProfiler.PackedNativeType[];
+    readonly nativeObjects: UnityEditor.MemoryProfiler.PackedNativeUnityEngineObject[];
+    readonly gcHandles: UnityEditor.MemoryProfiler.PackedGCHandle[];
+    readonly connections: UnityEditor.MemoryProfiler.Connection[];
+    readonly managedHeapSections: UnityEditor.MemoryProfiler.MemorySection[];
+    readonly typeDescriptions: UnityEditor.MemoryProfiler.TypeDescription[];
+    readonly virtualMachineInformation: UnityEditor.MemoryProfiler.VirtualMachineInformation;
     // fields
   }
 }
@@ -27558,6 +28510,10 @@ declare namespace UnityEditor.MeshColliderEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static isTriggerText: any;
@@ -28607,6 +29563,18 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    LaunchPlayer(args: UnityEditor.Modules.BuildLaunchPlayerArgs): void;
+    PostProcess(args: UnityEditor.Modules.BuildPostProcessArgs): void;
+    SupportsInstallInBuildFolder(): boolean;
+    PostProcessScriptsOnly(args: UnityEditor.Modules.BuildPostProcessArgs): void;
+    SupportsScriptsOnlyBuild(): boolean;
+    GetScriptLayoutFileFromBuild(options: UnityEditor.BuildOptions, installPath: string, fileName: string): string;
+    PrepareForBuild(options: UnityEditor.BuildOptions, target: UnityEditor.BuildTarget): string;
+    GetExtension(target: UnityEditor.BuildTarget, options: UnityEditor.BuildOptions): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -28655,7 +29623,35 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    GetDisplayNames(): any[];
+    CreateBuildAnalyzer(): UnityEditor.Modules.IBuildAnalyzer;
+    CreateBuildPostprocessor(): UnityEditor.Modules.IBuildPostprocessor;
+    CreateScriptingImplementations(): UnityEditor.Modules.IScriptingImplementations;
+    CreateSettingsEditorExtension(): UnityEditor.Modules.ISettingEditorExtension;
+    CreatePreferenceWindowExtension(): UnityEditor.Modules.IPreferenceWindowExtension;
+    CreateTextureImportSettingsExtension(): UnityEditor.Modules.ITextureImportSettingsExtension;
+    CreateBuildWindowExtension(): UnityEditor.Modules.IBuildWindowExtension;
+    CreateCompilationExtension(): UnityEditor.Modules.ICompilationExtension;
+    CreatePluginImporterExtension(): UnityEditor.Modules.IPluginImporterExtension;
+    CreateUserAssembliesValidatorExtension(): UnityEditor.Modules.IUserAssembliesValidator;
+    CreateProjectGeneratorExtension(): UnityEditor.Modules.IProjectGeneratorExtension;
+    RegisterAdditionalUnityExtensions(): void;
+    CreateDevice(id: string): UnityEditor.Modules.IDevice;
+    OnActivate(): void;
+    OnDeactivate(): void;
+    OnLoad(): void;
+    OnUnload(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly TargetName: string;
+    readonly JamTarget: string;
+    readonly ExtensionVersion: string;
+    readonly NativeLibraries: string[];
+    readonly AssemblyReferencesForUserScripts: string[];
+    readonly AssemblyReferencesForEditorCsharpProject: string[];
     // fields
   }
 }
@@ -28664,6 +29660,26 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    OnEnable(settingsEditor: UnityEditor.PlayerSettingsEditor): void;
+    HasPublishSection(): boolean;
+    PublishSectionGUI(h: number, midWidth: number, maxWidth: number): void;
+    HasIdentificationGUI(): boolean;
+    IdentificationSectionGUI(): void;
+    ConfigurationSectionGUI(): void;
+    SupportsOrientation(): boolean;
+    CanShowUnitySplashScreen(): boolean;
+    SplashSectionGUI(): void;
+    UsesStandardIcons(): boolean;
+    IconSectionGUI(): void;
+    HasResolutionSection(): boolean;
+    SupportsStaticBatching(): boolean;
+    SupportsDynamicBatching(): boolean;
+    ResolutionSectionGUI(h: number, midWidth: number, maxWidth: number): void;
+    HasBundleIdentifier(): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -28694,6 +29710,10 @@ declare namespace UnityEditor.Modules.DefaultPluginImporterExtension {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -28703,6 +29723,11 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    GenerateCSharpProject(project: UnityEditor.Modules.CSharpProject, assemblyName: string, sourceFiles: any, defines: any, additionalProjectReferences: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -28726,6 +29751,7 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    OnAddedExecutable(report: UnityEditor.BuildReporting.BuildReport, fileIndex: number): void;
     // properties
     // fields
   }
@@ -28735,6 +29761,14 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    LaunchPlayer(args: UnityEditor.Modules.BuildLaunchPlayerArgs): void;
+    PostProcess(args: UnityEditor.Modules.BuildPostProcessArgs): void;
+    SupportsInstallInBuildFolder(): boolean;
+    PostProcessScriptsOnly(args: UnityEditor.Modules.BuildPostProcessArgs): void;
+    SupportsScriptsOnlyBuild(): boolean;
+    GetScriptLayoutFileFromBuild(options: UnityEditor.BuildOptions, installPath: string, fileName: string): string;
+    PrepareForBuild(options: UnityEditor.BuildOptions, target: UnityEditor.BuildTarget): string;
+    GetExtension(target: UnityEditor.BuildTarget, options: UnityEditor.BuildOptions): string;
     // properties
     // fields
   }
@@ -28744,6 +29778,16 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    ShowPlatformBuildOptions(): void;
+    ShowInternalPlatformBuildOptions(): void;
+    EnabledBuildButton(): boolean;
+    EnabledBuildAndRunButton(): boolean;
+    ShouldDrawScriptDebuggingCheckbox(): boolean;
+    ShouldDrawProfilerCheckbox(): boolean;
+    ShouldDrawDevelopmentPlayerCheckbox(): boolean;
+    ShouldDrawExplicitNullCheckbox(): boolean;
+    ShouldDrawExplicitDivideByZeroCheckbox(): boolean;
+    ShouldDrawForceOptimizeScriptsCheckbox(): boolean;
     // properties
     // fields
   }
@@ -28753,6 +29797,9 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    GetCsCompiler(buildingForEditor: boolean, assemblyName: string): UnityEditor.Modules.CSharpCompiler;
+    GetCompilerExtraAssemblyPaths(isEditor: boolean, assemblyPathName: string): string[];
+    GetAssemblyResolver(buildingForEditor: boolean, assemblyPath: string, searchDirectories: string[]): any;
     // properties
     // fields
   }
@@ -28762,6 +29809,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    StartRemoteSupport(): UnityEditor.Modules.RemoteAddress;
+    StopRemoteSupport(): void;
+    StartPlayerConnectionSupport(): UnityEditor.Modules.RemoteAddress;
+    StopPlayerConnectionSupport(): void;
     // properties
     // fields
   }
@@ -28771,7 +29822,31 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    GetDisplayNames(): any[];
+    CreateBuildPostprocessor(): UnityEditor.Modules.IBuildPostprocessor;
+    CreateScriptingImplementations(): UnityEditor.Modules.IScriptingImplementations;
+    CreateSettingsEditorExtension(): UnityEditor.Modules.ISettingEditorExtension;
+    CreatePreferenceWindowExtension(): UnityEditor.Modules.IPreferenceWindowExtension;
+    CreateBuildWindowExtension(): UnityEditor.Modules.IBuildWindowExtension;
+    CreateCompilationExtension(): UnityEditor.Modules.ICompilationExtension;
+    CreateTextureImportSettingsExtension(): UnityEditor.Modules.ITextureImportSettingsExtension;
+    CreatePluginImporterExtension(): UnityEditor.Modules.IPluginImporterExtension;
+    CreateBuildAnalyzer(): UnityEditor.Modules.IBuildAnalyzer;
+    CreateUserAssembliesValidatorExtension(): UnityEditor.Modules.IUserAssembliesValidator;
+    CreateProjectGeneratorExtension(): UnityEditor.Modules.IProjectGeneratorExtension;
+    RegisterAdditionalUnityExtensions(): void;
+    CreateDevice(id: string): UnityEditor.Modules.IDevice;
+    OnActivate(): void;
+    OnDeactivate(): void;
+    OnLoad(): void;
+    OnUnload(): void;
     // properties
+    readonly TargetName: string;
+    readonly JamTarget: string;
+    readonly NativeLibraries: string[];
+    readonly AssemblyReferencesForUserScripts: string[];
+    readonly AssemblyReferencesForEditorCsharpProject: string[];
+    readonly ExtensionVersion: string;
     // fields
   }
 }
@@ -28780,6 +29855,14 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    ResetValues(inspector: UnityEditor.PluginImporterInspector): void;
+    HasModified(inspector: UnityEditor.PluginImporterInspector): boolean;
+    Apply(inspector: UnityEditor.PluginImporterInspector): void;
+    OnEnable(inspector: UnityEditor.PluginImporterInspector): void;
+    OnDisable(inspector: UnityEditor.PluginImporterInspector): void;
+    OnPlatformSettingsGUI(inspector: UnityEditor.PluginImporterInspector): void;
+    CalculateFinalPluginPath(buildTargetName: string, imp: UnityEditor.PluginImporter): string;
+    CheckFileCollisions(buildTargetName: string): boolean;
     // properties
     // fields
   }
@@ -28789,6 +29872,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    ReadPreferences(): void;
+    WritePreferences(): void;
+    HasExternalApplications(): boolean;
+    ShowExternalApplications(): void;
     // properties
     // fields
   }
@@ -28798,6 +29885,7 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    GenerateCSharpProject(project: UnityEditor.Modules.CSharpProject, assemblyName: string, sourceFiles: any, defines: any, additionalProjectReferences: any): void;
     // properties
     // fields
   }
@@ -28807,6 +29895,8 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    Supported(): UnityEditor.ScriptingImplementation[];
+    Enabled(): UnityEditor.ScriptingImplementation[];
     // properties
     // fields
   }
@@ -28816,6 +29906,22 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    OnEnable(settingsEditor: UnityEditor.PlayerSettingsEditor): void;
+    HasPublishSection(): boolean;
+    PublishSectionGUI(h: number, midWidth: number, maxWidth: number): void;
+    HasIdentificationGUI(): boolean;
+    IdentificationSectionGUI(): void;
+    ConfigurationSectionGUI(): void;
+    SupportsOrientation(): boolean;
+    SupportsStaticBatching(): boolean;
+    SupportsDynamicBatching(): boolean;
+    CanShowUnitySplashScreen(): boolean;
+    SplashSectionGUI(): void;
+    UsesStandardIcons(): boolean;
+    IconSectionGUI(): void;
+    HasResolutionSection(): boolean;
+    ResolutionSectionGUI(h: number, midWidth: number, maxWidth: number): void;
+    HasBundleIdentifier(): boolean;
     // properties
     // fields
   }
@@ -28825,6 +29931,7 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    ShowImportSettings(baseEditor: UnityEditor.Editor, platformSettings: UnityEditor.TextureImportPlatformSettings): void;
     // properties
     // fields
   }
@@ -28834,7 +29941,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    Validate(userAssemblies: string[]): void;
+    Cleanup(): void;
     // properties
+    readonly canRunInBackground: boolean;
     // fields
   }
 }
@@ -28843,6 +29953,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -28852,6 +29966,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -30060,6 +31178,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -31001,6 +32123,10 @@ declare namespace UnityEditor.PackageExport {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static title: any;
@@ -31103,6 +32229,10 @@ declare namespace UnityEditor.PackageExportTreeView.PackageExportTreeViewGUI {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static folderIcon: any;
@@ -31344,6 +32474,10 @@ declare namespace UnityEditor.PackageImportTreeView.PackageImportTreeViewGUI {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static folderIcon: any;
@@ -31723,6 +32857,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Repaint(): void;
     // properties
     // fields
   }
@@ -31866,8 +33001,30 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static Get(): UnityEditor.ParticleSystemStyles;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    label: any;
+    numberField: any;
+    objectField: any;
+    effectBgStyle: any;
+    emitterHeaderStyle: any;
+    moduleHeaderStyle: any;
+    moduleBgStyle: any;
+    plus: any;
+    minus: any;
+    line: any;
+    checkmark: any;
+    minMaxCurveStateDropDown: any;
+    toggle: any;
+    popup: any;
+    selectionMarker: any;
+    toolbarButtonLeftAlignText: any;
+    modulePadding: any;
+    warningIcon: any;
   }
 }
 declare namespace UnityEditor {
@@ -31940,7 +33097,41 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static CreateWindow(): void;
+    OnSceneViewGUI(sceneView: UnityEditor.SceneView): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -33313,7 +34504,13 @@ declare namespace UnityEditor.PlayerSettings.WSA {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static protocolName: string;
+    static fileTypeAssociations: UnityEditor.PlayerSettings.WSAFileTypeAssociations;
     // fields
   }
 }
@@ -33694,6 +34891,10 @@ declare namespace UnityEditor.PlayerSettingsEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static categoryBox: any;
@@ -34212,6 +35413,10 @@ declare namespace UnityEditor {
     // methods
     static GetDropDownRect(buttonRect: any, minSize: any, maxSize: any, popupContainerWindow: UnityEditor.ContainerWindow): any;
     static GetDropDownRect(buttonRect: any, minSize: any, maxSize: any, popupContainerWindow: UnityEditor.ContainerWindow, locationPriorityOrder: UnityEditor.PopupLocationHelper.PopupLocation[]): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -34245,7 +35450,40 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static Show(activatorRect: any, windowContent: UnityEditor.PopupWindowContent): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -34254,7 +35492,16 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(rect: any): void;
+    GetWindowSize(): any;
+    OnOpen(): void;
+    OnClose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }
@@ -34344,7 +35591,14 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    GetHashCode(): number;
+    IsDefaultAttribute(): boolean;
+    Match(obj: any): boolean;
+    Equals(obj: any): boolean;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly TypeId: any;
     // fields
   }
 }
@@ -34817,7 +36071,25 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Count(): number;
+    GetPreset(index: number): any;
+    Add(presetObject: any, presetName: string): void;
+    Replace(index: number, newPresetObject: any): void;
+    Remove(index: number): void;
+    Move(index: number, destIndex: number, insertAfterDestIndex: boolean): void;
+    Draw(rect: any, index: number): void;
+    Draw(rect: any, presetObject: any): void;
+    GetName(index: number): string;
+    SetName(index: number, name: string): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -34869,6 +36141,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -34883,7 +36159,14 @@ declare namespace UnityEditor {
     static GetFileLocationFromPath(path: string): UnityEditor.PresetFileLocation;
     static GetParticleCurveLibraryExtension(singleCurve: boolean, signedRange: boolean): string;
     static GetCurveLibraryExtension(normalized: boolean): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly defaultLibraryLocation: string;
+    static readonly defaultPresetLibraryPath: string;
+    static readonly defaultLibraryName: string;
     // fields
   }
 }
@@ -35433,6 +36716,10 @@ declare namespace UnityEditor.ProjectBrowser {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -35442,6 +36729,10 @@ declare namespace UnityEditor.ProjectBrowser {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -35452,10 +36743,55 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static GetAllProjectBrowsers(): any;
+    Initialized(): boolean;
+    Init(): void;
+    SetSearch(searchString: string): void;
+    SetSearch(searchFilter: UnityEditor.SearchFilter): void;
     static ShowAssetStoreHitsWhileSearchingLocalAssetsChanged(): void;
+    TypeListCallback(element: UnityEditor.PopupList.ListElement): void;
+    AssetLabelListCallback(element: UnityEditor.PopupList.ListElement): void;
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
+    FrameObject(instanceID: number, ping: boolean): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly listAreaGridSize: number;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
     static s_LastInteractedProjectBrowser: UnityEditor.ProjectBrowser;
+    m_SearchAllAssets: any;
+    m_SearchInFolders: any;
+    m_SearchAssetStore: any;
   }
 }
 declare namespace UnityEditor.ProjectBrowser {
@@ -35484,6 +36820,10 @@ declare namespace UnityEditor.ProjectBrowser {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -35855,7 +37195,18 @@ declare namespace UnityEditor.ProjectWindowCallback {
     // constructors
     private constructor();
     // methods
+    OnEnable(): void;
+    Action(instanceId: number, pathName: string, resourceFile: string): void;
+    CleanUp(): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -35904,7 +37255,15 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(position: any, property: UnityEditor.SerializedProperty, label: any): void;
+    GetPropertyHeight(property: UnityEditor.SerializedProperty, label: any): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly attribute: any;
+    readonly fieldInfo: any;
     // fields
   }
 }
@@ -36116,7 +37475,12 @@ declare namespace UnityEditor.Purchasing {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static enabled: boolean;
     // fields
   }
 }
@@ -36216,6 +37580,10 @@ declare namespace UnityEditor.QualitySettingsEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static kToggle: any;
@@ -36730,6 +38098,10 @@ declare namespace UnityEditor.ReflectionProbeEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static richTextMiniLabel: any;
@@ -36915,6 +38287,10 @@ declare namespace UnityEditor.RendererEditorBase {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static m_SortingLayerStyle: any;
@@ -37297,6 +38673,10 @@ declare namespace UnityEditor.RestService {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -37936,6 +39316,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -38393,6 +39777,10 @@ declare namespace UnityEditor {
     static StaticFlagField(label: string, property: UnityEditor.SerializedProperty, flag: number): boolean;
     static SetStaticFlags(targetObjects: any[], changedFlags: number, flagValue: boolean): boolean;
     static GetObjects(gameObjects: any[], includeChildren: boolean): any[];
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39189,6 +40577,10 @@ declare namespace UnityEditor.Scripting.Compilers {
     static EscapeCharsQuote(input: string): string;
     static PrepareFileName(input: string): string;
     static EscapeCharsWindows(input: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39238,6 +40630,12 @@ declare namespace UnityEditor.Scripting.Compilers {
     // constructors
     private constructor();
     // methods
+    Parse(errorOutput: string[], compilationHadFailure: boolean): any;
+    Parse(errorOutput: string[], standardOutput: string[], compilationHadFailure: boolean): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39533,6 +40931,14 @@ declare namespace UnityEditor.Scripting.Compilers {
     // constructors
     private constructor();
     // methods
+    BeginCompiling(): void;
+    Dispose(): void;
+    Poll(): boolean;
+    GetCompilerMessages(): UnityEditor.Scripting.Compilers.CompilerMessage[];
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39597,6 +41003,14 @@ declare namespace UnityEditor.Scripting.Compilers {
     // constructors
     private constructor();
     // methods
+    BeginCompiling(): void;
+    Dispose(): void;
+    Poll(): boolean;
+    GetCompilerMessages(): UnityEditor.Scripting.Compilers.CompilerMessage[];
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39606,6 +41020,14 @@ declare namespace UnityEditor.Scripting.Compilers {
     // constructors
     private constructor();
     // methods
+    GetExtensionICanCompile(): string;
+    GetLanguageName(): string;
+    CreateCompiler(island: UnityEditor.Scripting.MonoIsland, buildingForEditor: boolean, targetPlatform: UnityEditor.BuildTarget, runUpdater: boolean): UnityEditor.Scripting.Compilers.ScriptCompilerBase;
+    GetNamespace(fileName: string, definedSymbols: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39682,6 +41104,10 @@ declare namespace UnityEditor.Scripting.Compilers {
     // methods
     static GetReferences(): string[];
     static GetExtensionSDKs(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39774,6 +41200,10 @@ declare namespace UnityEditor.Scripting {
     private constructor();
     // methods
     static GetExtensionOfSourceFile(file: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -39788,6 +41218,10 @@ declare namespace UnityEditor.Scripting.Serialization {
     static WeaveUnetFromEditor(assemblyPath: string, destPath: string, unityEngine: string, unityUNet: string, buildingForEditor: boolean): boolean;
     static WeaveInto(unityUNet: string, destPath: string, unityEngine: string, assemblyPath: string, extraAssemblyPaths: string[], assemblyResolver: any): boolean;
     static GetReferences(island: UnityEditor.Scripting.MonoIsland, projectDirectory: string): string[];
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -40317,8 +41751,67 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
     static EqualContents(x: UnityEditor.SerializedProperty, y: UnityEditor.SerializedProperty): boolean;
+    Next(enterChildren: boolean): boolean;
+    NextVisible(enterChildren: boolean): boolean;
+    Reset(): void;
+    CountRemaining(): number;
+    CountInProperty(): number;
+    Copy(): UnityEditor.SerializedProperty;
+    DuplicateCommand(): boolean;
+    DeleteCommand(): boolean;
+    FindPropertyRelative(relativePropertyPath: string): UnityEditor.SerializedProperty;
+    GetEndProperty(): UnityEditor.SerializedProperty;
+    GetEndProperty(includeInvisible: boolean): UnityEditor.SerializedProperty;
+    GetEnumerator(): any;
+    GetArrayElementAtIndex(index: number): UnityEditor.SerializedProperty;
+    InsertArrayElementAtIndex(index: number): void;
+    DeleteArrayElementAtIndex(index: number): void;
+    ClearArray(): void;
+    MoveArrayElement(srcIndex: number, dstIndex: number): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly serializedObject: UnityEditor.SerializedObject;
+    readonly hasMultipleDifferentValues: boolean;
+    readonly displayName: string;
+    readonly name: string;
+    readonly type: string;
+    readonly tooltip: string;
+    readonly depth: number;
+    readonly propertyPath: string;
+    readonly editable: boolean;
+    readonly isAnimated: boolean;
+    isExpanded: boolean;
+    readonly hasChildren: boolean;
+    readonly hasVisibleChildren: boolean;
+    readonly isInstantiatedPrefab: boolean;
+    prefabOverride: boolean;
+    readonly propertyType: UnityEditor.SerializedPropertyType;
+    intValue: number;
+    longValue: number;
+    boolValue: boolean;
+    floatValue: number;
+    doubleValue: number;
+    stringValue: string;
+    colorValue: any;
+    animationCurveValue: any;
+    objectReferenceValue: any;
+    objectReferenceInstanceIDValue: number;
+    enumValueIndex: number;
+    readonly enumNames: string[];
+    readonly enumDisplayNames: string[];
+    vector2Value: any;
+    vector3Value: any;
+    vector4Value: any;
+    quaternionValue: any;
+    rectValue: any;
+    boundsValue: any;
+    readonly isArray: boolean;
+    arraySize: number;
     // fields
   }
 }
@@ -40410,6 +41903,15 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnGUI(materialEditor: UnityEditor.MaterialEditor, properties: UnityEditor.MaterialProperty[]): void;
+    OnMaterialPreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): void;
+    OnMaterialInteractivePreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): void;
+    OnMaterialPreviewSettingsGUI(materialEditor: UnityEditor.MaterialEditor): void;
+    AssignNewShaderToMaterial(material: any, oldShader: any, newShader: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -40419,6 +41921,10 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -40757,6 +42263,10 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static HandleCascadeSliderGUI(normalizedCascadePartitions: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -42688,6 +44198,10 @@ declare namespace UnityEditor.SpriteInspector {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static spriteAlignmentOptions: any[];
@@ -42785,6 +44299,10 @@ declare namespace UnityEditor.SpriteRendererEditor {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static flipLabel: any;
@@ -42909,6 +44427,8 @@ declare namespace UnityEditor.Sprites {
     // constructors
     private constructor();
     // methods
+    OnGroupAtlases(target: UnityEditor.BuildTarget, job: UnityEditor.Sprites.PackerJob, textureImporterInstanceIDs: number[]): void;
+    GetVersion(): number;
     // properties
     // fields
   }
@@ -42962,6 +44482,12 @@ declare namespace UnityEditor.Sprites {
     // constructors
     private constructor();
     // methods
+    AddAtlas(atlasName: string, settings: UnityEditor.Sprites.AtlasSettings): void;
+    AssignToAtlas(atlasName: string, sprite: any, packingMode: any, packingRotation: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -43085,6 +44611,10 @@ declare namespace UnityEditor {
     static RemapObjectToSprite(obj: any): any;
     static TextureToSprites(tex: any): any[];
     static TextureToSprite(tex: any): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -43278,6 +44808,10 @@ declare namespace UnityEditor.StandardShaderGUI {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static optionsButton: any;
@@ -43850,7 +45384,37 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    OnInspectorGUI(): void;
+    OnPreviewSettings(): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
+    HasPreviewGUI(): boolean;
+    DrawDefaultInspector(): boolean;
+    RequiresConstantRepaint(): boolean;
+    Repaint(): void;
+    GetPreviewTitle(): any;
+    RenderStaticPreview(assetPath: string, subAssets: any[], width: number, height: number): any;
+    OnPreviewGUI(r: any, background: any): void;
+    GetInfoString(): string;
+    ReloadPreviewInstances(): void;
+    DrawHeader(): void;
+    DrawPreview(previewArea: any): void;
+    UseDefaultMargins(): boolean;
+    Initialize(targets: any[]): void;
+    MoveNextTarget(): boolean;
+    ResetTarget(): void;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    readonly activeEditor: UnityEditor.Editor;
+    target: any;
+    readonly targets: any[];
+    readonly serializedObject: UnityEditor.SerializedObject;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -46023,6 +47587,10 @@ declare namespace UnityEditor.Toolbar {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static collabButtonStyle: any;
@@ -46957,6 +48525,10 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static CreateAndSetTreeView(data: UnityEditor.ObjectTreeForSelector.TreeSelectorData): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -47863,6 +49435,10 @@ declare namespace UnityEditor.Utils {
     static NormalizePath(path: string): string;
     static UnifyDirectorySeparator(path: string): string;
     static AreEqual(pathA: string, pathB: string, ignoreCase: boolean): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -47886,6 +49462,10 @@ declare namespace UnityEditor.Utils {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -48346,7 +49926,17 @@ declare namespace UnityEditor.VersionControl {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly name: string;
+    readonly label: string;
+    readonly description: string;
+    readonly isRequired: boolean;
+    readonly isPassword: boolean;
     // fields
   }
 }
@@ -48355,7 +49945,15 @@ declare namespace UnityEditor.VersionControl {
     // constructors
     private constructor();
     // methods
+    StartTask(): UnityEditor.VersionControl.Task;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly name: string;
+    readonly label: string;
+    readonly context: UnityEditor.VersionControl.CommandContext;
     // fields
   }
 }
@@ -48408,7 +50006,15 @@ declare namespace UnityEditor.VersionControl {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
+    Show(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly severity: UnityEditor.VersionControl.Message.Severity;
+    readonly message: string;
     // fields
   }
 }
@@ -48463,7 +50069,15 @@ declare namespace UnityEditor.VersionControl {
     // constructors
     private constructor();
     // methods
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly availablePlugins: UnityEditor.VersionControl.Plugin[];
+    readonly name: string;
+    readonly configFields: UnityEditor.VersionControl.ConfigField[];
     // fields
   }
 }
@@ -48628,7 +50242,25 @@ declare namespace UnityEditor.VersionControl {
     // constructors
     private constructor();
     // methods
+    Wait(): void;
+    SetCompletionAction(action: UnityEditor.VersionControl.CompletionAction): void;
+    Dispose(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    userIdentifier: number;
+    readonly text: string;
+    readonly description: string;
+    readonly success: boolean;
+    readonly secondsSpent: number;
+    readonly progressPct: number;
+    readonly progressMessage: string;
+    readonly resultCode: number;
+    readonly messages: UnityEditor.VersionControl.Message[];
+    readonly assetList: UnityEditor.VersionControl.AssetList;
+    readonly changeSets: UnityEditor.VersionControl.ChangeSets;
     // fields
   }
 }
@@ -49009,6 +50641,10 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static DoLayout(): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -49116,7 +50752,17 @@ declare namespace UnityEditor.VisualStudioIntegration {
     // constructors
     private constructor();
     // methods
+    GetProjectHeaderTemplate(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;
+    GetProjectFooterTemplate(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;
     // properties
+    readonly VisualStudioVersion: number;
+    readonly SolutionTemplate: string;
+    readonly SolutionProjectEntryTemplate: string;
+    readonly SolutionProjectConfigurationTemplate: string;
+    readonly EditorAssemblyPath: string;
+    readonly EngineAssemblyPath: string;
+    readonly MonoLibFolder: string;
+    readonly Defines: string[];
     // fields
   }
 }
@@ -49150,6 +50796,10 @@ declare namespace UnityEditor.VisualStudioIntegration {
     // methods
     static GuidForProject(projectName: string): string;
     static GuidForSolution(projectName: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -49225,6 +50875,10 @@ declare namespace UnityEditor.VisualStudioIntegration {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static SettingsJson: string;
@@ -49335,6 +50989,12 @@ declare namespace UnityEditor.Web {
     // constructors
     private constructor();
     // methods
+    CopyToClipboard(value: string): void;
+    PasteFromClipboard(): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -49615,8 +51275,18 @@ declare namespace UnityEditor.Web {
     // methods
     static GetInstance(): UnityEditor.Web.JSProxyMgr;
     static DoTasks(): void;
+    AddGlobalObject(referenceName: string, obj: any): void;
+    RemoveGlobalObject(referenceName: string): void;
+    DoMessage(jsonRequest: string, callback: UnityEditor.Web.JSProxyMgr.ExecCallback, webView: UnityEditor.WebView): boolean;
     static FormatError(messageID: number, status: number, errorClass: string, message: string): UnityEditor.Web.JspmError;
     static FormatSuccess(messageID: number, result: any): UnityEditor.Web.JspmSuccess;
+    GetDestinationObject(reference: string): any;
+    ParseParams(method: any, data: any): any[];
+    Stringify(target: any): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
     static kProtocolVersion: number;
@@ -49756,7 +51426,18 @@ declare namespace UnityEditor.Web {
     // constructors
     private constructor();
     // methods
+    ProcessMessage(jsonRequest: string, callback: UnityEditor.WebViewV8CallbackCSharp): boolean;
+    processMessage(jsonRequest: string, callback: UnityEditor.WebViewV8CallbackCSharp): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    webView: UnityEditor.WebView;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -49765,7 +51446,56 @@ declare namespace UnityEditor.Web {
     // constructors
     private constructor();
     // methods
+    OnDestroy(): void;
+    OnInitScripting(): void;
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
+    Reload(): void;
+    About(): void;
+    OnLoadError(url: string): void;
+    ToggleMaximize(): void;
+    Init(): void;
+    OnGUI(): void;
+    OnBatchMode(): void;
+    Refresh(): void;
+    OnFocus(): void;
+    OnLostFocus(): void;
+    OnEnable(): void;
+    OnBecameInvisible(): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    initialOpenUrl: string;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -49774,7 +51504,56 @@ declare namespace UnityEditor.Web {
     // constructors
     private constructor();
     // methods
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
+    Reload(): void;
+    About(): void;
+    OnLoadError(url: string): void;
+    ToggleMaximize(): void;
+    Init(): void;
+    OnGUI(): void;
+    OnBatchMode(): void;
+    Refresh(): void;
+    OnFocus(): void;
+    OnLostFocus(): void;
+    OnEnable(): void;
+    OnBecameInvisible(): void;
+    OnDestroy(): void;
+    OnInitScripting(): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    initialOpenUrl: string;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -49783,7 +51562,59 @@ declare namespace UnityEditor.Web {
     // constructors
     private constructor();
     // methods
+    Init(): void;
+    OnDestroy(): void;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    GetWebViewFromURL(url: string): UnityEditor.WebView;
+    OnInitScripting(): void;
+    AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
+    Reload(): void;
+    About(): void;
+    OnLoadError(url: string): void;
+    ToggleMaximize(): void;
+    OnGUI(): void;
+    OnBatchMode(): void;
+    Refresh(): void;
+    OnFocus(): void;
+    OnLostFocus(): void;
+    OnEnable(): void;
+    OnBecameInvisible(): void;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
+    SendEvent(e: any): boolean;
+    SetDirty(): void;
+    ToString(): string;
+    GetInstanceID(): number;
+    GetHashCode(): number;
+    Equals(other: any): boolean;
+    GetType(): any;
     // properties
+    initialOpenUrl: string;
+    wantsMouseMove: boolean;
+    autoRepaintOnSceneChange: boolean;
+    maximized: boolean;
+    minSize: any;
+    maxSize: any;
+    title: string;
+    titleContent: any;
+    depthBufferBits: number;
+    antiAlias: number;
+    position: any;
+    name: string;
+    hideFlags: any;
     // fields
   }
 }
@@ -49925,7 +51756,19 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
+    GetTemplateIndex(path: string): number;
+    ClearTemplates(): void;
+    SelectionUI(templateProp: UnityEditor.SerializedProperty): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly customTemplatesFolder: string;
+    readonly builtinTemplatesFolder: string;
+    readonly defaultIcon: any;
+    readonly Templates: UnityEditor.WebTemplate[];
+    readonly TemplateGUIThumbnails: any[];
     // fields
   }
 }
@@ -51962,6 +53805,10 @@ declare namespace UnityEditorInternal {
     static IsTransformType(type: any): boolean;
     static ForceGrouping(binding: UnityEditor.EditorCurveBinding): boolean;
     static ControllerChanged(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -53064,6 +54911,10 @@ declare namespace UnityEditorInternal {
     // methods
     static GetCurrentValue(state: UnityEditorInternal.AnimationWindowState, curve: UnityEditorInternal.AnimationWindowCurve): any;
     static GetCurrentValue(rootGameObject: any, curveBinding: UnityEditor.EditorCurveBinding): any;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -53454,6 +55305,10 @@ declare namespace UnityEditorInternal {
     static MirrorFolder(from: string, to: string): void;
     static MirrorFolder(from: string, to: string, comparer: any): void;
     static CanSkipCopy(from: string, to: string): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -53651,6 +55506,10 @@ declare namespace UnityEditorInternal.FrameDebuggerTreeView.FDTreeViewDataSource
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -53920,7 +55779,12 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
+    SaveCurve(curve: UnityEditorInternal.AnimationWindowCurve): void;
     // properties
+    readonly activeGameObject: any;
+    readonly activeRootGameObject: any;
+    readonly activeAnimationClip: any;
+    readonly frame: number;
     // fields
   }
 }
@@ -53930,6 +55794,7 @@ declare namespace UnityEditorInternal {
     private constructor();
     // methods
     // properties
+    readonly boundingRect: any;
     // fields
   }
 }
@@ -53938,7 +55803,23 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
+    CreateNativeCompiler(): INativeCompiler;
+    CreateIl2CppNativeCodeBuilder(): UnityEditorInternal.Il2CppNativeCodeBuilder;
     // properties
+    readonly target: UnityEditor.BuildTarget;
+    readonly emitNullChecks: boolean;
+    readonly enableStackTraces: boolean;
+    readonly enableArrayBoundsCheck: boolean;
+    readonly enableDivideByZeroCheck: boolean;
+    readonly loadSymbols: boolean;
+    readonly nativeLibraryFileName: string;
+    readonly il2CppFolder: string;
+    readonly developmentMode: boolean;
+    readonly moduleStrippingInformationFolder: string;
+    readonly supportsEngineStripping: boolean;
+    readonly buildReport: UnityEditor.BuildReporting.BuildReport;
+    readonly includePaths: string[];
+    readonly libraryPaths: string[];
     // fields
   }
 }
@@ -53964,7 +55845,22 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
+    ConvertIncludesToFullPaths(relativeIncludePaths: any): any;
+    ConvertOutputFileToFullPath(outputFileRelativePath: string): string;
+    SetupStartInfo(startInfo: any): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    readonly CompilerPlatform: string;
+    readonly CompilerArchitecture: string;
+    readonly CompilerFlags: string;
+    readonly LinkerFlags: string;
+    readonly SetsUpEnvironment: boolean;
+    readonly CacheDirectory: string;
+    readonly PluginPath: string;
+    readonly AdditionalIl2CPPArguments: any;
     // fields
   }
 }
@@ -53978,6 +55874,10 @@ declare namespace UnityEditorInternal {
     static ClearCacheIfEditorVersionDiffers(builder: UnityEditorInternal.Il2CppNativeCodeBuilder, currentEditorVersion: string): void;
     static PrepareCacheDirectory(builder: UnityEditorInternal.Il2CppNativeCodeBuilder, currentEditorVersion: string): void;
     static ObjectFilePathInCacheDirectoryFor(builderCacheDirectory: string): string;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -54215,6 +56115,14 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
+    SetSelectedPropertyPath(path: string): void;
+    ClearSelectedPropertyPath(): void;
+    CreateProperty(details: boolean): UnityEditorInternal.ProfilerProperty;
+    GetActiveVisibleFrameIndex(): number;
+    SetSearch(searchString: string): void;
+    GetSearch(): string;
+    IsSearching(): boolean;
+    Repaint(): void;
     // properties
     // fields
   }
@@ -54397,6 +56305,10 @@ declare namespace UnityEditorInternal {
     static IsAnimated(materialProp: UnityEditor.MaterialProperty, target: any): boolean;
     static SetupMaterialPropertyBlock(materialProp: UnityEditor.MaterialProperty, changedMask: number, target: any): void;
     static ApplyMaterialModificationToAnimationRecording(materialProp: UnityEditor.MaterialProperty, changedMask: number, target: any, oldValue: any): boolean;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -54453,6 +56365,10 @@ declare namespace UnityEditorInternal {
     private constructor();
     // methods
     static CreateMonoScript(scriptContents: string, className: string, nameSpace: string, assemblyName: string, isEditorScript: boolean): UnityEditor.MonoScript;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -55043,8 +56959,20 @@ declare namespace UnityEditorInternal.ProfilerTimelineGUI {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
+    background: any;
+    tooltip: any;
+    tooltipArrow: any;
+    bar: any;
+    leftPane: any;
+    rightPane: any;
+    foldout: any;
+    profilerGraphBackground: any;
   }
 }
 declare namespace UnityEditorInternal.ProfilerTimelineGUI {
@@ -55753,6 +57681,10 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -55892,6 +57824,10 @@ declare namespace UnityEditorInternal {
     static DrawLine(p1: any, p2: any): void;
     static BeginLines(color: any): void;
     static EndLines(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }
@@ -56270,7 +58206,15 @@ declare namespace UnityEditorInternal.VR {
     // constructors
     private constructor();
     // methods
+    Initialize(vrEditorSettings: UnityEditor.SerializedProperty): void;
+    Draw(rect: any): void;
+    GetHeight(): number;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    IsExpanded: boolean;
     // fields
   }
 }
@@ -56340,7 +58284,19 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
+    static readonly unity: string;
+    static readonly unityConnect: string;
+    static readonly unityForum: string;
+    static readonly unityAnswers: string;
+    static readonly unityFeedback: string;
+    static readonly whatsNewPage: string;
+    static readonly betaLandingPage: string;
+    static readonly cloudBuildPage: string;
     // fields
   }
 }

@@ -56,6 +56,10 @@ declare namespace UnityEditorInternal {
     static IsTransformType(type: any): boolean;
     static ForceGrouping(binding: UnityEditor.EditorCurveBinding): boolean;
     static ControllerChanged(): void;
+    Equals(obj: any): boolean;
+    GetHashCode(): number;
+    GetType(): any;
+    ToString(): string;
     // properties
     // fields
   }

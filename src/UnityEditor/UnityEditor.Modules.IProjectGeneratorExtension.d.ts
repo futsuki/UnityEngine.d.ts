@@ -3,6 +3,7 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    GenerateCSharpProject(project: UnityEditor.Modules.CSharpProject, assemblyName: string, sourceFiles: any, defines: any, additionalProjectReferences: any): void;
     // properties
     // fields
   }

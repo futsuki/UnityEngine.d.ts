@@ -3,7 +3,10 @@ declare namespace UnityEditor.Modules {
     // constructors
     private constructor();
     // methods
+    Validate(userAssemblies: string[]): void;
+    Cleanup(): void;
     // properties
+    readonly canRunInBackground: boolean;
     // fields
   }
 }
