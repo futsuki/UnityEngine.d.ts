@@ -9,7 +9,7 @@ declare namespace UnityEngine.GUILayout {
     constructor(screenRect: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle);
     constructor(screenRect: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

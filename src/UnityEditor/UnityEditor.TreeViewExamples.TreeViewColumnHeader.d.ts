@@ -3,7 +3,7 @@ declare namespace UnityEditor.TreeViewExamples {
     // constructors
     constructor();
     // methods
-    OnGUI(rect: any): any;
+    OnGUI(rect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static RegisterForRemoteNotificationTypes(notificationTypes: UnityEngine.RemoteNotificationType): any;
+    static RegisterForRemoteNotificationTypes(notificationTypes: UnityEngine.RemoteNotificationType): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

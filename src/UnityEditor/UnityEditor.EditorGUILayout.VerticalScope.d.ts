@@ -4,7 +4,7 @@ declare namespace UnityEditor.EditorGUILayout {
     constructor(options: any[]);
     constructor(style: any, options: any[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

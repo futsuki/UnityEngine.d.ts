@@ -10,10 +10,10 @@ declare namespace UnityEngine.SceneManagement {
     static GetSceneByBuildIndex(buildIndex: number): UnityEngine.SceneManagement.Scene;
     static GetSceneAt(index: number): UnityEngine.SceneManagement.Scene;
     static GetAllScenes(): UnityEngine.SceneManagement.Scene[];
-    static LoadScene(sceneName: string): any;
-    static LoadScene(sceneName: string, mode: UnityEngine.SceneManagement.LoadSceneMode): any;
-    static LoadScene(sceneBuildIndex: number): any;
-    static LoadScene(sceneBuildIndex: number, mode: UnityEngine.SceneManagement.LoadSceneMode): any;
+    static LoadScene(sceneName: string): void;
+    static LoadScene(sceneName: string, mode: UnityEngine.SceneManagement.LoadSceneMode): void;
+    static LoadScene(sceneBuildIndex: number): void;
+    static LoadScene(sceneBuildIndex: number, mode: UnityEngine.SceneManagement.LoadSceneMode): void;
     static LoadSceneAsync(sceneName: string): UnityEngine.AsyncOperation;
     static LoadSceneAsync(sceneName: string, mode: UnityEngine.SceneManagement.LoadSceneMode): UnityEngine.AsyncOperation;
     static LoadSceneAsync(sceneBuildIndex: number): UnityEngine.AsyncOperation;
@@ -25,8 +25,8 @@ declare namespace UnityEngine.SceneManagement {
     static UnloadSceneAsync(sceneBuildIndex: number): UnityEngine.AsyncOperation;
     static UnloadSceneAsync(sceneName: string): UnityEngine.AsyncOperation;
     static UnloadSceneAsync(scene: UnityEngine.SceneManagement.Scene): UnityEngine.AsyncOperation;
-    static MergeScenes(sourceScene: UnityEngine.SceneManagement.Scene, destinationScene: UnityEngine.SceneManagement.Scene): any;
-    static MoveGameObjectToScene(go: UnityEngine.GameObject, scene: UnityEngine.SceneManagement.Scene): any;
+    static MergeScenes(sourceScene: UnityEngine.SceneManagement.Scene, destinationScene: UnityEngine.SceneManagement.Scene): void;
+    static MoveGameObjectToScene(go: UnityEngine.GameObject, scene: UnityEngine.SceneManagement.Scene): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

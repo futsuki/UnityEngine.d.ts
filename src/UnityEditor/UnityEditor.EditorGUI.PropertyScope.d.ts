@@ -3,7 +3,7 @@ declare namespace UnityEditor.EditorGUI {
     // constructors
     constructor(totalPosition: any, label: any, property: UnityEditor.SerializedProperty);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

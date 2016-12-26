@@ -4,12 +4,12 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static GetQualityLevel(): number;
-    static SetQualityLevel(index: number, applyExpensiveChanges: boolean): any;
-    static SetQualityLevel(index: number): any;
-    static IncreaseLevel(applyExpensiveChanges: boolean): any;
-    static IncreaseLevel(): any;
-    static DecreaseLevel(applyExpensiveChanges: boolean): any;
-    static DecreaseLevel(): any;
+    static SetQualityLevel(index: number, applyExpensiveChanges: boolean): void;
+    static SetQualityLevel(index: number): void;
+    static IncreaseLevel(applyExpensiveChanges: boolean): void;
+    static IncreaseLevel(): void;
+    static DecreaseLevel(applyExpensiveChanges: boolean): void;
+    static DecreaseLevel(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

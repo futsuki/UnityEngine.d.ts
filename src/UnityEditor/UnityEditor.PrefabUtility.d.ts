@@ -6,11 +6,11 @@ declare namespace UnityEditor {
     static GetPrefabParent(source: any): any;
     static GetPrefabObject(targetObject: any): any;
     static GetPropertyModifications(targetPrefab: any): UnityEditor.PropertyModification[];
-    static SetPropertyModifications(targetPrefab: any, modifications: UnityEditor.PropertyModification[]): any;
+    static SetPropertyModifications(targetPrefab: any, modifications: UnityEditor.PropertyModification[]): void;
     static InstantiateAttachedAsset(targetObject: any): any;
-    static RecordPrefabInstancePropertyModifications(targetObject: any): any;
-    static MergeAllPrefabInstances(targetObject: any): any;
-    static DisconnectPrefabInstance(targetObject: any): any;
+    static RecordPrefabInstancePropertyModifications(targetObject: any): void;
+    static MergeAllPrefabInstances(targetObject: any): void;
+    static DisconnectPrefabInstance(targetObject: any): void;
     static InstantiatePrefab(target: any): any;
     static InstantiatePrefab(target: any, destinationScene: any): any;
     static CreateEmptyPrefab(path: string): any;

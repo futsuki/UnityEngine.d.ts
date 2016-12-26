@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor();
     // methods
     IsEmpty(): boolean;
-    OnGUI(position: any, prop: UnityEditor.MaterialProperty, label: any, editor: UnityEditor.MaterialEditor): any;
+    OnGUI(position: any, prop: UnityEditor.MaterialProperty, label: any, editor: UnityEditor.MaterialEditor): void;
     GetPropertyHeight(prop: UnityEditor.MaterialProperty, label: string, editor: UnityEditor.MaterialEditor): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

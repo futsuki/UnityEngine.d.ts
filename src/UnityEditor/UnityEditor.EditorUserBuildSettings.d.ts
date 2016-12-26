@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static SetWSADotNetNative(config: UnityEditor.WSABuildType, enabled: boolean): any;
+    static SetWSADotNetNative(config: UnityEditor.WSABuildType, enabled: boolean): void;
     static GetWSADotNetNative(config: UnityEditor.WSABuildType): boolean;
     static SwitchActiveBuildTarget(target: UnityEditor.BuildTarget): boolean;
     static GetBuildLocation(target: UnityEditor.BuildTarget): string;
-    static SetBuildLocation(target: UnityEditor.BuildTarget, location: string): any;
-    static SetPlatformSettings(platformName: string, name: string, value: string): any;
+    static SetBuildLocation(target: UnityEditor.BuildTarget, location: string): void;
+    static SetPlatformSettings(platformName: string, name: string, value: string): void;
     static GetPlatformSettings(platformName: string, name: string): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

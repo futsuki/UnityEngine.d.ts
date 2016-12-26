@@ -3,14 +3,14 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): any;
-    RemoveListener(call: any): any;
-    Invoke(arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData): any;
+    AddListener(call: any): void;
+    RemoveListener(call: any): void;
+    Invoke(arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): any;
     GetPersistentMethodName(index: number): string;
-    SetPersistentListenerState(index: number, state: any): any;
-    RemoveAllListeners(): any;
+    SetPersistentListenerState(index: number, state: any): void;
+    RemoveAllListeners(): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

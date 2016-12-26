@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnClose(): any;
+    OnClose(): void;
     GetWindowSize(): any;
-    OnGUI(rect: any): any;
-    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): any;
-    Accepted(): any;
+    OnGUI(rect: any): void;
+    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): void;
+    Accepted(): void;
     IsShowing(): boolean;
-    OnOpen(): any;
+    OnOpen(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

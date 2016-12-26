@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor(hierarchytType: UnityEditor.HierarchyType);
     // methods
-    Reset(): any;
+    Reset(): void;
     GetScene(): any;
     IsExpanded(expanded: number[]): boolean;
     Next(expanded: number[]): boolean;
@@ -13,10 +13,10 @@ declare namespace UnityEditor {
     Find(instanceID: number, expanded: number[]): boolean;
     Skip(count: number, expanded: number[]): boolean;
     CountRemaining(expanded: number[]): number;
-    SetSearchFilter(searchString: string, mode: number): any;
+    SetSearchFilter(searchString: string, mode: number): void;
     FindAllAncestors(instanceIDs: number[]): number[];
-    static ClearSceneObjectsFilter(): any;
-    static FilterSingleSceneObject(instanceID: number, otherVisibilityState: boolean): any;
+    static ClearSceneObjectsFilter(): void;
+    static FilterSingleSceneObject(instanceID: number, otherVisibilityState: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

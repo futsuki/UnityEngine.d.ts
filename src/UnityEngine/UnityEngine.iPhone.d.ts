@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetNoBackupFlag(path: string): any;
-    static ResetNoBackupFlag(path: string): any;
+    static SetNoBackupFlag(path: string): void;
+    static ResetNoBackupFlag(path: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

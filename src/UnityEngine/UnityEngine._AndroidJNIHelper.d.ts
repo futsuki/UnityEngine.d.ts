@@ -10,7 +10,7 @@ declare namespace UnityEngine {
     static UnboxArray(obj: UnityEngine.AndroidJavaObject): any;
     static Unbox(obj: UnityEngine.AndroidJavaObject): any;
     static Box(obj: any): UnityEngine.AndroidJavaObject;
-    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): any;
+    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): void;
     static ConvertToJNIArray(array: any): any;
     static GetConstructorID(jclass: any, args: any[]): any;
     static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;

@@ -3,7 +3,7 @@ declare namespace UnityEditor.Hardware {
     // constructors
     constructor();
     // methods
-    static OnDevicesChanged(devices: UnityEditor.Hardware.UsbDevice[]): any;
+    static OnDevicesChanged(devices: UnityEditor.Hardware.UsbDevice[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

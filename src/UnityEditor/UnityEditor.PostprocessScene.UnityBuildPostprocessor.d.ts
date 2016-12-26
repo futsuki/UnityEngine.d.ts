@@ -3,7 +3,7 @@ declare namespace UnityEditor.PostprocessScene {
     // constructors
     constructor();
     // methods
-    static OnPostprocessScene(): any;
+    static OnPostprocessScene(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

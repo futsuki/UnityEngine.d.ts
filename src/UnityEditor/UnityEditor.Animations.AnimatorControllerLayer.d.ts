@@ -4,9 +4,9 @@ declare namespace UnityEditor.Animations {
     constructor();
     // methods
     GetOverrideMotion(state: UnityEditor.Animations.AnimatorState): any;
-    SetOverrideMotion(state: UnityEditor.Animations.AnimatorState, motion: any): any;
+    SetOverrideMotion(state: UnityEditor.Animations.AnimatorState, motion: any): void;
     GetOverrideBehaviours(state: UnityEditor.Animations.AnimatorState): any[];
-    SetOverrideBehaviours(state: UnityEditor.Animations.AnimatorState, behaviours: any[]): any;
+    SetOverrideBehaviours(state: UnityEditor.Animations.AnimatorState, behaviours: any[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

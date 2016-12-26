@@ -3,10 +3,10 @@ declare namespace UnityEngine.Profiling {
     // constructors
     constructor();
     // methods
-    static AddFramesFromFile(file: string): any;
-    static BeginSample(name: string): any;
-    static BeginSample(name: string, targetObject: UnityEngine.Object): any;
-    static EndSample(): any;
+    static AddFramesFromFile(file: string): void;
+    static BeginSample(name: string): void;
+    static BeginSample(name: string, targetObject: UnityEngine.Object): void;
+    static EndSample(): void;
     static GetRuntimeMemorySize(o: UnityEngine.Object): number;
     static GetMonoHeapSize(): number;
     static GetMonoUsedSize(): number;

@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor(so: UnityEditor.SerializedObject);
     // methods
-    OnOpen(): any;
-    OnClose(): any;
+    OnOpen(): void;
+    OnClose(): void;
     GetWindowSize(): any;
-    OnGUI(rect: any): any;
+    OnGUI(rect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

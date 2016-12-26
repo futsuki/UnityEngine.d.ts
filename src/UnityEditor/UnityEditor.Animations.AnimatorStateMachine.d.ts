@@ -4,18 +4,18 @@ declare namespace UnityEditor.Animations {
     constructor();
     // methods
     GetStateMachineTransitions(sourceStateMachine: UnityEditor.Animations.AnimatorStateMachine): UnityEditor.Animations.AnimatorTransition[];
-    SetStateMachineTransitions(sourceStateMachine: UnityEditor.Animations.AnimatorStateMachine, transitions: UnityEditor.Animations.AnimatorTransition[]): any;
+    SetStateMachineTransitions(sourceStateMachine: UnityEditor.Animations.AnimatorStateMachine, transitions: UnityEditor.Animations.AnimatorTransition[]): void;
     AddStateMachineBehaviour(stateMachineBehaviourType: any): any;
     MakeUniqueStateName(name: string): string;
     MakeUniqueStateMachineName(name: string): string;
     AddState(name: string): UnityEditor.Animations.AnimatorState;
     AddState(name: string, position: any): UnityEditor.Animations.AnimatorState;
-    AddState(state: UnityEditor.Animations.AnimatorState, position: any): any;
-    RemoveState(state: UnityEditor.Animations.AnimatorState): any;
+    AddState(state: UnityEditor.Animations.AnimatorState, position: any): void;
+    RemoveState(state: UnityEditor.Animations.AnimatorState): void;
     AddStateMachine(name: string): UnityEditor.Animations.AnimatorStateMachine;
     AddStateMachine(name: string, position: any): UnityEditor.Animations.AnimatorStateMachine;
-    AddStateMachine(stateMachine: UnityEditor.Animations.AnimatorStateMachine, position: any): any;
-    RemoveStateMachine(stateMachine: UnityEditor.Animations.AnimatorStateMachine): any;
+    AddStateMachine(stateMachine: UnityEditor.Animations.AnimatorStateMachine, position: any): void;
+    RemoveStateMachine(stateMachine: UnityEditor.Animations.AnimatorStateMachine): void;
     AddAnyStateTransition(destinationState: UnityEditor.Animations.AnimatorState): UnityEditor.Animations.AnimatorStateTransition;
     AddAnyStateTransition(destinationStateMachine: UnityEditor.Animations.AnimatorStateMachine): UnityEditor.Animations.AnimatorStateTransition;
     RemoveAnyStateTransition(transition: UnityEditor.Animations.AnimatorStateTransition): boolean;

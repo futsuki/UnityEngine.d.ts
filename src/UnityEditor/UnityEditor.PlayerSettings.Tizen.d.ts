@@ -3,7 +3,7 @@ declare namespace UnityEditor.PlayerSettings {
     // constructors
     constructor();
     // methods
-    static SetCapability(capability: UnityEditor.PlayerSettings.TizenCapability, value: boolean): any;
+    static SetCapability(capability: UnityEditor.PlayerSettings.TizenCapability, value: boolean): void;
     static GetCapability(capability: UnityEditor.PlayerSettings.TizenCapability): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

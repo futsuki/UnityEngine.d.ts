@@ -3,11 +3,11 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static SetEnabled(enabled: boolean, remotePlayerGUID: number): any;
+    static SetEnabled(enabled: boolean, remotePlayerGUID: number): void;
     static IsLocalEnabled(): boolean;
     static IsRemoteEnabled(): boolean;
     static GetRemotePlayerGUID(): number;
-    static SetRenderTargetDisplayOptions(rtIndex: number, channels: any, blackLevel: number, whiteLevel: number): any;
+    static SetRenderTargetDisplayOptions(rtIndex: number, channels: any, blackLevel: number, whiteLevel: number): void;
     static GetFrameEvents(): UnityEditorInternal.FrameDebuggerEvent[];
     static GetFrameEventData(index: number, frameDebuggerEventData: any): boolean;
     static GetFrameEventInfoName(index: number): string;

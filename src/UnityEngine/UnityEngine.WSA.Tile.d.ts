@@ -10,9 +10,9 @@ declare namespace UnityEngine.WSA {
     static CreateOrUpdateSecondary(data: UnityEngine.WSA.SecondaryTileData, area: UnityEngine.Rect): UnityEngine.WSA.Tile;
     static GetSecondary(tileId: string): UnityEngine.WSA.Tile;
     static GetSecondaries(): UnityEngine.WSA.Tile[];
-    static DeleteSecondary(tileId: string): any;
-    static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): any;
-    static DeleteSecondary(tileId: string, area: UnityEngine.Rect): any;
+    static DeleteSecondary(tileId: string): void;
+    static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): void;
+    static DeleteSecondary(tileId: string, area: UnityEngine.Rect): void;
     // properties
     // fields
   }

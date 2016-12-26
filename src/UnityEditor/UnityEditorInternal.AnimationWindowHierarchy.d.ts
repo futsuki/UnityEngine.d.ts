@@ -5,10 +5,10 @@ declare namespace UnityEditorInternal {
     // methods
     GetContentSize(): any;
     GetTotalRect(): any;
-    OnGUI(position: any): any;
-    Init(owner: UnityEditor.EditorWindow, rect: any): any;
+    OnGUI(position: any): void;
+    Init(owner: UnityEditor.EditorWindow, rect: any): void;
     IsIDVisible(id: number): boolean;
-    EndNameEditing(acceptChanges: boolean): any;
+    EndNameEditing(acceptChanges: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

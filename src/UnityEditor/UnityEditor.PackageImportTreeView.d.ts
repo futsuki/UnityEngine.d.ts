@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor(packageImport: UnityEditor.PackageImport, treeViewState: UnityEditor.IMGUI.Controls.TreeViewState, startRect: any);
     // methods
-    OnGUI(rect: any): any;
-    SetAllEnabled(state: UnityEditor.PackageImportTreeView.EnabledState): any;
+    OnGUI(rect: any): void;
+    SetAllEnabled(state: UnityEditor.PackageImportTreeView.EnabledState): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

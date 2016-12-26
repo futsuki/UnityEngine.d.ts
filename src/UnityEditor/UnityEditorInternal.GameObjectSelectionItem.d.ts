@@ -4,12 +4,12 @@ declare namespace UnityEditorInternal {
     constructor();
     // methods
     static Create(gameObject: any): UnityEditorInternal.GameObjectSelectionItem;
-    Synchronize(): any;
+    Synchronize(): void;
     GetRefreshHash(): number;
-    ClearCache(): any;
+    ClearCache(): void;
     Equals(other: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
     GetEditorCurveValueType(curveBinding: UnityEditor.EditorCurveBinding): any;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

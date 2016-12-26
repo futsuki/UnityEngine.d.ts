@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetGlobalAnisotropicFilteringLimits(forcedMin: number, globalMax: number): any;
+    static SetGlobalAnisotropicFilteringLimits(forcedMin: number, globalMax: number): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;

@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor(parent: UnityEditor.EditorWindow);
     // methods
-    FilterItems(recreateGUIItems: boolean): any;
-    DoLocalSelectionChange(): any;
-    OnSelectionChange(): any;
+    FilterItems(recreateGUIItems: boolean): void;
+    DoLocalSelectionChange(): void;
+    OnSelectionChange(): void;
     DoGUI(hasFocus: boolean): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

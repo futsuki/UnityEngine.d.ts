@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static Equal(a: UnityEditor.TextureImporterSettings, b: UnityEditor.TextureImporterSettings): boolean;
-    CopyTo(target: UnityEditor.TextureImporterSettings): any;
-    ApplyTextureType(type: UnityEditor.TextureImporterType, applyAll: boolean): any;
-    ApplyTextureType(type: UnityEditor.TextureImporterType): any;
+    CopyTo(target: UnityEditor.TextureImporterSettings): void;
+    ApplyTextureType(type: UnityEditor.TextureImporterType, applyAll: boolean): void;
+    ApplyTextureType(type: UnityEditor.TextureImporterType): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static GetAllProjectBrowsers(): any;
-    static ShowAssetStoreHitsWhileSearchingLocalAssetsChanged(): any;
+    static ShowAssetStoreHitsWhileSearchingLocalAssetsChanged(): void;
     // properties
     // fields
     static s_LastInteractedProjectBrowser: UnityEditor.ProjectBrowser;

@@ -3,26 +3,26 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnInspectorGUI(): any;
+    OnInspectorGUI(): void;
     GetInfoString(): string;
-    OnPreviewSettings(): any;
-    OnPreviewGUI(r: any, background: any): any;
+    OnPreviewSettings(): void;
+    OnPreviewGUI(r: any, background: any): void;
     GetMipLevelForRendering(): number;
     HasPreviewGUI(): boolean;
     RenderStaticPreview(assetPath: string, subAssets: any[], width: number, height: number): any;
     DrawDefaultInspector(): boolean;
     RequiresConstantRepaint(): boolean;
-    Repaint(): any;
+    Repaint(): void;
     GetPreviewTitle(): any;
-    OnInteractivePreviewGUI(r: any, background: any): any;
-    ReloadPreviewInstances(): any;
-    DrawHeader(): any;
-    DrawPreview(previewArea: any): any;
+    OnInteractivePreviewGUI(r: any, background: any): void;
+    ReloadPreviewInstances(): void;
+    DrawHeader(): void;
+    DrawPreview(previewArea: any): void;
     UseDefaultMargins(): boolean;
-    Initialize(targets: any[]): any;
+    Initialize(targets: any[]): void;
     MoveNextTarget(): boolean;
-    ResetTarget(): any;
-    SetDirty(): any;
+    ResetTarget(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

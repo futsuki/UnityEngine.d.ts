@@ -3,18 +3,18 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Unmaximize(win: UnityEditor.EditorWindow): any;
-    static AddSplitViewAndChildrenRecurse(splitview: UnityEditor.View, list: any): any;
-    static SaveSplitViewAndChildren(splitview: UnityEditor.View, win: UnityEditor.EditorWindow, path: string): any;
-    static Maximize(win: UnityEditor.EditorWindow): any;
+    static Unmaximize(win: UnityEditor.EditorWindow): void;
+    static AddSplitViewAndChildrenRecurse(splitview: UnityEditor.View, list: any): void;
+    static SaveSplitViewAndChildren(splitview: UnityEditor.View, win: UnityEditor.EditorWindow, path: string): void;
+    static Maximize(win: UnityEditor.EditorWindow): void;
     static MaximizePrepare(win: UnityEditor.EditorWindow): boolean;
-    static MaximizePresent(win: UnityEditor.EditorWindow): any;
+    static MaximizePresent(win: UnityEditor.EditorWindow): void;
     static LoadWindowLayout(path: string, newProjectLayoutWasCreated: boolean): boolean;
-    static CloseWindows(): any;
-    static SaveWindowLayout(path: string): any;
-    static EnsureMainWindowHasBeenLoaded(): any;
-    static SaveGUI(): any;
-    static DeleteGUI(): any;
+    static CloseWindows(): void;
+    static SaveWindowLayout(path: string): void;
+    static EnsureMainWindowHasBeenLoaded(): void;
+    static SaveGUI(): void;
+    static DeleteGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

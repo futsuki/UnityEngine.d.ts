@@ -3,10 +3,10 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Start(desiredAccuracyInMeters: number, updateDistanceInMeters: number): any;
-    Start(desiredAccuracyInMeters: number): any;
-    Start(): any;
-    Stop(): any;
+    Start(desiredAccuracyInMeters: number, updateDistanceInMeters: number): void;
+    Start(desiredAccuracyInMeters: number): void;
+    Start(): void;
+    Stop(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

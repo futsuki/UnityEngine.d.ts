@@ -4,7 +4,7 @@ declare namespace UnityEngine.Networking {
     constructor();
     constructor(preallocatedBuffer: number[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

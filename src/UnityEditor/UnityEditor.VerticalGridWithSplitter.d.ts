@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    InitNumRowsAndColumns(itemCount: number, maxNumRows: number): any;
+    InitNumRowsAndColumns(itemCount: number, maxNumRows: number): void;
     CalcRect(itemIdx: number, yOffset: number): any;
     GetMaxVisibleItems(height: number): number;
-    ResetSplit(): any;
-    OpenSplit(splitAfterRowIndex: number, numItems: number): any;
+    ResetSplit(): void;
+    OpenSplit(splitAfterRowIndex: number, numItems: number): void;
     CalcSplitRect(splitIndex: number, yOffset: number): any;
-    CloseSplit(): any;
+    CloseSplit(): void;
     UpdateSplitAnimationOnGUI(): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

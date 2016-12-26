@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Reset(): any;
-    StartEditing(collider: any): any;
-    StopEditing(): any;
-    OnSceneGUI(): any;
+    Reset(): void;
+    StartEditing(collider: any): void;
+    StopEditing(): void;
+    OnSceneGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

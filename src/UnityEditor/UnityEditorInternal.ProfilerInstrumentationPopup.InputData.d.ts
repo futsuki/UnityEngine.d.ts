@@ -4,8 +4,8 @@ declare namespace UnityEditorInternal.ProfilerInstrumentationPopup {
     constructor();
     // methods
     BuildQuery(prefix: string): any;
-    DeselectAll(): any;
-    ResetScores(): any;
+    DeselectAll(): void;
+    ResetScores(): void;
     GetFilteredList(prefix: string): any;
     GetFilteredCount(prefix: string): number;
     NewOrMatchingElement(label: string): UnityEditor.PopupList.ListElement;

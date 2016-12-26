@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     private constructor();
     // methods
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

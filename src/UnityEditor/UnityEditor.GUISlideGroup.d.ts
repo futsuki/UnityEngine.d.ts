@@ -3,11 +3,11 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Begin(): any;
-    End(): any;
-    Reset(): any;
+    Begin(): void;
+    End(): void;
+    Reset(): void;
     BeginHorizontal(id: number, options: any[]): any;
-    EndHorizontal(): any;
+    EndHorizontal(): void;
     GetRect(id: number, r: any): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

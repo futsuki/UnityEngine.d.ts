@@ -3,22 +3,22 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    BeginWindows(): any;
-    EndWindows(): any;
-    ShowNotification(notification: any): any;
-    RemoveNotification(): any;
-    ShowTab(): any;
-    Focus(): any;
-    ShowUtility(): any;
-    ShowPopup(): any;
-    ShowAsDropDown(buttonRect: any, windowSize: any): any;
-    Show(): any;
-    Show(immediateDisplay: boolean): any;
-    ShowAuxWindow(): any;
-    Close(): any;
-    Repaint(): any;
+    BeginWindows(): void;
+    EndWindows(): void;
+    ShowNotification(notification: any): void;
+    RemoveNotification(): void;
+    ShowTab(): void;
+    Focus(): void;
+    ShowUtility(): void;
+    ShowPopup(): void;
+    ShowAsDropDown(buttonRect: any, windowSize: any): void;
+    Show(): void;
+    Show(immediateDisplay: boolean): void;
+    ShowAuxWindow(): void;
+    Close(): void;
+    Repaint(): void;
     SendEvent(e: any): boolean;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

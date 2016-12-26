@@ -3,11 +3,11 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnGUI(materialEditor: UnityEditor.MaterialEditor, props: UnityEditor.MaterialProperty[]): any;
-    OnMaterialPreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): any;
-    OnMaterialInteractivePreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): any;
-    OnMaterialPreviewSettingsGUI(materialEditor: UnityEditor.MaterialEditor): any;
-    AssignNewShaderToMaterial(material: any, oldShader: any, newShader: any): any;
+    OnGUI(materialEditor: UnityEditor.MaterialEditor, props: UnityEditor.MaterialProperty[]): void;
+    OnMaterialPreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): void;
+    OnMaterialInteractivePreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): void;
+    OnMaterialPreviewSettingsGUI(materialEditor: UnityEditor.MaterialEditor): void;
+    AssignNewShaderToMaterial(material: any, oldShader: any, newShader: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

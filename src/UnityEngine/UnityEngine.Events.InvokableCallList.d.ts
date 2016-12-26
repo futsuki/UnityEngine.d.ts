@@ -3,12 +3,12 @@ declare namespace UnityEngine.Events {
     // constructors
     constructor();
     // methods
-    AddPersistentInvokableCall(call: UnityEngine.Events.BaseInvokableCall): any;
-    AddListener(call: UnityEngine.Events.BaseInvokableCall): any;
-    RemoveListener(targetObj: any, method: any): any;
-    Clear(): any;
-    ClearPersistent(): any;
-    Invoke(parameters: any[]): any;
+    AddPersistentInvokableCall(call: UnityEngine.Events.BaseInvokableCall): void;
+    AddListener(call: UnityEngine.Events.BaseInvokableCall): void;
+    RemoveListener(targetObj: any, method: any): void;
+    Clear(): void;
+    ClearPersistent(): void;
+    Invoke(parameters: any[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

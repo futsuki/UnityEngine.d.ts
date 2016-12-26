@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static ClearCache(): any;
+    static ClearCache(): void;
     static GetPropertyPreview(previewWidth: number, previewHeight: number, useCurveRanges: boolean, curveRanges: any, property: UnityEditor.SerializedProperty, color: any): any;
     static GetPropertyPreviewFilled(previewWidth: number, previewHeight: number, useCurveRanges: boolean, curveRanges: any, property: UnityEditor.SerializedProperty, color: any, topFillColor: any, bottomFillColor: any): any;
     static GetPropertyPreviewRegion(previewWidth: number, previewHeight: number, useCurveRanges: boolean, curveRanges: any, property: UnityEditor.SerializedProperty, property2: UnityEditor.SerializedProperty, color: any): any;

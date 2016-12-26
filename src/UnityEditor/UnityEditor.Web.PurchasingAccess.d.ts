@@ -6,12 +6,12 @@ declare namespace UnityEditor.Web {
     GetServiceName(): string;
     GetServiceDisplayName(): string;
     IsServiceEnabled(): boolean;
-    EnableService(enabled: boolean): any;
-    InstallUnityPackage(): any;
+    EnableService(enabled: boolean): void;
+    InstallUnityPackage(): void;
     GetInstalledETag(): string;
-    OnProjectUnbound(): any;
-    ShowServicePage(): any;
-    GoBackToHub(): any;
+    OnProjectUnbound(): void;
+    ShowServicePage(): void;
+    GoBackToHub(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

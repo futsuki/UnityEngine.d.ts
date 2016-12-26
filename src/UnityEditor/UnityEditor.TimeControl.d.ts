@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    DoTimeControl(rect: any): any;
-    OnDisable(): any;
-    Update(): any;
+    DoTimeControl(rect: any): void;
+    OnDisable(): void;
+    Update(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

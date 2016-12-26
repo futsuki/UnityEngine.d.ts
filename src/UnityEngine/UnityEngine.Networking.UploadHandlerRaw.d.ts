@@ -3,7 +3,7 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(data: number[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

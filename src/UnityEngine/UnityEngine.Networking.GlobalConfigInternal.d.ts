@@ -3,13 +3,13 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(config: UnityEngine.Networking.GlobalConfig);
     // methods
-    InitWrapper(): any;
-    InitThreadAwakeTimeout(ms: number): any;
-    InitReactorModel(model: number): any;
-    InitReactorMaximumReceivedMessages(size: number): any;
-    InitReactorMaximumSentMessages(size: number): any;
-    InitMaxPacketSize(size: number): any;
-    Dispose(): any;
+    InitWrapper(): void;
+    InitThreadAwakeTimeout(ms: number): void;
+    InitReactorModel(model: number): void;
+    InitReactorMaximumReceivedMessages(size: number): void;
+    InitReactorMaximumSentMessages(size: number): void;
+    InitMaxPacketSize(size: number): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

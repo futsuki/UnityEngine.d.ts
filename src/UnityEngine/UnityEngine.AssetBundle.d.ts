@@ -31,7 +31,7 @@ declare namespace UnityEngine {
     LoadAllAssets(type: any): UnityEngine.Object[];
     LoadAllAssetsAsync(): UnityEngine.AssetBundleRequest;
     LoadAllAssetsAsync(type: any): UnityEngine.AssetBundleRequest;
-    Unload(unloadAllLoadedObjects: boolean): any;
+    Unload(unloadAllLoadedObjects: boolean): void;
     AllAssetNames(): string[];
     GetAllAssetNames(): string[];
     GetAllScenePaths(): string[];

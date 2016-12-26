@@ -3,7 +3,7 @@ declare namespace UnityEditor.Scripting {
     // constructors
     constructor();
     // methods
-    static FixFiles(filesToFix: string[]): any;
+    static FixFiles(filesToFix: string[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

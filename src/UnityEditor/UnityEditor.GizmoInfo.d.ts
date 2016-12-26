@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Update(point1: any, point2: any): any;
-    Update(center: any, length: number, angle: number): any;
+    Update(point1: any, point2: any): void;
+    Update(center: any, length: number, angle: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

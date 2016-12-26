@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor(en: UnityEditor.EditorMetricCollectionType);
     // methods
-    Send(): any;
-    Dispose(): any;
+    Send(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

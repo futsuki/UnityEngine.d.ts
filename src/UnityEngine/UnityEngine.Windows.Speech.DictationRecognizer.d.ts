@@ -6,9 +6,9 @@ declare namespace UnityEngine.Windows.Speech {
     constructor(topic: UnityEngine.Windows.Speech.DictationTopicConstraint);
     constructor(minimumConfidence: UnityEngine.Windows.Speech.ConfidenceLevel, topic: UnityEngine.Windows.Speech.DictationTopicConstraint);
     // methods
-    Start(): any;
-    Stop(): any;
-    Dispose(): any;
+    Start(): void;
+    Stop(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

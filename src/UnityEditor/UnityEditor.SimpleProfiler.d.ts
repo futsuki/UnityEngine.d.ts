@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Begin(label: string): any;
-    static End(): any;
-    static PrintTimes(): any;
+    static Begin(label: string): void;
+    static End(): void;
+    static PrintTimes(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

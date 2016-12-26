@@ -5,13 +5,13 @@ declare namespace UnityEditor {
     // methods
     GetLineCount(): number;
     HasTrue(): boolean;
-    SetLineCount(): any;
+    SetLineCount(): void;
     GetFoldersCount(): number;
-    ClearSelection(): any;
-    AddAssetItems(assets: UnityEditor.AssetsItem[]): any;
-    AddAssetItems(assets: UnityEditor.Changeset): any;
-    AddAssetItems(assets: UnityEditor.DeletedAsset[]): any;
-    Clear(): any;
+    ClearSelection(): void;
+    AddAssetItems(assets: UnityEditor.AssetsItem[]): void;
+    AddAssetItems(assets: UnityEditor.Changeset): void;
+    AddAssetItems(assets: UnityEditor.DeletedAsset[]): void;
+    Clear(): void;
     NextFileFolder(folder: any, file: any): boolean;
     IndexToFolderAndFile(index: number, folder: any, file: any): boolean;
     Equals(obj: any): boolean;

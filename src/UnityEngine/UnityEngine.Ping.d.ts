@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor(address: string);
     // methods
-    DestroyPing(): any;
+    DestroyPing(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

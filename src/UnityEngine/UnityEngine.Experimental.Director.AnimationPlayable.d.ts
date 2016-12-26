@@ -3,7 +3,7 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     private constructor();
     // methods
-    Destroy(): any;
+    Destroy(): void;
     AddInput(input: UnityEngine.Experimental.Director.Playable): number;
     SetInput(source: UnityEngine.Experimental.Director.Playable, index: number): boolean;
     SetInputs(sources: any): boolean;
@@ -16,7 +16,7 @@ declare namespace UnityEngine.Experimental.Director {
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     ToString(): string;
     GetType(): any;
     // properties

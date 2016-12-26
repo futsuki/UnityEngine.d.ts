@@ -7,13 +7,13 @@ declare namespace UnityEditor {
     static GetRandomUnusedPort(): number;
     static PingHost(host: string, port: number, timeout: number): boolean;
     static WaitForServerToComeAlive(port: number): boolean;
-    static Kill(): any;
-    static CreateIfNeeded(): any;
-    static Setup(): any;
+    static Kill(): void;
+    static CreateIfNeeded(): void;
+    static Setup(): void;
     static GetLocalCacheServerPort(): number;
-    static Clear(): any;
+    static Clear(): void;
     static CheckValidCacheLocation(path: string): boolean;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

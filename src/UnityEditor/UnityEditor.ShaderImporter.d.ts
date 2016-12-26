@@ -4,10 +4,10 @@ declare namespace UnityEditor {
     constructor();
     // methods
     GetShader(): any;
-    SetDefaultTextures(name: string[], textures: any[]): any;
+    SetDefaultTextures(name: string[], textures: any[]): void;
     GetDefaultTexture(name: string): any;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): any;
-    SaveAndReimport(): any;
+    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
+    SaveAndReimport(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

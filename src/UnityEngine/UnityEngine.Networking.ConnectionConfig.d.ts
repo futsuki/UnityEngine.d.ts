@@ -4,7 +4,7 @@ declare namespace UnityEngine.Networking {
     constructor();
     constructor(config: UnityEngine.Networking.ConnectionConfig);
     // methods
-    static Validate(config: UnityEngine.Networking.ConnectionConfig): any;
+    static Validate(config: UnityEngine.Networking.ConnectionConfig): void;
     AddChannel(value: UnityEngine.Networking.QosType): number;
     GetChannel(idx: number): UnityEngine.Networking.QosType;
     Equals(obj: any): boolean;

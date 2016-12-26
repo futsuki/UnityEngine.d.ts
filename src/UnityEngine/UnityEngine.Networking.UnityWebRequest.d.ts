@@ -26,11 +26,11 @@ declare namespace UnityEngine.Networking {
     static SerializeFormSections(multipartFormSections: any, boundary: number[]): number[];
     static GenerateBoundary(): number[];
     static SerializeSimpleForm(formFields: any): number[];
-    Dispose(): any;
+    Dispose(): void;
     Send(): UnityEngine.AsyncOperation;
-    Abort(): any;
+    Abort(): void;
     GetRequestHeader(name: string): string;
-    SetRequestHeader(name: string, value: string): any;
+    SetRequestHeader(name: string, value: string): void;
     GetResponseHeader(name: string): string;
     GetResponseHeaders(): any;
     Equals(obj: any): boolean;

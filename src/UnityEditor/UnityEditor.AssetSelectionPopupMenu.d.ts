@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Show(buttonRect: any, classNames: string[], initialSelectedInstanceID: number): any;
+    static Show(buttonRect: any, classNames: string[], initialSelectedInstanceID: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

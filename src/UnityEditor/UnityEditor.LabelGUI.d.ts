@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnEnable(): any;
-    OnDisable(): any;
-    OnLostFocus(): any;
-    AssetLabelsChangedForObject(asset: any): any;
-    SaveLabels(): any;
-    AssetLabelListCallback(element: UnityEditor.PopupList.ListElement): any;
-    InitLabelCache(assets: any[]): any;
-    OnLabelGUI(assets: any[]): any;
+    OnEnable(): void;
+    OnDisable(): void;
+    OnLostFocus(): void;
+    AssetLabelsChangedForObject(asset: any): void;
+    SaveLabels(): void;
+    AssetLabelListCallback(element: UnityEditor.PopupList.ListElement): void;
+    InitLabelCache(assets: any[]): void;
+    OnLabelGUI(assets: any[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

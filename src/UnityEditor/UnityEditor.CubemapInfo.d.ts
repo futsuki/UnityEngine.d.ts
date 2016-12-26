@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SetCubemapShadowInfo(newCubemapShadowInfo: UnityEditor.CubemapInfo): any;
-    ResetEnvInfos(): any;
+    SetCubemapShadowInfo(newCubemapShadowInfo: UnityEditor.CubemapInfo): void;
+    ResetEnvInfos(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

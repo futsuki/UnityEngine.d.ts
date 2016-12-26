@@ -3,19 +3,19 @@ declare namespace UnityEditor {
     // constructors
     constructor(name: string, target: UnityEditor.BuildTarget, inspector: UnityEditor.TextureImporterInspector);
     // methods
-    SetOverriddenForAll(overridden: boolean): any;
-    SetMaxTextureSizeForAll(maxTextureSize: number): any;
-    SetTextureCompressionForAll(textureCompression: UnityEditor.TextureImporterCompression): any;
-    SetCompressionQualityForAll(quality: number): any;
-    SetCrunchedCompressionForAll(crunched: boolean): any;
-    SetTextureFormatForAll(format: UnityEditor.TextureImporterFormat): any;
-    SetAllowsAlphaSplitForAll(value: boolean): any;
+    SetOverriddenForAll(overridden: boolean): void;
+    SetMaxTextureSizeForAll(maxTextureSize: number): void;
+    SetTextureCompressionForAll(textureCompression: UnityEditor.TextureImporterCompression): void;
+    SetCompressionQualityForAll(quality: number): void;
+    SetCrunchedCompressionForAll(crunched: boolean): void;
+    SetTextureFormatForAll(format: UnityEditor.TextureImporterFormat): void;
+    SetAllowsAlphaSplitForAll(value: boolean): void;
     SupportsFormat(format: UnityEditor.TextureImporterFormat, importer: UnityEditor.TextureImporter): boolean;
     GetSettings(importer: UnityEditor.TextureImporter): UnityEditor.TextureImporterSettings;
-    SetChanged(): any;
+    SetChanged(): void;
     HasChanged(): boolean;
-    Sync(): any;
-    Apply(): any;
+    Sync(): void;
+    Apply(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

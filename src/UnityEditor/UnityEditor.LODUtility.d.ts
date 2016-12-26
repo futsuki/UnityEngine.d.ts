@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static CalculateLODGroupBoundingBox(group: any): any;
+    static CalculateLODGroupBoundingBox(group: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

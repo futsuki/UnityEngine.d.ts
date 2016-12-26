@@ -4,7 +4,7 @@ declare namespace UnityEditorInternal {
     constructor();
     // methods
     static Process(state: UnityEditorInternal.IAnimationRecordingState, modifications: UnityEditor.UndoPropertyModification[]): UnityEditor.UndoPropertyModification[];
-    static SaveModifiedCurve(curve: UnityEditorInternal.AnimationWindowCurve, clip: any): any;
+    static SaveModifiedCurve(curve: UnityEditorInternal.AnimationWindowCurve, clip: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,9 +3,9 @@ declare namespace UnityEditorInternal.VR {
     // constructors
     constructor();
     // methods
-    Draw(rect: any): any;
+    Draw(rect: any): void;
     GetHeight(): number;
-    Initialize(vrEditorSettings: UnityEditor.SerializedProperty): any;
+    Initialize(vrEditorSettings: UnityEditor.SerializedProperty): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

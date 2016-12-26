@@ -5,16 +5,16 @@ declare namespace UnityEditor {
     // methods
     Count(): number;
     GetPreset(index: number): any;
-    Add(presetObject: any, presetName: string): any;
-    Replace(index: number, newPresetObject: any): any;
-    Remove(index: number): any;
-    Move(index: number, destIndex: number, insertAfterDestIndex: boolean): any;
-    Draw(rect: any, index: number): any;
-    Draw(rect: any, presetObject: any): any;
+    Add(presetObject: any, presetName: string): void;
+    Replace(index: number, newPresetObject: any): void;
+    Remove(index: number): void;
+    Move(index: number, destIndex: number, insertAfterDestIndex: boolean): void;
+    Draw(rect: any, index: number): void;
+    Draw(rect: any, presetObject: any): void;
     GetName(index: number): string;
-    SetName(index: number, presetName: string): any;
-    DebugCreateTonsOfPresets(): any;
-    SetDirty(): any;
+    SetName(index: number, presetName: string): void;
+    DebugCreateTonsOfPresets(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

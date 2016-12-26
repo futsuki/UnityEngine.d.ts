@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetDirty(): any;
+    SetDirty(): void;
     static CreateInstance(className: string): UnityEngine.ScriptableObject;
     static CreateInstance(type: any): UnityEngine.ScriptableObject;
     ToString(): string;

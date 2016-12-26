@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static SetPreview(type: UnityEditor.ModelImporterAnimationType, go: any): any;
+    static SetPreview(type: UnityEditor.ModelImporterAnimationType, go: any): void;
     static GetPreview(type: UnityEditor.ModelImporterAnimationType): any;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

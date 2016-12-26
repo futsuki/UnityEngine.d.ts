@@ -19,7 +19,7 @@ declare namespace UnityEngine {
     static GetMouseButton(button: number): boolean;
     static GetMouseButtonDown(button: number): boolean;
     static GetMouseButtonUp(button: number): boolean;
-    static ResetInputAxes(): any;
+    static ResetInputAxes(): void;
     static GetAccelerationEvent(index: number): UnityEngine.AccelerationEvent;
     static GetTouch(index: number): UnityEngine.Touch;
     Equals(obj: any): boolean;

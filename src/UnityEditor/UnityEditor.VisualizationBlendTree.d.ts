@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Init(blendTree: UnityEditor.Animations.BlendTree, animator: any): any;
-    Reset(): any;
-    Destroy(): any;
-    Update(): any;
+    Init(blendTree: UnityEditor.Animations.BlendTree, animator: any): void;
+    Reset(): void;
+    Destroy(): void;
+    Update(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

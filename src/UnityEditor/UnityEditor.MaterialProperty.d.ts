@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    ReadFromMaterialPropertyBlock(block: any): any;
-    WriteToMaterialPropertyBlock(materialblock: any, changedPropertyMask: number): any;
+    ReadFromMaterialPropertyBlock(block: any): void;
+    WriteToMaterialPropertyBlock(materialblock: any, changedPropertyMask: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

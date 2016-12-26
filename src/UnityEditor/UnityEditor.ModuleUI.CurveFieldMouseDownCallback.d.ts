@@ -6,7 +6,7 @@ declare namespace UnityEditor.ModuleUI {
     Invoke(button: number, drawRect: any, curveRanges: any): boolean;
     BeginInvoke(button: number, drawRect: any, curveRanges: any, callback: any, object: any): any;
     EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

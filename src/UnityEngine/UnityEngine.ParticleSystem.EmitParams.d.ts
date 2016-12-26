@@ -3,15 +3,15 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    ResetPosition(): any;
-    ResetVelocity(): any;
-    ResetAxisOfRotation(): any;
-    ResetRotation(): any;
-    ResetAngularVelocity(): any;
-    ResetStartSize(): any;
-    ResetStartColor(): any;
-    ResetRandomSeed(): any;
-    ResetStartLifetime(): any;
+    ResetPosition(): void;
+    ResetVelocity(): void;
+    ResetAxisOfRotation(): void;
+    ResetRotation(): void;
+    ResetAngularVelocity(): void;
+    ResetStartSize(): void;
+    ResetStartColor(): void;
+    ResetRandomSeed(): void;
+    ResetStartLifetime(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

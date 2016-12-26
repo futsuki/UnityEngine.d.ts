@@ -6,8 +6,8 @@ declare namespace UnityEditor.Connect {
     static GetServiceEnv(serviceName: string): number;
     static ServicePrefKey(baseKey: string, serviceName: string): string;
     static FixUrl(url: string, serviceName: string): string;
-    static ShowPanelPrefUI(): any;
-    static StorePanelPrefs(): any;
+    static ShowPanelPrefUI(): void;
+    static StorePanelPrefs(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

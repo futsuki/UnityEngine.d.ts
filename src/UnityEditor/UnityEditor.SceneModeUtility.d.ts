@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static SearchForType(type: any): any;
+    static SearchForType(type: any): void;
     static SearchBar(types: any[]): any;
     static StaticFlagField(label: string, property: UnityEditor.SerializedProperty, flag: number): boolean;
     static SetStaticFlags(targetObjects: any[], changedFlags: number, flagValue: boolean): boolean;

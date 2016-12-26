@@ -3,7 +3,7 @@ declare namespace UnityEditor.IMGUI.Controls {
     // constructors
     constructor();
     // methods
-    FireAnimationEndedEvent(): any;
+    FireAnimationEndedEvent(): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

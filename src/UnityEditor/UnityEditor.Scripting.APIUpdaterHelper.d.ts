@@ -5,7 +5,7 @@ declare namespace UnityEditor.Scripting {
     // methods
     static IsReferenceToMissingObsoleteMember(namespaceName: string, className: string): boolean;
     static IsReferenceToTypeWithChangedNamespace(simpleOrQualifiedName: string): boolean;
-    static Run(commaSeparatedListOfAssemblies: string): any;
+    static Run(commaSeparatedListOfAssemblies: string): void;
     static DoesAssemblyRequireUpgrade(assemblyFullPath: string): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

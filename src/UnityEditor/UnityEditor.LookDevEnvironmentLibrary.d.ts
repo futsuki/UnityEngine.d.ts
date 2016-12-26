@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    InsertHDRI(cubemap: any): any;
-    InsertHDRI(cubemap: any, insertionIndex: number): any;
+    InsertHDRI(cubemap: any): void;
+    InsertHDRI(cubemap: any, insertionIndex: number): void;
     RemoveHDRI(cubemap: any): boolean;
-    CleanupDeletedHDRI(): any;
-    SetLookDevView(lookDevView: UnityEditor.LookDevView): any;
-    OnBeforeSerialize(): any;
-    OnAfterDeserialize(): any;
-    SetDirty(): any;
+    CleanupDeletedHDRI(): void;
+    SetLookDevView(lookDevView: UnityEditor.LookDevView): void;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

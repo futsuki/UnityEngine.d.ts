@@ -6,8 +6,8 @@ declare namespace UnityEditor {
     static StatsString(): string;
     static TextureFromUrl(url: string, label: string, textureSize: number, labelStyle: any, iconStyle: any, onlyCached: boolean): UnityEditor.AssetStorePreviewManager.CachedAssetStoreImage;
     static CheckRepaint(): boolean;
-    static AbortSize(size: number): any;
-    static AbortOlderThan(timestamp: number): any;
+    static AbortSize(size: number): void;
+    static AbortOlderThan(timestamp: number): void;
     // properties
     // fields
   }

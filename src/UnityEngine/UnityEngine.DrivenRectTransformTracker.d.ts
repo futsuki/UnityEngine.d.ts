@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    Add(driver: UnityEngine.Object, rectTransform: UnityEngine.RectTransform, drivenProperties: UnityEngine.DrivenTransformProperties): any;
-    Clear(): any;
+    Add(driver: UnityEngine.Object, rectTransform: UnityEngine.RectTransform, drivenProperties: UnityEngine.DrivenTransformProperties): void;
+    Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

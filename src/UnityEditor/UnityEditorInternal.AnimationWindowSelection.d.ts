@@ -3,24 +3,24 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    BeginOperations(): any;
-    EndOperations(): any;
-    Notify(): any;
-    Set(newItem: UnityEditorInternal.AnimationWindowSelectionItem): any;
-    Add(newItem: UnityEditorInternal.AnimationWindowSelectionItem): any;
-    RangeAdd(newItemArray: UnityEditorInternal.AnimationWindowSelectionItem[]): any;
-    UpdateClip(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, newClip: any): any;
-    UpdateTimeOffset(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, timeOffset: number): any;
+    BeginOperations(): void;
+    EndOperations(): void;
+    Notify(): void;
+    Set(newItem: UnityEditorInternal.AnimationWindowSelectionItem): void;
+    Add(newItem: UnityEditorInternal.AnimationWindowSelectionItem): void;
+    RangeAdd(newItemArray: UnityEditorInternal.AnimationWindowSelectionItem[]): void;
+    UpdateClip(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, newClip: any): void;
+    UpdateTimeOffset(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, timeOffset: number): void;
     Exists(itemToFind: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
     Exists(predicate: any): boolean;
     Find(predicate: any): UnityEditorInternal.AnimationWindowSelectionItem;
     First(): UnityEditorInternal.AnimationWindowSelectionItem;
     GetRefreshHash(): number;
-    Refresh(): any;
+    Refresh(): void;
     ToArray(): UnityEditorInternal.AnimationWindowSelectionItem[];
-    Clear(): any;
-    ClearCache(): any;
-    Synchronize(): any;
+    Clear(): void;
+    ClearCache(): void;
+    Synchronize(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

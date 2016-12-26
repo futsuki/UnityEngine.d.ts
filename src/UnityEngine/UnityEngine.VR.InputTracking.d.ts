@@ -5,7 +5,7 @@ declare namespace UnityEngine.VR {
     // methods
     static GetLocalPosition(node: UnityEngine.VR.VRNode): UnityEngine.Vector3;
     static GetLocalRotation(node: UnityEngine.VR.VRNode): UnityEngine.Quaternion;
-    static Recenter(): any;
+    static Recenter(): void;
     // properties
     // fields
   }

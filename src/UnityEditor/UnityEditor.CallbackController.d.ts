@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor(callback: any, callbacksPerSecond: number);
     // methods
-    Start(): any;
-    Stop(): any;
+    Start(): void;
+    Stop(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

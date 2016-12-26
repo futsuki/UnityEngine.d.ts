@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Show(showAlpha: boolean): any;
-    static Close(): any;
+    static Show(showAlpha: boolean): void;
+    static Close(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

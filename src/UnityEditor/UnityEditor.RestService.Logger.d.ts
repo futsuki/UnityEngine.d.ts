@@ -3,8 +3,8 @@ declare namespace UnityEditor.RestService {
     // constructors
     constructor();
     // methods
-    static Log(an_exception: any): any;
-    static Log(a_message: string): any;
+    static Log(an_exception: any): void;
+    static Log(a_message: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

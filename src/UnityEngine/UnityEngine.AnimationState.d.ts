@@ -3,9 +3,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    AddMixingTransform(mix: UnityEngine.Transform, recursive: boolean): any;
-    AddMixingTransform(mix: UnityEngine.Transform): any;
-    RemoveMixingTransform(mix: UnityEngine.Transform): any;
+    AddMixingTransform(mix: UnityEngine.Transform, recursive: boolean): void;
+    AddMixingTransform(mix: UnityEngine.Transform): void;
+    RemoveMixingTransform(mix: UnityEngine.Transform): void;
     Equals(o: any): boolean;
     GetHashCode(): number;
     GetType(): any;

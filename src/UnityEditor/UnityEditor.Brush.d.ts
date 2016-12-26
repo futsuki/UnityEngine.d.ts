@@ -5,7 +5,7 @@ declare namespace UnityEditor {
     // methods
     Load(brushTex: any, size: number): boolean;
     GetStrengthInt(ix: number, iy: number): number;
-    Dispose(): any;
+    Dispose(): void;
     GetPreviewProjector(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

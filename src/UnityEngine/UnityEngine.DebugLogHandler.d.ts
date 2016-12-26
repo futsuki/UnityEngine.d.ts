@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): any;
-    LogException(exception: any, context: UnityEngine.Object): any;
+    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): void;
+    LogException(exception: any, context: UnityEngine.Object): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

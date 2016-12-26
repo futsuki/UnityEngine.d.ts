@@ -6,7 +6,7 @@ declare namespace UnityEditor.LayerMatrixGUI {
     Invoke(layerA: number, layerB: number): boolean;
     BeginInvoke(layerA: number, layerB: number, callback: any, object: any): any;
     EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

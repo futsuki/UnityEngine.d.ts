@@ -3,10 +3,10 @@ declare namespace UnityEditorInternal.ProfilerHierarchyGUI {
     // constructors
     constructor();
     // methods
-    Init(maxNumberSearchResults: number): any;
-    Filter(property: UnityEditorInternal.ProfilerProperty, columns: UnityEditorInternal.ProfilerColumn[], searchString: string, frameIndex: number, sortType: UnityEditorInternal.ProfilerColumn): any;
-    Draw(gui: UnityEditorInternal.ProfilerHierarchyGUI, controlID: number): any;
-    MoveSelection(steps: number, gui: UnityEditorInternal.ProfilerHierarchyGUI): any;
+    Init(maxNumberSearchResults: number): void;
+    Filter(property: UnityEditorInternal.ProfilerProperty, columns: UnityEditorInternal.ProfilerColumn[], searchString: string, frameIndex: number, sortType: UnityEditorInternal.ProfilerColumn): void;
+    Draw(gui: UnityEditorInternal.ProfilerHierarchyGUI, controlID: number): void;
+    MoveSelection(steps: number, gui: UnityEditorInternal.ProfilerHierarchyGUI): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

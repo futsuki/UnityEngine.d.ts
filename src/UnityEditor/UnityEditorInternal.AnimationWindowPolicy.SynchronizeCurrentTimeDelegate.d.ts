@@ -6,7 +6,7 @@ declare namespace UnityEditorInternal.AnimationWindowPolicy {
     Invoke(time: any): boolean;
     BeginInvoke(time: any, callback: any, object: any): any;
     EndInvoke(time: any, result: any): boolean;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

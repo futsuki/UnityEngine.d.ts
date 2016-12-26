@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Track(page: string): any;
-    static Event(category: string, action: string, label: string, value: number): any;
+    static Track(page: string): void;
+    static Event(category: string, action: string, label: string, value: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

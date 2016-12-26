@@ -2,20 +2,20 @@
     // constructors
     constructor();
     // methods
-    OnDisable(): any;
-    OnDestroy(): any;
-    Refresh(): any;
-    Init(): any;
+    OnDisable(): void;
+    OnDestroy(): void;
+    Refresh(): void;
+    Init(): void;
     IsAdded(min: UnityEditor.SerializedProperty, max: UnityEditor.SerializedProperty): boolean;
     IsAdded(max: UnityEditor.SerializedProperty): boolean;
-    AddCurve(curveData: ParticleSystemCurveEditor.CurveData): any;
-    RemoveCurve(max: UnityEditor.SerializedProperty): any;
-    RemoveCurve(min: UnityEditor.SerializedProperty, max: UnityEditor.SerializedProperty): any;
+    AddCurve(curveData: ParticleSystemCurveEditor.CurveData): void;
+    RemoveCurve(max: UnityEditor.SerializedProperty): void;
+    RemoveCurve(min: UnityEditor.SerializedProperty, max: UnityEditor.SerializedProperty): void;
     GetCurveColor(max: UnityEditor.SerializedProperty): any;
-    AddCurveDataIfNeeded(curveName: string, curveData: ParticleSystemCurveEditor.CurveData): any;
-    SetVisible(curveProp: UnityEditor.SerializedProperty, visible: boolean): any;
+    AddCurveDataIfNeeded(curveName: string, curveData: ParticleSystemCurveEditor.CurveData): void;
+    SetVisible(curveProp: UnityEditor.SerializedProperty, visible: boolean): void;
     GetAvailableColor(): any;
-    OnGUI(rect: any): any;
+    OnGUI(rect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

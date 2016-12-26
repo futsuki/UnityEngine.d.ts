@@ -3,7 +3,7 @@ declare namespace UnityEditor.Animations {
     // constructors
     private constructor();
     // methods
-    DoUndo(target: any, undoOperation: string): any;
+    DoUndo(target: any, undoOperation: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

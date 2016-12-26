@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Stop(): any;
+    static Stop(): void;
     static Highlight(windowTitle: string, text: string): boolean;
     static Highlight(windowTitle: string, text: string, mode: UnityEditor.HighlightSearchMode): boolean;
-    static HighlightIdentifier(position: any, identifier: string): any;
+    static HighlightIdentifier(position: any, identifier: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

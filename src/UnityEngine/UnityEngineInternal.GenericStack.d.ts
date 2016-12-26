@@ -3,14 +3,14 @@ declare namespace UnityEngineInternal {
     // constructors
     constructor();
     // methods
-    Clear(): any;
+    Clear(): void;
     Clone(): any;
     Contains(obj: any): boolean;
-    CopyTo(array: any, index: number): any;
+    CopyTo(array: any, index: number): void;
     GetEnumerator(): any;
     Peek(): any;
     Pop(): any;
-    Push(obj: any): any;
+    Push(obj: any): void;
     ToArray(): any[];
     Equals(obj: any): boolean;
     GetHashCode(): number;

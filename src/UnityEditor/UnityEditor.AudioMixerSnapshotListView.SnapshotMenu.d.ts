@@ -3,7 +3,7 @@ declare namespace UnityEditor.AudioMixerSnapshotListView {
     // constructors
     constructor();
     // methods
-    static Show(buttonRect: any, snapshot: UnityEditor.Audio.AudioMixerSnapshotController, list: UnityEditor.AudioMixerSnapshotListView): any;
+    static Show(buttonRect: any, snapshot: UnityEditor.Audio.AudioMixerSnapshotController, list: UnityEditor.AudioMixerSnapshotListView): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

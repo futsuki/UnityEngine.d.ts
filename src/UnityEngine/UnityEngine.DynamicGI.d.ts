@@ -3,11 +3,11 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetEmissive(renderer: UnityEngine.Renderer, color: UnityEngine.Color): any;
-    static UpdateMaterials(renderer: UnityEngine.Renderer): any;
-    static UpdateMaterials(terrain: UnityEngine.Terrain): any;
-    static UpdateMaterials(terrain: UnityEngine.Terrain, x: number, y: number, width: number, height: number): any;
-    static UpdateEnvironment(): any;
+    static SetEmissive(renderer: UnityEngine.Renderer, color: UnityEngine.Color): void;
+    static UpdateMaterials(renderer: UnityEngine.Renderer): void;
+    static UpdateMaterials(terrain: UnityEngine.Terrain): void;
+    static UpdateMaterials(terrain: UnityEngine.Terrain, x: number, y: number, width: number, height: number): void;
+    static UpdateEnvironment(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

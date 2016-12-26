@@ -7,8 +7,8 @@ declare namespace UnityEditor {
     GetOverrideSampleSettings(platform: string): UnityEditor.AudioImporterSampleSettings;
     SetOverrideSampleSettings(platform: string, settings: UnityEditor.AudioImporterSampleSettings): boolean;
     ClearSampleSettingOverride(platform: string): boolean;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): any;
-    SaveAndReimport(): any;
+    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
+    SaveAndReimport(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

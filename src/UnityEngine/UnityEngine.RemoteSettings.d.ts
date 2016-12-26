@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static CallOnUpdate(): any;
+    static CallOnUpdate(): void;
     static GetInt(key: string, defaultValue: number): number;
     static GetInt(key: string): number;
     static GetFloat(key: string, defaultValue: number): number;

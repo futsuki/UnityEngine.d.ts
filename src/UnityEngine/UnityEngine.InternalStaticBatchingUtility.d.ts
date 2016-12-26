@@ -3,9 +3,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static CombineRoot(staticBatchRoot: UnityEngine.GameObject): any;
-    static Combine(staticBatchRoot: UnityEngine.GameObject, combineOnlyStatic: boolean, isEditorPostprocessScene: boolean): any;
-    static CombineGameObjects(gos: UnityEngine.GameObject[], staticBatchRoot: UnityEngine.GameObject, isEditorPostprocessScene: boolean): any;
+    static CombineRoot(staticBatchRoot: UnityEngine.GameObject): void;
+    static Combine(staticBatchRoot: UnityEngine.GameObject, combineOnlyStatic: boolean, isEditorPostprocessScene: boolean): void;
+    static CombineGameObjects(gos: UnityEngine.GameObject[], staticBatchRoot: UnityEngine.GameObject, isEditorPostprocessScene: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

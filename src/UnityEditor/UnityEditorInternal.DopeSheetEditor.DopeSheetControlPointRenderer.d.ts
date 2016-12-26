@@ -3,12 +3,12 @@ declare namespace UnityEditorInternal.DopeSheetEditor {
     // constructors
     constructor();
     // methods
-    FlushCache(): any;
-    Clear(): any;
-    Render(): any;
-    AddUnselectedKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): any;
-    AddSelectedKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): any;
-    AddDragDropKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): any;
+    FlushCache(): void;
+    Clear(): void;
+    Render(): void;
+    AddUnselectedKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): void;
+    AddSelectedKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): void;
+    AddDragDropKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

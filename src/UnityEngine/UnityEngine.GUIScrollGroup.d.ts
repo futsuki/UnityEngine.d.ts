@@ -3,16 +3,16 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    CalcWidth(): any;
-    SetHorizontal(x: number, width: number): any;
-    CalcHeight(): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
-    ResetCursor(): any;
+    CalcWidth(): void;
+    SetHorizontal(x: number, width: number): void;
+    CalcHeight(): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
+    ResetCursor(): void;
     PeekNext(): UnityEngine.Rect;
     GetNext(): UnityEngine.GUILayoutEntry;
     GetLast(): UnityEngine.Rect;
-    Add(e: UnityEngine.GUILayoutEntry): any;
+    Add(e: UnityEngine.GUILayoutEntry): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

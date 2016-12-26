@@ -5,12 +5,12 @@ declare namespace UnityEditor.Web {
     // methods
     GetServiceName(): string;
     GetServiceDisplayName(): string;
-    SetMultiplayerId(id: number): any;
+    SetMultiplayerId(id: number): void;
     IsServiceEnabled(): boolean;
-    EnableService(enabled: boolean): any;
-    OnProjectUnbound(): any;
-    ShowServicePage(): any;
-    GoBackToHub(): any;
+    EnableService(enabled: boolean): void;
+    OnProjectUnbound(): void;
+    ShowServicePage(): void;
+    GoBackToHub(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

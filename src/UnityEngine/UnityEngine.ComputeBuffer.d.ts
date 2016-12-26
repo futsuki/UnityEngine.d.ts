@@ -4,12 +4,12 @@ declare namespace UnityEngine {
     constructor(count: number, stride: number);
     constructor(count: number, stride: number, type: UnityEngine.ComputeBufferType);
     // methods
-    Dispose(): any;
-    Release(): any;
-    SetData(data: any): any;
-    SetCounterValue(counterValue: number): any;
-    GetData(data: any): any;
-    static CopyCount(src: UnityEngine.ComputeBuffer, dst: UnityEngine.ComputeBuffer, dstOffset: number): any;
+    Dispose(): void;
+    Release(): void;
+    SetData(data: any): void;
+    SetCounterValue(counterValue: number): void;
+    GetData(data: any): void;
+    static CopyCount(src: UnityEngine.ComputeBuffer, dst: UnityEngine.ComputeBuffer, dstOffset: number): void;
     GetNativeBufferPtr(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

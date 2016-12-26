@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    HandleEvents(): any;
-    IgnoreEvents(): any;
+    HandleEvents(): void;
+    IgnoreEvents(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

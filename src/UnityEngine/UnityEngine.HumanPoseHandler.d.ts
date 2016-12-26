@@ -3,9 +3,9 @@ declare namespace UnityEngine {
     // constructors
     constructor(avatar: UnityEngine.Avatar, root: UnityEngine.Transform);
     // methods
-    Dispose(): any;
-    GetHumanPose(humanPose: any): any;
-    SetHumanPose(humanPose: any): any;
+    Dispose(): void;
+    GetHumanPose(humanPose: any): void;
+    SetHumanPose(humanPose: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

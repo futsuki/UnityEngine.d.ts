@@ -3,13 +3,13 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D, ignore: boolean): any;
-    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): any;
+    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D, ignore: boolean): void;
+    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): void;
     static GetIgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): boolean;
-    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): any;
-    static IgnoreLayerCollision(layer1: number, layer2: number): any;
+    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): void;
+    static IgnoreLayerCollision(layer1: number, layer2: number): void;
     static GetIgnoreLayerCollision(layer1: number, layer2: number): boolean;
-    static SetLayerCollisionMask(layer: number, layerMask: number): any;
+    static SetLayerCollisionMask(layer: number, layerMask: number): void;
     static GetLayerCollisionMask(layer: number): number;
     static IsTouching(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): boolean;
     static IsTouchingLayers(collider: UnityEngine.Collider2D, layerMask: number): boolean;

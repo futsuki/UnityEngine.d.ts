@@ -3,10 +3,10 @@ declare namespace UnityEditor.ProceduralMaterialInspector {
     // constructors
     constructor(objects: any[], _name: string, _target: UnityEditor.BuildTarget, _icon: any);
     // methods
-    SetOverride(master: UnityEditor.ProceduralMaterialInspector.ProceduralPlatformSetting): any;
-    ClearOverride(master: UnityEditor.ProceduralMaterialInspector.ProceduralPlatformSetting): any;
+    SetOverride(master: UnityEditor.ProceduralMaterialInspector.ProceduralPlatformSetting): void;
+    ClearOverride(master: UnityEditor.ProceduralMaterialInspector.ProceduralPlatformSetting): void;
     HasChanged(): boolean;
-    Apply(): any;
+    Apply(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

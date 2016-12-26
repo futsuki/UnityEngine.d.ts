@@ -3,10 +3,10 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(info: UnityEditor.Collaboration.CollabInfo): any;
+    Invoke(info: UnityEditor.Collaboration.CollabInfo): void;
     BeginInvoke(info: UnityEditor.Collaboration.CollabInfo, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

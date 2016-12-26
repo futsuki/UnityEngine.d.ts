@@ -3,7 +3,7 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    SetPlane(index: number, transform: UnityEngine.Transform): any;
+    SetPlane(index: number, transform: UnityEngine.Transform): void;
     GetPlane(index: number): UnityEngine.Transform;
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -3,7 +3,7 @@ declare namespace UnityEditor.BuildReporting {
     // constructors
     private constructor();
     // methods
-    static OnAddedExecutable(report: UnityEditor.BuildReporting.BuildReport, fileIndex: number): any;
+    static OnAddedExecutable(report: UnityEditor.BuildReporting.BuildReport, fileIndex: number): void;
     // properties
     // fields
   }

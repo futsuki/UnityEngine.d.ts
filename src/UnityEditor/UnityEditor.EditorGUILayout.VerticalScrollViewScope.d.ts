@@ -4,7 +4,7 @@ declare namespace UnityEditor.EditorGUILayout {
     constructor(scrollPosition: any, options: any[]);
     constructor(scrollPosition: any, alwaysShowVertical: boolean, verticalScrollbar: any, background: any, options: any[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

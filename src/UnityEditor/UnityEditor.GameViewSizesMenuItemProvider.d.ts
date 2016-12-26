@@ -6,10 +6,10 @@ declare namespace UnityEditor {
     Count(): number;
     GetItem(index: number): any;
     Add(obj: any): number;
-    Replace(index: number, obj: any): any;
-    Remove(index: number): any;
+    Replace(index: number, obj: any): void;
+    Remove(index: number): void;
     Create(): any;
-    Move(index: number, destIndex: number, insertAfterDestIndex: boolean): any;
+    Move(index: number, destIndex: number, insertAfterDestIndex: boolean): void;
     GetName(index: number): string;
     IsModificationAllowed(index: number): boolean;
     GetSeperatorIndices(): number[];

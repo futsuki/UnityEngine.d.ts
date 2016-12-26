@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor(previewObject: any);
     // methods
-    OnClose(): any;
-    OnGUI(rect: any): any;
+    OnClose(): void;
+    OnGUI(rect: any): void;
     GetWindowSize(): any;
-    OnOpen(): any;
+    OnOpen(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,15 +3,15 @@ declare namespace UnityEditor.BuildReporting {
     // constructors
     constructor();
     // methods
-    OnBeforeSerialize(): any;
-    OnAfterDeserialize(): any;
-    RegisterDependency(obj: string, depends: string): any;
-    AddModule(module: string): any;
-    SetIcon(dependency: string, icon: string): any;
-    AddModuleSize(module: string, size: number): any;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    RegisterDependency(obj: string, depends: string): void;
+    AddModule(module: string): void;
+    SetIcon(dependency: string, icon: string): void;
+    AddModuleSize(module: string, size: number): void;
     static GetBuildReportData(report: UnityEditor.BuildReporting.BuildReport): UnityEditor.BuildReporting.StrippingInfo;
     static ModuleName(module: string): string;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

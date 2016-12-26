@@ -3,10 +3,10 @@ declare namespace UnityEditor.ObjectListArea {
     // constructors
     constructor(owner: UnityEditor.ObjectListArea, groupTitle: string);
     // methods
-    UpdateAssets(): any;
-    UpdateHeight(): any;
-    UpdateFilter(hierarchyType: UnityEditor.HierarchyType, searchFilter: UnityEditor.SearchFilter, showFoldersFirst: boolean): any;
-    Draw(yOffset: number, scrollPos: any): any;
+    UpdateAssets(): void;
+    UpdateHeight(): void;
+    UpdateFilter(hierarchyType: UnityEditor.HierarchyType, searchFilter: UnityEditor.SearchFilter, showFoldersFirst: boolean): void;
+    Draw(yOffset: number, scrollPos: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,10 +3,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture): any;
+    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture): void;
     BeginInvoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

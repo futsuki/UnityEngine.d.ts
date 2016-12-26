@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor(style: any);
     // methods
-    OnGUI(windowRect: any, pixelTime: number): any;
-    HandleEvents(): any;
-    IgnoreEvents(): any;
+    OnGUI(windowRect: any, pixelTime: number): void;
+    HandleEvents(): void;
+    IgnoreEvents(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

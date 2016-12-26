@@ -3,15 +3,15 @@ declare namespace UnityEditorInternal.ReorderableList {
     // constructors
     constructor();
     // methods
-    DrawFooter(rect: any, list: UnityEditorInternal.ReorderableList): any;
-    DoAddButton(list: UnityEditorInternal.ReorderableList): any;
-    DoRemoveButton(list: UnityEditorInternal.ReorderableList): any;
-    DrawHeaderBackground(headerRect: any): any;
-    DrawHeader(headerRect: any, serializedObject: UnityEditor.SerializedObject, element: UnityEditor.SerializedProperty, elementList: any): any;
-    DrawElementBackground(rect: any, index: number, selected: boolean, focused: boolean, draggable: boolean): any;
-    DrawElementDraggingHandle(rect: any, index: number, selected: boolean, focused: boolean, draggable: boolean): any;
-    DrawElement(rect: any, element: UnityEditor.SerializedProperty, listItem: any, selected: boolean, focused: boolean, draggable: boolean): any;
-    DrawNoneElement(rect: any, draggable: boolean): any;
+    DrawFooter(rect: any, list: UnityEditorInternal.ReorderableList): void;
+    DoAddButton(list: UnityEditorInternal.ReorderableList): void;
+    DoRemoveButton(list: UnityEditorInternal.ReorderableList): void;
+    DrawHeaderBackground(headerRect: any): void;
+    DrawHeader(headerRect: any, serializedObject: UnityEditor.SerializedObject, element: UnityEditor.SerializedProperty, elementList: any): void;
+    DrawElementBackground(rect: any, index: number, selected: boolean, focused: boolean, draggable: boolean): void;
+    DrawElementDraggingHandle(rect: any, index: number, selected: boolean, focused: boolean, draggable: boolean): void;
+    DrawElement(rect: any, element: UnityEditor.SerializedProperty, listItem: any, selected: boolean, focused: boolean, draggable: boolean): void;
+    DrawNoneElement(rect: any, draggable: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

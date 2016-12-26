@@ -3,14 +3,14 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Destroy(obj: UnityEngine.Object, t: number): any;
-    static Destroy(obj: UnityEngine.Object): any;
-    static DestroyImmediate(obj: UnityEngine.Object, allowDestroyingAssets: boolean): any;
-    static DestroyImmediate(obj: UnityEngine.Object): any;
+    static Destroy(obj: UnityEngine.Object, t: number): void;
+    static Destroy(obj: UnityEngine.Object): void;
+    static DestroyImmediate(obj: UnityEngine.Object, allowDestroyingAssets: boolean): void;
+    static DestroyImmediate(obj: UnityEngine.Object): void;
     static FindObjectsOfType(type: any): UnityEngine.Object[];
-    static DontDestroyOnLoad(target: UnityEngine.Object): any;
-    static DestroyObject(obj: UnityEngine.Object, t: number): any;
-    static DestroyObject(obj: UnityEngine.Object): any;
+    static DontDestroyOnLoad(target: UnityEngine.Object): void;
+    static DestroyObject(obj: UnityEngine.Object, t: number): void;
+    static DestroyObject(obj: UnityEngine.Object): void;
     static FindSceneObjectsOfType(type: any): UnityEngine.Object[];
     static FindObjectsOfTypeIncludingAssets(type: any): UnityEngine.Object[];
     static FindObjectsOfTypeAll(type: any): UnityEngine.Object[];

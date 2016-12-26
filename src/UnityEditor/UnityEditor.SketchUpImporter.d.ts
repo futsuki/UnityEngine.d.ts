@@ -5,9 +5,9 @@ declare namespace UnityEditor {
     // methods
     GetScenes(): UnityEditor.SketchUpImportScene[];
     GetDefaultCamera(): UnityEditor.SketchUpImportCamera;
-    CreateDefaultMaskForClip(clip: UnityEditor.ModelImporterClipAnimation): any;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): any;
-    SaveAndReimport(): any;
+    CreateDefaultMaskForClip(clip: UnityEditor.ModelImporterClipAnimation): void;
+    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
+    SaveAndReimport(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

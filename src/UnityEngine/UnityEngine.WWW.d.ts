@@ -6,8 +6,8 @@ declare namespace UnityEngine {
     constructor(url: string, postData: number[]);
     constructor(url: string, postData: number[], headers: any);
     // methods
-    Dispose(): any;
-    InitWWW(url: string, postData: number[], iHeaders: string[]): any;
+    Dispose(): void;
+    InitWWW(url: string, postData: number[], iHeaders: string[]): void;
     static EscapeURL(s: string): string;
     static EscapeURL(s: string, e: any): string;
     static UnEscapeURL(s: string): string;
@@ -18,10 +18,10 @@ declare namespace UnityEngine {
     GetAudioClipCompressed(): UnityEngine.AudioClip;
     GetAudioClipCompressed(threeD: boolean): UnityEngine.AudioClip;
     GetAudioClipCompressed(threeD: boolean, audioType: UnityEngine.AudioType): UnityEngine.AudioClip;
-    LoadImageIntoTexture(tex: UnityEngine.Texture2D): any;
+    LoadImageIntoTexture(tex: UnityEngine.Texture2D): void;
     static GetURL(url: string): string;
     static GetTextureFromURL(url: string): UnityEngine.Texture2D;
-    LoadUnityWeb(): any;
+    LoadUnityWeb(): void;
     static LoadFromCacheOrDownload(url: string, version: number): UnityEngine.WWW;
     static LoadFromCacheOrDownload(url: string, version: number, crc: number): UnityEngine.WWW;
     static LoadFromCacheOrDownload(url: string, hash: UnityEngine.Hash128): UnityEngine.WWW;

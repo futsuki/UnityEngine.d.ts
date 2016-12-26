@@ -3,7 +3,7 @@ declare namespace UnityEditor.StyleDrawInspectView {
     // constructors
     constructor();
     // methods
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

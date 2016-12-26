@@ -388,17 +388,17 @@ declare namespace SimpleJson {
     constructor(capacity: number);
     // methods
     ToString(): string;
-    Add(item: any): any;
-    AddRange(collection: any): any;
+    Add(item: any): void;
+    AddRange(collection: any): void;
     AsReadOnly(): any;
     BinarySearch(item: any): number;
     BinarySearch(item: any, comparer: any): number;
     BinarySearch(index: number, count: number, item: any, comparer: any): number;
-    Clear(): any;
+    Clear(): void;
     Contains(item: any): boolean;
-    CopyTo(array: any[]): any;
-    CopyTo(array: any[], arrayIndex: number): any;
-    CopyTo(index: number, array: any[], arrayIndex: number, count: number): any;
+    CopyTo(array: any[]): void;
+    CopyTo(array: any[], arrayIndex: number): void;
+    CopyTo(index: number, array: any[], arrayIndex: number, count: number): void;
     Exists(match: any): boolean;
     Find(match: any): any;
     FindAll(match: any): any;
@@ -409,29 +409,29 @@ declare namespace SimpleJson {
     FindLastIndex(match: any): number;
     FindLastIndex(startIndex: number, match: any): number;
     FindLastIndex(startIndex: number, count: number, match: any): number;
-    ForEach(action: any): any;
+    ForEach(action: any): void;
     GetEnumerator(): any;
     GetRange(index: number, count: number): any;
     IndexOf(item: any): number;
     IndexOf(item: any, index: number): number;
     IndexOf(item: any, index: number, count: number): number;
-    Insert(index: number, item: any): any;
-    InsertRange(index: number, collection: any): any;
+    Insert(index: number, item: any): void;
+    InsertRange(index: number, collection: any): void;
     LastIndexOf(item: any): number;
     LastIndexOf(item: any, index: number): number;
     LastIndexOf(item: any, index: number, count: number): number;
     Remove(item: any): boolean;
     RemoveAll(match: any): number;
-    RemoveAt(index: number): any;
-    RemoveRange(index: number, count: number): any;
-    Reverse(): any;
-    Reverse(index: number, count: number): any;
-    Sort(): any;
-    Sort(comparer: any): any;
-    Sort(comparison: any): any;
-    Sort(index: number, count: number, comparer: any): any;
+    RemoveAt(index: number): void;
+    RemoveRange(index: number, count: number): void;
+    Reverse(): void;
+    Reverse(index: number, count: number): void;
+    Sort(): void;
+    Sort(comparer: any): void;
+    Sort(comparison: any): void;
+    Sort(index: number, count: number, comparer: any): void;
     ToArray(): any[];
-    TrimExcess(): any;
+    TrimExcess(): void;
     TrueForAll(match: any): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -440,7 +440,7 @@ declare namespace SimpleJson {
     Capacity: number;
     readonly Count: number;
     get_Item(index: number): any;
-    set_Item(index: number, value: any): any;
+    set_Item(index: number, value: any): void;
     // fields
   }
 }
@@ -450,14 +450,14 @@ declare namespace SimpleJson {
     constructor();
     constructor(comparer: any);
     // methods
-    Add(key: string, value: any): any;
+    Add(key: string, value: any): void;
     ContainsKey(key: string): boolean;
     Remove(key: string): boolean;
     TryGetValue(key: string, value: any): boolean;
-    Add(item: any): any;
-    Clear(): any;
+    Add(item: any): void;
+    Clear(): void;
     Contains(item: any): boolean;
-    CopyTo(array: any[], arrayIndex: number): any;
+    CopyTo(array: any[], arrayIndex: number): void;
     Remove(item: any): boolean;
     GetEnumerator(): any;
     ToString(): string;
@@ -469,7 +469,7 @@ declare namespace SimpleJson {
     readonly Keys: any;
     readonly Values: any;
     get_Item(key: string): any;
-    set_Item(key: string, value: any): any;
+    set_Item(key: string, value: any): void;
     readonly Count: number;
     readonly IsReadOnly: boolean;
     // fields
@@ -498,7 +498,7 @@ declare namespace SimpleJson.Reflection.ReflectionUtils {
     Invoke(args: any[]): any;
     BeginInvoke(args: any[], callback: any, object: any): any;
     EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -560,7 +560,7 @@ declare namespace SimpleJson.Reflection.ReflectionUtils {
     Invoke(source: any): any;
     BeginInvoke(source: any, callback: any, object: any): any;
     EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -579,10 +579,10 @@ declare namespace SimpleJson.Reflection.ReflectionUtils {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: any, value: any): any;
+    Invoke(source: any, value: any): void;
     BeginInvoke(source: any, value: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -823,9 +823,9 @@ declare namespace UnityEditor.Advertisements {
     private constructor();
     // methods
     static IsPlatformEnabled(platform: UnityEngine.RuntimePlatform): boolean;
-    static SetPlatformEnabled(platform: UnityEngine.RuntimePlatform, value: boolean): any;
+    static SetPlatformEnabled(platform: UnityEngine.RuntimePlatform, value: boolean): void;
     static GetGameId(platform: UnityEngine.RuntimePlatform): string;
-    static SetGameId(platform: UnityEngine.RuntimePlatform, gameId: string): any;
+    static SetGameId(platform: UnityEngine.RuntimePlatform, gameId: string): void;
     // properties
     // fields
   }
@@ -1032,10 +1032,10 @@ declare namespace UnityEngine.ADBannerView {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -1054,10 +1054,10 @@ declare namespace UnityEngine.ADBannerView {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -1167,8 +1167,8 @@ declare namespace UnityEngine {
     constructor(autoReload: boolean);
     constructor();
     // methods
-    Show(): any;
-    ReloadAd(): any;
+    Show(): void;
+    ReloadAd(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -1184,10 +1184,10 @@ declare namespace UnityEngine.ADInterstitialAd {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -1210,16 +1210,16 @@ declare namespace UnityEngine.AI {
     static CalculatePath(sourcePosition: UnityEngine.Vector3, targetPosition: UnityEngine.Vector3, areaMask: number, path: UnityEngine.AI.NavMeshPath): boolean;
     static FindClosestEdge(sourcePosition: UnityEngine.Vector3, hit: any, areaMask: number): boolean;
     static SamplePosition(sourcePosition: UnityEngine.Vector3, hit: any, maxDistance: number, areaMask: number): boolean;
-    static SetLayerCost(layer: number, cost: number): any;
+    static SetLayerCost(layer: number, cost: number): void;
     static GetLayerCost(layer: number): number;
     static GetNavMeshLayerFromName(layerName: string): number;
-    static SetAreaCost(areaIndex: number, cost: number): any;
+    static SetAreaCost(areaIndex: number, cost: number): void;
     static GetAreaCost(areaIndex: number): number;
     static GetAreaFromName(areaName: string): number;
     static CalculateTriangulation(): UnityEngine.AI.NavMeshTriangulation;
-    static Triangulate(vertices: any, indices: any): any;
-    static AddOffMeshLinks(): any;
-    static RestoreNavMesh(): any;
+    static Triangulate(vertices: any, indices: any): void;
+    static AddOffMeshLinks(): void;
+    static RestoreNavMesh(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -1237,22 +1237,22 @@ declare namespace UnityEngine.AI {
     constructor();
     // methods
     SetDestination(target: UnityEngine.Vector3): boolean;
-    ActivateCurrentOffMeshLink(activated: boolean): any;
-    CompleteOffMeshLink(): any;
+    ActivateCurrentOffMeshLink(activated: boolean): void;
+    CompleteOffMeshLink(): void;
     Warp(newPosition: UnityEngine.Vector3): boolean;
-    Move(offset: UnityEngine.Vector3): any;
-    Stop(): any;
-    Stop(stopUpdates: boolean): any;
-    Resume(): any;
-    ResetPath(): any;
+    Move(offset: UnityEngine.Vector3): void;
+    Stop(): void;
+    Stop(stopUpdates: boolean): void;
+    Resume(): void;
+    ResetPath(): void;
     SetPath(path: UnityEngine.AI.NavMeshPath): boolean;
     FindClosestEdge(hit: any): boolean;
     Raycast(targetPosition: UnityEngine.Vector3, hit: any): boolean;
     CalculatePath(targetPosition: UnityEngine.Vector3, path: UnityEngine.AI.NavMeshPath): boolean;
     SamplePathPosition(areaMask: number, maxDistance: number, hit: any): boolean;
-    SetLayerCost(layer: number, cost: number): any;
+    SetLayerCost(layer: number, cost: number): void;
     GetLayerCost(layer: number): number;
-    SetAreaCost(areaIndex: number, areaCost: number): any;
+    SetAreaCost(areaIndex: number, areaCost: number): void;
     GetAreaCost(areaIndex: number): number;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
@@ -1264,20 +1264,20 @@ declare namespace UnityEngine.AI {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -1376,20 +1376,20 @@ declare namespace UnityEngine.AI {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -1460,7 +1460,7 @@ declare namespace UnityEngine.AI {
     constructor();
     // methods
     GetCornersNonAlloc(results: UnityEngine.Vector3[]): number;
-    ClearCorners(): any;
+    ClearCorners(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -1539,7 +1539,7 @@ declare namespace UnityEngine.AI {
     // constructors
     constructor();
     // methods
-    UpdatePositions(): any;
+    UpdatePositions(): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -1550,20 +1550,20 @@ declare namespace UnityEngine.AI {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -1695,7 +1695,7 @@ declare namespace UnityEngine.Analytics {
     // constructors
     constructor(name: string);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Add(key: string, value: string): boolean;
     Add(key: string, value: boolean): boolean;
     Add(key: string, value: any): boolean;
@@ -1711,7 +1711,7 @@ declare namespace UnityEngine.Analytics {
     Add(key: string, value: number): boolean;
     Add(key: string, value: number): boolean;
     Add(eventData: any): boolean;
-    InternalCreate(name: string): any;
+    InternalCreate(name: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -1747,7 +1747,7 @@ declare namespace UnityEngine.Analytics {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
+    Dispose(): void;
     FlushEvents(): UnityEngine.Analytics.AnalyticsResult;
     SetUserId(userId: string): UnityEngine.Analytics.AnalyticsResult;
     SetUserGender(gender: UnityEngine.Analytics.Gender): UnityEngine.Analytics.AnalyticsResult;
@@ -1781,20 +1781,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -1877,9 +1877,9 @@ declare namespace UnityEngine {
     // constructors
     constructor(className: string);
     // methods
-    Dispose(): any;
-    Call(methodName: string, args: any[]): any;
-    CallStatic(methodName: string, args: any[]): any;
+    Dispose(): void;
+    Call(methodName: string, args: any[]): void;
+    CallStatic(methodName: string, args: any[]): void;
     GetRawObject(): any;
     GetRawClass(): any;
     Equals(obj: any): boolean;
@@ -1904,9 +1904,9 @@ declare namespace UnityEngine {
     // constructors
     constructor(className: string, args: any[]);
     // methods
-    Dispose(): any;
-    Call(methodName: string, args: any[]): any;
-    CallStatic(methodName: string, args: any[]): any;
+    Dispose(): void;
+    Call(methodName: string, args: any[]): void;
+    CallStatic(methodName: string, args: any[]): void;
     GetRawObject(): any;
     GetRawClass(): any;
     Equals(obj: any): boolean;
@@ -1939,10 +1939,10 @@ declare namespace UnityEngine {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -1961,7 +1961,7 @@ declare namespace UnityEngine {
     // constructors
     constructor(runnable: UnityEngine.AndroidJavaRunnable);
     // methods
-    run(): any;
+    run(): void;
     Invoke(methodName: string, args: any[]): UnityEngine.AndroidJavaObject;
     Invoke(methodName: string, javaArgs: UnityEngine.AndroidJavaObject[]): UnityEngine.AndroidJavaObject;
     Equals(obj: any): boolean;
@@ -1991,15 +1991,15 @@ declare namespace UnityEngine {
     static Throw(obj: any): number;
     static ThrowNew(clazz: any, message: string): number;
     static ExceptionOccurred(): any;
-    static ExceptionDescribe(): any;
-    static ExceptionClear(): any;
-    static FatalError(message: string): any;
+    static ExceptionDescribe(): void;
+    static ExceptionClear(): void;
+    static FatalError(message: string): void;
     static PushLocalFrame(capacity: number): number;
     static PopLocalFrame(ptr: any): any;
     static NewGlobalRef(obj: any): any;
-    static DeleteGlobalRef(obj: any): any;
+    static DeleteGlobalRef(obj: any): void;
     static NewLocalRef(obj: any): any;
-    static DeleteLocalRef(obj: any): any;
+    static DeleteLocalRef(obj: any): void;
     static IsSameObject(obj1: any, obj2: any): boolean;
     static EnsureLocalCapacity(capacity: number): number;
     static AllocObject(clazz: any): any;
@@ -2023,7 +2023,7 @@ declare namespace UnityEngine {
     static CallFloatMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): number;
     static CallDoubleMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): number;
     static CallLongMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): number;
-    static CallVoidMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): any;
+    static CallVoidMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): void;
     static GetStringField(obj: any, fieldID: any): string;
     static GetObjectField(obj: any, fieldID: any): any;
     static GetBooleanField(obj: any, fieldID: any): boolean;
@@ -2034,16 +2034,16 @@ declare namespace UnityEngine {
     static GetLongField(obj: any, fieldID: any): number;
     static GetFloatField(obj: any, fieldID: any): number;
     static GetDoubleField(obj: any, fieldID: any): number;
-    static SetStringField(obj: any, fieldID: any, val: string): any;
-    static SetObjectField(obj: any, fieldID: any, val: any): any;
-    static SetBooleanField(obj: any, fieldID: any, val: boolean): any;
-    static SetByteField(obj: any, fieldID: any, val: number): any;
-    static SetCharField(obj: any, fieldID: any, val: any): any;
-    static SetShortField(obj: any, fieldID: any, val: number): any;
-    static SetIntField(obj: any, fieldID: any, val: number): any;
-    static SetLongField(obj: any, fieldID: any, val: number): any;
-    static SetFloatField(obj: any, fieldID: any, val: number): any;
-    static SetDoubleField(obj: any, fieldID: any, val: number): any;
+    static SetStringField(obj: any, fieldID: any, val: string): void;
+    static SetObjectField(obj: any, fieldID: any, val: any): void;
+    static SetBooleanField(obj: any, fieldID: any, val: boolean): void;
+    static SetByteField(obj: any, fieldID: any, val: number): void;
+    static SetCharField(obj: any, fieldID: any, val: any): void;
+    static SetShortField(obj: any, fieldID: any, val: number): void;
+    static SetIntField(obj: any, fieldID: any, val: number): void;
+    static SetLongField(obj: any, fieldID: any, val: number): void;
+    static SetFloatField(obj: any, fieldID: any, val: number): void;
+    static SetDoubleField(obj: any, fieldID: any, val: number): void;
     static CallStaticStringMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): string;
     static CallStaticObjectMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): any;
     static CallStaticIntMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): number;
@@ -2054,7 +2054,7 @@ declare namespace UnityEngine {
     static CallStaticFloatMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): number;
     static CallStaticDoubleMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): number;
     static CallStaticLongMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): number;
-    static CallStaticVoidMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): any;
+    static CallStaticVoidMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): void;
     static GetStaticStringField(clazz: any, fieldID: any): string;
     static GetStaticObjectField(clazz: any, fieldID: any): any;
     static GetStaticBooleanField(clazz: any, fieldID: any): boolean;
@@ -2065,16 +2065,16 @@ declare namespace UnityEngine {
     static GetStaticLongField(clazz: any, fieldID: any): number;
     static GetStaticFloatField(clazz: any, fieldID: any): number;
     static GetStaticDoubleField(clazz: any, fieldID: any): number;
-    static SetStaticStringField(clazz: any, fieldID: any, val: string): any;
-    static SetStaticObjectField(clazz: any, fieldID: any, val: any): any;
-    static SetStaticBooleanField(clazz: any, fieldID: any, val: boolean): any;
-    static SetStaticByteField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticCharField(clazz: any, fieldID: any, val: any): any;
-    static SetStaticShortField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticIntField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticLongField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticFloatField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticDoubleField(clazz: any, fieldID: any, val: number): any;
+    static SetStaticStringField(clazz: any, fieldID: any, val: string): void;
+    static SetStaticObjectField(clazz: any, fieldID: any, val: any): void;
+    static SetStaticBooleanField(clazz: any, fieldID: any, val: boolean): void;
+    static SetStaticByteField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticCharField(clazz: any, fieldID: any, val: any): void;
+    static SetStaticShortField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticIntField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticLongField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticFloatField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticDoubleField(clazz: any, fieldID: any, val: number): void;
     static ToBooleanArray(array: boolean[]): any;
     static ToByteArray(array: number[]): any;
     static ToCharArray(array: any[]): any;
@@ -2113,15 +2113,15 @@ declare namespace UnityEngine {
     static GetFloatArrayElement(array: any, index: number): number;
     static GetDoubleArrayElement(array: any, index: number): number;
     static GetObjectArrayElement(array: any, index: number): any;
-    static SetBooleanArrayElement(array: any, index: number, val: number): any;
-    static SetByteArrayElement(array: any, index: number, val: number): any;
-    static SetCharArrayElement(array: any, index: number, val: any): any;
-    static SetShortArrayElement(array: any, index: number, val: number): any;
-    static SetIntArrayElement(array: any, index: number, val: number): any;
-    static SetLongArrayElement(array: any, index: number, val: number): any;
-    static SetFloatArrayElement(array: any, index: number, val: number): any;
-    static SetDoubleArrayElement(array: any, index: number, val: number): any;
-    static SetObjectArrayElement(array: any, index: number, obj: any): any;
+    static SetBooleanArrayElement(array: any, index: number, val: number): void;
+    static SetByteArrayElement(array: any, index: number, val: number): void;
+    static SetCharArrayElement(array: any, index: number, val: any): void;
+    static SetShortArrayElement(array: any, index: number, val: number): void;
+    static SetIntArrayElement(array: any, index: number, val: number): void;
+    static SetLongArrayElement(array: any, index: number, val: number): void;
+    static SetFloatArrayElement(array: any, index: number, val: number): void;
+    static SetDoubleArrayElement(array: any, index: number, val: number): void;
+    static SetObjectArrayElement(array: any, index: number, obj: any): void;
     // properties
     // fields
   }
@@ -2143,7 +2143,7 @@ declare namespace UnityEngine {
     static CreateJavaProxy(proxy: UnityEngine.AndroidJavaProxy): any;
     static ConvertToJNIArray(array: any): any;
     static CreateJNIArgArray(args: any[]): UnityEngine.jvalue[];
-    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): any;
+    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): void;
     static GetConstructorID(jclass: any, args: any[]): any;
     static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
     static GetSignature(obj: any): string;
@@ -2157,9 +2157,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static CheckException(): any;
-    static DeleteGlobalRef(globalref: any): any;
-    static DeleteLocalRef(localref: any): any;
+    static CheckException(): void;
+    static DeleteGlobalRef(globalref: any): void;
+    static DeleteLocalRef(localref: any): void;
     static NewStringUTF(bytes: string): any;
     static GetStringUTFChars(str: any): string;
     static GetObjectClass(ptr: any): any;
@@ -2171,16 +2171,16 @@ declare namespace UnityEngine {
     static FromReflectedField(refField: any): any;
     static FindClass(name: string): any;
     static NewObject(clazz: any, methodID: any, args: UnityEngine.jvalue[]): any;
-    static SetStaticObjectField(clazz: any, fieldID: any, val: any): any;
-    static SetStaticStringField(clazz: any, fieldID: any, val: string): any;
-    static SetStaticCharField(clazz: any, fieldID: any, val: any): any;
-    static SetStaticDoubleField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticFloatField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticLongField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticShortField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticByteField(clazz: any, fieldID: any, val: number): any;
-    static SetStaticBooleanField(clazz: any, fieldID: any, val: boolean): any;
-    static SetStaticIntField(clazz: any, fieldID: any, val: number): any;
+    static SetStaticObjectField(clazz: any, fieldID: any, val: any): void;
+    static SetStaticStringField(clazz: any, fieldID: any, val: string): void;
+    static SetStaticCharField(clazz: any, fieldID: any, val: any): void;
+    static SetStaticDoubleField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticFloatField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticLongField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticShortField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticByteField(clazz: any, fieldID: any, val: number): void;
+    static SetStaticBooleanField(clazz: any, fieldID: any, val: boolean): void;
+    static SetStaticIntField(clazz: any, fieldID: any, val: number): void;
     static GetStaticObjectField(clazz: any, fieldID: any): any;
     static GetStaticStringField(clazz: any, fieldID: any): string;
     static GetStaticCharField(clazz: any, fieldID: any): any;
@@ -2191,7 +2191,7 @@ declare namespace UnityEngine {
     static GetStaticByteField(clazz: any, fieldID: any): number;
     static GetStaticBooleanField(clazz: any, fieldID: any): boolean;
     static GetStaticIntField(clazz: any, fieldID: any): number;
-    static CallStaticVoidMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): any;
+    static CallStaticVoidMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): void;
     static CallStaticObjectMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): any;
     static CallStaticStringMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): string;
     static CallStaticCharMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): any;
@@ -2202,16 +2202,16 @@ declare namespace UnityEngine {
     static CallStaticByteMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): number;
     static CallStaticBooleanMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): boolean;
     static CallStaticIntMethod(clazz: any, methodID: any, args: UnityEngine.jvalue[]): number;
-    static SetObjectField(obj: any, fieldID: any, val: any): any;
-    static SetStringField(obj: any, fieldID: any, val: string): any;
-    static SetCharField(obj: any, fieldID: any, val: any): any;
-    static SetDoubleField(obj: any, fieldID: any, val: number): any;
-    static SetFloatField(obj: any, fieldID: any, val: number): any;
-    static SetLongField(obj: any, fieldID: any, val: number): any;
-    static SetShortField(obj: any, fieldID: any, val: number): any;
-    static SetByteField(obj: any, fieldID: any, val: number): any;
-    static SetBooleanField(obj: any, fieldID: any, val: boolean): any;
-    static SetIntField(obj: any, fieldID: any, val: number): any;
+    static SetObjectField(obj: any, fieldID: any, val: any): void;
+    static SetStringField(obj: any, fieldID: any, val: string): void;
+    static SetCharField(obj: any, fieldID: any, val: any): void;
+    static SetDoubleField(obj: any, fieldID: any, val: number): void;
+    static SetFloatField(obj: any, fieldID: any, val: number): void;
+    static SetLongField(obj: any, fieldID: any, val: number): void;
+    static SetShortField(obj: any, fieldID: any, val: number): void;
+    static SetByteField(obj: any, fieldID: any, val: number): void;
+    static SetBooleanField(obj: any, fieldID: any, val: boolean): void;
+    static SetIntField(obj: any, fieldID: any, val: number): void;
     static GetObjectField(obj: any, fieldID: any): any;
     static GetStringField(obj: any, fieldID: any): string;
     static GetCharField(obj: any, fieldID: any): any;
@@ -2222,7 +2222,7 @@ declare namespace UnityEngine {
     static GetByteField(obj: any, fieldID: any): number;
     static GetBooleanField(obj: any, fieldID: any): boolean;
     static GetIntField(obj: any, fieldID: any): number;
-    static CallVoidMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): any;
+    static CallVoidMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): void;
     static CallObjectMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): any;
     static CallStringMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): string;
     static CallCharMethod(obj: any, methodID: any, args: UnityEngine.jvalue[]): any;
@@ -2286,22 +2286,22 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Stop(): any;
-    Stop(name: string): any;
-    Rewind(name: string): any;
-    Rewind(): any;
-    Sample(): any;
+    Stop(): void;
+    Stop(name: string): void;
+    Rewind(name: string): void;
+    Rewind(): void;
+    Sample(): void;
     IsPlaying(name: string): boolean;
     Play(): boolean;
     Play(mode: UnityEngine.PlayMode): boolean;
     Play(animation: string, mode: UnityEngine.PlayMode): boolean;
     Play(animation: string): boolean;
-    CrossFade(animation: string, fadeLength: number, mode: UnityEngine.PlayMode): any;
-    CrossFade(animation: string, fadeLength: number): any;
-    CrossFade(animation: string): any;
-    Blend(animation: string, targetWeight: number, fadeLength: number): any;
-    Blend(animation: string, targetWeight: number): any;
-    Blend(animation: string): any;
+    CrossFade(animation: string, fadeLength: number, mode: UnityEngine.PlayMode): void;
+    CrossFade(animation: string, fadeLength: number): void;
+    CrossFade(animation: string): void;
+    Blend(animation: string, targetWeight: number, fadeLength: number): void;
+    Blend(animation: string, targetWeight: number): void;
+    Blend(animation: string): void;
     CrossFadeQueued(animation: string, fadeLength: number, queue: UnityEngine.QueueMode, mode: UnityEngine.PlayMode): UnityEngine.AnimationState;
     CrossFadeQueued(animation: string, fadeLength: number, queue: UnityEngine.QueueMode): UnityEngine.AnimationState;
     CrossFadeQueued(animation: string, fadeLength: number): UnityEngine.AnimationState;
@@ -2309,15 +2309,15 @@ declare namespace UnityEngine {
     PlayQueued(animation: string, queue: UnityEngine.QueueMode, mode: UnityEngine.PlayMode): UnityEngine.AnimationState;
     PlayQueued(animation: string, queue: UnityEngine.QueueMode): UnityEngine.AnimationState;
     PlayQueued(animation: string): UnityEngine.AnimationState;
-    AddClip(clip: UnityEngine.AnimationClip, newName: string): any;
-    AddClip(clip: UnityEngine.AnimationClip, newName: string, firstFrame: number, lastFrame: number, addLoopFrame: boolean): any;
-    AddClip(clip: UnityEngine.AnimationClip, newName: string, firstFrame: number, lastFrame: number): any;
-    RemoveClip(clip: UnityEngine.AnimationClip): any;
-    RemoveClip(clipName: string): any;
+    AddClip(clip: UnityEngine.AnimationClip, newName: string): void;
+    AddClip(clip: UnityEngine.AnimationClip, newName: string, firstFrame: number, lastFrame: number, addLoopFrame: boolean): void;
+    AddClip(clip: UnityEngine.AnimationClip, newName: string, firstFrame: number, lastFrame: number): void;
+    RemoveClip(clip: UnityEngine.AnimationClip): void;
+    RemoveClip(clipName: string): void;
     GetClipCount(): number;
     Play(mode: UnityEngine.AnimationPlayMode): boolean;
     Play(animation: string, mode: UnityEngine.AnimationPlayMode): boolean;
-    SyncLayer(layer: number): any;
+    SyncLayer(layer: number): void;
     GetEnumerator(): any;
     GetClip(name: string): UnityEngine.AnimationClip;
     GetComponent(type: any): UnityEngine.Component;
@@ -2330,20 +2330,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -2421,11 +2421,11 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SampleAnimation(go: UnityEngine.GameObject, time: number): any;
-    SetCurve(relativePath: string, type: any, propertyName: string, curve: UnityEngine.AnimationCurve): any;
-    EnsureQuaternionContinuity(): any;
-    ClearCurves(): any;
-    AddEvent(evt: UnityEngine.AnimationEvent): any;
+    SampleAnimation(go: UnityEngine.GameObject, time: number): void;
+    SetCurve(relativePath: string, type: any, propertyName: string, curve: UnityEngine.AnimationCurve): void;
+    EnsureQuaternionContinuity(): void;
+    ClearCurves(): void;
+    AddEvent(evt: UnityEngine.AnimationEvent): void;
     ValidateIfRetargetable(val: boolean): boolean;
     ToString(): string;
     GetInstanceID(): number;
@@ -2500,8 +2500,8 @@ declare namespace UnityEngine {
     AddKey(time: number, value: number): number;
     AddKey(key: UnityEngine.Keyframe): number;
     MoveKey(index: number, key: UnityEngine.Keyframe): number;
-    RemoveKey(index: number): any;
-    SmoothTangents(index: number, weight: number): any;
+    RemoveKey(index: number): void;
+    SmoothTangents(index: number, weight: number): void;
     static Linear(timeStart: number, valueStart: number, timeEnd: number, valueEnd: number): UnityEngine.AnimationCurve;
     static EaseInOut(timeStart: number, valueStart: number, timeEnd: number, valueEnd: number): UnityEngine.AnimationCurve;
     Equals(obj: any): boolean;
@@ -2607,9 +2607,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    AddMixingTransform(mix: UnityEngine.Transform, recursive: boolean): any;
-    AddMixingTransform(mix: UnityEngine.Transform): any;
-    RemoveMixingTransform(mix: UnityEngine.Transform): any;
+    AddMixingTransform(mix: UnityEngine.Transform, recursive: boolean): void;
+    AddMixingTransform(mix: UnityEngine.Transform): void;
+    RemoveMixingTransform(mix: UnityEngine.Transform): void;
     Equals(o: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -2637,114 +2637,114 @@ declare namespace UnityEngine {
     // methods
     GetFloat(name: string): number;
     GetFloat(id: number): number;
-    SetFloat(name: string, value: number): any;
-    SetFloat(name: string, value: number, dampTime: number, deltaTime: number): any;
-    SetFloat(id: number, value: number): any;
-    SetFloat(id: number, value: number, dampTime: number, deltaTime: number): any;
+    SetFloat(name: string, value: number): void;
+    SetFloat(name: string, value: number, dampTime: number, deltaTime: number): void;
+    SetFloat(id: number, value: number): void;
+    SetFloat(id: number, value: number, dampTime: number, deltaTime: number): void;
     GetBool(name: string): boolean;
     GetBool(id: number): boolean;
-    SetBool(name: string, value: boolean): any;
-    SetBool(id: number, value: boolean): any;
+    SetBool(name: string, value: boolean): void;
+    SetBool(id: number, value: boolean): void;
     GetInteger(name: string): number;
     GetInteger(id: number): number;
-    SetInteger(name: string, value: number): any;
-    SetInteger(id: number, value: number): any;
-    SetTrigger(name: string): any;
-    SetTrigger(id: number): any;
-    ResetTrigger(name: string): any;
-    ResetTrigger(id: number): any;
+    SetInteger(name: string, value: number): void;
+    SetInteger(id: number, value: number): void;
+    SetTrigger(name: string): void;
+    SetTrigger(id: number): void;
+    ResetTrigger(name: string): void;
+    ResetTrigger(id: number): void;
     IsParameterControlledByCurve(name: string): boolean;
     IsParameterControlledByCurve(id: number): boolean;
     GetIKPosition(goal: UnityEngine.AvatarIKGoal): UnityEngine.Vector3;
-    SetIKPosition(goal: UnityEngine.AvatarIKGoal, goalPosition: UnityEngine.Vector3): any;
+    SetIKPosition(goal: UnityEngine.AvatarIKGoal, goalPosition: UnityEngine.Vector3): void;
     GetIKRotation(goal: UnityEngine.AvatarIKGoal): UnityEngine.Quaternion;
-    SetIKRotation(goal: UnityEngine.AvatarIKGoal, goalRotation: UnityEngine.Quaternion): any;
+    SetIKRotation(goal: UnityEngine.AvatarIKGoal, goalRotation: UnityEngine.Quaternion): void;
     GetIKPositionWeight(goal: UnityEngine.AvatarIKGoal): number;
-    SetIKPositionWeight(goal: UnityEngine.AvatarIKGoal, value: number): any;
+    SetIKPositionWeight(goal: UnityEngine.AvatarIKGoal, value: number): void;
     GetIKRotationWeight(goal: UnityEngine.AvatarIKGoal): number;
-    SetIKRotationWeight(goal: UnityEngine.AvatarIKGoal, value: number): any;
+    SetIKRotationWeight(goal: UnityEngine.AvatarIKGoal, value: number): void;
     GetIKHintPosition(hint: UnityEngine.AvatarIKHint): UnityEngine.Vector3;
-    SetIKHintPosition(hint: UnityEngine.AvatarIKHint, hintPosition: UnityEngine.Vector3): any;
+    SetIKHintPosition(hint: UnityEngine.AvatarIKHint, hintPosition: UnityEngine.Vector3): void;
     GetIKHintPositionWeight(hint: UnityEngine.AvatarIKHint): number;
-    SetIKHintPositionWeight(hint: UnityEngine.AvatarIKHint, value: number): any;
-    SetLookAtPosition(lookAtPosition: UnityEngine.Vector3): any;
-    SetLookAtWeight(weight: number, bodyWeight: number, headWeight: number, eyesWeight: number): any;
-    SetLookAtWeight(weight: number, bodyWeight: number, headWeight: number): any;
-    SetLookAtWeight(weight: number, bodyWeight: number): any;
-    SetLookAtWeight(weight: number): any;
-    SetLookAtWeight(weight: number, bodyWeight: number, headWeight: number, eyesWeight: number, clampWeight: number): any;
-    SetBoneLocalRotation(humanBoneId: UnityEngine.HumanBodyBones, rotation: UnityEngine.Quaternion): any;
+    SetIKHintPositionWeight(hint: UnityEngine.AvatarIKHint, value: number): void;
+    SetLookAtPosition(lookAtPosition: UnityEngine.Vector3): void;
+    SetLookAtWeight(weight: number, bodyWeight: number, headWeight: number, eyesWeight: number): void;
+    SetLookAtWeight(weight: number, bodyWeight: number, headWeight: number): void;
+    SetLookAtWeight(weight: number, bodyWeight: number): void;
+    SetLookAtWeight(weight: number): void;
+    SetLookAtWeight(weight: number, bodyWeight: number, headWeight: number, eyesWeight: number, clampWeight: number): void;
+    SetBoneLocalRotation(humanBoneId: UnityEngine.HumanBodyBones, rotation: UnityEngine.Quaternion): void;
     GetLayerName(layerIndex: number): string;
     GetLayerIndex(layerName: string): number;
     GetLayerWeight(layerIndex: number): number;
-    SetLayerWeight(layerIndex: number, weight: number): any;
+    SetLayerWeight(layerIndex: number, weight: number): void;
     GetCurrentAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
     GetNextAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
     GetAnimatorTransitionInfo(layerIndex: number): UnityEngine.AnimatorTransitionInfo;
     GetCurrentAnimatorClipInfoCount(layerIndex: number): number;
     GetCurrentAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
-    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): any;
+    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): void;
     GetNextAnimatorClipInfoCount(layerIndex: number): number;
     GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
-    GetNextAnimatorClipInfo(layerIndex: number, clips: any): any;
+    GetNextAnimatorClipInfo(layerIndex: number, clips: any): void;
     IsInTransition(layerIndex: number): boolean;
     GetParameter(index: number): UnityEngine.AnimatorControllerParameter;
-    MatchTarget(matchPosition: UnityEngine.Vector3, matchRotation: UnityEngine.Quaternion, targetBodyPart: UnityEngine.AvatarTarget, weightMask: UnityEngine.MatchTargetWeightMask, startNormalizedTime: number, targetNormalizedTime: number): any;
-    MatchTarget(matchPosition: UnityEngine.Vector3, matchRotation: UnityEngine.Quaternion, targetBodyPart: UnityEngine.AvatarTarget, weightMask: UnityEngine.MatchTargetWeightMask, startNormalizedTime: number): any;
-    InterruptMatchTarget(completeMatch: boolean): any;
-    InterruptMatchTarget(): any;
-    ForceStateNormalizedTime(normalizedTime: number): any;
-    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number): any;
-    CrossFadeInFixedTime(stateName: string, transitionDuration: number): any;
-    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number, fixedTime: number): any;
-    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number, fixedTime: number): any;
-    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number): any;
-    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number): any;
-    CrossFade(stateName: string, transitionDuration: number, layer: number): any;
-    CrossFade(stateName: string, transitionDuration: number): any;
-    CrossFade(stateName: string, transitionDuration: number, layer: number, normalizedTime: number): any;
-    CrossFade(stateNameHash: number, transitionDuration: number, layer: number, normalizedTime: number): any;
-    CrossFade(stateNameHash: number, transitionDuration: number, layer: number): any;
-    CrossFade(stateNameHash: number, transitionDuration: number): any;
-    PlayInFixedTime(stateName: string, layer: number): any;
-    PlayInFixedTime(stateName: string): any;
-    PlayInFixedTime(stateName: string, layer: number, fixedTime: number): any;
-    PlayInFixedTime(stateNameHash: number, layer: number, fixedTime: number): any;
-    PlayInFixedTime(stateNameHash: number, layer: number): any;
-    PlayInFixedTime(stateNameHash: number): any;
-    Play(stateName: string, layer: number): any;
-    Play(stateName: string): any;
-    Play(stateName: string, layer: number, normalizedTime: number): any;
-    Play(stateNameHash: number, layer: number, normalizedTime: number): any;
-    Play(stateNameHash: number, layer: number): any;
-    Play(stateNameHash: number): any;
-    SetTarget(targetIndex: UnityEngine.AvatarTarget, targetNormalizedTime: number): any;
+    MatchTarget(matchPosition: UnityEngine.Vector3, matchRotation: UnityEngine.Quaternion, targetBodyPart: UnityEngine.AvatarTarget, weightMask: UnityEngine.MatchTargetWeightMask, startNormalizedTime: number, targetNormalizedTime: number): void;
+    MatchTarget(matchPosition: UnityEngine.Vector3, matchRotation: UnityEngine.Quaternion, targetBodyPart: UnityEngine.AvatarTarget, weightMask: UnityEngine.MatchTargetWeightMask, startNormalizedTime: number): void;
+    InterruptMatchTarget(completeMatch: boolean): void;
+    InterruptMatchTarget(): void;
+    ForceStateNormalizedTime(normalizedTime: number): void;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number): void;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number): void;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number, fixedTime: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number, fixedTime: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number): void;
+    CrossFade(stateName: string, transitionDuration: number, layer: number): void;
+    CrossFade(stateName: string, transitionDuration: number): void;
+    CrossFade(stateName: string, transitionDuration: number, layer: number, normalizedTime: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number, layer: number, normalizedTime: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number, layer: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number): void;
+    PlayInFixedTime(stateName: string, layer: number): void;
+    PlayInFixedTime(stateName: string): void;
+    PlayInFixedTime(stateName: string, layer: number, fixedTime: number): void;
+    PlayInFixedTime(stateNameHash: number, layer: number, fixedTime: number): void;
+    PlayInFixedTime(stateNameHash: number, layer: number): void;
+    PlayInFixedTime(stateNameHash: number): void;
+    Play(stateName: string, layer: number): void;
+    Play(stateName: string): void;
+    Play(stateName: string, layer: number, normalizedTime: number): void;
+    Play(stateNameHash: number, layer: number, normalizedTime: number): void;
+    Play(stateNameHash: number, layer: number): void;
+    Play(stateNameHash: number): void;
+    SetTarget(targetIndex: UnityEngine.AvatarTarget, targetNormalizedTime: number): void;
     IsControlled(transform: UnityEngine.Transform): boolean;
     GetBoneTransform(humanBoneId: UnityEngine.HumanBodyBones): UnityEngine.Transform;
-    StartPlayback(): any;
-    StopPlayback(): any;
-    StartRecording(frameCount: number): any;
-    StopRecording(): any;
+    StartPlayback(): void;
+    StopPlayback(): void;
+    StartRecording(frameCount: number): void;
+    StopRecording(): void;
     HasState(layerIndex: number, stateID: number): boolean;
     static StringToHash(name: string): number;
-    Update(deltaTime: number): any;
-    Rebind(): any;
-    ApplyBuiltinRootMotion(): any;
+    Update(deltaTime: number): void;
+    Rebind(): void;
+    ApplyBuiltinRootMotion(): void;
     GetVector(name: string): UnityEngine.Vector3;
     GetVector(id: number): UnityEngine.Vector3;
-    SetVector(name: string, value: UnityEngine.Vector3): any;
-    SetVector(id: number, value: UnityEngine.Vector3): any;
+    SetVector(name: string, value: UnityEngine.Vector3): void;
+    SetVector(id: number, value: UnityEngine.Vector3): void;
     GetQuaternion(name: string): UnityEngine.Quaternion;
     GetQuaternion(id: number): UnityEngine.Quaternion;
-    SetQuaternion(name: string, value: UnityEngine.Quaternion): any;
-    SetQuaternion(id: number, value: UnityEngine.Quaternion): any;
+    SetQuaternion(name: string, value: UnityEngine.Quaternion): void;
+    SetQuaternion(id: number, value: UnityEngine.Quaternion): void;
     GetCurrentAnimationClipState(layerIndex: number): UnityEngine.AnimationInfo[];
     GetNextAnimationClipState(layerIndex: number): UnityEngine.AnimationInfo[];
-    Play(pStruct: UnityEngine.Experimental.Director.Playable): any;
-    Stop(): any;
-    SetTime(time: number): any;
+    Play(pStruct: UnityEngine.Experimental.Director.Playable): void;
+    Stop(): void;
+    SetTime(time: number): void;
     GetTime(): number;
-    SetTimeUpdateMode(mode: UnityEngine.Experimental.Director.DirectorUpdateMode): any;
+    SetTimeUpdateMode(mode: UnityEngine.Experimental.Director.DirectorUpdateMode): void;
     GetTimeUpdateMode(): UnityEngine.Experimental.Director.DirectorUpdateMode;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
@@ -2756,20 +2756,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -2938,9 +2938,9 @@ declare namespace UnityEngine {
     // properties
     runtimeAnimatorController: UnityEngine.RuntimeAnimatorController;
     get_Item(name: string): UnityEngine.AnimationClip;
-    set_Item(name: string, value: UnityEngine.AnimationClip): any;
+    set_Item(name: string, value: UnityEngine.AnimationClip): void;
     get_Item(clip: UnityEngine.AnimationClip): UnityEngine.AnimationClip;
-    set_Item(clip: UnityEngine.AnimationClip, value: UnityEngine.AnimationClip): any;
+    set_Item(clip: UnityEngine.AnimationClip, value: UnityEngine.AnimationClip): void;
     clips: UnityEngine.AnimationClipPair[];
     readonly animationClips: UnityEngine.AnimationClip[];
     name: string;
@@ -2953,10 +2953,10 @@ declare namespace UnityEngine.AnimatorOverrideController {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -3063,8 +3063,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static OptimizeTransformHierarchy(go: UnityEngine.GameObject, exposedTransforms: string[]): any;
-    static DeoptimizeTransformHierarchy(go: UnityEngine.GameObject): any;
+    static OptimizeTransformHierarchy(go: UnityEngine.GameObject, exposedTransforms: string[]): void;
+    static DeoptimizeTransformHierarchy(go: UnityEngine.GameObject): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -3100,10 +3100,10 @@ declare namespace UnityEngine.Apple.ReplayKit.ReplayKit {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(hasStarted: boolean, errorMessage: string): any;
+    Invoke(hasStarted: boolean, errorMessage: string): void;
     BeginInvoke(hasStarted: boolean, errorMessage: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -3128,12 +3128,12 @@ declare namespace UnityEngine.Apple.ReplayKit {
     static StopRecording(): boolean;
     static Preview(): boolean;
     static Discard(): boolean;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean, enableCamera: boolean): any;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean): any;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback): any;
-    static StopBroadcasting(): any;
+    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean, enableCamera: boolean): void;
+    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean): void;
+    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback): void;
+    static StopBroadcasting(): void;
     static ShowCameraPreviewAt(posX: number, posY: number): boolean;
-    static HideCameraPreview(): any;
+    static HideCameraPreview(): void;
     // properties
     // fields
   }
@@ -3160,10 +3160,10 @@ declare namespace UnityEngine.Application {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(advertisingId: string, trackingEnabled: boolean, errorMsg: string): any;
+    Invoke(advertisingId: string, trackingEnabled: boolean, errorMsg: string): void;
     BeginInvoke(advertisingId: string, trackingEnabled: boolean, errorMsg: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -3182,32 +3182,32 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Quit(): any;
-    static CancelQuit(): any;
-    static Unload(): any;
+    static Quit(): void;
+    static CancelQuit(): void;
+    static Unload(): void;
     static GetStreamProgressForLevel(levelIndex: number): number;
     static GetStreamProgressForLevel(levelName: string): number;
     static CanStreamedLevelBeLoaded(levelIndex: number): boolean;
     static CanStreamedLevelBeLoaded(levelName: string): boolean;
-    static CaptureScreenshot(filename: string, superSize: number): any;
-    static CaptureScreenshot(filename: string): any;
+    static CaptureScreenshot(filename: string, superSize: number): void;
+    static CaptureScreenshot(filename: string): void;
     static HasProLicense(): boolean;
-    static DontDestroyOnLoad(mono: UnityEngine.Object): any;
-    static ExternalCall(functionName: string, args: any[]): any;
-    static ExternalEval(script: string): any;
+    static DontDestroyOnLoad(mono: UnityEngine.Object): void;
+    static ExternalCall(functionName: string, args: any[]): void;
+    static ExternalEval(script: string): void;
     static RequestAdvertisingIdentifierAsync(delegateMethod: UnityEngine.Application.AdvertisingIdentifierCallback): boolean;
-    static OpenURL(url: string): any;
-    static ForceCrash(mode: number): any;
+    static OpenURL(url: string): void;
+    static ForceCrash(mode: number): void;
     static GetStackTraceLogType(logType: UnityEngine.LogType): UnityEngine.StackTraceLogType;
-    static SetStackTraceLogType(logType: UnityEngine.LogType, stackTraceType: UnityEngine.StackTraceLogType): any;
+    static SetStackTraceLogType(logType: UnityEngine.LogType, stackTraceType: UnityEngine.StackTraceLogType): void;
     static RequestUserAuthorization(mode: UnityEngine.UserAuthorization): UnityEngine.AsyncOperation;
     static HasUserAuthorization(mode: UnityEngine.UserAuthorization): boolean;
-    static RegisterLogCallback(handler: UnityEngine.Application.LogCallback): any;
-    static RegisterLogCallbackThreaded(handler: UnityEngine.Application.LogCallback): any;
-    static LoadLevel(index: number): any;
-    static LoadLevel(name: string): any;
-    static LoadLevelAdditive(index: number): any;
-    static LoadLevelAdditive(name: string): any;
+    static RegisterLogCallback(handler: UnityEngine.Application.LogCallback): void;
+    static RegisterLogCallbackThreaded(handler: UnityEngine.Application.LogCallback): void;
+    static LoadLevel(index: number): void;
+    static LoadLevel(name: string): void;
+    static LoadLevelAdditive(index: number): void;
+    static LoadLevelAdditive(name: string): void;
     static LoadLevelAsync(index: number): UnityEngine.AsyncOperation;
     static LoadLevelAsync(levelName: string): UnityEngine.AsyncOperation;
     static LoadLevelAdditiveAsync(index: number): UnityEngine.AsyncOperation;
@@ -3266,10 +3266,10 @@ declare namespace UnityEngine.Application {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(condition: string, stackTrace: string, type: UnityEngine.LogType): any;
+    Invoke(condition: string, stackTrace: string, type: UnityEngine.LogType): void;
     BeginInvoke(condition: string, stackTrace: string, type: UnityEngine.LogType, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -3346,20 +3346,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -3464,22 +3464,22 @@ declare namespace UnityEngine.Assertions {
     // methods
     static Equals(obj1: any, obj2: any): boolean;
     static ReferenceEquals(obj1: any, obj2: any): boolean;
-    static IsTrue(condition: boolean): any;
-    static IsTrue(condition: boolean, message: string): any;
-    static IsFalse(condition: boolean): any;
-    static IsFalse(condition: boolean, message: string): any;
-    static AreApproximatelyEqual(expected: number, actual: number): any;
-    static AreApproximatelyEqual(expected: number, actual: number, message: string): any;
-    static AreApproximatelyEqual(expected: number, actual: number, tolerance: number): any;
-    static AreApproximatelyEqual(expected: number, actual: number, tolerance: number, message: string): any;
-    static AreNotApproximatelyEqual(expected: number, actual: number): any;
-    static AreNotApproximatelyEqual(expected: number, actual: number, message: string): any;
-    static AreNotApproximatelyEqual(expected: number, actual: number, tolerance: number): any;
-    static AreNotApproximatelyEqual(expected: number, actual: number, tolerance: number, message: string): any;
-    static AreEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): any;
-    static AreNotEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): any;
-    static IsNull(value: UnityEngine.Object, message: string): any;
-    static IsNotNull(value: UnityEngine.Object, message: string): any;
+    static IsTrue(condition: boolean): void;
+    static IsTrue(condition: boolean, message: string): void;
+    static IsFalse(condition: boolean): void;
+    static IsFalse(condition: boolean, message: string): void;
+    static AreApproximatelyEqual(expected: number, actual: number): void;
+    static AreApproximatelyEqual(expected: number, actual: number, message: string): void;
+    static AreApproximatelyEqual(expected: number, actual: number, tolerance: number): void;
+    static AreApproximatelyEqual(expected: number, actual: number, tolerance: number, message: string): void;
+    static AreNotApproximatelyEqual(expected: number, actual: number): void;
+    static AreNotApproximatelyEqual(expected: number, actual: number, message: string): void;
+    static AreNotApproximatelyEqual(expected: number, actual: number, tolerance: number): void;
+    static AreNotApproximatelyEqual(expected: number, actual: number, tolerance: number, message: string): void;
+    static AreEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): void;
+    static AreNotEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): void;
+    static IsNull(value: UnityEngine.Object, message: string): void;
+    static IsNotNull(value: UnityEngine.Object, message: string): void;
     // properties
     // fields
     static raiseExceptions: boolean;
@@ -3491,7 +3491,7 @@ declare namespace UnityEngine.Assertions {
     constructor(message: string, userMessage: string);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -3553,18 +3553,18 @@ declare namespace UnityEngine.Assertions.Must {
     // constructors
     private constructor();
     // methods
-    static MustBeTrue(value: boolean): any;
-    static MustBeTrue(value: boolean, message: string): any;
-    static MustBeFalse(value: boolean): any;
-    static MustBeFalse(value: boolean, message: string): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number, message: string): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number, message: string): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): any;
+    static MustBeTrue(value: boolean): void;
+    static MustBeTrue(value: boolean, message: string): void;
+    static MustBeFalse(value: boolean): void;
+    static MustBeFalse(value: boolean, message: string): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number, message: string): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number, message: string): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): void;
     // properties
     // fields
   }
@@ -3602,7 +3602,7 @@ declare namespace UnityEngine {
     LoadAllAssets(type: any): UnityEngine.Object[];
     LoadAllAssetsAsync(): UnityEngine.AssetBundleRequest;
     LoadAllAssetsAsync(type: any): UnityEngine.AssetBundleRequest;
-    Unload(unloadAllLoadedObjects: boolean): any;
+    Unload(unloadAllLoadedObjects: boolean): void;
     AllAssetNames(): string[];
     GetAllAssetNames(): string[];
     GetAllScenePaths(): string[];
@@ -3773,20 +3773,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -3868,10 +3868,10 @@ declare namespace UnityEngine.AudioClip {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(data: number[]): any;
+    Invoke(data: number[]): void;
     BeginInvoke(data: number[], callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -3890,10 +3890,10 @@ declare namespace UnityEngine.AudioClip {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(position: number): any;
+    Invoke(position: number): void;
     BeginInvoke(position: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -4014,20 +4014,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4077,20 +4077,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4143,20 +4143,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4199,9 +4199,9 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static GetOutputData(numSamples: number, channel: number): number[];
-    static GetOutputData(samples: number[], channel: number): any;
+    static GetOutputData(samples: number[], channel: number): void;
     static GetSpectrumData(numSamples: number, channel: number, window: UnityEngine.FFTWindow): number[];
-    static GetSpectrumData(samples: number[], channel: number, window: UnityEngine.FFTWindow): any;
+    static GetSpectrumData(samples: number[], channel: number, window: UnityEngine.FFTWindow): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -4212,20 +4212,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4277,20 +4277,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4343,20 +4343,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4469,20 +4469,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4560,10 +4560,10 @@ declare namespace UnityEngine.AudioSettings {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(deviceWasChanged: boolean): any;
+    Invoke(deviceWasChanged: boolean): void;
     BeginInvoke(deviceWasChanged: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -4582,8 +4582,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static GetDSPBufferSize(bufferLength: any, numBuffers: any): any;
-    static SetDSPBufferSize(bufferLength: number, numBuffers: number): any;
+    static GetDSPBufferSize(bufferLength: any, numBuffers: any): void;
+    static SetDSPBufferSize(bufferLength: number, numBuffers: number): void;
     static GetConfiguration(): UnityEngine.AudioConfiguration;
     static Reset(config: UnityEngine.AudioConfiguration): boolean;
     Equals(obj: any): boolean;
@@ -4604,25 +4604,25 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Play(delay: number): any;
-    Play(): any;
-    PlayDelayed(delay: number): any;
-    PlayScheduled(time: number): any;
-    SetScheduledStartTime(time: number): any;
-    SetScheduledEndTime(time: number): any;
-    Stop(): any;
-    Pause(): any;
-    UnPause(): any;
-    PlayOneShot(clip: UnityEngine.AudioClip, volumeScale: number): any;
-    PlayOneShot(clip: UnityEngine.AudioClip): any;
-    static PlayClipAtPoint(clip: UnityEngine.AudioClip, position: UnityEngine.Vector3): any;
-    static PlayClipAtPoint(clip: UnityEngine.AudioClip, position: UnityEngine.Vector3, volume: number): any;
-    SetCustomCurve(type: UnityEngine.AudioSourceCurveType, curve: UnityEngine.AnimationCurve): any;
+    Play(delay: number): void;
+    Play(): void;
+    PlayDelayed(delay: number): void;
+    PlayScheduled(time: number): void;
+    SetScheduledStartTime(time: number): void;
+    SetScheduledEndTime(time: number): void;
+    Stop(): void;
+    Pause(): void;
+    UnPause(): void;
+    PlayOneShot(clip: UnityEngine.AudioClip, volumeScale: number): void;
+    PlayOneShot(clip: UnityEngine.AudioClip): void;
+    static PlayClipAtPoint(clip: UnityEngine.AudioClip, position: UnityEngine.Vector3): void;
+    static PlayClipAtPoint(clip: UnityEngine.AudioClip, position: UnityEngine.Vector3, volume: number): void;
+    SetCustomCurve(type: UnityEngine.AudioSourceCurveType, curve: UnityEngine.AnimationCurve): void;
     GetCustomCurve(type: UnityEngine.AudioSourceCurveType): UnityEngine.AnimationCurve;
     GetOutputData(numSamples: number, channel: number): number[];
-    GetOutputData(samples: number[], channel: number): any;
+    GetOutputData(samples: number[], channel: number): void;
     GetSpectrumData(numSamples: number, channel: number, window: UnityEngine.FFTWindow): number[];
-    GetSpectrumData(samples: number[], channel: number, window: UnityEngine.FFTWindow): any;
+    GetSpectrumData(samples: number[], channel: number, window: UnityEngine.FFTWindow): void;
     SetSpatializerFloat(index: number, value: number): boolean;
     GetSpatializerFloat(index: number, value: any): boolean;
     GetComponent(type: any): UnityEngine.Component;
@@ -4635,20 +4635,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4929,20 +4929,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -4981,18 +4981,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    GetImageTexCoords(imageTexCoords: any): any;
+    GetImageTexCoords(imageTexCoords: any): void;
     GetImageTexCoords(): UnityEngine.Vector4[];
-    SetImageTexCoords(imageTexCoords: any): any;
-    SetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): any;
-    GetVertices(vertices: any): any;
+    SetImageTexCoords(imageTexCoords: any): void;
+    SetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): void;
+    GetVertices(vertices: any): void;
     GetVertices(): UnityEngine.Vector2[];
-    SetVertices(vertices: any): any;
-    SetVertices(vertices: UnityEngine.Vector2[]): any;
-    GetIndices(indices: any): any;
+    SetVertices(vertices: any): void;
+    SetVertices(vertices: UnityEngine.Vector2[]): void;
+    GetIndices(indices: any): void;
     GetIndices(): number[];
-    SetIndices(indices: any): any;
-    SetIndices(indices: number[]): any;
+    SetIndices(indices: any): void;
+    SetIndices(indices: number[]): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5016,9 +5016,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -5029,20 +5029,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5108,18 +5108,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any, maxDelta: number): any;
-    Serialize(value: any): any;
-    Serialize(value: any, maxDelta: number): any;
-    Serialize(value: any): any;
-    Serialize(value: any, maxDelta: number): any;
-    Serialize(value: any): any;
-    Serialize(viewID: any): any;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any, maxDelta: number): void;
+    Serialize(value: any): void;
+    Serialize(value: any, maxDelta: number): void;
+    Serialize(value: any): void;
+    Serialize(value: any, maxDelta: number): void;
+    Serialize(value: any): void;
+    Serialize(viewID: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -5226,11 +5226,11 @@ declare namespace UnityEngine {
     ClosestPoint(point: UnityEngine.Vector3): UnityEngine.Vector3;
     GetHashCode(): number;
     Equals(other: any): boolean;
-    SetMinMax(min: UnityEngine.Vector3, max: UnityEngine.Vector3): any;
-    Encapsulate(point: UnityEngine.Vector3): any;
-    Encapsulate(bounds: UnityEngine.Bounds): any;
-    Expand(amount: number): any;
-    Expand(amount: UnityEngine.Vector3): any;
+    SetMinMax(min: UnityEngine.Vector3, max: UnityEngine.Vector3): void;
+    Encapsulate(point: UnityEngine.Vector3): void;
+    Encapsulate(bounds: UnityEngine.Bounds): void;
+    Expand(amount: number): void;
+    Expand(amount: UnityEngine.Vector3): void;
     Intersects(bounds: UnityEngine.Bounds): boolean;
     ToString(): string;
     ToString(format: string): string;
@@ -5261,20 +5261,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5343,20 +5343,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5417,20 +5417,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5506,10 +5506,10 @@ declare namespace UnityEngine {
     static IsVersionCached(url: string, hash: UnityEngine.Hash128): boolean;
     static MarkAsUsed(url: string, version: number): boolean;
     static MarkAsUsed(url: string, hash: UnityEngine.Hash128): boolean;
-    static SetNoBackupFlag(url: string, version: number): any;
-    static SetNoBackupFlag(url: string, hash: UnityEngine.Hash128): any;
-    static ResetNoBackupFlag(url: string, version: number): any;
-    static ResetNoBackupFlag(url: string, hash: UnityEngine.Hash128): any;
+    static SetNoBackupFlag(url: string, version: number): void;
+    static SetNoBackupFlag(url: string, hash: UnityEngine.Hash128): void;
+    static ResetNoBackupFlag(url: string, version: number): void;
+    static ResetNoBackupFlag(url: string, hash: UnityEngine.Hash128): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -5593,10 +5593,10 @@ declare namespace UnityEngine.Camera {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(cam: UnityEngine.Camera): any;
+    Invoke(cam: UnityEngine.Camera): void;
     BeginInvoke(cam: UnityEngine.Camera, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -5615,23 +5615,23 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetTargetBuffers(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer): any;
-    SetTargetBuffers(colorBuffer: UnityEngine.RenderBuffer[], depthBuffer: UnityEngine.RenderBuffer): any;
-    ResetWorldToCameraMatrix(): any;
-    ResetProjectionMatrix(): any;
-    ResetAspect(): any;
-    ResetFieldOfView(): any;
+    SetTargetBuffers(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer): void;
+    SetTargetBuffers(colorBuffer: UnityEngine.RenderBuffer[], depthBuffer: UnityEngine.RenderBuffer): void;
+    ResetWorldToCameraMatrix(): void;
+    ResetProjectionMatrix(): void;
+    ResetAspect(): void;
+    ResetFieldOfView(): void;
     GetStereoViewMatrices(): UnityEngine.Matrix4x4[];
     GetStereoViewMatrix(eye: UnityEngine.Camera.StereoscopicEye): UnityEngine.Matrix4x4;
-    SetStereoViewMatrices(leftMatrix: UnityEngine.Matrix4x4, rightMatrix: UnityEngine.Matrix4x4): any;
-    SetStereoViewMatrix(eye: UnityEngine.Camera.StereoscopicEye, matrix: UnityEngine.Matrix4x4): any;
-    ResetStereoViewMatrices(): any;
+    SetStereoViewMatrices(leftMatrix: UnityEngine.Matrix4x4, rightMatrix: UnityEngine.Matrix4x4): void;
+    SetStereoViewMatrix(eye: UnityEngine.Camera.StereoscopicEye, matrix: UnityEngine.Matrix4x4): void;
+    ResetStereoViewMatrices(): void;
     GetStereoProjectionMatrices(): UnityEngine.Matrix4x4[];
     GetStereoProjectionMatrix(eye: UnityEngine.Camera.StereoscopicEye): UnityEngine.Matrix4x4;
-    SetStereoProjectionMatrix(eye: UnityEngine.Camera.StereoscopicEye, matrix: UnityEngine.Matrix4x4): any;
-    SetStereoProjectionMatrices(leftMatrix: UnityEngine.Matrix4x4, rightMatrix: UnityEngine.Matrix4x4): any;
-    CalculateFrustumCorners(viewport: UnityEngine.Rect, z: number, eye: UnityEngine.Camera.MonoOrStereoscopicEye, outCorners: UnityEngine.Vector3[]): any;
-    ResetStereoProjectionMatrices(): any;
+    SetStereoProjectionMatrix(eye: UnityEngine.Camera.StereoscopicEye, matrix: UnityEngine.Matrix4x4): void;
+    SetStereoProjectionMatrices(leftMatrix: UnityEngine.Matrix4x4, rightMatrix: UnityEngine.Matrix4x4): void;
+    CalculateFrustumCorners(viewport: UnityEngine.Rect, z: number, eye: UnityEngine.Camera.MonoOrStereoscopicEye, outCorners: UnityEngine.Vector3[]): void;
+    ResetStereoProjectionMatrices(): void;
     WorldToScreenPoint(position: UnityEngine.Vector3): UnityEngine.Vector3;
     WorldToViewportPoint(position: UnityEngine.Vector3): UnityEngine.Vector3;
     ViewportToWorldPoint(position: UnityEngine.Vector3): UnityEngine.Vector3;
@@ -5641,27 +5641,27 @@ declare namespace UnityEngine {
     ViewportPointToRay(position: UnityEngine.Vector3): UnityEngine.Ray;
     ScreenPointToRay(position: UnityEngine.Vector3): UnityEngine.Ray;
     static GetAllCameras(cameras: UnityEngine.Camera[]): number;
-    Render(): any;
-    RenderWithShader(shader: UnityEngine.Shader, replacementTag: string): any;
-    SetReplacementShader(shader: UnityEngine.Shader, replacementTag: string): any;
-    ResetReplacementShader(): any;
-    ResetCullingMatrix(): any;
-    RenderDontRestore(): any;
-    static SetupCurrent(cur: UnityEngine.Camera): any;
+    Render(): void;
+    RenderWithShader(shader: UnityEngine.Shader, replacementTag: string): void;
+    SetReplacementShader(shader: UnityEngine.Shader, replacementTag: string): void;
+    ResetReplacementShader(): void;
+    ResetCullingMatrix(): void;
+    RenderDontRestore(): void;
+    static SetupCurrent(cur: UnityEngine.Camera): void;
     RenderToCubemap(cubemap: UnityEngine.Cubemap): boolean;
     RenderToCubemap(cubemap: UnityEngine.Cubemap, faceMask: number): boolean;
     RenderToCubemap(cubemap: UnityEngine.RenderTexture): boolean;
     RenderToCubemap(cubemap: UnityEngine.RenderTexture, faceMask: number): boolean;
-    CopyFrom(other: UnityEngine.Camera): any;
-    AddCommandBuffer(evt: UnityEngine.Rendering.CameraEvent, buffer: UnityEngine.Rendering.CommandBuffer): any;
-    RemoveCommandBuffer(evt: UnityEngine.Rendering.CameraEvent, buffer: UnityEngine.Rendering.CommandBuffer): any;
-    RemoveCommandBuffers(evt: UnityEngine.Rendering.CameraEvent): any;
-    RemoveAllCommandBuffers(): any;
+    CopyFrom(other: UnityEngine.Camera): void;
+    AddCommandBuffer(evt: UnityEngine.Rendering.CameraEvent, buffer: UnityEngine.Rendering.CommandBuffer): void;
+    RemoveCommandBuffer(evt: UnityEngine.Rendering.CameraEvent, buffer: UnityEngine.Rendering.CommandBuffer): void;
+    RemoveCommandBuffers(evt: UnityEngine.Rendering.CameraEvent): void;
+    RemoveAllCommandBuffers(): void;
     GetCommandBuffers(evt: UnityEngine.Rendering.CameraEvent): UnityEngine.Rendering.CommandBuffer[];
     CalculateObliqueMatrix(clipPlane: UnityEngine.Vector4): UnityEngine.Matrix4x4;
     GetScreenWidth(): number;
     GetScreenHeight(): number;
-    DoClear(): any;
+    DoClear(): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -5672,20 +5672,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5871,7 +5871,7 @@ declare namespace UnityEngine {
     static GetDefaultCanvasMaterial(): UnityEngine.Material;
     static GetETC1SupportedCanvasMaterial(): UnityEngine.Material;
     static GetDefaultCanvasTextMaterial(): UnityEngine.Material;
-    static ForceUpdateCanvases(): any;
+    static ForceUpdateCanvases(): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -5882,20 +5882,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -5953,10 +5953,10 @@ declare namespace UnityEngine.Canvas {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -5986,20 +5986,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6040,27 +6040,27 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetColor(color: UnityEngine.Color): any;
+    SetColor(color: UnityEngine.Color): void;
     GetColor(): UnityEngine.Color;
     GetAlpha(): number;
-    SetAlpha(alpha: number): any;
-    SetVertices(vertices: any): any;
-    SetVertices(vertices: UnityEngine.UIVertex[], size: number): any;
-    EnableRectClipping(rect: UnityEngine.Rect): any;
-    DisableRectClipping(): any;
-    SetMaterial(material: UnityEngine.Material, index: number): any;
-    SetMaterial(material: UnityEngine.Material, texture: UnityEngine.Texture): any;
+    SetAlpha(alpha: number): void;
+    SetVertices(vertices: any): void;
+    SetVertices(vertices: UnityEngine.UIVertex[], size: number): void;
+    EnableRectClipping(rect: UnityEngine.Rect): void;
+    DisableRectClipping(): void;
+    SetMaterial(material: UnityEngine.Material, index: number): void;
+    SetMaterial(material: UnityEngine.Material, texture: UnityEngine.Texture): void;
     GetMaterial(): UnityEngine.Material;
     GetMaterial(index: number): UnityEngine.Material;
-    SetPopMaterial(material: UnityEngine.Material, index: number): any;
+    SetPopMaterial(material: UnityEngine.Material, index: number): void;
     GetPopMaterial(index: number): UnityEngine.Material;
-    SetTexture(texture: UnityEngine.Texture): any;
-    SetAlphaTexture(texture: UnityEngine.Texture): any;
-    SetMesh(mesh: UnityEngine.Mesh): any;
-    Clear(): any;
-    static SplitUIVertexStreams(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any, indicies: any): any;
-    static CreateUIVertexStream(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any, indicies: any): any;
-    static AddUIVertexStream(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any): any;
+    SetTexture(texture: UnityEngine.Texture): void;
+    SetAlphaTexture(texture: UnityEngine.Texture): void;
+    SetMesh(mesh: UnityEngine.Mesh): void;
+    Clear(): void;
+    static SplitUIVertexStreams(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any, indicies: any): void;
+    static CreateUIVertexStream(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any, indicies: any): void;
+    static AddUIVertexStream(verts: any, positions: any, colors: any, uv0S: any, uv1S: any, normals: any, tangents: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -6071,20 +6071,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6130,10 +6130,10 @@ declare namespace UnityEngine.CanvasRenderer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -6164,20 +6164,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6247,20 +6247,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6346,20 +6346,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6456,20 +6456,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6552,20 +6552,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6625,9 +6625,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    ClearTransformMotion(): any;
-    SetEnabledFading(enabled: boolean, interpolationTime: number): any;
-    SetEnabledFading(enabled: boolean): any;
+    ClearTransformMotion(): void;
+    SetEnabledFading(enabled: boolean, interpolationTime: number): void;
+    SetEnabledFading(enabled: boolean): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -6638,20 +6638,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6743,10 +6743,10 @@ declare namespace UnityEngine {
     static GetButton(name: string): boolean;
     static GetTrackerPosition(name: string): UnityEngine.Vector3;
     static GetTrackerRotation(name: string): UnityEngine.Quaternion;
-    static SetAxis(name: string, value: number): any;
-    static SetButton(name: string, value: boolean): any;
-    static SetTrackerPosition(name: string, value: UnityEngine.Vector3): any;
-    static SetTrackerRotation(name: string, value: UnityEngine.Quaternion): any;
+    static SetAxis(name: string, value: number): void;
+    static SetButton(name: string, value: boolean): void;
+    static SetTrackerPosition(name: string, value: UnityEngine.Vector3): void;
+    static SetTrackerRotation(name: string, value: UnityEngine.Quaternion): void;
     static AddInput(name: string, deviceName: string, serverUrl: string, index: number, type: UnityEngine.ClusterInputType): boolean;
     static EditInput(name: string, deviceName: string, serverUrl: string, index: number, type: UnityEngine.ClusterInputType): boolean;
     static CheckConnectionToServer(name: string): boolean;
@@ -6814,20 +6814,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -6893,20 +6893,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -7097,7 +7097,7 @@ declare namespace UnityEngine {
     Equals(other: any): boolean;
     static Lerp(a: UnityEngine.Color, b: UnityEngine.Color, t: number): UnityEngine.Color;
     static LerpUnclamped(a: UnityEngine.Color, b: UnityEngine.Color, t: number): UnityEngine.Color;
-    static RGBToHSV(rgbColor: UnityEngine.Color, H: any, S: any, V: any): any;
+    static RGBToHSV(rgbColor: UnityEngine.Color, H: any, S: any, V: any): void;
     static HSVToRGB(H: number, S: number, V: number): UnityEngine.Color;
     static HSVToRGB(H: number, S: number, V: number, hdr: boolean): UnityEngine.Color;
     GetType(): any;
@@ -7118,7 +7118,7 @@ declare namespace UnityEngine {
     readonly gamma: UnityEngine.Color;
     readonly maxColorComponent: number;
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     // fields
     r: number;
     g: number;
@@ -7258,20 +7258,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -7309,12 +7309,12 @@ declare namespace UnityEngine {
     constructor(count: number, stride: number);
     constructor(count: number, stride: number, type: UnityEngine.ComputeBufferType);
     // methods
-    Dispose(): any;
-    Release(): any;
-    SetData(data: any): any;
-    SetCounterValue(counterValue: number): any;
-    GetData(data: any): any;
-    static CopyCount(src: UnityEngine.ComputeBuffer, dst: UnityEngine.ComputeBuffer, dstOffset: number): any;
+    Dispose(): void;
+    Release(): void;
+    SetData(data: any): void;
+    SetCounterValue(counterValue: number): void;
+    GetData(data: any): void;
+    static CopyCount(src: UnityEngine.ComputeBuffer, dst: UnityEngine.ComputeBuffer, dstOffset: number): void;
     GetNativeBufferPtr(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -7359,28 +7359,28 @@ declare namespace UnityEngine {
     // methods
     FindKernel(name: string): number;
     HasKernel(name: string): boolean;
-    GetKernelThreadGroupSizes(kernelIndex: number, x: any, y: any, z: any): any;
-    SetFloat(name: string, val: number): any;
-    SetFloat(nameID: number, val: number): any;
-    SetInt(name: string, val: number): any;
-    SetInt(nameID: number, val: number): any;
-    SetBool(name: string, val: boolean): any;
-    SetBool(nameID: number, val: boolean): any;
-    SetVector(name: string, val: UnityEngine.Vector4): any;
-    SetVector(nameID: number, val: UnityEngine.Vector4): any;
-    SetFloats(name: string, values: number[]): any;
-    SetFloats(nameID: number, values: number[]): any;
-    SetInts(name: string, values: number[]): any;
-    SetInts(nameID: number, values: number[]): any;
-    SetTexture(kernelIndex: number, name: string, texture: UnityEngine.Texture): any;
-    SetTexture(kernelIndex: number, nameID: number, texture: UnityEngine.Texture): any;
-    SetTextureFromGlobal(kernelIndex: number, name: string, globalTextureName: string): any;
-    SetTextureFromGlobal(kernelIndex: number, nameID: number, globalTextureNameID: number): any;
-    SetBuffer(kernelIndex: number, name: string, buffer: UnityEngine.ComputeBuffer): any;
-    SetBuffer(kernelIndex: number, nameID: number, buffer: UnityEngine.ComputeBuffer): any;
-    Dispatch(kernelIndex: number, threadGroupsX: number, threadGroupsY: number, threadGroupsZ: number): any;
-    DispatchIndirect(kernelIndex: number, argsBuffer: UnityEngine.ComputeBuffer): any;
-    DispatchIndirect(kernelIndex: number, argsBuffer: UnityEngine.ComputeBuffer, argsOffset: number): any;
+    GetKernelThreadGroupSizes(kernelIndex: number, x: any, y: any, z: any): void;
+    SetFloat(name: string, val: number): void;
+    SetFloat(nameID: number, val: number): void;
+    SetInt(name: string, val: number): void;
+    SetInt(nameID: number, val: number): void;
+    SetBool(name: string, val: boolean): void;
+    SetBool(nameID: number, val: boolean): void;
+    SetVector(name: string, val: UnityEngine.Vector4): void;
+    SetVector(nameID: number, val: UnityEngine.Vector4): void;
+    SetFloats(name: string, values: number[]): void;
+    SetFloats(nameID: number, values: number[]): void;
+    SetInts(name: string, values: number[]): void;
+    SetInts(nameID: number, values: number[]): void;
+    SetTexture(kernelIndex: number, name: string, texture: UnityEngine.Texture): void;
+    SetTexture(kernelIndex: number, nameID: number, texture: UnityEngine.Texture): void;
+    SetTextureFromGlobal(kernelIndex: number, name: string, globalTextureName: string): void;
+    SetTextureFromGlobal(kernelIndex: number, nameID: number, globalTextureNameID: number): void;
+    SetBuffer(kernelIndex: number, name: string, buffer: UnityEngine.ComputeBuffer): void;
+    SetBuffer(kernelIndex: number, nameID: number, buffer: UnityEngine.ComputeBuffer): void;
+    Dispatch(kernelIndex: number, threadGroupsX: number, threadGroupsY: number, threadGroupsZ: number): void;
+    DispatchIndirect(kernelIndex: number, argsBuffer: UnityEngine.ComputeBuffer): void;
+    DispatchIndirect(kernelIndex: number, argsBuffer: UnityEngine.ComputeBuffer, argsOffset: number): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -7407,20 +7407,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -7522,9 +7522,9 @@ declare namespace UnityEngine.Connect {
     constructor();
     // methods
     static IsPlatformEnabled(platform: UnityEngine.RuntimePlatform): boolean;
-    static SetPlatformEnabled(platform: UnityEngine.RuntimePlatform, value: boolean): any;
+    static SetPlatformEnabled(platform: UnityEngine.RuntimePlatform, value: boolean): void;
     static GetGameId(platform: UnityEngine.RuntimePlatform): string;
-    static SetGameId(platform: UnityEngine.RuntimePlatform, gameId: string): any;
+    static SetGameId(platform: UnityEngine.RuntimePlatform, gameId: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -7598,20 +7598,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -7664,20 +7664,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -7939,7 +7939,7 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static RemoveAll(): any;
+    static RemoveAll(): void;
     // properties
     // fields
   }
@@ -7977,17 +7977,17 @@ declare namespace UnityEngine {
     // constructors
     constructor(size: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     // methods
-    SetPixel(face: UnityEngine.CubemapFace, x: number, y: number, color: UnityEngine.Color): any;
+    SetPixel(face: UnityEngine.CubemapFace, x: number, y: number, color: UnityEngine.Color): void;
     GetPixel(face: UnityEngine.CubemapFace, x: number, y: number): UnityEngine.Color;
     GetPixels(face: UnityEngine.CubemapFace, miplevel: number): UnityEngine.Color[];
     GetPixels(face: UnityEngine.CubemapFace): UnityEngine.Color[];
-    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, miplevel: number): any;
-    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace): any;
-    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): any;
-    Apply(updateMipmaps: boolean): any;
-    Apply(): any;
-    SmoothEdges(smoothRegionWidthInPixels: number): any;
-    SmoothEdges(): any;
+    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, miplevel: number): void;
+    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace): void;
+    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
+    Apply(updateMipmaps: boolean): void;
+    Apply(): void;
+    SmoothEdges(smoothRegionWidthInPixels: number): void;
+    SmoothEdges(): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;
@@ -8017,13 +8017,13 @@ declare namespace UnityEngine {
     constructor(faceSize: number, cubemapCount: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     constructor(faceSize: number, cubemapCount: number, format: UnityEngine.TextureFormat, mipmap: boolean, linear: boolean);
     // methods
-    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): any;
-    Apply(updateMipmaps: boolean): any;
-    Apply(): any;
-    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): any;
-    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, arrayElement: number): any;
-    SetPixels32(colors: UnityEngine.Color32[], face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): any;
-    SetPixels32(colors: UnityEngine.Color32[], face: UnityEngine.CubemapFace, arrayElement: number): any;
+    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
+    Apply(updateMipmaps: boolean): void;
+    Apply(): void;
+    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): void;
+    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, arrayElement: number): void;
+    SetPixels32(colors: UnityEngine.Color32[], face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): void;
+    SetPixels32(colors: UnityEngine.Color32[], face: UnityEngine.CubemapFace, arrayElement: number): void;
     GetPixels(face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): UnityEngine.Color[];
     GetPixels(face: UnityEngine.CubemapFace, arrayElement: number): UnityEngine.Color[];
     GetPixels32(face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): UnityEngine.Color32[];
@@ -8082,18 +8082,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
-    SetBoundingSpheres(array: UnityEngine.BoundingSphere[]): any;
-    SetBoundingSphereCount(count: number): any;
-    EraseSwapBack(index: number): any;
+    Dispose(): void;
+    SetBoundingSpheres(array: UnityEngine.BoundingSphere[]): void;
+    SetBoundingSphereCount(count: number): void;
+    EraseSwapBack(index: number): void;
     QueryIndices(visible: boolean, result: number[], firstIndex: number): number;
     QueryIndices(distanceIndex: number, result: number[], firstIndex: number): number;
     QueryIndices(visible: boolean, distanceIndex: number, result: number[], firstIndex: number): number;
     IsVisible(index: number): boolean;
     GetDistance(index: number): number;
-    SetBoundingDistances(distances: number[]): any;
-    SetDistanceReferencePoint(point: UnityEngine.Vector3): any;
-    SetDistanceReferencePoint(transform: UnityEngine.Transform): any;
+    SetBoundingDistances(distances: number[]): void;
+    SetDistanceReferencePoint(point: UnityEngine.Vector3): void;
+    SetDistanceReferencePoint(transform: UnityEngine.Transform): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -8110,10 +8110,10 @@ declare namespace UnityEngine.CullingGroup {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(sphere: UnityEngine.CullingGroupEvent): any;
+    Invoke(sphere: UnityEngine.CullingGroupEvent): void;
     BeginInvoke(sphere: UnityEngine.CullingGroupEvent, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -8174,7 +8174,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetCursor(texture: UnityEngine.Texture2D, hotspot: UnityEngine.Vector2, cursorMode: UnityEngine.CursorMode): any;
+    static SetCursor(texture: UnityEngine.Texture2D, hotspot: UnityEngine.Vector2, cursorMode: UnityEngine.CursorMode): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -8242,44 +8242,44 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3, color: UnityEngine.Color, duration: number, depthTest: boolean): any;
-    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3, color: UnityEngine.Color, duration: number): any;
-    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3, color: UnityEngine.Color): any;
-    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3): any;
-    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3, color: UnityEngine.Color, duration: number): any;
-    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3, color: UnityEngine.Color): any;
-    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3): any;
-    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3, color: UnityEngine.Color, duration: number, depthTest: boolean): any;
-    static Break(): any;
-    static DebugBreak(): any;
-    static Log(message: any): any;
-    static Log(message: any, context: UnityEngine.Object): any;
-    static LogFormat(format: string, args: any[]): any;
-    static LogFormat(context: UnityEngine.Object, format: string, args: any[]): any;
-    static LogError(message: any): any;
-    static LogError(message: any, context: UnityEngine.Object): any;
-    static LogErrorFormat(format: string, args: any[]): any;
-    static LogErrorFormat(context: UnityEngine.Object, format: string, args: any[]): any;
-    static ClearDeveloperConsole(): any;
-    static LogException(exception: any): any;
-    static LogException(exception: any, context: UnityEngine.Object): any;
-    static LogWarning(message: any): any;
-    static LogWarning(message: any, context: UnityEngine.Object): any;
-    static LogWarningFormat(format: string, args: any[]): any;
-    static LogWarningFormat(context: UnityEngine.Object, format: string, args: any[]): any;
-    static Assert(condition: boolean): any;
-    static Assert(condition: boolean, context: UnityEngine.Object): any;
-    static Assert(condition: boolean, message: any): any;
-    static Assert(condition: boolean, message: string): any;
-    static Assert(condition: boolean, message: any, context: UnityEngine.Object): any;
-    static Assert(condition: boolean, message: string, context: UnityEngine.Object): any;
-    static AssertFormat(condition: boolean, format: string, args: any[]): any;
-    static AssertFormat(condition: boolean, context: UnityEngine.Object, format: string, args: any[]): any;
-    static LogAssertion(message: any): any;
-    static LogAssertion(message: any, context: UnityEngine.Object): any;
-    static LogAssertionFormat(format: string, args: any[]): any;
-    static LogAssertionFormat(context: UnityEngine.Object, format: string, args: any[]): any;
-    static Assert(condition: boolean, format: string, args: any[]): any;
+    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3, color: UnityEngine.Color, duration: number, depthTest: boolean): void;
+    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3, color: UnityEngine.Color, duration: number): void;
+    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3, color: UnityEngine.Color): void;
+    static DrawLine(start: UnityEngine.Vector3, end: UnityEngine.Vector3): void;
+    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3, color: UnityEngine.Color, duration: number): void;
+    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3, color: UnityEngine.Color): void;
+    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3): void;
+    static DrawRay(start: UnityEngine.Vector3, dir: UnityEngine.Vector3, color: UnityEngine.Color, duration: number, depthTest: boolean): void;
+    static Break(): void;
+    static DebugBreak(): void;
+    static Log(message: any): void;
+    static Log(message: any, context: UnityEngine.Object): void;
+    static LogFormat(format: string, args: any[]): void;
+    static LogFormat(context: UnityEngine.Object, format: string, args: any[]): void;
+    static LogError(message: any): void;
+    static LogError(message: any, context: UnityEngine.Object): void;
+    static LogErrorFormat(format: string, args: any[]): void;
+    static LogErrorFormat(context: UnityEngine.Object, format: string, args: any[]): void;
+    static ClearDeveloperConsole(): void;
+    static LogException(exception: any): void;
+    static LogException(exception: any, context: UnityEngine.Object): void;
+    static LogWarning(message: any): void;
+    static LogWarning(message: any, context: UnityEngine.Object): void;
+    static LogWarningFormat(format: string, args: any[]): void;
+    static LogWarningFormat(context: UnityEngine.Object, format: string, args: any[]): void;
+    static Assert(condition: boolean): void;
+    static Assert(condition: boolean, context: UnityEngine.Object): void;
+    static Assert(condition: boolean, message: any): void;
+    static Assert(condition: boolean, message: string): void;
+    static Assert(condition: boolean, message: any, context: UnityEngine.Object): void;
+    static Assert(condition: boolean, message: string, context: UnityEngine.Object): void;
+    static AssertFormat(condition: boolean, format: string, args: any[]): void;
+    static AssertFormat(condition: boolean, context: UnityEngine.Object, format: string, args: any[]): void;
+    static LogAssertion(message: any): void;
+    static LogAssertion(message: any, context: UnityEngine.Object): void;
+    static LogAssertionFormat(format: string, args: any[]): void;
+    static LogAssertionFormat(context: UnityEngine.Object, format: string, args: any[]): void;
+    static Assert(condition: boolean, format: string, args: any[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -8296,8 +8296,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): any;
-    LogException(exception: any, context: UnityEngine.Object): any;
+    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): void;
+    LogException(exception: any, context: UnityEngine.Object): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -8464,7 +8464,7 @@ declare namespace UnityEngine.Diagnostics {
     // constructors
     private constructor();
     // methods
-    static SendFile(remoteFilePath: string, data: number[]): any;
+    static SendFile(remoteFilePath: string, data: number[]): void;
     // properties
     // fields
   }
@@ -8566,10 +8566,10 @@ declare namespace UnityEngine.Display {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -8600,20 +8600,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -8701,8 +8701,8 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    Add(driver: UnityEngine.Object, rectTransform: UnityEngine.RectTransform, drivenProperties: UnityEngine.DrivenTransformProperties): any;
-    Clear(): any;
+    Add(driver: UnityEngine.Object, rectTransform: UnityEngine.RectTransform, drivenProperties: UnityEngine.DrivenTransformProperties): void;
+    Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;
@@ -8760,11 +8760,11 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetEmissive(renderer: UnityEngine.Renderer, color: UnityEngine.Color): any;
-    static UpdateMaterials(renderer: UnityEngine.Renderer): any;
-    static UpdateMaterials(terrain: UnityEngine.Terrain): any;
-    static UpdateMaterials(terrain: UnityEngine.Terrain, x: number, y: number, width: number, height: number): any;
-    static UpdateEnvironment(): any;
+    static SetEmissive(renderer: UnityEngine.Renderer, color: UnityEngine.Color): void;
+    static UpdateMaterials(renderer: UnityEngine.Renderer): void;
+    static UpdateMaterials(terrain: UnityEngine.Terrain): void;
+    static UpdateMaterials(terrain: UnityEngine.Terrain, x: number, y: number, width: number, height: number): void;
+    static UpdateEnvironment(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -8781,7 +8781,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Reset(): any;
+    Reset(): void;
     IsTouching(collider: UnityEngine.Collider2D): boolean;
     IsTouchingLayers(layerMask: number): boolean;
     IsTouchingLayers(): boolean;
@@ -8804,20 +8804,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -8879,20 +8879,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -9009,7 +9009,7 @@ declare namespace UnityEngine {
     GetHashCode(): number;
     Equals(obj: any): boolean;
     ToString(): string;
-    Use(): any;
+    Use(): void;
     GetTypeForControl(controlID: number): UnityEngine.EventType;
     static PopEvent(outEvent: UnityEngine.Event): boolean;
     static GetEventCount(): number;
@@ -9073,7 +9073,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static WriteCustomEvent(value: number, text: string): any;
+    static WriteCustomEvent(value: number, text: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -9087,8 +9087,8 @@ declare namespace UnityEngine.Events {
     // constructors
     constructor();
     // methods
-    OnBeforeSerialize(): any;
-    OnAfterDeserialize(): any;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -9118,7 +9118,7 @@ declare namespace UnityEngine.Events {
     constructor(target: any, theFunction: any);
     constructor(action: UnityEngine.Events.UnityAction);
     // methods
-    Invoke(args: any[]): any;
+    Invoke(args: any[]): void;
     Find(targetObj: any, method: any): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -9133,12 +9133,12 @@ declare namespace UnityEngine.Events {
     // constructors
     constructor();
     // methods
-    AddPersistentInvokableCall(call: UnityEngine.Events.BaseInvokableCall): any;
-    AddListener(call: UnityEngine.Events.BaseInvokableCall): any;
-    RemoveListener(targetObj: any, method: any): any;
-    Clear(): any;
-    ClearPersistent(): any;
-    Invoke(parameters: any[]): any;
+    AddPersistentInvokableCall(call: UnityEngine.Events.BaseInvokableCall): void;
+    AddListener(call: UnityEngine.Events.BaseInvokableCall): void;
+    RemoveListener(targetObj: any, method: any): void;
+    Clear(): void;
+    ClearPersistent(): void;
+    Invoke(parameters: any[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -9155,8 +9155,8 @@ declare namespace UnityEngine.Events {
     // methods
     IsValid(): boolean;
     GetRuntimeCall(theEvent: UnityEngine.Events.UnityEventBase): UnityEngine.Events.BaseInvokableCall;
-    RegisterPersistentListener(ttarget: UnityEngine.Object, mmethodName: string): any;
-    UnregisterPersistentListener(): any;
+    RegisterPersistentListener(ttarget: UnityEngine.Object, mmethodName: string): void;
+    UnregisterPersistentListener(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -9177,20 +9177,20 @@ declare namespace UnityEngine.Events {
     // methods
     GetListener(index: number): UnityEngine.Events.PersistentCall;
     GetListeners(): any;
-    AddListener(): any;
-    AddListener(call: UnityEngine.Events.PersistentCall): any;
-    RemoveListener(index: number): any;
-    Clear(): any;
-    RegisterEventPersistentListener(index: number, targetObj: UnityEngine.Object, methodName: string): any;
-    RegisterVoidPersistentListener(index: number, targetObj: UnityEngine.Object, methodName: string): any;
-    RegisterObjectPersistentListener(index: number, targetObj: UnityEngine.Object, argument: UnityEngine.Object, methodName: string): any;
-    RegisterIntPersistentListener(index: number, targetObj: UnityEngine.Object, argument: number, methodName: string): any;
-    RegisterFloatPersistentListener(index: number, targetObj: UnityEngine.Object, argument: number, methodName: string): any;
-    RegisterStringPersistentListener(index: number, targetObj: UnityEngine.Object, argument: string, methodName: string): any;
-    RegisterBoolPersistentListener(index: number, targetObj: UnityEngine.Object, argument: boolean, methodName: string): any;
-    UnregisterPersistentListener(index: number): any;
-    RemoveListeners(target: UnityEngine.Object, methodName: string): any;
-    Initialize(invokableList: UnityEngine.Events.InvokableCallList, unityEventBase: UnityEngine.Events.UnityEventBase): any;
+    AddListener(): void;
+    AddListener(call: UnityEngine.Events.PersistentCall): void;
+    RemoveListener(index: number): void;
+    Clear(): void;
+    RegisterEventPersistentListener(index: number, targetObj: UnityEngine.Object, methodName: string): void;
+    RegisterVoidPersistentListener(index: number, targetObj: UnityEngine.Object, methodName: string): void;
+    RegisterObjectPersistentListener(index: number, targetObj: UnityEngine.Object, argument: UnityEngine.Object, methodName: string): void;
+    RegisterIntPersistentListener(index: number, targetObj: UnityEngine.Object, argument: number, methodName: string): void;
+    RegisterFloatPersistentListener(index: number, targetObj: UnityEngine.Object, argument: number, methodName: string): void;
+    RegisterStringPersistentListener(index: number, targetObj: UnityEngine.Object, argument: string, methodName: string): void;
+    RegisterBoolPersistentListener(index: number, targetObj: UnityEngine.Object, argument: boolean, methodName: string): void;
+    UnregisterPersistentListener(index: number): void;
+    RemoveListeners(target: UnityEngine.Object, methodName: string): void;
+    Initialize(invokableList: UnityEngine.Events.InvokableCallList, unityEventBase: UnityEngine.Events.UnityEventBase): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -9231,10 +9231,10 @@ declare namespace UnityEngine.Events {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -9253,14 +9253,14 @@ declare namespace UnityEngine.Events {
     // constructors
     constructor();
     // methods
-    AddListener(call: UnityEngine.Events.UnityAction): any;
-    RemoveListener(call: UnityEngine.Events.UnityAction): any;
-    Invoke(): any;
+    AddListener(call: UnityEngine.Events.UnityAction): void;
+    RemoveListener(call: UnityEngine.Events.UnityAction): void;
+    Invoke(): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
     GetPersistentMethodName(index: number): string;
-    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): any;
-    RemoveAllListeners(): any;
+    SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
+    RemoveAllListeners(): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -9372,7 +9372,7 @@ declare namespace UnityEngine {
     constructor();
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -9395,7 +9395,7 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(clip: UnityEngine.AnimationClip): UnityEngine.Experimental.Director.AnimationClipPlayable;
-    Destroy(): any;
+    Destroy(): void;
     Equals(p: any): boolean;
     GetHashCode(): number;
     IsValid(): boolean;
@@ -9419,14 +9419,14 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.AnimationLayerMixerPlayable;
-    Destroy(): any;
+    Destroy(): void;
     Equals(p: any): boolean;
     GetHashCode(): number;
     IsValid(): boolean;
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     AddInput(input: UnityEngine.Experimental.Director.Playable): number;
     SetInput(source: UnityEngine.Experimental.Director.Playable, index: number): boolean;
     SetInputs(sources: any): boolean;
@@ -9449,12 +9449,12 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.AnimationMixerPlayable;
-    Destroy(): any;
+    Destroy(): void;
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     SetInputs(clips: UnityEngine.AnimationClip[]): boolean;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     Equals(p: any): boolean;
     GetHashCode(): number;
     IsValid(): boolean;
@@ -9480,11 +9480,11 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.AnimationOffsetPlayable;
-    Destroy(): any;
+    Destroy(): void;
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     Equals(p: any): boolean;
     GetHashCode(): number;
     IsValid(): boolean;
@@ -9509,7 +9509,7 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     private constructor();
     // methods
-    Destroy(): any;
+    Destroy(): void;
     AddInput(input: UnityEngine.Experimental.Director.Playable): number;
     SetInput(source: UnityEngine.Experimental.Director.Playable, index: number): boolean;
     SetInputs(sources: any): boolean;
@@ -9522,7 +9522,7 @@ declare namespace UnityEngine.Experimental.Director {
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     ToString(): string;
     GetType(): any;
     // properties
@@ -9555,64 +9555,64 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(controller: UnityEngine.RuntimeAnimatorController): UnityEngine.Experimental.Director.AnimatorControllerPlayable;
-    Destroy(): any;
+    Destroy(): void;
     GetFloat(name: string): number;
     GetFloat(id: number): number;
-    SetFloat(name: string, value: number): any;
-    SetFloat(id: number, value: number): any;
+    SetFloat(name: string, value: number): void;
+    SetFloat(id: number, value: number): void;
     GetBool(name: string): boolean;
     GetBool(id: number): boolean;
-    SetBool(name: string, value: boolean): any;
-    SetBool(id: number, value: boolean): any;
+    SetBool(name: string, value: boolean): void;
+    SetBool(id: number, value: boolean): void;
     GetInteger(name: string): number;
     GetInteger(id: number): number;
-    SetInteger(name: string, value: number): any;
-    SetInteger(id: number, value: number): any;
-    SetTrigger(name: string): any;
-    SetTrigger(id: number): any;
-    ResetTrigger(name: string): any;
-    ResetTrigger(id: number): any;
+    SetInteger(name: string, value: number): void;
+    SetInteger(id: number, value: number): void;
+    SetTrigger(name: string): void;
+    SetTrigger(id: number): void;
+    ResetTrigger(name: string): void;
+    ResetTrigger(id: number): void;
     IsParameterControlledByCurve(name: string): boolean;
     IsParameterControlledByCurve(id: number): boolean;
     GetLayerName(layerIndex: number): string;
     GetLayerIndex(layerName: string): number;
     GetLayerWeight(layerIndex: number): number;
-    SetLayerWeight(layerIndex: number, weight: number): any;
+    SetLayerWeight(layerIndex: number, weight: number): void;
     GetCurrentAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
     GetNextAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
     GetAnimatorTransitionInfo(layerIndex: number): UnityEngine.AnimatorTransitionInfo;
     GetCurrentAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
-    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): any;
-    GetNextAnimatorClipInfo(layerIndex: number, clips: any): any;
+    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): void;
+    GetNextAnimatorClipInfo(layerIndex: number, clips: any): void;
     GetCurrentAnimatorClipInfoCount(layerIndex: number): number;
     GetNextAnimatorClipInfoCount(layerIndex: number): number;
     GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
     IsInTransition(layerIndex: number): boolean;
     GetParameter(index: number): UnityEngine.AnimatorControllerParameter;
-    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number): any;
-    CrossFadeInFixedTime(stateName: string, transitionDuration: number): any;
-    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number, fixedTime: number): any;
-    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number): any;
-    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number): any;
-    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number, fixedTime: number): any;
-    CrossFade(stateName: string, transitionDuration: number, layer: number): any;
-    CrossFade(stateName: string, transitionDuration: number): any;
-    CrossFade(stateName: string, transitionDuration: number, layer: number, normalizedTime: number): any;
-    CrossFade(stateNameHash: number, transitionDuration: number, layer: number): any;
-    CrossFade(stateNameHash: number, transitionDuration: number): any;
-    CrossFade(stateNameHash: number, transitionDuration: number, layer: number, normalizedTime: number): any;
-    PlayInFixedTime(stateName: string, layer: number): any;
-    PlayInFixedTime(stateName: string): any;
-    PlayInFixedTime(stateName: string, layer: number, fixedTime: number): any;
-    PlayInFixedTime(stateNameHash: number, layer: number): any;
-    PlayInFixedTime(stateNameHash: number): any;
-    PlayInFixedTime(stateNameHash: number, layer: number, fixedTime: number): any;
-    Play(stateName: string, layer: number): any;
-    Play(stateName: string): any;
-    Play(stateName: string, layer: number, normalizedTime: number): any;
-    Play(stateNameHash: number, layer: number): any;
-    Play(stateNameHash: number): any;
-    Play(stateNameHash: number, layer: number, normalizedTime: number): any;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number): void;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number): void;
+    CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number, fixedTime: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number): void;
+    CrossFadeInFixedTime(stateNameHash: number, transitionDuration: number, layer: number, fixedTime: number): void;
+    CrossFade(stateName: string, transitionDuration: number, layer: number): void;
+    CrossFade(stateName: string, transitionDuration: number): void;
+    CrossFade(stateName: string, transitionDuration: number, layer: number, normalizedTime: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number, layer: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number): void;
+    CrossFade(stateNameHash: number, transitionDuration: number, layer: number, normalizedTime: number): void;
+    PlayInFixedTime(stateName: string, layer: number): void;
+    PlayInFixedTime(stateName: string): void;
+    PlayInFixedTime(stateName: string, layer: number, fixedTime: number): void;
+    PlayInFixedTime(stateNameHash: number, layer: number): void;
+    PlayInFixedTime(stateNameHash: number): void;
+    PlayInFixedTime(stateNameHash: number, layer: number, fixedTime: number): void;
+    Play(stateName: string, layer: number): void;
+    Play(stateName: string): void;
+    Play(stateName: string, layer: number, normalizedTime: number): void;
+    Play(stateNameHash: number, layer: number): void;
+    Play(stateNameHash: number): void;
+    Play(stateNameHash: number, layer: number, normalizedTime: number): void;
     HasState(layerIndex: number, stateID: number): boolean;
     IsValid(): boolean;
     Equals(p: any): boolean;
@@ -9634,14 +9634,14 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     constructor();
     // methods
-    Destroy(): any;
-    PrepareFrame(info: UnityEngine.Experimental.Director.FrameData): any;
-    OnSetTime(localTime: number): any;
-    OnSetPlayState(newState: UnityEngine.Experimental.Director.PlayState): any;
+    Destroy(): void;
+    PrepareFrame(info: UnityEngine.Experimental.Director.FrameData): void;
+    OnSetTime(localTime: number): void;
+    OnSetPlayState(newState: UnityEngine.Experimental.Director.PlayState): void;
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     AddInput(input: UnityEngine.Experimental.Director.Playable): number;
     SetInput(source: UnityEngine.Experimental.Director.Playable, index: number): boolean;
     SetInputs(sources: any): boolean;
@@ -9665,11 +9665,11 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     constructor();
     // methods
-    Play(pStruct: UnityEngine.Experimental.Director.Playable): any;
-    Stop(): any;
-    SetTime(time: number): any;
+    Play(pStruct: UnityEngine.Experimental.Director.Playable): void;
+    Stop(): void;
+    SetTime(time: number): void;
     GetTime(): number;
-    SetTimeUpdateMode(mode: UnityEngine.Experimental.Director.DirectorUpdateMode): any;
+    SetTimeUpdateMode(mode: UnityEngine.Experimental.Director.DirectorUpdateMode): void;
     GetTimeUpdateMode(): UnityEngine.Experimental.Director.DirectorUpdateMode;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
@@ -9681,20 +9681,20 @@ declare namespace UnityEngine.Experimental.Director {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -9779,7 +9779,7 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.GenericMixerPlayable;
-    Destroy(): any;
+    Destroy(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;
@@ -9802,17 +9802,17 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     private constructor();
     // methods
-    Destroy(): any;
+    Destroy(): void;
     IsValid(): boolean;
     static GetTypeOf(playable: UnityEngine.Experimental.Director.Playable): any;
     static Connect(source: UnityEngine.Experimental.Director.Playable, target: UnityEngine.Experimental.Director.Playable): boolean;
     static Connect(source: UnityEngine.Experimental.Director.Playable, target: UnityEngine.Experimental.Director.Playable, sourceOutputPort: number, targetInputPort: number): boolean;
-    static Disconnect(target: UnityEngine.Experimental.Director.Playable, inputPort: number): any;
+    static Disconnect(target: UnityEngine.Experimental.Director.Playable, inputPort: number): void;
     GetInputs(): UnityEngine.Experimental.Director.Playable[];
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutputs(): UnityEngine.Experimental.Director.Playable[];
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
-    SetInputWeight(input: UnityEngine.Experimental.Director.Playable, weight: number): any;
+    SetInputWeight(input: UnityEngine.Experimental.Director.Playable, weight: number): void;
     SetInputWeight(inputIndex: number, weight: number): boolean;
     GetInputWeight(index: number): number;
     Equals(p: any): boolean;
@@ -9962,20 +9962,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -10035,20 +10035,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -10174,9 +10174,9 @@ declare namespace UnityEngine {
     static CreateDynamicFontFromOSFont(fontname: string, size: number): UnityEngine.Font;
     static CreateDynamicFontFromOSFont(fontnames: string[], size: number): UnityEngine.Font;
     HasCharacter(c: any): boolean;
-    RequestCharactersInTexture(characters: string, size: number, style: UnityEngine.FontStyle): any;
-    RequestCharactersInTexture(characters: string, size: number): any;
-    RequestCharactersInTexture(characters: string): any;
+    RequestCharactersInTexture(characters: string, size: number, style: UnityEngine.FontStyle): void;
+    RequestCharactersInTexture(characters: string, size: number): void;
+    RequestCharactersInTexture(characters: string): void;
     static GetMaxVertsForString(str: string): number;
     GetCharacterInfo(ch: any, info: any, size: number, style: UnityEngine.FontStyle): boolean;
     GetCharacterInfo(ch: any, info: any, size: number): boolean;
@@ -10205,10 +10205,10 @@ declare namespace UnityEngine.Font {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -10306,20 +10306,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -10425,35 +10425,35 @@ declare namespace UnityEngine {
     GetComponentInChildren(type: any): UnityEngine.Component;
     GetComponentInParent(type: any): UnityEngine.Component;
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     GetComponentsInChildren(type: any): UnityEngine.Component[];
     GetComponentsInChildren(type: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponentsInParent(type: any): UnityEngine.Component[];
     GetComponentsInParent(type: any, includeInactive: boolean): UnityEngine.Component[];
-    SetActive(value: boolean): any;
-    SetActiveRecursively(state: boolean): any;
+    SetActive(value: boolean): void;
+    SetActiveRecursively(state: boolean): void;
     CompareTag(tag: string): boolean;
     static FindGameObjectWithTag(tag: string): UnityEngine.GameObject;
     static FindWithTag(tag: string): UnityEngine.GameObject;
     static FindGameObjectsWithTag(tag: string): UnityEngine.GameObject[];
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     AddComponent(componentType: any): UnityEngine.Component;
     static Find(name: string): UnityEngine.GameObject;
-    SampleAnimation(clip: UnityEngine.Object, time: number): any;
+    SampleAnimation(clip: UnityEngine.Object, time: number): void;
     AddComponent(className: string): UnityEngine.Component;
-    PlayAnimation(animation: UnityEngine.Object): any;
-    StopAnimation(): any;
+    PlayAnimation(animation: UnityEngine.Object): void;
+    StopAnimation(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -10513,36 +10513,36 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static DrawRay(r: UnityEngine.Ray): any;
-    static DrawRay(from: UnityEngine.Vector3, direction: UnityEngine.Vector3): any;
-    static DrawLine(from: UnityEngine.Vector3, to: UnityEngine.Vector3): any;
-    static DrawWireSphere(center: UnityEngine.Vector3, radius: number): any;
-    static DrawSphere(center: UnityEngine.Vector3, radius: number): any;
-    static DrawWireCube(center: UnityEngine.Vector3, size: UnityEngine.Vector3): any;
-    static DrawCube(center: UnityEngine.Vector3, size: UnityEngine.Vector3): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3): any;
-    static DrawMesh(mesh: UnityEngine.Mesh): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3): any;
-    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number): any;
-    static DrawIcon(center: UnityEngine.Vector3, name: string, allowScaling: boolean): any;
-    static DrawIcon(center: UnityEngine.Vector3, name: string): any;
-    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture): any;
-    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material): any;
-    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): any;
-    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): any;
-    static DrawFrustum(center: UnityEngine.Vector3, fov: number, maxRange: number, minRange: number, aspect: number): any;
+    static DrawRay(r: UnityEngine.Ray): void;
+    static DrawRay(from: UnityEngine.Vector3, direction: UnityEngine.Vector3): void;
+    static DrawLine(from: UnityEngine.Vector3, to: UnityEngine.Vector3): void;
+    static DrawWireSphere(center: UnityEngine.Vector3, radius: number): void;
+    static DrawSphere(center: UnityEngine.Vector3, radius: number): void;
+    static DrawWireCube(center: UnityEngine.Vector3, size: UnityEngine.Vector3): void;
+    static DrawCube(center: UnityEngine.Vector3, size: UnityEngine.Vector3): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3): void;
+    static DrawMesh(mesh: UnityEngine.Mesh): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, submeshIndex: number): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, scale: UnityEngine.Vector3): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number, position: UnityEngine.Vector3): void;
+    static DrawWireMesh(mesh: UnityEngine.Mesh, submeshIndex: number): void;
+    static DrawIcon(center: UnityEngine.Vector3, name: string, allowScaling: boolean): void;
+    static DrawIcon(center: UnityEngine.Vector3, name: string): void;
+    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture): void;
+    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material): void;
+    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): void;
+    static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): void;
+    static DrawFrustum(center: UnityEngine.Vector3, fov: number, maxRange: number, minRange: number, aspect: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10558,36 +10558,36 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Vertex3(x: number, y: number, z: number): any;
-    static Vertex(v: UnityEngine.Vector3): any;
-    static Color(c: UnityEngine.Color): any;
-    static TexCoord(v: UnityEngine.Vector3): any;
-    static TexCoord2(x: number, y: number): any;
-    static TexCoord3(x: number, y: number, z: number): any;
-    static MultiTexCoord2(unit: number, x: number, y: number): any;
-    static MultiTexCoord3(unit: number, x: number, y: number, z: number): any;
-    static MultiTexCoord(unit: number, v: UnityEngine.Vector3): any;
-    static Begin(mode: number): any;
-    static End(): any;
-    static LoadOrtho(): any;
-    static LoadPixelMatrix(): any;
-    static LoadPixelMatrix(left: number, right: number, bottom: number, top: number): any;
-    static Viewport(pixelRect: UnityEngine.Rect): any;
-    static LoadProjectionMatrix(mat: UnityEngine.Matrix4x4): any;
-    static LoadIdentity(): any;
-    static MultMatrix(mat: UnityEngine.Matrix4x4): any;
-    static PushMatrix(): any;
-    static PopMatrix(): any;
+    static Vertex3(x: number, y: number, z: number): void;
+    static Vertex(v: UnityEngine.Vector3): void;
+    static Color(c: UnityEngine.Color): void;
+    static TexCoord(v: UnityEngine.Vector3): void;
+    static TexCoord2(x: number, y: number): void;
+    static TexCoord3(x: number, y: number, z: number): void;
+    static MultiTexCoord2(unit: number, x: number, y: number): void;
+    static MultiTexCoord3(unit: number, x: number, y: number, z: number): void;
+    static MultiTexCoord(unit: number, v: UnityEngine.Vector3): void;
+    static Begin(mode: number): void;
+    static End(): void;
+    static LoadOrtho(): void;
+    static LoadPixelMatrix(): void;
+    static LoadPixelMatrix(left: number, right: number, bottom: number, top: number): void;
+    static Viewport(pixelRect: UnityEngine.Rect): void;
+    static LoadProjectionMatrix(mat: UnityEngine.Matrix4x4): void;
+    static LoadIdentity(): void;
+    static MultMatrix(mat: UnityEngine.Matrix4x4): void;
+    static PushMatrix(): void;
+    static PopMatrix(): void;
     static GetGPUProjectionMatrix(proj: UnityEngine.Matrix4x4, renderIntoTexture: boolean): UnityEngine.Matrix4x4;
-    static SetRevertBackfacing(revertBackFaces: boolean): any;
-    static Clear(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color): any;
-    static Clear(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color, depth: number): any;
-    static ClearWithSkybox(clearDepth: boolean, camera: UnityEngine.Camera): any;
-    static Flush(): any;
-    static InvalidateState(): any;
-    static IssuePluginEvent(eventID: number): any;
-    static IssuePluginEvent(callback: any, eventID: number): any;
-    static RenderTargetBarrier(): any;
+    static SetRevertBackfacing(revertBackFaces: boolean): void;
+    static Clear(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color): void;
+    static Clear(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color, depth: number): void;
+    static ClearWithSkybox(clearDepth: boolean, camera: UnityEngine.Camera): void;
+    static Flush(): void;
+    static InvalidateState(): void;
+    static IssuePluginEvent(eventID: number): void;
+    static IssuePluginEvent(callback: any, eventID: number): void;
+    static RenderTargetBarrier(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10610,7 +10610,7 @@ declare namespace UnityEngine {
     constructor();
     // methods
     Evaluate(time: number): UnityEngine.Color;
-    SetKeys(colorKeys: UnityEngine.GradientColorKey[], alphaKeys: UnityEngine.GradientAlphaKey[]): any;
+    SetKeys(colorKeys: UnityEngine.GradientColorKey[], alphaKeys: UnityEngine.GradientAlphaKey[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10678,89 +10678,89 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean, useLightProbes: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform, useLightProbes: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean, useLightProbes: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform, useLightProbes: boolean): any;
-    static DrawMeshNow(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): any;
-    static DrawMeshNow(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): any;
-    static DrawMeshNow(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): any;
-    static DrawMeshNow(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, materialIndex: number): any;
-    static DrawProcedural(topology: UnityEngine.MeshTopology, vertexCount: number, instanceCount: number): any;
-    static DrawProcedural(topology: UnityEngine.MeshTopology, vertexCount: number): any;
-    static DrawProceduralIndirect(topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer, argsOffset: number): any;
-    static DrawProceduralIndirect(topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[]): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any): any;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material, pass: number): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material, pass: number): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material, pass: number): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, color: UnityEngine.Color, mat: UnityEngine.Material): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, color: UnityEngine.Color): any;
-    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, color: UnityEngine.Color, mat: UnityEngine.Material, pass: number): any;
-    static ExecuteCommandBuffer(buffer: UnityEngine.Rendering.CommandBuffer): any;
-    static Blit(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture): any;
-    static Blit(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture, mat: UnityEngine.Material): any;
-    static Blit(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture, mat: UnityEngine.Material, pass: number): any;
-    static Blit(source: UnityEngine.Texture, mat: UnityEngine.Material): any;
-    static Blit(source: UnityEngine.Texture, mat: UnityEngine.Material, pass: number): any;
-    static BlitMultiTap(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture, mat: UnityEngine.Material, offsets: UnityEngine.Vector2[]): any;
-    static CopyTexture(src: UnityEngine.Texture, dst: UnityEngine.Texture): any;
-    static CopyTexture(src: UnityEngine.Texture, srcElement: number, srcMip: number, dst: UnityEngine.Texture, dstElement: number, dstMip: number): any;
-    static CopyTexture(src: UnityEngine.Texture, srcElement: number, srcMip: number, srcX: number, srcY: number, srcWidth: number, srcHeight: number, dst: UnityEngine.Texture, dstElement: number, dstMip: number, dstX: number, dstY: number): any;
-    static SetRandomWriteTarget(index: number, uav: UnityEngine.RenderTexture): any;
-    static SetRandomWriteTarget(index: number, uav: UnityEngine.ComputeBuffer): any;
-    static SetRandomWriteTarget(index: number, uav: UnityEngine.ComputeBuffer, preserveCounterValue: boolean): any;
-    static ClearRandomWriteTargets(): any;
-    static SetRenderTarget(rt: UnityEngine.RenderTexture): any;
-    static SetRenderTarget(rt: UnityEngine.RenderTexture, mipLevel: number): any;
-    static SetRenderTarget(rt: UnityEngine.RenderTexture, mipLevel: number, face: UnityEngine.CubemapFace): any;
-    static SetRenderTarget(rt: UnityEngine.RenderTexture, mipLevel: number, face: UnityEngine.CubemapFace, depthSlice: number): any;
-    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer): any;
-    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number): any;
-    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace): any;
-    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace, depthSlice: number): any;
-    static SetRenderTarget(colorBuffers: UnityEngine.RenderBuffer[], depthBuffer: UnityEngine.RenderBuffer): any;
-    static SetRenderTarget(setup: UnityEngine.RenderTargetSetup): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): any;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, materialIndex: number): any;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean, useLightProbes: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform, useLightProbes: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: boolean, receiveShadows: boolean, useLightProbes: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform, useLightProbes: boolean): void;
+    static DrawMeshNow(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawMeshNow(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): void;
+    static DrawMeshNow(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): void;
+    static DrawMeshNow(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, materialIndex: number): void;
+    static DrawProcedural(topology: UnityEngine.MeshTopology, vertexCount: number, instanceCount: number): void;
+    static DrawProcedural(topology: UnityEngine.MeshTopology, vertexCount: number): void;
+    static DrawProceduralIndirect(topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer, argsOffset: number): void;
+    static DrawProceduralIndirect(topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[]): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material, pass: number): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material, pass: number): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material, pass: number): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, color: UnityEngine.Color, mat: UnityEngine.Material): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, color: UnityEngine.Color): void;
+    static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, sourceRect: UnityEngine.Rect, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, color: UnityEngine.Color, mat: UnityEngine.Material, pass: number): void;
+    static ExecuteCommandBuffer(buffer: UnityEngine.Rendering.CommandBuffer): void;
+    static Blit(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture): void;
+    static Blit(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture, mat: UnityEngine.Material): void;
+    static Blit(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture, mat: UnityEngine.Material, pass: number): void;
+    static Blit(source: UnityEngine.Texture, mat: UnityEngine.Material): void;
+    static Blit(source: UnityEngine.Texture, mat: UnityEngine.Material, pass: number): void;
+    static BlitMultiTap(source: UnityEngine.Texture, dest: UnityEngine.RenderTexture, mat: UnityEngine.Material, offsets: UnityEngine.Vector2[]): void;
+    static CopyTexture(src: UnityEngine.Texture, dst: UnityEngine.Texture): void;
+    static CopyTexture(src: UnityEngine.Texture, srcElement: number, srcMip: number, dst: UnityEngine.Texture, dstElement: number, dstMip: number): void;
+    static CopyTexture(src: UnityEngine.Texture, srcElement: number, srcMip: number, srcX: number, srcY: number, srcWidth: number, srcHeight: number, dst: UnityEngine.Texture, dstElement: number, dstMip: number, dstX: number, dstY: number): void;
+    static SetRandomWriteTarget(index: number, uav: UnityEngine.RenderTexture): void;
+    static SetRandomWriteTarget(index: number, uav: UnityEngine.ComputeBuffer): void;
+    static SetRandomWriteTarget(index: number, uav: UnityEngine.ComputeBuffer, preserveCounterValue: boolean): void;
+    static ClearRandomWriteTargets(): void;
+    static SetRenderTarget(rt: UnityEngine.RenderTexture): void;
+    static SetRenderTarget(rt: UnityEngine.RenderTexture, mipLevel: number): void;
+    static SetRenderTarget(rt: UnityEngine.RenderTexture, mipLevel: number, face: UnityEngine.CubemapFace): void;
+    static SetRenderTarget(rt: UnityEngine.RenderTexture, mipLevel: number, face: UnityEngine.CubemapFace, depthSlice: number): void;
+    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer): void;
+    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number): void;
+    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace): void;
+    static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace, depthSlice: number): void;
+    static SetRenderTarget(colorBuffers: UnityEngine.RenderBuffer[], depthBuffer: UnityEngine.RenderBuffer): void;
+    static SetRenderTarget(setup: UnityEngine.RenderTargetSetup): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, materialIndex: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10780,7 +10780,7 @@ declare namespace UnityEngine.GUI {
     // constructors
     constructor(position: UnityEngine.Rect);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10794,24 +10794,24 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Label(position: UnityEngine.Rect, text: string): any;
-    static Label(position: UnityEngine.Rect, image: UnityEngine.Texture): any;
-    static Label(position: UnityEngine.Rect, content: UnityEngine.GUIContent): any;
-    static Label(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): any;
-    static Label(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): any;
-    static Label(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): any;
-    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture): any;
-    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture, scaleMode: UnityEngine.ScaleMode): any;
-    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture, scaleMode: UnityEngine.ScaleMode, alphaBlend: boolean): any;
-    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture, scaleMode: UnityEngine.ScaleMode, alphaBlend: boolean, imageAspect: number): any;
-    static DrawTextureWithTexCoords(position: UnityEngine.Rect, image: UnityEngine.Texture, texCoords: UnityEngine.Rect): any;
-    static DrawTextureWithTexCoords(position: UnityEngine.Rect, image: UnityEngine.Texture, texCoords: UnityEngine.Rect, alphaBlend: boolean): any;
-    static Box(position: UnityEngine.Rect, text: string): any;
-    static Box(position: UnityEngine.Rect, image: UnityEngine.Texture): any;
-    static Box(position: UnityEngine.Rect, content: UnityEngine.GUIContent): any;
-    static Box(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): any;
-    static Box(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): any;
-    static Box(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): any;
+    static Label(position: UnityEngine.Rect, text: string): void;
+    static Label(position: UnityEngine.Rect, image: UnityEngine.Texture): void;
+    static Label(position: UnityEngine.Rect, content: UnityEngine.GUIContent): void;
+    static Label(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): void;
+    static Label(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): void;
+    static Label(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): void;
+    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture): void;
+    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture, scaleMode: UnityEngine.ScaleMode): void;
+    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture, scaleMode: UnityEngine.ScaleMode, alphaBlend: boolean): void;
+    static DrawTexture(position: UnityEngine.Rect, image: UnityEngine.Texture, scaleMode: UnityEngine.ScaleMode, alphaBlend: boolean, imageAspect: number): void;
+    static DrawTextureWithTexCoords(position: UnityEngine.Rect, image: UnityEngine.Texture, texCoords: UnityEngine.Rect): void;
+    static DrawTextureWithTexCoords(position: UnityEngine.Rect, image: UnityEngine.Texture, texCoords: UnityEngine.Rect, alphaBlend: boolean): void;
+    static Box(position: UnityEngine.Rect, text: string): void;
+    static Box(position: UnityEngine.Rect, image: UnityEngine.Texture): void;
+    static Box(position: UnityEngine.Rect, content: UnityEngine.GUIContent): void;
+    static Box(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): void;
+    static Box(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): void;
+    static Box(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): void;
     static Button(position: UnityEngine.Rect, text: string): boolean;
     static Button(position: UnityEngine.Rect, image: UnityEngine.Texture): boolean;
     static Button(position: UnityEngine.Rect, content: UnityEngine.GUIContent): boolean;
@@ -10864,25 +10864,25 @@ declare namespace UnityEngine {
     static HorizontalScrollbar(position: UnityEngine.Rect, value: number, size: number, leftValue: number, rightValue: number, style: UnityEngine.GUIStyle): number;
     static VerticalScrollbar(position: UnityEngine.Rect, value: number, size: number, topValue: number, bottomValue: number): number;
     static VerticalScrollbar(position: UnityEngine.Rect, value: number, size: number, topValue: number, bottomValue: number, style: UnityEngine.GUIStyle): number;
-    static BeginClip(position: UnityEngine.Rect, scrollOffset: UnityEngine.Vector2, renderOffset: UnityEngine.Vector2, resetOffset: boolean): any;
-    static BeginGroup(position: UnityEngine.Rect): any;
-    static BeginGroup(position: UnityEngine.Rect, text: string): any;
-    static BeginGroup(position: UnityEngine.Rect, image: UnityEngine.Texture): any;
-    static BeginGroup(position: UnityEngine.Rect, content: UnityEngine.GUIContent): any;
-    static BeginGroup(position: UnityEngine.Rect, style: UnityEngine.GUIStyle): any;
-    static BeginGroup(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): any;
-    static BeginGroup(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): any;
-    static BeginGroup(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): any;
-    static EndGroup(): any;
-    static BeginClip(position: UnityEngine.Rect): any;
-    static EndClip(): any;
+    static BeginClip(position: UnityEngine.Rect, scrollOffset: UnityEngine.Vector2, renderOffset: UnityEngine.Vector2, resetOffset: boolean): void;
+    static BeginGroup(position: UnityEngine.Rect): void;
+    static BeginGroup(position: UnityEngine.Rect, text: string): void;
+    static BeginGroup(position: UnityEngine.Rect, image: UnityEngine.Texture): void;
+    static BeginGroup(position: UnityEngine.Rect, content: UnityEngine.GUIContent): void;
+    static BeginGroup(position: UnityEngine.Rect, style: UnityEngine.GUIStyle): void;
+    static BeginGroup(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): void;
+    static BeginGroup(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): void;
+    static BeginGroup(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): void;
+    static EndGroup(): void;
+    static BeginClip(position: UnityEngine.Rect): void;
+    static EndClip(): void;
     static BeginScrollView(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect): UnityEngine.Vector2;
     static BeginScrollView(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean): UnityEngine.Vector2;
     static BeginScrollView(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle): UnityEngine.Vector2;
     static BeginScrollView(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle): UnityEngine.Vector2;
-    static EndScrollView(): any;
-    static EndScrollView(handleScrollWheel: boolean): any;
-    static ScrollTo(position: UnityEngine.Rect): any;
+    static EndScrollView(): void;
+    static EndScrollView(handleScrollWheel: boolean): void;
+    static ScrollTo(position: UnityEngine.Rect): void;
     static ScrollTowards(position: UnityEngine.Rect, maxDelta: number): boolean;
     static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string): UnityEngine.Rect;
     static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture): UnityEngine.Rect;
@@ -10896,15 +10896,15 @@ declare namespace UnityEngine {
     static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static DragWindow(): any;
-    static SetNextControlName(name: string): any;
+    static DragWindow(): void;
+    static SetNextControlName(name: string): void;
     static GetNameOfFocusedControl(): string;
-    static FocusControl(name: string): any;
-    static DragWindow(position: UnityEngine.Rect): any;
-    static BringWindowToFront(windowID: number): any;
-    static BringWindowToBack(windowID: number): any;
-    static FocusWindow(windowID: number): any;
-    static UnfocusWindow(): any;
+    static FocusControl(name: string): void;
+    static DragWindow(position: UnityEngine.Rect): void;
+    static BringWindowToFront(windowID: number): void;
+    static BringWindowToBack(windowID: number): void;
+    static FocusWindow(windowID: number): void;
+    static UnfocusWindow(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10933,7 +10933,7 @@ declare namespace UnityEngine.GUI {
     constructor(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle);
     constructor(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10959,7 +10959,7 @@ declare namespace UnityEngine.GUI {
     constructor(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle);
     constructor(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -10994,10 +10994,10 @@ declare namespace UnityEngine.GUI {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(id: number): any;
+    Invoke(id: number): void;
     BeginInvoke(id: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -11016,11 +11016,11 @@ declare namespace UnityEngine {
     // constructors
     constructor(aspect: number, options: UnityEngine.GUILayoutOption[]);
     // methods
-    CalcHeight(): any;
-    CalcWidth(): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
+    CalcHeight(): void;
+    CalcWidth(): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11088,9 +11088,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static LogLayoutEntry(rect: UnityEngine.Rect, margins: UnityEngine.RectOffset, style: UnityEngine.GUIStyle): any;
-    static LogLayoutGroupEntry(rect: UnityEngine.Rect, margins: UnityEngine.RectOffset, style: UnityEngine.GUIStyle, isVertical: boolean): any;
-    static LogLayoutEndGroup(): any;
+    static LogLayoutEntry(rect: UnityEngine.Rect, margins: UnityEngine.RectOffset, style: UnityEngine.GUIStyle): void;
+    static LogLayoutGroupEntry(rect: UnityEngine.Rect, margins: UnityEngine.RectOffset, style: UnityEngine.GUIStyle, isVertical: boolean): void;
+    static LogLayoutEndGroup(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -11118,20 +11118,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -11191,20 +11191,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -11249,7 +11249,7 @@ declare namespace UnityEngine.GUILayout {
     constructor(screenRect: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle);
     constructor(screenRect: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -11263,18 +11263,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Label(image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): any;
-    static Label(text: string, options: UnityEngine.GUILayoutOption[]): any;
-    static Label(content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): any;
-    static Label(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static Label(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static Label(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static Box(image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): any;
-    static Box(text: string, options: UnityEngine.GUILayoutOption[]): any;
-    static Box(content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): any;
-    static Box(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static Box(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static Box(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
+    static Label(image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): void;
+    static Label(text: string, options: UnityEngine.GUILayoutOption[]): void;
+    static Label(content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): void;
+    static Label(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static Label(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static Label(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static Box(image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): void;
+    static Box(text: string, options: UnityEngine.GUILayoutOption[]): void;
+    static Box(content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): void;
+    static Box(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static Box(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static Box(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
     static Button(image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): boolean;
     static Button(text: string, options: UnityEngine.GUILayoutOption[]): boolean;
     static Button(content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): boolean;
@@ -11325,29 +11325,29 @@ declare namespace UnityEngine {
     static HorizontalScrollbar(value: number, size: number, leftValue: number, rightValue: number, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): number;
     static VerticalScrollbar(value: number, size: number, topValue: number, bottomValue: number, options: UnityEngine.GUILayoutOption[]): number;
     static VerticalScrollbar(value: number, size: number, topValue: number, bottomValue: number, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): number;
-    static Space(pixels: number): any;
-    static FlexibleSpace(): any;
-    static BeginHorizontal(options: UnityEngine.GUILayoutOption[]): any;
-    static BeginHorizontal(style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static BeginHorizontal(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static BeginHorizontal(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static BeginHorizontal(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static EndHorizontal(): any;
-    static BeginVertical(options: UnityEngine.GUILayoutOption[]): any;
-    static BeginVertical(style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static BeginVertical(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static BeginVertical(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static BeginVertical(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): any;
-    static EndVertical(): any;
-    static BeginArea(screenRect: UnityEngine.Rect): any;
-    static BeginArea(screenRect: UnityEngine.Rect, text: string): any;
-    static BeginArea(screenRect: UnityEngine.Rect, image: UnityEngine.Texture): any;
-    static BeginArea(screenRect: UnityEngine.Rect, content: UnityEngine.GUIContent): any;
-    static BeginArea(screenRect: UnityEngine.Rect, style: UnityEngine.GUIStyle): any;
-    static BeginArea(screenRect: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): any;
-    static BeginArea(screenRect: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): any;
-    static BeginArea(screenRect: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): any;
-    static EndArea(): any;
+    static Space(pixels: number): void;
+    static FlexibleSpace(): void;
+    static BeginHorizontal(options: UnityEngine.GUILayoutOption[]): void;
+    static BeginHorizontal(style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static BeginHorizontal(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static BeginHorizontal(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static BeginHorizontal(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static EndHorizontal(): void;
+    static BeginVertical(options: UnityEngine.GUILayoutOption[]): void;
+    static BeginVertical(style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static BeginVertical(text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static BeginVertical(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static BeginVertical(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): void;
+    static EndVertical(): void;
+    static BeginArea(screenRect: UnityEngine.Rect): void;
+    static BeginArea(screenRect: UnityEngine.Rect, text: string): void;
+    static BeginArea(screenRect: UnityEngine.Rect, image: UnityEngine.Texture): void;
+    static BeginArea(screenRect: UnityEngine.Rect, content: UnityEngine.GUIContent): void;
+    static BeginArea(screenRect: UnityEngine.Rect, style: UnityEngine.GUIStyle): void;
+    static BeginArea(screenRect: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle): void;
+    static BeginArea(screenRect: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): void;
+    static BeginArea(screenRect: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): void;
+    static EndArea(): void;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
@@ -11355,7 +11355,7 @@ declare namespace UnityEngine {
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, background: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
-    static EndScrollView(): any;
+    static EndScrollView(): void;
     static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
@@ -11387,7 +11387,7 @@ declare namespace UnityEngine.GUILayout {
     constructor(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     constructor(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -11415,7 +11415,7 @@ declare namespace UnityEngine.GUILayout {
     constructor(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     constructor(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, background: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -11435,7 +11435,7 @@ declare namespace UnityEngine.GUILayout {
     constructor(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     constructor(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -11450,11 +11450,11 @@ declare namespace UnityEngine {
     constructor(_minWidth: number, _maxWidth: number, _minHeight: number, _maxHeight: number, _style: UnityEngine.GUIStyle);
     constructor(_minWidth: number, _maxWidth: number, _minHeight: number, _maxHeight: number, _style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    CalcWidth(): any;
-    CalcHeight(): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
+    CalcWidth(): void;
+    CalcHeight(): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11478,16 +11478,16 @@ declare namespace UnityEngine {
     constructor();
     constructor(_style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
-    ResetCursor(): any;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
+    ResetCursor(): void;
     PeekNext(): UnityEngine.Rect;
     GetNext(): UnityEngine.GUILayoutEntry;
     GetLast(): UnityEngine.Rect;
-    Add(e: UnityEngine.GUILayoutEntry): any;
-    CalcWidth(): any;
-    SetHorizontal(x: number, width: number): any;
-    CalcHeight(): any;
-    SetVertical(y: number, height: number): any;
+    Add(e: UnityEngine.GUILayoutEntry): void;
+    CalcWidth(): void;
+    SetHorizontal(x: number, width: number): void;
+    CalcHeight(): void;
+    SetVertical(y: number, height: number): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11559,8 +11559,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static BeginGroup(GroupName: string): any;
-    static EndGroup(groupName: string): any;
+    static BeginGroup(GroupName: string): void;
+    static EndGroup(groupName: string): void;
     static GetRect(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static GetRect(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static GetRect(width: number, height: number): UnityEngine.Rect;
@@ -11598,16 +11598,16 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    CalcWidth(): any;
-    SetHorizontal(x: number, width: number): any;
-    CalcHeight(): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
-    ResetCursor(): any;
+    CalcWidth(): void;
+    SetHorizontal(x: number, width: number): void;
+    CalcHeight(): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
+    ResetCursor(): void;
     PeekNext(): UnityEngine.Rect;
     GetNext(): UnityEngine.GUILayoutEntry;
     GetLast(): UnityEngine.Rect;
-    Add(e: UnityEngine.GUILayoutEntry): any;
+    Add(e: UnityEngine.GUILayoutEntry): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11670,7 +11670,7 @@ declare namespace UnityEngine {
     GetStyle(styleName: string): UnityEngine.GUIStyle;
     FindStyle(styleName: string): UnityEngine.GUIStyle;
     GetEnumerator(): any;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -11710,10 +11710,10 @@ declare namespace UnityEngine.GUISkin {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -11746,20 +11746,20 @@ declare namespace UnityEngine {
     constructor();
     constructor(other: UnityEngine.GUIStyle);
     // methods
-    Draw(position: UnityEngine.Rect, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): any;
-    Draw(position: UnityEngine.Rect, text: string, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): any;
-    Draw(position: UnityEngine.Rect, image: UnityEngine.Texture, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): any;
-    Draw(position: UnityEngine.Rect, content: UnityEngine.GUIContent, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): any;
-    Draw(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number): any;
-    Draw(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number, on: boolean): any;
-    DrawCursor(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number, Character: number): any;
-    DrawWithTextSelection(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number, firstSelectedCharacter: number, lastSelectedCharacter: number): any;
+    Draw(position: UnityEngine.Rect, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): void;
+    Draw(position: UnityEngine.Rect, text: string, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): void;
+    Draw(position: UnityEngine.Rect, image: UnityEngine.Texture, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): void;
+    Draw(position: UnityEngine.Rect, content: UnityEngine.GUIContent, isHover: boolean, isActive: boolean, on: boolean, hasKeyboardFocus: boolean): void;
+    Draw(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number): void;
+    Draw(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number, on: boolean): void;
+    DrawCursor(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number, Character: number): void;
+    DrawWithTextSelection(position: UnityEngine.Rect, content: UnityEngine.GUIContent, controlID: number, firstSelectedCharacter: number, lastSelectedCharacter: number): void;
     GetCursorPixelPosition(position: UnityEngine.Rect, content: UnityEngine.GUIContent, cursorStringIndex: number): UnityEngine.Vector2;
     GetCursorStringIndex(position: UnityEngine.Rect, content: UnityEngine.GUIContent, cursorPixelPosition: UnityEngine.Vector2): number;
     CalcSize(content: UnityEngine.GUIContent): UnityEngine.Vector2;
     CalcScreenSize(contentSize: UnityEngine.Vector2): UnityEngine.Vector2;
     CalcHeight(content: UnityEngine.GUIContent, width: number): number;
-    CalcMinMaxWidth(content: UnityEngine.GUIContent, minWidth: any, maxWidth: any): any;
+    CalcMinMaxWidth(content: UnityEngine.GUIContent, minWidth: any, maxWidth: any): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11852,20 +11852,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -11930,20 +11930,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -11993,12 +11993,12 @@ declare namespace UnityEngine {
     static GetControlID(contents: UnityEngine.GUIContent, focus: UnityEngine.FocusType, position: UnityEngine.Rect): number;
     static GetStateObject(t: any, controlID: number): any;
     static QueryStateObject(t: any, controlID: number): any;
-    static ExitGUI(): any;
+    static ExitGUI(): void;
     static GUIToScreenPoint(guiPoint: UnityEngine.Vector2): UnityEngine.Vector2;
     static ScreenToGUIPoint(screenPoint: UnityEngine.Vector2): UnityEngine.Vector2;
     static ScreenToGUIRect(screenRect: UnityEngine.Rect): UnityEngine.Rect;
-    static RotateAroundPivot(angle: number, pivotPoint: UnityEngine.Vector2): any;
-    static ScaleAroundPivot(scale: UnityEngine.Vector2, pivotPoint: UnityEngine.Vector2): any;
+    static RotateAroundPivot(angle: number, pivotPoint: UnityEngine.Vector2): void;
+    static ScaleAroundPivot(scale: UnityEngine.Vector2, pivotPoint: UnityEngine.Vector2): void;
     static GetControlID(hint: number, focus: UnityEngine.FocusType): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -12017,11 +12017,11 @@ declare namespace UnityEngine {
     // constructors
     constructor(style: UnityEngine.GUIStyle, content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]);
     // methods
-    CalcWidth(): any;
-    CalcHeight(): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
+    CalcWidth(): void;
+    CalcHeight(): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -12057,14 +12057,14 @@ declare namespace UnityEngine {
     static PlayFullScreenMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.FullScreenMovieControlMode): boolean;
     static PlayFullScreenMovie(path: string, bgColor: UnityEngine.Color): boolean;
     static PlayFullScreenMovie(path: string): boolean;
-    static Vibrate(): any;
-    static SetActivityIndicatorStyle(style: UnityEngine.iOS.ActivityIndicatorStyle): any;
-    static SetActivityIndicatorStyle(style: UnityEngine.AndroidActivityIndicatorStyle): any;
-    static SetActivityIndicatorStyle(style: UnityEngine.TizenActivityIndicatorStyle): any;
+    static Vibrate(): void;
+    static SetActivityIndicatorStyle(style: UnityEngine.iOS.ActivityIndicatorStyle): void;
+    static SetActivityIndicatorStyle(style: UnityEngine.AndroidActivityIndicatorStyle): void;
+    static SetActivityIndicatorStyle(style: UnityEngine.TizenActivityIndicatorStyle): void;
     static GetActivityIndicatorStyle(): number;
-    static StartActivityIndicator(): any;
-    static StopActivityIndicator(): any;
-    static ClearShaderCache(): any;
+    static StartActivityIndicator(): void;
+    static StopActivityIndicator(): void;
+    static ClearShaderCache(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -12215,20 +12215,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -12297,20 +12297,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -12607,9 +12607,9 @@ declare namespace UnityEngine {
     // constructors
     constructor(avatar: UnityEngine.Avatar, root: UnityEngine.Transform);
     // methods
-    Dispose(): any;
-    GetHumanPose(humanPose: any): any;
-    SetHumanPose(humanPose: any): any;
+    Dispose(): void;
+    GetHumanPose(humanPose: any): void;
+    SetHumanPose(humanPose: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -12800,7 +12800,7 @@ declare namespace UnityEngine {
     static GetMouseButton(button: number): boolean;
     static GetMouseButtonDown(button: number): boolean;
     static GetMouseButtonUp(button: number): boolean;
-    static ResetInputAxes(): any;
+    static ResetInputAxes(): void;
     static GetAccelerationEvent(index: number): UnityEngine.AccelerationEvent;
     static GetTouch(index: number): UnityEngine.Touch;
     Equals(obj: any): boolean;
@@ -12920,9 +12920,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static CombineRoot(staticBatchRoot: UnityEngine.GameObject): any;
-    static Combine(staticBatchRoot: UnityEngine.GameObject, combineOnlyStatic: boolean, isEditorPostprocessScene: boolean): any;
-    static CombineGameObjects(gos: UnityEngine.GameObject[], staticBatchRoot: UnityEngine.GameObject, isEditorPostprocessScene: boolean): any;
+    static CombineRoot(staticBatchRoot: UnityEngine.GameObject): void;
+    static Combine(staticBatchRoot: UnityEngine.GameObject, combineOnlyStatic: boolean, isEditorPostprocessScene: boolean): void;
+    static CombineGameObjects(gos: UnityEngine.GameObject[], staticBatchRoot: UnityEngine.GameObject, isEditorPostprocessScene: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13035,10 +13035,10 @@ declare namespace UnityEngine.iOS.ADBannerView {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -13057,10 +13057,10 @@ declare namespace UnityEngine.iOS.ADBannerView {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -13079,10 +13079,10 @@ declare namespace UnityEngine.iOS.ADBannerView {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -13173,8 +13173,8 @@ declare namespace UnityEngine.iOS {
     constructor(autoReload: boolean);
     constructor();
     // methods
-    Show(): any;
-    ReloadAd(): any;
+    Show(): void;
+    ReloadAd(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13190,10 +13190,10 @@ declare namespace UnityEngine.iOS.ADInterstitialAd {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -13212,10 +13212,10 @@ declare namespace UnityEngine.iOS.ADInterstitialAd {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -13294,8 +13294,8 @@ declare namespace UnityEngine.iOS {
     // constructors
     constructor();
     // methods
-    static SetNoBackupFlag(path: string): any;
-    static ResetNoBackupFlag(path: string): any;
+    static SetNoBackupFlag(path: string): void;
+    static ResetNoBackupFlag(path: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13396,16 +13396,16 @@ declare namespace UnityEngine.iOS {
     constructor();
     // methods
     static GetLocalNotification(index: number): UnityEngine.iOS.LocalNotification;
-    static ScheduleLocalNotification(notification: UnityEngine.iOS.LocalNotification): any;
-    static PresentLocalNotificationNow(notification: UnityEngine.iOS.LocalNotification): any;
-    static CancelLocalNotification(notification: UnityEngine.iOS.LocalNotification): any;
-    static CancelAllLocalNotifications(): any;
+    static ScheduleLocalNotification(notification: UnityEngine.iOS.LocalNotification): void;
+    static PresentLocalNotificationNow(notification: UnityEngine.iOS.LocalNotification): void;
+    static CancelLocalNotification(notification: UnityEngine.iOS.LocalNotification): void;
+    static CancelAllLocalNotifications(): void;
     static GetRemoteNotification(index: number): UnityEngine.iOS.RemoteNotification;
-    static ClearLocalNotifications(): any;
-    static ClearRemoteNotifications(): any;
-    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType): any;
-    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType, registerForRemote: boolean): any;
-    static UnregisterForRemoteNotifications(): any;
+    static ClearLocalNotifications(): void;
+    static ClearRemoteNotifications(): void;
+    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType): void;
+    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType, registerForRemote: boolean): void;
+    static UnregisterForRemoteNotifications(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13501,8 +13501,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetNoBackupFlag(path: string): any;
-    static ResetNoBackupFlag(path: string): any;
+    static SetNoBackupFlag(path: string): void;
+    static ResetNoBackupFlag(path: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13767,10 +13767,10 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static StartLocationServiceUpdates(desiredAccuracyInMeters: number, updateDistanceInMeters: number): any;
-    static StartLocationServiceUpdates(desiredAccuracyInMeters: number): any;
-    static StartLocationServiceUpdates(): any;
-    static StopLocationServiceUpdates(): any;
+    static StartLocationServiceUpdates(desiredAccuracyInMeters: number, updateDistanceInMeters: number): void;
+    static StartLocationServiceUpdates(desiredAccuracyInMeters: number): void;
+    static StartLocationServiceUpdates(): void;
+    static StopLocationServiceUpdates(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13841,13 +13841,13 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): any;
-    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): any;
-    static PlayMovie(path: string, bgColor: UnityEngine.Color): any;
-    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): any;
-    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): any;
-    static PlayMovieURL(url: string, bgColor: UnityEngine.Color): any;
-    static Vibrate(): any;
+    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): void;
+    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): void;
+    static PlayMovie(path: string, bgColor: UnityEngine.Color): void;
+    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): void;
+    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): void;
+    static PlayMovieURL(url: string, bgColor: UnityEngine.Color): void;
+    static Vibrate(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -13882,20 +13882,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -13955,20 +13955,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -14215,7 +14215,7 @@ declare namespace UnityEngine {
     static ToJson(obj: any): string;
     static ToJson(obj: any, prettyPrint: boolean): string;
     static FromJson(json: string, type: any): any;
-    static FromJsonOverwrite(json: string, objectToOverwrite: any): any;
+    static FromJsonOverwrite(json: string, objectToOverwrite: any): void;
     // properties
     // fields
   }
@@ -14660,20 +14660,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -14716,10 +14716,10 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    AddCommandBuffer(evt: UnityEngine.Rendering.LightEvent, buffer: UnityEngine.Rendering.CommandBuffer): any;
-    RemoveCommandBuffer(evt: UnityEngine.Rendering.LightEvent, buffer: UnityEngine.Rendering.CommandBuffer): any;
-    RemoveCommandBuffers(evt: UnityEngine.Rendering.LightEvent): any;
-    RemoveAllCommandBuffers(): any;
+    AddCommandBuffer(evt: UnityEngine.Rendering.LightEvent, buffer: UnityEngine.Rendering.CommandBuffer): void;
+    RemoveCommandBuffer(evt: UnityEngine.Rendering.LightEvent, buffer: UnityEngine.Rendering.CommandBuffer): void;
+    RemoveCommandBuffers(evt: UnityEngine.Rendering.LightEvent): void;
+    RemoveAllCommandBuffers(): void;
     GetCommandBuffers(evt: UnityEngine.Rendering.LightEvent): UnityEngine.Rendering.CommandBuffer[];
     static GetLights(type: UnityEngine.LightType, layer: number): UnityEngine.Light[];
     GetComponent(type: any): UnityEngine.Component;
@@ -14732,20 +14732,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -14932,20 +14932,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -15007,7 +15007,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Update(): any;
+    Update(): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -15018,20 +15018,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -15146,8 +15146,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static GetInterpolatedProbe(position: UnityEngine.Vector3, renderer: UnityEngine.Renderer, probe: any): any;
-    GetInterpolatedLightProbe(position: UnityEngine.Vector3, renderer: UnityEngine.Renderer, coefficients: number[]): any;
+    static GetInterpolatedProbe(position: UnityEngine.Vector3, renderer: UnityEngine.Renderer, probe: any): void;
+    GetInterpolatedLightProbe(position: UnityEngine.Vector3, renderer: UnityEngine.Renderer, coefficients: number[]): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -15236,16 +15236,16 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetWidth(start: number, end: number): any;
-    SetColors(start: UnityEngine.Color, end: UnityEngine.Color): any;
-    SetVertexCount(count: number): any;
-    SetPosition(index: number, position: UnityEngine.Vector3): any;
+    SetWidth(start: number, end: number): void;
+    SetColors(start: UnityEngine.Color, end: UnityEngine.Color): void;
+    SetVertexCount(count: number): void;
+    SetPosition(index: number, position: UnityEngine.Vector3): void;
     GetPosition(index: number): UnityEngine.Vector3;
-    SetPositions(positions: UnityEngine.Vector3[]): any;
+    SetPositions(positions: UnityEngine.Vector3[]): void;
     GetPositions(positions: UnityEngine.Vector3[]): number;
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -15256,20 +15256,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -15411,10 +15411,10 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Start(desiredAccuracyInMeters: number, updateDistanceInMeters: number): any;
-    Start(desiredAccuracyInMeters: number): any;
-    Start(): any;
-    Stop(): any;
+    Start(desiredAccuracyInMeters: number, updateDistanceInMeters: number): void;
+    Start(desiredAccuracyInMeters: number): void;
+    Start(): void;
+    Stop(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -15492,11 +15492,11 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    RecalculateBounds(): any;
+    RecalculateBounds(): void;
     GetLODs(): UnityEngine.LOD[];
-    SetLODS(lods: UnityEngine.LOD[]): any;
-    SetLODs(lods: UnityEngine.LOD[]): any;
-    ForceLOD(index: number): any;
+    SetLODS(lods: UnityEngine.LOD[]): void;
+    SetLODs(lods: UnityEngine.LOD[]): void;
+    ForceLOD(index: number): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -15507,20 +15507,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -15565,21 +15565,21 @@ declare namespace UnityEngine {
     constructor(logHandler: UnityEngine.ILogHandler);
     // methods
     IsLogTypeAllowed(logType: UnityEngine.LogType): boolean;
-    Log(logType: UnityEngine.LogType, message: any): any;
-    Log(logType: UnityEngine.LogType, message: any, context: UnityEngine.Object): any;
-    Log(logType: UnityEngine.LogType, tag: string, message: any): any;
-    Log(logType: UnityEngine.LogType, tag: string, message: any, context: UnityEngine.Object): any;
-    Log(message: any): any;
-    Log(tag: string, message: any): any;
-    Log(tag: string, message: any, context: UnityEngine.Object): any;
-    LogWarning(tag: string, message: any): any;
-    LogWarning(tag: string, message: any, context: UnityEngine.Object): any;
-    LogError(tag: string, message: any): any;
-    LogError(tag: string, message: any, context: UnityEngine.Object): any;
-    LogFormat(logType: UnityEngine.LogType, format: string, args: any[]): any;
-    LogException(exception: any): any;
-    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): any;
-    LogException(exception: any, context: UnityEngine.Object): any;
+    Log(logType: UnityEngine.LogType, message: any): void;
+    Log(logType: UnityEngine.LogType, message: any, context: UnityEngine.Object): void;
+    Log(logType: UnityEngine.LogType, tag: string, message: any): void;
+    Log(logType: UnityEngine.LogType, tag: string, message: any, context: UnityEngine.Object): void;
+    Log(message: any): void;
+    Log(tag: string, message: any): void;
+    Log(tag: string, message: any, context: UnityEngine.Object): void;
+    LogWarning(tag: string, message: any): void;
+    LogWarning(tag: string, message: any, context: UnityEngine.Object): void;
+    LogError(tag: string, message: any): void;
+    LogError(tag: string, message: any, context: UnityEngine.Object): void;
+    LogFormat(logType: UnityEngine.LogType, format: string, args: any[]): void;
+    LogException(exception: any): void;
+    LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): void;
+    LogException(exception: any, context: UnityEngine.Object): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -15620,12 +15620,12 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static RequestHostList(gameTypeName: string): any;
+    static RequestHostList(gameTypeName: string): void;
     static PollHostList(): UnityEngine.HostData[];
-    static RegisterHost(gameTypeName: string, gameName: string, comment: string): any;
-    static RegisterHost(gameTypeName: string, gameName: string): any;
-    static UnregisterHost(): any;
-    static ClearHostList(): any;
+    static RegisterHost(gameTypeName: string, gameName: string, comment: string): void;
+    static RegisterHost(gameTypeName: string, gameName: string): void;
+    static UnregisterHost(): void;
+    static ClearHostList(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -15684,80 +15684,80 @@ declare namespace UnityEngine {
     constructor(shader: UnityEngine.Shader);
     constructor(source: UnityEngine.Material);
     // methods
-    SetColor(propertyName: string, color: UnityEngine.Color): any;
-    SetColor(nameID: number, color: UnityEngine.Color): any;
+    SetColor(propertyName: string, color: UnityEngine.Color): void;
+    SetColor(nameID: number, color: UnityEngine.Color): void;
     GetColor(propertyName: string): UnityEngine.Color;
     GetColor(nameID: number): UnityEngine.Color;
-    SetVector(propertyName: string, vector: UnityEngine.Vector4): any;
-    SetVector(nameID: number, vector: UnityEngine.Vector4): any;
+    SetVector(propertyName: string, vector: UnityEngine.Vector4): void;
+    SetVector(nameID: number, vector: UnityEngine.Vector4): void;
     GetVector(propertyName: string): UnityEngine.Vector4;
     GetVector(nameID: number): UnityEngine.Vector4;
-    SetTexture(propertyName: string, texture: UnityEngine.Texture): any;
-    SetTexture(nameID: number, texture: UnityEngine.Texture): any;
+    SetTexture(propertyName: string, texture: UnityEngine.Texture): void;
+    SetTexture(nameID: number, texture: UnityEngine.Texture): void;
     GetTexture(propertyName: string): UnityEngine.Texture;
     GetTexture(nameID: number): UnityEngine.Texture;
-    SetTextureOffset(propertyName: string, offset: UnityEngine.Vector2): any;
+    SetTextureOffset(propertyName: string, offset: UnityEngine.Vector2): void;
     GetTextureOffset(propertyName: string): UnityEngine.Vector2;
-    SetTextureScale(propertyName: string, scale: UnityEngine.Vector2): any;
+    SetTextureScale(propertyName: string, scale: UnityEngine.Vector2): void;
     GetTextureScale(propertyName: string): UnityEngine.Vector2;
-    SetMatrix(propertyName: string, matrix: UnityEngine.Matrix4x4): any;
-    SetMatrix(nameID: number, matrix: UnityEngine.Matrix4x4): any;
+    SetMatrix(propertyName: string, matrix: UnityEngine.Matrix4x4): void;
+    SetMatrix(nameID: number, matrix: UnityEngine.Matrix4x4): void;
     GetMatrix(propertyName: string): UnityEngine.Matrix4x4;
     GetMatrix(nameID: number): UnityEngine.Matrix4x4;
-    SetFloat(propertyName: string, value: number): any;
-    SetFloat(nameID: number, value: number): any;
+    SetFloat(propertyName: string, value: number): void;
+    SetFloat(nameID: number, value: number): void;
     GetFloat(propertyName: string): number;
     GetFloat(nameID: number): number;
-    SetFloatArray(name: string, values: any): any;
-    SetFloatArray(nameID: number, values: any): any;
-    SetFloatArray(name: string, values: number[]): any;
-    SetFloatArray(nameID: number, values: number[]): any;
-    SetVectorArray(name: string, values: any): any;
-    SetVectorArray(nameID: number, values: any): any;
-    SetVectorArray(name: string, values: UnityEngine.Vector4[]): any;
-    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): any;
-    SetColorArray(name: string, values: any): any;
-    SetColorArray(nameID: number, values: any): any;
-    SetColorArray(name: string, values: UnityEngine.Color[]): any;
-    SetColorArray(nameID: number, values: UnityEngine.Color[]): any;
-    SetMatrixArray(name: string, values: any): any;
-    SetMatrixArray(nameID: number, values: any): any;
-    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): any;
-    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): any;
-    GetFloatArray(name: string, values: any): any;
-    GetFloatArray(nameID: number, values: any): any;
+    SetFloatArray(name: string, values: any): void;
+    SetFloatArray(nameID: number, values: any): void;
+    SetFloatArray(name: string, values: number[]): void;
+    SetFloatArray(nameID: number, values: number[]): void;
+    SetVectorArray(name: string, values: any): void;
+    SetVectorArray(nameID: number, values: any): void;
+    SetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    SetColorArray(name: string, values: any): void;
+    SetColorArray(nameID: number, values: any): void;
+    SetColorArray(name: string, values: UnityEngine.Color[]): void;
+    SetColorArray(nameID: number, values: UnityEngine.Color[]): void;
+    SetMatrixArray(name: string, values: any): void;
+    SetMatrixArray(nameID: number, values: any): void;
+    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
+    GetFloatArray(name: string, values: any): void;
+    GetFloatArray(nameID: number, values: any): void;
     GetFloatArray(name: string): number[];
     GetFloatArray(nameID: number): number[];
-    GetVectorArray(name: string, values: any): any;
-    GetVectorArray(nameID: number, values: any): any;
+    GetVectorArray(name: string, values: any): void;
+    GetVectorArray(nameID: number, values: any): void;
     GetVectorArray(name: string): UnityEngine.Vector4[];
     GetVectorArray(nameID: number): UnityEngine.Vector4[];
-    GetColorArray(name: string, values: any): any;
-    GetColorArray(nameID: number, values: any): any;
+    GetColorArray(name: string, values: any): void;
+    GetColorArray(nameID: number, values: any): void;
     GetColorArray(name: string): UnityEngine.Color[];
     GetColorArray(nameID: number): UnityEngine.Color[];
-    GetMatrixArray(name: string, values: any): any;
-    GetMatrixArray(nameID: number, values: any): any;
+    GetMatrixArray(name: string, values: any): void;
+    GetMatrixArray(nameID: number, values: any): void;
     GetMatrixArray(name: string): UnityEngine.Matrix4x4[];
     GetMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
-    SetInt(propertyName: string, value: number): any;
-    SetInt(nameID: number, value: number): any;
+    SetInt(propertyName: string, value: number): void;
+    SetInt(nameID: number, value: number): void;
     GetInt(propertyName: string): number;
     GetInt(nameID: number): number;
-    SetBuffer(propertyName: string, buffer: UnityEngine.ComputeBuffer): any;
+    SetBuffer(propertyName: string, buffer: UnityEngine.ComputeBuffer): void;
     HasProperty(propertyName: string): boolean;
     HasProperty(nameID: number): boolean;
     GetTag(tag: string, searchFallbacks: boolean, defaultValue: string): string;
     GetTag(tag: string, searchFallbacks: boolean): string;
-    SetOverrideTag(tag: string, val: string): any;
-    Lerp(start: UnityEngine.Material, end: UnityEngine.Material, t: number): any;
+    SetOverrideTag(tag: string, val: string): void;
+    Lerp(start: UnityEngine.Material, end: UnityEngine.Material, t: number): void;
     SetPass(pass: number): boolean;
     GetPassName(pass: number): string;
     FindPass(passName: string): number;
     static Create(scriptContents: string): UnityEngine.Material;
-    CopyPropertiesFromMaterial(mat: UnityEngine.Material): any;
-    EnableKeyword(keyword: string): any;
-    DisableKeyword(keyword: string): any;
+    CopyPropertiesFromMaterial(mat: UnityEngine.Material): void;
+    EnableKeyword(keyword: string): void;
+    DisableKeyword(keyword: string): void;
     IsKeywordEnabled(keyword: string): boolean;
     ToString(): string;
     GetInstanceID(): number;
@@ -15807,61 +15807,61 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetFloat(name: string, value: number): any;
-    SetFloat(nameID: number, value: number): any;
-    SetVector(name: string, value: UnityEngine.Vector4): any;
-    SetVector(nameID: number, value: UnityEngine.Vector4): any;
-    SetColor(name: string, value: UnityEngine.Color): any;
-    SetColor(nameID: number, value: UnityEngine.Color): any;
-    SetMatrix(name: string, value: UnityEngine.Matrix4x4): any;
-    SetMatrix(nameID: number, value: UnityEngine.Matrix4x4): any;
-    SetTexture(name: string, value: UnityEngine.Texture): any;
-    SetTexture(nameID: number, value: UnityEngine.Texture): any;
-    SetBuffer(name: string, value: UnityEngine.ComputeBuffer): any;
-    SetBuffer(nameID: number, value: UnityEngine.ComputeBuffer): any;
+    SetFloat(name: string, value: number): void;
+    SetFloat(nameID: number, value: number): void;
+    SetVector(name: string, value: UnityEngine.Vector4): void;
+    SetVector(nameID: number, value: UnityEngine.Vector4): void;
+    SetColor(name: string, value: UnityEngine.Color): void;
+    SetColor(nameID: number, value: UnityEngine.Color): void;
+    SetMatrix(name: string, value: UnityEngine.Matrix4x4): void;
+    SetMatrix(nameID: number, value: UnityEngine.Matrix4x4): void;
+    SetTexture(name: string, value: UnityEngine.Texture): void;
+    SetTexture(nameID: number, value: UnityEngine.Texture): void;
+    SetBuffer(name: string, value: UnityEngine.ComputeBuffer): void;
+    SetBuffer(nameID: number, value: UnityEngine.ComputeBuffer): void;
     GetFloat(name: string): number;
     GetFloat(nameID: number): number;
     GetVector(name: string): UnityEngine.Vector4;
     GetVector(nameID: number): UnityEngine.Vector4;
     GetMatrix(name: string): UnityEngine.Matrix4x4;
     GetMatrix(nameID: number): UnityEngine.Matrix4x4;
-    GetFloatArray(name: string, values: any): any;
-    GetFloatArray(nameID: number, values: any): any;
+    GetFloatArray(name: string, values: any): void;
+    GetFloatArray(nameID: number, values: any): void;
     GetFloatArray(name: string): number[];
     GetFloatArray(nameID: number): number[];
-    GetVectorArray(name: string, values: any): any;
-    GetVectorArray(nameID: number, values: any): any;
+    GetVectorArray(name: string, values: any): void;
+    GetVectorArray(nameID: number, values: any): void;
     GetVectorArray(name: string): UnityEngine.Vector4[];
     GetVectorArray(nameID: number): UnityEngine.Vector4[];
-    GetMatrixArray(name: string, values: any): any;
-    GetMatrixArray(nameID: number, values: any): any;
+    GetMatrixArray(name: string, values: any): void;
+    GetMatrixArray(nameID: number, values: any): void;
     GetMatrixArray(name: string): UnityEngine.Matrix4x4[];
     GetMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
     GetTexture(name: string): UnityEngine.Texture;
     GetTexture(nameID: number): UnityEngine.Texture;
-    SetFloatArray(name: string, values: any): any;
-    SetFloatArray(nameID: number, values: any): any;
-    SetFloatArray(name: string, values: number[]): any;
-    SetFloatArray(nameID: number, values: number[]): any;
-    SetVectorArray(name: string, values: any): any;
-    SetVectorArray(nameID: number, values: any): any;
-    SetVectorArray(name: string, values: UnityEngine.Vector4[]): any;
-    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): any;
-    SetMatrixArray(name: string, values: any): any;
-    SetMatrixArray(nameID: number, values: any): any;
-    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): any;
-    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): any;
-    Clear(): any;
-    AddFloat(name: string, value: number): any;
-    AddFloat(nameID: number, value: number): any;
-    AddVector(name: string, value: UnityEngine.Vector4): any;
-    AddVector(nameID: number, value: UnityEngine.Vector4): any;
-    AddColor(name: string, value: UnityEngine.Color): any;
-    AddColor(nameID: number, value: UnityEngine.Color): any;
-    AddMatrix(name: string, value: UnityEngine.Matrix4x4): any;
-    AddMatrix(nameID: number, value: UnityEngine.Matrix4x4): any;
-    AddTexture(name: string, value: UnityEngine.Texture): any;
-    AddTexture(nameID: number, value: UnityEngine.Texture): any;
+    SetFloatArray(name: string, values: any): void;
+    SetFloatArray(nameID: number, values: any): void;
+    SetFloatArray(name: string, values: number[]): void;
+    SetFloatArray(nameID: number, values: number[]): void;
+    SetVectorArray(name: string, values: any): void;
+    SetVectorArray(nameID: number, values: any): void;
+    SetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    SetMatrixArray(name: string, values: any): void;
+    SetMatrixArray(nameID: number, values: any): void;
+    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
+    Clear(): void;
+    AddFloat(name: string, value: number): void;
+    AddFloat(nameID: number, value: number): void;
+    AddVector(name: string, value: UnityEngine.Vector4): void;
+    AddVector(nameID: number, value: UnityEngine.Vector4): void;
+    AddColor(name: string, value: UnityEngine.Color): void;
+    AddColor(nameID: number, value: UnityEngine.Color): void;
+    AddMatrix(name: string, value: UnityEngine.Matrix4x4): void;
+    AddMatrix(nameID: number, value: UnityEngine.Matrix4x4): void;
+    AddTexture(name: string, value: UnityEngine.Texture): void;
+    AddTexture(nameID: number, value: UnityEngine.Texture): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -15957,7 +15957,7 @@ declare namespace UnityEngine {
     static Inverse(m: UnityEngine.Matrix4x4): UnityEngine.Matrix4x4;
     static Transpose(m: UnityEngine.Matrix4x4): UnityEngine.Matrix4x4;
     static Determinant(m: UnityEngine.Matrix4x4): number;
-    SetTRS(pos: UnityEngine.Vector3, q: UnityEngine.Quaternion, s: UnityEngine.Vector3): any;
+    SetTRS(pos: UnityEngine.Vector3, q: UnityEngine.Quaternion, s: UnityEngine.Vector3): void;
     static TRS(pos: UnityEngine.Vector3, q: UnityEngine.Quaternion, s: UnityEngine.Vector3): UnityEngine.Matrix4x4;
     static Ortho(left: number, right: number, bottom: number, top: number, zNear: number, zFar: number): UnityEngine.Matrix4x4;
     static Perspective(fov: number, aspect: number, zNear: number, zFar: number): UnityEngine.Matrix4x4;
@@ -15965,8 +15965,8 @@ declare namespace UnityEngine {
     Equals(other: any): boolean;
     GetColumn(i: number): UnityEngine.Vector4;
     GetRow(i: number): UnityEngine.Vector4;
-    SetColumn(i: number, v: UnityEngine.Vector4): any;
-    SetRow(i: number, v: UnityEngine.Vector4): any;
+    SetColumn(i: number, v: UnityEngine.Vector4): void;
+    SetRow(i: number, v: UnityEngine.Vector4): void;
     MultiplyPoint(v: UnityEngine.Vector3): UnityEngine.Vector3;
     MultiplyPoint3x4(v: UnityEngine.Vector3): UnityEngine.Vector3;
     MultiplyVector(v: UnityEngine.Vector3): UnityEngine.Vector3;
@@ -15980,9 +15980,9 @@ declare namespace UnityEngine {
     readonly isIdentity: boolean;
     readonly determinant: number;
     get_Item(row: number, column: number): number;
-    set_Item(row: number, column: number, value: number): any;
+    set_Item(row: number, column: number, value: number): void;
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     static readonly zero: UnityEngine.Matrix4x4;
     static readonly identity: UnityEngine.Matrix4x4;
     // fields
@@ -16009,43 +16009,43 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Clear(keepVertexLayout: boolean): any;
-    Clear(): any;
-    SetTriangles(triangles: number[], submesh: number): any;
-    SetTriangles(triangles: number[], submesh: number, calculateBounds: boolean): any;
-    SetTriangles(triangles: any, submesh: number): any;
-    SetTriangles(triangles: any, submesh: number, calculateBounds: boolean): any;
-    SetIndices(indices: number[], topology: UnityEngine.MeshTopology, submesh: number): any;
-    SetIndices(indices: number[], topology: UnityEngine.MeshTopology, submesh: number, calculateBounds: boolean): any;
-    ClearBlendShapes(): any;
+    Clear(keepVertexLayout: boolean): void;
+    Clear(): void;
+    SetTriangles(triangles: number[], submesh: number): void;
+    SetTriangles(triangles: number[], submesh: number, calculateBounds: boolean): void;
+    SetTriangles(triangles: any, submesh: number): void;
+    SetTriangles(triangles: any, submesh: number, calculateBounds: boolean): void;
+    SetIndices(indices: number[], topology: UnityEngine.MeshTopology, submesh: number): void;
+    SetIndices(indices: number[], topology: UnityEngine.MeshTopology, submesh: number, calculateBounds: boolean): void;
+    ClearBlendShapes(): void;
     GetBlendShapeName(shapeIndex: number): string;
     GetBlendShapeFrameCount(shapeIndex: number): number;
     GetBlendShapeFrameWeight(shapeIndex: number, frameIndex: number): number;
-    GetBlendShapeFrameVertices(shapeIndex: number, frameIndex: number, deltaVertices: UnityEngine.Vector3[], deltaNormals: UnityEngine.Vector3[], deltaTangents: UnityEngine.Vector3[]): any;
-    AddBlendShapeFrame(shapeName: string, frameWeight: number, deltaVertices: UnityEngine.Vector3[], deltaNormals: UnityEngine.Vector3[], deltaTangents: UnityEngine.Vector3[]): any;
+    GetBlendShapeFrameVertices(shapeIndex: number, frameIndex: number, deltaVertices: UnityEngine.Vector3[], deltaNormals: UnityEngine.Vector3[], deltaTangents: UnityEngine.Vector3[]): void;
+    AddBlendShapeFrame(shapeName: string, frameWeight: number, deltaVertices: UnityEngine.Vector3[], deltaNormals: UnityEngine.Vector3[], deltaTangents: UnityEngine.Vector3[]): void;
     GetNativeVertexBufferPtr(bufferIndex: number): any;
     GetNativeIndexBufferPtr(): any;
-    RecalculateBounds(): any;
-    RecalculateNormals(): any;
-    Optimize(): any;
+    RecalculateBounds(): void;
+    RecalculateNormals(): void;
+    Optimize(): void;
     GetTopology(submesh: number): UnityEngine.MeshTopology;
-    CombineMeshes(combine: UnityEngine.CombineInstance[], mergeSubMeshes: boolean, useMatrices: boolean): any;
-    CombineMeshes(combine: UnityEngine.CombineInstance[], mergeSubMeshes: boolean): any;
-    CombineMeshes(combine: UnityEngine.CombineInstance[]): any;
-    MarkDynamic(): any;
-    UploadMeshData(markNoLogerReadable: boolean): any;
+    CombineMeshes(combine: UnityEngine.CombineInstance[], mergeSubMeshes: boolean, useMatrices: boolean): void;
+    CombineMeshes(combine: UnityEngine.CombineInstance[], mergeSubMeshes: boolean): void;
+    CombineMeshes(combine: UnityEngine.CombineInstance[]): void;
+    MarkDynamic(): void;
+    UploadMeshData(markNoLogerReadable: boolean): void;
     GetBlendShapeIndex(blendShapeName: string): number;
-    SetVertices(inVertices: any): any;
-    SetNormals(inNormals: any): any;
-    SetTangents(inTangents: any): any;
-    SetColors(inColors: any): any;
-    SetColors(inColors: any): any;
-    SetUVs(channel: number, uvs: any): any;
-    SetUVs(channel: number, uvs: any): any;
-    SetUVs(channel: number, uvs: any): any;
-    GetUVs(channel: number, uvs: any): any;
-    GetUVs(channel: number, uvs: any): any;
-    GetUVs(channel: number, uvs: any): any;
+    SetVertices(inVertices: any): void;
+    SetNormals(inNormals: any): void;
+    SetTangents(inTangents: any): void;
+    SetColors(inColors: any): void;
+    SetColors(inColors: any): void;
+    SetUVs(channel: number, uvs: any): void;
+    SetUVs(channel: number, uvs: any): void;
+    SetUVs(channel: number, uvs: any): void;
+    GetUVs(channel: number, uvs: any): void;
+    GetUVs(channel: number, uvs: any): void;
+    GetUVs(channel: number, uvs: any): void;
     GetTriangles(submesh: number): number[];
     GetIndices(submesh: number): number[];
     ToString(): string;
@@ -16143,20 +16143,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -16215,20 +16215,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -16276,9 +16276,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -16289,20 +16289,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -16459,10 +16459,10 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static Start(deviceName: string, loop: boolean, lengthSec: number, frequency: number): UnityEngine.AudioClip;
-    static End(deviceName: string): any;
+    static End(deviceName: string): void;
     static IsRecording(deviceName: string): boolean;
     static GetPosition(deviceName: string): number;
-    static GetDeviceCaps(deviceName: string, minFreq: any, maxFreq: any): any;
+    static GetDeviceCaps(deviceName: string, minFreq: any, maxFreq: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -16480,7 +16480,7 @@ declare namespace UnityEngine {
     constructor(message: string, innerException: any);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -16505,7 +16505,7 @@ declare namespace UnityEngine {
     constructor(message: string, innerException: any);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -16527,21 +16527,21 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Invoke(methodName: string, time: number): any;
-    InvokeRepeating(methodName: string, time: number, repeatRate: number): any;
-    CancelInvoke(): any;
-    CancelInvoke(methodName: string): any;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
     IsInvoking(methodName: string): boolean;
     IsInvoking(): boolean;
     StartCoroutine(routine: any): UnityEngine.Coroutine;
     StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
     StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
     StartCoroutine(methodName: string): UnityEngine.Coroutine;
-    StopCoroutine(methodName: string): any;
-    StopCoroutine(routine: any): any;
-    StopCoroutine(routine: UnityEngine.Coroutine): any;
-    StopAllCoroutines(): any;
-    static print(message: any): any;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
+    static print(message: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -16552,20 +16552,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -16653,9 +16653,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Play(): any;
-    Stop(): any;
-    Pause(): any;
+    Play(): void;
+    Stop(): void;
+    Pause(): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;
@@ -16708,7 +16708,7 @@ declare namespace UnityEngine {
     // methods
     static InitializeServer(connections: number, listenPort: number, useNat: boolean): UnityEngine.NetworkConnectionError;
     static InitializeServer(connections: number, listenPort: number): UnityEngine.NetworkConnectionError;
-    static InitializeSecurity(): any;
+    static InitializeSecurity(): void;
     static Connect(IP: string, remotePort: number): UnityEngine.NetworkConnectionError;
     static Connect(IP: string, remotePort: number, password: string): UnityEngine.NetworkConnectionError;
     static Connect(IPs: string[], remotePort: number): UnityEngine.NetworkConnectionError;
@@ -16717,24 +16717,24 @@ declare namespace UnityEngine {
     static Connect(GUID: string, password: string): UnityEngine.NetworkConnectionError;
     static Connect(hostData: UnityEngine.HostData): UnityEngine.NetworkConnectionError;
     static Connect(hostData: UnityEngine.HostData, password: string): UnityEngine.NetworkConnectionError;
-    static Disconnect(timeout: number): any;
-    static Disconnect(): any;
-    static CloseConnection(target: UnityEngine.NetworkPlayer, sendDisconnectionNotification: boolean): any;
+    static Disconnect(timeout: number): void;
+    static Disconnect(): void;
+    static CloseConnection(target: UnityEngine.NetworkPlayer, sendDisconnectionNotification: boolean): void;
     static AllocateViewID(): UnityEngine.NetworkViewID;
     static Instantiate(prefab: UnityEngine.Object, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, group: number): UnityEngine.Object;
-    static Destroy(viewID: UnityEngine.NetworkViewID): any;
-    static Destroy(gameObject: UnityEngine.GameObject): any;
-    static DestroyPlayerObjects(playerID: UnityEngine.NetworkPlayer): any;
-    static RemoveRPCs(playerID: UnityEngine.NetworkPlayer): any;
-    static RemoveRPCs(playerID: UnityEngine.NetworkPlayer, group: number): any;
-    static RemoveRPCs(viewID: UnityEngine.NetworkViewID): any;
-    static RemoveRPCsInGroup(group: number): any;
-    static SetLevelPrefix(prefix: number): any;
+    static Destroy(viewID: UnityEngine.NetworkViewID): void;
+    static Destroy(gameObject: UnityEngine.GameObject): void;
+    static DestroyPlayerObjects(playerID: UnityEngine.NetworkPlayer): void;
+    static RemoveRPCs(playerID: UnityEngine.NetworkPlayer): void;
+    static RemoveRPCs(playerID: UnityEngine.NetworkPlayer, group: number): void;
+    static RemoveRPCs(viewID: UnityEngine.NetworkViewID): void;
+    static RemoveRPCsInGroup(group: number): void;
+    static SetLevelPrefix(prefix: number): void;
     static GetLastPing(player: UnityEngine.NetworkPlayer): number;
     static GetAveragePing(player: UnityEngine.NetworkPlayer): number;
-    static SetReceivingEnabled(player: UnityEngine.NetworkPlayer, group: number, enabled: boolean): any;
-    static SetSendingEnabled(group: number, enabled: boolean): any;
-    static SetSendingEnabled(player: UnityEngine.NetworkPlayer, group: number, enabled: boolean): any;
+    static SetReceivingEnabled(player: UnityEngine.NetworkPlayer, group: number, enabled: boolean): void;
+    static SetSendingEnabled(group: number, enabled: boolean): void;
+    static SetSendingEnabled(player: UnityEngine.NetworkPlayer, group: number, enabled: boolean): void;
     static TestConnection(forceTest: boolean): UnityEngine.ConnectionTesterStatus;
     static TestConnection(): UnityEngine.ConnectionTesterStatus;
     static TestConnectionNAT(forceTest: boolean): UnityEngine.ConnectionTesterStatus;
@@ -16846,7 +16846,7 @@ declare namespace UnityEngine.Networking {
     constructor();
     constructor(config: UnityEngine.Networking.ConnectionConfig);
     // methods
-    static Validate(config: UnityEngine.Networking.ConnectionConfig): any;
+    static Validate(config: UnityEngine.Networking.ConnectionConfig): void;
     AddChannel(value: UnityEngine.Networking.QosType): number;
     GetChannel(idx: number): UnityEngine.Networking.QosType;
     Equals(obj: any): boolean;
@@ -16883,29 +16883,29 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(config: UnityEngine.Networking.ConnectionConfig);
     // methods
-    InitWrapper(): any;
+    InitWrapper(): void;
     AddChannel(value: UnityEngine.Networking.QosType): number;
     GetChannel(i: number): UnityEngine.Networking.QosType;
-    InitPacketSize(value: number): any;
-    InitFragmentSize(value: number): any;
-    InitResendTimeout(value: number): any;
-    InitDisconnectTimeout(value: number): any;
-    InitConnectTimeout(value: number): any;
-    InitMinUpdateTimeout(value: number): any;
-    InitPingTimeout(value: number): any;
-    InitReducedPingTimeout(value: number): any;
-    InitAllCostTimeout(value: number): any;
-    InitNetworkDropThreshold(value: number): any;
-    InitOverflowDropThreshold(value: number): any;
-    InitMaxConnectionAttempt(value: number): any;
-    InitAckDelay(value: number): any;
-    InitMaxCombinedReliableMessageSize(value: number): any;
-    InitMaxCombinedReliableMessageCount(value: number): any;
-    InitMaxSentMessageQueueSize(value: number): any;
-    InitIsAcksLong(value: boolean): any;
-    InitUsePlatformSpecificProtocols(value: boolean): any;
-    InitWebSocketReceiveBufferMaxSize(value: number): any;
-    Dispose(): any;
+    InitPacketSize(value: number): void;
+    InitFragmentSize(value: number): void;
+    InitResendTimeout(value: number): void;
+    InitDisconnectTimeout(value: number): void;
+    InitConnectTimeout(value: number): void;
+    InitMinUpdateTimeout(value: number): void;
+    InitPingTimeout(value: number): void;
+    InitReducedPingTimeout(value: number): void;
+    InitAllCostTimeout(value: number): void;
+    InitNetworkDropThreshold(value: number): void;
+    InitOverflowDropThreshold(value: number): void;
+    InitMaxConnectionAttempt(value: number): void;
+    InitAckDelay(value: number): void;
+    InitMaxCombinedReliableMessageSize(value: number): void;
+    InitMaxCombinedReliableMessageCount(value: number): void;
+    InitMaxSentMessageQueueSize(value: number): void;
+    InitIsAcksLong(value: boolean): void;
+    InitUsePlatformSpecificProtocols(value: boolean): void;
+    InitWebSocketReceiveBufferMaxSize(value: number): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -16920,7 +16920,7 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(outMinDelay: number, outAvgDelay: number, inMinDelay: number, inAvgDelay: number, packetLossPercentage: number);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -16946,7 +16946,7 @@ declare namespace UnityEngine.Networking {
     constructor(url: string, hash: UnityEngine.Hash128, crc: number);
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): UnityEngine.AssetBundle;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -16965,7 +16965,7 @@ declare namespace UnityEngine.Networking {
     constructor(url: string, audioType: UnityEngine.AudioType);
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): UnityEngine.AudioClip;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -16984,7 +16984,7 @@ declare namespace UnityEngine.Networking {
     constructor();
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): string;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -17002,7 +17002,7 @@ declare namespace UnityEngine.Networking {
     constructor();
     constructor(preallocatedBuffer: number[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -17021,7 +17021,7 @@ declare namespace UnityEngine.Networking {
     constructor(readable: boolean);
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): UnityEngine.Texture2D;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -17057,13 +17057,13 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(config: UnityEngine.Networking.GlobalConfig);
     // methods
-    InitWrapper(): any;
-    InitThreadAwakeTimeout(ms: number): any;
-    InitReactorModel(model: number): any;
-    InitReactorMaximumReceivedMessages(size: number): any;
-    InitReactorMaximumSentMessages(size: number): any;
-    InitMaxPacketSize(size: number): any;
-    Dispose(): any;
+    InitWrapper(): void;
+    InitThreadAwakeTimeout(ms: number): void;
+    InitReactorModel(model: number): void;
+    InitReactorMaximumReceivedMessages(size: number): void;
+    InitReactorMaximumSentMessages(size: number): void;
+    InitMaxPacketSize(size: number): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -17099,12 +17099,12 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(topology: UnityEngine.Networking.HostTopology);
     // methods
-    InitWrapper(config: UnityEngine.Networking.ConnectionConfigInternal, maxDefaultConnections: number): any;
+    InitWrapper(config: UnityEngine.Networking.ConnectionConfigInternal, maxDefaultConnections: number): void;
     AddSpecialConnectionConfigWrapper(config: UnityEngine.Networking.ConnectionConfigInternal): number;
-    InitReceivedPoolSize(pool: number): any;
-    InitSentMessagePoolSize(pool: number): any;
-    InitMessagePoolSizeGrowthFactor(factor: number): any;
-    Dispose(): any;
+    InitReceivedPoolSize(pool: number): void;
+    InitSentMessagePoolSize(pool: number): void;
+    InitMessagePoolSizeGrowthFactor(factor: number): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -17127,10 +17127,10 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     constructor();
     // methods
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ToString(): string;
-    Parse(obj: any): any;
+    Parse(obj: any): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17184,9 +17184,9 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     ToString(): string;
-    Parse(obj: any): any;
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    Parse(obj: any): void;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17290,9 +17290,9 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     ToString(): string;
-    Parse(obj: any): any;
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    Parse(obj: any): void;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17354,9 +17354,9 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     ToString(): string;
-    Parse(obj: any): any;
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    Parse(obj: any): void;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17419,9 +17419,9 @@ declare namespace UnityEngine.Networking.Match {
     constructor(otherMatches: any);
     // methods
     ToString(): string;
-    Parse(obj: any): any;
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    Parse(obj: any): void;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17448,7 +17448,7 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     ToString(): string;
-    Parse(obj: any): any;
+    Parse(obj: any): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17481,7 +17481,7 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     ToString(): string;
-    Parse(obj: any): any;
+    Parse(obj: any): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;
@@ -17567,10 +17567,10 @@ declare namespace UnityEngine.Networking.Match.NetworkMatch {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(success: boolean, extendedInfo: string): any;
+    Invoke(success: boolean, extendedInfo: string): void;
     BeginInvoke(success: boolean, extendedInfo: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -17589,27 +17589,27 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     constructor();
     // methods
-    SetProgramAppID(programAppID: UnityEngine.Networking.Types.AppID): any;
+    SetProgramAppID(programAppID: UnityEngine.Networking.Types.AppID): void;
     CreateMatch(matchName: string, matchSize: number, matchAdvertise: boolean, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForMatch: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
     JoinMatch(netId: UnityEngine.Networking.Types.NetworkID, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForClient: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
     DestroyMatch(netId: UnityEngine.Networking.Types.NetworkID, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
     DropConnection(netId: UnityEngine.Networking.Types.NetworkID, dropNodeId: UnityEngine.Networking.Types.NodeID, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
     ListMatches(startPageNumber: number, resultPageSize: number, matchNameFilter: string, filterOutPrivateMatchesFromResults: boolean, eloScoreTarget: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
     SetMatchAttributes(networkId: UnityEngine.Networking.Types.NetworkID, isListed: boolean, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
-    Invoke(methodName: string, time: number): any;
-    InvokeRepeating(methodName: string, time: number, repeatRate: number): any;
-    CancelInvoke(): any;
-    CancelInvoke(methodName: string): any;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
     IsInvoking(methodName: string): boolean;
     IsInvoking(): boolean;
     StartCoroutine(routine: any): UnityEngine.Coroutine;
     StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
     StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
     StartCoroutine(methodName: string): UnityEngine.Coroutine;
-    StopCoroutine(methodName: string): any;
-    StopCoroutine(routine: any): any;
-    StopCoroutine(routine: UnityEngine.Coroutine): any;
-    StopAllCoroutines(): any;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -17620,20 +17620,20 @@ declare namespace UnityEngine.Networking.Match {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -17826,14 +17826,14 @@ declare namespace UnityEngine.Networking {
     private constructor();
     // methods
     static ConnectEndPoint(hostId: number, endPoint: any, exceptionConnectionId: number, error: any): number;
-    static Init(): any;
-    static Init(config: UnityEngine.Networking.GlobalConfig): any;
-    static Shutdown(): any;
+    static Init(): void;
+    static Init(config: UnityEngine.Networking.GlobalConfig): void;
+    static Shutdown(): void;
     static GetAssetId(go: UnityEngine.GameObject): string;
-    static AddSceneId(id: number): any;
+    static AddSceneId(id: number): void;
     static GetNextSceneId(): number;
-    static ConnectAsNetworkHost(hostId: number, address: string, port: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, error: any): any;
-    static DisconnectNetworkHost(hostId: number, error: any): any;
+    static ConnectAsNetworkHost(hostId: number, address: string, port: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, error: any): void;
+    static DisconnectNetworkHost(hostId: number, error: any): void;
     static ReceiveRelayEventFromHost(hostId: number, error: any): UnityEngine.Networking.NetworkEventType;
     static ConnectToNetworkPeer(hostId: number, address: string, port: number, exceptionConnectionId: number, relaySlotId: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, bytesPerSec: number, bucketSizeFactor: number, error: any): number;
     static ConnectToNetworkPeer(hostId: number, address: string, port: number, exceptionConnectionId: number, relaySlotId: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, error: any): number;
@@ -17845,7 +17845,7 @@ declare namespace UnityEngine.Networking {
     static GetPacketReceivedRate(hostId: number, connectionId: number, error: any): number;
     static GetRemotePacketReceivedRate(hostId: number, connectionId: number, error: any): number;
     static GetNetIOTimeuS(): number;
-    static GetConnectionInfo(hostId: number, connectionId: number, address: any, port: any, network: any, dstNode: any, error: any): any;
+    static GetConnectionInfo(hostId: number, connectionId: number, address: any, port: any, network: any, dstNode: any, error: any): void;
     static GetConnectionInfo(hostId: number, connectionId: number, port: any, network: any, dstNode: any, error: any): string;
     static GetNetworkTimestamp(): number;
     static GetRemoteDelayTimeMS(hostId: number, connectionId: number, remoteTime: number, error: any): number;
@@ -17867,14 +17867,14 @@ declare namespace UnityEngine.Networking {
     static Send(hostId: number, connectionId: number, channelId: number, buffer: number[], size: number, error: any): boolean;
     static Receive(hostId: any, connectionId: any, channelId: any, buffer: number[], bufferSize: number, receivedSize: any, error: any): UnityEngine.Networking.NetworkEventType;
     static ReceiveFromHost(hostId: number, connectionId: any, channelId: any, buffer: number[], bufferSize: number, receivedSize: any, error: any): UnityEngine.Networking.NetworkEventType;
-    static SetPacketStat(direction: number, packetStatId: number, numMsgs: number, numBytes: number): any;
+    static SetPacketStat(direction: number, packetStatId: number, numMsgs: number, numBytes: number): void;
     static StartBroadcastDiscovery(hostId: number, broadcastPort: number, key: number, version: number, subversion: number, buffer: number[], size: number, timeout: number, error: any): boolean;
-    static StopBroadcastDiscovery(): any;
+    static StopBroadcastDiscovery(): void;
     static IsBroadcastDiscoveryRunning(): boolean;
-    static SetBroadcastCredentials(hostId: number, key: number, version: number, subversion: number, error: any): any;
+    static SetBroadcastCredentials(hostId: number, key: number, version: number, subversion: number, error: any): void;
     static GetBroadcastConnectionInfo(hostId: number, port: any, error: any): string;
-    static GetBroadcastConnectionInfo(hostId: number, address: any, port: any, error: any): any;
-    static GetBroadcastConnectionMessage(hostId: number, buffer: number[], bufferSize: number, receivedSize: any, error: any): any;
+    static GetBroadcastConnectionInfo(hostId: number, address: any, port: any, error: any): void;
+    static GetBroadcastConnectionMessage(hostId: number, buffer: number[], bufferSize: number, receivedSize: any, error: any): void;
     // properties
     // fields
   }
@@ -18097,11 +18097,11 @@ declare namespace UnityEngine.Networking {
     static SerializeFormSections(multipartFormSections: any, boundary: number[]): number[];
     static GenerateBoundary(): number[];
     static SerializeSimpleForm(formFields: any): number[];
-    Dispose(): any;
+    Dispose(): void;
     Send(): UnityEngine.AsyncOperation;
-    Abort(): any;
+    Abort(): void;
     GetRequestHeader(name: string): string;
-    SetRequestHeader(name: string, value: string): any;
+    SetRequestHeader(name: string, value: string): void;
     GetResponseHeader(name: string): string;
     GetResponseHeaders(): any;
     Equals(obj: any): boolean;
@@ -18221,7 +18221,7 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(data: number[]);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -18239,9 +18239,9 @@ declare namespace UnityEngine.Networking {
     private constructor();
     // methods
     static GetSourceID(): UnityEngine.Networking.Types.SourceID;
-    static SetAppID(newAppID: UnityEngine.Networking.Types.AppID): any;
+    static SetAppID(newAppID: UnityEngine.Networking.Types.AppID): void;
     static GetAppID(): UnityEngine.Networking.Types.AppID;
-    static SetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID, accessToken: UnityEngine.Networking.Types.NetworkAccessToken): any;
+    static SetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID, accessToken: UnityEngine.Networking.Types.NetworkAccessToken): void;
     static GetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID): UnityEngine.Networking.Types.NetworkAccessToken;
     // properties
     // fields
@@ -18375,8 +18375,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    RPC(name: string, mode: UnityEngine.RPCMode, args: any[]): any;
-    RPC(name: string, target: UnityEngine.NetworkPlayer, args: any[]): any;
+    RPC(name: string, mode: UnityEngine.RPCMode, args: any[]): void;
+    RPC(name: string, target: UnityEngine.NetworkPlayer, args: any[]): void;
     SetScope(player: UnityEngine.NetworkPlayer, relevancy: boolean): boolean;
     static Find(viewID: UnityEngine.NetworkViewID): UnityEngine.NetworkView;
     GetComponent(type: any): UnityEngine.Component;
@@ -18389,20 +18389,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -18463,7 +18463,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static RegisterForRemoteNotificationTypes(notificationTypes: UnityEngine.RemoteNotificationType): any;
+    static RegisterForRemoteNotificationTypes(notificationTypes: UnityEngine.RemoteNotificationType): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -18499,14 +18499,14 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Destroy(obj: UnityEngine.Object, t: number): any;
-    static Destroy(obj: UnityEngine.Object): any;
-    static DestroyImmediate(obj: UnityEngine.Object, allowDestroyingAssets: boolean): any;
-    static DestroyImmediate(obj: UnityEngine.Object): any;
+    static Destroy(obj: UnityEngine.Object, t: number): void;
+    static Destroy(obj: UnityEngine.Object): void;
+    static DestroyImmediate(obj: UnityEngine.Object, allowDestroyingAssets: boolean): void;
+    static DestroyImmediate(obj: UnityEngine.Object): void;
     static FindObjectsOfType(type: any): UnityEngine.Object[];
-    static DontDestroyOnLoad(target: UnityEngine.Object): any;
-    static DestroyObject(obj: UnityEngine.Object, t: number): any;
-    static DestroyObject(obj: UnityEngine.Object): any;
+    static DontDestroyOnLoad(target: UnityEngine.Object): void;
+    static DestroyObject(obj: UnityEngine.Object, t: number): void;
+    static DestroyObject(obj: UnityEngine.Object): void;
     static FindSceneObjectsOfType(type: any): UnityEngine.Object[];
     static FindObjectsOfTypeIncludingAssets(type: any): UnityEngine.Object[];
     static FindObjectsOfTypeAll(type: any): UnityEngine.Object[];
@@ -18542,20 +18542,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -18604,20 +18604,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -18709,20 +18709,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -18800,8 +18800,8 @@ declare namespace UnityEngine {
     static GetCollisionEvents(ps: UnityEngine.ParticleSystem, go: UnityEngine.GameObject, collisionEvents: UnityEngine.ParticleCollisionEvent[]): number;
     static GetSafeTriggerParticlesSize(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType): number;
     static GetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): number;
-    static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any, offset: number, count: number): any;
-    static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): any;
+    static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any, offset: number, count: number): void;
+    static SetTriggerParticles(ps: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemTriggerEventType, particles: any): void;
     // properties
     // fields
   }
@@ -18811,9 +18811,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -18824,20 +18824,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -18973,7 +18973,7 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    SetPlane(index: number, transform: UnityEngine.Transform): any;
+    SetPlane(index: number, transform: UnityEngine.Transform): void;
     GetPlane(index: number): UnityEngine.Transform;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -19039,29 +19039,29 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetParticles(particles: UnityEngine.ParticleSystem.Particle[], size: number): any;
+    SetParticles(particles: UnityEngine.ParticleSystem.Particle[], size: number): void;
     GetParticles(particles: UnityEngine.ParticleSystem.Particle[]): number;
-    SetCustomParticleData(customData: any, streamIndex: UnityEngine.ParticleSystemCustomData): any;
+    SetCustomParticleData(customData: any, streamIndex: UnityEngine.ParticleSystemCustomData): void;
     GetCustomParticleData(customData: any, streamIndex: UnityEngine.ParticleSystemCustomData): number;
-    Simulate(t: number, withChildren: boolean, restart: boolean): any;
-    Simulate(t: number, withChildren: boolean): any;
-    Simulate(t: number): any;
-    Simulate(t: number, withChildren: boolean, restart: boolean, fixedTimeStep: boolean): any;
-    Play(): any;
-    Play(withChildren: boolean): any;
-    Stop(withChildren: boolean): any;
-    Stop(): any;
-    Stop(withChildren: boolean, stopBehavior: UnityEngine.ParticleSystemStopBehavior): any;
-    Pause(): any;
-    Pause(withChildren: boolean): any;
-    Clear(): any;
-    Clear(withChildren: boolean): any;
+    Simulate(t: number, withChildren: boolean, restart: boolean): void;
+    Simulate(t: number, withChildren: boolean): void;
+    Simulate(t: number): void;
+    Simulate(t: number, withChildren: boolean, restart: boolean, fixedTimeStep: boolean): void;
+    Play(): void;
+    Play(withChildren: boolean): void;
+    Stop(withChildren: boolean): void;
+    Stop(): void;
+    Stop(withChildren: boolean, stopBehavior: UnityEngine.ParticleSystemStopBehavior): void;
+    Pause(): void;
+    Pause(withChildren: boolean): void;
+    Clear(): void;
+    Clear(withChildren: boolean): void;
     IsAlive(): boolean;
     IsAlive(withChildren: boolean): boolean;
-    Emit(count: number): any;
-    Emit(position: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, lifetime: number, color: UnityEngine.Color32): any;
-    Emit(particle: UnityEngine.ParticleSystem.Particle): any;
-    Emit(emitParams: UnityEngine.ParticleSystem.EmitParams, count: number): any;
+    Emit(count: number): void;
+    Emit(position: UnityEngine.Vector3, velocity: UnityEngine.Vector3, size: number, lifetime: number, color: UnityEngine.Color32): void;
+    Emit(particle: UnityEngine.ParticleSystem.Particle): void;
+    Emit(emitParams: UnityEngine.ParticleSystem.EmitParams, count: number): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -19072,20 +19072,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -19169,8 +19169,8 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): any;
-    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[], size: number): any;
+    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): void;
+    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[], size: number): void;
     GetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -19194,15 +19194,15 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    ResetPosition(): any;
-    ResetVelocity(): any;
-    ResetAxisOfRotation(): any;
-    ResetRotation(): any;
-    ResetAngularVelocity(): any;
-    ResetStartSize(): any;
-    ResetStartColor(): any;
-    ResetRandomSeed(): any;
-    ResetStartLifetime(): any;
+    ResetPosition(): void;
+    ResetVelocity(): void;
+    ResetAxisOfRotation(): void;
+    ResetRotation(): void;
+    ResetAngularVelocity(): void;
+    ResetStartSize(): void;
+    ResetStartColor(): void;
+    ResetRandomSeed(): void;
+    ResetStartLifetime(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;
@@ -19286,7 +19286,7 @@ declare namespace UnityEngine.ParticleSystem {
     Invoke(ps: UnityEngine.ParticleSystem): boolean;
     BeginInvoke(ps: UnityEngine.ParticleSystem, callback: any, object: any): any;
     EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -19647,11 +19647,11 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    AddSubEmitter(subEmitter: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemSubEmitterType, properties: UnityEngine.ParticleSystemSubEmitterProperties): any;
-    RemoveSubEmitter(index: number): any;
-    SetSubEmitterSystem(index: number, subEmitter: UnityEngine.ParticleSystem): any;
-    SetSubEmitterType(index: number, type: UnityEngine.ParticleSystemSubEmitterType): any;
-    SetSubEmitterProperties(index: number, properties: UnityEngine.ParticleSystemSubEmitterProperties): any;
+    AddSubEmitter(subEmitter: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemSubEmitterType, properties: UnityEngine.ParticleSystemSubEmitterProperties): void;
+    RemoveSubEmitter(index: number): void;
+    SetSubEmitterSystem(index: number, subEmitter: UnityEngine.ParticleSystem): void;
+    SetSubEmitterType(index: number, type: UnityEngine.ParticleSystemSubEmitterType): void;
+    SetSubEmitterProperties(index: number, properties: UnityEngine.ParticleSystemSubEmitterProperties): void;
     GetSubEmitterSystem(index: number): UnityEngine.ParticleSystem;
     GetSubEmitterType(index: number): UnityEngine.ParticleSystemSubEmitterType;
     GetSubEmitterProperties(index: number): UnityEngine.ParticleSystemSubEmitterProperties;
@@ -19731,7 +19731,7 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    SetCollider(index: number, collider: UnityEngine.Component): any;
+    SetCollider(index: number, collider: UnityEngine.Component): void;
     GetCollider(index: number): UnityEngine.Component;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -20049,15 +20049,15 @@ declare namespace UnityEngine {
     constructor();
     // methods
     GetMeshes(meshes: UnityEngine.Mesh[]): number;
-    SetMeshes(meshes: UnityEngine.Mesh[]): any;
-    SetMeshes(meshes: UnityEngine.Mesh[], size: number): any;
-    EnableVertexStreams(streams: UnityEngine.ParticleSystemVertexStreams): any;
-    DisableVertexStreams(streams: UnityEngine.ParticleSystemVertexStreams): any;
+    SetMeshes(meshes: UnityEngine.Mesh[]): void;
+    SetMeshes(meshes: UnityEngine.Mesh[], size: number): void;
+    EnableVertexStreams(streams: UnityEngine.ParticleSystemVertexStreams): void;
+    DisableVertexStreams(streams: UnityEngine.ParticleSystemVertexStreams): void;
     AreVertexStreamsEnabled(streams: UnityEngine.ParticleSystemVertexStreams): boolean;
     GetEnabledVertexStreams(streams: UnityEngine.ParticleSystemVertexStreams): UnityEngine.ParticleSystemVertexStreams;
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -20068,20 +20068,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -20639,10 +20639,10 @@ declare namespace UnityEngine {
     static BoxCast(center: UnityEngine.Vector3, halfExtents: UnityEngine.Vector3, direction: UnityEngine.Vector3, hitInfo: any, orientation: UnityEngine.Quaternion): boolean;
     static BoxCast(center: UnityEngine.Vector3, halfExtents: UnityEngine.Vector3, direction: UnityEngine.Vector3, hitInfo: any): boolean;
     static BoxCast(center: UnityEngine.Vector3, halfExtents: UnityEngine.Vector3, direction: UnityEngine.Vector3, hitInfo: any, orientation: UnityEngine.Quaternion, maxDistance: number, layerMask: number, queryTriggerInteraction: UnityEngine.QueryTriggerInteraction): boolean;
-    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider, ignore: boolean): any;
-    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider): any;
-    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): any;
-    static IgnoreLayerCollision(layer1: number, layer2: number): any;
+    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider, ignore: boolean): void;
+    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider): void;
+    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): void;
+    static IgnoreLayerCollision(layer1: number, layer2: number): void;
     static GetIgnoreLayerCollision(layer1: number, layer2: number): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -20679,13 +20679,13 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D, ignore: boolean): any;
-    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): any;
+    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D, ignore: boolean): void;
+    static IgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): void;
     static GetIgnoreCollision(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): boolean;
-    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): any;
-    static IgnoreLayerCollision(layer1: number, layer2: number): any;
+    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): void;
+    static IgnoreLayerCollision(layer1: number, layer2: number): void;
     static GetIgnoreLayerCollision(layer1: number, layer2: number): boolean;
-    static SetLayerCollisionMask(layer: number, layerMask: number): any;
+    static SetLayerCollisionMask(layer: number, layerMask: number): void;
     static GetLayerCollisionMask(layer: number): number;
     static IsTouching(collider1: UnityEngine.Collider2D, collider2: UnityEngine.Collider2D): boolean;
     static IsTouchingLayers(collider: UnityEngine.Collider2D, layerMask: number): boolean;
@@ -20905,20 +20905,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -20957,7 +20957,7 @@ declare namespace UnityEngine {
     // constructors
     constructor(address: string);
     // methods
-    DestroyPing(): any;
+    DestroyPing(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -20974,8 +20974,8 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    SetNormalAndPosition(inNormal: UnityEngine.Vector3, inPoint: UnityEngine.Vector3): any;
-    Set3Points(a: UnityEngine.Vector3, b: UnityEngine.Vector3, c: UnityEngine.Vector3): any;
+    SetNormalAndPosition(inNormal: UnityEngine.Vector3, inPoint: UnityEngine.Vector3): void;
+    Set3Points(a: UnityEngine.Vector3, b: UnityEngine.Vector3, c: UnityEngine.Vector3): void;
     GetDistanceToPoint(inPt: UnityEngine.Vector3): number;
     GetSide(inPt: UnityEngine.Vector3): boolean;
     SameSide(inPt0: UnityEngine.Vector3, inPt1: UnityEngine.Vector3): boolean;
@@ -21005,20 +21005,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -21092,19 +21092,19 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetInt(key: string, value: number): any;
+    static SetInt(key: string, value: number): void;
     static GetInt(key: string, defaultValue: number): number;
     static GetInt(key: string): number;
-    static SetFloat(key: string, value: number): any;
+    static SetFloat(key: string, value: number): void;
     static GetFloat(key: string, defaultValue: number): number;
     static GetFloat(key: string): number;
-    static SetString(key: string, value: string): any;
+    static SetString(key: string, value: string): void;
     static GetString(key: string, defaultValue: string): string;
     static GetString(key: string): string;
     static HasKey(key: string): boolean;
-    static DeleteKey(key: string): any;
-    static DeleteAll(): any;
-    static Save(): any;
+    static DeleteKey(key: string): void;
+    static DeleteAll(): void;
+    static Save(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -21119,7 +21119,7 @@ declare namespace UnityEngine {
     constructor(error: string);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -21172,20 +21172,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -21235,11 +21235,11 @@ declare namespace UnityEngine {
     constructor();
     // methods
     GetPath(index: number): UnityEngine.Vector2[];
-    SetPath(index: number, points: UnityEngine.Vector2[]): any;
+    SetPath(index: number, points: UnityEngine.Vector2[]): void;
     GetTotalPointCount(): number;
-    CreatePrimitive(sides: number, scale: UnityEngine.Vector2, offset: UnityEngine.Vector2): any;
-    CreatePrimitive(sides: number, scale: UnityEngine.Vector2): any;
-    CreatePrimitive(sides: number): any;
+    CreatePrimitive(sides: number, scale: UnityEngine.Vector2, offset: UnityEngine.Vector2): void;
+    CreatePrimitive(sides: number, scale: UnityEngine.Vector2): void;
+    CreatePrimitive(sides: number): void;
     IsTouching(collider: UnityEngine.Collider2D): boolean;
     IsTouchingLayers(layerMask: number): boolean;
     IsTouchingLayers(): boolean;
@@ -21262,20 +21262,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -21416,7 +21416,7 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static StopRebuilds(): any;
+    static StopRebuilds(): void;
     // properties
     // fields
   }
@@ -21561,10 +21561,10 @@ declare namespace UnityEngine.Profiling {
     // constructors
     constructor();
     // methods
-    static AddFramesFromFile(file: string): any;
-    static BeginSample(name: string): any;
-    static BeginSample(name: string, targetObject: UnityEngine.Object): any;
-    static EndSample(): any;
+    static AddFramesFromFile(file: string): void;
+    static BeginSample(name: string): void;
+    static BeginSample(name: string, targetObject: UnityEngine.Object): void;
+    static EndSample(): void;
     static GetRuntimeMemorySize(o: UnityEngine.Object): number;
     static GetMonoHeapSize(): number;
     static GetMonoUsedSize(): number;
@@ -21611,20 +21611,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -21708,12 +21708,12 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static GetQualityLevel(): number;
-    static SetQualityLevel(index: number, applyExpensiveChanges: boolean): any;
-    static SetQualityLevel(index: number): any;
-    static IncreaseLevel(applyExpensiveChanges: boolean): any;
-    static IncreaseLevel(): any;
-    static DecreaseLevel(applyExpensiveChanges: boolean): any;
-    static DecreaseLevel(): any;
+    static SetQualityLevel(index: number, applyExpensiveChanges: boolean): void;
+    static SetQualityLevel(index: number): void;
+    static IncreaseLevel(applyExpensiveChanges: boolean): void;
+    static IncreaseLevel(): void;
+    static DecreaseLevel(applyExpensiveChanges: boolean): void;
+    static DecreaseLevel(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -21759,9 +21759,9 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static AngleAxis(angle: number, axis: UnityEngine.Vector3): UnityEngine.Quaternion;
-    ToAngleAxis(angle: any, axis: any): any;
+    ToAngleAxis(angle: any, axis: any): void;
     static FromToRotation(fromDirection: UnityEngine.Vector3, toDirection: UnityEngine.Vector3): UnityEngine.Quaternion;
-    SetFromToRotation(fromDirection: UnityEngine.Vector3, toDirection: UnityEngine.Vector3): any;
+    SetFromToRotation(fromDirection: UnityEngine.Vector3, toDirection: UnityEngine.Vector3): void;
     static LookRotation(forward: UnityEngine.Vector3, upwards: UnityEngine.Vector3): UnityEngine.Quaternion;
     static LookRotation(forward: UnityEngine.Vector3): UnityEngine.Quaternion;
     static Slerp(a: UnityEngine.Quaternion, b: UnityEngine.Quaternion, t: number): UnityEngine.Quaternion;
@@ -21774,22 +21774,22 @@ declare namespace UnityEngine {
     static Euler(euler: UnityEngine.Vector3): UnityEngine.Quaternion;
     static EulerRotation(x: number, y: number, z: number): UnityEngine.Quaternion;
     static EulerRotation(euler: UnityEngine.Vector3): UnityEngine.Quaternion;
-    SetEulerRotation(x: number, y: number, z: number): any;
-    SetEulerRotation(euler: UnityEngine.Vector3): any;
+    SetEulerRotation(x: number, y: number, z: number): void;
+    SetEulerRotation(euler: UnityEngine.Vector3): void;
     ToEuler(): UnityEngine.Vector3;
     static EulerAngles(x: number, y: number, z: number): UnityEngine.Quaternion;
     static EulerAngles(euler: UnityEngine.Vector3): UnityEngine.Quaternion;
-    ToAxisAngle(axis: any, angle: any): any;
-    SetEulerAngles(x: number, y: number, z: number): any;
-    SetEulerAngles(euler: UnityEngine.Vector3): any;
+    ToAxisAngle(axis: any, angle: any): void;
+    SetEulerAngles(x: number, y: number, z: number): void;
+    SetEulerAngles(euler: UnityEngine.Vector3): void;
     static ToEulerAngles(rotation: UnityEngine.Quaternion): UnityEngine.Vector3;
     ToEulerAngles(): UnityEngine.Vector3;
     static AxisAngle(axis: UnityEngine.Vector3, angle: number): UnityEngine.Quaternion;
-    SetAxisAngle(axis: UnityEngine.Vector3, angle: number): any;
-    Set(new_x: number, new_y: number, new_z: number, new_w: number): any;
+    SetAxisAngle(axis: UnityEngine.Vector3, angle: number): void;
+    Set(new_x: number, new_y: number, new_z: number, new_w: number): void;
     static Dot(a: UnityEngine.Quaternion, b: UnityEngine.Quaternion): number;
-    SetLookRotation(view: UnityEngine.Vector3): any;
-    SetLookRotation(view: UnityEngine.Vector3, up: UnityEngine.Vector3): any;
+    SetLookRotation(view: UnityEngine.Vector3): void;
+    SetLookRotation(view: UnityEngine.Vector3, up: UnityEngine.Vector3): void;
     static Angle(a: UnityEngine.Quaternion, b: UnityEngine.Quaternion): number;
     GetHashCode(): number;
     Equals(other: any): boolean;
@@ -21799,7 +21799,7 @@ declare namespace UnityEngine {
     // properties
     eulerAngles: UnityEngine.Vector3;
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     static readonly identity: UnityEngine.Quaternion;
     // fields
     x: number;
@@ -21857,7 +21857,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static InitState(seed: number): any;
+    static InitState(seed: number): void;
     static Range(min: number, max: number): number;
     static Range(min: number, max: number): number;
     static RandomRange(min: number, max: number): number;
@@ -22002,7 +22002,7 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static MinMaxRect(xmin: number, ymin: number, xmax: number, ymax: number): UnityEngine.Rect;
-    Set(x: number, y: number, width: number, height: number): any;
+    Set(x: number, y: number, width: number, height: number): void;
     Contains(point: UnityEngine.Vector2): boolean;
     Contains(point: UnityEngine.Vector3): boolean;
     Contains(point: UnityEngine.Vector3, allowInverse: boolean): boolean;
@@ -22085,29 +22085,29 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    GetLocalCorners(fourCornersArray: UnityEngine.Vector3[]): any;
-    GetWorldCorners(fourCornersArray: UnityEngine.Vector3[]): any;
-    SetInsetAndSizeFromParentEdge(edge: UnityEngine.RectTransform.Edge, inset: number, size: number): any;
-    SetSizeWithCurrentAnchors(axis: UnityEngine.RectTransform.Axis, size: number): any;
-    SetParent(parent: UnityEngine.Transform): any;
-    SetParent(parent: UnityEngine.Transform, worldPositionStays: boolean): any;
-    Translate(translation: UnityEngine.Vector3): any;
-    Translate(translation: UnityEngine.Vector3, relativeTo: UnityEngine.Space): any;
-    Translate(x: number, y: number, z: number): any;
-    Translate(x: number, y: number, z: number, relativeTo: UnityEngine.Space): any;
-    Translate(translation: UnityEngine.Vector3, relativeTo: UnityEngine.Transform): any;
-    Translate(x: number, y: number, z: number, relativeTo: UnityEngine.Transform): any;
-    Rotate(eulerAngles: UnityEngine.Vector3): any;
-    Rotate(eulerAngles: UnityEngine.Vector3, relativeTo: UnityEngine.Space): any;
-    Rotate(xAngle: number, yAngle: number, zAngle: number): any;
-    Rotate(xAngle: number, yAngle: number, zAngle: number, relativeTo: UnityEngine.Space): any;
-    Rotate(axis: UnityEngine.Vector3, angle: number): any;
-    Rotate(axis: UnityEngine.Vector3, angle: number, relativeTo: UnityEngine.Space): any;
-    RotateAround(point: UnityEngine.Vector3, axis: UnityEngine.Vector3, angle: number): any;
-    LookAt(target: UnityEngine.Transform): any;
-    LookAt(target: UnityEngine.Transform, worldUp: UnityEngine.Vector3): any;
-    LookAt(worldPosition: UnityEngine.Vector3, worldUp: UnityEngine.Vector3): any;
-    LookAt(worldPosition: UnityEngine.Vector3): any;
+    GetLocalCorners(fourCornersArray: UnityEngine.Vector3[]): void;
+    GetWorldCorners(fourCornersArray: UnityEngine.Vector3[]): void;
+    SetInsetAndSizeFromParentEdge(edge: UnityEngine.RectTransform.Edge, inset: number, size: number): void;
+    SetSizeWithCurrentAnchors(axis: UnityEngine.RectTransform.Axis, size: number): void;
+    SetParent(parent: UnityEngine.Transform): void;
+    SetParent(parent: UnityEngine.Transform, worldPositionStays: boolean): void;
+    Translate(translation: UnityEngine.Vector3): void;
+    Translate(translation: UnityEngine.Vector3, relativeTo: UnityEngine.Space): void;
+    Translate(x: number, y: number, z: number): void;
+    Translate(x: number, y: number, z: number, relativeTo: UnityEngine.Space): void;
+    Translate(translation: UnityEngine.Vector3, relativeTo: UnityEngine.Transform): void;
+    Translate(x: number, y: number, z: number, relativeTo: UnityEngine.Transform): void;
+    Rotate(eulerAngles: UnityEngine.Vector3): void;
+    Rotate(eulerAngles: UnityEngine.Vector3, relativeTo: UnityEngine.Space): void;
+    Rotate(xAngle: number, yAngle: number, zAngle: number): void;
+    Rotate(xAngle: number, yAngle: number, zAngle: number, relativeTo: UnityEngine.Space): void;
+    Rotate(axis: UnityEngine.Vector3, angle: number): void;
+    Rotate(axis: UnityEngine.Vector3, angle: number, relativeTo: UnityEngine.Space): void;
+    RotateAround(point: UnityEngine.Vector3, axis: UnityEngine.Vector3, angle: number): void;
+    LookAt(target: UnityEngine.Transform): void;
+    LookAt(target: UnityEngine.Transform, worldUp: UnityEngine.Vector3): void;
+    LookAt(worldPosition: UnityEngine.Vector3, worldUp: UnityEngine.Vector3): void;
+    LookAt(worldPosition: UnityEngine.Vector3): void;
     TransformDirection(direction: UnityEngine.Vector3): UnityEngine.Vector3;
     TransformDirection(x: number, y: number, z: number): UnityEngine.Vector3;
     InverseTransformDirection(direction: UnityEngine.Vector3): UnityEngine.Vector3;
@@ -22120,17 +22120,17 @@ declare namespace UnityEngine {
     TransformPoint(x: number, y: number, z: number): UnityEngine.Vector3;
     InverseTransformPoint(position: UnityEngine.Vector3): UnityEngine.Vector3;
     InverseTransformPoint(x: number, y: number, z: number): UnityEngine.Vector3;
-    DetachChildren(): any;
-    SetAsFirstSibling(): any;
-    SetAsLastSibling(): any;
-    SetSiblingIndex(index: number): any;
+    DetachChildren(): void;
+    SetAsFirstSibling(): void;
+    SetAsLastSibling(): void;
+    SetSiblingIndex(index: number): void;
     GetSiblingIndex(): number;
     Find(name: string): UnityEngine.Transform;
     IsChildOf(parent: UnityEngine.Transform): boolean;
     FindChild(name: string): UnityEngine.Transform;
     GetEnumerator(): any;
-    RotateAround(axis: UnityEngine.Vector3, angle: number): any;
-    RotateAroundLocal(axis: UnityEngine.Vector3, angle: number): any;
+    RotateAround(axis: UnityEngine.Vector3, angle: number): void;
+    RotateAroundLocal(axis: UnityEngine.Vector3, angle: number): void;
     GetChild(index: number): UnityEngine.Transform;
     GetChildCount(): number;
     GetComponent(type: any): UnityEngine.Component;
@@ -22143,20 +22143,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -22244,10 +22244,10 @@ declare namespace UnityEngine.RectTransform {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(driven: UnityEngine.RectTransform): any;
+    Invoke(driven: UnityEngine.RectTransform): void;
     BeginInvoke(driven: UnityEngine.RectTransform, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -22273,8 +22273,8 @@ declare namespace UnityEngine {
     static WorldToScreenPoint(cam: UnityEngine.Camera, worldPoint: UnityEngine.Vector3): UnityEngine.Vector2;
     static CalculateRelativeRectTransformBounds(root: UnityEngine.Transform, child: UnityEngine.Transform): UnityEngine.Bounds;
     static CalculateRelativeRectTransformBounds(trans: UnityEngine.Transform): UnityEngine.Bounds;
-    static FlipLayoutOnAxis(rect: UnityEngine.RectTransform, axis: number, keepPositioning: boolean, recursive: boolean): any;
-    static FlipLayoutAxes(rect: UnityEngine.RectTransform, keepPositioning: boolean, recursive: boolean): any;
+    static FlipLayoutOnAxis(rect: UnityEngine.RectTransform, axis: number, keepPositioning: boolean, recursive: boolean): void;
+    static FlipLayoutAxes(rect: UnityEngine.RectTransform, keepPositioning: boolean, recursive: boolean): void;
     static RectangleContainsScreenPoint(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2, cam: UnityEngine.Camera): boolean;
     static PixelAdjustPoint(point: UnityEngine.Vector2, elementTransform: UnityEngine.Transform, canvas: UnityEngine.Canvas): UnityEngine.Vector2;
     static PixelAdjustRect(rectTransform: UnityEngine.RectTransform, canvas: UnityEngine.Canvas): UnityEngine.Rect;
@@ -22301,20 +22301,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -22389,20 +22389,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -22496,7 +22496,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static CallOnUpdate(): any;
+    static CallOnUpdate(): void;
     static GetInt(key: string, defaultValue: number): number;
     static GetInt(key: string): number;
     static GetFloat(key: string, defaultValue: number): number;
@@ -22519,10 +22519,10 @@ declare namespace UnityEngine.RemoteSettings {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -22568,9 +22568,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -22581,20 +22581,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -22917,75 +22917,75 @@ declare namespace UnityEngine.Rendering {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
-    Release(): any;
-    Clear(): any;
-    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, submeshIndex: number, shaderPass: number): any;
-    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, submeshIndex: number): any;
-    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material): any;
-    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, submeshIndex: number, shaderPass: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    DrawRenderer(renderer: UnityEngine.Renderer, material: UnityEngine.Material, submeshIndex: number): any;
-    DrawRenderer(renderer: UnityEngine.Renderer, material: UnityEngine.Material): any;
-    DrawRenderer(renderer: UnityEngine.Renderer, material: UnityEngine.Material, submeshIndex: number, shaderPass: number): any;
-    DrawProcedural(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, vertexCount: number, instanceCount: number): any;
-    DrawProcedural(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, vertexCount: number): any;
-    DrawProcedural(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, vertexCount: number, instanceCount: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    DrawProceduralIndirect(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer, argsOffset: number): any;
-    DrawProceduralIndirect(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer): any;
-    DrawProceduralIndirect(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer, argsOffset: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, shaderPass: number, matrices: UnityEngine.Matrix4x4[], count: number): any;
-    DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, shaderPass: number, matrices: UnityEngine.Matrix4x4[]): any;
-    DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, shaderPass: number, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock): any;
-    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number): any;
-    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace): any;
-    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace, depthSlice: number): any;
-    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number): any;
-    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace): any;
-    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace, depthSlice: number): any;
-    SetRenderTarget(colors: UnityEngine.Rendering.RenderTargetIdentifier[], depth: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    Blit(source: UnityEngine.Texture, dest: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    Blit(source: UnityEngine.Texture, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material): any;
-    Blit(source: UnityEngine.Texture, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material, pass: number): any;
-    Blit(source: UnityEngine.Rendering.RenderTargetIdentifier, dest: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    Blit(source: UnityEngine.Rendering.RenderTargetIdentifier, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material): any;
-    Blit(source: UnityEngine.Rendering.RenderTargetIdentifier, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material, pass: number): any;
-    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite, antiAliasing: number): any;
-    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite): any;
-    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode, format: UnityEngine.RenderTextureFormat): any;
-    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode): any;
-    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number): any;
-    GetTemporaryRT(nameID: number, width: number, height: number): any;
-    ReleaseTemporaryRT(nameID: number): any;
-    ClearRenderTarget(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color, depth: number): any;
-    ClearRenderTarget(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color): any;
-    SetGlobalFloat(name: string, value: number): any;
-    SetGlobalFloat(nameID: number, value: number): any;
-    SetGlobalVector(name: string, value: UnityEngine.Vector4): any;
-    SetGlobalVector(nameID: number, value: UnityEngine.Vector4): any;
-    SetGlobalColor(name: string, value: UnityEngine.Color): any;
-    SetGlobalColor(nameID: number, value: UnityEngine.Color): any;
-    SetGlobalMatrix(name: string, value: UnityEngine.Matrix4x4): any;
-    SetGlobalMatrix(nameID: number, value: UnityEngine.Matrix4x4): any;
-    SetGlobalFloatArray(propertyName: string, values: any): any;
-    SetGlobalFloatArray(nameID: number, values: any): any;
-    SetGlobalFloatArray(propertyName: string, values: number[]): any;
-    SetGlobalFloatArray(nameID: number, values: number[]): any;
-    SetGlobalVectorArray(propertyName: string, values: any): any;
-    SetGlobalVectorArray(nameID: number, values: any): any;
-    SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): any;
-    SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): any;
-    SetGlobalMatrixArray(propertyName: string, values: any): any;
-    SetGlobalMatrixArray(nameID: number, values: any): any;
-    SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): any;
-    SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): any;
-    SetGlobalTexture(name: string, value: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    SetGlobalTexture(nameID: number, value: UnityEngine.Rendering.RenderTargetIdentifier): any;
-    SetGlobalBuffer(name: string, value: UnityEngine.ComputeBuffer): any;
-    SetGlobalBuffer(nameID: number, value: UnityEngine.ComputeBuffer): any;
-    SetShadowSamplingMode(shadowmap: UnityEngine.Rendering.RenderTargetIdentifier, mode: UnityEngine.Rendering.ShadowSamplingMode): any;
-    IssuePluginEvent(callback: any, eventID: number): any;
+    Dispose(): void;
+    Release(): void;
+    Clear(): void;
+    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, submeshIndex: number, shaderPass: number): void;
+    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, submeshIndex: number): void;
+    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material): void;
+    DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, submeshIndex: number, shaderPass: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    DrawRenderer(renderer: UnityEngine.Renderer, material: UnityEngine.Material, submeshIndex: number): void;
+    DrawRenderer(renderer: UnityEngine.Renderer, material: UnityEngine.Material): void;
+    DrawRenderer(renderer: UnityEngine.Renderer, material: UnityEngine.Material, submeshIndex: number, shaderPass: number): void;
+    DrawProcedural(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, vertexCount: number, instanceCount: number): void;
+    DrawProcedural(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, vertexCount: number): void;
+    DrawProcedural(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, vertexCount: number, instanceCount: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    DrawProceduralIndirect(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer, argsOffset: number): void;
+    DrawProceduralIndirect(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer): void;
+    DrawProceduralIndirect(matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, shaderPass: number, topology: UnityEngine.MeshTopology, bufferWithArgs: UnityEngine.ComputeBuffer, argsOffset: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, shaderPass: number, matrices: UnityEngine.Matrix4x4[], count: number): void;
+    DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, shaderPass: number, matrices: UnityEngine.Matrix4x4[]): void;
+    DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, shaderPass: number, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock): void;
+    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number): void;
+    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace): void;
+    SetRenderTarget(rt: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace, depthSlice: number): void;
+    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number): void;
+    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace): void;
+    SetRenderTarget(color: UnityEngine.Rendering.RenderTargetIdentifier, depth: UnityEngine.Rendering.RenderTargetIdentifier, mipLevel: number, cubemapFace: UnityEngine.CubemapFace, depthSlice: number): void;
+    SetRenderTarget(colors: UnityEngine.Rendering.RenderTargetIdentifier[], depth: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    Blit(source: UnityEngine.Texture, dest: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    Blit(source: UnityEngine.Texture, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material): void;
+    Blit(source: UnityEngine.Texture, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material, pass: number): void;
+    Blit(source: UnityEngine.Rendering.RenderTargetIdentifier, dest: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    Blit(source: UnityEngine.Rendering.RenderTargetIdentifier, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material): void;
+    Blit(source: UnityEngine.Rendering.RenderTargetIdentifier, dest: UnityEngine.Rendering.RenderTargetIdentifier, mat: UnityEngine.Material, pass: number): void;
+    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite, antiAliasing: number): void;
+    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite): void;
+    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode, format: UnityEngine.RenderTextureFormat): void;
+    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number, filter: UnityEngine.FilterMode): void;
+    GetTemporaryRT(nameID: number, width: number, height: number, depthBuffer: number): void;
+    GetTemporaryRT(nameID: number, width: number, height: number): void;
+    ReleaseTemporaryRT(nameID: number): void;
+    ClearRenderTarget(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color, depth: number): void;
+    ClearRenderTarget(clearDepth: boolean, clearColor: boolean, backgroundColor: UnityEngine.Color): void;
+    SetGlobalFloat(name: string, value: number): void;
+    SetGlobalFloat(nameID: number, value: number): void;
+    SetGlobalVector(name: string, value: UnityEngine.Vector4): void;
+    SetGlobalVector(nameID: number, value: UnityEngine.Vector4): void;
+    SetGlobalColor(name: string, value: UnityEngine.Color): void;
+    SetGlobalColor(nameID: number, value: UnityEngine.Color): void;
+    SetGlobalMatrix(name: string, value: UnityEngine.Matrix4x4): void;
+    SetGlobalMatrix(nameID: number, value: UnityEngine.Matrix4x4): void;
+    SetGlobalFloatArray(propertyName: string, values: any): void;
+    SetGlobalFloatArray(nameID: number, values: any): void;
+    SetGlobalFloatArray(propertyName: string, values: number[]): void;
+    SetGlobalFloatArray(nameID: number, values: number[]): void;
+    SetGlobalVectorArray(propertyName: string, values: any): void;
+    SetGlobalVectorArray(nameID: number, values: any): void;
+    SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): void;
+    SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    SetGlobalMatrixArray(propertyName: string, values: any): void;
+    SetGlobalMatrixArray(nameID: number, values: any): void;
+    SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): void;
+    SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
+    SetGlobalTexture(name: string, value: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    SetGlobalTexture(nameID: number, value: UnityEngine.Rendering.RenderTargetIdentifier): void;
+    SetGlobalBuffer(name: string, value: UnityEngine.ComputeBuffer): void;
+    SetGlobalBuffer(nameID: number, value: UnityEngine.ComputeBuffer): void;
+    SetShadowSamplingMode(shadowmap: UnityEngine.Rendering.RenderTargetIdentifier, mode: UnityEngine.Rendering.ShadowSamplingMode): void;
+    IssuePluginEvent(callback: any, eventID: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -23133,9 +23133,9 @@ declare namespace UnityEngine.Rendering {
     // constructors
     constructor();
     // methods
-    static SetShaderMode(type: UnityEngine.Rendering.BuiltinShaderType, mode: UnityEngine.Rendering.BuiltinShaderMode): any;
+    static SetShaderMode(type: UnityEngine.Rendering.BuiltinShaderType, mode: UnityEngine.Rendering.BuiltinShaderMode): void;
     static GetShaderMode(type: UnityEngine.Rendering.BuiltinShaderType): UnityEngine.Rendering.BuiltinShaderMode;
-    static SetCustomShader(type: UnityEngine.Rendering.BuiltinShaderType, shader: UnityEngine.Shader): any;
+    static SetCustomShader(type: UnityEngine.Rendering.BuiltinShaderType, shader: UnityEngine.Shader): void;
     static GetCustomShader(type: UnityEngine.Rendering.BuiltinShaderType): UnityEngine.Shader;
     ToString(): string;
     GetInstanceID(): number;
@@ -23610,16 +23610,16 @@ declare namespace UnityEngine.Rendering {
     // constructors
     private constructor();
     // methods
-    Clear(): any;
-    AddAmbientLight(color: UnityEngine.Color): any;
-    AddDirectionalLight(direction: UnityEngine.Vector3, color: UnityEngine.Color, intensity: number): any;
+    Clear(): void;
+    AddAmbientLight(color: UnityEngine.Color): void;
+    AddDirectionalLight(direction: UnityEngine.Vector3, color: UnityEngine.Color, intensity: number): void;
     GetHashCode(): number;
     Equals(other: any): boolean;
     ToString(): string;
     GetType(): any;
     // properties
     get_Item(rgb: number, coefficient: number): number;
-    set_Item(rgb: number, coefficient: number, value: number): any;
+    set_Item(rgb: number, coefficient: number, value: number): void;
     // fields
   }
 }
@@ -23628,8 +23628,8 @@ declare namespace UnityEngine.Rendering {
     // constructors
     constructor();
     // methods
-    static Begin(): any;
-    static Draw(): any;
+    static Begin(): void;
+    static Draw(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -23836,19 +23836,19 @@ declare namespace UnityEngine {
     static GetTemporary(width: number, height: number, depthBuffer: number, format: UnityEngine.RenderTextureFormat): UnityEngine.RenderTexture;
     static GetTemporary(width: number, height: number, depthBuffer: number): UnityEngine.RenderTexture;
     static GetTemporary(width: number, height: number): UnityEngine.RenderTexture;
-    static ReleaseTemporary(temp: UnityEngine.RenderTexture): any;
+    static ReleaseTemporary(temp: UnityEngine.RenderTexture): void;
     Create(): boolean;
-    Release(): any;
+    Release(): void;
     IsCreated(): boolean;
-    DiscardContents(): any;
-    DiscardContents(discardColor: boolean, discardDepth: boolean): any;
-    MarkRestoreExpected(): any;
-    GenerateMips(): any;
+    DiscardContents(): void;
+    DiscardContents(discardColor: boolean, discardDepth: boolean): void;
+    MarkRestoreExpected(): void;
+    GenerateMips(): void;
     GetNativeDepthBufferPtr(): any;
-    SetGlobalShaderProperty(propertyName: string): any;
+    SetGlobalShaderProperty(propertyName: string): void;
     GetTexelOffset(): UnityEngine.Vector2;
     static SupportsStencil(rt: UnityEngine.RenderTexture): boolean;
-    SetBorderColor(color: UnityEngine.Color): any;
+    SetBorderColor(color: UnityEngine.Color): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;
@@ -24016,7 +24016,7 @@ declare namespace UnityEngine {
     static LoadAll(path: string, systemTypeInstance: any): UnityEngine.Object[];
     static LoadAll(path: string): UnityEngine.Object[];
     static GetBuiltinResource(type: any, path: string): UnityEngine.Object;
-    static UnloadAsset(assetToUnload: UnityEngine.Object): any;
+    static UnloadAsset(assetToUnload: UnityEngine.Object): void;
     static UnloadUnusedAssets(): UnityEngine.AsyncOperation;
     static LoadAssetAtPath(assetPath: string, type: any): UnityEngine.Object;
     Equals(obj: any): boolean;
@@ -24032,45 +24032,45 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetDensity(density: number): any;
-    AddForce(force: UnityEngine.Vector3, mode: UnityEngine.ForceMode): any;
-    AddForce(force: UnityEngine.Vector3): any;
-    AddForce(x: number, y: number, z: number): any;
-    AddForce(x: number, y: number, z: number, mode: UnityEngine.ForceMode): any;
-    AddRelativeForce(force: UnityEngine.Vector3, mode: UnityEngine.ForceMode): any;
-    AddRelativeForce(force: UnityEngine.Vector3): any;
-    AddRelativeForce(x: number, y: number, z: number): any;
-    AddRelativeForce(x: number, y: number, z: number, mode: UnityEngine.ForceMode): any;
-    AddTorque(torque: UnityEngine.Vector3, mode: UnityEngine.ForceMode): any;
-    AddTorque(torque: UnityEngine.Vector3): any;
-    AddTorque(x: number, y: number, z: number): any;
-    AddTorque(x: number, y: number, z: number, mode: UnityEngine.ForceMode): any;
-    AddRelativeTorque(torque: UnityEngine.Vector3, mode: UnityEngine.ForceMode): any;
-    AddRelativeTorque(torque: UnityEngine.Vector3): any;
-    AddRelativeTorque(x: number, y: number, z: number): any;
-    AddRelativeTorque(x: number, y: number, z: number, mode: UnityEngine.ForceMode): any;
-    AddForceAtPosition(force: UnityEngine.Vector3, position: UnityEngine.Vector3, mode: UnityEngine.ForceMode): any;
-    AddForceAtPosition(force: UnityEngine.Vector3, position: UnityEngine.Vector3): any;
-    AddExplosionForce(explosionForce: number, explosionPosition: UnityEngine.Vector3, explosionRadius: number, upwardsModifier: number, mode: UnityEngine.ForceMode): any;
-    AddExplosionForce(explosionForce: number, explosionPosition: UnityEngine.Vector3, explosionRadius: number, upwardsModifier: number): any;
-    AddExplosionForce(explosionForce: number, explosionPosition: UnityEngine.Vector3, explosionRadius: number): any;
+    SetDensity(density: number): void;
+    AddForce(force: UnityEngine.Vector3, mode: UnityEngine.ForceMode): void;
+    AddForce(force: UnityEngine.Vector3): void;
+    AddForce(x: number, y: number, z: number): void;
+    AddForce(x: number, y: number, z: number, mode: UnityEngine.ForceMode): void;
+    AddRelativeForce(force: UnityEngine.Vector3, mode: UnityEngine.ForceMode): void;
+    AddRelativeForce(force: UnityEngine.Vector3): void;
+    AddRelativeForce(x: number, y: number, z: number): void;
+    AddRelativeForce(x: number, y: number, z: number, mode: UnityEngine.ForceMode): void;
+    AddTorque(torque: UnityEngine.Vector3, mode: UnityEngine.ForceMode): void;
+    AddTorque(torque: UnityEngine.Vector3): void;
+    AddTorque(x: number, y: number, z: number): void;
+    AddTorque(x: number, y: number, z: number, mode: UnityEngine.ForceMode): void;
+    AddRelativeTorque(torque: UnityEngine.Vector3, mode: UnityEngine.ForceMode): void;
+    AddRelativeTorque(torque: UnityEngine.Vector3): void;
+    AddRelativeTorque(x: number, y: number, z: number): void;
+    AddRelativeTorque(x: number, y: number, z: number, mode: UnityEngine.ForceMode): void;
+    AddForceAtPosition(force: UnityEngine.Vector3, position: UnityEngine.Vector3, mode: UnityEngine.ForceMode): void;
+    AddForceAtPosition(force: UnityEngine.Vector3, position: UnityEngine.Vector3): void;
+    AddExplosionForce(explosionForce: number, explosionPosition: UnityEngine.Vector3, explosionRadius: number, upwardsModifier: number, mode: UnityEngine.ForceMode): void;
+    AddExplosionForce(explosionForce: number, explosionPosition: UnityEngine.Vector3, explosionRadius: number, upwardsModifier: number): void;
+    AddExplosionForce(explosionForce: number, explosionPosition: UnityEngine.Vector3, explosionRadius: number): void;
     ClosestPointOnBounds(position: UnityEngine.Vector3): UnityEngine.Vector3;
     GetRelativePointVelocity(relativePoint: UnityEngine.Vector3): UnityEngine.Vector3;
     GetPointVelocity(worldPoint: UnityEngine.Vector3): UnityEngine.Vector3;
-    MovePosition(position: UnityEngine.Vector3): any;
-    MoveRotation(rot: UnityEngine.Quaternion): any;
-    Sleep(): any;
+    MovePosition(position: UnityEngine.Vector3): void;
+    MoveRotation(rot: UnityEngine.Quaternion): void;
+    Sleep(): void;
     IsSleeping(): boolean;
-    WakeUp(): any;
-    ResetCenterOfMass(): any;
-    ResetInertiaTensor(): any;
+    WakeUp(): void;
+    ResetCenterOfMass(): void;
+    ResetInertiaTensor(): void;
     SweepTest(direction: UnityEngine.Vector3, hitInfo: any, maxDistance: number, queryTriggerInteraction: UnityEngine.QueryTriggerInteraction): boolean;
     SweepTest(direction: UnityEngine.Vector3, hitInfo: any, maxDistance: number): boolean;
     SweepTest(direction: UnityEngine.Vector3, hitInfo: any): boolean;
     SweepTestAll(direction: UnityEngine.Vector3, maxDistance: number, queryTriggerInteraction: UnityEngine.QueryTriggerInteraction): UnityEngine.RaycastHit[];
     SweepTestAll(direction: UnityEngine.Vector3, maxDistance: number): UnityEngine.RaycastHit[];
     SweepTestAll(direction: UnityEngine.Vector3): UnityEngine.RaycastHit[];
-    SetMaxAngularVelocity(a: number): any;
+    SetMaxAngularVelocity(a: number): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -24081,20 +24081,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -24159,26 +24159,26 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    MovePosition(position: UnityEngine.Vector2): any;
-    MoveRotation(angle: number): any;
+    MovePosition(position: UnityEngine.Vector2): void;
+    MoveRotation(angle: number): void;
     IsSleeping(): boolean;
     IsAwake(): boolean;
-    Sleep(): any;
-    WakeUp(): any;
+    Sleep(): void;
+    WakeUp(): void;
     IsTouching(collider: UnityEngine.Collider2D): boolean;
     IsTouchingLayers(layerMask: number): boolean;
     IsTouchingLayers(): boolean;
     OverlapPoint(point: UnityEngine.Vector2): boolean;
     Cast(direction: UnityEngine.Vector2, results: UnityEngine.RaycastHit2D[], distance: number): number;
     Cast(direction: UnityEngine.Vector2, results: UnityEngine.RaycastHit2D[]): number;
-    AddForce(force: UnityEngine.Vector2, mode: UnityEngine.ForceMode2D): any;
-    AddForce(force: UnityEngine.Vector2): any;
-    AddRelativeForce(relativeForce: UnityEngine.Vector2, mode: UnityEngine.ForceMode2D): any;
-    AddRelativeForce(relativeForce: UnityEngine.Vector2): any;
-    AddForceAtPosition(force: UnityEngine.Vector2, position: UnityEngine.Vector2, mode: UnityEngine.ForceMode2D): any;
-    AddForceAtPosition(force: UnityEngine.Vector2, position: UnityEngine.Vector2): any;
-    AddTorque(torque: number, mode: UnityEngine.ForceMode2D): any;
-    AddTorque(torque: number): any;
+    AddForce(force: UnityEngine.Vector2, mode: UnityEngine.ForceMode2D): void;
+    AddForce(force: UnityEngine.Vector2): void;
+    AddRelativeForce(relativeForce: UnityEngine.Vector2, mode: UnityEngine.ForceMode2D): void;
+    AddRelativeForce(relativeForce: UnityEngine.Vector2): void;
+    AddForceAtPosition(force: UnityEngine.Vector2, position: UnityEngine.Vector2, mode: UnityEngine.ForceMode2D): void;
+    AddForceAtPosition(force: UnityEngine.Vector2, position: UnityEngine.Vector2): void;
+    AddTorque(torque: number, mode: UnityEngine.ForceMode2D): void;
+    AddTorque(torque: number): void;
     GetPoint(point: UnityEngine.Vector2): UnityEngine.Vector2;
     GetRelativePoint(relativePoint: UnityEngine.Vector2): UnityEngine.Vector2;
     GetVector(vector: UnityEngine.Vector2): UnityEngine.Vector2;
@@ -24195,20 +24195,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -24604,9 +24604,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetTransformParent(transform: UnityEngine.Transform, newParent: UnityEngine.Transform, name: string): any;
-    static RecordObject(objectToUndo: UnityEngine.Object, name: string): any;
-    static RecordObjects(objectsToUndo: UnityEngine.Object[], name: string): any;
+    static SetTransformParent(transform: UnityEngine.Transform, newParent: UnityEngine.Transform, name: string): void;
+    static RecordObject(objectToUndo: UnityEngine.Object, name: string): void;
+    static RecordObjects(objectsToUndo: UnityEngine.Object[], name: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -24620,7 +24620,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetSystemLanguage(language: UnityEngine.SystemLanguage): any;
+    static SetSystemLanguage(language: UnityEngine.SystemLanguage): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -24789,7 +24789,7 @@ declare namespace UnityEngine.SceneManagement {
     // methods
     IsValid(): boolean;
     GetRootGameObjects(): UnityEngine.GameObject[];
-    GetRootGameObjects(rootGameObjects: any): any;
+    GetRootGameObjects(rootGameObjects: any): void;
     GetHashCode(): number;
     Equals(other: any): boolean;
     ToString(): string;
@@ -24838,10 +24838,10 @@ declare namespace UnityEngine.SceneManagement {
     static GetSceneByBuildIndex(buildIndex: number): UnityEngine.SceneManagement.Scene;
     static GetSceneAt(index: number): UnityEngine.SceneManagement.Scene;
     static GetAllScenes(): UnityEngine.SceneManagement.Scene[];
-    static LoadScene(sceneName: string): any;
-    static LoadScene(sceneName: string, mode: UnityEngine.SceneManagement.LoadSceneMode): any;
-    static LoadScene(sceneBuildIndex: number): any;
-    static LoadScene(sceneBuildIndex: number, mode: UnityEngine.SceneManagement.LoadSceneMode): any;
+    static LoadScene(sceneName: string): void;
+    static LoadScene(sceneName: string, mode: UnityEngine.SceneManagement.LoadSceneMode): void;
+    static LoadScene(sceneBuildIndex: number): void;
+    static LoadScene(sceneBuildIndex: number, mode: UnityEngine.SceneManagement.LoadSceneMode): void;
     static LoadSceneAsync(sceneName: string): UnityEngine.AsyncOperation;
     static LoadSceneAsync(sceneName: string, mode: UnityEngine.SceneManagement.LoadSceneMode): UnityEngine.AsyncOperation;
     static LoadSceneAsync(sceneBuildIndex: number): UnityEngine.AsyncOperation;
@@ -24853,8 +24853,8 @@ declare namespace UnityEngine.SceneManagement {
     static UnloadSceneAsync(sceneBuildIndex: number): UnityEngine.AsyncOperation;
     static UnloadSceneAsync(sceneName: string): UnityEngine.AsyncOperation;
     static UnloadSceneAsync(scene: UnityEngine.SceneManagement.Scene): UnityEngine.AsyncOperation;
-    static MergeScenes(sourceScene: UnityEngine.SceneManagement.Scene, destinationScene: UnityEngine.SceneManagement.Scene): any;
-    static MoveGameObjectToScene(go: UnityEngine.GameObject, scene: UnityEngine.SceneManagement.Scene): any;
+    static MergeScenes(sourceScene: UnityEngine.SceneManagement.Scene, destinationScene: UnityEngine.SceneManagement.Scene): void;
+    static MoveGameObjectToScene(go: UnityEngine.GameObject, scene: UnityEngine.SceneManagement.Scene): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -24881,8 +24881,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetResolution(width: number, height: number, fullscreen: boolean, preferredRefreshRate: number): any;
-    static SetResolution(width: number, height: number, fullscreen: boolean): any;
+    static SetResolution(width: number, height: number, fullscreen: boolean, preferredRefreshRate: number): void;
+    static SetResolution(width: number, height: number, fullscreen: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -24937,7 +24937,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetDirty(): any;
+    SetDirty(): void;
     static CreateInstance(className: string): UnityEngine.ScriptableObject;
     static CreateInstance(type: any): UnityEngine.ScriptableObject;
     ToString(): string;
@@ -25106,7 +25106,7 @@ declare namespace UnityEngine.SendMouseEvents {
     // constructors
     private constructor();
     // methods
-    SendMessage(name: string): any;
+    SendMessage(name: string): void;
     static Compare(lhs: UnityEngine.SendMouseEvents.HitInfo, rhs: UnityEngine.SendMouseEvents.HitInfo): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -25140,7 +25140,7 @@ declare namespace UnityEngine.Serialization {
     // constructors
     constructor();
     // methods
-    GetObjectData(obj: any, info: any, context: any): any;
+    GetObjectData(obj: any, info: any, context: any): void;
     SetObjectData(obj: any, info: any, context: any, selector: any): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -25157,7 +25157,7 @@ declare namespace UnityEngine.Serialization {
     constructor();
     // methods
     GetSurrogate(type: any, context: any, selector: any): any;
-    ChainSelector(selector: any): any;
+    ChainSelector(selector: any): void;
     GetNextSelector(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -25204,7 +25204,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static InvokeMoveNext(enumerator: any, returnValueAddress: any): any;
+    static InvokeMoveNext(enumerator: any, returnValueAddress: any): void;
     static InvokeMember(behaviour: any, name: string, variable: any): any;
     static InvokeStatic(klass: any, name: string, variable: any): any;
     Equals(obj: any): boolean;
@@ -25221,35 +25221,35 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static Find(name: string): UnityEngine.Shader;
-    static EnableKeyword(keyword: string): any;
-    static DisableKeyword(keyword: string): any;
+    static EnableKeyword(keyword: string): void;
+    static DisableKeyword(keyword: string): void;
     static IsKeywordEnabled(keyword: string): boolean;
-    static SetGlobalVector(propertyName: string, vec: UnityEngine.Vector4): any;
-    static SetGlobalVector(nameID: number, vec: UnityEngine.Vector4): any;
-    static SetGlobalColor(propertyName: string, color: UnityEngine.Color): any;
-    static SetGlobalColor(nameID: number, color: UnityEngine.Color): any;
-    static SetGlobalFloat(propertyName: string, value: number): any;
-    static SetGlobalFloat(nameID: number, value: number): any;
-    static SetGlobalInt(propertyName: string, value: number): any;
-    static SetGlobalInt(nameID: number, value: number): any;
-    static SetGlobalMatrix(propertyName: string, mat: UnityEngine.Matrix4x4): any;
-    static SetGlobalMatrix(nameID: number, mat: UnityEngine.Matrix4x4): any;
-    static SetGlobalTexture(propertyName: string, tex: UnityEngine.Texture): any;
-    static SetGlobalTexture(nameID: number, tex: UnityEngine.Texture): any;
-    static SetGlobalFloatArray(name: string, values: any): any;
-    static SetGlobalFloatArray(nameID: number, values: any): any;
-    static SetGlobalFloatArray(propertyName: string, values: number[]): any;
-    static SetGlobalFloatArray(nameID: number, values: number[]): any;
-    static SetGlobalVectorArray(name: string, values: any): any;
-    static SetGlobalVectorArray(nameID: number, values: any): any;
-    static SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): any;
-    static SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): any;
-    static SetGlobalMatrixArray(name: string, values: any): any;
-    static SetGlobalMatrixArray(nameID: number, values: any): any;
-    static SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): any;
-    static SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): any;
-    static SetGlobalBuffer(name: string, buffer: UnityEngine.ComputeBuffer): any;
-    static SetGlobalBuffer(nameID: number, buffer: UnityEngine.ComputeBuffer): any;
+    static SetGlobalVector(propertyName: string, vec: UnityEngine.Vector4): void;
+    static SetGlobalVector(nameID: number, vec: UnityEngine.Vector4): void;
+    static SetGlobalColor(propertyName: string, color: UnityEngine.Color): void;
+    static SetGlobalColor(nameID: number, color: UnityEngine.Color): void;
+    static SetGlobalFloat(propertyName: string, value: number): void;
+    static SetGlobalFloat(nameID: number, value: number): void;
+    static SetGlobalInt(propertyName: string, value: number): void;
+    static SetGlobalInt(nameID: number, value: number): void;
+    static SetGlobalMatrix(propertyName: string, mat: UnityEngine.Matrix4x4): void;
+    static SetGlobalMatrix(nameID: number, mat: UnityEngine.Matrix4x4): void;
+    static SetGlobalTexture(propertyName: string, tex: UnityEngine.Texture): void;
+    static SetGlobalTexture(nameID: number, tex: UnityEngine.Texture): void;
+    static SetGlobalFloatArray(name: string, values: any): void;
+    static SetGlobalFloatArray(nameID: number, values: any): void;
+    static SetGlobalFloatArray(propertyName: string, values: number[]): void;
+    static SetGlobalFloatArray(nameID: number, values: number[]): void;
+    static SetGlobalVectorArray(name: string, values: any): void;
+    static SetGlobalVectorArray(nameID: number, values: any): void;
+    static SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): void;
+    static SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    static SetGlobalMatrixArray(name: string, values: any): void;
+    static SetGlobalMatrixArray(nameID: number, values: any): void;
+    static SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): void;
+    static SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
+    static SetGlobalBuffer(name: string, buffer: UnityEngine.ComputeBuffer): void;
+    static SetGlobalBuffer(nameID: number, buffer: UnityEngine.ComputeBuffer): void;
     static GetGlobalFloat(name: string): number;
     static GetGlobalFloat(nameID: number): number;
     static GetGlobalInt(name: string): number;
@@ -25262,22 +25262,22 @@ declare namespace UnityEngine {
     static GetGlobalMatrix(nameID: number): UnityEngine.Matrix4x4;
     static GetGlobalTexture(name: string): UnityEngine.Texture;
     static GetGlobalTexture(nameID: number): UnityEngine.Texture;
-    static GetGlobalFloatArray(name: string, values: any): any;
-    static GetGlobalFloatArray(nameID: number, values: any): any;
+    static GetGlobalFloatArray(name: string, values: any): void;
+    static GetGlobalFloatArray(nameID: number, values: any): void;
     static GetGlobalFloatArray(name: string): number[];
     static GetGlobalFloatArray(nameID: number): number[];
-    static GetGlobalVectorArray(name: string, values: any): any;
-    static GetGlobalVectorArray(nameID: number, values: any): any;
+    static GetGlobalVectorArray(name: string, values: any): void;
+    static GetGlobalVectorArray(nameID: number, values: any): void;
     static GetGlobalVectorArray(name: string): UnityEngine.Vector4[];
     static GetGlobalVectorArray(nameID: number): UnityEngine.Vector4[];
-    static GetGlobalMatrixArray(name: string, values: any): any;
-    static GetGlobalMatrixArray(nameID: number, values: any): any;
+    static GetGlobalMatrixArray(name: string, values: any): void;
+    static GetGlobalMatrixArray(nameID: number, values: any): void;
     static GetGlobalMatrixArray(name: string): UnityEngine.Matrix4x4[];
     static GetGlobalMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
     static PropertyToID(name: string): number;
-    static WarmupAllShaders(): any;
-    static SetGlobalTexGenMode(propertyName: string, mode: UnityEngine.TexGenMode): any;
-    static SetGlobalTextureMatrixName(propertyName: string, matrixName: string): any;
+    static WarmupAllShaders(): void;
+    static SetGlobalTexGenMode(propertyName: string, mode: UnityEngine.TexGenMode): void;
+    static SetGlobalTextureMatrixName(propertyName: string, matrixName: string): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -25302,8 +25302,8 @@ declare namespace UnityEngine {
     Add(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
     Remove(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
     Contains(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
-    Clear(): any;
-    WarmUp(): any;
+    Clear(): void;
+    WarmUp(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -25439,12 +25439,12 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    BakeMesh(mesh: UnityEngine.Mesh): any;
+    BakeMesh(mesh: UnityEngine.Mesh): void;
     GetBlendShapeWeight(index: number): number;
-    SetBlendShapeWeight(index: number, value: number): any;
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetBlendShapeWeight(index: number, value: number): void;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -25455,20 +25455,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -25573,20 +25573,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -25668,20 +25668,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -25756,16 +25756,16 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static LoadUsers(userIDs: string[], callback: any): any;
-    static ReportProgress(achievementID: string, progress: number, callback: any): any;
-    static LoadAchievementDescriptions(callback: any): any;
-    static LoadAchievements(callback: any): any;
-    static ReportScore(score: number, board: string, callback: any): any;
-    static LoadScores(leaderboardID: string, callback: any): any;
+    static LoadUsers(userIDs: string[], callback: any): void;
+    static ReportProgress(achievementID: string, progress: number, callback: any): void;
+    static LoadAchievementDescriptions(callback: any): void;
+    static LoadAchievements(callback: any): void;
+    static ReportScore(score: number, board: string, callback: any): void;
+    static LoadScores(leaderboardID: string, callback: any): void;
     static CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     static CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
-    static ShowAchievementsUI(): any;
-    static ShowLeaderboardUI(): any;
+    static ShowAchievementsUI(): void;
+    static ShowLeaderboardUI(): void;
     // properties
     // fields
   }
@@ -25784,17 +25784,17 @@ declare namespace UnityEngine.SocialPlatforms.GameCenter {
     // constructors
     constructor();
     // methods
-    static ResetAllAchievements(callback: any): any;
-    static ShowDefaultAchievementCompletionBanner(value: boolean): any;
-    static ShowLeaderboardUI(leaderboardID: string, timeScope: UnityEngine.SocialPlatforms.TimeScope): any;
-    LoadUsers(userIDs: string[], callback: any): any;
-    ReportProgress(id: string, progress: number, callback: any): any;
-    LoadAchievementDescriptions(callback: any): any;
-    LoadAchievements(callback: any): any;
-    ReportScore(score: number, board: string, callback: any): any;
-    LoadScores(leaderboardID: string, callback: any): any;
-    ShowAchievementsUI(): any;
-    ShowLeaderboardUI(): any;
+    static ResetAllAchievements(callback: any): void;
+    static ShowDefaultAchievementCompletionBanner(value: boolean): void;
+    static ShowLeaderboardUI(leaderboardID: string, timeScope: UnityEngine.SocialPlatforms.TimeScope): void;
+    LoadUsers(userIDs: string[], callback: any): void;
+    ReportProgress(id: string, progress: number, callback: any): void;
+    LoadAchievementDescriptions(callback: any): void;
+    LoadAchievements(callback: any): void;
+    ReportScore(score: number, board: string, callback: any): void;
+    LoadScores(leaderboardID: string, callback: any): void;
+    ShowAchievementsUI(): void;
+    ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
     Equals(obj: any): boolean;
@@ -25850,10 +25850,10 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor();
     // methods
     ToString(): string;
-    ReportProgress(callback: any): any;
-    SetCompleted(value: boolean): any;
-    SetHidden(value: boolean): any;
-    SetLastReportedDate(date: any): any;
+    ReportProgress(callback: any): void;
+    SetCompleted(value: boolean): void;
+    SetHidden(value: boolean): void;
+    SetLastReportedDate(date: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -25872,7 +25872,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(id: string, title: string, image: UnityEngine.Texture2D, achievedDescription: string, unachievedDescription: string, hidden: boolean, points: number);
     // methods
     ToString(): string;
-    SetImage(image: UnityEngine.Texture2D): any;
+    SetImage(image: UnityEngine.Texture2D): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -25892,13 +25892,13 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // constructors
     constructor();
     // methods
-    SetUserFilter(userIDs: string[]): any;
+    SetUserFilter(userIDs: string[]): void;
     ToString(): string;
-    LoadScores(callback: any): any;
-    SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): any;
-    SetMaxRange(maxRange: number): any;
-    SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): any;
-    SetTitle(title: string): any;
+    LoadScores(callback: any): void;
+    SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): void;
+    SetMaxRange(maxRange: number): void;
+    SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): void;
+    SetTitle(title: string): void;
     GetUserFilter(): string[];
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -25921,18 +25921,18 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // constructors
     constructor();
     // methods
-    Authenticate(callback: any): any;
-    Authenticate(callback: any): any;
-    LoadFriends(callback: any): any;
-    SetFriends(friends: UnityEngine.SocialPlatforms.IUserProfile[]): any;
-    SetAuthenticated(value: boolean): any;
-    SetUnderage(value: boolean): any;
+    Authenticate(callback: any): void;
+    Authenticate(callback: any): void;
+    LoadFriends(callback: any): void;
+    SetFriends(friends: UnityEngine.SocialPlatforms.IUserProfile[]): void;
+    SetAuthenticated(value: boolean): void;
+    SetUnderage(value: boolean): void;
     ToString(): string;
-    SetUserName(name: string): any;
-    SetUserID(id: string): any;
-    SetImage(image: UnityEngine.Texture2D): any;
-    SetIsFriend(value: boolean): any;
-    SetState(state: UnityEngine.SocialPlatforms.UserState): any;
+    SetUserName(name: string): void;
+    SetUserID(id: string): void;
+    SetImage(image: UnityEngine.Texture2D): void;
+    SetIsFriend(value: boolean): void;
+    SetState(state: UnityEngine.SocialPlatforms.UserState): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -25956,11 +25956,11 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(leaderboardID: string, value: number, userID: string, date: any, formattedValue: string, rank: number);
     // methods
     ToString(): string;
-    ReportScore(callback: any): any;
-    SetDate(date: any): any;
-    SetFormattedValue(value: string): any;
-    SetUserID(userID: string): any;
-    SetRank(rank: number): any;
+    ReportScore(callback: any): void;
+    SetDate(date: any): void;
+    SetFormattedValue(value: string): void;
+    SetUserID(userID: string): void;
+    SetRank(rank: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -25982,11 +25982,11 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(name: string, id: string, friend: boolean, state: UnityEngine.SocialPlatforms.UserState, image: UnityEngine.Texture2D);
     // methods
     ToString(): string;
-    SetUserName(name: string): any;
-    SetUserID(id: string): any;
-    SetImage(image: UnityEngine.Texture2D): any;
-    SetIsFriend(value: boolean): any;
-    SetState(state: UnityEngine.SocialPlatforms.UserState): any;
+    SetUserName(name: string): void;
+    SetUserID(id: string): void;
+    SetImage(image: UnityEngine.Texture2D): void;
+    SetIsFriend(value: boolean): void;
+    SetState(state: UnityEngine.SocialPlatforms.UserState): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -26031,14 +26031,14 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     constructor();
     // methods
-    LoadUsers(userIDs: string[], callback: any): any;
-    ReportProgress(id: string, progress: number, callback: any): any;
-    LoadAchievementDescriptions(callback: any): any;
-    LoadAchievements(callback: any): any;
-    ReportScore(score: number, board: string, callback: any): any;
-    LoadScores(leaderboardID: string, callback: any): any;
-    ShowAchievementsUI(): any;
-    ShowLeaderboardUI(): any;
+    LoadUsers(userIDs: string[], callback: any): void;
+    ReportProgress(id: string, progress: number, callback: any): void;
+    LoadAchievementDescriptions(callback: any): void;
+    LoadAchievements(callback: any): void;
+    ReportScore(score: number, board: string, callback: any): void;
+    LoadScores(leaderboardID: string, callback: any): void;
+    ShowAchievementsUI(): void;
+    ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
     Equals(obj: any): boolean;
@@ -26234,9 +26234,9 @@ declare namespace UnityEngine {
     constructor(width: number, height: number, format: UnityEngine.TextureFormat, mipCount: number);
     constructor(width: number, height: number, format: UnityEngine.TextureFormat, mipCount: number, linear: boolean);
     // methods
-    UpdateTile(tileX: number, tileY: number, miplevel: number, data: UnityEngine.Color32[]): any;
-    UpdateTileRaw(tileX: number, tileY: number, miplevel: number, data: number[]): any;
-    UnloadTile(tileX: number, tileY: number, miplevel: number): any;
+    UpdateTile(tileX: number, tileY: number, miplevel: number, data: UnityEngine.Color32[]): void;
+    UpdateTileRaw(tileX: number, tileY: number, miplevel: number, data: number[]): void;
+    UnloadTile(tileX: number, tileY: number, miplevel: number): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;
@@ -26294,20 +26294,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -26383,20 +26383,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -26461,20 +26461,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -26532,7 +26532,7 @@ declare namespace UnityEngine {
     static Create(texture: UnityEngine.Texture2D, rect: UnityEngine.Rect, pivot: UnityEngine.Vector2, pixelsPerUnit: number, extrude: number): UnityEngine.Sprite;
     static Create(texture: UnityEngine.Texture2D, rect: UnityEngine.Rect, pivot: UnityEngine.Vector2, pixelsPerUnit: number): UnityEngine.Sprite;
     static Create(texture: UnityEngine.Texture2D, rect: UnityEngine.Rect, pivot: UnityEngine.Vector2): UnityEngine.Sprite;
-    OverrideGeometry(vertices: UnityEngine.Vector2[], triangles: number[]): any;
+    OverrideGeometry(vertices: UnityEngine.Vector2[], triangles: number[]): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -26656,9 +26656,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -26669,20 +26669,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -26814,8 +26814,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static Combine(staticBatchRoot: UnityEngine.GameObject): any;
-    static Combine(gos: UnityEngine.GameObject[], staticBatchRoot: UnityEngine.GameObject): any;
+    static Combine(staticBatchRoot: UnityEngine.GameObject): void;
+    static Combine(gos: UnityEngine.GameObject[], staticBatchRoot: UnityEngine.GameObject): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -26862,20 +26862,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -27073,20 +27073,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -27138,15 +27138,15 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    GetClosestReflectionProbes(result: any): any;
+    GetClosestReflectionProbes(result: any): void;
     SampleHeight(worldPosition: UnityEngine.Vector3): number;
-    ApplyDelayedHeightmapModification(): any;
-    AddTreeInstance(instance: UnityEngine.TreeInstance): any;
-    SetNeighbors(left: UnityEngine.Terrain, top: UnityEngine.Terrain, right: UnityEngine.Terrain, bottom: UnityEngine.Terrain): any;
+    ApplyDelayedHeightmapModification(): void;
+    AddTreeInstance(instance: UnityEngine.TreeInstance): void;
+    SetNeighbors(left: UnityEngine.Terrain, top: UnityEngine.Terrain, right: UnityEngine.Terrain, bottom: UnityEngine.Terrain): void;
     GetPosition(): UnityEngine.Vector3;
-    Flush(): any;
-    SetSplatMaterialPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetSplatMaterialPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
+    Flush(): void;
+    SetSplatMaterialPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetSplatMaterialPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
     static CreateTerrainGameObject(assignTerrain: UnityEngine.TerrainData): UnityEngine.GameObject;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
@@ -27158,20 +27158,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -27299,20 +27299,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -27360,19 +27360,19 @@ declare namespace UnityEngine {
     GetHeight(x: number, y: number): number;
     GetInterpolatedHeight(x: number, y: number): number;
     GetHeights(xBase: number, yBase: number, width: number, height: number): number[];
-    SetHeights(xBase: number, yBase: number, heights: number[]): any;
-    SetHeightsDelayLOD(xBase: number, yBase: number, heights: number[]): any;
+    SetHeights(xBase: number, yBase: number, heights: number[]): void;
+    SetHeightsDelayLOD(xBase: number, yBase: number, heights: number[]): void;
     GetSteepness(x: number, y: number): number;
     GetInterpolatedNormal(x: number, y: number): UnityEngine.Vector3;
-    SetDetailResolution(detailResolution: number, resolutionPerPatch: number): any;
-    RefreshPrototypes(): any;
+    SetDetailResolution(detailResolution: number, resolutionPerPatch: number): void;
+    RefreshPrototypes(): void;
     GetSupportedLayers(xBase: number, yBase: number, totalWidth: number, totalHeight: number): number[];
     GetDetailLayer(xBase: number, yBase: number, width: number, height: number, layer: number): number[];
-    SetDetailLayer(xBase: number, yBase: number, layer: number, details: number[]): any;
+    SetDetailLayer(xBase: number, yBase: number, layer: number, details: number[]): void;
     GetTreeInstance(index: number): UnityEngine.TreeInstance;
-    SetTreeInstance(index: number, instance: UnityEngine.TreeInstance): any;
+    SetTreeInstance(index: number, instance: UnityEngine.TreeInstance): void;
     GetAlphamaps(x: number, y: number, width: number, height: number): number[];
-    SetAlphamaps(x: number, y: number, map: number[]): any;
+    SetAlphamaps(x: number, y: number, map: number[]): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -27594,8 +27594,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    OnFocus(): any;
-    OnLostFocus(): any;
+    OnFocus(): void;
+    OnLostFocus(): void;
     HandleKeyEvent(e: UnityEngine.Event): boolean;
     DeleteLineBack(): boolean;
     DeleteWordBack(): boolean;
@@ -27603,61 +27603,61 @@ declare namespace UnityEngine {
     Delete(): boolean;
     CanPaste(): boolean;
     Backspace(): boolean;
-    SelectAll(): any;
-    SelectNone(): any;
+    SelectAll(): void;
+    SelectNone(): void;
     DeleteSelection(): boolean;
-    ReplaceSelection(replace: string): any;
-    Insert(c: any): any;
-    MoveSelectionToAltCursor(): any;
-    MoveRight(): any;
-    MoveLeft(): any;
-    MoveUp(): any;
-    MoveDown(): any;
-    MoveLineStart(): any;
-    MoveLineEnd(): any;
-    MoveGraphicalLineStart(): any;
-    MoveGraphicalLineEnd(): any;
-    MoveTextStart(): any;
-    MoveTextEnd(): any;
-    MoveParagraphForward(): any;
-    MoveParagraphBackward(): any;
-    MoveCursorToPosition(cursorPosition: UnityEngine.Vector2): any;
-    MoveAltCursorToPosition(cursorPosition: UnityEngine.Vector2): any;
+    ReplaceSelection(replace: string): void;
+    Insert(c: any): void;
+    MoveSelectionToAltCursor(): void;
+    MoveRight(): void;
+    MoveLeft(): void;
+    MoveUp(): void;
+    MoveDown(): void;
+    MoveLineStart(): void;
+    MoveLineEnd(): void;
+    MoveGraphicalLineStart(): void;
+    MoveGraphicalLineEnd(): void;
+    MoveTextStart(): void;
+    MoveTextEnd(): void;
+    MoveParagraphForward(): void;
+    MoveParagraphBackward(): void;
+    MoveCursorToPosition(cursorPosition: UnityEngine.Vector2): void;
+    MoveAltCursorToPosition(cursorPosition: UnityEngine.Vector2): void;
     IsOverSelection(cursorPosition: UnityEngine.Vector2): boolean;
-    SelectToPosition(cursorPosition: UnityEngine.Vector2): any;
-    SelectLeft(): any;
-    SelectRight(): any;
-    SelectUp(): any;
-    SelectDown(): any;
-    SelectTextEnd(): any;
-    SelectTextStart(): any;
-    MouseDragSelectsWholeWords(on: boolean): any;
-    DblClickSnap(snapping: UnityEngine.TextEditor.DblClickSnapping): any;
-    MoveWordRight(): any;
-    MoveToStartOfNextWord(): any;
-    MoveToEndOfPreviousWord(): any;
-    SelectToStartOfNextWord(): any;
-    SelectToEndOfPreviousWord(): any;
+    SelectToPosition(cursorPosition: UnityEngine.Vector2): void;
+    SelectLeft(): void;
+    SelectRight(): void;
+    SelectUp(): void;
+    SelectDown(): void;
+    SelectTextEnd(): void;
+    SelectTextStart(): void;
+    MouseDragSelectsWholeWords(on: boolean): void;
+    DblClickSnap(snapping: UnityEngine.TextEditor.DblClickSnapping): void;
+    MoveWordRight(): void;
+    MoveToStartOfNextWord(): void;
+    MoveToEndOfPreviousWord(): void;
+    SelectToStartOfNextWord(): void;
+    SelectToEndOfPreviousWord(): void;
     FindStartOfNextWord(p: number): number;
-    MoveWordLeft(): any;
-    SelectWordRight(): any;
-    SelectWordLeft(): any;
-    ExpandSelectGraphicalLineStart(): any;
-    ExpandSelectGraphicalLineEnd(): any;
-    SelectGraphicalLineStart(): any;
-    SelectGraphicalLineEnd(): any;
-    SelectParagraphForward(): any;
-    SelectParagraphBackward(): any;
-    SelectCurrentWord(): any;
-    SelectCurrentParagraph(): any;
-    UpdateScrollOffsetIfNeeded(evt: UnityEngine.Event): any;
-    DrawCursor(newText: string): any;
-    SaveBackup(): any;
-    Undo(): any;
+    MoveWordLeft(): void;
+    SelectWordRight(): void;
+    SelectWordLeft(): void;
+    ExpandSelectGraphicalLineStart(): void;
+    ExpandSelectGraphicalLineEnd(): void;
+    SelectGraphicalLineStart(): void;
+    SelectGraphicalLineEnd(): void;
+    SelectParagraphForward(): void;
+    SelectParagraphBackward(): void;
+    SelectCurrentWord(): void;
+    SelectCurrentParagraph(): void;
+    UpdateScrollOffsetIfNeeded(evt: UnityEngine.Event): void;
+    DrawCursor(newText: string): void;
+    SaveBackup(): void;
+    Undo(): void;
     Cut(): boolean;
-    Copy(): any;
+    Copy(): void;
     Paste(): boolean;
-    DetectFocusChange(): any;
+    DetectFocusChange(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -27833,10 +27833,10 @@ declare namespace UnityEngine {
     constructor();
     constructor(initialCapacity: number);
     // methods
-    Invalidate(): any;
-    GetCharacters(characters: any): any;
-    GetLines(lines: any): any;
-    GetVertices(vertices: any): any;
+    Invalidate(): void;
+    GetCharacters(characters: any): void;
+    GetLines(lines: any): void;
+    GetVertices(vertices: any): void;
     GetPreferredWidth(str: string, settings: UnityEngine.TextGenerationSettings): number;
     GetPreferredHeight(str: string, settings: UnityEngine.TextGenerationSettings): number;
     PopulateWithErrors(str: string, settings: UnityEngine.TextGenerationSettings, context: UnityEngine.GameObject): boolean;
@@ -27876,20 +27876,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -27938,7 +27938,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetGlobalAnisotropicFilteringLimits(forcedMin: number, globalMax: number): any;
+    static SetGlobalAnisotropicFilteringLimits(forcedMin: number, globalMax: number): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;
@@ -27970,22 +27970,22 @@ declare namespace UnityEngine {
     constructor(width: number, height: number, format: UnityEngine.TextureFormat, mipmap: boolean, linear: boolean);
     // methods
     static CreateExternalTexture(width: number, height: number, format: UnityEngine.TextureFormat, mipmap: boolean, linear: boolean, nativeTex: any): UnityEngine.Texture2D;
-    UpdateExternalTexture(nativeTex: any): any;
-    SetPixel(x: number, y: number, color: UnityEngine.Color): any;
+    UpdateExternalTexture(nativeTex: any): void;
+    SetPixel(x: number, y: number, color: UnityEngine.Color): void;
     GetPixel(x: number, y: number): UnityEngine.Color;
     GetPixelBilinear(u: number, v: number): UnityEngine.Color;
-    SetPixels(colors: UnityEngine.Color[]): any;
-    SetPixels(colors: UnityEngine.Color[], miplevel: number): any;
-    SetPixels(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color[], miplevel: number): any;
-    SetPixels(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color[]): any;
-    SetPixels32(colors: UnityEngine.Color32[]): any;
-    SetPixels32(colors: UnityEngine.Color32[], miplevel: number): any;
-    SetPixels32(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color32[]): any;
-    SetPixels32(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color32[], miplevel: number): any;
+    SetPixels(colors: UnityEngine.Color[]): void;
+    SetPixels(colors: UnityEngine.Color[], miplevel: number): void;
+    SetPixels(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color[], miplevel: number): void;
+    SetPixels(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color[]): void;
+    SetPixels32(colors: UnityEngine.Color32[]): void;
+    SetPixels32(colors: UnityEngine.Color32[], miplevel: number): void;
+    SetPixels32(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color32[]): void;
+    SetPixels32(x: number, y: number, blockWidth: number, blockHeight: number, colors: UnityEngine.Color32[], miplevel: number): void;
     LoadImage(data: number[], markNonReadable: boolean): boolean;
     LoadImage(data: number[]): boolean;
-    LoadRawTextureData(data: number[]): any;
-    LoadRawTextureData(data: any, size: number): any;
+    LoadRawTextureData(data: number[]): void;
+    LoadRawTextureData(data: any, size: number): void;
     GetRawTextureData(): number[];
     GetPixels(): UnityEngine.Color[];
     GetPixels(miplevel: number): UnityEngine.Color[];
@@ -27993,17 +27993,17 @@ declare namespace UnityEngine {
     GetPixels(x: number, y: number, blockWidth: number, blockHeight: number): UnityEngine.Color[];
     GetPixels32(miplevel: number): UnityEngine.Color32[];
     GetPixels32(): UnityEngine.Color32[];
-    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): any;
-    Apply(updateMipmaps: boolean): any;
-    Apply(): any;
+    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
+    Apply(updateMipmaps: boolean): void;
+    Apply(): void;
     Resize(width: number, height: number, format: UnityEngine.TextureFormat, hasMipMap: boolean): boolean;
     Resize(width: number, height: number): boolean;
-    Compress(highQuality: boolean): any;
+    Compress(highQuality: boolean): void;
     PackTextures(textures: UnityEngine.Texture2D[], padding: number, maximumAtlasSize: number, makeNoLongerReadable: boolean): UnityEngine.Rect[];
     PackTextures(textures: UnityEngine.Texture2D[], padding: number, maximumAtlasSize: number): UnityEngine.Rect[];
     PackTextures(textures: UnityEngine.Texture2D[], padding: number): UnityEngine.Rect[];
-    ReadPixels(source: UnityEngine.Rect, destX: number, destY: number, recalculateMipMaps: boolean): any;
-    ReadPixels(source: UnityEngine.Rect, destX: number, destY: number): any;
+    ReadPixels(source: UnityEngine.Rect, destX: number, destY: number, recalculateMipMaps: boolean): void;
+    ReadPixels(source: UnityEngine.Rect, destX: number, destY: number): void;
     EncodeToPNG(): number[];
     EncodeToJPG(quality: number): number[];
     EncodeToJPG(): number[];
@@ -28039,13 +28039,13 @@ declare namespace UnityEngine {
     constructor(width: number, height: number, depth: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     constructor(width: number, height: number, depth: number, format: UnityEngine.TextureFormat, mipmap: boolean, linear: boolean);
     // methods
-    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): any;
-    Apply(updateMipmaps: boolean): any;
-    Apply(): any;
-    SetPixels(colors: UnityEngine.Color[], arrayElement: number, miplevel: number): any;
-    SetPixels(colors: UnityEngine.Color[], arrayElement: number): any;
-    SetPixels32(colors: UnityEngine.Color32[], arrayElement: number, miplevel: number): any;
-    SetPixels32(colors: UnityEngine.Color32[], arrayElement: number): any;
+    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
+    Apply(updateMipmaps: boolean): void;
+    Apply(): void;
+    SetPixels(colors: UnityEngine.Color[], arrayElement: number, miplevel: number): void;
+    SetPixels(colors: UnityEngine.Color[], arrayElement: number): void;
+    SetPixels32(colors: UnityEngine.Color32[], arrayElement: number, miplevel: number): void;
+    SetPixels32(colors: UnityEngine.Color32[], arrayElement: number): void;
     GetPixels(arrayElement: number, miplevel: number): UnityEngine.Color[];
     GetPixels(arrayElement: number): UnityEngine.Color[];
     GetPixels32(arrayElement: number, miplevel: number): UnityEngine.Color32[];
@@ -28082,13 +28082,13 @@ declare namespace UnityEngine {
     GetPixels(): UnityEngine.Color[];
     GetPixels32(miplevel: number): UnityEngine.Color32[];
     GetPixels32(): UnityEngine.Color32[];
-    SetPixels(colors: UnityEngine.Color[], miplevel: number): any;
-    SetPixels(colors: UnityEngine.Color[]): any;
-    SetPixels32(colors: UnityEngine.Color32[], miplevel: number): any;
-    SetPixels32(colors: UnityEngine.Color32[]): any;
-    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): any;
-    Apply(updateMipmaps: boolean): any;
-    Apply(): any;
+    SetPixels(colors: UnityEngine.Color[], miplevel: number): void;
+    SetPixels(colors: UnityEngine.Color[]): void;
+    SetPixels32(colors: UnityEngine.Color32[], miplevel: number): void;
+    SetPixels32(colors: UnityEngine.Color32[]): void;
+    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
+    Apply(updateMipmaps: boolean): void;
+    Apply(): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;
@@ -28532,10 +28532,10 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Clear(): any;
-    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): any;
-    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): any;
-    GetClosestReflectionProbes(result: any): any;
+    Clear(): void;
+    SetPropertyBlock(properties: UnityEngine.MaterialPropertyBlock): void;
+    GetPropertyBlock(dest: UnityEngine.MaterialPropertyBlock): void;
+    GetClosestReflectionProbes(result: any): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -28546,20 +28546,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -28709,20 +28709,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -28860,7 +28860,7 @@ declare namespace UnityEngine {
     constructor(message: string, innerException: any);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -28930,7 +28930,7 @@ declare namespace UnityEngine {
     constructor(message: string, innerException: any);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;
@@ -28952,46 +28952,46 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static WriteStringToUnityLog(s: string): any;
-    static Init(): any;
-    Write(value: any): any;
-    Write(s: string): any;
-    Close(): any;
-    Dispose(): any;
-    Flush(): any;
-    Write(value: boolean): any;
-    Write(buffer: any[]): any;
-    Write(value: number): any;
-    Write(value: number): any;
-    Write(value: number): any;
-    Write(value: number): any;
-    Write(value: any): any;
-    Write(value: number): any;
-    Write(value: number): any;
-    Write(value: number): any;
-    Write(format: string, arg0: any): any;
-    Write(format: string, arg: any[]): any;
-    Write(buffer: any[], index: number, count: number): any;
-    Write(format: string, arg0: any, arg1: any): any;
-    Write(format: string, arg0: any, arg1: any, arg2: any): any;
-    WriteLine(): any;
-    WriteLine(value: boolean): any;
-    WriteLine(value: any): any;
-    WriteLine(buffer: any[]): any;
-    WriteLine(value: number): any;
-    WriteLine(value: number): any;
-    WriteLine(value: number): any;
-    WriteLine(value: number): any;
-    WriteLine(value: any): any;
-    WriteLine(value: number): any;
-    WriteLine(value: string): any;
-    WriteLine(value: number): any;
-    WriteLine(value: number): any;
-    WriteLine(format: string, arg0: any): any;
-    WriteLine(format: string, arg: any[]): any;
-    WriteLine(buffer: any[], index: number, count: number): any;
-    WriteLine(format: string, arg0: any, arg1: any): any;
-    WriteLine(format: string, arg0: any, arg1: any, arg2: any): any;
+    static WriteStringToUnityLog(s: string): void;
+    static Init(): void;
+    Write(value: any): void;
+    Write(s: string): void;
+    Close(): void;
+    Dispose(): void;
+    Flush(): void;
+    Write(value: boolean): void;
+    Write(buffer: any[]): void;
+    Write(value: number): void;
+    Write(value: number): void;
+    Write(value: number): void;
+    Write(value: number): void;
+    Write(value: any): void;
+    Write(value: number): void;
+    Write(value: number): void;
+    Write(value: number): void;
+    Write(format: string, arg0: any): void;
+    Write(format: string, arg: any[]): void;
+    Write(buffer: any[], index: number, count: number): void;
+    Write(format: string, arg0: any, arg1: any): void;
+    Write(format: string, arg0: any, arg1: any, arg2: any): void;
+    WriteLine(): void;
+    WriteLine(value: boolean): void;
+    WriteLine(value: any): void;
+    WriteLine(buffer: any[]): void;
+    WriteLine(value: number): void;
+    WriteLine(value: number): void;
+    WriteLine(value: number): void;
+    WriteLine(value: number): void;
+    WriteLine(value: any): void;
+    WriteLine(value: number): void;
+    WriteLine(value: string): void;
+    WriteLine(value: number): void;
+    WriteLine(value: number): void;
+    WriteLine(format: string, arg0: any): void;
+    WriteLine(format: string, arg: any[]): void;
+    WriteLine(buffer: any[], index: number, count: number): void;
+    WriteLine(format: string, arg0: any, arg1: any): void;
+    WriteLine(format: string, arg0: any, arg1: any, arg2: any): void;
     CreateObjRef(requestedType: any): any;
     GetLifetimeService(): any;
     InitializeLifetimeService(): any;
@@ -29046,20 +29046,20 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Invoke(methodName: string, time: number): any;
-    InvokeRepeating(methodName: string, time: number, repeatRate: number): any;
-    CancelInvoke(): any;
-    CancelInvoke(methodName: string): any;
+    Invoke(methodName: string, time: number): void;
+    InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
+    CancelInvoke(): void;
+    CancelInvoke(methodName: string): void;
     IsInvoking(methodName: string): boolean;
     IsInvoking(): boolean;
     StartCoroutine(routine: any): UnityEngine.Coroutine;
     StartCoroutine_Auto(routine: any): UnityEngine.Coroutine;
     StartCoroutine(methodName: string, value: any): UnityEngine.Coroutine;
     StartCoroutine(methodName: string): UnityEngine.Coroutine;
-    StopCoroutine(methodName: string): any;
-    StopCoroutine(routine: any): any;
-    StopCoroutine(routine: UnityEngine.Coroutine): any;
-    StopAllCoroutines(): any;
+    StopCoroutine(methodName: string): void;
+    StopCoroutine(routine: any): void;
+    StopCoroutine(routine: UnityEngine.Coroutine): void;
+    StopAllCoroutines(): void;
     GetComponent(type: any): UnityEngine.Component;
     GetComponent(type: string): UnityEngine.Component;
     GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
@@ -29070,20 +29070,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -29124,13 +29124,13 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    Set(newX: number, newY: number): any;
+    Set(newX: number, newY: number): void;
     static Lerp(a: UnityEngine.Vector2, b: UnityEngine.Vector2, t: number): UnityEngine.Vector2;
     static LerpUnclamped(a: UnityEngine.Vector2, b: UnityEngine.Vector2, t: number): UnityEngine.Vector2;
     static MoveTowards(current: UnityEngine.Vector2, target: UnityEngine.Vector2, maxDistanceDelta: number): UnityEngine.Vector2;
     static Scale(a: UnityEngine.Vector2, b: UnityEngine.Vector2): UnityEngine.Vector2;
-    Scale(scale: UnityEngine.Vector2): any;
-    Normalize(): any;
+    Scale(scale: UnityEngine.Vector2): void;
+    Normalize(): void;
     ToString(): string;
     ToString(format: string): string;
     GetHashCode(): number;
@@ -29148,7 +29148,7 @@ declare namespace UnityEngine {
     GetType(): any;
     // properties
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     readonly normalized: UnityEngine.Vector2;
     readonly magnitude: number;
     readonly sqrMagnitude: number;
@@ -29171,8 +29171,8 @@ declare namespace UnityEngine {
     // methods
     static Slerp(a: UnityEngine.Vector3, b: UnityEngine.Vector3, t: number): UnityEngine.Vector3;
     static SlerpUnclamped(a: UnityEngine.Vector3, b: UnityEngine.Vector3, t: number): UnityEngine.Vector3;
-    static OrthoNormalize(normal: any, tangent: any): any;
-    static OrthoNormalize(normal: any, tangent: any, binormal: any): any;
+    static OrthoNormalize(normal: any, tangent: any): void;
+    static OrthoNormalize(normal: any, tangent: any, binormal: any): void;
     static RotateTowards(current: UnityEngine.Vector3, target: UnityEngine.Vector3, maxRadiansDelta: number, maxMagnitudeDelta: number): UnityEngine.Vector3;
     static Exclude(excludeThis: UnityEngine.Vector3, fromThat: UnityEngine.Vector3): UnityEngine.Vector3;
     static Lerp(a: UnityEngine.Vector3, b: UnityEngine.Vector3, t: number): UnityEngine.Vector3;
@@ -29181,15 +29181,15 @@ declare namespace UnityEngine {
     static SmoothDamp(current: UnityEngine.Vector3, target: UnityEngine.Vector3, currentVelocity: any, smoothTime: number, maxSpeed: number): UnityEngine.Vector3;
     static SmoothDamp(current: UnityEngine.Vector3, target: UnityEngine.Vector3, currentVelocity: any, smoothTime: number): UnityEngine.Vector3;
     static SmoothDamp(current: UnityEngine.Vector3, target: UnityEngine.Vector3, currentVelocity: any, smoothTime: number, maxSpeed: number, deltaTime: number): UnityEngine.Vector3;
-    Set(new_x: number, new_y: number, new_z: number): any;
+    Set(new_x: number, new_y: number, new_z: number): void;
     static Scale(a: UnityEngine.Vector3, b: UnityEngine.Vector3): UnityEngine.Vector3;
-    Scale(scale: UnityEngine.Vector3): any;
+    Scale(scale: UnityEngine.Vector3): void;
     static Cross(lhs: UnityEngine.Vector3, rhs: UnityEngine.Vector3): UnityEngine.Vector3;
     GetHashCode(): number;
     Equals(other: any): boolean;
     static Reflect(inDirection: UnityEngine.Vector3, inNormal: UnityEngine.Vector3): UnityEngine.Vector3;
     static Normalize(value: UnityEngine.Vector3): UnityEngine.Vector3;
-    Normalize(): any;
+    Normalize(): void;
     static Dot(lhs: UnityEngine.Vector3, rhs: UnityEngine.Vector3): number;
     static Project(vector: UnityEngine.Vector3, onNormal: UnityEngine.Vector3): UnityEngine.Vector3;
     static ProjectOnPlane(vector: UnityEngine.Vector3, planeNormal: UnityEngine.Vector3): UnityEngine.Vector3;
@@ -29206,7 +29206,7 @@ declare namespace UnityEngine {
     GetType(): any;
     // properties
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     readonly normalized: UnityEngine.Vector3;
     readonly magnitude: number;
     readonly sqrMagnitude: number;
@@ -29231,16 +29231,16 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    Set(new_x: number, new_y: number, new_z: number, new_w: number): any;
+    Set(new_x: number, new_y: number, new_z: number, new_w: number): void;
     static Lerp(a: UnityEngine.Vector4, b: UnityEngine.Vector4, t: number): UnityEngine.Vector4;
     static LerpUnclamped(a: UnityEngine.Vector4, b: UnityEngine.Vector4, t: number): UnityEngine.Vector4;
     static MoveTowards(current: UnityEngine.Vector4, target: UnityEngine.Vector4, maxDistanceDelta: number): UnityEngine.Vector4;
     static Scale(a: UnityEngine.Vector4, b: UnityEngine.Vector4): UnityEngine.Vector4;
-    Scale(scale: UnityEngine.Vector4): any;
+    Scale(scale: UnityEngine.Vector4): void;
     GetHashCode(): number;
     Equals(other: any): boolean;
     static Normalize(a: UnityEngine.Vector4): UnityEngine.Vector4;
-    Normalize(): any;
+    Normalize(): void;
     static Dot(a: UnityEngine.Vector4, b: UnityEngine.Vector4): number;
     static Project(a: UnityEngine.Vector4, b: UnityEngine.Vector4): UnityEngine.Vector4;
     static Distance(a: UnityEngine.Vector4, b: UnityEngine.Vector4): number;
@@ -29254,7 +29254,7 @@ declare namespace UnityEngine {
     GetType(): any;
     // properties
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     readonly normalized: UnityEngine.Vector4;
     readonly magnitude: number;
     readonly sqrMagnitude: number;
@@ -29296,7 +29296,7 @@ declare namespace UnityEngine.VR {
     // methods
     static GetLocalPosition(node: UnityEngine.VR.VRNode): UnityEngine.Vector3;
     static GetLocalRotation(node: UnityEngine.VR.VRNode): UnityEngine.Quaternion;
-    static Recenter(): any;
+    static Recenter(): void;
     // properties
     // fields
   }
@@ -29367,8 +29367,8 @@ declare namespace UnityEngine.VR {
     // constructors
     private constructor();
     // methods
-    static LoadDeviceByName(deviceName: string): any;
-    static LoadDeviceByName(prioritizedDeviceNameList: string[]): any;
+    static LoadDeviceByName(deviceName: string): void;
+    static LoadDeviceByName(prioritizedDeviceNameList: string[]): void;
     // properties
     // fields
   }
@@ -29387,10 +29387,10 @@ declare namespace UnityEngine.VR.WSA {
     // constructors
     constructor();
     // methods
-    static SetFocusPointForFrame(position: UnityEngine.Vector3): any;
-    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3): any;
-    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3, velocity: UnityEngine.Vector3): any;
-    static ActivateLatentFramePresentation(activated: boolean): any;
+    static SetFocusPointForFrame(position: UnityEngine.Vector3): void;
+    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3): void;
+    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3, velocity: UnityEngine.Vector3): void;
+    static ActivateLatentFramePresentation(activated: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -29405,13 +29405,13 @@ declare namespace UnityEngine.VR.WSA.Input {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
+    Dispose(): void;
     SetRecognizableGestures(newMaskValue: UnityEngine.VR.WSA.Input.GestureSettings): UnityEngine.VR.WSA.Input.GestureSettings;
     GetRecognizableGestures(): UnityEngine.VR.WSA.Input.GestureSettings;
-    StartCapturingGestures(): any;
-    StopCapturingGestures(): any;
+    StartCapturingGestures(): void;
+    StopCapturingGestures(): void;
     IsCapturingGestures(): boolean;
-    CancelGestures(): any;
+    CancelGestures(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -29425,10 +29425,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(error: string, hresult: number): any;
+    Invoke(error: string, hresult: number): void;
     BeginInvoke(error: string, hresult: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29481,10 +29481,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29503,10 +29503,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29525,10 +29525,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29547,10 +29547,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29569,10 +29569,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29591,10 +29591,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29613,10 +29613,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29635,10 +29635,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29657,10 +29657,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29679,10 +29679,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29701,10 +29701,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29723,10 +29723,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29745,10 +29745,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29767,10 +29767,10 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, tapCount: number, headRay: UnityEngine.Ray): any;
+    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, tapCount: number, headRay: UnityEngine.Ray): void;
     BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, tapCount: number, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29859,10 +29859,10 @@ declare namespace UnityEngine.VR.WSA.Input.InteractionManager {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(eventType: UnityEngine.VR.WSA.Input.InteractionManager.EventType, state: UnityEngine.VR.WSA.Input.InteractionSourceState): any;
+    Invoke(eventType: UnityEngine.VR.WSA.Input.InteractionManager.EventType, state: UnityEngine.VR.WSA.Input.InteractionSourceState): void;
     BeginInvoke(eventType: UnityEngine.VR.WSA.Input.InteractionManager.EventType, state: UnityEngine.VR.WSA.Input.InteractionSourceState, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29881,10 +29881,10 @@ declare namespace UnityEngine.VR.WSA.Input.InteractionManager {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(state: UnityEngine.VR.WSA.Input.InteractionSourceState): any;
+    Invoke(state: UnityEngine.VR.WSA.Input.InteractionSourceState): void;
     BeginInvoke(state: UnityEngine.VR.WSA.Input.InteractionSourceState, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -29989,7 +29989,7 @@ declare namespace UnityEngine.VR.WSA.Persistence {
     // constructors
     private constructor();
     // methods
-    static GetAsync(onCompleted: UnityEngine.VR.WSA.Persistence.WorldAnchorStore.GetAsyncDelegate): any;
+    static GetAsync(onCompleted: UnityEngine.VR.WSA.Persistence.WorldAnchorStore.GetAsyncDelegate): void;
     // properties
     // fields
   }
@@ -29999,10 +29999,10 @@ declare namespace UnityEngine.VR.WSA.Persistence.WorldAnchorStore {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore): any;
+    Invoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore): void;
     BeginInvoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30068,14 +30068,14 @@ declare namespace UnityEngine.VR.WSA.Sharing {
     // constructors
     constructor();
     // methods
-    static ExportAsync(transferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, onDataAvailable: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationDataAvailableDelegate, onCompleted: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationCompleteDelegate): any;
-    static ImportAsync(serializedData: number[], onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): any;
-    static ImportAsync(serializedData: number[], offset: number, length: number, onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): any;
+    static ExportAsync(transferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, onDataAvailable: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationDataAvailableDelegate, onCompleted: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationCompleteDelegate): void;
+    static ImportAsync(serializedData: number[], onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): void;
+    static ImportAsync(serializedData: number[], offset: number, length: number, onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): void;
     AddWorldAnchor(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
     GetAllIds(ids: string[]): number;
     GetAllIds(): string[];
     LockObject(id: string, go: UnityEngine.GameObject): UnityEngine.VR.WSA.WorldAnchor;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -30090,10 +30090,10 @@ declare namespace UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, deserializedTransferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch): any;
+    Invoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, deserializedTransferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch): void;
     BeginInvoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, deserializedTransferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30112,10 +30112,10 @@ declare namespace UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason): any;
+    Invoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason): void;
     BeginInvoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30134,10 +30134,10 @@ declare namespace UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(data: number[]): any;
+    Invoke(data: number[]): void;
     BeginInvoke(data: number[], callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30211,13 +30211,13 @@ declare namespace UnityEngine.VR.WSA {
     // constructors
     constructor();
     // methods
-    SetVolumeAsAxisAlignedBox(origin: UnityEngine.Vector3, extents: UnityEngine.Vector3): any;
-    SetVolumeAsSphere(origin: UnityEngine.Vector3, radiusMeters: number): any;
-    SetVolumeAsOrientedBox(origin: UnityEngine.Vector3, extents: UnityEngine.Vector3, orientation: UnityEngine.Quaternion): any;
-    SetVolumeAsFrustum(planes: UnityEngine.Plane[]): any;
-    Update(onSurfaceChanged: UnityEngine.VR.WSA.SurfaceObserver.SurfaceChangedDelegate): any;
+    SetVolumeAsAxisAlignedBox(origin: UnityEngine.Vector3, extents: UnityEngine.Vector3): void;
+    SetVolumeAsSphere(origin: UnityEngine.Vector3, radiusMeters: number): void;
+    SetVolumeAsOrientedBox(origin: UnityEngine.Vector3, extents: UnityEngine.Vector3, orientation: UnityEngine.Quaternion): void;
+    SetVolumeAsFrustum(planes: UnityEngine.Plane[]): void;
+    Update(onSurfaceChanged: UnityEngine.VR.WSA.SurfaceObserver.SurfaceChangedDelegate): void;
     RequestMeshAsync(dataRequest: UnityEngine.VR.WSA.SurfaceData, onDataReady: UnityEngine.VR.WSA.SurfaceObserver.SurfaceDataReadyDelegate): boolean;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -30231,10 +30231,10 @@ declare namespace UnityEngine.VR.WSA.SurfaceObserver {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(surfaceId: UnityEngine.VR.WSA.SurfaceId, changeType: UnityEngine.VR.WSA.SurfaceChange, bounds: UnityEngine.Bounds, updateTime: any): any;
+    Invoke(surfaceId: UnityEngine.VR.WSA.SurfaceId, changeType: UnityEngine.VR.WSA.SurfaceChange, bounds: UnityEngine.Bounds, updateTime: any): void;
     BeginInvoke(surfaceId: UnityEngine.VR.WSA.SurfaceId, changeType: UnityEngine.VR.WSA.SurfaceChange, bounds: UnityEngine.Bounds, updateTime: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30253,10 +30253,10 @@ declare namespace UnityEngine.VR.WSA.SurfaceObserver {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number): any;
+    Invoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number): void;
     BeginInvoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30337,7 +30337,7 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // constructors
     private constructor();
     // methods
-    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback): any;
+    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback): void;
     // properties
     // fields
   }
@@ -30347,10 +30347,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30369,10 +30369,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, photoCaptureFrame: UnityEngine.VR.WSA.WebCam.PhotoCaptureFrame): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, photoCaptureFrame: UnityEngine.VR.WSA.WebCam.PhotoCaptureFrame): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, photoCaptureFrame: UnityEngine.VR.WSA.WebCam.PhotoCaptureFrame, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30391,10 +30391,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture): any;
+    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture): void;
     BeginInvoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30413,10 +30413,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30435,10 +30435,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30548,7 +30548,7 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     private constructor();
     // methods
     static GetSupportedFrameRatesForResolution(resolution: UnityEngine.Resolution): any;
-    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoCaptureResourceCreatedCallback): any;
+    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoCaptureResourceCreatedCallback): void;
     // properties
     // fields
   }
@@ -30558,10 +30558,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30580,10 +30580,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30602,10 +30602,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.VideoCapture): any;
+    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.VideoCapture): void;
     BeginInvoke(captureObject: UnityEngine.VR.WSA.WebCam.VideoCapture, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30624,10 +30624,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30646,10 +30646,10 @@ declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): any;
+    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
     BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30724,10 +30724,10 @@ declare namespace UnityEngine.VR.WSA.WorldAnchor {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(self: UnityEngine.VR.WSA.WorldAnchor, located: boolean): any;
+    Invoke(self: UnityEngine.VR.WSA.WorldAnchor, located: boolean): void;
     BeginInvoke(self: UnityEngine.VR.WSA.WorldAnchor, located: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30761,10 +30761,10 @@ declare namespace UnityEngine.VR.WSA.WorldManager {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(oldState: UnityEngine.VR.WSA.PositionalLocatorState, newState: UnityEngine.VR.WSA.PositionalLocatorState): any;
+    Invoke(oldState: UnityEngine.VR.WSA.PositionalLocatorState, newState: UnityEngine.VR.WSA.PositionalLocatorState): void;
     BeginInvoke(oldState: UnityEngine.VR.WSA.PositionalLocatorState, newState: UnityEngine.VR.WSA.PositionalLocatorState, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -30823,7 +30823,7 @@ declare namespace UnityEngine {
     constructor(time: number);
     // methods
     MoveNext(): boolean;
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -30840,7 +30840,7 @@ declare namespace UnityEngine {
     constructor(predicate: any);
     // methods
     MoveNext(): boolean;
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -30857,7 +30857,7 @@ declare namespace UnityEngine {
     constructor(predicate: any);
     // methods
     MoveNext(): boolean;
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -30873,7 +30873,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static InvokeCallbacks(inst: any, gchandle: any, parameters: any[]): any;
+    static InvokeCallbacks(inst: any, gchandle: any, parameters: any[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -30927,10 +30927,10 @@ declare namespace UnityEngine {
     constructor(requestedWidth: number, requestedHeight: number);
     constructor();
     // methods
-    Play(): any;
-    Pause(): any;
-    Stop(): any;
-    MarkNonReadable(): any;
+    Play(): void;
+    Pause(): void;
+    Stop(): void;
+    MarkNonReadable(): void;
     GetPixel(x: number, y: number): UnityEngine.Color;
     GetPixels(): UnityEngine.Color[];
     GetPixels(x: number, y: number, blockWidth: number, blockHeight: number): UnityEngine.Color[];
@@ -30972,9 +30972,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    ConfigureVehicleSubsteps(speedThreshold: number, stepsBelowThreshold: number, stepsAboveThreshold: number): any;
+    ConfigureVehicleSubsteps(speedThreshold: number, stepsBelowThreshold: number, stepsAboveThreshold: number): void;
     GetGroundHit(hit: any): boolean;
-    GetWorldPose(pos: any, quat: any): any;
+    GetWorldPose(pos: any, quat: any): void;
     ClosestPointOnBounds(position: UnityEngine.Vector3): UnityEngine.Vector3;
     Raycast(ray: UnityEngine.Ray, hitInfo: any, maxDistance: number): boolean;
     GetComponent(type: any): UnityEngine.Component;
@@ -30987,20 +30987,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -31111,20 +31111,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -31231,9 +31231,9 @@ declare namespace UnityEngine.Windows.Speech {
     constructor(topic: UnityEngine.Windows.Speech.DictationTopicConstraint);
     constructor(minimumConfidence: UnityEngine.Windows.Speech.ConfidenceLevel, topic: UnityEngine.Windows.Speech.DictationTopicConstraint);
     // methods
-    Start(): any;
-    Stop(): any;
-    Dispose(): any;
+    Start(): void;
+    Stop(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -31250,10 +31250,10 @@ declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(cause: UnityEngine.Windows.Speech.DictationCompletionCause): any;
+    Invoke(cause: UnityEngine.Windows.Speech.DictationCompletionCause): void;
     BeginInvoke(cause: UnityEngine.Windows.Speech.DictationCompletionCause, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31272,10 +31272,10 @@ declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(error: string, hresult: number): any;
+    Invoke(error: string, hresult: number): void;
     BeginInvoke(error: string, hresult: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31294,10 +31294,10 @@ declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(text: string): any;
+    Invoke(text: string): void;
     BeginInvoke(text: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31316,10 +31316,10 @@ declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(text: string, confidence: UnityEngine.Windows.Speech.ConfidenceLevel): any;
+    Invoke(text: string, confidence: UnityEngine.Windows.Speech.ConfidenceLevel): void;
     BeginInvoke(text: string, confidence: UnityEngine.Windows.Speech.ConfidenceLevel, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31361,9 +31361,9 @@ declare namespace UnityEngine.Windows.Speech {
     constructor(grammarFilePath: string);
     constructor(grammarFilePath: string, minimumConfidence: UnityEngine.Windows.Speech.ConfidenceLevel);
     // methods
-    Start(): any;
-    Stop(): any;
-    Dispose(): any;
+    Start(): void;
+    Stop(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -31380,9 +31380,9 @@ declare namespace UnityEngine.Windows.Speech {
     constructor(keywords: string[]);
     constructor(keywords: string[], minimumConfidence: UnityEngine.Windows.Speech.ConfidenceLevel);
     // methods
-    Start(): any;
-    Stop(): any;
-    Dispose(): any;
+    Start(): void;
+    Stop(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -31398,8 +31398,8 @@ declare namespace UnityEngine.Windows.Speech {
     // constructors
     private constructor();
     // methods
-    static Restart(): any;
-    static Shutdown(): any;
+    static Restart(): void;
+    static Shutdown(): void;
     // properties
     // fields
   }
@@ -31409,10 +31409,10 @@ declare namespace UnityEngine.Windows.Speech.PhraseRecognitionSystem {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(errorCode: UnityEngine.Windows.Speech.SpeechError): any;
+    Invoke(errorCode: UnityEngine.Windows.Speech.SpeechError): void;
     BeginInvoke(errorCode: UnityEngine.Windows.Speech.SpeechError, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31431,10 +31431,10 @@ declare namespace UnityEngine.Windows.Speech.PhraseRecognitionSystem {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(status: UnityEngine.Windows.Speech.SpeechSystemStatus): any;
+    Invoke(status: UnityEngine.Windows.Speech.SpeechSystemStatus): void;
     BeginInvoke(status: UnityEngine.Windows.Speech.SpeechSystemStatus, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31480,10 +31480,10 @@ declare namespace UnityEngine.Windows.Speech.PhraseRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(args: UnityEngine.Windows.Speech.PhraseRecognizedEventArgs): any;
+    Invoke(args: UnityEngine.Windows.Speech.PhraseRecognizedEventArgs): void;
     BeginInvoke(args: UnityEngine.Windows.Speech.PhraseRecognizedEventArgs, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31578,20 +31578,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -31696,10 +31696,10 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(): any;
+    Invoke(): void;
     BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -31718,8 +31718,8 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor();
     // methods
-    static InvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): any;
-    static InvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): any;
+    static InvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): void;
+    static InvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): void;
     static TryInvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): boolean;
     static TryInvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): boolean;
     static RunningOnAppThread(): boolean;
@@ -31739,7 +31739,7 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor();
     // methods
-    static SetCustomCursor(id: number): any;
+    static SetCustomCursor(id: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -31786,9 +31786,9 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor();
     // methods
-    static LaunchFile(folder: UnityEngine.WSA.Folder, relativeFilePath: string, showWarning: boolean): any;
-    static LaunchFileWithPicker(fileExtension: string): any;
-    static LaunchUri(uri: string, showWarning: boolean): any;
+    static LaunchFile(folder: UnityEngine.WSA.Folder, relativeFilePath: string, showWarning: boolean): void;
+    static LaunchFileWithPicker(fileExtension: string): void;
+    static LaunchUri(uri: string, showWarning: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -31840,9 +31840,9 @@ declare namespace UnityEngine.WSA {
     static CreateOrUpdateSecondary(data: UnityEngine.WSA.SecondaryTileData, area: UnityEngine.Rect): UnityEngine.WSA.Tile;
     static GetSecondary(tileId: string): UnityEngine.WSA.Tile;
     static GetSecondaries(): UnityEngine.WSA.Tile[];
-    static DeleteSecondary(tileId: string): any;
-    static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): any;
-    static DeleteSecondary(tileId: string, area: UnityEngine.Rect): any;
+    static DeleteSecondary(tileId: string): void;
+    static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): void;
+    static DeleteSecondary(tileId: string, area: UnityEngine.Rect): void;
     // properties
     // fields
   }
@@ -32015,10 +32015,10 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(state: UnityEngine.WSA.WindowActivationState): any;
+    Invoke(state: UnityEngine.WSA.WindowActivationState): void;
     BeginInvoke(state: UnityEngine.WSA.WindowActivationState, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -32059,10 +32059,10 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(width: number, height: number): any;
+    Invoke(width: number, height: number): void;
     BeginInvoke(width: number, height: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -32084,8 +32084,8 @@ declare namespace UnityEngine {
     constructor(url: string, postData: number[]);
     constructor(url: string, postData: number[], headers: any);
     // methods
-    Dispose(): any;
-    InitWWW(url: string, postData: number[], iHeaders: string[]): any;
+    Dispose(): void;
+    InitWWW(url: string, postData: number[], iHeaders: string[]): void;
     static EscapeURL(s: string): string;
     static EscapeURL(s: string, e: any): string;
     static UnEscapeURL(s: string): string;
@@ -32096,10 +32096,10 @@ declare namespace UnityEngine {
     GetAudioClipCompressed(): UnityEngine.AudioClip;
     GetAudioClipCompressed(threeD: boolean): UnityEngine.AudioClip;
     GetAudioClipCompressed(threeD: boolean, audioType: UnityEngine.AudioType): UnityEngine.AudioClip;
-    LoadImageIntoTexture(tex: UnityEngine.Texture2D): any;
+    LoadImageIntoTexture(tex: UnityEngine.Texture2D): void;
     static GetURL(url: string): string;
     static GetTextureFromURL(url: string): UnityEngine.Texture2D;
-    LoadUnityWeb(): any;
+    LoadUnityWeb(): void;
     static LoadFromCacheOrDownload(url: string, version: number): UnityEngine.WWW;
     static LoadFromCacheOrDownload(url: string, version: number, crc: number): UnityEngine.WWW;
     static LoadFromCacheOrDownload(url: string, hash: UnityEngine.Hash128): UnityEngine.WWW;
@@ -32135,12 +32135,12 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    AddField(fieldName: string, value: string): any;
-    AddField(fieldName: string, value: string, e: any): any;
-    AddField(fieldName: string, i: number): any;
-    AddBinaryData(fieldName: string, contents: number[], fileName: string): any;
-    AddBinaryData(fieldName: string, contents: number[]): any;
-    AddBinaryData(fieldName: string, contents: number[], fileName: string, mimeType: string): any;
+    AddField(fieldName: string, value: string): void;
+    AddField(fieldName: string, value: string, e: any): void;
+    AddField(fieldName: string, i: number): void;
+    AddBinaryData(fieldName: string, contents: number[], fileName: string): void;
+    AddBinaryData(fieldName: string, contents: number[]): void;
+    AddBinaryData(fieldName: string, contents: number[], fileName: string, mimeType: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -32206,7 +32206,7 @@ declare namespace UnityEngine {
     static UnboxArray(obj: UnityEngine.AndroidJavaObject): any;
     static Unbox(obj: UnityEngine.AndroidJavaObject): any;
     static Box(obj: any): UnityEngine.AndroidJavaObject;
-    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): any;
+    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): void;
     static ConvertToJNIArray(array: any): any;
     static GetConstructorID(jclass: any, args: any[]): any;
     static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
@@ -32242,10 +32242,10 @@ declare namespace UnityEngineInternal {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(ex: any): any;
+    Invoke(ex: any): void;
     BeginInvoke(ex: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -32264,14 +32264,14 @@ declare namespace UnityEngineInternal {
     // constructors
     constructor();
     // methods
-    Clear(): any;
+    Clear(): void;
     Clone(): any;
     Contains(obj: any): boolean;
-    CopyTo(array: any, index: number): any;
+    CopyTo(array: any, index: number): void;
     GetEnumerator(): any;
     Peek(): any;
     Pop(): any;
-    Push(obj: any): any;
+    Push(obj: any): void;
     ToArray(): any[];
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -32292,7 +32292,7 @@ declare namespace UnityEngineInternal {
     Invoke(classType: any, methodName: string, searchBaseTypes: boolean, instanceMethod: boolean, methodParamTypes: any[]): any;
     BeginInvoke(classType: any, methodName: string, searchBaseTypes: boolean, instanceMethod: boolean, methodParamTypes: any[], callback: any, object: any): any;
     EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];
@@ -32311,12 +32311,12 @@ declare namespace UnityEngineInternal {
     // constructors
     constructor();
     // methods
-    static ResetRuntimeInputTextures(): any;
-    static PlayCycleMode(): any;
-    static PauseCycleMode(): any;
-    static StopCycleMode(): any;
-    static CycleSkipInstances(skip: number): any;
-    static CycleSkipSystems(skip: number): any;
+    static ResetRuntimeInputTextures(): void;
+    static PlayCycleMode(): void;
+    static PauseCycleMode(): void;
+    static StopCycleMode(): void;
+    static CycleSkipInstances(skip: number): void;
+    static CycleSkipSystems(skip: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

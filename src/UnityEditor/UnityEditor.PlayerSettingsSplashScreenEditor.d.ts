@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor(owner: UnityEditor.PlayerSettingsEditor);
     // methods
-    OnEnable(): any;
-    SplashSectionGUI(platform: UnityEditor.BuildPlayerWindow.BuildPlatform, targetGroup: UnityEditor.BuildTargetGroup, settingsExtension: UnityEditor.Modules.ISettingEditorExtension): any;
+    OnEnable(): void;
+    SplashSectionGUI(platform: UnityEditor.BuildPlayerWindow.BuildPlatform, targetGroup: UnityEditor.BuildTargetGroup, settingsExtension: UnityEditor.Modules.ISettingEditorExtension): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

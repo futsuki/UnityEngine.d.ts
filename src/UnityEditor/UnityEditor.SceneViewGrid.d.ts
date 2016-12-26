@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Register(source: UnityEditor.SceneView): any;
+    Register(source: UnityEditor.SceneView): void;
     PrepareGridRender(camera: any, pivot: any, rotation: any, size: number, orthoMode: boolean, gridVisible: boolean): UnityEditor.DrawGridParameters;
     Equals(obj: any): boolean;
     GetHashCode(): number;

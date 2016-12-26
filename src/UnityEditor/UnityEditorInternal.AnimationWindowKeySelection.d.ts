@@ -3,10 +3,10 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    SaveSelection(undoLabel: string): any;
-    OnBeforeSerialize(): any;
-    OnAfterDeserialize(): any;
-    SetDirty(): any;
+    SaveSelection(undoLabel: string): void;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

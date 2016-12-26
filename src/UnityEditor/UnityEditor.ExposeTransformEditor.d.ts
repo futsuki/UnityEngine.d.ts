@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnEnable(transformPaths: string[], serializedObject: UnityEditor.SerializedObject): any;
-    OnGUI(): any;
+    OnEnable(transformPaths: string[], serializedObject: UnityEditor.SerializedObject): void;
+    OnGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

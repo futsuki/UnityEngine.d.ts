@@ -3,9 +3,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetTransformParent(transform: UnityEngine.Transform, newParent: UnityEngine.Transform, name: string): any;
-    static RecordObject(objectToUndo: UnityEngine.Object, name: string): any;
-    static RecordObjects(objectsToUndo: UnityEngine.Object[], name: string): any;
+    static SetTransformParent(transform: UnityEngine.Transform, newParent: UnityEngine.Transform, name: string): void;
+    static RecordObject(objectToUndo: UnityEngine.Object, name: string): void;
+    static RecordObjects(objectsToUndo: UnityEngine.Object[], name: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

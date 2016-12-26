@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor(guiViewDebuggerWindow: UnityEditor.GUIViewDebuggerWindow);
     // methods
-    DrawInstructionList(): any;
-    UpdateInstructions(): any;
-    DrawSelectedInstructionDetails(): any;
-    Unselect(): any;
-    SelectRow(index: number): any;
-    ShowOverlay(): any;
+    DrawInstructionList(): void;
+    UpdateInstructions(): void;
+    DrawSelectedInstructionDetails(): void;
+    Unselect(): void;
+    SelectRow(index: number): void;
+    ShowOverlay(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

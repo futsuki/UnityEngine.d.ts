@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor(prefix: string);
     // methods
     static GetItemViewMode(prefix: string): UnityEditor.PresetLibraryEditorState.ItemViewMode;
-    TransferEditorPrefsState(load: boolean): any;
+    TransferEditorPrefsState(load: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

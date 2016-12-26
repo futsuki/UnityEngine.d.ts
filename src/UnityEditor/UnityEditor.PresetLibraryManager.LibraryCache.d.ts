@@ -3,7 +3,7 @@ declare namespace UnityEditor.PresetLibraryManager {
     // constructors
     constructor(identifier: string);
     // methods
-    UnloadScriptableObjects(): any;
+    UnloadScriptableObjects(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

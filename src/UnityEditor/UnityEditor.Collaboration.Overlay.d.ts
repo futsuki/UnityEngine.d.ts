@@ -3,7 +3,7 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     constructor();
     // methods
-    static DrawOverlays(assetState: UnityEditor.Collaboration.Collab.CollabStates, itemRect: any): any;
+    static DrawOverlays(assetState: UnityEditor.Collaboration.Collab.CollabStates, itemRect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

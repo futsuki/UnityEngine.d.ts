@@ -3,21 +3,21 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SetInternalGameViewDimensions(rect: any, clippedRect: any, targetSize: any): any;
-    SetAsStartView(): any;
-    ClearStartView(): any;
-    Focus(): any;
-    Repaint(): any;
-    RepaintImmediately(): any;
-    CaptureRenderDoc(): any;
-    OnDestroy(): any;
+    SetInternalGameViewDimensions(rect: any, clippedRect: any, targetSize: any): void;
+    SetAsStartView(): void;
+    ClearStartView(): void;
+    Focus(): void;
+    Repaint(): void;
+    RepaintImmediately(): void;
+    CaptureRenderDoc(): void;
+    OnDestroy(): void;
     IndexOfChild(child: UnityEditor.View): number;
-    OnDestroy(): any;
-    AddChild(child: UnityEditor.View): any;
-    AddChild(child: UnityEditor.View, idx: number): any;
-    RemoveChild(child: UnityEditor.View): any;
-    RemoveChild(idx: number): any;
-    SetDirty(): any;
+    OnDestroy(): void;
+    AddChild(child: UnityEditor.View): void;
+    AddChild(child: UnityEditor.View, idx: number): void;
+    RemoveChild(child: UnityEditor.View): void;
+    RemoveChild(idx: number): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

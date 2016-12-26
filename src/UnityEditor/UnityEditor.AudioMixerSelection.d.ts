@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor(controller: UnityEditor.Audio.AudioMixerController);
     // methods
-    SyncToUnitySelection(): any;
-    SetChannelStrips(newSelection: any): any;
-    SetSingleChannelStrip(group: UnityEditor.Audio.AudioMixerGroupController): any;
-    ToggleChannelStrip(group: UnityEditor.Audio.AudioMixerGroupController): any;
-    ClearChannelStrips(): any;
+    SyncToUnitySelection(): void;
+    SetChannelStrips(newSelection: any): void;
+    SetSingleChannelStrip(group: UnityEditor.Audio.AudioMixerGroupController): void;
+    ToggleChannelStrip(group: UnityEditor.Audio.AudioMixerGroupController): void;
+    ClearChannelStrips(): void;
     HasSingleChannelStripSelection(): boolean;
-    Sanitize(): any;
+    Sanitize(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

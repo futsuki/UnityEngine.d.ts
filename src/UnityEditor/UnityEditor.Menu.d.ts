@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static SetChecked(menuPath: string, isChecked: boolean): any;
+    static SetChecked(menuPath: string, isChecked: boolean): void;
     static GetChecked(menuPath: string): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

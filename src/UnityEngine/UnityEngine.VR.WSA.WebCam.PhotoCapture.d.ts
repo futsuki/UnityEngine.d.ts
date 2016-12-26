@@ -3,7 +3,7 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // constructors
     private constructor();
     // methods
-    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback): any;
+    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback): void;
     // properties
     // fields
   }

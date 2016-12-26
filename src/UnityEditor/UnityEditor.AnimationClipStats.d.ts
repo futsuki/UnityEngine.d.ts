@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    Reset(): any;
-    Combine(other: UnityEditor.AnimationClipStats): any;
+    Reset(): void;
+    Combine(other: UnityEditor.AnimationClipStats): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

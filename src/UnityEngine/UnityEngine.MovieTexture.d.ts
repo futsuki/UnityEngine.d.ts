@@ -3,9 +3,9 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Play(): any;
-    Stop(): any;
-    Pause(): any;
+    Play(): void;
+    Stop(): void;
+    Pause(): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;

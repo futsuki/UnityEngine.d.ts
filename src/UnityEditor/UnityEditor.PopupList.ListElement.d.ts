@@ -5,7 +5,7 @@ declare namespace UnityEditor.PopupList {
     constructor(text: string, selected: boolean);
     constructor(text: string);
     // methods
-    ResetScore(): any;
+    ResetScore(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

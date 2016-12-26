@@ -5,7 +5,7 @@ declare namespace UnityEngine.Networking {
     constructor(readable: boolean);
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): UnityEngine.Texture2D;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

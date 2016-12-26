@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    SetSelectedColumn(index: number): any;
+    SetSelectedColumn(index: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

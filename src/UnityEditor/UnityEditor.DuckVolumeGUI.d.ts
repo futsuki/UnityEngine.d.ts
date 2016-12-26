@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static BuildGUIStyleForLabel(color: any, fontSize: number, wrapText: boolean, fontstyle: any, anchor: any): any;
-    static DrawText(x: number, y: number, text: string): any;
-    static DrawLine(x1: number, y1: number, x2: number, y2: number, col: any): any;
+    static DrawText(x: number, y: number, text: string): void;
+    static DrawLine(x1: number, y1: number, x2: number, y2: number, col: any): void;
     OnGUI(plugin: UnityEditor.IAudioEffectPlugin): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

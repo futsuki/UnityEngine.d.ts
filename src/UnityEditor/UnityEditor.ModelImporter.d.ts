@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    CreateDefaultMaskForClip(clip: UnityEditor.ModelImporterClipAnimation): any;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): any;
-    SaveAndReimport(): any;
+    CreateDefaultMaskForClip(clip: UnityEditor.ModelImporterClipAnimation): void;
+    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
+    SaveAndReimport(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

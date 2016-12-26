@@ -3,10 +3,10 @@ declare namespace UnityEngine.VR.WSA.SurfaceObserver {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number): any;
+    Invoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number): void;
     BeginInvoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

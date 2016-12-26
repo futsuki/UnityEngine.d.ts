@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static GetConfigValue(name: string): string;
-    static SetConfigValue(name: string, value: string): any;
+    static SetConfigValue(name: string, value: string): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

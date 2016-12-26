@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static GetDSPBufferSize(bufferLength: any, numBuffers: any): any;
-    static SetDSPBufferSize(bufferLength: number, numBuffers: number): any;
+    static GetDSPBufferSize(bufferLength: any, numBuffers: any): void;
+    static SetDSPBufferSize(bufferLength: number, numBuffers: number): void;
     static GetConfiguration(): UnityEngine.AudioConfiguration;
     static Reset(config: UnityEngine.AudioConfiguration): boolean;
     Equals(obj: any): boolean;

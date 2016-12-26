@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static ReadPreferences(): any;
-    static WritePreferences(): any;
-    static OnGUI(): any;
+    static ReadPreferences(): void;
+    static WritePreferences(): void;
+    static OnGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

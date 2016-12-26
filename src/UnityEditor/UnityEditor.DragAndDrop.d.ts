@@ -3,11 +3,11 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static PrepareStartDrag(): any;
-    static StartDrag(title: string): any;
-    static AcceptDrag(): any;
+    static PrepareStartDrag(): void;
+    static StartDrag(title: string): void;
+    static AcceptDrag(): void;
     static GetGenericData(type: string): any;
-    static SetGenericData(type: string, data: any): any;
+    static SetGenericData(type: string, data: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

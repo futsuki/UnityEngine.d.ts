@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor(c: any);
     // methods
-    Parse(response: UnityEditor.AssetStoreResponse): any;
+    Parse(response: UnityEditor.AssetStoreResponse): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

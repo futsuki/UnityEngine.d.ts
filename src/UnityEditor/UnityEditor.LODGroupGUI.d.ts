@@ -9,9 +9,9 @@ declare namespace UnityEditor {
     static GetCulledBox(totalRect: any, previousLODPercentage: number): any;
     static CreateLODInfos(numLODs: number, area: any, nameGen: any, heightGen: any): any;
     static GetCameraPercent(position: any, sliderRect: any): number;
-    static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): any;
-    static DrawLODSlider(area: any, lods: any, selectedLevel: number): any;
-    static DrawMixedValueLODSlider(area: any): any;
+    static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): void;
+    static DrawLODSlider(area: any, lods: any, selectedLevel: number): void;
+    static DrawMixedValueLODSlider(area: any): void;
     // properties
     // fields
     static kLODColors: any[];

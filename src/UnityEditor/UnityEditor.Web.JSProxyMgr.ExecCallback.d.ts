@@ -3,10 +3,10 @@ declare namespace UnityEditor.Web.JSProxyMgr {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(result: any): any;
+    Invoke(result: any): void;
     BeginInvoke(result: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

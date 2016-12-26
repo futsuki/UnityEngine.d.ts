@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Register(view: UnityEditor.SceneView): any;
+    Register(view: UnityEditor.SceneView): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

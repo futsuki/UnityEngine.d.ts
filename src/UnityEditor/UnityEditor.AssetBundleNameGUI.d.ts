@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnAssetBundleNameGUI(assets: any): any;
+    OnAssetBundleNameGUI(assets: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

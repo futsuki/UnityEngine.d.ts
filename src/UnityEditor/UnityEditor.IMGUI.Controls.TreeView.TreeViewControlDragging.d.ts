@@ -4,15 +4,15 @@ declare namespace UnityEditor.IMGUI.Controls.TreeView {
     constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, owner: UnityEditor.IMGUI.Controls.TreeView);
     // methods
     CanStartDrag(targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, draggedItemIDs: any, mouseDownPosition: any): boolean;
-    StartDrag(draggedItem: UnityEditor.IMGUI.Controls.TreeViewItem, draggedItemIDs: any): any;
+    StartDrag(draggedItem: UnityEditor.IMGUI.Controls.TreeViewItem, draggedItemIDs: any): void;
     DoDrag(parentItem: UnityEditor.IMGUI.Controls.TreeViewItem, targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, perform: boolean, dropPosition: UnityEditor.IMGUI.Controls.TreeViewDragging.DropPosition): UnityEditor.DragAndDropVisualMode;
-    OnInitialize(): any;
+    OnInitialize(): void;
     GetDropTargetControlID(): number;
     GetRowMarkerControlID(): number;
     DragElement(targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, targetItemRect: any, firstItem: boolean): boolean;
-    DragCleanup(revertExpanded: boolean): any;
+    DragCleanup(revertExpanded: boolean): void;
     GetCurrentExpanded(): any;
-    RestoreExpanded(ids: any): any;
+    RestoreExpanded(ids: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

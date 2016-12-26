@@ -4,14 +4,14 @@ declare namespace SimpleJson {
     constructor();
     constructor(comparer: any);
     // methods
-    Add(key: string, value: any): any;
+    Add(key: string, value: any): void;
     ContainsKey(key: string): boolean;
     Remove(key: string): boolean;
     TryGetValue(key: string, value: any): boolean;
-    Add(item: any): any;
-    Clear(): any;
+    Add(item: any): void;
+    Clear(): void;
     Contains(item: any): boolean;
-    CopyTo(array: any[], arrayIndex: number): any;
+    CopyTo(array: any[], arrayIndex: number): void;
     Remove(item: any): boolean;
     GetEnumerator(): any;
     ToString(): string;
@@ -23,7 +23,7 @@ declare namespace SimpleJson {
     readonly Keys: any;
     readonly Values: any;
     get_Item(key: string): any;
-    set_Item(key: string, value: any): any;
+    set_Item(key: string, value: any): void;
     readonly Count: number;
     readonly IsReadOnly: boolean;
     // fields

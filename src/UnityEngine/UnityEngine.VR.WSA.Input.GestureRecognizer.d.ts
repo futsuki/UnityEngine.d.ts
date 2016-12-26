@@ -3,13 +3,13 @@ declare namespace UnityEngine.VR.WSA.Input {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
+    Dispose(): void;
     SetRecognizableGestures(newMaskValue: UnityEngine.VR.WSA.Input.GestureSettings): UnityEngine.VR.WSA.Input.GestureSettings;
     GetRecognizableGestures(): UnityEngine.VR.WSA.Input.GestureSettings;
-    StartCapturingGestures(): any;
-    StopCapturingGestures(): any;
+    StartCapturingGestures(): void;
+    StopCapturingGestures(): void;
     IsCapturingGestures(): boolean;
-    CancelGestures(): any;
+    CancelGestures(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

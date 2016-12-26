@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static RepaintAudioMixerAndInspectors(): any;
-    static VisitGroupsRecursivly(group: UnityEditor.Audio.AudioMixerGroupController, visitorCallback: any): any;
+    static RepaintAudioMixerAndInspectors(): void;
+    static VisitGroupsRecursivly(group: UnityEditor.Audio.AudioMixerGroupController, visitorCallback: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

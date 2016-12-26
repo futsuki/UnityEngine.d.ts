@@ -3,7 +3,7 @@ declare namespace UnityEngine.GUI {
     // constructors
     constructor(position: UnityEngine.Rect);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,11 +3,11 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnEnable(serializedObject: UnityEditor.SerializedObject): any;
-    OnDisable(): any;
+    OnEnable(serializedObject: UnityEditor.SerializedObject): void;
+    OnDisable(): void;
     GetAxisScalars(): any;
-    CheckCurveChangedExternally(): any;
-    OnInspectorGUI(): any;
+    CheckCurveChangedExternally(): void;
+    OnInspectorGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

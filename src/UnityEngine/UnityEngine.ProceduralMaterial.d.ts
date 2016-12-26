@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static StopRebuilds(): any;
+    static StopRebuilds(): void;
     // properties
     // fields
   }

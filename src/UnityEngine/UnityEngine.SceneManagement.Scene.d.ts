@@ -5,7 +5,7 @@ declare namespace UnityEngine.SceneManagement {
     // methods
     IsValid(): boolean;
     GetRootGameObjects(): UnityEngine.GameObject[];
-    GetRootGameObjects(rootGameObjects: any): any;
+    GetRootGameObjects(rootGameObjects: any): void;
     GetHashCode(): number;
     Equals(other: any): boolean;
     ToString(): string;

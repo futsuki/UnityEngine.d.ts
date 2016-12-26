@@ -3,7 +3,7 @@ declare namespace UnityEditor.ObjectListArea.LocalGroup {
     // constructors
     constructor();
     // methods
-    Start(instanceIDs: any): any;
+    Start(instanceIDs: any): void;
     GetAlpha(instanceID: number): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

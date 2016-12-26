@@ -4,7 +4,7 @@ declare namespace UnityEngine {
     constructor();
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;

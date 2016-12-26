@@ -3,8 +3,8 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(state: UnityEditorInternal.AudioProfilerClipTreeViewState);
     // methods
-    SetData(data: any): any;
-    UpdateSorting(): any;
+    SetData(data: any): void;
+    UpdateSorting(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

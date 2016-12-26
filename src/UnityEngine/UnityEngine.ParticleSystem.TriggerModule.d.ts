@@ -3,7 +3,7 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    SetCollider(index: number, collider: UnityEngine.Component): any;
+    SetCollider(index: number, collider: UnityEngine.Component): void;
     GetCollider(index: number): UnityEngine.Component;
     Equals(obj: any): boolean;
     GetHashCode(): number;

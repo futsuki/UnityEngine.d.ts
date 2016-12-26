@@ -3,7 +3,7 @@ declare namespace UnityEditor.AssetStoreContext {
     // constructors
     constructor();
     // methods
-    Initialize(json: UnityEditorInternal.JSONValue): any;
+    Initialize(json: UnityEditorInternal.JSONValue): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

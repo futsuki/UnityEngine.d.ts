@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    InitNumRowsAndColumns(itemCount: number, maxNumRows: number): any;
+    InitNumRowsAndColumns(itemCount: number, maxNumRows: number): void;
     CalcColumns(): number;
     CalcRows(itemCount: number): number;
     CalcRect(itemIdx: number, yOffset: number): any;

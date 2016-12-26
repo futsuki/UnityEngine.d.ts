@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SetSelection(node: UnityEditor.MemoryElement): any;
-    ClearSelection(): any;
+    SetSelection(node: UnityEditor.MemoryElement): void;
+    ClearSelection(): void;
     isSelected(node: UnityEditor.MemoryElement): boolean;
-    MoveUp(): any;
-    MoveDown(): any;
-    MoveFirst(): any;
-    MoveLast(): any;
-    MoveParent(): any;
+    MoveUp(): void;
+    MoveDown(): void;
+    MoveFirst(): void;
+    MoveLast(): void;
+    MoveParent(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

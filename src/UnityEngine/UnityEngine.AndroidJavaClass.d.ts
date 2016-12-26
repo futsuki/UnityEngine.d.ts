@@ -3,9 +3,9 @@ declare namespace UnityEngine {
     // constructors
     constructor(className: string);
     // methods
-    Dispose(): any;
-    Call(methodName: string, args: any[]): any;
-    CallStatic(methodName: string, args: any[]): any;
+    Dispose(): void;
+    Call(methodName: string, args: any[]): void;
+    CallStatic(methodName: string, args: any[]): void;
     GetRawObject(): any;
     GetRawClass(): any;
     Equals(obj: any): boolean;

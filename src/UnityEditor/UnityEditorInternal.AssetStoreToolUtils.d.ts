@@ -5,7 +5,7 @@ declare namespace UnityEditorInternal {
     // methods
     static BuildAssetStoreAssetBundle(targetObject: any, targetPath: string): boolean;
     static PreviewAssetStoreAssetBundleInInspector(bundle: any, info: UnityEditor.AssetStoreAsset): boolean;
-    static UpdatePreloadingInternal(): any;
+    static UpdatePreloadingInternal(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

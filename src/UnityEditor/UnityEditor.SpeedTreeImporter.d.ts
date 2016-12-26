@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    GenerateMaterials(): any;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): any;
-    SaveAndReimport(): any;
+    GenerateMaterials(): void;
+    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
+    SaveAndReimport(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

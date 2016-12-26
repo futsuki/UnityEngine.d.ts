@@ -15,10 +15,10 @@ declare namespace UnityEngine {
     static IsVersionCached(url: string, hash: UnityEngine.Hash128): boolean;
     static MarkAsUsed(url: string, version: number): boolean;
     static MarkAsUsed(url: string, hash: UnityEngine.Hash128): boolean;
-    static SetNoBackupFlag(url: string, version: number): any;
-    static SetNoBackupFlag(url: string, hash: UnityEngine.Hash128): any;
-    static ResetNoBackupFlag(url: string, version: number): any;
-    static ResetNoBackupFlag(url: string, hash: UnityEngine.Hash128): any;
+    static SetNoBackupFlag(url: string, version: number): void;
+    static SetNoBackupFlag(url: string, hash: UnityEngine.Hash128): void;
+    static ResetNoBackupFlag(url: string, version: number): void;
+    static ResetNoBackupFlag(url: string, hash: UnityEngine.Hash128): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

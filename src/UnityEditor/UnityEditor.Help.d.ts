@@ -5,9 +5,9 @@ declare namespace UnityEditor {
     // methods
     static HasHelpForObject(obj: any): boolean;
     static GetHelpURLForObject(obj: any): string;
-    static ShowHelpForObject(obj: any): any;
-    static ShowHelpPage(page: string): any;
-    static BrowseURL(url: string): any;
+    static ShowHelpForObject(obj: any): void;
+    static ShowHelpPage(page: string): void;
+    static BrowseURL(url: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

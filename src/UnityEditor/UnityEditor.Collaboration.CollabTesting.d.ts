@@ -3,10 +3,10 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     constructor();
     // methods
-    static OnCompleteJob(): any;
-    static AddAction(action: any): any;
-    static Execute(): any;
-    static DropAll(): any;
+    static OnCompleteJob(): void;
+    static AddAction(action: any): void;
+    static Execute(): void;
+    static DropAll(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

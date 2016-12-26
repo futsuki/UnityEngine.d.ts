@@ -3,7 +3,7 @@ declare namespace UnityEditor.AudioMixerUtility {
     // constructors
     constructor();
     // methods
-    Visitor(group: UnityEditor.Audio.AudioMixerGroupController): any;
+    Visitor(group: UnityEditor.Audio.AudioMixerGroupController): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

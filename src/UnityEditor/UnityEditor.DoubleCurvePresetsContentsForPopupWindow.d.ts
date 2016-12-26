@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor(doubleCurveToSave: UnityEditor.DoubleCurve, presetSelectedCallback: any);
     // methods
-    OnClose(): any;
+    OnClose(): void;
     GetPresetLibraryEditor(): any;
-    InitIfNeeded(): any;
-    OnGUI(rect: any): any;
+    InitIfNeeded(): void;
+    OnGUI(rect: any): void;
     GetWindowSize(): any;
-    OnOpen(): any;
+    OnOpen(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,7 +3,7 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor();
     // methods
-    static SetCustomCursor(id: number): any;
+    static SetCustomCursor(id: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

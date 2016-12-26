@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static OnBeforeAssemblyReload(): any;
-    static OnAfterAssemblyReload(): any;
+    static OnBeforeAssemblyReload(): void;
+    static OnAfterAssemblyReload(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

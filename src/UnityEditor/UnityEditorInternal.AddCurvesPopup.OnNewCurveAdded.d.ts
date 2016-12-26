@@ -3,10 +3,10 @@ declare namespace UnityEditorInternal.AddCurvesPopup {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(node: UnityEditorInternal.AddCurvesPopupPropertyNode): any;
+    Invoke(node: UnityEditorInternal.AddCurvesPopupPropertyNode): void;
     BeginInvoke(node: UnityEditorInternal.AddCurvesPopupPropertyNode, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

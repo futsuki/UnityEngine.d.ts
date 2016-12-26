@@ -6,7 +6,7 @@ declare namespace UnityEditor {
     static CreateAndEdit(root: any, clip: any, time: number): UnityEditor.AnimationWindowEvent;
     static Edit(root: any, clip: any, eventIndex: number): UnityEditor.AnimationWindowEvent;
     static Edit(clipInfo: UnityEditor.AnimationClipInfoProperties, eventIndex: number): UnityEditor.AnimationWindowEvent;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

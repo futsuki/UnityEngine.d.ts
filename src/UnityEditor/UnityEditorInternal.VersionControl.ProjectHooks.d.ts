@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal.VersionControl {
     // constructors
     constructor();
     // methods
-    static OnProjectWindowItem(guid: string, drawRect: any): any;
+    static OnProjectWindowItem(guid: string, drawRect: any): void;
     static GetOverlayRect(drawRect: any): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

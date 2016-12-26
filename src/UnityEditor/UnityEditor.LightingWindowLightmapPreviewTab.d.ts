@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    LightmapPreview(r: any): any;
-    UpdateLightmapSelection(): any;
-    Maps(): any;
+    LightmapPreview(r: any): void;
+    UpdateLightmapSelection(): void;
+    Maps(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

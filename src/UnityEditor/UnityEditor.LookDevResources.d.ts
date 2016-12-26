@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Initialize(): any;
-    static Cleanup(): any;
-    static UpdateShadowInfoWithBrightestSpot(cubemapInfo: UnityEditor.CubemapInfo): any;
+    static Initialize(): void;
+    static Cleanup(): void;
+    static UpdateShadowInfoWithBrightestSpot(cubemapInfo: UnityEditor.CubemapInfo): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

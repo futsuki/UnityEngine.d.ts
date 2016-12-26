@@ -4,9 +4,9 @@ declare namespace UnityEditorInternal {
     constructor(editorWindow: UnityEditor.EditorWindow, state: UnityEditorInternal.AudioProfilerClipTreeViewState);
     // methods
     GetNumItemsInData(): number;
-    Init(rect: any, backend: UnityEditorInternal.AudioProfilerClipViewBackend): any;
-    OnTreeSelectionChanged(selection: number[]): any;
-    OnGUI(rect: any): any;
+    Init(rect: any, backend: UnityEditorInternal.AudioProfilerClipViewBackend): void;
+    OnTreeSelectionChanged(selection: number[]): void;
+    OnGUI(rect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

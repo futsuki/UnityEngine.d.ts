@@ -3,7 +3,7 @@ declare namespace UnityEditor.ConsoleWindow {
     // constructors
     constructor();
     // methods
-    static Init(): any;
+    static Init(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

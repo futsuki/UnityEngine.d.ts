@@ -3,19 +3,19 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnGUI(): any;
-    Edges(): any;
-    Tangents(): any;
-    Points(): any;
-    HandlePointInsertToEdge(closestEdge: number, closestEdgeDist: number): any;
-    HandlePointClick(pointIndex: number): any;
-    CycleTangentMode(): any;
+    OnGUI(): void;
+    Edges(): void;
+    Tangents(): void;
+    Points(): void;
+    HandlePointInsertToEdge(closestEdge: number, closestEdgeDist: number): void;
+    HandlePointClick(pointIndex: number): void;
+    CycleTangentMode(): void;
     static GetNextTangentMode(current: UnityEditor.ShapeEditor.TangentMode): UnityEditor.ShapeEditor.TangentMode;
-    RefreshTangentsAfterModeChange(pointIndex: number, oldMode: UnityEditor.ShapeEditor.TangentMode, newMode: UnityEditor.ShapeEditor.TangentMode): any;
+    RefreshTangentsAfterModeChange(pointIndex: number, oldMode: UnityEditor.ShapeEditor.TangentMode, newMode: UnityEditor.ShapeEditor.TangentMode): void;
     FindClosestPointOnEdge(edgeIndex: number, position: any, iterations: number): any;
-    static RectCap(controlID: number, position: any, rotation: any, size: number, eventType: any): any;
-    static CircleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): any;
-    static DiamondCap(controlID: number, position: any, rotation: any, size: number, eventType: any): any;
+    static RectCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
+    static CircleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
+    static DiamondCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

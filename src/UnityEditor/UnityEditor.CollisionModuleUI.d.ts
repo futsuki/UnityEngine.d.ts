@@ -3,17 +3,17 @@ declare namespace UnityEditor {
     // constructors
     constructor(owner: UnityEditor.ParticleSystemUI, o: UnityEditor.SerializedObject, displayName: string);
     // methods
-    OnInspectorGUI(s: any): any;
-    OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): any;
-    UpdateCullingSupportedString(text: any): any;
-    Validate(): any;
+    OnInspectorGUI(s: any): void;
+    OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
+    UpdateCullingSupportedString(text: any): void;
+    Validate(): void;
     GetXAxisScalar(): number;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
-    AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): any;
+    AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
     GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
-    GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): any;
-    GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): any;
-    GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): any;
+    GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
+    GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
+    GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
     GetProperty0(name: string): UnityEditor.SerializedProperty;
     GetProperty(name: string): UnityEditor.SerializedProperty;
     GetProperty0(structName: string, propName: string): UnityEditor.SerializedProperty;

@@ -3,11 +3,11 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    SampleAnimation(go: UnityEngine.GameObject, time: number): any;
-    SetCurve(relativePath: string, type: any, propertyName: string, curve: UnityEngine.AnimationCurve): any;
-    EnsureQuaternionContinuity(): any;
-    ClearCurves(): any;
-    AddEvent(evt: UnityEngine.AnimationEvent): any;
+    SampleAnimation(go: UnityEngine.GameObject, time: number): void;
+    SetCurve(relativePath: string, type: any, propertyName: string, curve: UnityEngine.AnimationCurve): void;
+    EnsureQuaternionContinuity(): void;
+    ClearCurves(): void;
+    AddEvent(evt: UnityEngine.AnimationEvent): void;
     ValidateIfRetargetable(val: boolean): boolean;
     ToString(): string;
     GetInstanceID(): number;

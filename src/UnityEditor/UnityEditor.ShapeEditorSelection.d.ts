@@ -4,12 +4,12 @@ declare namespace UnityEditor {
     constructor(owner: UnityEditor.ShapeEditor);
     // methods
     Contains(i: number): boolean;
-    DeleteSelection(): any;
-    MoveSelection(delta: any): any;
-    Clear(): any;
-    SelectPoint(i: number, type: UnityEditor.ShapeEditor.SelectionType): any;
-    RectSelect(rect: any, type: UnityEditor.ShapeEditor.SelectionType): any;
-    OnGUI(): any;
+    DeleteSelection(): void;
+    MoveSelection(delta: any): void;
+    Clear(): void;
+    SelectPoint(i: number, type: UnityEditor.ShapeEditor.SelectionType): void;
+    RectSelect(rect: any, type: UnityEditor.ShapeEditor.SelectionType): void;
+    OnGUI(): void;
     GetEnumerator(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

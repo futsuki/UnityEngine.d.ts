@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static CreateWindow(): any;
+    static CreateWindow(): void;
     // properties
     // fields
   }

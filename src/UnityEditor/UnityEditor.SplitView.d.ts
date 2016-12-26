@@ -3,20 +3,20 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    AddChild(child: UnityEditor.View, idx: number): any;
-    RemoveChildNice(child: UnityEditor.View): any;
-    RemoveChild(child: UnityEditor.View): any;
+    AddChild(child: UnityEditor.View, idx: number): void;
+    RemoveChildNice(child: UnityEditor.View): void;
+    RemoveChild(child: UnityEditor.View): void;
     DragOverRootView(mouseScreenPosition: any): UnityEditor.DropInfo;
     DragOver(w: UnityEditor.EditorWindow, mouseScreenPosition: any): UnityEditor.DropInfo;
     ToString(): string;
     PerformDrop(dropWindow: UnityEditor.EditorWindow, dropInfo: UnityEditor.DropInfo, screenPos: any): boolean;
-    Cleanup(): any;
-    SplitGUI(evt: any): any;
+    Cleanup(): void;
+    SplitGUI(evt: any): void;
     IndexOfChild(child: UnityEditor.View): number;
-    OnDestroy(): any;
-    AddChild(child: UnityEditor.View): any;
-    RemoveChild(idx: number): any;
-    SetDirty(): any;
+    OnDestroy(): void;
+    AddChild(child: UnityEditor.View): void;
+    RemoveChild(idx: number): void;
+    SetDirty(): void;
     GetInstanceID(): number;
     GetHashCode(): number;
     Equals(other: any): boolean;

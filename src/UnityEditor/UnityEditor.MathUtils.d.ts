@@ -6,7 +6,7 @@ declare namespace UnityEditor {
     static GetQuatLength(q: any): number;
     static GetQuatConjugate(q: any): any;
     static OrthogonalizeMatrix(m: any): any;
-    static QuaternionNormalize(q: any): any;
+    static QuaternionNormalize(q: any): void;
     static QuaternionFromMatrix(m: any): any;
     static GetQuatLog(q: any): any;
     static GetQuatExp(q: any): any;

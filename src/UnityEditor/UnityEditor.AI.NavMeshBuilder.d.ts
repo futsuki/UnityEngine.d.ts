@@ -3,11 +3,11 @@ declare namespace UnityEditor.AI {
     // constructors
     constructor();
     // methods
-    static BuildNavMesh(): any;
-    static BuildNavMeshAsync(): any;
-    static ClearAllNavMeshes(): any;
-    static Cancel(): any;
-    static BuildNavMeshForMultipleScenes(paths: string[]): any;
+    static BuildNavMesh(): void;
+    static BuildNavMeshAsync(): void;
+    static ClearAllNavMeshes(): void;
+    static Cancel(): void;
+    static BuildNavMeshForMultipleScenes(paths: string[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

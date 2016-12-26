@@ -3,10 +3,10 @@ declare namespace UnityEditor.RectTransformEditor {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(rect: any, f: number): any;
+    Invoke(rect: any, f: number): void;
     BeginInvoke(rect: any, f: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

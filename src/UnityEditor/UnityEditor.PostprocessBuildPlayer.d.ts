@@ -8,8 +8,8 @@ declare namespace UnityEditor {
     static SupportsScriptsOnlyBuild(target: UnityEditor.BuildTarget): boolean;
     static GetExtensionForBuildTarget(target: UnityEditor.BuildTarget, options: UnityEditor.BuildOptions): string;
     static SupportsInstallInBuildFolder(target: UnityEditor.BuildTarget): boolean;
-    static Launch(target: UnityEditor.BuildTarget, path: string, productName: string, options: UnityEditor.BuildOptions): any;
-    static Postprocess(target: UnityEditor.BuildTarget, installPath: string, companyName: string, productName: string, width: number, height: number, downloadWebplayerUrl: string, manualDownloadWebplayerUrl: string, options: UnityEditor.BuildOptions, usedClassRegistry: UnityEditor.RuntimeClassRegistry, report: UnityEditor.BuildReporting.BuildReport): any;
+    static Launch(target: UnityEditor.BuildTarget, path: string, productName: string, options: UnityEditor.BuildOptions): void;
+    static Postprocess(target: UnityEditor.BuildTarget, installPath: string, companyName: string, productName: string, width: number, height: number, downloadWebplayerUrl: string, manualDownloadWebplayerUrl: string, options: UnityEditor.BuildOptions, usedClassRegistry: UnityEditor.RuntimeClassRegistry, report: UnityEditor.BuildReporting.BuildReport): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

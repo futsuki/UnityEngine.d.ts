@@ -3,11 +3,11 @@ declare namespace UnityEditor.VersionControl {
     // constructors
     constructor(clientPath: string);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     IsChildOf(other: UnityEditor.VersionControl.Asset): boolean;
     IsState(state: UnityEditor.VersionControl.Asset.States): boolean;
     IsOneOfStates(states: UnityEditor.VersionControl.Asset.States[]): boolean;
-    Edit(): any;
+    Edit(): void;
     Load(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

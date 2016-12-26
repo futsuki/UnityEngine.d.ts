@@ -8,7 +8,7 @@ declare namespace UnityEditor {
     static GetPrototypeExtent(terrainData: any, prototypeIndex: number): any;
     static GetPrototypeCount(terrainData: any): number;
     static PrototypeIsRenderable(terrainData: any, prototypeIndex: number): boolean;
-    static RefreshPhysicsInEditMode(): any;
+    static RefreshPhysicsInEditMode(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

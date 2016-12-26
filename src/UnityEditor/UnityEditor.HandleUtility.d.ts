@@ -19,8 +19,8 @@ declare namespace UnityEditor {
     static ClosestPointToArc(center: any, normal: any, from: any, angle: number, radius: number): any;
     static DistanceToPolyLine(points: any[]): number;
     static ClosestPointToPolyLine(vertices: any[]): any;
-    static AddControl(controlId: number, distance: number): any;
-    static AddDefaultControl(controlId: number): any;
+    static AddControl(controlId: number, distance: number): void;
+    static AddDefaultControl(controlId: number): void;
     static GetHandleSize(position: any): number;
     static WorldToGUIPoint(world: any): any;
     static GUIPointToWorldRay(position: any): any;
@@ -31,10 +31,10 @@ declare namespace UnityEditor {
     static PickGameObject(position: any, ignore: any[], materialIndex: any): any;
     static PickGameObject(position: any, selectPrefabRoot: boolean): any;
     static PickGameObject(position: any, selectPrefabRoot: boolean, ignore: any[]): any;
-    static PushCamera(camera: any): any;
-    static PopCamera(camera: any): any;
+    static PushCamera(camera: any): void;
+    static PopCamera(camera: any): void;
     static RaySnap(ray: any): any;
-    static Repaint(): any;
+    static Repaint(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,18 +3,18 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(clip: any, binding: UnityEditor.EditorCurveBinding, valueType: any);
     // methods
-    LoadKeyframes(clip: any): any;
+    LoadKeyframes(clip: any): void;
     GetHashCode(): number;
     CompareTo(obj: UnityEditorInternal.AnimationWindowCurve): number;
     ToAnimationCurve(): any;
     ToObjectCurve(): UnityEditor.ObjectReferenceKeyframe[];
     FindKeyAtTime(keyTime: UnityEditorInternal.AnimationKeyTime): UnityEditorInternal.AnimationWindowKeyframe;
     Evaluate(time: number): any;
-    AddKeyframe(key: UnityEditorInternal.AnimationWindowKeyframe, keyTime: UnityEditorInternal.AnimationKeyTime): any;
-    RemoveKeyframe(time: UnityEditorInternal.AnimationKeyTime): any;
+    AddKeyframe(key: UnityEditorInternal.AnimationWindowKeyframe, keyTime: UnityEditorInternal.AnimationKeyTime): void;
+    RemoveKeyframe(time: UnityEditorInternal.AnimationKeyTime): void;
     HasKeyframe(time: UnityEditorInternal.AnimationKeyTime): boolean;
     GetKeyframeIndex(time: UnityEditorInternal.AnimationKeyTime): number;
-    RemoveKeysAtRange(startTime: number, endTime: number): any;
+    RemoveKeysAtRange(startTime: number, endTime: number): void;
     Equals(obj: any): boolean;
     GetType(): any;
     ToString(): string;

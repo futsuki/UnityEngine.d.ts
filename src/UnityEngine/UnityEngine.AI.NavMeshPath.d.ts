@@ -4,7 +4,7 @@ declare namespace UnityEngine.AI {
     constructor();
     // methods
     GetCornersNonAlloc(results: UnityEngine.Vector3[]): number;
-    ClearCorners(): any;
+    ClearCorners(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

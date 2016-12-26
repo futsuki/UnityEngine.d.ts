@@ -6,10 +6,10 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor();
     // methods
     ToString(): string;
-    ReportProgress(callback: any): any;
-    SetCompleted(value: boolean): any;
-    SetHidden(value: boolean): any;
-    SetLastReportedDate(date: any): any;
+    ReportProgress(callback: any): void;
+    SetCompleted(value: boolean): void;
+    SetHidden(value: boolean): void;
+    SetLastReportedDate(date: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

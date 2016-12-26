@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): any;
+    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
     static GetAtPath(path: string): UnityEditor.AssetImporter;
-    SaveAndReimport(): any;
+    SaveAndReimport(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

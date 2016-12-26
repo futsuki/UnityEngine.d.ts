@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static InitializeDirections(): any;
-    static CalcSoftOcclusion(mesh: any): any;
+    static InitializeDirections(): void;
+    static CalcSoftOcclusion(mesh: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -6,7 +6,7 @@ declare namespace UnityEditor.RestService {
     constructor(httpStatusCode: UnityEditor.RestService.HttpStatusCode, restErrorString: string, restErrorDescription: string);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;

@@ -4,9 +4,9 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     ToString(): string;
-    Parse(obj: any): any;
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    Parse(obj: any): void;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;

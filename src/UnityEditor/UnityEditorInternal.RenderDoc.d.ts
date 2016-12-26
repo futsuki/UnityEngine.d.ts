@@ -6,7 +6,7 @@ declare namespace UnityEditorInternal {
     static IsInstalled(): boolean;
     static IsLoaded(): boolean;
     static IsSupported(): boolean;
-    static Load(): any;
+    static Load(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

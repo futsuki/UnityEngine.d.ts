@@ -4,7 +4,7 @@ declare namespace UnityEditorInternal {
     constructor(area: UnityEditorInternal.ProfilerArea, type: UnityEditorInternal.Chart.ChartType, dataScale: number, seriesCount: number);
     // methods
     DoChartGUI(currentFrame: number, currentArea: UnityEditorInternal.ProfilerArea, action: any): number;
-    LoadAndBindSettings(): any;
+    LoadAndBindSettings(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,10 +3,10 @@ declare namespace UnityEngine.RectTransform {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(driven: UnityEngine.RectTransform): any;
+    Invoke(driven: UnityEngine.RectTransform): void;
     BeginInvoke(driven: UnityEngine.RectTransform, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

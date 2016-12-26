@@ -4,11 +4,11 @@ declare namespace UnityEngine {
     constructor(_minWidth: number, _maxWidth: number, _minHeight: number, _maxHeight: number, _style: UnityEngine.GUIStyle);
     constructor(_minWidth: number, _maxWidth: number, _minHeight: number, _maxHeight: number, _style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    CalcWidth(): any;
-    CalcHeight(): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
+    CalcWidth(): void;
+    CalcHeight(): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

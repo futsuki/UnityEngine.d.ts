@@ -4,7 +4,7 @@ declare namespace UnityEngine {
     constructor();
     // methods
     Evaluate(time: number): UnityEngine.Color;
-    SetKeys(colorKeys: UnityEngine.GradientColorKey[], alphaKeys: UnityEngine.GradientAlphaKey[]): any;
+    SetKeys(colorKeys: UnityEngine.GradientColorKey[], alphaKeys: UnityEngine.GradientAlphaKey[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

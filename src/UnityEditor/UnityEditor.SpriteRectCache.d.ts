@@ -4,12 +4,12 @@ declare namespace UnityEditor {
     constructor();
     // methods
     RectAt(i: number): UnityEditor.SpriteRect;
-    AddRect(r: UnityEditor.SpriteRect): any;
-    RemoveRect(r: UnityEditor.SpriteRect): any;
-    ClearAll(): any;
+    AddRect(r: UnityEditor.SpriteRect): void;
+    RemoveRect(r: UnityEditor.SpriteRect): void;
+    ClearAll(): void;
     GetIndex(spriteRect: UnityEditor.SpriteRect): number;
     Contains(spriteRect: UnityEditor.SpriteRect): boolean;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

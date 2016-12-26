@@ -5,10 +5,10 @@ declare namespace UnityEditor.Sprites {
     // methods
     static GetTexturesForAtlas(atlasName: string): any[];
     static GetAlphaTexturesForAtlas(atlasName: string): any[];
-    static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget, displayProgressBar: boolean, execution: UnityEditor.Sprites.Packer.Execution): any;
-    static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget, displayProgressBar: boolean): any;
-    static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget): any;
-    static GetAtlasDataForSprite(sprite: any, atlasName: any, atlasTexture: any): any;
+    static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget, displayProgressBar: boolean, execution: UnityEditor.Sprites.Packer.Execution): void;
+    static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget, displayProgressBar: boolean): void;
+    static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget): void;
+    static GetAtlasDataForSprite(sprite: any, atlasName: any, atlasTexture: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -6,7 +6,7 @@ declare namespace UnityEditor.Undo {
     Invoke(modifications: UnityEditor.UndoPropertyModification[]): UnityEditor.UndoPropertyModification[];
     BeginInvoke(modifications: UnityEditor.UndoPropertyModification[], callback: any, object: any): any;
     EndInvoke(result: any): UnityEditor.UndoPropertyModification[];
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

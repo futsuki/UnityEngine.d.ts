@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    OnGUI(clippingRect: any, property: UnityEditorInternal.ProfilerProperty, showInactiveDSPChains: boolean, highlightAudibleDSPChains: boolean, zoomFactor: any, scrollPos: any): any;
+    OnGUI(clippingRect: any, property: UnityEditorInternal.ProfilerProperty, showInactiveDSPChains: boolean, highlightAudibleDSPChains: boolean, zoomFactor: any, scrollPos: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

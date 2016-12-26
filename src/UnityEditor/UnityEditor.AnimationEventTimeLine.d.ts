@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor(owner: UnityEditor.EditorWindow);
     // methods
-    AddEvent(time: number, rootGameObject: any, animationClip: any): any;
-    DeselectAll(): any;
-    EventLineGUI(rect: any, state: UnityEditorInternal.AnimationWindowState): any;
-    DrawInstantTooltip(position: any): any;
-    EventLineContextMenuAdd(obj: any): any;
-    EventLineContextMenuEdit(obj: any): any;
-    EventLineContextMenuDelete(obj: any): any;
+    AddEvent(time: number, rootGameObject: any, animationClip: any): void;
+    DeselectAll(): void;
+    EventLineGUI(rect: any, state: UnityEditorInternal.AnimationWindowState): void;
+    DrawInstantTooltip(position: any): void;
+    EventLineContextMenuAdd(obj: any): void;
+    EventLineContextMenuEdit(obj: any): void;
+    EventLineContextMenuDelete(obj: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

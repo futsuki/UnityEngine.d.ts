@@ -3,19 +3,19 @@ declare namespace UnityEditor.Animations {
     // constructors
     constructor();
     // methods
-    static SetAnimatorController(behavior: any, controller: UnityEditor.Animations.AnimatorController): any;
+    static SetAnimatorController(behavior: any, controller: UnityEditor.Animations.AnimatorController): void;
     MakeUniqueParameterName(name: string): string;
     MakeUniqueLayerName(name: string): string;
     static FindStateMachineBehaviourContext(behaviour: any): UnityEditor.Animations.StateMachineBehaviourContext[];
     static CreateStateMachineBehaviour(script: UnityEditor.MonoScript): number;
     AddEffectiveStateMachineBehaviour(stateMachineBehaviourType: any, state: UnityEditor.Animations.AnimatorState, layerIndex: number): any;
-    AddLayer(name: string): any;
-    AddLayer(layer: UnityEditor.Animations.AnimatorControllerLayer): any;
-    RemoveLayer(index: number): any;
-    AddParameter(name: string, type: any): any;
-    AddParameter(paramater: any): any;
-    RemoveParameter(index: number): any;
-    RemoveParameter(parameter: any): any;
+    AddLayer(name: string): void;
+    AddLayer(layer: UnityEditor.Animations.AnimatorControllerLayer): void;
+    RemoveLayer(index: number): void;
+    AddParameter(name: string, type: any): void;
+    AddParameter(paramater: any): void;
+    RemoveParameter(index: number): void;
+    RemoveParameter(parameter: any): void;
     AddMotion(motion: any): UnityEditor.Animations.AnimatorState;
     AddMotion(motion: any, layerIndex: number): UnityEditor.Animations.AnimatorState;
     CreateBlendTreeInController(name: string, tree: any): UnityEditor.Animations.AnimatorState;
@@ -23,11 +23,11 @@ declare namespace UnityEditor.Animations {
     static CreateAnimatorControllerAtPath(path: string): UnityEditor.Animations.AnimatorController;
     static AllocateAnimatorClip(name: string): any;
     static CreateAnimatorControllerAtPathWithClip(path: string, clip: any): UnityEditor.Animations.AnimatorController;
-    SetStateEffectiveMotion(state: UnityEditor.Animations.AnimatorState, motion: any): any;
-    SetStateEffectiveMotion(state: UnityEditor.Animations.AnimatorState, motion: any, layerIndex: number): any;
+    SetStateEffectiveMotion(state: UnityEditor.Animations.AnimatorState, motion: any): void;
+    SetStateEffectiveMotion(state: UnityEditor.Animations.AnimatorState, motion: any, layerIndex: number): void;
     GetStateEffectiveMotion(state: UnityEditor.Animations.AnimatorState): any;
     GetStateEffectiveMotion(state: UnityEditor.Animations.AnimatorState, layerIndex: number): any;
-    SetStateEffectiveBehaviours(state: UnityEditor.Animations.AnimatorState, layerIndex: number, behaviours: any[]): any;
+    SetStateEffectiveBehaviours(state: UnityEditor.Animations.AnimatorState, layerIndex: number, behaviours: any[]): void;
     GetStateEffectiveBehaviours(state: UnityEditor.Animations.AnimatorState, layerIndex: number): any[];
     ToString(): string;
     GetInstanceID(): number;

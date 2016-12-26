@@ -4,14 +4,14 @@ declare namespace UnityEngine.Networking {
     private constructor();
     // methods
     static ConnectEndPoint(hostId: number, endPoint: any, exceptionConnectionId: number, error: any): number;
-    static Init(): any;
-    static Init(config: UnityEngine.Networking.GlobalConfig): any;
-    static Shutdown(): any;
+    static Init(): void;
+    static Init(config: UnityEngine.Networking.GlobalConfig): void;
+    static Shutdown(): void;
     static GetAssetId(go: UnityEngine.GameObject): string;
-    static AddSceneId(id: number): any;
+    static AddSceneId(id: number): void;
     static GetNextSceneId(): number;
-    static ConnectAsNetworkHost(hostId: number, address: string, port: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, error: any): any;
-    static DisconnectNetworkHost(hostId: number, error: any): any;
+    static ConnectAsNetworkHost(hostId: number, address: string, port: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, error: any): void;
+    static DisconnectNetworkHost(hostId: number, error: any): void;
     static ReceiveRelayEventFromHost(hostId: number, error: any): UnityEngine.Networking.NetworkEventType;
     static ConnectToNetworkPeer(hostId: number, address: string, port: number, exceptionConnectionId: number, relaySlotId: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, bytesPerSec: number, bucketSizeFactor: number, error: any): number;
     static ConnectToNetworkPeer(hostId: number, address: string, port: number, exceptionConnectionId: number, relaySlotId: number, network: UnityEngine.Networking.Types.NetworkID, source: UnityEngine.Networking.Types.SourceID, node: UnityEngine.Networking.Types.NodeID, error: any): number;
@@ -23,7 +23,7 @@ declare namespace UnityEngine.Networking {
     static GetPacketReceivedRate(hostId: number, connectionId: number, error: any): number;
     static GetRemotePacketReceivedRate(hostId: number, connectionId: number, error: any): number;
     static GetNetIOTimeuS(): number;
-    static GetConnectionInfo(hostId: number, connectionId: number, address: any, port: any, network: any, dstNode: any, error: any): any;
+    static GetConnectionInfo(hostId: number, connectionId: number, address: any, port: any, network: any, dstNode: any, error: any): void;
     static GetConnectionInfo(hostId: number, connectionId: number, port: any, network: any, dstNode: any, error: any): string;
     static GetNetworkTimestamp(): number;
     static GetRemoteDelayTimeMS(hostId: number, connectionId: number, remoteTime: number, error: any): number;
@@ -45,14 +45,14 @@ declare namespace UnityEngine.Networking {
     static Send(hostId: number, connectionId: number, channelId: number, buffer: number[], size: number, error: any): boolean;
     static Receive(hostId: any, connectionId: any, channelId: any, buffer: number[], bufferSize: number, receivedSize: any, error: any): UnityEngine.Networking.NetworkEventType;
     static ReceiveFromHost(hostId: number, connectionId: any, channelId: any, buffer: number[], bufferSize: number, receivedSize: any, error: any): UnityEngine.Networking.NetworkEventType;
-    static SetPacketStat(direction: number, packetStatId: number, numMsgs: number, numBytes: number): any;
+    static SetPacketStat(direction: number, packetStatId: number, numMsgs: number, numBytes: number): void;
     static StartBroadcastDiscovery(hostId: number, broadcastPort: number, key: number, version: number, subversion: number, buffer: number[], size: number, timeout: number, error: any): boolean;
-    static StopBroadcastDiscovery(): any;
+    static StopBroadcastDiscovery(): void;
     static IsBroadcastDiscoveryRunning(): boolean;
-    static SetBroadcastCredentials(hostId: number, key: number, version: number, subversion: number, error: any): any;
+    static SetBroadcastCredentials(hostId: number, key: number, version: number, subversion: number, error: any): void;
     static GetBroadcastConnectionInfo(hostId: number, port: any, error: any): string;
-    static GetBroadcastConnectionInfo(hostId: number, address: any, port: any, error: any): any;
-    static GetBroadcastConnectionMessage(hostId: number, buffer: number[], bufferSize: number, receivedSize: any, error: any): any;
+    static GetBroadcastConnectionInfo(hostId: number, address: any, port: any, error: any): void;
+    static GetBroadcastConnectionMessage(hostId: number, buffer: number[], bufferSize: number, receivedSize: any, error: any): void;
     // properties
     // fields
   }

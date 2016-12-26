@@ -6,7 +6,7 @@ declare namespace UnityEditor.VersionControl {
     constructor(description: string, revision: string);
     constructor(other: UnityEditor.VersionControl.ChangeSet);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

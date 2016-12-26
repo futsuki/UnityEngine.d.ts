@@ -3,7 +3,7 @@ declare namespace UnityEditor.MemoryProfiler {
     // constructors
     private constructor();
     // methods
-    static RequestNewSnapshot(): any;
+    static RequestNewSnapshot(): void;
     // properties
     // fields
   }

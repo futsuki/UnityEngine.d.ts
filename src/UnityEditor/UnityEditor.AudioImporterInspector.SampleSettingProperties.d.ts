@@ -4,7 +4,7 @@ declare namespace UnityEditor.AudioImporterInspector {
     private constructor();
     // methods
     HasModified(): boolean;
-    ClearChangedFlags(): any;
+    ClearChangedFlags(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

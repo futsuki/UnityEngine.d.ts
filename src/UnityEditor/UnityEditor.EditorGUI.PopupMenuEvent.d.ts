@@ -3,7 +3,7 @@ declare namespace UnityEditor.EditorGUI {
     // constructors
     constructor(cmd: string, v: UnityEditor.GUIView);
     // methods
-    SendEvent(): any;
+    SendEvent(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,10 +3,10 @@ declare namespace UnityEditor.ScriptExecutionOrderInspector.DragReorderGUI {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(r: any, obj: any, dragging: boolean): any;
+    Invoke(r: any, obj: any, dragging: boolean): void;
     BeginInvoke(r: any, obj: any, dragging: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

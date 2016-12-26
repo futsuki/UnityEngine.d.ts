@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Insert(name: string, templateName: string): any;
+    Insert(name: string, templateName: string): void;
     Find(name: string): string;
-    ClearTemplate(): any;
+    ClearTemplate(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

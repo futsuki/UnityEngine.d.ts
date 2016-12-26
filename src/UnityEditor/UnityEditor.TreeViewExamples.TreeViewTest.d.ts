@@ -5,8 +5,8 @@ declare namespace UnityEditor.TreeViewExamples {
     // methods
     GetNumItemsInData(): number;
     GetNumItemsInTree(): number;
-    Init(rect: any, backendData: UnityEditor.TreeViewExamples.BackendData): any;
-    OnGUI(rect: any): any;
+    Init(rect: any, backendData: UnityEditor.TreeViewExamples.BackendData): void;
+    OnGUI(rect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

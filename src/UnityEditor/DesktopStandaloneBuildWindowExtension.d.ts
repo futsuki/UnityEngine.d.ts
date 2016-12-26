@@ -2,10 +2,10 @@
     // constructors
     constructor();
     // methods
-    ShowPlatformBuildOptions(): any;
+    ShowPlatformBuildOptions(): void;
     EnabledBuildButton(): boolean;
     EnabledBuildAndRunButton(): boolean;
-    ShowInternalPlatformBuildOptions(): any;
+    ShowInternalPlatformBuildOptions(): void;
     ShouldDrawScriptDebuggingCheckbox(): boolean;
     ShouldDrawProfilerCheckbox(): boolean;
     ShouldDrawDevelopmentPlayerCheckbox(): boolean;

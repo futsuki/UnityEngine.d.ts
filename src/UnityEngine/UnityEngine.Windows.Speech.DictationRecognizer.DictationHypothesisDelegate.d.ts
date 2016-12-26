@@ -3,10 +3,10 @@ declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(text: string): any;
+    Invoke(text: string): void;
     BeginInvoke(text: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

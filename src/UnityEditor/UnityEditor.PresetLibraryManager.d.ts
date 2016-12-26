@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor();
     // methods
     GetLastError(): string;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

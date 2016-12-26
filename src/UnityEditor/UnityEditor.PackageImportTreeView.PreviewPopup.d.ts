@@ -3,10 +3,10 @@ declare namespace UnityEditor.PackageImportTreeView {
     // constructors
     constructor(preview: any);
     // methods
-    OnGUI(rect: any): any;
+    OnGUI(rect: any): void;
     GetWindowSize(): any;
-    OnOpen(): any;
-    OnClose(): any;
+    OnOpen(): void;
+    OnClose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

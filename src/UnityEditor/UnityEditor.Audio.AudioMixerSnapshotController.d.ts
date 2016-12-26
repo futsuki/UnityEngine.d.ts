@@ -3,12 +3,12 @@ declare namespace UnityEditor.Audio {
     // constructors
     constructor(owner: any);
     // methods
-    SetValue(guid: UnityEditor.GUID, value: number): any;
+    SetValue(guid: UnityEditor.GUID, value: number): void;
     GetValue(guid: UnityEditor.GUID, value: any): boolean;
-    SetTransitionTypeOverride(guid: UnityEditor.GUID, type: UnityEditor.Audio.ParameterTransitionType): any;
+    SetTransitionTypeOverride(guid: UnityEditor.GUID, type: UnityEditor.Audio.ParameterTransitionType): void;
     GetTransitionTypeOverride(guid: UnityEditor.GUID, type: any): boolean;
-    ClearTransitionTypeOverride(guid: UnityEditor.GUID): any;
-    TransitionTo(timeToReach: number): any;
+    ClearTransitionTypeOverride(guid: UnityEditor.GUID): void;
+    TransitionTo(timeToReach: number): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

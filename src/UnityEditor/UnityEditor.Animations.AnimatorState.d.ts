@@ -4,8 +4,8 @@ declare namespace UnityEditor.Animations {
     constructor();
     // methods
     AddStateMachineBehaviour(stateMachineBehaviourType: any): any;
-    AddTransition(transition: UnityEditor.Animations.AnimatorStateTransition): any;
-    RemoveTransition(transition: UnityEditor.Animations.AnimatorStateTransition): any;
+    AddTransition(transition: UnityEditor.Animations.AnimatorStateTransition): void;
+    RemoveTransition(transition: UnityEditor.Animations.AnimatorStateTransition): void;
     AddTransition(destinationState: UnityEditor.Animations.AnimatorState): UnityEditor.Animations.AnimatorStateTransition;
     AddTransition(destinationStateMachine: UnityEditor.Animations.AnimatorStateMachine): UnityEditor.Animations.AnimatorStateTransition;
     AddTransition(destinationState: UnityEditor.Animations.AnimatorState, defaultExitTime: boolean): UnityEditor.Animations.AnimatorStateTransition;

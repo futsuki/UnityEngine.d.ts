@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor(timeArea: UnityEditor.TimeArea);
     // methods
-    SelectEvent(events: any[], index: number, clipInfo: UnityEditor.AnimationClipInfoProperties): any;
-    UpdateEvent(info: UnityEditor.AnimationClipInfoProperties): any;
+    SelectEvent(events: any[], index: number, clipInfo: UnityEditor.AnimationClipInfoProperties): void;
+    UpdateEvent(info: UnityEditor.AnimationClipInfoProperties): void;
     HandleEventManipulation(rect: any, events: any, clipInfo: UnityEditor.AnimationClipInfoProperties): boolean;
-    EventLineContextMenuAdd(obj: any): any;
-    EventLineContextMenuDelete(obj: any): any;
-    Draw(window: any): any;
+    EventLineContextMenuAdd(obj: any): void;
+    EventLineContextMenuDelete(obj: any): void;
+    Draw(window: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static PlaceTrees(terrain: any, xBase: number, yBase: number): any;
-    static RemoveTrees(terrain: any, xBase: number, yBase: number, clearSelectedOnly: boolean): any;
-    static MassPlaceTrees(terrainData: any, numberOfTrees: number, randomTreeColor: boolean, keepExistingTrees: boolean): any;
+    static PlaceTrees(terrain: any, xBase: number, yBase: number): void;
+    static RemoveTrees(terrain: any, xBase: number, yBase: number, clearSelectedOnly: boolean): void;
+    static MassPlaceTrees(terrainData: any, numberOfTrees: number, randomTreeColor: boolean, keepExistingTrees: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

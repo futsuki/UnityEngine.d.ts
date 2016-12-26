@@ -3,10 +3,10 @@ declare namespace UnityEditor.SceneHierarchySortingWindow {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(element: UnityEditor.SceneHierarchySortingWindow.InputData): any;
+    Invoke(element: UnityEditor.SceneHierarchySortingWindow.InputData): void;
     BeginInvoke(element: UnityEditor.SceneHierarchySortingWindow.InputData, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

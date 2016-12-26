@@ -3,7 +3,7 @@ declare namespace UnityEditor.AudioMixerChannelStripView {
     // constructors
     constructor();
     // methods
-    Init(controller: UnityEditor.Audio.AudioMixerController, channelStripRect: any, maxNumEffects: number): any;
+    Init(controller: UnityEditor.Audio.AudioMixerController, channelStripRect: any, maxNumEffects: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

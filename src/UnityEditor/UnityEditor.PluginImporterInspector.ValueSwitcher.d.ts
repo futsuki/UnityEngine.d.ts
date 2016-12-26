@@ -6,7 +6,7 @@ declare namespace UnityEditor.PluginImporterInspector {
     Invoke(value: UnityEditor.PluginImporterInspector.Compatibility): UnityEditor.PluginImporterInspector.Compatibility;
     BeginInvoke(value: UnityEditor.PluginImporterInspector.Compatibility, callback: any, object: any): any;
     EndInvoke(result: any): UnityEditor.PluginImporterInspector.Compatibility;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

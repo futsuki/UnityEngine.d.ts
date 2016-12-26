@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Initialize(timeArea: UnityEditor.TimeArea): any;
-    OnGUI(): any;
-    HandleEvents(): any;
+    Initialize(timeArea: UnityEditor.TimeArea): void;
+    OnGUI(): void;
+    HandleEvents(): void;
     ToolCoordToPosition(coord: UnityEditor.RectangleTool.ToolCoord, bounds: any): any;
     CalculateScaleTimeMatrix(fromTime: number, toTime: number, offsetTime: number, pivotTime: number, frameRate: number, transform: any, flipKeys: any): boolean;
     CalculateScaleValueMatrix(fromValue: number, toValue: number, offsetValue: number, pivotValue: number, transform: any, flipKeys: any): boolean;
@@ -13,7 +13,7 @@ declare namespace UnityEditor {
     PixelToValue(pixelValue: number): number;
     TimeToPixel(time: number): number;
     ValueToPixel(value: number): number;
-    HandleClutchKeys(): any;
+    HandleClutchKeys(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

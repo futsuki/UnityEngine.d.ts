@@ -5,9 +5,9 @@ declare namespace UnityEditor {
     // methods
     static Compute(): boolean;
     static GenerateInBackground(): boolean;
-    static Cancel(): any;
-    static Clear(): any;
-    static SetDefaultOcclusionBakeSettings(): any;
+    static Cancel(): void;
+    static Clear(): void;
+    static SetDefaultOcclusionBakeSettings(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

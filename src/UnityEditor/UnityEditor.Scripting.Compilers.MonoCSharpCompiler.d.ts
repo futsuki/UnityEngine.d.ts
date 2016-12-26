@@ -4,8 +4,8 @@ declare namespace UnityEditor.Scripting.Compilers {
     constructor(island: UnityEditor.Scripting.MonoIsland, runUpdater: boolean);
     // methods
     static Compile(sources: string[], references: string[], defines: string[], outputFile: string): string[];
-    BeginCompiling(): any;
-    Dispose(): any;
+    BeginCompiling(): void;
+    Dispose(): void;
     Poll(): boolean;
     GetCompilerMessages(): UnityEditor.Scripting.Compilers.CompilerMessage[];
     Equals(obj: any): boolean;

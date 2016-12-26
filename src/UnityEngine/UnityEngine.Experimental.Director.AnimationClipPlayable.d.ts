@@ -4,7 +4,7 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(clip: UnityEngine.AnimationClip): UnityEngine.Experimental.Director.AnimationClipPlayable;
-    Destroy(): any;
+    Destroy(): void;
     Equals(p: any): boolean;
     GetHashCode(): number;
     IsValid(): boolean;

@@ -4,12 +4,12 @@ declare namespace UnityEditor {
     constructor(inputData: UnityEditor.PopupList.InputData);
     constructor(inputData: UnityEditor.PopupList.InputData, initialSelectionLabel: string);
     // methods
-    OnClose(): any;
+    OnClose(): void;
     GetWindowHeight(): number;
     GetWindowWidth(): number;
     GetWindowSize(): any;
-    OnGUI(windowRect: any): any;
-    OnOpen(): any;
+    OnGUI(windowRect: any): void;
+    OnOpen(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

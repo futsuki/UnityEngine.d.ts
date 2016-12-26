@@ -3,11 +3,11 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(window: UnityEditorInternal.IProfilerWindowController, columnSettingsName: string, columnsToShow: UnityEditorInternal.ProfilerColumn[], columnNames: string[], detailPane: boolean, sort: UnityEditorInternal.ProfilerColumn);
     // methods
-    SetKeyboardFocus(): any;
-    SelectFirstRow(): any;
+    SetKeyboardFocus(): void;
+    SelectFirstRow(): void;
     GetDetailedProperty(property: UnityEditorInternal.ProfilerProperty): UnityEditorInternal.ProfilerProperty;
-    FrameSelection(): any;
-    DoGUI(property: UnityEditorInternal.ProfilerProperty, searchString: string, expandAll: boolean): any;
+    FrameSelection(): void;
+    DoGUI(property: UnityEditorInternal.ProfilerProperty, searchString: string, expandAll: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

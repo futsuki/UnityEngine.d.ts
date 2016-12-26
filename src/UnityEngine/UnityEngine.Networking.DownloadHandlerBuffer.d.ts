@@ -4,7 +4,7 @@ declare namespace UnityEngine.Networking {
     constructor();
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): string;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

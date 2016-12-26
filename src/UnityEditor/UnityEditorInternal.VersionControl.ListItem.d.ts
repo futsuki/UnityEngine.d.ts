@@ -5,10 +5,10 @@ declare namespace UnityEditorInternal.VersionControl {
     // methods
     HasPath(): boolean;
     IsChildOf(listItem: UnityEditorInternal.VersionControl.ListItem): boolean;
-    Clear(): any;
-    Add(listItem: UnityEditorInternal.VersionControl.ListItem): any;
+    Clear(): void;
+    Add(listItem: UnityEditorInternal.VersionControl.ListItem): void;
     Remove(listItem: UnityEditorInternal.VersionControl.ListItem): boolean;
-    RemoveAll(): any;
+    RemoveAll(): void;
     FindWithIdentifierRecurse(inIdentifier: number): UnityEditorInternal.VersionControl.ListItem;
     Equals(obj: any): boolean;
     GetHashCode(): number;

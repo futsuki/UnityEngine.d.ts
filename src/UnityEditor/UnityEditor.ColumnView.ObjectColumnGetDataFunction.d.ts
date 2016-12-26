@@ -6,7 +6,7 @@ declare namespace UnityEditor.ColumnView {
     Invoke(value: any): any;
     BeginInvoke(value: any, callback: any, object: any): any;
     EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

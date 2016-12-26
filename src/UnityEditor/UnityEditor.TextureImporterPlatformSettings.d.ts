@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    CopyTo(target: UnityEditor.TextureImporterPlatformSettings): any;
+    CopyTo(target: UnityEditor.TextureImporterPlatformSettings): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

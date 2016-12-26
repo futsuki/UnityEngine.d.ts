@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor(sceneView: UnityEditor.SceneView);
     // methods
     GetWindowSize(): any;
-    OnGUI(rect: any): any;
-    OnOpen(): any;
-    OnClose(): any;
+    OnGUI(rect: any): void;
+    OnOpen(): void;
+    OnClose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

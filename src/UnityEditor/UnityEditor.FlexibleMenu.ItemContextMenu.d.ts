@@ -3,7 +3,7 @@ declare namespace UnityEditor.FlexibleMenu {
     // constructors
     private constructor();
     // methods
-    static Show(itemIndex: number, caller: UnityEditor.FlexibleMenu): any;
+    static Show(itemIndex: number, caller: UnityEditor.FlexibleMenu): void;
     // properties
     // fields
   }

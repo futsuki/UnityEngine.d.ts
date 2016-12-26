@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Paint(xCenterNormalized: number, yCenterNormalized: number, splatIndex: number): any;
+    Paint(xCenterNormalized: number, yCenterNormalized: number, splatIndex: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

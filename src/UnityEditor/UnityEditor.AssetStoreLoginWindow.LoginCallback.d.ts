@@ -3,10 +3,10 @@ declare namespace UnityEditor.AssetStoreLoginWindow {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(errorMessage: string): any;
+    Invoke(errorMessage: string): void;
     BeginInvoke(errorMessage: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

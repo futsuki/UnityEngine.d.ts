@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SetTransition(transition: UnityEditor.Animations.AnimatorStateTransition, sourceState: UnityEditor.Animations.AnimatorState, destinationState: UnityEditor.Animations.AnimatorState, srcLayer: UnityEditor.Animations.AnimatorControllerLayer, previewObject: any): any;
-    DoTransitionPreview(): any;
-    OnDisable(): any;
-    OnDestroy(): any;
+    SetTransition(transition: UnityEditor.Animations.AnimatorStateTransition, sourceState: UnityEditor.Animations.AnimatorState, destinationState: UnityEditor.Animations.AnimatorState, srcLayer: UnityEditor.Animations.AnimatorControllerLayer, previewObject: any): void;
+    DoTransitionPreview(): void;
+    OnDisable(): void;
+    OnDestroy(): void;
     HasPreviewGUI(): boolean;
-    OnPreviewSettings(): any;
-    OnInteractivePreviewGUI(r: any, background: any): any;
+    OnPreviewSettings(): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

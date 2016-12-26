@@ -4,20 +4,20 @@ declare namespace UnityEditor {
     constructor(owner: UnityEditor.ParticleEffectUIOwner);
     // methods
     InitializeIfNeeded(shuriken: any): boolean;
-    Clear(): any;
+    Clear(): void;
     static GetMinSize(): any;
-    Refresh(): any;
+    Refresh(): void;
     GetNextParticleSystemName(): string;
     IsParticleSystemUIVisible(psUI: UnityEditor.ParticleSystemUI): boolean;
     GetParticleSystemUIForParticleSystem(shuriken: any): UnityEditor.ParticleSystemUI;
-    PlayOnAwakeChanged(newPlayOnAwake: boolean): any;
+    PlayOnAwakeChanged(newPlayOnAwake: boolean): void;
     ValidateParticleSystemProperty(shurikenProperty: UnityEditor.SerializedProperty): boolean;
     CreateParticleSystem(parentOfNewParticleSystem: any, defaultType: UnityEditor.SubModuleUI.SubEmitterType): any;
     GetParticleSystemUIList(shurikens: any): any;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
-    OnSceneViewGUI(): any;
-    OnSceneGUI(): any;
-    OnGUI(): any;
+    OnSceneViewGUI(): void;
+    OnSceneGUI(): void;
+    OnGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

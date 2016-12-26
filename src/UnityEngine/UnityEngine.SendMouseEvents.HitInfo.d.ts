@@ -3,7 +3,7 @@ declare namespace UnityEngine.SendMouseEvents {
     // constructors
     private constructor();
     // methods
-    SendMessage(name: string): any;
+    SendMessage(name: string): void;
     static Compare(lhs: UnityEngine.SendMouseEvents.HitInfo, rhs: UnityEngine.SendMouseEvents.HitInfo): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

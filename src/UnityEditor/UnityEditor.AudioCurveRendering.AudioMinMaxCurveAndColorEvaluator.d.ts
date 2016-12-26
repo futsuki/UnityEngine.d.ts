@@ -3,10 +3,10 @@ declare namespace UnityEditor.AudioCurveRendering {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(x: number, col: any, minValue: any, maxValue: any): any;
+    Invoke(x: number, col: any, minValue: any, maxValue: any): void;
     BeginInvoke(x: number, col: any, minValue: any, maxValue: any, callback: any, object: any): any;
-    EndInvoke(col: any, minValue: any, maxValue: any, result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(col: any, minValue: any, maxValue: any, result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

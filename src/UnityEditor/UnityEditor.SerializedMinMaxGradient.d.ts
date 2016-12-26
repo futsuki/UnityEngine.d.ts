@@ -5,7 +5,7 @@ declare namespace UnityEditor {
     constructor(m: UnityEditor.SerializedModule, name: string);
     // methods
     static GetGradientAsColor(gradientProp: UnityEditor.SerializedProperty): any;
-    static SetGradientAsColor(gradientProp: UnityEditor.SerializedProperty, color: any): any;
+    static SetGradientAsColor(gradientProp: UnityEditor.SerializedProperty, color: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

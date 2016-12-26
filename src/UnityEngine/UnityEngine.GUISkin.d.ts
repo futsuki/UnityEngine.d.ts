@@ -6,7 +6,7 @@ declare namespace UnityEngine {
     GetStyle(styleName: string): UnityEngine.GUIStyle;
     FindStyle(styleName: string): UnityEngine.GUIStyle;
     GetEnumerator(): any;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

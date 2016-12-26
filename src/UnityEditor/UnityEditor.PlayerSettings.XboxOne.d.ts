@@ -3,17 +3,17 @@ declare namespace UnityEditor.PlayerSettings {
     // constructors
     constructor();
     // methods
-    static SetCapability(capability: string, value: boolean): any;
+    static SetCapability(capability: string, value: boolean): void;
     static GetCapability(capability: string): boolean;
-    static SetSupportedLanguage(language: string, enabled: boolean): any;
+    static SetSupportedLanguage(language: string, enabled: boolean): void;
     static GetSupportedLanguage(language: string): boolean;
-    static RemoveSocketDefinition(name: string): any;
-    static SetSocketDefinition(name: string, port: string, protocol: number, usages: number[], templateName: string, sessionRequirment: number, deviceUsages: number[]): any;
-    static GetSocketDefinition(name: string, port: any, protocol: any, usages: any, templateName: any, sessionRequirment: any, deviceUsages: any): any;
-    static RemoveAllowedProductId(id: string): any;
+    static RemoveSocketDefinition(name: string): void;
+    static SetSocketDefinition(name: string, port: string, protocol: number, usages: number[], templateName: string, sessionRequirment: number, deviceUsages: number[]): void;
+    static GetSocketDefinition(name: string, port: any, protocol: any, usages: any, templateName: any, sessionRequirment: any, deviceUsages: any): void;
+    static RemoveAllowedProductId(id: string): void;
     static AddAllowedProductId(id: string): boolean;
-    static UpdateAllowedProductId(idx: number, id: string): any;
-    static SetGameRating(name: string, value: number): any;
+    static UpdateAllowedProductId(idx: number, id: string): void;
+    static SetGameRating(name: string, value: number): void;
     static GetGameRating(name: string): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

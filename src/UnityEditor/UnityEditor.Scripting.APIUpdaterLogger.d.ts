@@ -3,9 +3,9 @@ declare namespace UnityEditor.Scripting {
     // constructors
     constructor();
     // methods
-    static WriteToFile(msg: string, args: any[]): any;
-    static WriteErrorToConsole(msg: string, args: any[]): any;
-    static WriteInfoToConsole(line: string): any;
+    static WriteToFile(msg: string, args: any[]): void;
+    static WriteErrorToConsole(msg: string, args: any[]): void;
+    static WriteInfoToConsole(line: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

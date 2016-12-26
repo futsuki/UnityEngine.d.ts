@@ -4,8 +4,8 @@ declare namespace UnityEditor.Animations {
     constructor();
     // methods
     GetDisplayName(source: any): string;
-    AddCondition(mode: UnityEditor.Animations.AnimatorConditionMode, threshold: number, parameter: string): any;
-    RemoveCondition(condition: UnityEditor.Animations.AnimatorCondition): any;
+    AddCondition(mode: UnityEditor.Animations.AnimatorConditionMode, threshold: number, parameter: string): void;
+    RemoveCondition(condition: UnityEditor.Animations.AnimatorCondition): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

@@ -3,14 +3,14 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Next(enterChildren: boolean): boolean;
     GetThreadCount(frame: number): number;
     GetFrameStartS(frame: number): number;
     GetGroupCount(frame: number): number;
     GetGroupName(): string;
     GetThreadName(): string;
-    SetRoot(frame: number, threadIdx: number): any;
+    SetRoot(frame: number, threadIdx: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

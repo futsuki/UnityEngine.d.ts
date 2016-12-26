@@ -3,7 +3,7 @@ declare namespace UnityEngine.Serialization {
     // constructors
     constructor();
     // methods
-    GetObjectData(obj: any, info: any, context: any): any;
+    GetObjectData(obj: any, info: any, context: any): void;
     SetObjectData(obj: any, info: any, context: any, selector: any): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

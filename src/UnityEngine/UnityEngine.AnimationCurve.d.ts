@@ -8,8 +8,8 @@ declare namespace UnityEngine {
     AddKey(time: number, value: number): number;
     AddKey(key: UnityEngine.Keyframe): number;
     MoveKey(index: number, key: UnityEngine.Keyframe): number;
-    RemoveKey(index: number): any;
-    SmoothTangents(index: number, weight: number): any;
+    RemoveKey(index: number): void;
+    SmoothTangents(index: number, weight: number): void;
     static Linear(timeStart: number, valueStart: number, timeEnd: number, valueEnd: number): UnityEngine.AnimationCurve;
     static EaseInOut(timeStart: number, valueStart: number, timeEnd: number, valueEnd: number): UnityEngine.AnimationCurve;
     Equals(obj: any): boolean;

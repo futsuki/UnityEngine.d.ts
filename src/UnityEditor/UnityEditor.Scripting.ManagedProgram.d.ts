@@ -4,18 +4,18 @@ declare namespace UnityEditor.Scripting {
     constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setupStartInfo: any);
     constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setMonoEnvironmentVariables: boolean, setupStartInfo: any);
     // methods
-    Start(): any;
+    Start(): void;
     GetProcessStartInfo(): any;
-    LogProcessStartInfo(): any;
+    LogProcessStartInfo(): void;
     GetAllOutput(): string;
-    Dispose(): any;
-    Kill(): any;
+    Dispose(): void;
+    Kill(): void;
     GetStandardInput(): any;
     GetStandardOutput(): string[];
     GetStandardOutputAsString(): string;
     GetErrorOutput(): string[];
     GetErrorOutputAsString(): string;
-    WaitForExit(): any;
+    WaitForExit(): void;
     WaitForExit(milliseconds: number): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

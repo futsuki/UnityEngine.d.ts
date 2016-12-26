@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor(objectsToUndo: any[]);
     // methods
-    Restore(): any;
-    Dispose(): any;
+    Restore(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

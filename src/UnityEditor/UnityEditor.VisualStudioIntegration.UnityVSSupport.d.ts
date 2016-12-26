@@ -3,11 +3,11 @@ declare namespace UnityEditor.VisualStudioIntegration {
     // constructors
     constructor();
     // methods
-    static Initialize(): any;
-    static Initialize(editorPath: string): any;
+    static Initialize(): void;
+    static Initialize(editorPath: string): void;
     static ShouldUnityVSBeActive(): boolean;
     static IsUnityVSEnabled(): boolean;
-    static ScriptEditorChanged(editorPath: string): any;
+    static ScriptEditorChanged(editorPath: string): void;
     static GetAboutWindowLabel(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

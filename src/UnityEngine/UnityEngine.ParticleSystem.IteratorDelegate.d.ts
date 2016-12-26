@@ -6,7 +6,7 @@ declare namespace UnityEngine.ParticleSystem {
     Invoke(ps: UnityEngine.ParticleSystem): boolean;
     BeginInvoke(ps: UnityEngine.ParticleSystem, callback: any, object: any): any;
     EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

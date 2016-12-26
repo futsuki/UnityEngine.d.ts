@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static BeginSplit(state: UnityEditor.SplitterState, style: any, vertical: boolean, options: any[]): any;
-    static BeginHorizontalSplit(state: UnityEditor.SplitterState, options: any[]): any;
-    static BeginVerticalSplit(state: UnityEditor.SplitterState, options: any[]): any;
-    static BeginHorizontalSplit(state: UnityEditor.SplitterState, style: any, options: any[]): any;
-    static BeginVerticalSplit(state: UnityEditor.SplitterState, style: any, options: any[]): any;
-    static EndVerticalSplit(): any;
-    static EndHorizontalSplit(): any;
+    static BeginSplit(state: UnityEditor.SplitterState, style: any, vertical: boolean, options: any[]): void;
+    static BeginHorizontalSplit(state: UnityEditor.SplitterState, options: any[]): void;
+    static BeginVerticalSplit(state: UnityEditor.SplitterState, options: any[]): void;
+    static BeginHorizontalSplit(state: UnityEditor.SplitterState, style: any, options: any[]): void;
+    static BeginVerticalSplit(state: UnityEditor.SplitterState, style: any, options: any[]): void;
+    static EndVerticalSplit(): void;
+    static EndHorizontalSplit(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

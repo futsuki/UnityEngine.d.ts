@@ -3,9 +3,9 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor();
     // methods
-    static LaunchFile(folder: UnityEngine.WSA.Folder, relativeFilePath: string, showWarning: boolean): any;
-    static LaunchFileWithPicker(fileExtension: string): any;
-    static LaunchUri(uri: string, showWarning: boolean): any;
+    static LaunchFile(folder: UnityEngine.WSA.Folder, relativeFilePath: string, showWarning: boolean): void;
+    static LaunchFileWithPicker(fileExtension: string): void;
+    static LaunchUri(uri: string, showWarning: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

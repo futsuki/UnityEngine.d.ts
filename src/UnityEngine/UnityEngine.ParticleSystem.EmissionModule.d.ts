@@ -3,8 +3,8 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): any;
-    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[], size: number): any;
+    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): void;
+    SetBursts(bursts: UnityEngine.ParticleSystem.Burst[], size: number): void;
     GetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -3,8 +3,8 @@ declare namespace UnityEditor.LODGroupEditor {
     // constructors
     constructor(lods: any, percentage: number, clickedPosition: any, propLODs: UnityEditor.SerializedProperty, callback: UnityEditor.LODGroupEditor.LODAction.Callback);
     // methods
-    InsertLOD(): any;
-    DeleteLOD(): any;
+    InsertLOD(): void;
+    DeleteLOD(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

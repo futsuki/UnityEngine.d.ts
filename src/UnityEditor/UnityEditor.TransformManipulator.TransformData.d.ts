@@ -4,9 +4,9 @@ declare namespace UnityEditor.TransformManipulator {
     private constructor();
     // methods
     static GetData(t: any): UnityEditor.TransformManipulator.TransformData;
-    SetScaleDelta(scaleDelta: any, scalePivot: any, scaleRotation: any, preferRectResize: boolean): any;
-    SetPositionDelta(positionDelta: any): any;
-    DebugAlignment(targetRotation: any): any;
+    SetScaleDelta(scaleDelta: any, scalePivot: any, scaleRotation: any, preferRectResize: boolean): void;
+    SetPositionDelta(positionDelta: any): void;
+    DebugAlignment(targetRotation: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

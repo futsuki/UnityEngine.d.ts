@@ -3,10 +3,10 @@ declare namespace UnityEditor.GenericMenu {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(userData: any): any;
+    Invoke(userData: any): void;
     BeginInvoke(userData: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

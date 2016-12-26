@@ -11,7 +11,7 @@ declare namespace UnityEngine {
     static LoadAll(path: string, systemTypeInstance: any): UnityEngine.Object[];
     static LoadAll(path: string): UnityEngine.Object[];
     static GetBuiltinResource(type: any, path: string): UnityEngine.Object;
-    static UnloadAsset(assetToUnload: UnityEngine.Object): any;
+    static UnloadAsset(assetToUnload: UnityEngine.Object): void;
     static UnloadUnusedAssets(): UnityEngine.AsyncOperation;
     static LoadAssetAtPath(assetPath: string, type: any): UnityEngine.Object;
     Equals(obj: any): boolean;

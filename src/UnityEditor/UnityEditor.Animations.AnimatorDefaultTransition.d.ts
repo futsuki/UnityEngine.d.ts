@@ -3,7 +3,7 @@ declare namespace UnityEditor.Animations {
     // constructors
     constructor();
     // methods
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

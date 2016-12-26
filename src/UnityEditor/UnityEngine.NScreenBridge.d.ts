@@ -3,14 +3,14 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    InitServer(id: number): any;
-    Update(): any;
-    StartWatchdogForPid(pid: number): any;
-    SetResolution(x: number, y: number): any;
-    SetInput(x: number, y: number, button: number, key: number, type: number): any;
-    ResetInput(): any;
+    InitServer(id: number): void;
+    Update(): void;
+    StartWatchdogForPid(pid: number): void;
+    SetResolution(x: number, y: number): void;
+    SetInput(x: number, y: number, button: number, key: number, type: number): void;
+    ResetInput(): void;
     GetScreenTexture(): any;
-    Shutdown(): any;
+    Shutdown(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

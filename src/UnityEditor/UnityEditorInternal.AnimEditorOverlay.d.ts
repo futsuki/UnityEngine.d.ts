@@ -3,9 +3,9 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    Initialize(): any;
-    OnGUI(rect: any, contentRect: any): any;
-    HandleEvents(): any;
+    Initialize(): void;
+    OnGUI(rect: any, contentRect: any): void;
+    HandleEvents(): void;
     MousePositionToTime(evt: any): number;
     MousePositionToValue(evt: any): number;
     TimeToPixel(time: number): number;

@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor();
     // methods
     RegisterCustomGUI(gui: UnityEditor.IAudioEffectPluginGUI): boolean;
-    OnGUI(group: UnityEditor.Audio.AudioMixerGroupController): any;
+    OnGUI(group: UnityEditor.Audio.AudioMixerGroupController): void;
     static DoInitialModule(group: UnityEditor.Audio.AudioMixerGroupController, controller: UnityEditor.Audio.AudioMixerController, allGroups: any): number;
-    DoEffectGUI(effectIndex: number, group: UnityEditor.Audio.AudioMixerGroupController, allGroups: any, effectMap: any, highlightEffectIndex: any): any;
+    DoEffectGUI(effectIndex: number, group: UnityEditor.Audio.AudioMixerGroupController, allGroups: any, effectMap: any, highlightEffectIndex: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static SetPerTriangleUV2(src: any, triUV: any[]): any;
-    static SetMeshCompression(mesh: any, compression: UnityEditor.ModelImporterMeshCompression): any;
+    static SetPerTriangleUV2(src: any, triUV: any[]): void;
+    static SetMeshCompression(mesh: any, compression: UnityEditor.ModelImporterMeshCompression): void;
     static GetMeshCompression(mesh: any): UnityEditor.ModelImporterMeshCompression;
-    static Optimize(mesh: any): any;
+    static Optimize(mesh: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

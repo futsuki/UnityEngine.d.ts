@@ -3,8 +3,8 @@ declare namespace UnityEditor.Modules {
     // constructors
     constructor();
     // methods
-    ShowPlatformBuildOptions(): any;
-    ShowInternalPlatformBuildOptions(): any;
+    ShowPlatformBuildOptions(): void;
+    ShowInternalPlatformBuildOptions(): void;
     EnabledBuildButton(): boolean;
     EnabledBuildAndRunButton(): boolean;
     ShouldDrawScriptDebuggingCheckbox(): boolean;

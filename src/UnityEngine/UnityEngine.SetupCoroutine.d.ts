@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static InvokeMoveNext(enumerator: any, returnValueAddress: any): any;
+    static InvokeMoveNext(enumerator: any, returnValueAddress: any): void;
     static InvokeMember(behaviour: any, name: string, variable: any): any;
     static InvokeStatic(klass: any, name: string, variable: any): any;
     Equals(obj: any): boolean;

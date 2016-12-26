@@ -3,7 +3,7 @@ declare namespace UnityEditor.ZoomableArea {
     // constructors
     constructor(minimalGUI: boolean);
     // methods
-    InitGUIStyles(minimalGUI: boolean, enableSliderZoom: boolean): any;
+    InitGUIStyles(minimalGUI: boolean, enableSliderZoom: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

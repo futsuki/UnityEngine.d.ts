@@ -3,16 +3,16 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static ClearDiskCache(): any;
+    static ClearDiskCache(): void;
     static BakeAsync(): boolean;
     static Bake(): boolean;
-    static Cancel(): any;
-    static Clear(): any;
-    static ClearLightingDataAsset(): any;
-    static Tetrahedralize(positions: any[], outIndices: any, outPositions: any): any;
+    static Cancel(): void;
+    static Clear(): void;
+    static ClearLightingDataAsset(): void;
+    static Tetrahedralize(positions: any[], outIndices: any, outPositions: any): void;
     static BakeReflectionProbe(probe: any, path: string): boolean;
-    static GetTerrainGIChunks(terrain: any, numChunksX: any, numChunksY: any): any;
-    static BakeMultipleScenes(paths: string[]): any;
+    static GetTerrainGIChunks(terrain: any, numChunksX: any, numChunksY: any): void;
+    static BakeMultipleScenes(paths: string[]): void;
     static BakeSelectedAsync(): boolean;
     static BakeSelected(): boolean;
     static BakeLightProbesOnlyAsync(): boolean;

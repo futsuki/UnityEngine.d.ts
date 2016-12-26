@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Initialize(): any;
+    static Initialize(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

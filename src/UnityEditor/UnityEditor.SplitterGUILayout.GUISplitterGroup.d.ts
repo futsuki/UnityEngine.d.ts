@@ -3,16 +3,16 @@ declare namespace UnityEditor.SplitterGUILayout {
     // constructors
     constructor();
     // methods
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: any[]): any;
-    ResetCursor(): any;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: any[]): void;
+    ResetCursor(): void;
     PeekNext(): any;
     GetNext(): any;
     GetLast(): any;
-    Add(e: any): any;
-    CalcWidth(): any;
-    CalcHeight(): any;
+    Add(e: any): void;
+    CalcWidth(): void;
+    CalcHeight(): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -6,7 +6,7 @@ declare namespace UnityEngine.Networking {
     constructor(url: string, hash: UnityEngine.Hash128, crc: number);
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): UnityEngine.AssetBundle;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

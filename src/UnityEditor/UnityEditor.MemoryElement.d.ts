@@ -6,11 +6,11 @@ declare namespace UnityEditor {
     constructor(memInfo: UnityEditor.ObjectInfo, finalize: boolean);
     constructor(n: string, groups: any);
     // methods
-    ExpandChildren(): any;
+    ExpandChildren(): void;
     AccumulatedChildCount(): number;
     ChildCount(): number;
     ReferenceCount(): number;
-    AddChild(node: UnityEditor.MemoryElement): any;
+    AddChild(node: UnityEditor.MemoryElement): void;
     GetChildIndexInList(): number;
     GetPrevNode(): UnityEditor.MemoryElement;
     GetNextNode(): UnityEditor.MemoryElement;

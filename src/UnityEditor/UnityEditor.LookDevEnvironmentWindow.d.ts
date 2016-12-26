@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor(lookDevView: UnityEditor.LookDevView);
     // methods
-    SetRects(positionInLookDev: any, GUIRect: any, displayRect: any): any;
+    SetRects(positionInLookDev: any, GUIRect: any, displayRect: any): void;
     GetCurrentSelection(): any;
     GetSelectedPositionOffset(): any;
-    CancelSelection(): any;
+    CancelSelection(): void;
     static PositionToLatLong(position: any): any;
-    ResetShadowCubemap(): any;
-    OnGUI(windowID: number): any;
+    ResetShadowCubemap(): void;
+    OnGUI(windowID: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

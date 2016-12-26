@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static SetColor(color: any): any;
+    static SetColor(color: any): void;
     static HasColor(): boolean;
     static TryGetColor(allowHDR: boolean, color: any): boolean;
     // properties

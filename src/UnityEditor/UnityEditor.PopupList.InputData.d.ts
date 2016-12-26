@@ -3,8 +3,8 @@ declare namespace UnityEditor.PopupList {
     // constructors
     constructor();
     // methods
-    DeselectAll(): any;
-    ResetScores(): any;
+    DeselectAll(): void;
+    ResetScores(): void;
     BuildQuery(prefix: string): any;
     GetFilteredList(prefix: string): any;
     GetFilteredCount(prefix: string): number;

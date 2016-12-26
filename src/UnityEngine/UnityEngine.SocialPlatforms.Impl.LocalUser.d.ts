@@ -3,18 +3,18 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // constructors
     constructor();
     // methods
-    Authenticate(callback: any): any;
-    Authenticate(callback: any): any;
-    LoadFriends(callback: any): any;
-    SetFriends(friends: UnityEngine.SocialPlatforms.IUserProfile[]): any;
-    SetAuthenticated(value: boolean): any;
-    SetUnderage(value: boolean): any;
+    Authenticate(callback: any): void;
+    Authenticate(callback: any): void;
+    LoadFriends(callback: any): void;
+    SetFriends(friends: UnityEngine.SocialPlatforms.IUserProfile[]): void;
+    SetAuthenticated(value: boolean): void;
+    SetUnderage(value: boolean): void;
     ToString(): string;
-    SetUserName(name: string): any;
-    SetUserID(id: string): any;
-    SetImage(image: UnityEngine.Texture2D): any;
-    SetIsFriend(value: boolean): any;
-    SetState(state: UnityEngine.SocialPlatforms.UserState): any;
+    SetUserName(name: string): void;
+    SetUserID(id: string): void;
+    SetImage(image: UnityEngine.Texture2D): void;
+    SetIsFriend(value: boolean): void;
+    SetState(state: UnityEngine.SocialPlatforms.UserState): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

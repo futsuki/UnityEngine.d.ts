@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static GameViewStatsGUI(): any;
+    static GameViewStatsGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

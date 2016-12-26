@@ -3,12 +3,12 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static RequestHostList(gameTypeName: string): any;
+    static RequestHostList(gameTypeName: string): void;
     static PollHostList(): UnityEngine.HostData[];
-    static RegisterHost(gameTypeName: string, gameName: string, comment: string): any;
-    static RegisterHost(gameTypeName: string, gameName: string): any;
-    static UnregisterHost(): any;
-    static ClearHostList(): any;
+    static RegisterHost(gameTypeName: string, gameName: string, comment: string): void;
+    static RegisterHost(gameTypeName: string, gameName: string): void;
+    static UnregisterHost(): void;
+    static ClearHostList(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

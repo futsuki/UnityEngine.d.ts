@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static DrawNative(d: any): any;
+    static DrawNative(d: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

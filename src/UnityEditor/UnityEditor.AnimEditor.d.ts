@@ -4,17 +4,17 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static GetAllAnimationWindows(): any;
-    OnAnimEditorGUI(parent: UnityEditor.EditorWindow, position: any): any;
-    Update(): any;
-    OnEnable(): any;
-    OnDisable(): any;
-    OnDestroy(): any;
-    OnSelectionChanged(): any;
-    OnStartLiveEdit(): any;
-    OnEndLiveEdit(): any;
-    OnLostFocus(): any;
-    Repaint(): any;
-    SetDirty(): any;
+    OnAnimEditorGUI(parent: UnityEditor.EditorWindow, position: any): void;
+    Update(): void;
+    OnEnable(): void;
+    OnDisable(): void;
+    OnDestroy(): void;
+    OnSelectionChanged(): void;
+    OnStartLiveEdit(): void;
+    OnEndLiveEdit(): void;
+    OnLostFocus(): void;
+    Repaint(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

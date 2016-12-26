@@ -3,12 +3,12 @@ declare namespace UnityEngineInternal {
     // constructors
     constructor();
     // methods
-    static ResetRuntimeInputTextures(): any;
-    static PlayCycleMode(): any;
-    static PauseCycleMode(): any;
-    static StopCycleMode(): any;
-    static CycleSkipInstances(skip: number): any;
-    static CycleSkipSystems(skip: number): any;
+    static ResetRuntimeInputTextures(): void;
+    static PlayCycleMode(): void;
+    static PauseCycleMode(): void;
+    static StopCycleMode(): void;
+    static CycleSkipInstances(skip: number): void;
+    static CycleSkipSystems(skip: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

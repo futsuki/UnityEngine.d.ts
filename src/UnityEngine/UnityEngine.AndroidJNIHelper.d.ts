@@ -15,7 +15,7 @@ declare namespace UnityEngine {
     static CreateJavaProxy(proxy: UnityEngine.AndroidJavaProxy): any;
     static ConvertToJNIArray(array: any): any;
     static CreateJNIArgArray(args: any[]): UnityEngine.jvalue[];
-    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): any;
+    static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): void;
     static GetConstructorID(jclass: any, args: any[]): any;
     static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
     static GetSignature(obj: any): string;

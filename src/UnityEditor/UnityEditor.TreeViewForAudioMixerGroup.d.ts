@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static CreateAndSetTreeView(data: UnityEditor.ObjectTreeForSelector.TreeSelectorData): any;
+    static CreateAndSetTreeView(data: UnityEditor.ObjectTreeForSelector.TreeSelectorData): void;
     // properties
     // fields
   }

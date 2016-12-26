@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SelectDeletedItem(guid: string): any;
-    DoRecover(): any;
+    SelectDeletedItem(guid: string): void;
+    DoRecover(): void;
     GetSelectedDeletedItemGUIDs(): string[];
     GetAllDeletedItemGUIDs(): string[];
-    FilterItems(filterText: string): any;
-    DoDeletedItemsGUI(parentWin: UnityEditor.ASHistoryWindow, theRect: any, s: any, offset: number, endOffset: number, focused: boolean): any;
-    DoGUI(parentWin: UnityEditor.ASHistoryWindow, theRect: any, focused: boolean): any;
+    FilterItems(filterText: string): void;
+    DoDeletedItemsGUI(parentWin: UnityEditor.ASHistoryWindow, theRect: any, s: any, offset: number, endOffset: number, focused: boolean): void;
+    DoGUI(parentWin: UnityEditor.ASHistoryWindow, theRect: any, focused: boolean): void;
     GetImplicitProjectViewSelection(): string[];
     Equals(obj: any): boolean;
     GetHashCode(): number;

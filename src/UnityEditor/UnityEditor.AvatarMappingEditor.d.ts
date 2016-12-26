@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Enable(inspector: UnityEditor.AvatarEditor): any;
-    Disable(): any;
-    OnDestroy(): any;
-    OnInspectorGUI(): any;
+    Enable(inspector: UnityEditor.AvatarEditor): void;
+    Disable(): void;
+    OnDestroy(): void;
+    OnInspectorGUI(): void;
     static MatchName(transformName: string, boneName: string): boolean;
-    OnSceneGUI(): any;
-    ApplyAndImport(): any;
-    SetDirty(): any;
+    OnSceneGUI(): void;
+    ApplyAndImport(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

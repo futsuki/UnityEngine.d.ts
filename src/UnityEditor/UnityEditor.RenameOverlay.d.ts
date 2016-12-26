@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     BeginRename(name: string, userData: number, delay: number): boolean;
-    EndRename(acceptChanges: boolean): any;
-    Clear(): any;
+    EndRename(acceptChanges: boolean): void;
+    Clear(): void;
     HasKeyboardFocus(): boolean;
     IsRenaming(): boolean;
     OnEvent(): boolean;

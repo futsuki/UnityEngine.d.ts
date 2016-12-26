@@ -3,12 +3,12 @@ declare namespace UnityEngine.Networking {
     // constructors
     constructor(topology: UnityEngine.Networking.HostTopology);
     // methods
-    InitWrapper(config: UnityEngine.Networking.ConnectionConfigInternal, maxDefaultConnections: number): any;
+    InitWrapper(config: UnityEngine.Networking.ConnectionConfigInternal, maxDefaultConnections: number): void;
     AddSpecialConnectionConfigWrapper(config: UnityEngine.Networking.ConnectionConfigInternal): number;
-    InitReceivedPoolSize(pool: number): any;
-    InitSentMessagePoolSize(pool: number): any;
-    InitMessagePoolSizeGrowthFactor(factor: number): any;
-    Dispose(): any;
+    InitReceivedPoolSize(pool: number): void;
+    InitSentMessagePoolSize(pool: number): void;
+    InitMessagePoolSizeGrowthFactor(factor: number): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

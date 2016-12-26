@@ -3,15 +3,15 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Init(blendTree: UnityEditor.Animations.BlendTree, animator: any): any;
-    CreateParameters(): any;
-    ResetStateMachine(): any;
-    OnDisable(): any;
-    OnDestroy(): any;
-    TestForReset(): any;
+    Init(blendTree: UnityEditor.Animations.BlendTree, animator: any): void;
+    CreateParameters(): void;
+    ResetStateMachine(): void;
+    OnDisable(): void;
+    OnDestroy(): void;
+    TestForReset(): void;
     HasPreviewGUI(): boolean;
-    OnPreviewSettings(): any;
-    OnInteractivePreviewGUI(r: any, background: any): any;
+    OnPreviewSettings(): void;
+    OnInteractivePreviewGUI(r: any, background: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

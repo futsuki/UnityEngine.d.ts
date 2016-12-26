@@ -5,7 +5,7 @@ declare namespace UnityEditor.SceneView {
     constructor(other: UnityEditor.SceneView.SceneViewState);
     // methods
     IsAllOn(): boolean;
-    Toggle(value: boolean): any;
+    Toggle(value: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Clear(): any;
+    Clear(): void;
     BeginNewAssetCreation(instanceID: number, newAssetEndAction: UnityEditor.ProjectWindowCallback.EndNameEditAction, filePath: string, icon: any, newAssetResourceFile: string): boolean;
-    EndNewAssetCreation(name: string): any;
+    EndNewAssetCreation(name: string): void;
     IsCreatingNewAsset(): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

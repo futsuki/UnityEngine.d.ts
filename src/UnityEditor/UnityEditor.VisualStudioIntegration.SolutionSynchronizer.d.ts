@@ -8,7 +8,7 @@ declare namespace UnityEditor.VisualStudioIntegration {
     ProjectExists(island: UnityEditor.Scripting.MonoIsland): boolean;
     SolutionExists(): boolean;
     SyncIfNeeded(affectedFiles: any): boolean;
-    Sync(): any;
+    Sync(): void;
     ProjectFile(island: UnityEditor.Scripting.MonoIsland): string;
     static IsManagedAssembly(file: string): boolean;
     static GetProjectExtension(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;

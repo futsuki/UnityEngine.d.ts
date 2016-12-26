@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor(type: UnityEditor.HierarchyType);
     // methods
-    SetResults(instanceIDs: number[]): any;
-    ResultsChanged(): any;
-    RefreshVisibleItems(expandedInstanceIDs: any): any;
+    SetResults(instanceIDs: number[]): void;
+    ResultsChanged(): void;
+    RefreshVisibleItems(expandedInstanceIDs: any): void;
     GetSubAssetInstanceIDs(mainAssetInstanceID: number): any;
     AddSubItemsOfMainRepresentation(mainRepresentionIndex: number, visibleItems: any): number;
     Equals(obj: any): boolean;

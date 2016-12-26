@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(hierarchyNodeID: number, curves: UnityEditorInternal.AnimationWindowCurve[]);
     // methods
-    InvalidateKeyframes(): any;
+    InvalidateKeyframes(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,17 +3,17 @@ declare namespace UnityEngine {
     // constructors
     constructor(size: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     // methods
-    SetPixel(face: UnityEngine.CubemapFace, x: number, y: number, color: UnityEngine.Color): any;
+    SetPixel(face: UnityEngine.CubemapFace, x: number, y: number, color: UnityEngine.Color): void;
     GetPixel(face: UnityEngine.CubemapFace, x: number, y: number): UnityEngine.Color;
     GetPixels(face: UnityEngine.CubemapFace, miplevel: number): UnityEngine.Color[];
     GetPixels(face: UnityEngine.CubemapFace): UnityEngine.Color[];
-    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, miplevel: number): any;
-    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace): any;
-    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): any;
-    Apply(updateMipmaps: boolean): any;
-    Apply(): any;
-    SmoothEdges(smoothRegionWidthInPixels: number): any;
-    SmoothEdges(): any;
+    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace, miplevel: number): void;
+    SetPixels(colors: UnityEngine.Color[], face: UnityEngine.CubemapFace): void;
+    Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
+    Apply(updateMipmaps: boolean): void;
+    Apply(): void;
+    SmoothEdges(smoothRegionWidthInPixels: number): void;
+    SmoothEdges(): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;

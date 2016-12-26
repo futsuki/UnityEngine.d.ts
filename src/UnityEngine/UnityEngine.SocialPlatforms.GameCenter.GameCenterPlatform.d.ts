@@ -3,17 +3,17 @@ declare namespace UnityEngine.SocialPlatforms.GameCenter {
     // constructors
     constructor();
     // methods
-    static ResetAllAchievements(callback: any): any;
-    static ShowDefaultAchievementCompletionBanner(value: boolean): any;
-    static ShowLeaderboardUI(leaderboardID: string, timeScope: UnityEngine.SocialPlatforms.TimeScope): any;
-    LoadUsers(userIDs: string[], callback: any): any;
-    ReportProgress(id: string, progress: number, callback: any): any;
-    LoadAchievementDescriptions(callback: any): any;
-    LoadAchievements(callback: any): any;
-    ReportScore(score: number, board: string, callback: any): any;
-    LoadScores(leaderboardID: string, callback: any): any;
-    ShowAchievementsUI(): any;
-    ShowLeaderboardUI(): any;
+    static ResetAllAchievements(callback: any): void;
+    static ShowDefaultAchievementCompletionBanner(value: boolean): void;
+    static ShowLeaderboardUI(leaderboardID: string, timeScope: UnityEngine.SocialPlatforms.TimeScope): void;
+    LoadUsers(userIDs: string[], callback: any): void;
+    ReportProgress(id: string, progress: number, callback: any): void;
+    LoadAchievementDescriptions(callback: any): void;
+    LoadAchievements(callback: any): void;
+    ReportScore(score: number, board: string, callback: any): void;
+    LoadScores(leaderboardID: string, callback: any): void;
+    ShowAchievementsUI(): void;
+    ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
     Equals(obj: any): boolean;

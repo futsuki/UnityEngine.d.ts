@@ -5,10 +5,10 @@ declare namespace UnityEditor {
     // methods
     IsEditor(): boolean;
     GetConnectedProfiler(): string;
-    static DirectIPConnect(ip: string): any;
-    static DirectURLConnect(url: string): any;
-    OnGUILayout(window: UnityEditor.EditorWindow): any;
-    OnGUI(connectRect: any, profilerLabel: any): any;
+    static DirectIPConnect(ip: string): void;
+    static DirectURLConnect(url: string): void;
+    OnGUILayout(window: UnityEditor.EditorWindow): void;
+    OnGUI(connectRect: any, profilerLabel: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

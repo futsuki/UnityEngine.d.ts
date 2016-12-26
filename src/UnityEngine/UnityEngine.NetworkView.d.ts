@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    RPC(name: string, mode: UnityEngine.RPCMode, args: any[]): any;
-    RPC(name: string, target: UnityEngine.NetworkPlayer, args: any[]): any;
+    RPC(name: string, mode: UnityEngine.RPCMode, args: any[]): void;
+    RPC(name: string, target: UnityEngine.NetworkPlayer, args: any[]): void;
     SetScope(player: UnityEngine.NetworkPlayer, relevancy: boolean): boolean;
     static Find(viewID: UnityEngine.NetworkViewID): UnityEngine.NetworkView;
     GetComponent(type: any): UnityEngine.Component;
@@ -17,20 +17,20 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): any;
+    GetComponents(type: any, results: any): void;
     CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessageUpwards(methodName: string, value: any): any;
-    SendMessageUpwards(methodName: string): any;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): any;
-    SendMessage(methodName: string, value: any): any;
-    SendMessage(methodName: string): any;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): any;
-    BroadcastMessage(methodName: string, parameter: any): any;
-    BroadcastMessage(methodName: string): any;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): any;
+    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessageUpwards(methodName: string, value: any): void;
+    SendMessageUpwards(methodName: string): void;
+    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
+    SendMessage(methodName: string, value: any): void;
+    SendMessage(methodName: string): void;
+    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
+    BroadcastMessage(methodName: string, parameter: any): void;
+    BroadcastMessage(methodName: string): void;
+    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

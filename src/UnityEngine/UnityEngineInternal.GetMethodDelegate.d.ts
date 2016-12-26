@@ -6,7 +6,7 @@ declare namespace UnityEngineInternal {
     Invoke(classType: any, methodName: string, searchBaseTypes: boolean, instanceMethod: boolean, methodParamTypes: any[]): any;
     BeginInvoke(classType: any, methodName: string, searchBaseTypes: boolean, instanceMethod: boolean, methodParamTypes: any[], callback: any, object: any): any;
     EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

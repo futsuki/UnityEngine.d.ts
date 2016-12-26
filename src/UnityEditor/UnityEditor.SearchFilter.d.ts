@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    ClearSearch(): any;
+    ClearSearch(): void;
     GetState(): UnityEditor.SearchFilter.State;
     IsSearching(): boolean;
     SetNewFilter(newFilter: UnityEditor.SearchFilter): boolean;

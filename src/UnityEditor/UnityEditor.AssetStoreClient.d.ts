@@ -7,7 +7,7 @@ declare namespace UnityEditor {
     static LoggedOut(): boolean;
     static LoginError(): boolean;
     static LoginInProgress(): boolean;
-    static Logout(): any;
+    static Logout(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

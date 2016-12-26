@@ -3,10 +3,10 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static StartLocationServiceUpdates(desiredAccuracyInMeters: number, updateDistanceInMeters: number): any;
-    static StartLocationServiceUpdates(desiredAccuracyInMeters: number): any;
-    static StartLocationServiceUpdates(): any;
-    static StopLocationServiceUpdates(): any;
+    static StartLocationServiceUpdates(desiredAccuracyInMeters: number, updateDistanceInMeters: number): void;
+    static StartLocationServiceUpdates(desiredAccuracyInMeters: number): void;
+    static StartLocationServiceUpdates(): void;
+    static StopLocationServiceUpdates(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

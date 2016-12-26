@@ -3,9 +3,9 @@ declare namespace UnityEditor.NetworkDetailStats {
     // constructors
     constructor();
     // methods
-    NewProfilerTick(tickId: number): any;
-    Clear(): any;
-    AddStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, amount: number): any;
+    NewProfilerTick(tickId: number): void;
+    Clear(): void;
+    AddStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, amount: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

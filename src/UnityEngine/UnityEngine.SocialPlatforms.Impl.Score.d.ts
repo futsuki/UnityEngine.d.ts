@@ -6,11 +6,11 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(leaderboardID: string, value: number, userID: string, date: any, formattedValue: string, rank: number);
     // methods
     ToString(): string;
-    ReportScore(callback: any): any;
-    SetDate(date: any): any;
-    SetFormattedValue(value: string): any;
-    SetUserID(userID: string): any;
-    SetRank(rank: number): any;
+    ReportScore(callback: any): void;
+    SetDate(date: any): void;
+    SetFormattedValue(value: string): void;
+    SetUserID(userID: string): void;
+    SetRank(rank: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

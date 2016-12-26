@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor(editorWindow: UnityEditor.EditorWindow, detailview: UnityEditor.MemoryTreeList);
     // methods
-    OnGUI(): any;
-    SetRoot(root: UnityEditor.MemoryElement): any;
+    OnGUI(): void;
+    SetRoot(root: UnityEditor.MemoryElement): void;
     GetRoot(): UnityEditor.MemoryElement;
     Equals(obj: any): boolean;
     GetHashCode(): number;

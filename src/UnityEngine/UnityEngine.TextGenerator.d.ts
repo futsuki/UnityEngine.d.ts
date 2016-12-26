@@ -4,10 +4,10 @@ declare namespace UnityEngine {
     constructor();
     constructor(initialCapacity: number);
     // methods
-    Invalidate(): any;
-    GetCharacters(characters: any): any;
-    GetLines(lines: any): any;
-    GetVertices(vertices: any): any;
+    Invalidate(): void;
+    GetCharacters(characters: any): void;
+    GetLines(lines: any): void;
+    GetVertices(vertices: any): void;
     GetPreferredWidth(str: string, settings: UnityEngine.TextGenerationSettings): number;
     GetPreferredHeight(str: string, settings: UnityEngine.TextGenerationSettings): number;
     PopulateWithErrors(str: string, settings: UnityEngine.TextGenerationSettings, context: UnityEngine.GameObject): boolean;

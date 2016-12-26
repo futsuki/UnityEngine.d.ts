@@ -3,13 +3,13 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    Set(newX: number, newY: number): any;
+    Set(newX: number, newY: number): void;
     static Lerp(a: UnityEngine.Vector2, b: UnityEngine.Vector2, t: number): UnityEngine.Vector2;
     static LerpUnclamped(a: UnityEngine.Vector2, b: UnityEngine.Vector2, t: number): UnityEngine.Vector2;
     static MoveTowards(current: UnityEngine.Vector2, target: UnityEngine.Vector2, maxDistanceDelta: number): UnityEngine.Vector2;
     static Scale(a: UnityEngine.Vector2, b: UnityEngine.Vector2): UnityEngine.Vector2;
-    Scale(scale: UnityEngine.Vector2): any;
-    Normalize(): any;
+    Scale(scale: UnityEngine.Vector2): void;
+    Normalize(): void;
     ToString(): string;
     ToString(format: string): string;
     GetHashCode(): number;
@@ -27,7 +27,7 @@ declare namespace UnityEngine {
     GetType(): any;
     // properties
     get_Item(index: number): number;
-    set_Item(index: number, value: number): any;
+    set_Item(index: number, value: number): void;
     readonly normalized: UnityEngine.Vector2;
     readonly magnitude: number;
     readonly sqrMagnitude: number;

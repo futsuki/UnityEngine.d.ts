@@ -3,7 +3,7 @@ declare namespace UnityEditor.Connect {
     // constructors
     private constructor();
     // methods
-    static StaticEnableService(serviceName: string, enabled: boolean): any;
+    static StaticEnableService(serviceName: string, enabled: boolean): void;
     // properties
     // fields
   }

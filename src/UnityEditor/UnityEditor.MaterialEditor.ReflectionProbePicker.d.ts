@@ -4,11 +4,11 @@ declare namespace UnityEditor.MaterialEditor {
     constructor();
     // methods
     GetWindowSize(): any;
-    OnEnable(): any;
-    OnDisable(): any;
-    OnGUI(rc: any): any;
-    OnOpen(): any;
-    OnClose(): any;
+    OnEnable(): void;
+    OnDisable(): void;
+    OnGUI(rc: any): void;
+    OnOpen(): void;
+    OnClose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

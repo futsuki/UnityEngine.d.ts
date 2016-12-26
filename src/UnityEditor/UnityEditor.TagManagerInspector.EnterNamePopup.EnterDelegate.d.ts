@@ -3,10 +3,10 @@ declare namespace UnityEditor.TagManagerInspector.EnterNamePopup {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(str: string): any;
+    Invoke(str: string): void;
     BeginInvoke(str: string, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

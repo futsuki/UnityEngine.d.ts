@@ -3,9 +3,9 @@ declare namespace UnityEditor.AddComponentWindow {
     // constructors
     constructor();
     // methods
-    OnGUI(): any;
+    OnGUI(): void;
     CanCreate(): boolean;
-    Create(): any;
+    Create(): void;
     TargetPath(): string;
     CompareTo(o: any): number;
     Equals(obj: any): boolean;

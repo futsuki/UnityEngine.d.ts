@@ -6,11 +6,11 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(name: string, id: string, friend: boolean, state: UnityEngine.SocialPlatforms.UserState, image: UnityEngine.Texture2D);
     // methods
     ToString(): string;
-    SetUserName(name: string): any;
-    SetUserID(id: string): any;
-    SetImage(image: UnityEngine.Texture2D): any;
-    SetIsFriend(value: boolean): any;
-    SetState(state: UnityEngine.SocialPlatforms.UserState): any;
+    SetUserName(name: string): void;
+    SetUserID(id: string): void;
+    SetImage(image: UnityEngine.Texture2D): void;
+    SetIsFriend(value: boolean): void;
+    SetState(state: UnityEngine.SocialPlatforms.UserState): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

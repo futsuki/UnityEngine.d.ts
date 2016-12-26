@@ -3,7 +3,7 @@ declare namespace UnityEditor.Connect.UnityConnectPrefs {
     // constructors
     constructor(serviceName: string);
     // methods
-    StoreCloudServicePref(): any;
+    StoreCloudServicePref(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

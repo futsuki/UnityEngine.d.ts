@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor(value: number, vertices: any[]);
     constructor(value: number, safe: boolean, vertices: any[]);
     // methods
-    Draw(): any;
+    Draw(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

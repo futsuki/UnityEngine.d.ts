@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static BeginGroup(GroupName: string): any;
-    static EndGroup(groupName: string): any;
+    static BeginGroup(GroupName: string): void;
+    static EndGroup(groupName: string): void;
     static GetRect(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static GetRect(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static GetRect(width: number, height: number): UnityEngine.Rect;

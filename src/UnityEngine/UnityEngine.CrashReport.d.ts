@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static RemoveAll(): any;
+    static RemoveAll(): void;
     // properties
     // fields
   }

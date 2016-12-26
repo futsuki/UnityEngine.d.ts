@@ -9,7 +9,7 @@ declare namespace UnityEngine {
     GetHashCode(): number;
     Equals(obj: any): boolean;
     ToString(): string;
-    Use(): any;
+    Use(): void;
     GetTypeForControl(controlID: number): UnityEngine.EventType;
     static PopEvent(outEvent: UnityEngine.Event): boolean;
     static GetEventCount(): number;

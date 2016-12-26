@@ -4,11 +4,11 @@ declare namespace UnityEditor {
     constructor();
     // methods
     IsInitialized(): boolean;
-    Init(position: any, owner: UnityEditor.EditorWindow, treeViewNeededCallback: any, selectionCallback: any, doubleClickedCallback: any, initialSelectedTreeViewItemID: number, userData: number): any;
-    Clear(): any;
+    Init(position: any, owner: UnityEditor.EditorWindow, treeViewNeededCallback: any, selectionCallback: any, doubleClickedCallback: any, initialSelectedTreeViewItemID: number, userData: number): void;
+    Clear(): void;
     GetSelection(): number[];
-    SetTreeView(treeView: UnityEditor.IMGUI.Controls.TreeViewController): any;
-    OnGUI(position: any): any;
+    SetTreeView(treeView: UnityEditor.IMGUI.Controls.TreeViewController): void;
+    OnGUI(position: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

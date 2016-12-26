@@ -3,11 +3,11 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnDisable(): any;
+    OnDisable(): void;
     GetMipLevelForRendering(texture: any): number;
-    SetIntensity(intensity: number): any;
-    OnPreviewSettings(targets: any[]): any;
-    OnPreviewGUI(t: any, r: any, background: any): any;
+    SetIntensity(intensity: number): void;
+    OnPreviewSettings(targets: any[]): void;
+    OnPreviewGUI(t: any, r: any, background: any): void;
     RenderStaticPreview(t: any, width: number, height: number): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

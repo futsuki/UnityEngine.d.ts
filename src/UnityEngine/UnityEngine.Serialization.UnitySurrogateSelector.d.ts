@@ -4,7 +4,7 @@ declare namespace UnityEngine.Serialization {
     constructor();
     // methods
     GetSurrogate(type: any, context: any, selector: any): any;
-    ChainSelector(selector: any): any;
+    ChainSelector(selector: any): void;
     GetNextSelector(): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

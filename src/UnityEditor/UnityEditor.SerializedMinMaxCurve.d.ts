@@ -7,13 +7,13 @@ declare namespace UnityEditor {
     constructor(m: UnityEditor.ModuleUI, displayName: any, name: string, signedRange: boolean);
     constructor(m: UnityEditor.ModuleUI, displayName: any, name: string, signedRange: boolean, useProp0: boolean);
     // methods
-    SetScalarAndNormalizedConstants(newScalar: number, totalMin: number, totalMax: number): any;
+    SetScalarAndNormalizedConstants(newScalar: number, totalMin: number, totalMax: number): void;
     GetAxisScalars(): any;
-    SetAxisScalars(axisScalars: any): any;
-    RemoveCurveFromEditor(): any;
+    SetAxisScalars(axisScalars: any): void;
+    RemoveCurveFromEditor(): void;
     OnCurveAreaMouseDown(button: number, drawRect: any, curveRanges: any): boolean;
     CreateCurveData(color: any): ParticleSystemCurveEditor.CurveData;
-    ToggleCurveInEditor(): any;
+    ToggleCurveInEditor(): void;
     GetUniqueCurveName(): string;
     SupportsProcedural(): boolean;
     Equals(obj: any): boolean;

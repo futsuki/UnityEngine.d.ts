@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnGUI(): any;
+    OnGUI(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,7 +3,7 @@ declare namespace UnityEditor.Collaboration {
     // constructors
     constructor();
     // methods
-    static OnProjectWindowItemIconOverlay(guid: string, drawRect: any): any;
+    static OnProjectWindowItemIconOverlay(guid: string, drawRect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

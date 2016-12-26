@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor();
     constructor(name: string, shortcut: string);
     // methods
-    Load(): any;
+    Load(): void;
     ToUniqueString(): string;
-    FromUniqueString(s: string): any;
+    FromUniqueString(s: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,18 +3,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
-    SetBoundingSpheres(array: UnityEngine.BoundingSphere[]): any;
-    SetBoundingSphereCount(count: number): any;
-    EraseSwapBack(index: number): any;
+    Dispose(): void;
+    SetBoundingSpheres(array: UnityEngine.BoundingSphere[]): void;
+    SetBoundingSphereCount(count: number): void;
+    EraseSwapBack(index: number): void;
     QueryIndices(visible: boolean, result: number[], firstIndex: number): number;
     QueryIndices(distanceIndex: number, result: number[], firstIndex: number): number;
     QueryIndices(visible: boolean, distanceIndex: number, result: number[], firstIndex: number): number;
     IsVisible(index: number): boolean;
     GetDistance(index: number): number;
-    SetBoundingDistances(distances: number[]): any;
-    SetDistanceReferencePoint(point: UnityEngine.Vector3): any;
-    SetDistanceReferencePoint(transform: UnityEngine.Transform): any;
+    SetBoundingDistances(distances: number[]): void;
+    SetDistanceReferencePoint(point: UnityEngine.Vector3): void;
+    SetDistanceReferencePoint(transform: UnityEngine.Transform): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static OptimizeTransformHierarchy(go: UnityEngine.GameObject, exposedTransforms: string[]): any;
-    static DeoptimizeTransformHierarchy(go: UnityEngine.GameObject): any;
+    static OptimizeTransformHierarchy(go: UnityEngine.GameObject, exposedTransforms: string[]): void;
+    static DeoptimizeTransformHierarchy(go: UnityEngine.GameObject): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

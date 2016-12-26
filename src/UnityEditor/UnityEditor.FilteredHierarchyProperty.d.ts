@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor(filter: UnityEditor.FilteredHierarchy);
     // methods
     static CreateHierarchyPropertyForFilter(filteredHierarchy: UnityEditor.FilteredHierarchy): UnityEditor.IHierarchyProperty;
-    Reset(): any;
+    Reset(): void;
     IsExpanded(expanded: number[]): boolean;
     Next(expanded: number[]): boolean;
     NextWithDepthCheck(expanded: number[], minDepth: number): boolean;

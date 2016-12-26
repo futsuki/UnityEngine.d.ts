@@ -3,7 +3,7 @@ declare namespace UnityEditor.Animations.PushUndoIfNeeded {
     // constructors
     constructor(pushUndo: boolean);
     // methods
-    DoUndo(target: any, undoOperation: string): any;
+    DoUndo(target: any, undoOperation: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,10 +3,10 @@ declare namespace UnityEditor.Handles {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(controlID: number, position: any, rotation: any, size: number): any;
+    Invoke(controlID: number, position: any, rotation: any, size: number): void;
     BeginInvoke(controlID: number, position: any, rotation: any, size: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

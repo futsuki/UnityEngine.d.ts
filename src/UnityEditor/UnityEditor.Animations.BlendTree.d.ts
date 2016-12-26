@@ -3,10 +3,10 @@ declare namespace UnityEditor.Animations {
     // constructors
     constructor();
     // methods
-    AddChild(motion: any): any;
-    AddChild(motion: any, position: any): any;
-    AddChild(motion: any, threshold: number): any;
-    RemoveChild(index: number): any;
+    AddChild(motion: any): void;
+    AddChild(motion: any, position: any): void;
+    AddChild(motion: any, threshold: number): void;
+    RemoveChild(index: number): void;
     CreateBlendTreeChild(threshold: number): UnityEditor.Animations.BlendTree;
     CreateBlendTreeChild(position: any): UnityEditor.Animations.BlendTree;
     ValidateIfRetargetable(val: boolean): boolean;

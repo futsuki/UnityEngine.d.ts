@@ -7,10 +7,10 @@ declare namespace UnityEditorInternal {
     static RoundedRect(rect: any): any;
     static RoundToInt(r: any): any;
     static ClampedRect(rect: any, clamp: any, maintainSize: boolean): any;
-    static DrawBox(position: any): any;
-    static DrawLine(p1: any, p2: any): any;
-    static BeginLines(color: any): any;
-    static EndLines(): any;
+    static DrawBox(position: any): void;
+    static DrawLine(p1: any, p2: any): void;
+    static BeginLines(color: any): void;
+    static EndLines(): void;
     // properties
     // fields
   }

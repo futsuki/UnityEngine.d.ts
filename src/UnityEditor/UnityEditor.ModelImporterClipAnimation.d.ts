@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    ConfigureMaskFromClip(mask: any): any;
-    ConfigureClipFromMask(mask: UnityEditor.Animations.AvatarMask): any;
+    ConfigureMaskFromClip(mask: any): void;
+    ConfigureClipFromMask(mask: UnityEditor.Animations.AvatarMask): void;
     Equals(o: any): boolean;
     GetHashCode(): number;
     GetType(): any;

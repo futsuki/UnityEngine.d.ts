@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static Open(assetStoreURL: string): any;
+    static Open(assetStoreURL: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

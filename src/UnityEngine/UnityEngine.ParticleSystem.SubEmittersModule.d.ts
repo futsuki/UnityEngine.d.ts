@@ -3,11 +3,11 @@ declare namespace UnityEngine.ParticleSystem {
     // constructors
     private constructor();
     // methods
-    AddSubEmitter(subEmitter: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemSubEmitterType, properties: UnityEngine.ParticleSystemSubEmitterProperties): any;
-    RemoveSubEmitter(index: number): any;
-    SetSubEmitterSystem(index: number, subEmitter: UnityEngine.ParticleSystem): any;
-    SetSubEmitterType(index: number, type: UnityEngine.ParticleSystemSubEmitterType): any;
-    SetSubEmitterProperties(index: number, properties: UnityEngine.ParticleSystemSubEmitterProperties): any;
+    AddSubEmitter(subEmitter: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemSubEmitterType, properties: UnityEngine.ParticleSystemSubEmitterProperties): void;
+    RemoveSubEmitter(index: number): void;
+    SetSubEmitterSystem(index: number, subEmitter: UnityEngine.ParticleSystem): void;
+    SetSubEmitterType(index: number, type: UnityEngine.ParticleSystemSubEmitterType): void;
+    SetSubEmitterProperties(index: number, properties: UnityEngine.ParticleSystemSubEmitterProperties): void;
     GetSubEmitterSystem(index: number): UnityEngine.ParticleSystem;
     GetSubEmitterType(index: number): UnityEngine.ParticleSystemSubEmitterType;
     GetSubEmitterProperties(index: number): UnityEngine.ParticleSystemSubEmitterProperties;

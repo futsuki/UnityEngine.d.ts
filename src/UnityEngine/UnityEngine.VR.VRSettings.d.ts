@@ -3,8 +3,8 @@ declare namespace UnityEngine.VR {
     // constructors
     private constructor();
     // methods
-    static LoadDeviceByName(deviceName: string): any;
-    static LoadDeviceByName(prioritizedDeviceNameList: string[]): any;
+    static LoadDeviceByName(deviceName: string): void;
+    static LoadDeviceByName(prioritizedDeviceNameList: string[]): void;
     // properties
     // fields
   }

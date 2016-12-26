@@ -5,7 +5,7 @@ declare namespace UnityEditor {
     // methods
     static GetLightmapTilingOffset(lightmapType: any): any;
     static GetGITexture(textureType: any): any;
-    static DrawTextureWithUVOverlay(texture: any, gameObject: any, drawableArea: any, position: any, textureType: any, drawSpecularUV: boolean): any;
+    static DrawTextureWithUVOverlay(texture: any, gameObject: any, drawableArea: any, position: any, textureType: any, drawSpecularUV: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

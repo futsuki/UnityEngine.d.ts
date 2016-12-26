@@ -4,7 +4,7 @@ declare namespace UnityEditorInternal {
     constructor(msg: string);
     // methods
     GetBaseException(): any;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     ToString(): string;
     GetType(): any;
     Equals(obj: any): boolean;

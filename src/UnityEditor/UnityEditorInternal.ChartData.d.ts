@@ -3,9 +3,9 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    Assign(items: UnityEditorInternal.ChartSeries[], firstFrame: number, firstSelectableFrame: number): any;
-    AssignScale(scale: number[]): any;
-    SetGrid(grid: number[], labels: string[]): any;
+    Assign(items: UnityEditorInternal.ChartSeries[], firstFrame: number, firstSelectableFrame: number): void;
+    AssignScale(scale: number[]): void;
+    SetGrid(grid: number[], labels: string[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

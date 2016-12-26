@@ -9,7 +9,7 @@ declare namespace UnityEngine.GUI {
     constructor(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle);
     constructor(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

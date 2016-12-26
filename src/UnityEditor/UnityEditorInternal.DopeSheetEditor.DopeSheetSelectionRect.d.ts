@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal.DopeSheetEditor {
     // constructors
     constructor(owner: UnityEditorInternal.DopeSheetEditor);
     // methods
-    OnGUI(position: any): any;
+    OnGUI(position: any): void;
     GetCurrentPixelRect(): any;
     GetCurrentTimeRect(): any;
     Equals(obj: any): boolean;

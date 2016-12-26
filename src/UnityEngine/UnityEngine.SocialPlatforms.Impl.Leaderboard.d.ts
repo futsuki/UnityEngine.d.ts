@@ -3,13 +3,13 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // constructors
     constructor();
     // methods
-    SetUserFilter(userIDs: string[]): any;
+    SetUserFilter(userIDs: string[]): void;
     ToString(): string;
-    LoadScores(callback: any): any;
-    SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): any;
-    SetMaxRange(maxRange: number): any;
-    SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): any;
-    SetTitle(title: string): any;
+    LoadScores(callback: any): void;
+    SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): void;
+    SetMaxRange(maxRange: number): void;
+    SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): void;
+    SetTitle(title: string): void;
     GetUserFilter(): string[];
     Equals(obj: any): boolean;
     GetHashCode(): number;

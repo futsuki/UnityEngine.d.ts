@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    PaintHeight(xCenterNormalized: number, yCenterNormalized: number): any;
+    PaintHeight(xCenterNormalized: number, yCenterNormalized: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

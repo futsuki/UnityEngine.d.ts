@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor(id: number, depth: number, parent: UnityEditor.IMGUI.Controls.TreeViewItem, displayName: string, mixer: UnityEditor.Audio.AudioMixerController, infoText: string);
     // methods
-    UpdateSuspendedString(force: boolean): any;
+    UpdateSuspendedString(force: boolean): void;
     CompareTo(other: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     ToString(): string;
     Equals(obj: any): boolean;

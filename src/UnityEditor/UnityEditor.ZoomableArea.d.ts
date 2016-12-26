@@ -5,10 +5,10 @@ declare namespace UnityEditor {
     constructor(minimalGUI: boolean);
     constructor(minimalGUI: boolean, enableSliderZoom: boolean);
     // methods
-    SetShownHRangeInsideMargins(min: number, max: number): any;
-    SetShownHRange(min: number, max: number): any;
-    SetShownVRangeInsideMargins(min: number, max: number): any;
-    SetShownVRange(min: number, max: number): any;
+    SetShownHRangeInsideMargins(min: number, max: number): void;
+    SetShownHRange(min: number, max: number): void;
+    SetShownVRangeInsideMargins(min: number, max: number): void;
+    SetShownVRange(min: number, max: number): void;
     DrawingToViewTransformPoint(lhs: any): any;
     DrawingToViewTransformPoint(lhs: any): any;
     ViewToDrawingTransformPoint(lhs: any): any;
@@ -18,13 +18,13 @@ declare namespace UnityEditor {
     ViewToDrawingTransformVector(lhs: any): any;
     ViewToDrawingTransformVector(lhs: any): any;
     NormalizeInViewSpace(vec: any): any;
-    BeginViewGUI(): any;
-    HandleZoomAndPanEvents(area: any): any;
-    EndViewGUI(): any;
-    SetScaleFocused(focalPoint: any, newScale: any): any;
-    SetScaleFocused(focalPoint: any, newScale: any, lockHorizontal: boolean, lockVertical: boolean): any;
-    SetTransform(newTranslation: any, newScale: any): any;
-    EnforceScaleAndRange(): any;
+    BeginViewGUI(): void;
+    HandleZoomAndPanEvents(area: any): void;
+    EndViewGUI(): void;
+    SetScaleFocused(focalPoint: any, newScale: any): void;
+    SetScaleFocused(focalPoint: any, newScale: any, lockHorizontal: boolean, lockVertical: boolean): void;
+    SetTransform(newTranslation: any, newScale: any): void;
+    EnforceScaleAndRange(): void;
     PixelToTime(pixelX: number, rect: any): number;
     TimeToPixel(time: number, rect: any): number;
     PixelDeltaToTime(rect: any): number;

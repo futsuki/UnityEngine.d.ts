@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor(style: any, cursor: UnityEditor.MouseCursor);
     constructor(style: any);
     // methods
-    OnGUI(widgetRect: any): any;
-    HandleEvents(): any;
-    IgnoreEvents(): any;
+    OnGUI(widgetRect: any): void;
+    HandleEvents(): void;
+    IgnoreEvents(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

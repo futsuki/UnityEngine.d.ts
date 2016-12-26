@@ -3,7 +3,7 @@ declare namespace UnityEngine.Diagnostics {
     // constructors
     private constructor();
     // methods
-    static SendFile(remoteFilePath: string, data: number[]): any;
+    static SendFile(remoteFilePath: string, data: number[]): void;
     // properties
     // fields
   }

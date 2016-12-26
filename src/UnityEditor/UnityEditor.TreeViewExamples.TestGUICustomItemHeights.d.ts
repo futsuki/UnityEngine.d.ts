@@ -3,21 +3,21 @@ declare namespace UnityEditor.TreeViewExamples {
     // constructors
     constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController);
     // methods
-    BeginRowGUI(): any;
-    EndRowGUI(): any;
-    OnRowGUI(rowRect: any, item: UnityEditor.IMGUI.Controls.TreeViewItem, row: number, selected: boolean, focused: boolean): any;
-    OnInitialize(): any;
+    BeginRowGUI(): void;
+    EndRowGUI(): void;
+    OnRowGUI(rowRect: any, item: UnityEditor.IMGUI.Controls.TreeViewItem, row: number, selected: boolean, focused: boolean): void;
+    OnInitialize(): void;
     GetRowRect(row: number, rowWidth: number): any;
     GetRenameRect(rowRect: any, row: number, item: UnityEditor.IMGUI.Controls.TreeViewItem): any;
     GetRectForFraming(row: number): any;
-    CalculateRowRects(): any;
+    CalculateRowRects(): void;
     GetTotalSize(): any;
     GetNumRowsOnPageUpDown(fromItem: UnityEditor.IMGUI.Controls.TreeViewItem, pageUp: boolean, heightOfTreeView: number): number;
-    GetFirstAndLastRowVisible(firstRowVisible: any, lastRowVisible: any): any;
-    BeginPingItem(item: UnityEditor.IMGUI.Controls.TreeViewItem, topPixelOfRow: number, availableWidth: number): any;
-    EndPingItem(): any;
+    GetFirstAndLastRowVisible(firstRowVisible: any, lastRowVisible: any): void;
+    BeginPingItem(item: UnityEditor.IMGUI.Controls.TreeViewItem, topPixelOfRow: number, availableWidth: number): void;
+    EndPingItem(): void;
     BeginRename(item: UnityEditor.IMGUI.Controls.TreeViewItem, delay: number): boolean;
-    EndRename(): any;
+    EndRename(): void;
     GetFoldoutIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     GetContentIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     Equals(obj: any): boolean;

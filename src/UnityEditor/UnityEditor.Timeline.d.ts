@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    ResetRange(): any;
+    ResetRange(): void;
     DoTimeline(timeRect: any): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -2,8 +2,8 @@
     // constructors
     constructor();
     // methods
-    static Patch(serializedObject: UnityEditor.SerializedObject, classID: number, oldName: string, newName: string): any;
-    static PatchMultiple(serializedObject: UnityEditor.SerializedObject, classID: number, oldNames: string[], newNames: string[]): any;
+    static Patch(serializedObject: UnityEditor.SerializedObject, classID: number, oldName: string, newName: string): void;
+    static PatchMultiple(serializedObject: UnityEditor.SerializedObject, classID: number, oldNames: string[], newNames: string[]): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    FindProperties(props: UnityEditor.MaterialProperty[]): any;
-    OnGUI(materialEditor: UnityEditor.MaterialEditor, props: UnityEditor.MaterialProperty[]): any;
-    ShaderPropertiesGUI(material: any): any;
-    AssignNewShaderToMaterial(material: any, oldShader: any, newShader: any): any;
-    static SetupMaterialWithBlendMode(material: any, blendMode: UnityEditor.StandardShaderGUI.BlendMode): any;
-    OnMaterialPreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): any;
-    OnMaterialInteractivePreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): any;
-    OnMaterialPreviewSettingsGUI(materialEditor: UnityEditor.MaterialEditor): any;
+    FindProperties(props: UnityEditor.MaterialProperty[]): void;
+    OnGUI(materialEditor: UnityEditor.MaterialEditor, props: UnityEditor.MaterialProperty[]): void;
+    ShaderPropertiesGUI(material: any): void;
+    AssignNewShaderToMaterial(material: any, oldShader: any, newShader: any): void;
+    static SetupMaterialWithBlendMode(material: any, blendMode: UnityEditor.StandardShaderGUI.BlendMode): void;
+    OnMaterialPreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): void;
+    OnMaterialInteractivePreviewGUI(materialEditor: UnityEditor.MaterialEditor, r: any, background: any): void;
+    OnMaterialPreviewSettingsGUI(materialEditor: UnityEditor.MaterialEditor): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

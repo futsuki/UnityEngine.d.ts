@@ -3,8 +3,8 @@ declare namespace UnityEditorInternal.UnityEventDrawer {
     // constructors
     private constructor();
     // methods
-    Assign(): any;
-    Clear(): any;
+    Assign(): void;
+    Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

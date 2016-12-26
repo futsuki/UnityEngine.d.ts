@@ -3,10 +3,10 @@ declare namespace UnityEditor.Connect {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(state: UnityEditor.Connect.UserInfo): any;
+    Invoke(state: UnityEditor.Connect.UserInfo): void;
     BeginInvoke(state: UnityEditor.Connect.UserInfo, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

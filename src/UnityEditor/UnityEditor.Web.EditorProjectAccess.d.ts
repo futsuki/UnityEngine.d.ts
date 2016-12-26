@@ -5,7 +5,7 @@ declare namespace UnityEditor.Web {
     // methods
     GetProjectEditorVersion(): string;
     GetRESTServiceURI(): string;
-    OpenLink(link: string): any;
+    OpenLink(link: string): void;
     IsOnline(): boolean;
     IsLoggedIn(): boolean;
     GetEnvironment(): string;
@@ -20,15 +20,15 @@ declare namespace UnityEditor.Web {
     GetOrganizationID(): string;
     GetBuildTarget(): string;
     IsProjectBound(): boolean;
-    EnableCloud(enable: boolean): any;
-    EnterPlayMode(): any;
+    EnableCloud(enable: boolean): void;
+    EnterPlayMode(): void;
     IsPlayMode(): boolean;
     SaveCurrentModifiedScenesIfUserWantsTo(): boolean;
     GetEditorSkinIndex(): number;
-    GoToHistory(): any;
-    ShowToolbarDropdown(): any;
-    CloseToolbarWindow(): any;
-    CloseToolbarWindowImmediately(): any;
+    GoToHistory(): void;
+    ShowToolbarDropdown(): void;
+    CloseToolbarWindow(): void;
+    CloseToolbarWindowImmediately(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,16 +3,16 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static LoadUsers(userIDs: string[], callback: any): any;
-    static ReportProgress(achievementID: string, progress: number, callback: any): any;
-    static LoadAchievementDescriptions(callback: any): any;
-    static LoadAchievements(callback: any): any;
-    static ReportScore(score: number, board: string, callback: any): any;
-    static LoadScores(leaderboardID: string, callback: any): any;
+    static LoadUsers(userIDs: string[], callback: any): void;
+    static ReportProgress(achievementID: string, progress: number, callback: any): void;
+    static LoadAchievementDescriptions(callback: any): void;
+    static LoadAchievements(callback: any): void;
+    static ReportScore(score: number, board: string, callback: any): void;
+    static LoadScores(leaderboardID: string, callback: any): void;
     static CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     static CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
-    static ShowAchievementsUI(): any;
-    static ShowLeaderboardUI(): any;
+    static ShowAchievementsUI(): void;
+    static ShowLeaderboardUI(): void;
     // properties
     // fields
   }

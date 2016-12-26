@@ -4,9 +4,9 @@ declare namespace UnityEngine {
     constructor(width: number, height: number, format: UnityEngine.TextureFormat, mipCount: number);
     constructor(width: number, height: number, format: UnityEngine.TextureFormat, mipCount: number, linear: boolean);
     // methods
-    UpdateTile(tileX: number, tileY: number, miplevel: number, data: UnityEngine.Color32[]): any;
-    UpdateTileRaw(tileX: number, tileY: number, miplevel: number, data: number[]): any;
-    UnloadTile(tileX: number, tileY: number, miplevel: number): any;
+    UpdateTile(tileX: number, tileY: number, miplevel: number, data: UnityEngine.Color32[]): void;
+    UpdateTileRaw(tileX: number, tileY: number, miplevel: number, data: number[]): void;
+    UnloadTile(tileX: number, tileY: number, miplevel: number): void;
     GetNativeTexturePtr(): any;
     GetNativeTextureID(): number;
     ToString(): string;

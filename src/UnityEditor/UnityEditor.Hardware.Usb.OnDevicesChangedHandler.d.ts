@@ -3,10 +3,10 @@ declare namespace UnityEditor.Hardware.Usb {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(devices: UnityEditor.Hardware.UsbDevice[]): any;
+    Invoke(devices: UnityEditor.Hardware.UsbDevice[]): void;
     BeginInvoke(devices: UnityEditor.Hardware.UsbDevice[], callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

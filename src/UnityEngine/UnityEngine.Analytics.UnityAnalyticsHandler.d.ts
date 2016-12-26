@@ -3,7 +3,7 @@ declare namespace UnityEngine.Analytics {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
+    Dispose(): void;
     FlushEvents(): UnityEngine.Analytics.AnalyticsResult;
     SetUserId(userId: string): UnityEngine.Analytics.AnalyticsResult;
     SetUserGender(gender: UnityEngine.Analytics.Gender): UnityEngine.Analytics.AnalyticsResult;

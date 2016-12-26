@@ -4,13 +4,13 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static DeleteFileOrDirectory(path: string): boolean;
-    static CopyFileOrDirectory(from: string, to: string): any;
-    static CopyFileOrDirectoryFollowSymlinks(from: string, to: string): any;
-    static MoveFileOrDirectory(from: string, to: string): any;
+    static CopyFileOrDirectory(from: string, to: string): void;
+    static CopyFileOrDirectoryFollowSymlinks(from: string, to: string): void;
+    static MoveFileOrDirectory(from: string, to: string): void;
     static GetUniqueTempPathInProject(): string;
     static GetProjectRelativePath(path: string): string;
-    static ReplaceFile(src: string, dst: string): any;
-    static ReplaceDirectory(src: string, dst: string): any;
+    static ReplaceFile(src: string, dst: string): void;
+    static ReplaceDirectory(src: string, dst: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

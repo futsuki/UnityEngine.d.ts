@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Init(owner: UnityEditor.ParticleEffectUI, ps: any): any;
+    Init(owner: UnityEditor.ParticleEffectUI, ps: any): void;
     GetName(): string;
     GetEmitterDuration(): number;
-    OnGUI(root: any, width: number, fixedWidth: boolean): any;
-    OnSceneGUI(): any;
-    ApplyProperties(): any;
-    UpdateProperties(): any;
+    OnGUI(root: any, width: number, fixedWidth: boolean): void;
+    OnSceneGUI(): void;
+    ApplyProperties(): void;
+    UpdateProperties(): void;
     static GetUIModuleNames(): string[];
     Equals(obj: any): boolean;
     GetHashCode(): number;

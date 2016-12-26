@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnGUI(position: any, property: UnityEditor.SerializedProperty, label: any): any;
+    OnGUI(position: any, property: UnityEditor.SerializedProperty, label: any): void;
     GetPropertyHeight(property: UnityEditor.SerializedProperty, label: any): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

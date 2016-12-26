@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor(intervalBetweenTicksInSeconds: number);
     // methods
     DoTick(): boolean;
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

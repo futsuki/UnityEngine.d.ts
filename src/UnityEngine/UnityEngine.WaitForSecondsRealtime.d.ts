@@ -4,7 +4,7 @@ declare namespace UnityEngine {
     constructor(time: number);
     // methods
     MoveNext(): boolean;
-    Reset(): any;
+    Reset(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

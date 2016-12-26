@@ -3,12 +3,12 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    AddField(fieldName: string, value: string): any;
-    AddField(fieldName: string, value: string, e: any): any;
-    AddField(fieldName: string, i: number): any;
-    AddBinaryData(fieldName: string, contents: number[], fileName: string): any;
-    AddBinaryData(fieldName: string, contents: number[]): any;
-    AddBinaryData(fieldName: string, contents: number[], fileName: string, mimeType: string): any;
+    AddField(fieldName: string, value: string): void;
+    AddField(fieldName: string, value: string, e: any): void;
+    AddField(fieldName: string, i: number): void;
+    AddBinaryData(fieldName: string, contents: number[], fileName: string): void;
+    AddBinaryData(fieldName: string, contents: number[]): void;
+    AddBinaryData(fieldName: string, contents: number[], fileName: string, mimeType: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

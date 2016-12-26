@@ -3,15 +3,15 @@ declare namespace UnityEditor {
     // constructors
     constructor(fileName: string);
     // methods
-    Save(): any;
-    Clear(): any;
+    Save(): void;
+    Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
     // properties
     get_Item(paramName: string): string;
-    set_Item(paramName: string, value: string): any;
+    set_Item(paramName: string, value: string): void;
     // fields
   }
 }

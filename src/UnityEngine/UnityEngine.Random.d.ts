@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static InitState(seed: number): any;
+    static InitState(seed: number): void;
     static Range(min: number, max: number): number;
     static Range(min: number, max: number): number;
     static RandomRange(min: number, max: number): number;

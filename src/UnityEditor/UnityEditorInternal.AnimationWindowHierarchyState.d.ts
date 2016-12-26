@@ -4,9 +4,9 @@ declare namespace UnityEditorInternal {
     constructor();
     // methods
     GetTallMode(node: UnityEditorInternal.AnimationWindowHierarchyNode): boolean;
-    SetTallMode(node: UnityEditorInternal.AnimationWindowHierarchyNode, tallMode: boolean): any;
+    SetTallMode(node: UnityEditorInternal.AnimationWindowHierarchyNode, tallMode: boolean): void;
     GetTallInstancesCount(): number;
-    AddTallInstance(id: number): any;
+    AddTallInstance(id: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

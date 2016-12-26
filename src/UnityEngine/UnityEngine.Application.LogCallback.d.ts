@@ -3,10 +3,10 @@ declare namespace UnityEngine.Application {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(condition: string, stackTrace: string, type: UnityEngine.LogType): any;
+    Invoke(condition: string, stackTrace: string, type: UnityEngine.LogType): void;
     BeginInvoke(condition: string, stackTrace: string, type: UnityEngine.LogType, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

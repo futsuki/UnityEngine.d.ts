@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static SetMinDragDifferenceForPos(position: any): any;
-    static DisableMinDragDifference(): any;
-    static DisableMinDragDifferenceForAxis(axis: number): any;
-    static DisableMinDragDifferenceBasedOnSnapping(positionBeforeSnapping: any, positionAfterSnapping: any): any;
-    static BeginDragging(handleName: string): any;
-    static EndDragging(handleName: string): any;
-    static DetectDraggingBasedOnMouseDownUp(handleName: string, typeBefore: any): any;
+    static SetMinDragDifferenceForPos(position: any): void;
+    static DisableMinDragDifference(): void;
+    static DisableMinDragDifferenceForAxis(axis: number): void;
+    static DisableMinDragDifferenceBasedOnSnapping(positionBeforeSnapping: any, positionAfterSnapping: any): void;
+    static BeginDragging(handleName: string): void;
+    static EndDragging(handleName: string): void;
+    static DetectDraggingBasedOnMouseDownUp(handleName: string, typeBefore: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

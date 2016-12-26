@@ -5,8 +5,8 @@ declare namespace UnityEditor.PlayerSettings {
     // methods
     static SetCertificate(path: string, password: string): boolean;
     static GetVisualAssetsImage(type: UnityEditor.PlayerSettings.WSAImageType, scale: UnityEditor.PlayerSettings.WSAImageScale): string;
-    static SetVisualAssetsImage(image: string, type: UnityEditor.PlayerSettings.WSAImageType, scale: UnityEditor.PlayerSettings.WSAImageScale): any;
-    static SetCapability(capability: UnityEditor.PlayerSettings.WSACapability, value: boolean): any;
+    static SetVisualAssetsImage(image: string, type: UnityEditor.PlayerSettings.WSAImageType, scale: UnityEditor.PlayerSettings.WSAImageScale): void;
+    static SetCapability(capability: UnityEditor.PlayerSettings.WSACapability, value: boolean): void;
     static GetCapability(capability: UnityEditor.PlayerSettings.WSACapability): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

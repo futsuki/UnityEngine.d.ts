@@ -3,10 +3,10 @@ declare namespace UnityEditor.SceneViewOverlay {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(target: any, sceneView: UnityEditor.SceneView): any;
+    Invoke(target: any, sceneView: UnityEditor.SceneView): void;
     BeginInvoke(target: any, sceneView: UnityEditor.SceneView, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

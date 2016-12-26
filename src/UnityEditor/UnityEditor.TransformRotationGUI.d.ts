@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnEnable(m_Rotation: UnityEditor.SerializedProperty, label: any): any;
-    RotationField(): any;
-    RotationField(disabled: boolean): any;
+    OnEnable(m_Rotation: UnityEditor.SerializedProperty, label: any): void;
+    RotationField(): void;
+    RotationField(disabled: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

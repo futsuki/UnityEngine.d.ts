@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Begin(hasChanged: boolean, position: any): boolean;
-    End(): any;
-    BeginRecording(): any;
-    EndRecording(): any;
-    Execute(): any;
+    End(): void;
+    BeginRecording(): void;
+    EndRecording(): void;
+    Execute(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

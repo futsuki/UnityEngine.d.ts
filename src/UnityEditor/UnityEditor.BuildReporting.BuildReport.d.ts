@@ -3,19 +3,19 @@ declare namespace UnityEditor.BuildReporting {
     // constructors
     constructor();
     // methods
-    RelocateFiles(originalPathPrefix: string, newPathPrefix: string): any;
-    AddFile(path: string, role: string): any;
-    AddFilesRecursive(rootDir: string, role: string): any;
-    DeleteFile(path: string): any;
-    DeleteFilesRecursive(rootDir: string): any;
+    RelocateFiles(originalPathPrefix: string, newPathPrefix: string): void;
+    AddFile(path: string, role: string): void;
+    AddFilesRecursive(rootDir: string, role: string): void;
+    DeleteFile(path: string): void;
+    DeleteFilesRecursive(rootDir: string): void;
     SummarizeErrors(): string;
-    AddMessage(messageType: any, message: string): any;
-    BeginBuildStepNoTiming(stepName: string): any;
-    BeginBuildStep(stepName: string): any;
-    AddAppendix(obj: any): any;
+    AddMessage(messageType: any, message: string): void;
+    BeginBuildStepNoTiming(stepName: string): void;
+    BeginBuildStep(stepName: string): void;
+    AddAppendix(obj: any): void;
     GetAppendices(type: any): any[];
     static GetLatestReport(): UnityEditor.BuildReporting.BuildReport;
-    SendChanged(): any;
+    SendChanged(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

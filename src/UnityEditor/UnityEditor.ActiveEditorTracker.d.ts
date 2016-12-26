@@ -5,13 +5,13 @@ declare namespace UnityEditor {
     // methods
     Equals(o: any): boolean;
     GetHashCode(): number;
-    Destroy(): any;
+    Destroy(): void;
     GetVisible(index: number): number;
-    SetVisible(index: number, visible: number): any;
-    ClearDirty(): any;
-    RebuildIfNecessary(): any;
-    ForceRebuild(): any;
-    VerifyModifiedMonoBehaviours(): any;
+    SetVisible(index: number, visible: number): void;
+    ClearDirty(): void;
+    RebuildIfNecessary(): void;
+    ForceRebuild(): void;
+    VerifyModifiedMonoBehaviours(): void;
     static MakeCustomEditor(obj: any): UnityEditor.Editor;
     static HasCustomEditor(obj: any): boolean;
     GetType(): any;

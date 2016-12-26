@@ -5,11 +5,11 @@ declare namespace UnityEditorInternal {
     // methods
     static Create(animationClip: any, sourceObject: any): UnityEditorInternal.AnimationClipSelectionItem;
     GetRefreshHash(): number;
-    ClearCache(): any;
-    Synchronize(): any;
+    ClearCache(): void;
+    Synchronize(): void;
     Equals(other: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
     GetEditorCurveValueType(curveBinding: UnityEditor.EditorCurveBinding): any;
-    SetDirty(): any;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor(function_: any, timeFromNow: number);
     // methods
-    Clear(): any;
+    Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

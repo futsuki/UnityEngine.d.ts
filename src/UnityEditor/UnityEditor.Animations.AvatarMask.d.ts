@@ -4,11 +4,11 @@ declare namespace UnityEditor.Animations {
     constructor();
     // methods
     GetHumanoidBodyPartActive(index: UnityEditor.Animations.AvatarMaskBodyPart): boolean;
-    SetHumanoidBodyPartActive(index: UnityEditor.Animations.AvatarMaskBodyPart, value: boolean): any;
+    SetHumanoidBodyPartActive(index: UnityEditor.Animations.AvatarMaskBodyPart, value: boolean): void;
     GetTransformPath(index: number): string;
-    SetTransformPath(index: number, path: string): any;
+    SetTransformPath(index: number, path: string): void;
     GetTransformActive(index: number): boolean;
-    SetTransformActive(index: number, value: boolean): any;
+    SetTransformActive(index: number, value: boolean): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

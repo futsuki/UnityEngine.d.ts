@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor(validBones: any);
     // methods
-    static InitGlobalMappingData(): any;
+    static InitGlobalMappingData(): void;
     static MapBones(root: any, validBones: any): any;
     MapBones(root: any): any;
     Equals(obj: any): boolean;

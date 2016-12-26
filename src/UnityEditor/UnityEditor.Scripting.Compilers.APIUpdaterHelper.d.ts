@@ -3,7 +3,7 @@ declare namespace UnityEditor.Scripting.Compilers {
     // constructors
     constructor();
     // methods
-    static UpdateScripts(responseFile: string, sourceExtension: string): any;
+    static UpdateScripts(responseFile: string, sourceExtension: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

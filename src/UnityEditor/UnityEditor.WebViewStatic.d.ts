@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static GetWebView(): UnityEditor.WebView;
-    static SetWebView(webView: UnityEditor.WebView): any;
-    SetDirty(): any;
+    static SetWebView(webView: UnityEditor.WebView): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

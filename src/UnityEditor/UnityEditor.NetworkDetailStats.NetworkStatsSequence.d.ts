@@ -3,8 +3,8 @@ declare namespace UnityEditor.NetworkDetailStats {
     // constructors
     constructor();
     // methods
-    Add(tick: number, amount: number): any;
-    NewProfilerTick(tick: number): any;
+    Add(tick: number, amount: number): void;
+    NewProfilerTick(tick: number): void;
     GetFiveTick(tick: number): number;
     GetTenTick(tick: number): number;
     Equals(obj: any): boolean;

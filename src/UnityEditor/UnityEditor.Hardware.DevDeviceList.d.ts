@@ -3,7 +3,7 @@ declare namespace UnityEditor.Hardware {
     // constructors
     constructor();
     // methods
-    static OnChanged(): any;
+    static OnChanged(): void;
     static FindDevice(deviceId: string, device: any): boolean;
     static GetDevices(): UnityEditor.Hardware.DevDevice[];
     Equals(obj: any): boolean;

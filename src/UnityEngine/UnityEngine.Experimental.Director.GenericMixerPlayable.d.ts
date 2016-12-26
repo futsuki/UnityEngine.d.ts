@@ -4,7 +4,7 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.GenericMixerPlayable;
-    Destroy(): any;
+    Destroy(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     ToString(): string;

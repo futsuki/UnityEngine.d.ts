@@ -3,10 +3,10 @@ declare namespace UnityEditor.ProjectWindowCallback {
     // constructors
     constructor();
     // methods
-    Action(instanceId: number, pathName: string, resourceFile: string): any;
-    OnEnable(): any;
-    CleanUp(): any;
-    SetDirty(): any;
+    Action(instanceId: number, pathName: string, resourceFile: string): void;
+    OnEnable(): void;
+    CleanUp(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

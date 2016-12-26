@@ -3,17 +3,17 @@ declare namespace UnityEngine.Experimental.Director {
     // constructors
     private constructor();
     // methods
-    Destroy(): any;
+    Destroy(): void;
     IsValid(): boolean;
     static GetTypeOf(playable: UnityEngine.Experimental.Director.Playable): any;
     static Connect(source: UnityEngine.Experimental.Director.Playable, target: UnityEngine.Experimental.Director.Playable): boolean;
     static Connect(source: UnityEngine.Experimental.Director.Playable, target: UnityEngine.Experimental.Director.Playable, sourceOutputPort: number, targetInputPort: number): boolean;
-    static Disconnect(target: UnityEngine.Experimental.Director.Playable, inputPort: number): any;
+    static Disconnect(target: UnityEngine.Experimental.Director.Playable, inputPort: number): void;
     GetInputs(): UnityEngine.Experimental.Director.Playable[];
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutputs(): UnityEngine.Experimental.Director.Playable[];
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
-    SetInputWeight(input: UnityEngine.Experimental.Director.Playable, weight: number): any;
+    SetInputWeight(input: UnityEngine.Experimental.Director.Playable, weight: number): void;
     SetInputWeight(inputIndex: number, weight: number): boolean;
     GetInputWeight(index: number): number;
     Equals(p: any): boolean;

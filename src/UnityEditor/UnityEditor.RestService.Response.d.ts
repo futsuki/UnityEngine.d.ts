@@ -3,7 +3,7 @@ declare namespace UnityEditor.RestService {
     // constructors
     constructor();
     // methods
-    SimpleResponse(status: UnityEditor.RestService.HttpStatusCode, payload: string): any;
+    SimpleResponse(status: UnityEditor.RestService.HttpStatusCode, payload: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

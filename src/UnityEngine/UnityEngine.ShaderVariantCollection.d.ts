@@ -6,8 +6,8 @@ declare namespace UnityEngine {
     Add(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
     Remove(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
     Contains(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
-    Clear(): any;
-    WarmUp(): any;
+    Clear(): void;
+    WarmUp(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

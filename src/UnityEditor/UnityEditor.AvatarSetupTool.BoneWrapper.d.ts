@@ -3,11 +3,11 @@ declare namespace UnityEditor.AvatarSetupTool {
     // constructors
     constructor(humanBoneName: string, serializedObject: UnityEditor.SerializedObject, bones: any);
     // methods
-    Reset(serializedObject: UnityEditor.SerializedObject, bones: any): any;
-    Serialize(serializedObject: UnityEditor.SerializedObject): any;
+    Reset(serializedObject: UnityEditor.SerializedObject, bones: any): void;
+    Serialize(serializedObject: UnityEditor.SerializedObject): void;
     GetSerializedProperty(serializedObject: UnityEditor.SerializedObject, createIfMissing: boolean): UnityEditor.SerializedProperty;
-    BoneDotGUI(rect: any, boneIndex: number, doClickSelect: boolean, doDragDrop: boolean, serializedObject: UnityEditor.SerializedObject, editor: UnityEditor.AvatarMappingEditor): any;
-    HandleClickSelection(selectRect: any, boneIndex: number): any;
+    BoneDotGUI(rect: any, boneIndex: number, doClickSelect: boolean, doDragDrop: boolean, serializedObject: UnityEditor.SerializedObject, editor: UnityEditor.AvatarMappingEditor): void;
+    HandleClickSelection(selectRect: any, boneIndex: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

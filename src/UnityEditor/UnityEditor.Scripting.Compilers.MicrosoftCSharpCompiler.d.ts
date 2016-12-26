@@ -3,8 +3,8 @@ declare namespace UnityEditor.Scripting.Compilers {
     // constructors
     constructor(island: UnityEditor.Scripting.MonoIsland, runUpdater: boolean);
     // methods
-    BeginCompiling(): any;
-    Dispose(): any;
+    BeginCompiling(): void;
+    Dispose(): void;
     Poll(): boolean;
     GetCompilerMessages(): UnityEditor.Scripting.Compilers.CompilerMessage[];
     Equals(obj: any): boolean;

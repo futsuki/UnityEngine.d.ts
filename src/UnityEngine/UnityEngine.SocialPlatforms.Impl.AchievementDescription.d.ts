@@ -4,7 +4,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(id: string, title: string, image: UnityEngine.Texture2D, achievedDescription: string, unachievedDescription: string, hidden: boolean, points: number);
     // methods
     ToString(): string;
-    SetImage(image: UnityEngine.Texture2D): any;
+    SetImage(image: UnityEngine.Texture2D): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

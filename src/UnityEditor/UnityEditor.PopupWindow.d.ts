@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static Show(activatorRect: any, windowContent: UnityEditor.PopupWindowContent): any;
+    static Show(activatorRect: any, windowContent: UnityEditor.PopupWindowContent): void;
     // properties
     // fields
   }

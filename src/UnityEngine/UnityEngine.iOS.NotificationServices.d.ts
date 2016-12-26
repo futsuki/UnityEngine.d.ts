@@ -4,16 +4,16 @@ declare namespace UnityEngine.iOS {
     constructor();
     // methods
     static GetLocalNotification(index: number): UnityEngine.iOS.LocalNotification;
-    static ScheduleLocalNotification(notification: UnityEngine.iOS.LocalNotification): any;
-    static PresentLocalNotificationNow(notification: UnityEngine.iOS.LocalNotification): any;
-    static CancelLocalNotification(notification: UnityEngine.iOS.LocalNotification): any;
-    static CancelAllLocalNotifications(): any;
+    static ScheduleLocalNotification(notification: UnityEngine.iOS.LocalNotification): void;
+    static PresentLocalNotificationNow(notification: UnityEngine.iOS.LocalNotification): void;
+    static CancelLocalNotification(notification: UnityEngine.iOS.LocalNotification): void;
+    static CancelAllLocalNotifications(): void;
     static GetRemoteNotification(index: number): UnityEngine.iOS.RemoteNotification;
-    static ClearLocalNotifications(): any;
-    static ClearRemoteNotifications(): any;
-    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType): any;
-    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType, registerForRemote: boolean): any;
-    static UnregisterForRemoteNotifications(): any;
+    static ClearLocalNotifications(): void;
+    static ClearRemoteNotifications(): void;
+    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType): void;
+    static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType, registerForRemote: boolean): void;
+    static UnregisterForRemoteNotifications(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

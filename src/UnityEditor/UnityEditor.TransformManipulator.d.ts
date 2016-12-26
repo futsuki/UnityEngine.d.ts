@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static BeginManipulationHandling(lockHandleWhileDragging: boolean): any;
+    static BeginManipulationHandling(lockHandleWhileDragging: boolean): void;
     static EndManipulationHandling(): any;
-    static SetScaleDelta(scaleDelta: any, pivotRotation: any): any;
-    static SetResizeDelta(scaleDelta: any, pivotPosition: any, pivotRotation: any): any;
-    static SetPositionDelta(positionDelta: any): any;
-    static DebugAlignment(targetRotation: any): any;
+    static SetScaleDelta(scaleDelta: any, pivotRotation: any): void;
+    static SetResizeDelta(scaleDelta: any, pivotPosition: any, pivotRotation: any): void;
+    static SetPositionDelta(positionDelta: any): void;
+    static DebugAlignment(targetRotation: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

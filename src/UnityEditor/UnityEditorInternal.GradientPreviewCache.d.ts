@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static ClearCache(): any;
+    static ClearCache(): void;
     static GetPropertyPreview(property: UnityEditor.SerializedProperty): any;
     static GetGradientPreview(curve: any): any;
     Equals(obj: any): boolean;

@@ -3,17 +3,17 @@ declare namespace UnityEditor.GUISlideGroup {
     // constructors
     constructor();
     // methods
-    SetID(owner: UnityEditor.GUISlideGroup, id: number): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: any[]): any;
-    ResetCursor(): any;
+    SetID(owner: UnityEditor.GUISlideGroup, id: number): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: any[]): void;
+    ResetCursor(): void;
     PeekNext(): any;
     GetNext(): any;
     GetLast(): any;
-    Add(e: any): any;
-    CalcWidth(): any;
-    CalcHeight(): any;
+    Add(e: any): void;
+    CalcWidth(): void;
+    CalcHeight(): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

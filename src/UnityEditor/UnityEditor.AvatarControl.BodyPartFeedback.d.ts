@@ -6,7 +6,7 @@ declare namespace UnityEditor.AvatarControl {
     Invoke(bodyPart: UnityEditor.BodyPart): UnityEditor.AvatarControl.BodyPartColor;
     BeginInvoke(bodyPart: UnityEditor.BodyPart, callback: any, object: any): any;
     EndInvoke(result: any): UnityEditor.AvatarControl.BodyPartColor;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

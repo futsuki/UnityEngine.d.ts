@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(name: string, len: number, clr: any);
     // methods
-    CreateOverlayData(): any;
+    CreateOverlayData(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

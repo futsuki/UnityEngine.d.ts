@@ -3,18 +3,18 @@ declare namespace UnityEditor.ListViewGUILayout {
     // constructors
     constructor();
     // methods
-    CalcWidth(): any;
-    CalcHeight(): any;
-    AddY(): any;
-    AddY(val: number): any;
-    ApplyOptions(options: any[]): any;
-    ResetCursor(): any;
+    CalcWidth(): void;
+    CalcHeight(): void;
+    AddY(): void;
+    AddY(val: number): void;
+    ApplyOptions(options: any[]): void;
+    ResetCursor(): void;
     PeekNext(): any;
     GetNext(): any;
     GetLast(): any;
-    Add(e: any): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
+    Add(e: any): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

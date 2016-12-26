@@ -3,18 +3,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any): any;
-    Serialize(value: any, maxDelta: number): any;
-    Serialize(value: any): any;
-    Serialize(value: any, maxDelta: number): any;
-    Serialize(value: any): any;
-    Serialize(value: any, maxDelta: number): any;
-    Serialize(value: any): any;
-    Serialize(viewID: any): any;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any): void;
+    Serialize(value: any, maxDelta: number): void;
+    Serialize(value: any): void;
+    Serialize(value: any, maxDelta: number): void;
+    Serialize(value: any): void;
+    Serialize(value: any, maxDelta: number): void;
+    Serialize(value: any): void;
+    Serialize(viewID: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

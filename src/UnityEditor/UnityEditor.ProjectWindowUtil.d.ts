@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static CreateNewGUISkin(): any;
-    static CreateAsset(asset: any, pathName: string): any;
-    static CreateFolder(): any;
-    static CreateScene(): any;
-    static CreatePrefab(): any;
-    static ShowCreatedAsset(o: any): any;
-    static StartNameEditingIfProjectWindowExists(instanceID: number, endAction: UnityEditor.ProjectWindowCallback.EndNameEditAction, pathName: string, icon: any, resourceFile: string): any;
+    static CreateNewGUISkin(): void;
+    static CreateAsset(asset: any, pathName: string): void;
+    static CreateFolder(): void;
+    static CreateScene(): void;
+    static CreatePrefab(): void;
+    static ShowCreatedAsset(o: any): void;
+    static StartNameEditingIfProjectWindowExists(instanceID: number, endAction: UnityEditor.ProjectWindowCallback.EndNameEditAction, pathName: string, icon: any, resourceFile: string): void;
     static GetAncestors(instanceID: number): number[];
     static IsFolder(instanceID: number): boolean;
     static GetContainingFolder(path: string): string;

@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Display(progressInfo: string, progress: number): any;
-    static Clear(): any;
+    static Display(progressInfo: string, progress: number): void;
+    static Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

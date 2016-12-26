@@ -3,16 +3,16 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    CalcWidth(): any;
-    SetHorizontal(x: number, width: number): any;
-    CalcHeight(): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: any[]): any;
-    ResetCursor(): any;
+    CalcWidth(): void;
+    SetHorizontal(x: number, width: number): void;
+    CalcHeight(): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: any[]): void;
+    ResetCursor(): void;
     PeekNext(): any;
     GetNext(): any;
     GetLast(): any;
-    Add(e: any): any;
+    Add(e: any): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

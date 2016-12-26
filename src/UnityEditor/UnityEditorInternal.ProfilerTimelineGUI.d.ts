@@ -3,7 +3,7 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(window: UnityEditorInternal.IProfilerWindowController);
     // methods
-    DoGUI(frameIndex: number, width: number, ypos: number, height: number, detailView: boolean): any;
+    DoGUI(frameIndex: number, width: number, ypos: number, height: number, detailView: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

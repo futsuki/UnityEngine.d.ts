@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static WriteCustomEvent(value: number, text: string): any;
+    static WriteCustomEvent(value: number, text: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -8,12 +8,12 @@ declare namespace UnityEditor {
     RangeEnd(): number;
     PreWrapMode(): any;
     PostWrapMode(): any;
-    SetWrap(wrap: any): any;
-    SetWrap(preWrap: any, postWrap: any): any;
-    SetCustomRange(start: number, end: number): any;
+    SetWrap(wrap: any): void;
+    SetWrap(preWrap: any, postWrap: any): void;
+    SetCustomRange(start: number, end: number): void;
     EvaluateCurveDeltaSlow(time: number, component: number): number;
     EvaluateCurveSlow(time: number, component: number): number;
-    DrawCurve(minTime: number, maxTime: number, color: any, transform: any, component: number, wrapColor: any): any;
+    DrawCurve(minTime: number, maxTime: number, color: any, transform: any, component: number, wrapColor: any): void;
     GetBounds(minTime: number, maxTime: number, component: number): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    OnEnable(window: UnityEditor.EditorWindow): any;
-    OnDisable(): any;
-    ObjectPreview(r: any): any;
+    OnEnable(window: UnityEditor.EditorWindow): void;
+    OnDisable(): void;
+    ObjectPreview(r: any): void;
     EditLights(): boolean;
     EditLightmapParameters(): boolean;
     EditTerrains(): boolean;
     EditRenderers(): boolean;
-    ObjectSettings(): any;
+    ObjectSettings(): void;
     static LightmapParametersGUI(prop: UnityEditor.SerializedProperty, content: any, advancedParameters: boolean): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

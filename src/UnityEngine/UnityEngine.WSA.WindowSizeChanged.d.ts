@@ -3,10 +3,10 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(width: number, height: number): any;
+    Invoke(width: number, height: number): void;
     BeginInvoke(width: number, height: number, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

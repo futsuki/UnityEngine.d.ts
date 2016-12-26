@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     GetProperty(property: UnityEditor.LookDevProperty): UnityEditor.LookDevContext.LookDevPropertyValue;
-    UpdateProperty(property: UnityEditor.LookDevProperty, value: number): any;
-    UpdateProperty(property: UnityEditor.LookDevProperty, value: number): any;
+    UpdateProperty(property: UnityEditor.LookDevProperty, value: number): void;
+    UpdateProperty(property: UnityEditor.LookDevProperty, value: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

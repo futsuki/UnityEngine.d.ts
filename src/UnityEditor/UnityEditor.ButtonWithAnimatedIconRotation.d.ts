@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor(angleCallback: any, repaintCallback: any, repaintsPerSecond: number, mouseDownButton: boolean);
     // methods
     OnGUI(rect: any, guiContent: any, animate: boolean, style: any): boolean;
-    Clear(): any;
+    Clear(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

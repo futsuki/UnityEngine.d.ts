@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor(runnable: UnityEngine.AndroidJavaRunnable);
     // methods
-    run(): any;
+    run(): void;
     Invoke(methodName: string, args: any[]): UnityEngine.AndroidJavaObject;
     Invoke(methodName: string, javaArgs: UnityEngine.AndroidJavaObject[]): UnityEngine.AndroidJavaObject;
     Equals(obj: any): boolean;

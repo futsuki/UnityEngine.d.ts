@@ -3,13 +3,13 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Enable(inspector: UnityEditor.AvatarEditor): any;
-    Disable(): any;
-    OnDestroy(): any;
-    OnInspectorGUI(): any;
-    OnSceneGUI(): any;
-    ApplyAndImport(): any;
-    SetDirty(): any;
+    Enable(inspector: UnityEditor.AvatarEditor): void;
+    Disable(): void;
+    OnDestroy(): void;
+    OnInspectorGUI(): void;
+    OnSceneGUI(): void;
+    ApplyAndImport(): void;
+    SetDirty(): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

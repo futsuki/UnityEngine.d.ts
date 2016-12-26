@@ -3,16 +3,16 @@ declare namespace UnityEditor {
     // constructors
     constructor(state: UnityEditorInternal.ReorderableListWithRenameAndScrollView.State);
     // methods
-    OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): any;
-    LoadFromBackend(): any;
-    OnEvent(): any;
-    CustomDrawElement(r: any, index: number, isActive: boolean, isFocused: boolean): any;
+    OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): void;
+    LoadFromBackend(): void;
+    OnEvent(): void;
+    CustomDrawElement(r: any, index: number, isActive: boolean, isFocused: boolean): void;
     GetTotalHeight(): number;
-    OnGUI(rect: any): any;
-    SelectionChanged(index: number): any;
-    NameChanged(index: number, newName: string): any;
-    EndDragChild(list: UnityEditorInternal.ReorderableList): any;
-    OnUndoRedoPerformed(): any;
+    OnGUI(rect: any): void;
+    SelectionChanged(index: number): void;
+    NameChanged(index: number, newName: string): void;
+    EndDragChild(list: UnityEditorInternal.ReorderableList): void;
+    OnUndoRedoPerformed(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

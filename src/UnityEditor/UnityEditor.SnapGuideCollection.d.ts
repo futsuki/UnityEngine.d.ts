@@ -3,11 +3,11 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Clear(): any;
-    AddGuide(guide: UnityEditor.SnapGuide): any;
+    Clear(): void;
+    AddGuide(guide: UnityEditor.SnapGuide): void;
     SnapToGuides(value: number, snapDistance: number): number;
-    OnGUI(): any;
-    DrawGuides(): any;
+    OnGUI(): void;
+    DrawGuides(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,7 +3,7 @@ declare namespace UnityEngine.Analytics {
     // constructors
     constructor(name: string);
     // methods
-    Dispose(): any;
+    Dispose(): void;
     Add(key: string, value: string): boolean;
     Add(key: string, value: boolean): boolean;
     Add(key: string, value: any): boolean;
@@ -19,7 +19,7 @@ declare namespace UnityEngine.Analytics {
     Add(key: string, value: number): boolean;
     Add(key: string, value: number): boolean;
     Add(eventData: any): boolean;
-    InternalCreate(name: string): any;
+    InternalCreate(name: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

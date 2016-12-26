@@ -4,9 +4,9 @@ declare namespace UnityEngine.Windows.Speech {
     constructor(keywords: string[]);
     constructor(keywords: string[], minimumConfidence: UnityEngine.Windows.Speech.ConfidenceLevel);
     // methods
-    Start(): any;
-    Stop(): any;
-    Dispose(): any;
+    Start(): void;
+    Stop(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

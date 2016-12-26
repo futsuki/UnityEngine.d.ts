@@ -3,13 +3,13 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): any;
-    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): any;
-    static PlayMovie(path: string, bgColor: UnityEngine.Color): any;
-    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): any;
-    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): any;
-    static PlayMovieURL(url: string, bgColor: UnityEngine.Color): any;
-    static Vibrate(): any;
+    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): void;
+    static PlayMovie(path: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): void;
+    static PlayMovie(path: string, bgColor: UnityEngine.Color): void;
+    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode, scalingMode: UnityEngine.iPhoneMovieScalingMode): void;
+    static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): void;
+    static PlayMovieURL(url: string, bgColor: UnityEngine.Color): void;
+    static Vibrate(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

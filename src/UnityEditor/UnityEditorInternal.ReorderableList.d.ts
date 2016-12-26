@@ -6,11 +6,11 @@ declare namespace UnityEditorInternal {
     constructor(serializedObject: UnityEditor.SerializedObject, elements: UnityEditor.SerializedProperty);
     constructor(serializedObject: UnityEditor.SerializedObject, elements: UnityEditor.SerializedProperty, draggable: boolean, displayHeader: boolean, displayAddButton: boolean, displayRemoveButton: boolean);
     // methods
-    DoLayoutList(): any;
-    DoList(rect: any): any;
+    DoLayoutList(): void;
+    DoList(rect: any): void;
     GetHeight(): number;
-    GrabKeyboardFocus(): any;
-    ReleaseKeyboardFocus(): any;
+    GrabKeyboardFocus(): void;
+    ReleaseKeyboardFocus(): void;
     HasKeyboardControl(): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

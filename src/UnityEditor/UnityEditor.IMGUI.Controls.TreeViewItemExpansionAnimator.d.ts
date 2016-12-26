@@ -3,13 +3,13 @@ declare namespace UnityEditor.IMGUI.Controls {
     // constructors
     constructor();
     // methods
-    BeginAnimating(setup: UnityEditor.IMGUI.Controls.TreeViewAnimationInput): any;
+    BeginAnimating(setup: UnityEditor.IMGUI.Controls.TreeViewAnimationInput): void;
     CullRow(row: number, gui: UnityEditor.IMGUI.Controls.ITreeViewGUI): boolean;
-    OnRowGUI(row: number): any;
+    OnRowGUI(row: number): void;
     OnBeginRowGUI(row: number, rowRect: any): any;
-    OnEndRowGUI(row: number): any;
-    OnBeforeAllRowsGUI(): any;
-    OnAfterAllRowsGUI(): any;
+    OnEndRowGUI(row: number): void;
+    OnBeforeAllRowsGUI(): void;
+    OnAfterAllRowsGUI(): void;
     IsAnimating(itemID: number): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

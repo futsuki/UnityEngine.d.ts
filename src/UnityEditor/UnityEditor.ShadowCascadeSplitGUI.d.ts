@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static HandleCascadeSliderGUI(normalizedCascadePartitions: any): any;
+    static HandleCascadeSliderGUI(normalizedCascadePartitions: any): void;
     // properties
     // fields
   }

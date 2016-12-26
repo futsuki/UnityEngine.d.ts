@@ -6,10 +6,10 @@ declare namespace UnityEditor {
     constructor(relativeSizes: number[], minSizes: number[], maxSizes: number[]);
     constructor(relativeSizes: number[], minSizes: number[], maxSizes: number[], splitSize: number);
     // methods
-    NormalizeRelativeSizes(): any;
-    RealToRelativeSizes(): any;
-    RelativeToRealSizes(totalSpace: number): any;
-    DoSplitter(i1: number, i2: number, diff: number): any;
+    NormalizeRelativeSizes(): void;
+    RealToRelativeSizes(): void;
+    RelativeToRealSizes(totalSpace: number): void;
+    DoSplitter(i1: number, i2: number, diff: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

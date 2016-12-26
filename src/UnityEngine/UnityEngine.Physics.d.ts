@@ -135,10 +135,10 @@ declare namespace UnityEngine {
     static BoxCast(center: UnityEngine.Vector3, halfExtents: UnityEngine.Vector3, direction: UnityEngine.Vector3, hitInfo: any, orientation: UnityEngine.Quaternion): boolean;
     static BoxCast(center: UnityEngine.Vector3, halfExtents: UnityEngine.Vector3, direction: UnityEngine.Vector3, hitInfo: any): boolean;
     static BoxCast(center: UnityEngine.Vector3, halfExtents: UnityEngine.Vector3, direction: UnityEngine.Vector3, hitInfo: any, orientation: UnityEngine.Quaternion, maxDistance: number, layerMask: number, queryTriggerInteraction: UnityEngine.QueryTriggerInteraction): boolean;
-    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider, ignore: boolean): any;
-    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider): any;
-    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): any;
-    static IgnoreLayerCollision(layer1: number, layer2: number): any;
+    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider, ignore: boolean): void;
+    static IgnoreCollision(collider1: UnityEngine.Collider, collider2: UnityEngine.Collider): void;
+    static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): void;
+    static IgnoreLayerCollision(layer1: number, layer2: number): void;
     static GetIgnoreLayerCollision(layer1: number, layer2: number): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

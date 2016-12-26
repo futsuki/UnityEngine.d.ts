@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static ArrowKeys(sv: UnityEditor.SceneView): any;
-    static DoViewTool(view: UnityEditor.SceneView): any;
-    static ResetMotion(): any;
+    static ArrowKeys(sv: UnityEditor.SceneView): void;
+    static DoViewTool(view: UnityEditor.SceneView): void;
+    static ResetMotion(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

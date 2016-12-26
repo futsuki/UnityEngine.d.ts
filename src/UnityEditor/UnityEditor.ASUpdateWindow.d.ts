@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor(parentWin: UnityEditor.ASMainWindow, changesets: UnityEditor.Changeset[]);
     // methods
-    OnSelectionChange(): any;
+    OnSelectionChange(): void;
     GetSelectedRevisionNumber(): number;
-    SetSelectedRevisionLine(selIndex: number): any;
+    SetSelectedRevisionLine(selIndex: number): void;
     GetGUIDs(): string[];
     DoUpdate(afterResolvingConflicts: boolean): boolean;
-    ShowConflictResolutions(conflicting: string[]): any;
-    UpdateGUI(): any;
-    Repaint(): any;
+    ShowConflictResolutions(conflicting: string[]): void;
+    UpdateGUI(): void;
+    Repaint(): void;
     DoGUI(): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

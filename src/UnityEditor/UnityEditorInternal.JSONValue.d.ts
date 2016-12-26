@@ -28,19 +28,19 @@ declare namespace UnityEditorInternal {
     static NewNull(): UnityEditorInternal.JSONValue;
     ContainsKey(index: string): boolean;
     Get(key: string): UnityEditorInternal.JSONValue;
-    Set(key: string, value: string): any;
-    Set(key: string, value: number): any;
-    Set(key: string, value: boolean): any;
-    Add(value: string): any;
-    Add(value: number): any;
-    Add(value: boolean): any;
+    Set(key: string, value: string): void;
+    Set(key: string, value: number): void;
+    Set(key: string, value: boolean): void;
+    Add(value: string): void;
+    Add(value: number): void;
+    Add(value: boolean): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     // properties
     get_Item(index: string): UnityEditorInternal.JSONValue;
-    set_Item(index: string, value: UnityEditorInternal.JSONValue): any;
+    set_Item(index: string, value: UnityEditorInternal.JSONValue): void;
     // fields
   }
 }

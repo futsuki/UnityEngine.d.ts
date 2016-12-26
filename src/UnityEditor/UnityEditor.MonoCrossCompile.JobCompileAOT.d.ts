@@ -3,7 +3,7 @@ declare namespace UnityEditor.MonoCrossCompile {
     // constructors
     constructor(target: UnityEditor.BuildTarget, crossCompilerAbsolutePath: string, assembliesAbsoluteDirectory: string, crossCompileOptions: UnityEditor.CrossCompileOptions, input: string, output: string, additionalOptions: string);
     // methods
-    ThreadPoolCallback(threadContext: any): any;
+    ThreadPoolCallback(threadContext: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -5,12 +5,12 @@ declare namespace UnityEditor.Web {
     // methods
     GetServiceName(): string;
     GetServiceDisplayName(): string;
-    EnableService(enabled: boolean): any;
+    EnableService(enabled: boolean): void;
     IsCollabUIAccessible(): boolean;
     IsServiceEnabled(): boolean;
-    OnProjectUnbound(): any;
-    ShowServicePage(): any;
-    GoBackToHub(): any;
+    OnProjectUnbound(): void;
+    ShowServicePage(): void;
+    GoBackToHub(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

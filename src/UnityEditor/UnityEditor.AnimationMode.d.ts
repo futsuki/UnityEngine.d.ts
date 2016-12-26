@@ -4,13 +4,13 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static IsPropertyAnimated(target: any, propertyPath: string): boolean;
-    static StopAnimationMode(): any;
+    static StopAnimationMode(): void;
     static InAnimationMode(): boolean;
-    static StartAnimationMode(): any;
-    static BeginSampling(): any;
-    static EndSampling(): any;
-    static SampleAnimationClip(gameObject: any, clip: any, time: number): any;
-    static AddPropertyModification(binding: UnityEditor.EditorCurveBinding, modification: UnityEditor.PropertyModification, keepPrefabOverride: boolean): any;
+    static StartAnimationMode(): void;
+    static BeginSampling(): void;
+    static EndSampling(): void;
+    static SampleAnimationClip(gameObject: any, clip: any, time: number): void;
+    static AddPropertyModification(binding: UnityEditor.EditorCurveBinding, modification: UnityEditor.PropertyModification, keepPrefabOverride: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

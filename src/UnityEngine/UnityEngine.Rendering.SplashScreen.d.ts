@@ -3,8 +3,8 @@ declare namespace UnityEngine.Rendering {
     // constructors
     constructor();
     // methods
-    static Begin(): any;
-    static Draw(): any;
+    static Begin(): void;
+    static Draw(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

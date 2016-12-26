@@ -8,10 +8,10 @@ declare namespace UnityEngine {
     constructor(requestedWidth: number, requestedHeight: number);
     constructor();
     // methods
-    Play(): any;
-    Pause(): any;
-    Stop(): any;
-    MarkNonReadable(): any;
+    Play(): void;
+    Pause(): void;
+    Stop(): void;
+    MarkNonReadable(): void;
     GetPixel(x: number, y: number): UnityEngine.Color;
     GetPixels(): UnityEngine.Color[];
     GetPixels(x: number, y: number, blockWidth: number, blockHeight: number): UnityEngine.Color[];

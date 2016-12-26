@@ -3,8 +3,8 @@ declare namespace UnityEditor.Connect {
     // constructors
     constructor(serviceName: string, htmlSourcePath: string, jsGlobalObject: UnityEditor.Web.CloudServiceAccess, jsGlobalObjectName: string);
     // methods
-    EnableService(enabled: boolean): any;
-    OnProjectUnbound(): any;
+    EnableService(enabled: boolean): void;
+    OnProjectUnbound(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

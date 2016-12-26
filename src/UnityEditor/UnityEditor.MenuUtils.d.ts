@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static MenuCallback(callbackObject: any): any;
-    static ExtractSubMenuWithPath(path: string, menu: UnityEditor.GenericMenu, replacementPath: string, temporaryContext: any[]): any;
-    static ExtractMenuItemWithPath(menuString: string, menu: UnityEditor.GenericMenu, replacementMenuString: string, temporaryContext: any[], userData: number, onBeforeExecuteCallback: any, onAfterExecuteCallback: any): any;
+    static MenuCallback(callbackObject: any): void;
+    static ExtractSubMenuWithPath(path: string, menu: UnityEditor.GenericMenu, replacementPath: string, temporaryContext: any[]): void;
+    static ExtractMenuItemWithPath(menuString: string, menu: UnityEditor.GenericMenu, replacementMenuString: string, temporaryContext: any[], userData: number, onBeforeExecuteCallback: any, onAfterExecuteCallback: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

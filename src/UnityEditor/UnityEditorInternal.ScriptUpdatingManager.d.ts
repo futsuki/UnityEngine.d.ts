@@ -4,8 +4,8 @@ declare namespace UnityEditorInternal {
     constructor();
     // methods
     static WaitForVCSServerConnection(reportTimeout: boolean): boolean;
-    static ReportExpectedUpdateFailure(): any;
-    static ReportGroupedAPIUpdaterFailure(msg: string): any;
+    static ReportExpectedUpdateFailure(): void;
+    static ReportGroupedAPIUpdaterFailure(msg: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

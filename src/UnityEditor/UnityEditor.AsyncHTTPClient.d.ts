@@ -4,15 +4,15 @@ declare namespace UnityEditor {
     constructor(_toUrl: string);
     constructor(_toUrl: string, _method: string);
     // methods
-    static AbortByTag(tag: string): any;
-    static CurlRequestCheck(): any;
-    Abort(): any;
+    static AbortByTag(tag: string): void;
+    static CurlRequestCheck(): void;
+    Abort(): void;
     IsAborted(): boolean;
     IsDone(): boolean;
     static IsDone(state: UnityEditor.AsyncHTTPClient.State): boolean;
     IsSuccess(): boolean;
     static IsSuccess(state: UnityEditor.AsyncHTTPClient.State): boolean;
-    Begin(): any;
+    Begin(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

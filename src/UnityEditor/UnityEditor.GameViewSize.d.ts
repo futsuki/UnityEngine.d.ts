@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     constructor(type: UnityEditor.GameViewSizeType, width: number, height: number, baseText: string);
     constructor(other: UnityEditor.GameViewSize);
     // methods
-    Set(other: UnityEditor.GameViewSize): any;
+    Set(other: UnityEditor.GameViewSize): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    static VerifyBuild(target: UnityEditor.BuildTarget, managedDllFolder: string): any;
+    static VerifyBuild(target: UnityEditor.BuildTarget, managedDllFolder: string): void;
     // properties
     // fields
   }

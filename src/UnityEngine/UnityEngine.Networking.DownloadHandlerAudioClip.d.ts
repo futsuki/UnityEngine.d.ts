@@ -4,7 +4,7 @@ declare namespace UnityEngine.Networking {
     constructor(url: string, audioType: UnityEngine.AudioType);
     // methods
     static GetContent(www: UnityEngine.Networking.UnityWebRequest): UnityEngine.AudioClip;
-    Dispose(): any;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

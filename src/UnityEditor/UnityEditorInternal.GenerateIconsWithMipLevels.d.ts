@@ -3,10 +3,10 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static GenerateAllIconsWithMipLevels(): any;
+    static GenerateAllIconsWithMipLevels(): void;
     static VerifyIconPath(assetPath: string, logError: boolean): boolean;
-    static GenerateSelectedIconsWithMips(): any;
-    static GenerateIconWithMipLevels(assetPath: string, mipTextures: any, fileInfo: any): any;
+    static GenerateSelectedIconsWithMips(): void;
+    static GenerateIconWithMipLevels(assetPath: string, mipTextures: any, fileInfo: any): void;
     static MipLevelForAssetPath(assetPath: string, separator: string): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

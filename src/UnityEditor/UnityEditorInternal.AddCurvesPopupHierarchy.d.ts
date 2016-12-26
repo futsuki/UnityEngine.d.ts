@@ -3,8 +3,8 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    OnGUI(position: any, owner: UnityEditor.EditorWindow): any;
-    InitIfNeeded(owner: UnityEditor.EditorWindow, rect: any): any;
+    OnGUI(position: any, owner: UnityEditor.EditorWindow): void;
+    InitIfNeeded(owner: UnityEditor.EditorWindow, rect: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

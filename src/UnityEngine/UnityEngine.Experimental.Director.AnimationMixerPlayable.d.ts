@@ -4,12 +4,12 @@ declare namespace UnityEngine.Experimental.Director {
     private constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.AnimationMixerPlayable;
-    Destroy(): any;
+    Destroy(): void;
     GetInput(inputPort: number): UnityEngine.Experimental.Director.Playable;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     SetInputs(clips: UnityEngine.AnimationClip[]): boolean;
     GetInputWeight(index: number): number;
-    SetInputWeight(inputIndex: number, weight: number): any;
+    SetInputWeight(inputIndex: number, weight: number): void;
     Equals(p: any): boolean;
     GetHashCode(): number;
     IsValid(): boolean;

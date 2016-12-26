@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static GetBuildTargetGroup(platform: UnityEditor.BuildTarget): UnityEditor.BuildTargetGroup;
-    static PushAssetDependencies(): any;
-    static PopAssetDependencies(): any;
+    static PushAssetDependencies(): void;
+    static PopAssetDependencies(): void;
     static BuildPlayer(levels: UnityEditor.EditorBuildSettingsScene[], locationPathName: string, target: UnityEditor.BuildTarget, options: UnityEditor.BuildOptions): string;
     static BuildPlayer(levels: string[], locationPathName: string, target: UnityEditor.BuildTarget, options: UnityEditor.BuildOptions): string;
     static BuildPlayer(buildPlayerOptions: UnityEditor.BuildPlayerOptions): string;

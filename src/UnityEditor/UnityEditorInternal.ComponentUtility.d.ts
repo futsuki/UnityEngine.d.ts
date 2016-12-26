@@ -8,8 +8,8 @@ declare namespace UnityEditorInternal {
     static CopyComponent(component: any): boolean;
     static PasteComponentValues(component: any): boolean;
     static PasteComponentAsNew(go: any): boolean;
-    static DestroyComponentsMatching(dst: any, componentFilter: UnityEditorInternal.ComponentUtility.IsDesiredComponent): any;
-    static ReplaceComponentsIfDifferent(src: any, dst: any, componentFilter: UnityEditorInternal.ComponentUtility.IsDesiredComponent): any;
+    static DestroyComponentsMatching(dst: any, componentFilter: UnityEditorInternal.ComponentUtility.IsDesiredComponent): void;
+    static ReplaceComponentsIfDifferent(src: any, dst: any, componentFilter: UnityEditorInternal.ComponentUtility.IsDesiredComponent): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,15 +3,15 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor(functions: any, showAllCheckbox: boolean, showAutoInstrumemtationParams: boolean);
     // methods
-    OnGUI(rect: any): any;
-    OnClose(): any;
+    OnGUI(rect: any): void;
+    OnClose(): void;
     GetWindowSize(): any;
-    UpdateAllCheckbox(): any;
-    static UpdateInstrumentableFunctions(): any;
-    static Show(r: any): any;
-    static Show(r: any, funcName: string): any;
+    UpdateAllCheckbox(): void;
+    static UpdateInstrumentableFunctions(): void;
+    static Show(r: any): void;
+    static Show(r: any, funcName: string): void;
     static FunctionHasInstrumentationPopup(funcName: string): boolean;
-    OnOpen(): any;
+    OnOpen(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

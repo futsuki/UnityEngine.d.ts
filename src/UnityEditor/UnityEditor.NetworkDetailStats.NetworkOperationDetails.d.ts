@@ -3,10 +3,10 @@ declare namespace UnityEditor.NetworkDetailStats {
     // constructors
     constructor();
     // methods
-    NewProfilerTick(tickId: number): any;
-    Clear(): any;
-    SetStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, entryName: string, amount: number): any;
-    IncrementStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, entryName: string, amount: number): any;
+    NewProfilerTick(tickId: number): void;
+    Clear(): void;
+    SetStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, entryName: string, amount: number): void;
+    IncrementStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, entryName: string, amount: number): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

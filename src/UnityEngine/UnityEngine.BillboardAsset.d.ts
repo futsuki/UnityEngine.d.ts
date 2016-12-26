@@ -3,18 +3,18 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    GetImageTexCoords(imageTexCoords: any): any;
+    GetImageTexCoords(imageTexCoords: any): void;
     GetImageTexCoords(): UnityEngine.Vector4[];
-    SetImageTexCoords(imageTexCoords: any): any;
-    SetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): any;
-    GetVertices(vertices: any): any;
+    SetImageTexCoords(imageTexCoords: any): void;
+    SetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): void;
+    GetVertices(vertices: any): void;
     GetVertices(): UnityEngine.Vector2[];
-    SetVertices(vertices: any): any;
-    SetVertices(vertices: UnityEngine.Vector2[]): any;
-    GetIndices(indices: any): any;
+    SetVertices(vertices: any): void;
+    SetVertices(vertices: UnityEngine.Vector2[]): void;
+    GetIndices(indices: any): void;
     GetIndices(): number[];
-    SetIndices(indices: any): any;
-    SetIndices(indices: number[]): any;
+    SetIndices(indices: any): void;
+    SetIndices(indices: number[]): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

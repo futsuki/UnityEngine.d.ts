@@ -3,10 +3,10 @@ declare namespace UnityEditorInternal.ReorderableList {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(rect: any): any;
+    Invoke(rect: any): void;
     BeginInvoke(rect: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

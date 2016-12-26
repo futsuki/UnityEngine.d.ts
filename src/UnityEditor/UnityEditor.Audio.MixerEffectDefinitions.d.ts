@@ -6,10 +6,10 @@ declare namespace UnityEditor.Audio {
     static GetAudioEffectNames(): string[];
     static GetAudioEffectParameterDesc(effectName: string): UnityEditor.Audio.MixerParameterDefinition[];
     static EffectCanBeSidechainTarget(effect: UnityEditor.Audio.AudioMixerEffectController): boolean;
-    static Refresh(): any;
+    static Refresh(): void;
     static EffectExists(name: string): boolean;
     static GetEffectList(): string[];
-    static ClearDefinitions(): any;
+    static ClearDefinitions(): void;
     static GetEffectParameters(effect: string): UnityEditor.Audio.MixerParameterDefinition[];
     static RegisterAudioMixerEffect(name: string, definitions: UnityEditor.Audio.MixerParameterDefinition[]): boolean;
     Equals(obj: any): boolean;

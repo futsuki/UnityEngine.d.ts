@@ -4,15 +4,15 @@ declare namespace UnityEditor {
     constructor(obj: any);
     constructor(objs: any[]);
     // methods
-    Update(): any;
-    SetIsDifferentCacheDirty(): any;
-    UpdateIfDirtyOrScript(): any;
-    Dispose(): any;
+    Update(): void;
+    SetIsDifferentCacheDirty(): void;
+    UpdateIfDirtyOrScript(): void;
+    Dispose(): void;
     GetIterator(): UnityEditor.SerializedProperty;
     FindProperty(propertyPath: string): UnityEditor.SerializedProperty;
     ApplyModifiedProperties(): boolean;
     ApplyModifiedPropertiesWithoutUndo(): boolean;
-    CopyFromSerializedProperty(prop: UnityEditor.SerializedProperty): any;
+    CopyFromSerializedProperty(prop: UnityEditor.SerializedProperty): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

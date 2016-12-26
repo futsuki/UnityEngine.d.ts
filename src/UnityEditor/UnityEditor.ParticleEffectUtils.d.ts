@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static GetPlane(index: number): any;
-    static HidePlaneIfExists(index: number): any;
-    static ClearPlanes(): any;
+    static HidePlaneIfExists(index: number): void;
+    static ClearPlanes(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

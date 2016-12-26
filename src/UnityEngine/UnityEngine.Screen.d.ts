@@ -3,8 +3,8 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetResolution(width: number, height: number, fullscreen: boolean, preferredRefreshRate: number): any;
-    static SetResolution(width: number, height: number, fullscreen: boolean): any;
+    static SetResolution(width: number, height: number, fullscreen: boolean, preferredRefreshRate: number): void;
+    static SetResolution(width: number, height: number, fullscreen: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

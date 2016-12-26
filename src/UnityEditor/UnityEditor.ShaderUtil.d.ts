@@ -11,7 +11,7 @@ declare namespace UnityEditor {
     static GetTexDim(s: any, propertyIdx: number): any;
     static IsShaderPropertyHidden(s: any, propertyIdx: number): boolean;
     static CreateShaderAsset(source: string): any;
-    static UpdateShaderAsset(shader: any, source: string): any;
+    static UpdateShaderAsset(shader: any, source: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

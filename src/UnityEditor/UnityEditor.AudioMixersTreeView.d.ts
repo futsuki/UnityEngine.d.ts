@@ -3,15 +3,15 @@ declare namespace UnityEditor {
     // constructors
     constructor(mixerWindow: UnityEditor.AudioMixerWindow, treeState: UnityEditor.IMGUI.Controls.TreeViewState, getAllControllersCallback: any);
     // methods
-    ReloadTree(): any;
-    OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): any;
-    DeleteAudioMixerCallback(obj: any): any;
-    OnTreeViewContextClick(index: number): any;
-    OnTreeSelectionChanged(selection: number[]): any;
+    ReloadTree(): void;
+    OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): void;
+    DeleteAudioMixerCallback(obj: any): void;
+    OnTreeViewContextClick(index: number): void;
+    OnTreeSelectionChanged(selection: number[]): void;
     GetTotalHeight(): number;
-    OnGUI(rect: any): any;
-    EndRenaming(): any;
-    OnUndoRedoPerformed(): any;
+    OnGUI(rect: any): void;
+    EndRenaming(): void;
+    OnUndoRedoPerformed(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

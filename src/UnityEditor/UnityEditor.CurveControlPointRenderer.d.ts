@@ -3,12 +3,12 @@ declare namespace UnityEditor {
     // constructors
     constructor(style: UnityEditor.CurveEditor.Styles);
     // methods
-    FlushCache(): any;
-    Clear(): any;
-    Render(): any;
-    AddPoint(rect: any, color: any): any;
-    AddSelectedPoint(rect: any, color: any): any;
-    AddSemiSelectedPoint(rect: any, color: any): any;
+    FlushCache(): void;
+    Clear(): void;
+    Render(): void;
+    AddPoint(rect: any, color: any): void;
+    AddSelectedPoint(rect: any, color: any): void;
+    AddSemiSelectedPoint(rect: any, color: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

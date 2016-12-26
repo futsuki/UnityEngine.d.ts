@@ -3,14 +3,14 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    SetTickModulos(tickModulos: number[]): any;
-    SetTickModulosForFrameRate(frameRate: number): any;
-    SetRanges(minValue: number, maxValue: number, minPixel: number, maxPixel: number): any;
+    SetTickModulos(tickModulos: number[]): void;
+    SetTickModulosForFrameRate(frameRate: number): void;
+    SetRanges(minValue: number, maxValue: number, minPixel: number, maxPixel: number): void;
     GetTicksAtLevel(level: number, excludeTicksFromHigherlevels: boolean): number[];
     GetStrengthOfLevel(level: number): number;
     GetPeriodOfLevel(level: number): number;
     GetLevelWithMinSeparation(pixelSeparation: number): number;
-    SetTickStrengths(tickMinSpacing: number, tickMaxSpacing: number, sqrt: boolean): any;
+    SetTickStrengths(tickMinSpacing: number, tickMaxSpacing: number, sqrt: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

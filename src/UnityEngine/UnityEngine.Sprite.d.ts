@@ -8,7 +8,7 @@ declare namespace UnityEngine {
     static Create(texture: UnityEngine.Texture2D, rect: UnityEngine.Rect, pivot: UnityEngine.Vector2, pixelsPerUnit: number, extrude: number): UnityEngine.Sprite;
     static Create(texture: UnityEngine.Texture2D, rect: UnityEngine.Rect, pivot: UnityEngine.Vector2, pixelsPerUnit: number): UnityEngine.Sprite;
     static Create(texture: UnityEngine.Texture2D, rect: UnityEngine.Rect, pivot: UnityEngine.Vector2): UnityEngine.Sprite;
-    OverrideGeometry(vertices: UnityEngine.Vector2[], triangles: number[]): any;
+    OverrideGeometry(vertices: UnityEngine.Vector2[], triangles: number[]): void;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

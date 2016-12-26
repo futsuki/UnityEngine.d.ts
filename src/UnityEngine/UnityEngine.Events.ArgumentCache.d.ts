@@ -3,8 +3,8 @@ declare namespace UnityEngine.Events {
     // constructors
     constructor();
     // methods
-    OnBeforeSerialize(): any;
-    OnAfterDeserialize(): any;
+    OnBeforeSerialize(): void;
+    OnAfterDeserialize(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

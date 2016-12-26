@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     private constructor();
     // methods
-    SetLabels(leftLabel: any, rightLabel: any): any;
+    SetLabels(leftLabel: any, rightLabel: any): void;
     HasLabels(): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

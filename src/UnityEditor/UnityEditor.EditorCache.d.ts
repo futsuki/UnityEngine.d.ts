@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor();
     constructor(requirements: UnityEditor.EditorFeatures);
     // methods
-    CleanupUntouchedEditors(): any;
-    CleanupAllEditors(): any;
-    Dispose(): any;
+    CleanupUntouchedEditors(): void;
+    CleanupAllEditors(): void;
+    Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

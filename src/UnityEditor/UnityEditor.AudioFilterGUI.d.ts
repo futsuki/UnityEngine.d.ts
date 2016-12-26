@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    DrawAudioFilterGUI(behaviour: any): any;
+    DrawAudioFilterGUI(behaviour: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

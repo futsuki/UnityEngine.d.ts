@@ -6,7 +6,7 @@ declare namespace UnityEditor.ShapeEditor {
     Invoke(pos: any, rotation: any, handleSize: number): number;
     BeginInvoke(pos: any, rotation: any, handleSize: number, callback: any, object: any): any;
     EndInvoke(result: any): number;
-    GetObjectData(info: any, context: any): any;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

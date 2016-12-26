@@ -3,7 +3,7 @@ declare namespace UnityEngine {
     // constructors
     constructor();
     // methods
-    static SetSystemLanguage(language: UnityEngine.SystemLanguage): any;
+    static SetSystemLanguage(language: UnityEngine.SystemLanguage): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

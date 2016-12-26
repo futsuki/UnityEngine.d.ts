@@ -3,11 +3,11 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    Dispose(): any;
-    Cleanup(): any;
+    Dispose(): void;
+    Cleanup(): void;
     Next(enterChildren: boolean): boolean;
-    SetRoot(frame: number, profilerSortColumn: UnityEditorInternal.ProfilerColumn, viewType: UnityEditorInternal.ProfilerViewType): any;
-    InitializeDetailProperty(source: UnityEditorInternal.ProfilerProperty): any;
+    SetRoot(frame: number, profilerSortColumn: UnityEditorInternal.ProfilerColumn, viewType: UnityEditorInternal.ProfilerViewType): void;
+    InitializeDetailProperty(source: UnityEditorInternal.ProfilerProperty): void;
     GetTooltip(column: UnityEditorInternal.ProfilerColumn): string;
     GetColumn(column: UnityEditorInternal.ProfilerColumn): string;
     GetAudioProfilerGroupInfo(): UnityEditorInternal.AudioProfilerGroupInfo[];

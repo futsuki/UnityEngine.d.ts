@@ -4,7 +4,7 @@ declare namespace UnityEngine {
     private constructor();
     // methods
     static MinMaxRect(xmin: number, ymin: number, xmax: number, ymax: number): UnityEngine.Rect;
-    Set(x: number, y: number, width: number, height: number): any;
+    Set(x: number, y: number, width: number, height: number): void;
     Contains(point: UnityEngine.Vector2): boolean;
     Contains(point: UnityEngine.Vector3): boolean;
     Contains(point: UnityEngine.Vector3, allowInverse: boolean): boolean;

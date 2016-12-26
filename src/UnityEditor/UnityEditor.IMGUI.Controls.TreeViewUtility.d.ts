@@ -3,8 +3,8 @@ declare namespace UnityEditor.IMGUI.Controls {
     // constructors
     private constructor();
     // methods
-    static SetParentAndChildrenForItems(rows: any, root: UnityEditor.IMGUI.Controls.TreeViewItem): any;
-    static BuildRowsUsingExpandedState(rows: any, root: UnityEditor.IMGUI.Controls.TreeViewItem, treeView: UnityEditor.IMGUI.Controls.TreeView): any;
+    static SetParentAndChildrenForItems(rows: any, root: UnityEditor.IMGUI.Controls.TreeViewItem): void;
+    static BuildRowsUsingExpandedState(rows: any, root: UnityEditor.IMGUI.Controls.TreeViewItem, treeView: UnityEditor.IMGUI.Controls.TreeView): void;
     // properties
     // fields
   }

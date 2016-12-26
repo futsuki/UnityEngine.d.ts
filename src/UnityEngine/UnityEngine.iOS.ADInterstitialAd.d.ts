@@ -4,8 +4,8 @@ declare namespace UnityEngine.iOS {
     constructor(autoReload: boolean);
     constructor();
     // methods
-    Show(): any;
-    ReloadAd(): any;
+    Show(): void;
+    ReloadAd(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor(icon: any);
     // methods
-    FlushCache(): any;
-    Clear(): any;
-    Render(): any;
-    AddPoint(rect: any, color: any): any;
+    FlushCache(): void;
+    Clear(): void;
+    Render(): void;
+    AddPoint(rect: any, color: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

@@ -4,9 +4,9 @@ declare namespace UnityEditor {
     constructor(useLossyScale: boolean, controlIdHint: number);
     constructor(useLossyScale: boolean, controlIdHint: number, disableZaxis: boolean);
     // methods
-    OnEnable(): any;
-    OnDisable(): any;
-    SetAlwaysDisplayHandles(enable: boolean): any;
+    OnEnable(): void;
+    OnDisable(): void;
+    SetAlwaysDisplayHandles(enable: boolean): void;
     OnSceneGUI(transform: any, color: any, center: any, size: any): boolean;
     OnSceneGUI(transform: any, color: any, handlesOnly: boolean, center: any, size: any): boolean;
     OnSceneGUI(transform: any, color: any, handlesOnly: boolean, center: any, size: any): boolean;

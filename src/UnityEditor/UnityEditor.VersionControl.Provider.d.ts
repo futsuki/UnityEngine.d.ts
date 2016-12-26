@@ -11,7 +11,7 @@ declare namespace UnityEditor.VersionControl {
     static UpdateSettings(): UnityEditor.VersionControl.Task;
     static GetAssetByPath(unityPath: string): UnityEditor.VersionControl.Asset;
     static GetAssetByGUID(guid: string): UnityEditor.VersionControl.Asset;
-    static ClearCache(): any;
+    static ClearCache(): void;
     static Status(assets: UnityEditor.VersionControl.AssetList): UnityEditor.VersionControl.Task;
     static Status(asset: UnityEditor.VersionControl.Asset): UnityEditor.VersionControl.Task;
     static Status(assets: UnityEditor.VersionControl.AssetList, recursively: boolean): UnityEditor.VersionControl.Task;

@@ -6,7 +6,7 @@ declare namespace UnityEditor {
     GetDownloadConflicts(): string[];
     GetNameConflicts(): string[];
     CanContinue(): boolean;
-    OnSelectionChange(parentWin: UnityEditor.ASUpdateWindow): any;
+    OnSelectionChange(parentWin: UnityEditor.ASUpdateWindow): void;
     DoGUI(parentWin: UnityEditor.ASUpdateWindow): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

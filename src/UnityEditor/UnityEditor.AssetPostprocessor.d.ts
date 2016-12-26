@@ -3,10 +3,10 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    LogWarning(warning: string): any;
-    LogWarning(warning: string, context: any): any;
-    LogError(warning: string): any;
-    LogError(warning: string, context: any): any;
+    LogWarning(warning: string): void;
+    LogWarning(warning: string, context: any): void;
+    LogError(warning: string): void;
+    LogError(warning: string, context: any): void;
     GetVersion(): number;
     GetPostprocessOrder(): number;
     Equals(obj: any): boolean;

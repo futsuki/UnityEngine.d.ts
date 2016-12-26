@@ -3,9 +3,9 @@ declare namespace UnityEditor.Connect {
     // constructors
     private constructor();
     // methods
-    static TestComputerGoesToSleep(): any;
-    static TestComputerDidWakeUp(): any;
-    static TestClearAccessToken(): any;
+    static TestComputerGoesToSleep(): void;
+    static TestComputerDidWakeUp(): void;
+    static TestClearAccessToken(): void;
     // properties
     // fields
   }

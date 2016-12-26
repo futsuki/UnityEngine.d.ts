@@ -3,11 +3,11 @@ declare namespace UnityEngine {
     // constructors
     constructor(style: UnityEngine.GUIStyle, content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]);
     // methods
-    CalcWidth(): any;
-    CalcHeight(): any;
-    SetHorizontal(x: number, width: number): any;
-    SetVertical(y: number, height: number): any;
-    ApplyOptions(options: UnityEngine.GUILayoutOption[]): any;
+    CalcWidth(): void;
+    CalcHeight(): void;
+    SetHorizontal(x: number, width: number): void;
+    SetVertical(y: number, height: number): void;
+    ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
     ToString(): string;
     Equals(obj: any): boolean;
     GetHashCode(): number;

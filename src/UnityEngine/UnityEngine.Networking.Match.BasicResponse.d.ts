@@ -3,10 +3,10 @@ declare namespace UnityEngine.Networking.Match {
     // constructors
     constructor();
     // methods
-    SetSuccess(): any;
-    SetFailure(info: string): any;
+    SetSuccess(): void;
+    SetFailure(info: string): void;
     ToString(): string;
-    Parse(obj: any): any;
+    Parse(obj: any): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
     ParseJSONInt16(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONInt32(name: string, obj: any, dictJsonObj: any): number;

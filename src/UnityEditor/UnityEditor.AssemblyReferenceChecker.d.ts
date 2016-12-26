@@ -4,8 +4,8 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static AssemblyReferenceCheckerWithUpdateProgressAction(action: any): UnityEditor.AssemblyReferenceChecker;
-    CollectReferencesFromRoots(dir: string, roots: any, collectMethods: boolean, progressValue: number, ignoreSystemDlls: boolean): any;
-    CollectReferences(path: string, collectMethods: boolean, progressValue: number, ignoreSystemDlls: boolean): any;
+    CollectReferencesFromRoots(dir: string, roots: any, collectMethods: boolean, progressValue: number, ignoreSystemDlls: boolean): void;
+    CollectReferences(path: string, collectMethods: boolean, progressValue: number, ignoreSystemDlls: boolean): void;
     HasReferenceToMethod(methodName: string): boolean;
     HasDefinedMethod(methodName: string): boolean;
     HasReferenceToType(typeName: string): boolean;

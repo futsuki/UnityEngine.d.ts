@@ -3,18 +3,18 @@ declare namespace UnityEngine.Assertions.Must {
     // constructors
     private constructor();
     // methods
-    static MustBeTrue(value: boolean): any;
-    static MustBeTrue(value: boolean, message: string): any;
-    static MustBeFalse(value: boolean): any;
-    static MustBeFalse(value: boolean, message: string): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number, message: string): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number): any;
-    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number, message: string): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number): any;
-    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): any;
+    static MustBeTrue(value: boolean): void;
+    static MustBeTrue(value: boolean, message: string): void;
+    static MustBeFalse(value: boolean): void;
+    static MustBeFalse(value: boolean, message: string): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number, message: string): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number): void;
+    static MustBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number, message: string): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number): void;
+    static MustNotBeApproximatelyEqual(actual: number, expected: number, tolerance: number, message: string): void;
     // properties
     // fields
   }

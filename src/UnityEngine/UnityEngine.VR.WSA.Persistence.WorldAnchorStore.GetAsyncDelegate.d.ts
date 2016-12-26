@@ -3,10 +3,10 @@ declare namespace UnityEngine.VR.WSA.Persistence.WorldAnchorStore {
     // constructors
     constructor(object: any, method: any);
     // methods
-    Invoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore): any;
+    Invoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore): void;
     BeginInvoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): any;
+    EndInvoke(result: any): void;
+    GetObjectData(info: any, context: any): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetInvocationList(): any[];

@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static DoGUI(title: string, show: any, scrollPos: any, getValue: UnityEditor.LayerMatrixGUI.GetValueFunc, setValue: UnityEditor.LayerMatrixGUI.SetValueFunc): any;
+    static DoGUI(title: string, show: any, scrollPos: any, getValue: UnityEditor.LayerMatrixGUI.GetValueFunc, setValue: UnityEditor.LayerMatrixGUI.SetValueFunc): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

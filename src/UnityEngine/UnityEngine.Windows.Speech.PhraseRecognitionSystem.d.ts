@@ -3,8 +3,8 @@ declare namespace UnityEngine.Windows.Speech {
     // constructors
     private constructor();
     // methods
-    static Restart(): any;
-    static Shutdown(): any;
+    static Restart(): void;
+    static Shutdown(): void;
     // properties
     // fields
   }

@@ -3,10 +3,10 @@ declare namespace UnityEngine.VR.WSA {
     // constructors
     constructor();
     // methods
-    static SetFocusPointForFrame(position: UnityEngine.Vector3): any;
-    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3): any;
-    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3, velocity: UnityEngine.Vector3): any;
-    static ActivateLatentFramePresentation(activated: boolean): any;
+    static SetFocusPointForFrame(position: UnityEngine.Vector3): void;
+    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3): void;
+    static SetFocusPointForFrame(position: UnityEngine.Vector3, normal: UnityEngine.Vector3, velocity: UnityEngine.Vector3): void;
+    static ActivateLatentFramePresentation(activated: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
