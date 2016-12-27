@@ -41,6 +41,6 @@ declare namespace UnityEditorInternal.AudioProfilerClipView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }

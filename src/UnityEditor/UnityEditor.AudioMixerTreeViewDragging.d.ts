@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class AudioMixerTreeViewDragging {
     // constructors
-    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, mixerDroppedOnMixerCallback: any);
+    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, mixerDroppedOnMixerCallback: ((any, UnityEditor.Audio.AudioMixerController) => void));
     // methods
     StartDrag(draggedNode: UnityEditor.IMGUI.Controls.TreeViewItem, draggedNodes: any): void;
     DragElement(targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, targetItemRect: any, firstItem: boolean): boolean;

@@ -7,7 +7,7 @@ declare namespace UnityEditor {
     static LinearizeScreenPercentage(percentage: number): number;
     static CalcLODButton(totalRect: any, percentage: number): any;
     static GetCulledBox(totalRect: any, previousLODPercentage: number): any;
-    static CreateLODInfos(numLODs: number, area: any, nameGen: any, heightGen: any): any;
+    static CreateLODInfos(numLODs: number, area: any, nameGen: ((number) => string), heightGen: ((number) => number)): any;
     static GetCameraPercent(position: any, sliderRect: any): number;
     static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): void;
     static DrawLODSlider(area: any, lods: any, selectedLevel: number): void;

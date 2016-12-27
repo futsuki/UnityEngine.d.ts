@@ -117,11 +117,11 @@ declare namespace UnityEditorInternal {
     hierarchyState: UnityEditorInternal.AnimationWindowHierarchyState;
     animEditor: UnityEditor.AnimEditor;
     showCurveEditor: boolean;
-    onStartLiveEdit: any;
-    onEndLiveEdit: any;
+    onStartLiveEdit: (() => void);
+    onEndLiveEdit: (() => void);
     hierarchyData: UnityEditorInternal.AnimationWindowHierarchyDataSource;
     static kDefaultFrameRate: number;
     static kEditCurveUndoLabel: string;
-    onFrameRateChange: any;
+    onFrameRateChange: ((number) => void);
   }
 }

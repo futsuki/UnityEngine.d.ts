@@ -18,7 +18,7 @@ declare namespace UnityEditor {
     readonly textureDimension: any;
     readonly rangeLimits: any;
     readonly hasMixedValue: boolean;
-    applyPropertyCallback: UnityEditor.MaterialProperty.ApplyPropertyCallback;
+    applyPropertyCallback: ((UnityEditor.MaterialProperty, number, any) => boolean);
     colorValue: any;
     vectorValue: any;
     floatValue: number;

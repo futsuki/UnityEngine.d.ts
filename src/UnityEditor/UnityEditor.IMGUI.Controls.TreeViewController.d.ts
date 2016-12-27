@@ -41,16 +41,16 @@ declare namespace UnityEditor.IMGUI.Controls {
     GetType(): any;
     ToString(): string;
     // properties
-    selectionChangedCallback: any;
-    itemDoubleClickedCallback: any;
-    dragEndedCallback: any;
-    contextClickItemCallback: any;
-    contextClickOutsideItemsCallback: any;
-    keyboardInputCallback: any;
-    expandedStateChanged: any;
-    searchChanged: any;
-    scrollChanged: any;
-    onGUIRowCallback: any;
+    selectionChangedCallback: ((number[]) => void);
+    itemDoubleClickedCallback: ((number) => void);
+    dragEndedCallback: ((number[], boolean) => void);
+    contextClickItemCallback: ((number) => void);
+    contextClickOutsideItemsCallback: (() => void);
+    keyboardInputCallback: (() => void);
+    expandedStateChanged: (() => void);
+    searchChanged: ((string) => void);
+    scrollChanged: ((any) => void);
+    onGUIRowCallback: ((number, any) => void);
     data: UnityEditor.IMGUI.Controls.ITreeViewDataSource;
     dragging: UnityEditor.IMGUI.Controls.ITreeViewDragging;
     gui: UnityEditor.IMGUI.Controls.ITreeViewGUI;

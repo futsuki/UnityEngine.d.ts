@@ -14,7 +14,7 @@ declare namespace UnityEditor {
     static SetName(instanceID: number, name: string): void;
     static UpdateExistingSavedFilter(instanceID: number, filter: UnityEditor.SearchFilter, previewSize: number): void;
     static ConvertToTreeView(): UnityEditor.IMGUI.Controls.TreeViewItem;
-    static AddChangeListener(callback: any): void;
+    static AddChangeListener(callback: (() => void)): void;
     static MoveSavedFilter(instanceID: number, parentInstanceID: number, targetInstanceID: number, after: boolean): void;
     static CanMoveSavedFilter(instanceID: number, parentInstanceID: number, targetInstanceID: number, after: boolean): boolean;
     static AllowsHierarchy(): boolean;

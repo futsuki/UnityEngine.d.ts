@@ -156,8 +156,8 @@ declare namespace UnityEngine {
     name: string;
     hideFlags: UnityEngine.HideFlags;
     // fields
-    static onPreCull: UnityEngine.Camera.CameraCallback;
-    static onPreRender: UnityEngine.Camera.CameraCallback;
-    static onPostRender: UnityEngine.Camera.CameraCallback;
+    static onPreCull: ((UnityEngine.Camera) => void);
+    static onPreRender: ((UnityEngine.Camera) => void);
+    static onPostRender: ((UnityEngine.Camera) => void);
   }
 }

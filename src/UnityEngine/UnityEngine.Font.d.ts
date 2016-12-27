@@ -24,7 +24,7 @@ declare namespace UnityEngine {
     material: UnityEngine.Material;
     fontNames: string[];
     characterInfo: UnityEngine.CharacterInfo[];
-    textureRebuildCallback: UnityEngine.Font.FontTextureRebuildCallback;
+    textureRebuildCallback: (() => void);
     readonly dynamic: boolean;
     readonly ascent: number;
     readonly lineHeight: number;

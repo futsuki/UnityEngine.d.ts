@@ -20,7 +20,7 @@ declare namespace UnityEngine {
     GetType(): any;
     ToString(): string;
     // properties
-    onStateChanged: UnityEngine.CullingGroup.StateChanged;
+    onStateChanged: ((UnityEngine.CullingGroupEvent) => void);
     enabled: boolean;
     targetCamera: UnityEngine.Camera;
     // fields

@@ -3,15 +3,15 @@ declare namespace UnityEngine.SocialPlatforms.GameCenter {
     // constructors
     constructor();
     // methods
-    static ResetAllAchievements(callback: any): void;
+    static ResetAllAchievements(callback: ((boolean) => void)): void;
     static ShowDefaultAchievementCompletionBanner(value: boolean): void;
     static ShowLeaderboardUI(leaderboardID: string, timeScope: UnityEngine.SocialPlatforms.TimeScope): void;
-    LoadUsers(userIDs: string[], callback: any): void;
-    ReportProgress(id: string, progress: number, callback: any): void;
-    LoadAchievementDescriptions(callback: any): void;
-    LoadAchievements(callback: any): void;
-    ReportScore(score: number, board: string, callback: any): void;
-    LoadScores(leaderboardID: string, callback: any): void;
+    LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    ReportProgress(id: string, progress: number, callback: ((boolean) => void)): void;
+    LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
+    ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
+    LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
     ShowAchievementsUI(): void;
     ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;

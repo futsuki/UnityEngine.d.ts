@@ -1,8 +1,8 @@
 declare namespace UnityEditor.Scripting {
   class ManagedProgram {
     // constructors
-    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setupStartInfo: any);
-    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setMonoEnvironmentVariables: boolean, setupStartInfo: any);
+    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setupStartInfo: ((any) => void));
+    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setMonoEnvironmentVariables: boolean, setupStartInfo: ((any) => void));
     // methods
     Start(): void;
     GetProcessStartInfo(): any;

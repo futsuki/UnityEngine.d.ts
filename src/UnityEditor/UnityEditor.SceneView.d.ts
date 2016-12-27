@@ -79,7 +79,7 @@ declare namespace UnityEditor {
     m_SceneLighting: boolean;
     lastFramingTime: number;
     m_AudioPlay: boolean;
-    static onSceneGUIDelegate: UnityEditor.SceneView.OnSceneFunc;
+    static onSceneGUIDelegate: ((UnityEditor.SceneView) => void);
     m_RenderMode: UnityEditor.DrawCameraMode;
   }
 }

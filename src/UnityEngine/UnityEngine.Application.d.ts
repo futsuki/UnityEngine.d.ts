@@ -16,15 +16,15 @@ declare namespace UnityEngine {
     static DontDestroyOnLoad(mono: UnityEngine.Object): void;
     static ExternalCall(functionName: string, args: any[]): void;
     static ExternalEval(script: string): void;
-    static RequestAdvertisingIdentifierAsync(delegateMethod: UnityEngine.Application.AdvertisingIdentifierCallback): boolean;
+    static RequestAdvertisingIdentifierAsync(delegateMethod: ((string, boolean, string) => void)): boolean;
     static OpenURL(url: string): void;
     static ForceCrash(mode: number): void;
     static GetStackTraceLogType(logType: UnityEngine.LogType): UnityEngine.StackTraceLogType;
     static SetStackTraceLogType(logType: UnityEngine.LogType, stackTraceType: UnityEngine.StackTraceLogType): void;
     static RequestUserAuthorization(mode: UnityEngine.UserAuthorization): UnityEngine.AsyncOperation;
     static HasUserAuthorization(mode: UnityEngine.UserAuthorization): boolean;
-    static RegisterLogCallback(handler: UnityEngine.Application.LogCallback): void;
-    static RegisterLogCallbackThreaded(handler: UnityEngine.Application.LogCallback): void;
+    static RegisterLogCallback(handler: ((string, string, UnityEngine.LogType) => void)): void;
+    static RegisterLogCallbackThreaded(handler: ((string, string, UnityEngine.LogType) => void)): void;
     static LoadLevel(index: number): void;
     static LoadLevel(name: string): void;
     static LoadLevelAdditive(index: number): void;

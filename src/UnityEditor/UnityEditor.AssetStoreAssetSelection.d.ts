@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     static AddAsset(searchResult: UnityEditor.AssetStoreAsset, placeholderPreviewImage: any): void;
-    static RefreshFromServer(callback: UnityEditor.AssetStoreAssetSelection.AssetsRefreshed): void;
+    static RefreshFromServer(callback: (() => void)): void;
     static ContainsAsset(id: number): boolean;
     static Clear(): void;
     static GetFirstAsset(): UnityEditor.AssetStoreAsset;

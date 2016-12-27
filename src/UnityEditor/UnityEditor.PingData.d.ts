@@ -16,7 +16,7 @@ declare namespace UnityEditor {
     m_WaitTime: number;
     m_FadeOutTime: number;
     m_PeakScale: number;
-    m_ContentDraw: any;
+    m_ContentDraw: ((any) => void);
     m_ContentRect: any;
     m_AvailableWidth: number;
     m_PingStyle: any;

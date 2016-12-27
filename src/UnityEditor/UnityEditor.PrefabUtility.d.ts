@@ -33,6 +33,6 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    static prefabInstanceUpdated: UnityEditor.PrefabUtility.PrefabInstanceUpdated;
+    static prefabInstanceUpdated: ((any) => void);
   }
 }

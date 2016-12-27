@@ -2,7 +2,7 @@ declare namespace UnityEngine.Events {
   class InvokableCall {
     // constructors
     constructor(target: any, theFunction: any);
-    constructor(action: UnityEngine.Events.UnityAction);
+    constructor(action: (() => void));
     // methods
     Invoke(args: any[]): void;
     Find(targetObj: any, method: any): boolean;

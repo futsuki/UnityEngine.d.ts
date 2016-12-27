@@ -28,7 +28,7 @@ declare namespace UnityEditorInternal.AudioProfilerClipView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;

@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.ScrollRect {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEngine.Vector2) => void)): void;
+    RemoveListener(call: ((UnityEngine.Vector2) => void)): void;
     Invoke(arg0: UnityEngine.Vector2): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

@@ -41,12 +41,12 @@ declare namespace UnityEditor {
     allowUserRenderingHook: boolean;
     allowFindNextShortcut: boolean;
     foldersFirst: boolean;
-    repaintCallback: any;
-    itemSelectedCallback: any;
-    keyboardCallback: any;
-    gotKeyboardFocus: any;
-    assetStoreSearchEnded: any;
-    drawLocalAssetHeader: any;
+    repaintCallback: (() => void);
+    itemSelectedCallback: ((boolean) => void);
+    keyboardCallback: (() => void);
+    gotKeyboardFocus: (() => void);
+    assetStoreSearchEnded: (() => void);
+    drawLocalAssetHeader: ((any) => number);
     gridSize: number;
     readonly minGridSize: number;
     readonly maxGridSize: number;

@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class AudioMixersDataSource {
     // constructors
-    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, getAllControllersCallback: any);
+    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, getAllControllersCallback: (() => any));
     // methods
     FetchData(): void;
     IsRenamingItemAllowed(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
@@ -42,6 +42,6 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }

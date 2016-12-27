@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
   class WaitUntil {
     // constructors
-    constructor(predicate: any);
+    constructor(predicate: (() => boolean));
     // methods
     MoveNext(): boolean;
     Reset(): void;

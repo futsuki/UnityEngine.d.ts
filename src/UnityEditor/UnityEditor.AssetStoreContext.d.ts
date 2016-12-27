@@ -26,7 +26,7 @@ declare namespace UnityEditor {
     static OpenPackageInternal(id: string): boolean;
     OpenBrowser(url: string): void;
     Download(package_: UnityEditor.AssetStoreContext.Package, downloadInfo: UnityEditor.AssetStoreContext.DownloadInfo): void;
-    static Download(package_id: string, url: string, key: string, package_name: string, publisher_name: string, category_name: string, doneCallback: UnityEditor.AssetStoreUtils.DownloadDoneCallback): void;
+    static Download(package_id: string, url: string, key: string, package_name: string, publisher_name: string, category_name: string, doneCallback: ((string, string, number, number) => void)): void;
     static PackageStorePath(publisher_name: string, category_name: string, package_name: string, package_id: string, url: string): string[];
     GetPackageList(): UnityEditor.AssetStoreContext.PackageList;
     Equals(obj: any): boolean;

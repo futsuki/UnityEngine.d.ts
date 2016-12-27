@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class DoubleCurvePresetsContentsForPopupWindow {
     // constructors
-    constructor(doubleCurveToSave: UnityEditor.DoubleCurve, presetSelectedCallback: any);
+    constructor(doubleCurveToSave: UnityEditor.DoubleCurve, presetSelectedCallback: ((UnityEditor.DoubleCurve) => void));
     // methods
     OnClose(): void;
     GetPresetLibraryEditor(): any;

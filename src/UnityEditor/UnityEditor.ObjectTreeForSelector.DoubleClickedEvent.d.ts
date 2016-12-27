@@ -3,8 +3,8 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: (() => void)): void;
+    RemoveListener(call: (() => void)): void;
     Invoke(): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): any;

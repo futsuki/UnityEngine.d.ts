@@ -12,8 +12,8 @@ declare namespace UnityEngine.UI {
     static GetMinHeight(rect: UnityEngine.RectTransform): number;
     static GetPreferredHeight(rect: UnityEngine.RectTransform): number;
     static GetFlexibleHeight(rect: UnityEngine.RectTransform): number;
-    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: any, defaultValue: number): number;
-    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: any, defaultValue: number, source: any): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((UnityEngine.UI.ILayoutElement) => number), defaultValue: number): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((UnityEngine.UI.ILayoutElement) => number), defaultValue: number, source: any): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

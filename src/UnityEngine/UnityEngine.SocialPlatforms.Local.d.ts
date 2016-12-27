@@ -3,12 +3,12 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     constructor();
     // methods
-    LoadUsers(userIDs: string[], callback: any): void;
-    ReportProgress(id: string, progress: number, callback: any): void;
-    LoadAchievementDescriptions(callback: any): void;
-    LoadAchievements(callback: any): void;
-    ReportScore(score: number, board: string, callback: any): void;
-    LoadScores(leaderboardID: string, callback: any): void;
+    LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    ReportProgress(id: string, progress: number, callback: ((boolean) => void)): void;
+    LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
+    ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
+    LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
     ShowAchievementsUI(): void;
     ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;

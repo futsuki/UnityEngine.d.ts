@@ -3,8 +3,8 @@ declare namespace UnityEditor.AnimatedValues {
     // constructors
     constructor();
     constructor(value: boolean);
-    constructor(callback: any);
-    constructor(value: boolean, callback: any);
+    constructor(callback: (() => void));
+    constructor(value: boolean, callback: (() => void));
     // methods
     Fade(from: number, to: number): number;
     Equals(obj: any): boolean;

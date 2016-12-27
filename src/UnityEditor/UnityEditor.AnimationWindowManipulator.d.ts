@@ -11,9 +11,9 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    onStartDrag: UnityEditor.AnimationWindowManipulator.OnStartDragDelegate;
-    onDrag: UnityEditor.AnimationWindowManipulator.OnDragDelegate;
-    onEndDrag: UnityEditor.AnimationWindowManipulator.OnEndDragDelegate;
+    onStartDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onEndDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
     rect: any;
     controlID: number;
   }

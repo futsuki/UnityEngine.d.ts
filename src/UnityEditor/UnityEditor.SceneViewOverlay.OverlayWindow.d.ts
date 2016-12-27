@@ -11,7 +11,7 @@ declare namespace UnityEditor.SceneViewOverlay {
     // properties
     // fields
     m_Title: any;
-    m_SceneViewFunc: UnityEditor.SceneViewOverlay.WindowFunction;
+    m_SceneViewFunc: ((any, UnityEditor.SceneView) => void);
     m_PrimaryOrder: number;
     m_SecondaryOrder: number;
     m_Target: any;

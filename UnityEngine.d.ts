@@ -401,17 +401,17 @@ declare namespace SimpleJson {
     CopyTo(array: any[]): void;
     CopyTo(array: any[], arrayIndex: number): void;
     CopyTo(index: number, array: any[], arrayIndex: number, count: number): void;
-    Exists(match: any): boolean;
-    Find(match: any): any;
-    FindAll(match: any): any;
-    FindIndex(match: any): number;
-    FindIndex(startIndex: number, match: any): number;
-    FindIndex(startIndex: number, count: number, match: any): number;
-    FindLast(match: any): any;
-    FindLastIndex(match: any): number;
-    FindLastIndex(startIndex: number, match: any): number;
-    FindLastIndex(startIndex: number, count: number, match: any): number;
-    ForEach(action: any): void;
+    Exists(match: ((any) => boolean)): boolean;
+    Find(match: ((any) => boolean)): any;
+    FindAll(match: ((any) => boolean)): any;
+    FindIndex(match: ((any) => boolean)): number;
+    FindIndex(startIndex: number, match: ((any) => boolean)): number;
+    FindIndex(startIndex: number, count: number, match: ((any) => boolean)): number;
+    FindLast(match: ((any) => boolean)): any;
+    FindLastIndex(match: ((any) => boolean)): number;
+    FindLastIndex(startIndex: number, match: ((any) => boolean)): number;
+    FindLastIndex(startIndex: number, count: number, match: ((any) => boolean)): number;
+    ForEach(action: ((any) => void)): void;
     GetEnumerator(): any;
     GetRange(index: number, count: number): any;
     IndexOf(item: any): number;
@@ -423,18 +423,18 @@ declare namespace SimpleJson {
     LastIndexOf(item: any, index: number): number;
     LastIndexOf(item: any, index: number, count: number): number;
     Remove(item: any): boolean;
-    RemoveAll(match: any): number;
+    RemoveAll(match: ((any) => boolean)): number;
     RemoveAt(index: number): void;
     RemoveRange(index: number, count: number): void;
     Reverse(): void;
     Reverse(index: number, count: number): void;
     Sort(): void;
     Sort(comparer: any): void;
-    Sort(comparison: any): void;
+    Sort(comparison: ((any, any) => number)): void;
     Sort(index: number, count: number, comparer: any): void;
     ToArray(): any[];
     TrimExcess(): void;
-    TrueForAll(match: any): boolean;
+    TrueForAll(match: ((any) => boolean)): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -492,28 +492,6 @@ declare namespace SimpleJson {
     // fields
   }
 }
-declare namespace SimpleJson.Reflection.ReflectionUtils {
-  class ConstructorDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(args: any[]): any;
-    BeginInvoke(args: any[], callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace SimpleJson.Reflection {
   class ReflectionUtils {
     // constructors
@@ -534,67 +512,23 @@ declare namespace SimpleJson.Reflection {
     static GetFields(type: any): any;
     static GetGetterMethodInfo(propertyInfo: any): any;
     static GetSetterMethodInfo(propertyInfo: any): any;
-    static GetContructor(constructorInfo: any): SimpleJson.Reflection.ReflectionUtils.ConstructorDelegate;
-    static GetContructor(type: any, argsType: any[]): SimpleJson.Reflection.ReflectionUtils.ConstructorDelegate;
-    static GetConstructorByReflection(constructorInfo: any): SimpleJson.Reflection.ReflectionUtils.ConstructorDelegate;
-    static GetConstructorByReflection(type: any, argsType: any[]): SimpleJson.Reflection.ReflectionUtils.ConstructorDelegate;
-    static GetGetMethod(propertyInfo: any): SimpleJson.Reflection.ReflectionUtils.GetDelegate;
-    static GetGetMethod(fieldInfo: any): SimpleJson.Reflection.ReflectionUtils.GetDelegate;
-    static GetGetMethodByReflection(propertyInfo: any): SimpleJson.Reflection.ReflectionUtils.GetDelegate;
-    static GetGetMethodByReflection(fieldInfo: any): SimpleJson.Reflection.ReflectionUtils.GetDelegate;
-    static GetSetMethod(propertyInfo: any): SimpleJson.Reflection.ReflectionUtils.SetDelegate;
-    static GetSetMethod(fieldInfo: any): SimpleJson.Reflection.ReflectionUtils.SetDelegate;
-    static GetSetMethodByReflection(propertyInfo: any): SimpleJson.Reflection.ReflectionUtils.SetDelegate;
-    static GetSetMethodByReflection(fieldInfo: any): SimpleJson.Reflection.ReflectionUtils.SetDelegate;
+    static GetContructor(constructorInfo: any): ((any[]) => any);
+    static GetContructor(type: any, argsType: any[]): ((any[]) => any);
+    static GetConstructorByReflection(constructorInfo: any): ((any[]) => any);
+    static GetConstructorByReflection(type: any, argsType: any[]): ((any[]) => any);
+    static GetGetMethod(propertyInfo: any): ((any) => any);
+    static GetGetMethod(fieldInfo: any): ((any) => any);
+    static GetGetMethodByReflection(propertyInfo: any): ((any) => any);
+    static GetGetMethodByReflection(fieldInfo: any): ((any) => any);
+    static GetSetMethod(propertyInfo: any): ((any, any) => void);
+    static GetSetMethod(fieldInfo: any): ((any, any) => void);
+    static GetSetMethodByReflection(propertyInfo: any): ((any, any) => void);
+    static GetSetMethodByReflection(fieldInfo: any): ((any, any) => void);
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace SimpleJson.Reflection.ReflectionUtils {
-  class GetDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: any): any;
-    BeginInvoke(source: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace SimpleJson.Reflection.ReflectionUtils {
-  class SetDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: any, value: any): void;
-    BeginInvoke(source: any, value: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -1042,50 +976,6 @@ declare namespace UnityEngine {
     // fields
   }
 }
-declare namespace UnityEngine.ADBannerView {
-  class BannerWasClickedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.ADBannerView {
-  class BannerWasLoadedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine {
   class ADBannerView {
     // constructors
@@ -1191,28 +1081,6 @@ declare namespace UnityEngine {
     // properties
     static readonly isAvailable: boolean;
     readonly loaded: boolean;
-    // fields
-  }
-}
-declare namespace UnityEngine.ADInterstitialAd {
-  class InterstitialWasLoadedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -1976,31 +1844,9 @@ declare namespace UnityEngine {
   }
 }
 declare namespace UnityEngine {
-  class AndroidJavaRunnable {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine {
   class AndroidJavaRunnableProxy {
     // constructors
-    constructor(runnable: UnityEngine.AndroidJavaRunnable);
+    constructor(runnable: (() => void));
     // methods
     run(): void;
     Invoke(methodName: string, args: any[]): UnityEngine.AndroidJavaObject;
@@ -2184,7 +2030,7 @@ declare namespace UnityEngine {
     static GetFieldID(javaClass: any, fieldName: string, signature: string): any;
     static GetFieldID(javaClass: any, fieldName: string): any;
     static GetFieldID(javaClass: any, fieldName: string, signature: string, isStatic: boolean): any;
-    static CreateJavaRunnable(jrunnable: UnityEngine.AndroidJavaRunnable): any;
+    static CreateJavaRunnable(jrunnable: (() => void)): any;
     static CreateJavaProxy(proxy: UnityEngine.AndroidJavaProxy): any;
     static ConvertToJNIArray(array: any): any;
     static CreateJNIArgArray(args: any[]): UnityEngine.jvalue[];
@@ -3005,28 +2851,6 @@ declare namespace UnityEngine {
     // fields
   }
 }
-declare namespace UnityEngine.AnimatorOverrideController {
-  class OnOverrideControllerDirtyCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine {
   class AnimatorRecorderMode {
     // constructors
@@ -3152,28 +2976,6 @@ declare namespace UnityEngine {
     static ForceEnable: UnityEngine.AnisotropicFiltering;
   }
 }
-declare namespace UnityEngine.Apple.ReplayKit.ReplayKit {
-  class BroadcastStatusCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(hasStarted: boolean, errorMessage: string): void;
-    BeginInvoke(hasStarted: boolean, errorMessage: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine.Apple.ReplayKit {
   class ReplayKit {
     // constructors
@@ -3185,9 +2987,9 @@ declare namespace UnityEngine.Apple.ReplayKit {
     static StopRecording(): boolean;
     static Preview(): boolean;
     static Discard(): boolean;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean, enableCamera: boolean): void;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean): void;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback): void;
+    static StartBroadcasting(callback: ((boolean, string) => void), enableMicrophone: boolean, enableCamera: boolean): void;
+    static StartBroadcasting(callback: ((boolean, string) => void), enableMicrophone: boolean): void;
+    static StartBroadcasting(callback: ((boolean, string) => void)): void;
     static StopBroadcasting(): void;
     static ShowCameraPreviewAt(posX: number, posY: number): boolean;
     static HideCameraPreview(): void;
@@ -3225,28 +3027,6 @@ declare namespace UnityEngine.Apple.TV {
     // fields
   }
 }
-declare namespace UnityEngine.Application {
-  class AdvertisingIdentifierCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(advertisingId: string, trackingEnabled: boolean, errorMsg: string): void;
-    BeginInvoke(advertisingId: string, trackingEnabled: boolean, errorMsg: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine {
   class Application {
     // constructors
@@ -3265,15 +3045,15 @@ declare namespace UnityEngine {
     static DontDestroyOnLoad(mono: UnityEngine.Object): void;
     static ExternalCall(functionName: string, args: any[]): void;
     static ExternalEval(script: string): void;
-    static RequestAdvertisingIdentifierAsync(delegateMethod: UnityEngine.Application.AdvertisingIdentifierCallback): boolean;
+    static RequestAdvertisingIdentifierAsync(delegateMethod: ((string, boolean, string) => void)): boolean;
     static OpenURL(url: string): void;
     static ForceCrash(mode: number): void;
     static GetStackTraceLogType(logType: UnityEngine.LogType): UnityEngine.StackTraceLogType;
     static SetStackTraceLogType(logType: UnityEngine.LogType, stackTraceType: UnityEngine.StackTraceLogType): void;
     static RequestUserAuthorization(mode: UnityEngine.UserAuthorization): UnityEngine.AsyncOperation;
     static HasUserAuthorization(mode: UnityEngine.UserAuthorization): boolean;
-    static RegisterLogCallback(handler: UnityEngine.Application.LogCallback): void;
-    static RegisterLogCallbackThreaded(handler: UnityEngine.Application.LogCallback): void;
+    static RegisterLogCallback(handler: ((string, string, UnityEngine.LogType) => void)): void;
+    static RegisterLogCallbackThreaded(handler: ((string, string, UnityEngine.LogType) => void)): void;
     static LoadLevel(index: number): void;
     static LoadLevel(name: string): void;
     static LoadLevelAdditive(index: number): void;
@@ -3328,28 +3108,6 @@ declare namespace UnityEngine {
     static readonly loadedLevel: number;
     static readonly loadedLevelName: string;
     static readonly absoluteUrl: string;
-    // fields
-  }
-}
-declare namespace UnityEngine.Application {
-  class LogCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(condition: string, stackTrace: string, type: UnityEngine.LogType): void;
-    BeginInvoke(condition: string, stackTrace: string, type: UnityEngine.LogType, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -3952,11 +3710,11 @@ declare namespace UnityEngine {
     GetData(data: number[], offsetSamples: number): boolean;
     SetData(data: number[], offsetSamples: number): boolean;
     static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback, pcmsetpositioncallback: UnityEngine.AudioClip.PCMSetPositionCallback): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((number[]) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((number[]) => void), pcmsetpositioncallback: ((number) => void)): UnityEngine.AudioClip;
     static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback, pcmsetpositioncallback: UnityEngine.AudioClip.PCMSetPositionCallback): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((number[]) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((number[]) => void), pcmsetpositioncallback: ((number) => void)): UnityEngine.AudioClip;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;
@@ -3974,50 +3732,6 @@ declare namespace UnityEngine {
     readonly loadInBackground: boolean;
     name: string;
     hideFlags: UnityEngine.HideFlags;
-    // fields
-  }
-}
-declare namespace UnityEngine.AudioClip {
-  class PCMReaderCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(data: number[]): void;
-    BeginInvoke(data: number[], callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.AudioClip {
-  class PCMSetPositionCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(position: number): void;
-    BeginInvoke(position: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -4667,28 +4381,6 @@ declare namespace UnityEngine {
     static Logarithmic: UnityEngine.AudioRolloffMode;
     static Linear: UnityEngine.AudioRolloffMode;
     static Custom: UnityEngine.AudioRolloffMode;
-  }
-}
-declare namespace UnityEngine.AudioSettings {
-  class AudioConfigurationChangeHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(deviceWasChanged: boolean): void;
-    BeginInvoke(deviceWasChanged: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEngine {
@@ -5711,28 +5403,6 @@ declare namespace UnityEngine {
     static Quarter: UnityEngine.CalendarUnit;
   }
 }
-declare namespace UnityEngine.Camera {
-  class CameraCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(cam: UnityEngine.Camera): void;
-    BeginInvoke(cam: UnityEngine.Camera, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine {
   class Camera {
     // constructors
@@ -5891,9 +5561,9 @@ declare namespace UnityEngine {
     name: string;
     hideFlags: UnityEngine.HideFlags;
     // fields
-    static onPreCull: UnityEngine.Camera.CameraCallback;
-    static onPreRender: UnityEngine.Camera.CameraCallback;
-    static onPostRender: UnityEngine.Camera.CameraCallback;
+    static onPreCull: ((UnityEngine.Camera) => void);
+    static onPreRender: ((UnityEngine.Camera) => void);
+    static onPostRender: ((UnityEngine.Camera) => void);
   }
 }
 declare namespace UnityEngine.Camera {
@@ -6071,28 +5741,6 @@ declare namespace UnityEngine {
     // fields
   }
 }
-declare namespace UnityEngine.Canvas {
-  class WillRenderCanvases {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine {
   class CanvasGroup {
     // constructors
@@ -6245,28 +5893,6 @@ declare namespace UnityEngine {
     readonly particleSystem: UnityEngine.Component;
     name: string;
     hideFlags: UnityEngine.HideFlags;
-    // fields
-  }
-}
-declare namespace UnityEngine.CanvasRenderer {
-  class OnRequestRebuild {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -8244,31 +7870,9 @@ declare namespace UnityEngine {
     GetType(): any;
     ToString(): string;
     // properties
-    onStateChanged: UnityEngine.CullingGroup.StateChanged;
+    onStateChanged: ((UnityEngine.CullingGroupEvent) => void);
     enabled: boolean;
     targetCamera: UnityEngine.Camera;
-    // fields
-  }
-}
-declare namespace UnityEngine.CullingGroup {
-  class StateChanged {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(sphere: UnityEngine.CullingGroupEvent): void;
-    BeginInvoke(sphere: UnityEngine.CullingGroupEvent, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -8732,28 +8336,6 @@ declare namespace UnityEngine {
     static readonly main: UnityEngine.Display;
     // fields
     static displays: UnityEngine.Display[];
-  }
-}
-declare namespace UnityEngine.Display {
-  class DisplaysUpdatedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEngine {
@@ -9370,7 +8952,7 @@ declare namespace UnityEngine.Events {
   class InvokableCall {
     // constructors
     constructor(target: any, theFunction: any);
-    constructor(action: UnityEngine.Events.UnityAction);
+    constructor(action: (() => void));
     // methods
     Invoke(args: any[]): void;
     Find(targetObj: any, method: any): boolean;
@@ -9481,34 +9063,12 @@ declare namespace UnityEngine.Events {
   }
 }
 declare namespace UnityEngine.Events {
-  class UnityAction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.Events {
   class UnityEvent {
     // constructors
     constructor();
     // methods
-    AddListener(call: UnityEngine.Events.UnityAction): void;
-    RemoveListener(call: UnityEngine.Events.UnityAction): void;
+    AddListener(call: (() => void)): void;
+    RemoveListener(call: (() => void)): void;
     Invoke(): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -10117,8 +9677,8 @@ declare namespace UnityEngine.EventSystems.EventTrigger {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEngine.EventSystems.BaseEventData) => void)): void;
+    RemoveListener(call: ((UnityEngine.EventSystems.BaseEventData) => void)): void;
     Invoke(arg0: UnityEngine.EventSystems.BaseEventData): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -10179,23 +9739,23 @@ declare namespace UnityEngine.EventSystems {
     GetType(): any;
     ToString(): string;
     // properties
-    static readonly pointerEnterHandler: any;
-    static readonly pointerExitHandler: any;
-    static readonly pointerDownHandler: any;
-    static readonly pointerUpHandler: any;
-    static readonly pointerClickHandler: any;
-    static readonly initializePotentialDrag: any;
-    static readonly beginDragHandler: any;
-    static readonly dragHandler: any;
-    static readonly endDragHandler: any;
-    static readonly dropHandler: any;
-    static readonly scrollHandler: any;
-    static readonly updateSelectedHandler: any;
-    static readonly selectHandler: any;
-    static readonly deselectHandler: any;
-    static readonly moveHandler: any;
-    static readonly submitHandler: any;
-    static readonly cancelHandler: any;
+    static readonly pointerEnterHandler: ((UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerExitHandler: ((UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerDownHandler: ((UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerUpHandler: ((UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerClickHandler: ((UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly initializePotentialDrag: ((UnityEngine.EventSystems.IInitializePotentialDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly beginDragHandler: ((UnityEngine.EventSystems.IBeginDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly dragHandler: ((UnityEngine.EventSystems.IDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly endDragHandler: ((UnityEngine.EventSystems.IEndDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly dropHandler: ((UnityEngine.EventSystems.IDropHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly scrollHandler: ((UnityEngine.EventSystems.IScrollHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly updateSelectedHandler: ((UnityEngine.EventSystems.IUpdateSelectedHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly selectHandler: ((UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly deselectHandler: ((UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly moveHandler: ((UnityEngine.EventSystems.IMoveHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly submitHandler: ((UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly cancelHandler: ((UnityEngine.EventSystems.ICancelHandler, UnityEngine.EventSystems.BaseEventData) => void);
     // fields
   }
 }
@@ -12122,35 +11682,13 @@ declare namespace UnityEngine {
     material: UnityEngine.Material;
     fontNames: string[];
     characterInfo: UnityEngine.CharacterInfo[];
-    textureRebuildCallback: UnityEngine.Font.FontTextureRebuildCallback;
+    textureRebuildCallback: (() => void);
     readonly dynamic: boolean;
     readonly ascent: number;
     readonly lineHeight: number;
     readonly fontSize: number;
     name: string;
     hideFlags: UnityEngine.HideFlags;
-    // fields
-  }
-}
-declare namespace UnityEngine.Font {
-  class FontTextureRebuildCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -12816,18 +12354,18 @@ declare namespace UnityEngine {
     static EndScrollView(handleScrollWheel: boolean): void;
     static ScrollTo(position: UnityEngine.Rect): void;
     static ScrollTowards(position: UnityEngine.Rect, maxDelta: number): boolean;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, title: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), title: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static DragWindow(): void;
     static SetNextControlName(name: string): void;
     static GetNameOfFocusedControl(): string;
@@ -12924,28 +12462,6 @@ declare namespace UnityEngine.GUI {
     scrollPosition: UnityEngine.Vector2;
     apply: boolean;
     hasScrollTo: boolean;
-  }
-}
-declare namespace UnityEngine.GUI {
-  class WindowFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(id: number): void;
-    BeginInvoke(id: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEngine {
@@ -13311,12 +12827,12 @@ declare namespace UnityEngine {
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, background: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static EndScrollView(): void;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), text: string, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static Width(width: number): UnityEngine.GUILayoutOption;
     static MinWidth(minWidth: number): UnityEngine.GUILayoutOption;
     static MaxWidth(maxWidth: number): UnityEngine.GUILayoutOption;
@@ -13670,28 +13186,6 @@ declare namespace UnityEngine {
     readonly settings: UnityEngine.GUISettings;
     name: string;
     hideFlags: UnityEngine.HideFlags;
-    // fields
-  }
-}
-declare namespace UnityEngine.GUISkin {
-  class SkinChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -15029,72 +14523,6 @@ declare namespace UnityEngine.iOS {
     static Gray: UnityEngine.iOS.ActivityIndicatorStyle;
   }
 }
-declare namespace UnityEngine.iOS.ADBannerView {
-  class BannerFailedToLoadDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.iOS.ADBannerView {
-  class BannerWasClickedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.iOS.ADBannerView {
-  class BannerWasLoadedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine.iOS {
   class ADBannerView {
     // constructors
@@ -15181,50 +14609,6 @@ declare namespace UnityEngine.iOS {
     // properties
     static readonly isAvailable: boolean;
     readonly loaded: boolean;
-    // fields
-  }
-}
-declare namespace UnityEngine.iOS.ADInterstitialAd {
-  class InterstitialWasLoadedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.iOS.ADInterstitialAd {
-  class InterstitialWasViewedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -19682,40 +19066,18 @@ declare namespace UnityEngine.Networking.Match.MatchInfoSnapshot {
     // fields
   }
 }
-declare namespace UnityEngine.Networking.Match.NetworkMatch {
-  class BasicResponseDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(success: boolean, extendedInfo: string): void;
-    BeginInvoke(success: boolean, extendedInfo: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine.Networking.Match {
   class NetworkMatch {
     // constructors
     constructor();
     // methods
     SetProgramAppID(programAppID: UnityEngine.Networking.Types.AppID): void;
-    CreateMatch(matchName: string, matchSize: number, matchAdvertise: boolean, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForMatch: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
-    JoinMatch(netId: UnityEngine.Networking.Types.NetworkID, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForClient: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
-    DestroyMatch(netId: UnityEngine.Networking.Types.NetworkID, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
-    DropConnection(netId: UnityEngine.Networking.Types.NetworkID, dropNodeId: UnityEngine.Networking.Types.NodeID, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
-    ListMatches(startPageNumber: number, resultPageSize: number, matchNameFilter: string, filterOutPrivateMatchesFromResults: boolean, eloScoreTarget: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
-    SetMatchAttributes(networkId: UnityEngine.Networking.Types.NetworkID, isListed: boolean, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
+    CreateMatch(matchName: string, matchSize: number, matchAdvertise: boolean, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForMatch: number, requestDomain: number, callback: ((boolean, string, UnityEngine.Networking.Match.MatchInfo) => void)): UnityEngine.Coroutine;
+    JoinMatch(netId: UnityEngine.Networking.Types.NetworkID, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForClient: number, requestDomain: number, callback: ((boolean, string, UnityEngine.Networking.Match.MatchInfo) => void)): UnityEngine.Coroutine;
+    DestroyMatch(netId: UnityEngine.Networking.Types.NetworkID, requestDomain: number, callback: ((boolean, string) => void)): UnityEngine.Coroutine;
+    DropConnection(netId: UnityEngine.Networking.Types.NetworkID, dropNodeId: UnityEngine.Networking.Types.NodeID, requestDomain: number, callback: ((boolean, string) => void)): UnityEngine.Coroutine;
+    ListMatches(startPageNumber: number, resultPageSize: number, matchNameFilter: string, filterOutPrivateMatchesFromResults: boolean, eloScoreTarget: number, requestDomain: number, callback: ((boolean, string, any) => void)): UnityEngine.Coroutine;
+    SetMatchAttributes(networkId: UnityEngine.Networking.Types.NetworkID, isListed: boolean, requestDomain: number, callback: ((boolean, string) => void)): UnityEngine.Coroutine;
     Invoke(methodName: string, time: number): void;
     InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
     CancelInvoke(): void;
@@ -21537,28 +20899,6 @@ declare namespace UnityEngine.ParticleSystem {
     mode: UnityEngine.ParticleSystemInheritVelocityMode;
     curve: UnityEngine.ParticleSystem.MinMaxCurve;
     curveMultiplier: number;
-    // fields
-  }
-}
-declare namespace UnityEngine.ParticleSystem {
-  class IteratorDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(ps: UnityEngine.ParticleSystem): boolean;
-    BeginInvoke(ps: UnityEngine.ParticleSystem, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -24639,28 +23979,6 @@ declare namespace UnityEngine.RectTransform {
     static Bottom: UnityEngine.RectTransform.Edge;
   }
 }
-declare namespace UnityEngine.RectTransform {
-  class ReapplyDrivenProperties {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(driven: UnityEngine.RectTransform): void;
-    BeginInvoke(driven: UnityEngine.RectTransform, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine {
   class RectTransformUtility {
     // constructors
@@ -24915,28 +24233,6 @@ declare namespace UnityEngine {
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEngine.RemoteSettings {
-  class UpdatedEventHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -28168,12 +27464,12 @@ declare namespace UnityEngine {
     // constructors
     private constructor();
     // methods
-    static LoadUsers(userIDs: string[], callback: any): void;
-    static ReportProgress(achievementID: string, progress: number, callback: any): void;
-    static LoadAchievementDescriptions(callback: any): void;
-    static LoadAchievements(callback: any): void;
-    static ReportScore(score: number, board: string, callback: any): void;
-    static LoadScores(leaderboardID: string, callback: any): void;
+    static LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    static ReportProgress(achievementID: string, progress: number, callback: ((boolean) => void)): void;
+    static LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    static LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
+    static ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
+    static LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
     static CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     static CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
     static ShowAchievementsUI(): void;
@@ -28206,15 +27502,15 @@ declare namespace UnityEngine.SocialPlatforms.GameCenter {
     // constructors
     constructor();
     // methods
-    static ResetAllAchievements(callback: any): void;
+    static ResetAllAchievements(callback: ((boolean) => void)): void;
     static ShowDefaultAchievementCompletionBanner(value: boolean): void;
     static ShowLeaderboardUI(leaderboardID: string, timeScope: UnityEngine.SocialPlatforms.TimeScope): void;
-    LoadUsers(userIDs: string[], callback: any): void;
-    ReportProgress(id: string, progress: number, callback: any): void;
-    LoadAchievementDescriptions(callback: any): void;
-    LoadAchievements(callback: any): void;
-    ReportScore(score: number, board: string, callback: any): void;
-    LoadScores(leaderboardID: string, callback: any): void;
+    LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    ReportProgress(id: string, progress: number, callback: ((boolean) => void)): void;
+    LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
+    ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
+    LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
     ShowAchievementsUI(): void;
     ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
@@ -28233,7 +27529,7 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    ReportProgress(callback: any): void;
+    ReportProgress(callback: ((boolean) => void)): void;
     // properties
     id: string;
     percentCompleted: number;
@@ -28265,7 +27561,7 @@ declare namespace UnityEngine.SocialPlatforms {
     private constructor();
     // methods
     SetUserFilter(userIDs: string[]): void;
-    LoadScores(callback: any): void;
+    LoadScores(callback: ((boolean) => void)): void;
     // properties
     readonly loading: boolean;
     id: string;
@@ -28284,9 +27580,9 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    Authenticate(callback: any): void;
-    Authenticate(callback: any): void;
-    LoadFriends(callback: any): void;
+    Authenticate(callback: ((boolean) => void)): void;
+    Authenticate(callback: ((boolean, string) => void)): void;
+    LoadFriends(callback: ((boolean) => void)): void;
     // properties
     readonly friends: UnityEngine.SocialPlatforms.IUserProfile[];
     readonly authenticated: boolean;
@@ -28302,7 +27598,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor();
     // methods
     ToString(): string;
-    ReportProgress(callback: any): void;
+    ReportProgress(callback: ((boolean) => void)): void;
     SetCompleted(value: boolean): void;
     SetHidden(value: boolean): void;
     SetLastReportedDate(date: any): void;
@@ -28346,7 +27642,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // methods
     SetUserFilter(userIDs: string[]): void;
     ToString(): string;
-    LoadScores(callback: any): void;
+    LoadScores(callback: ((boolean) => void)): void;
     SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): void;
     SetMaxRange(maxRange: number): void;
     SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): void;
@@ -28373,9 +27669,9 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // constructors
     constructor();
     // methods
-    Authenticate(callback: any): void;
-    Authenticate(callback: any): void;
-    LoadFriends(callback: any): void;
+    Authenticate(callback: ((boolean) => void)): void;
+    Authenticate(callback: ((boolean, string) => void)): void;
+    LoadFriends(callback: ((boolean) => void)): void;
     SetFriends(friends: UnityEngine.SocialPlatforms.IUserProfile[]): void;
     SetAuthenticated(value: boolean): void;
     SetUnderage(value: boolean): void;
@@ -28408,7 +27704,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(leaderboardID: string, value: number, userID: string, date: any, formattedValue: string, rank: number);
     // methods
     ToString(): string;
-    ReportScore(callback: any): void;
+    ReportScore(callback: ((boolean) => void)): void;
     SetDate(date: any): void;
     SetFormattedValue(value: string): void;
     SetUserID(userID: string): void;
@@ -28456,7 +27752,7 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    ReportScore(callback: any): void;
+    ReportScore(callback: ((boolean) => void)): void;
     // properties
     leaderboardID: string;
     value: number;
@@ -28472,20 +27768,20 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    LoadUsers(userIDs: string[], callback: any): void;
-    ReportProgress(achievementID: string, progress: number, callback: any): void;
-    LoadAchievementDescriptions(callback: any): void;
-    LoadAchievements(callback: any): void;
+    LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    ReportProgress(achievementID: string, progress: number, callback: ((boolean) => void)): void;
+    LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
     CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
-    ReportScore(score: number, board: string, callback: any): void;
-    LoadScores(leaderboardID: string, callback: any): void;
+    ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
+    LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     ShowAchievementsUI(): void;
     ShowLeaderboardUI(): void;
-    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: any): void;
-    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: any): void;
-    LoadFriends(user: UnityEngine.SocialPlatforms.ILocalUser, callback: any): void;
-    LoadScores(board: UnityEngine.SocialPlatforms.ILeaderboard, callback: any): void;
+    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((boolean) => void)): void;
+    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((boolean, string) => void)): void;
+    LoadFriends(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((boolean) => void)): void;
+    LoadScores(board: UnityEngine.SocialPlatforms.ILeaderboard, callback: ((boolean) => void)): void;
     GetLoading(board: UnityEngine.SocialPlatforms.ILeaderboard): boolean;
     // properties
     readonly localUser: UnityEngine.SocialPlatforms.ILocalUser;
@@ -28511,12 +27807,12 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     constructor();
     // methods
-    LoadUsers(userIDs: string[], callback: any): void;
-    ReportProgress(id: string, progress: number, callback: any): void;
-    LoadAchievementDescriptions(callback: any): void;
-    LoadAchievements(callback: any): void;
-    ReportScore(score: number, board: string, callback: any): void;
-    LoadScores(leaderboardID: string, callback: any): void;
+    LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    ReportProgress(id: string, progress: number, callback: ((boolean) => void)): void;
+    LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
+    ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
+    LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
     ShowAchievementsUI(): void;
     ShowLeaderboardUI(): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
@@ -31658,8 +30954,8 @@ declare namespace UnityEngine.UI.Button {
     // constructors
     constructor();
     // methods
-    AddListener(call: UnityEngine.Events.UnityAction): void;
-    RemoveListener(call: UnityEngine.Events.UnityAction): void;
+    AddListener(call: (() => void)): void;
+    RemoveListener(call: (() => void)): void;
     Invoke(): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -32147,8 +31443,8 @@ declare namespace UnityEngine.UI.CoroutineTween.ColorTween {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEngine.Color) => void)): void;
+    RemoveListener(call: ((UnityEngine.Color) => void)): void;
     Invoke(arg0: UnityEngine.Color): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -32191,7 +31487,7 @@ declare namespace UnityEngine.UI.CoroutineTween {
     private constructor();
     // methods
     TweenValue(floatPercentage: number): void;
-    AddOnChangedCallback(callback: any): void;
+    AddOnChangedCallback(callback: ((UnityEngine.Color) => void)): void;
     GetIgnoreTimescale(): boolean;
     GetDuration(): number;
     ValidTarget(): boolean;
@@ -32214,7 +31510,7 @@ declare namespace UnityEngine.UI.CoroutineTween {
     private constructor();
     // methods
     TweenValue(floatPercentage: number): void;
-    AddOnChangedCallback(callback: any): void;
+    AddOnChangedCallback(callback: ((number) => void)): void;
     GetIgnoreTimescale(): boolean;
     GetDuration(): number;
     ValidTarget(): boolean;
@@ -32235,8 +31531,8 @@ declare namespace UnityEngine.UI.CoroutineTween.FloatTween {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((number) => void)): void;
+    RemoveListener(call: ((number) => void)): void;
     Invoke(arg0: number): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -32434,8 +31730,8 @@ declare namespace UnityEngine.UI.Dropdown {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((number) => void)): void;
+    RemoveListener(call: ((number) => void)): void;
     Invoke(arg0: number): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -32627,12 +31923,12 @@ declare namespace UnityEngine.UI {
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
     CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
-    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyLayoutCallback(action: (() => void)): void;
+    UnregisterDirtyLayoutCallback(action: (() => void)): void;
+    RegisterDirtyVerticesCallback(action: (() => void)): void;
+    UnregisterDirtyVerticesCallback(action: (() => void)): void;
+    RegisterDirtyMaterialCallback(action: (() => void)): void;
+    UnregisterDirtyMaterialCallback(action: (() => void)): void;
     IsActive(): boolean;
     IsDestroyed(): boolean;
     Invoke(methodName: string, time: number): void;
@@ -33358,12 +32654,12 @@ declare namespace UnityEngine.UI {
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
     CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
-    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyLayoutCallback(action: (() => void)): void;
+    UnregisterDirtyLayoutCallback(action: (() => void)): void;
+    RegisterDirtyVerticesCallback(action: (() => void)): void;
+    UnregisterDirtyVerticesCallback(action: (() => void)): void;
+    RegisterDirtyMaterialCallback(action: (() => void)): void;
+    UnregisterDirtyMaterialCallback(action: (() => void)): void;
     IsActive(): boolean;
     IsDestroyed(): boolean;
     Invoke(methodName: string, time: number): void;
@@ -33822,7 +33118,7 @@ declare namespace UnityEngine.UI {
     onEndEdit: UnityEngine.UI.InputField.SubmitEvent;
     onValueChange: UnityEngine.UI.InputField.OnChangeEvent;
     onValueChanged: UnityEngine.UI.InputField.OnChangeEvent;
-    onValidateInput: UnityEngine.UI.InputField.OnValidateInput;
+    onValidateInput: ((string, number, any) => any);
     characterLimit: number;
     contentType: UnityEngine.UI.InputField.ContentType;
     lineType: UnityEngine.UI.InputField.LineType;
@@ -33952,8 +33248,8 @@ declare namespace UnityEngine.UI.InputField {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((string) => void)): void;
+    RemoveListener(call: ((string) => void)): void;
     Invoke(arg0: string): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -33969,34 +33265,12 @@ declare namespace UnityEngine.UI.InputField {
   }
 }
 declare namespace UnityEngine.UI.InputField {
-  class OnValidateInput {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(text: string, charIndex: number, addedChar: any): any;
-    BeginInvoke(text: string, charIndex: number, addedChar: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.UI.InputField {
   class SubmitEvent {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((string) => void)): void;
+    RemoveListener(call: ((string) => void)): void;
     Invoke(arg0: string): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -34238,8 +33512,8 @@ declare namespace UnityEngine.UI {
     static GetMinHeight(rect: UnityEngine.RectTransform): number;
     static GetPreferredHeight(rect: UnityEngine.RectTransform): number;
     static GetFlexibleHeight(rect: UnityEngine.RectTransform): number;
-    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: any, defaultValue: number): number;
-    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: any, defaultValue: number, source: any): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((UnityEngine.UI.ILayoutElement) => number), defaultValue: number): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((UnityEngine.UI.ILayoutElement) => number), defaultValue: number, source: any): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -34340,8 +33614,8 @@ declare namespace UnityEngine.UI.MaskableGraphic {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((boolean) => void)): void;
+    RemoveListener(call: ((boolean) => void)): void;
     Invoke(arg0: boolean): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -34382,12 +33656,12 @@ declare namespace UnityEngine.UI {
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
     CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
-    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyLayoutCallback(action: (() => void)): void;
+    UnregisterDirtyLayoutCallback(action: (() => void)): void;
+    RegisterDirtyVerticesCallback(action: (() => void)): void;
+    UnregisterDirtyVerticesCallback(action: (() => void)): void;
+    RegisterDirtyMaterialCallback(action: (() => void)): void;
+    UnregisterDirtyMaterialCallback(action: (() => void)): void;
     IsActive(): boolean;
     IsDestroyed(): boolean;
     Invoke(methodName: string, time: number): void;
@@ -34747,12 +34021,12 @@ declare namespace UnityEngine.UI {
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
     CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
-    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyLayoutCallback(action: (() => void)): void;
+    UnregisterDirtyLayoutCallback(action: (() => void)): void;
+    RegisterDirtyVerticesCallback(action: (() => void)): void;
+    UnregisterDirtyVerticesCallback(action: (() => void)): void;
+    RegisterDirtyMaterialCallback(action: (() => void)): void;
+    UnregisterDirtyMaterialCallback(action: (() => void)): void;
     IsActive(): boolean;
     IsDestroyed(): boolean;
     Invoke(methodName: string, time: number): void;
@@ -34954,98 +34228,10 @@ declare namespace UnityEngine.UI {
     // properties
     static readonly Singleton: UnityEngine.UI.ReflectionMethodsCache;
     // fields
-    raycast3D: UnityEngine.UI.ReflectionMethodsCache.Raycast3DCallback;
-    raycast3DAll: UnityEngine.UI.ReflectionMethodsCache.RaycastAllCallback;
-    raycast2D: UnityEngine.UI.ReflectionMethodsCache.Raycast2DCallback;
-    getRayIntersectionAll: UnityEngine.UI.ReflectionMethodsCache.GetRayIntersectionAllCallback;
-  }
-}
-declare namespace UnityEngine.UI.ReflectionMethodsCache {
-  class GetRayIntersectionAllCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(r: UnityEngine.Ray, f: number, i: number): UnityEngine.RaycastHit2D[];
-    BeginInvoke(r: UnityEngine.Ray, f: number, i: number, callback: any, object: any): any;
-    EndInvoke(result: any): UnityEngine.RaycastHit2D[];
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.UI.ReflectionMethodsCache {
-  class Raycast2DCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(p1: UnityEngine.Vector2, p2: UnityEngine.Vector2, f: number, i: number): UnityEngine.RaycastHit2D;
-    BeginInvoke(p1: UnityEngine.Vector2, p2: UnityEngine.Vector2, f: number, i: number, callback: any, object: any): any;
-    EndInvoke(result: any): UnityEngine.RaycastHit2D;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.UI.ReflectionMethodsCache {
-  class Raycast3DCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(r: UnityEngine.Ray, hit: any, f: number, i: number): boolean;
-    BeginInvoke(r: UnityEngine.Ray, hit: any, f: number, i: number, callback: any, object: any): any;
-    EndInvoke(hit: any, result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.UI.ReflectionMethodsCache {
-  class RaycastAllCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(r: UnityEngine.Ray, f: number, i: number): UnityEngine.RaycastHit[];
-    BeginInvoke(r: UnityEngine.Ray, f: number, i: number, callback: any, object: any): any;
-    EndInvoke(result: any): UnityEngine.RaycastHit[];
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    raycast3D: ((UnityEngine.Ray, any, number, number) => boolean);
+    raycast3DAll: ((UnityEngine.Ray, number, number) => UnityEngine.RaycastHit[]);
+    raycast2D: ((UnityEngine.Vector2, UnityEngine.Vector2, number, number) => UnityEngine.RaycastHit2D);
+    getRayIntersectionAll: ((UnityEngine.Ray, number, number) => UnityEngine.RaycastHit2D[]);
   }
 }
 declare namespace UnityEngine.UI.Scrollbar {
@@ -35213,8 +34399,8 @@ declare namespace UnityEngine.UI.Scrollbar {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((number) => void)): void;
+    RemoveListener(call: ((number) => void)): void;
     Invoke(arg0: number): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -35398,8 +34584,8 @@ declare namespace UnityEngine.UI.ScrollRect {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEngine.Vector2) => void)): void;
+    RemoveListener(call: ((UnityEngine.Vector2) => void)): void;
     Invoke(arg0: UnityEngine.Vector2): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -35830,8 +35016,8 @@ declare namespace UnityEngine.UI.Slider {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((number) => void)): void;
+    RemoveListener(call: ((number) => void)): void;
     Invoke(arg0: number): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -35935,12 +35121,12 @@ declare namespace UnityEngine.UI {
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
     CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
-    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyLayoutCallback(action: (() => void)): void;
+    UnregisterDirtyLayoutCallback(action: (() => void)): void;
+    RegisterDirtyVerticesCallback(action: (() => void)): void;
+    UnregisterDirtyVerticesCallback(action: (() => void)): void;
+    RegisterDirtyMaterialCallback(action: (() => void)): void;
+    UnregisterDirtyMaterialCallback(action: (() => void)): void;
     IsActive(): boolean;
     IsDestroyed(): boolean;
     Invoke(methodName: string, time: number): void;
@@ -36169,8 +35355,8 @@ declare namespace UnityEngine.UI.Toggle {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((boolean) => void)): void;
+    RemoveListener(call: ((boolean) => void)): void;
     Invoke(arg0: boolean): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -37071,28 +36257,6 @@ declare namespace UnityEngine.VR.WSA.Input {
   }
 }
 declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class GestureErrorDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(error: string, hresult: number): void;
-    BeginInvoke(error: string, hresult: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
   class GestureEventType {
     // constructors
     private constructor();
@@ -37124,314 +36288,6 @@ declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
     static NavigationUpdated: UnityEngine.VR.WSA.Input.GestureRecognizer.GestureEventType;
     static RecognitionStarted: UnityEngine.VR.WSA.Input.GestureRecognizer.GestureEventType;
     static RecognitionEnded: UnityEngine.VR.WSA.Input.GestureRecognizer.GestureEventType;
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class HoldCanceledEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class HoldCompletedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class HoldStartedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class ManipulationCanceledEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class ManipulationCompletedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class ManipulationStartedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class ManipulationUpdatedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, cumulativeDelta: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class NavigationCanceledEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class NavigationCompletedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class NavigationStartedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class NavigationUpdatedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, normalizedOffset: UnityEngine.Vector3, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class RecognitionEndedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class RecognitionStartedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.GestureRecognizer {
-  class TappedEventDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, tapCount: number, headRay: UnityEngine.Ray): void;
-    BeginInvoke(source: UnityEngine.VR.WSA.Input.InteractionSourceKind, tapCount: number, headRay: UnityEngine.Ray, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEngine.VR.WSA.Input {
@@ -37502,50 +36358,6 @@ declare namespace UnityEngine.VR.WSA.Input.InteractionManager {
     static SourceUpdated: UnityEngine.VR.WSA.Input.InteractionManager.EventType;
     static SourcePressed: UnityEngine.VR.WSA.Input.InteractionManager.EventType;
     static SourceReleased: UnityEngine.VR.WSA.Input.InteractionManager.EventType;
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.InteractionManager {
-  class InternalSourceEventHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(eventType: UnityEngine.VR.WSA.Input.InteractionManager.EventType, state: UnityEngine.VR.WSA.Input.InteractionSourceState): void;
-    BeginInvoke(eventType: UnityEngine.VR.WSA.Input.InteractionManager.EventType, state: UnityEngine.VR.WSA.Input.InteractionSourceState, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Input.InteractionManager {
-  class SourceEventHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(state: UnityEngine.VR.WSA.Input.InteractionSourceState): void;
-    BeginInvoke(state: UnityEngine.VR.WSA.Input.InteractionSourceState, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEngine.VR.WSA.Input {
@@ -37639,7 +36451,7 @@ declare namespace UnityEngine.VR.WSA.Persistence {
     // constructors
     private constructor();
     // methods
-    static GetAsync(onCompleted: UnityEngine.VR.WSA.Persistence.WorldAnchorStore.GetAsyncDelegate): void;
+    static GetAsync(onCompleted: ((UnityEngine.VR.WSA.Persistence.WorldAnchorStore) => void)): void;
     Save(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
     Load(id: string, go: UnityEngine.GameObject): UnityEngine.VR.WSA.WorldAnchor;
     Delete(id: string): boolean;
@@ -37652,28 +36464,6 @@ declare namespace UnityEngine.VR.WSA.Persistence {
     ToString(): string;
     // properties
     readonly anchorCount: number;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Persistence.WorldAnchorStore {
-  class GetAsyncDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore): void;
-    BeginInvoke(store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -37729,9 +36519,9 @@ declare namespace UnityEngine.VR.WSA.Sharing {
     // constructors
     constructor();
     // methods
-    static ExportAsync(transferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, onDataAvailable: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationDataAvailableDelegate, onCompleted: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationCompleteDelegate): void;
-    static ImportAsync(serializedData: number[], onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): void;
-    static ImportAsync(serializedData: number[], offset: number, length: number, onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): void;
+    static ExportAsync(transferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, onDataAvailable: ((number[]) => void), onCompleted: ((UnityEngine.VR.WSA.Sharing.SerializationCompletionReason) => void)): void;
+    static ImportAsync(serializedData: number[], onComplete: ((UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch) => void)): void;
+    static ImportAsync(serializedData: number[], offset: number, length: number, onComplete: ((UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch) => void)): void;
     AddWorldAnchor(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
     GetAllIds(ids: string[]): number;
     GetAllIds(): string[];
@@ -37743,72 +36533,6 @@ declare namespace UnityEngine.VR.WSA.Sharing {
     ToString(): string;
     // properties
     readonly anchorCount: number;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch {
-  class DeserializationCompleteDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, deserializedTransferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch): void;
-    BeginInvoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, deserializedTransferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch {
-  class SerializationCompleteDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason): void;
-    BeginInvoke(completionReason: UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch {
-  class SerializationDataAvailableDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(data: number[]): void;
-    BeginInvoke(data: number[], callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -37876,58 +36600,14 @@ declare namespace UnityEngine.VR.WSA {
     SetVolumeAsSphere(origin: UnityEngine.Vector3, radiusMeters: number): void;
     SetVolumeAsOrientedBox(origin: UnityEngine.Vector3, extents: UnityEngine.Vector3, orientation: UnityEngine.Quaternion): void;
     SetVolumeAsFrustum(planes: UnityEngine.Plane[]): void;
-    Update(onSurfaceChanged: UnityEngine.VR.WSA.SurfaceObserver.SurfaceChangedDelegate): void;
-    RequestMeshAsync(dataRequest: UnityEngine.VR.WSA.SurfaceData, onDataReady: UnityEngine.VR.WSA.SurfaceObserver.SurfaceDataReadyDelegate): boolean;
+    Update(onSurfaceChanged: ((UnityEngine.VR.WSA.SurfaceId, UnityEngine.VR.WSA.SurfaceChange, UnityEngine.Bounds, any) => void)): void;
+    RequestMeshAsync(dataRequest: UnityEngine.VR.WSA.SurfaceData, onDataReady: ((UnityEngine.VR.WSA.SurfaceData, boolean, number) => void)): boolean;
     Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.SurfaceObserver {
-  class SurfaceChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(surfaceId: UnityEngine.VR.WSA.SurfaceId, changeType: UnityEngine.VR.WSA.SurfaceChange, bounds: UnityEngine.Bounds, updateTime: any): void;
-    BeginInvoke(surfaceId: UnityEngine.VR.WSA.SurfaceId, changeType: UnityEngine.VR.WSA.SurfaceChange, bounds: UnityEngine.Bounds, updateTime: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.SurfaceObserver {
-  class SurfaceDataReadyDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number): void;
-    BeginInvoke(bakedData: UnityEngine.VR.WSA.SurfaceData, outputWritten: boolean, elapsedBakeTimeSeconds: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -37998,11 +36678,11 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // constructors
     private constructor();
     // methods
-    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCaptureResourceCreatedCallback): void;
-    StartPhotoModeAsync(setupParams: UnityEngine.VR.WSA.WebCam.CameraParameters, onPhotoModeStartedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnPhotoModeStartedCallback): void;
-    StopPhotoModeAsync(onPhotoModeStoppedCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnPhotoModeStoppedCallback): void;
-    TakePhotoAsync(filename: string, fileOutputFormat: UnityEngine.VR.WSA.WebCam.PhotoCaptureFileOutputFormat, onCapturedPhotoToDiskCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCapturedToDiskCallback): void;
-    TakePhotoAsync(onCapturedPhotoToMemoryCallback: UnityEngine.VR.WSA.WebCam.PhotoCapture.OnCapturedToMemoryCallback): void;
+    static CreateAsync(showHolograms: boolean, onCreatedCallback: ((UnityEngine.VR.WSA.WebCam.PhotoCapture) => void)): void;
+    StartPhotoModeAsync(setupParams: UnityEngine.VR.WSA.WebCam.CameraParameters, onPhotoModeStartedCallback: ((UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult) => void)): void;
+    StopPhotoModeAsync(onPhotoModeStoppedCallback: ((UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult) => void)): void;
+    TakePhotoAsync(filename: string, fileOutputFormat: UnityEngine.VR.WSA.WebCam.PhotoCaptureFileOutputFormat, onCapturedPhotoToDiskCallback: ((UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult) => void)): void;
+    TakePhotoAsync(onCapturedPhotoToMemoryCallback: ((UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, UnityEngine.VR.WSA.WebCam.PhotoCaptureFrame) => void)): void;
     GetUnsafePointerToVideoDeviceController(): any;
     Dispose(): void;
     Equals(obj: any): boolean;
@@ -38011,116 +36691,6 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     ToString(): string;
     // properties
     static readonly SupportedResolutions: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
-  class OnCapturedToDiskCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
-  class OnCapturedToMemoryCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, photoCaptureFrame: UnityEngine.VR.WSA.WebCam.PhotoCaptureFrame): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, photoCaptureFrame: UnityEngine.VR.WSA.WebCam.PhotoCaptureFrame, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
-  class OnCaptureResourceCreatedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture): void;
-    BeginInvoke(captureObject: UnityEngine.VR.WSA.WebCam.PhotoCapture, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
-  class OnPhotoModeStartedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
-  class OnPhotoModeStoppedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.PhotoCapture.PhotoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -38234,11 +36804,11 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     private constructor();
     // methods
     static GetSupportedFrameRatesForResolution(resolution: UnityEngine.Resolution): any;
-    static CreateAsync(showHolograms: boolean, onCreatedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoCaptureResourceCreatedCallback): void;
-    StartVideoModeAsync(setupParams: UnityEngine.VR.WSA.WebCam.CameraParameters, audioState: UnityEngine.VR.WSA.WebCam.VideoCapture.AudioState, onVideoModeStartedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoModeStartedCallback): void;
-    StopVideoModeAsync(onVideoModeStoppedCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnVideoModeStoppedCallback): void;
-    StartRecordingAsync(filename: string, onStartedRecordingVideoCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnStartedRecordingVideoCallback): void;
-    StopRecordingAsync(onStoppedRecordingVideoCallback: UnityEngine.VR.WSA.WebCam.VideoCapture.OnStoppedRecordingVideoCallback): void;
+    static CreateAsync(showHolograms: boolean, onCreatedCallback: ((UnityEngine.VR.WSA.WebCam.VideoCapture) => void)): void;
+    StartVideoModeAsync(setupParams: UnityEngine.VR.WSA.WebCam.CameraParameters, audioState: UnityEngine.VR.WSA.WebCam.VideoCapture.AudioState, onVideoModeStartedCallback: ((UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult) => void)): void;
+    StopVideoModeAsync(onVideoModeStoppedCallback: ((UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult) => void)): void;
+    StartRecordingAsync(filename: string, onStartedRecordingVideoCallback: ((UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult) => void)): void;
+    StopRecordingAsync(onStoppedRecordingVideoCallback: ((UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult) => void)): void;
     GetUnsafePointerToVideoDeviceController(): any;
     Dispose(): void;
     Equals(obj: any): boolean;
@@ -38248,116 +36818,6 @@ declare namespace UnityEngine.VR.WSA.WebCam {
     // properties
     static readonly SupportedResolutions: any;
     readonly IsRecording: boolean;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
-  class OnStartedRecordingVideoCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
-  class OnStoppedRecordingVideoCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
-  class OnVideoCaptureResourceCreatedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(captureObject: UnityEngine.VR.WSA.WebCam.VideoCapture): void;
-    BeginInvoke(captureObject: UnityEngine.VR.WSA.WebCam.VideoCapture, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
-  class OnVideoModeStartedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WebCam.VideoCapture {
-  class OnVideoModeStoppedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult): void;
-    BeginInvoke(result: UnityEngine.VR.WSA.WebCam.VideoCapture.VideoCaptureResult, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -38474,28 +36934,6 @@ declare namespace UnityEngine.VR.WSA {
     // fields
   }
 }
-declare namespace UnityEngine.VR.WSA.WorldAnchor {
-  class OnTrackingChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(self: UnityEngine.VR.WSA.WorldAnchor, located: boolean): void;
-    BeginInvoke(self: UnityEngine.VR.WSA.WorldAnchor, located: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine.VR.WSA {
   class WorldManager {
     // constructors
@@ -38508,28 +36946,6 @@ declare namespace UnityEngine.VR.WSA {
     ToString(): string;
     // properties
     static readonly state: UnityEngine.VR.WSA.PositionalLocatorState;
-    // fields
-  }
-}
-declare namespace UnityEngine.VR.WSA.WorldManager {
-  class OnPositionalLocatorStateChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(oldState: UnityEngine.VR.WSA.PositionalLocatorState, newState: UnityEngine.VR.WSA.PositionalLocatorState): void;
-    BeginInvoke(oldState: UnityEngine.VR.WSA.PositionalLocatorState, newState: UnityEngine.VR.WSA.PositionalLocatorState, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -38592,7 +37008,7 @@ declare namespace UnityEngine {
 declare namespace UnityEngine {
   class WaitUntil {
     // constructors
-    constructor(predicate: any);
+    constructor(predicate: (() => boolean));
     // methods
     MoveNext(): boolean;
     Reset(): void;
@@ -38609,7 +37025,7 @@ declare namespace UnityEngine {
 declare namespace UnityEngine {
   class WaitWhile {
     // constructors
-    constructor(predicate: any);
+    constructor(predicate: (() => boolean));
     // methods
     MoveNext(): boolean;
     Reset(): void;
@@ -39000,94 +37416,6 @@ declare namespace UnityEngine.Windows.Speech {
     // fields
   }
 }
-declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
-  class DictationCompletedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(cause: UnityEngine.Windows.Speech.DictationCompletionCause): void;
-    BeginInvoke(cause: UnityEngine.Windows.Speech.DictationCompletionCause, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
-  class DictationErrorHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(error: string, hresult: number): void;
-    BeginInvoke(error: string, hresult: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
-  class DictationHypothesisDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(text: string): void;
-    BeginInvoke(text: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.Windows.Speech.DictationRecognizer {
-  class DictationResultDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(text: string, confidence: UnityEngine.Windows.Speech.ConfidenceLevel): void;
-    BeginInvoke(text: string, confidence: UnityEngine.Windows.Speech.ConfidenceLevel, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine.Windows.Speech {
   class DictationTopicConstraint {
     // constructors
@@ -39165,50 +37493,6 @@ declare namespace UnityEngine.Windows.Speech {
     // fields
   }
 }
-declare namespace UnityEngine.Windows.Speech.PhraseRecognitionSystem {
-  class ErrorDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(errorCode: UnityEngine.Windows.Speech.SpeechError): void;
-    BeginInvoke(errorCode: UnityEngine.Windows.Speech.SpeechError, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.Windows.Speech.PhraseRecognitionSystem {
-  class StatusDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(status: UnityEngine.Windows.Speech.SpeechSystemStatus): void;
-    BeginInvoke(status: UnityEngine.Windows.Speech.SpeechSystemStatus, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEngine.Windows.Speech {
   class PhraseRecognizedEventArgs {
     // constructors
@@ -39241,28 +37525,6 @@ declare namespace UnityEngine.Windows.Speech {
     ToString(): string;
     // properties
     readonly IsRunning: boolean;
-    // fields
-  }
-}
-declare namespace UnityEngine.Windows.Speech.PhraseRecognizer {
-  class PhraseRecognizedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(args: UnityEngine.Windows.Speech.PhraseRecognizedEventArgs): void;
-    BeginInvoke(args: UnityEngine.Windows.Speech.PhraseRecognizedEventArgs, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -39461,36 +37723,14 @@ declare namespace UnityEngine {
   }
 }
 declare namespace UnityEngine.WSA {
-  class AppCallbackItem {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.WSA {
   class Application {
     // constructors
     constructor();
     // methods
-    static InvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): void;
-    static InvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): void;
-    static TryInvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): boolean;
-    static TryInvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): boolean;
+    static InvokeOnAppThread(item: (() => void), waitUntilDone: boolean): void;
+    static InvokeOnUIThread(item: (() => void), waitUntilDone: boolean): void;
+    static TryInvokeOnAppThread(item: (() => void), waitUntilDone: boolean): boolean;
+    static TryInvokeOnUIThread(item: (() => void), waitUntilDone: boolean): boolean;
     static RunningOnAppThread(): boolean;
     static RunningOnUIThread(): boolean;
     Equals(obj: any): boolean;
@@ -39810,28 +38050,6 @@ declare namespace UnityEngine.WSA {
   }
 }
 declare namespace UnityEngine.WSA {
-  class WindowActivated {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(state: UnityEngine.WSA.WindowActivationState): void;
-    BeginInvoke(state: UnityEngine.WSA.WindowActivationState, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngine.WSA {
   class WindowActivationState {
     // constructors
     private constructor();
@@ -39851,28 +38069,6 @@ declare namespace UnityEngine.WSA {
     static CodeActivated: UnityEngine.WSA.WindowActivationState;
     static Deactivated: UnityEngine.WSA.WindowActivationState;
     static PointerActivated: UnityEngine.WSA.WindowActivationState;
-  }
-}
-declare namespace UnityEngine.WSA {
-  class WindowSizeChanged {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(width: number, height: number): void;
-    BeginInvoke(width: number, height: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEngine {
@@ -39999,7 +38195,7 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static CreateJavaProxy(delegateHandle: number, proxy: UnityEngine.AndroidJavaProxy): any;
-    static CreateJavaRunnable(jrunnable: UnityEngine.AndroidJavaRunnable): any;
+    static CreateJavaRunnable(jrunnable: (() => void)): any;
     static InvokeJavaProxyMethod(proxy: UnityEngine.AndroidJavaProxy, jmethodName: any, jargs: any): any;
     static CreateJNIArgArray(args: any[]): UnityEngine.jvalue[];
     static UnboxArray(obj: UnityEngine.AndroidJavaObject): any;
@@ -40037,28 +38233,6 @@ declare namespace UnityEngineInternal {
   }
 }
 declare namespace UnityEngineInternal {
-  class FastCallExceptionHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(ex: any): void;
-    BeginInvoke(ex: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEngineInternal {
   class GenericStack {
     // constructors
     constructor();
@@ -40080,28 +38254,6 @@ declare namespace UnityEngineInternal {
     readonly Count: number;
     readonly IsSynchronized: boolean;
     readonly SyncRoot: any;
-    // fields
-  }
-}
-declare namespace UnityEngineInternal {
-  class GetMethodDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(classType: any, methodName: string, searchBaseTypes: boolean, instanceMethod: boolean, methodParamTypes: any[]): any;
-    BeginInvoke(classType: any, methodName: string, searchBaseTypes: boolean, instanceMethod: boolean, methodParamTypes: any[], callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }

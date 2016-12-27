@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class FlexibleMenu {
     // constructors
-    constructor(itemProvider: UnityEditor.IFlexibleMenuItemProvider, selectionIndex: number, modifyItemUi: UnityEditor.FlexibleMenuModifyItemUI, itemClickedCallback: any);
+    constructor(itemProvider: UnityEditor.IFlexibleMenuItemProvider, selectionIndex: number, modifyItemUi: UnityEditor.FlexibleMenuModifyItemUI, itemClickedCallback: ((number, any) => void));
     // methods
     GetWindowSize(): any;
     OnGUI(rect: any): void;

@@ -21,6 +21,6 @@ declare namespace UnityEditor.IMGUI.Controls {
     item: UnityEditor.IMGUI.Controls.TreeViewItem;
     treeView: UnityEditor.IMGUI.Controls.TreeViewController;
     // fields
-    animationEnded: any;
+    animationEnded: ((UnityEditor.IMGUI.Controls.TreeViewAnimationInput) => void);
   }
 }

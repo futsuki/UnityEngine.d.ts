@@ -3,10 +3,10 @@ declare namespace UnityEngine.WSA {
     // constructors
     constructor();
     // methods
-    static InvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): void;
-    static InvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): void;
-    static TryInvokeOnAppThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): boolean;
-    static TryInvokeOnUIThread(item: UnityEngine.WSA.AppCallbackItem, waitUntilDone: boolean): boolean;
+    static InvokeOnAppThread(item: (() => void), waitUntilDone: boolean): void;
+    static InvokeOnUIThread(item: (() => void), waitUntilDone: boolean): void;
+    static TryInvokeOnAppThread(item: (() => void), waitUntilDone: boolean): boolean;
+    static TryInvokeOnUIThread(item: (() => void), waitUntilDone: boolean): boolean;
     static RunningOnAppThread(): boolean;
     static RunningOnUIThread(): boolean;
     Equals(obj: any): boolean;

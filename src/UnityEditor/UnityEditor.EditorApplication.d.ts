@@ -45,14 +45,14 @@ declare namespace UnityEditor {
     static readonly isSceneDirty: boolean;
     static currentScene: string;
     // fields
-    static projectWindowItemOnGUI: UnityEditor.EditorApplication.ProjectWindowItemCallback;
-    static hierarchyWindowItemOnGUI: UnityEditor.EditorApplication.HierarchyWindowItemCallback;
-    static update: UnityEditor.EditorApplication.CallbackFunction;
-    static delayCall: UnityEditor.EditorApplication.CallbackFunction;
-    static hierarchyWindowChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static projectWindowChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static searchChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static modifierKeysChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static playmodeStateChanged: UnityEditor.EditorApplication.CallbackFunction;
+    static projectWindowItemOnGUI: ((string, any) => void);
+    static hierarchyWindowItemOnGUI: ((number, any) => void);
+    static update: (() => void);
+    static delayCall: (() => void);
+    static hierarchyWindowChanged: (() => void);
+    static projectWindowChanged: (() => void);
+    static searchChanged: (() => void);
+    static modifierKeysChanged: (() => void);
+    static playmodeStateChanged: (() => void);
   }
 }

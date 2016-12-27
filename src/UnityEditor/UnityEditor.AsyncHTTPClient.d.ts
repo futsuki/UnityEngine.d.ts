@@ -26,8 +26,8 @@ declare namespace UnityEditor {
     readonly responseCode: number;
     tag: string;
     // fields
-    statusCallback: UnityEditor.AsyncHTTPClient.StatusCallback;
-    doneCallback: UnityEditor.AsyncHTTPClient.DoneCallback;
+    statusCallback: ((UnityEditor.AsyncHTTPClient.State, number, number) => void);
+    doneCallback: ((UnityEditor.AsyncHTTPClient) => void);
     header: any;
   }
 }

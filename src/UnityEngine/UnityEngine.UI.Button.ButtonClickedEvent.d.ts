@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.Button {
     // constructors
     constructor();
     // methods
-    AddListener(call: UnityEngine.Events.UnityAction): void;
-    RemoveListener(call: UnityEngine.Events.UnityAction): void;
+    AddListener(call: (() => void)): void;
+    RemoveListener(call: (() => void)): void;
     Invoke(): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

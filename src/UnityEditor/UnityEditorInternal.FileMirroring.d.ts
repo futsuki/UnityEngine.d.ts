@@ -4,9 +4,9 @@ declare namespace UnityEditorInternal {
     private constructor();
     // methods
     static MirrorFile(from: string, to: string): void;
-    static MirrorFile(from: string, to: string, comparer: any): void;
+    static MirrorFile(from: string, to: string, comparer: ((string, string) => boolean)): void;
     static MirrorFolder(from: string, to: string): void;
-    static MirrorFolder(from: string, to: string, comparer: any): void;
+    static MirrorFolder(from: string, to: string, comparer: ((string, string) => boolean)): void;
     static CanSkipCopy(from: string, to: string): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -122,7 +122,7 @@ declare namespace UnityEditor {
     readonly drawingToViewMatrix: any;
     readonly mousePositionInDrawing: any;
     // fields
-    curvesUpdated: UnityEditor.CurveEditor.CallbackFunction;
+    curvesUpdated: (() => void);
     state: UnityEditor.ICurveEditorState;
     invSnap: number;
     m_UniformScale: boolean;

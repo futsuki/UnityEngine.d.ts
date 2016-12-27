@@ -5,8 +5,8 @@ declare namespace UnityEditor {
     // methods
     Begin(): void;
     End(): void;
-    static Window(title: any, sceneViewFunc: UnityEditor.SceneViewOverlay.WindowFunction, order: number, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
-    static Window(title: any, sceneViewFunc: UnityEditor.SceneViewOverlay.WindowFunction, order: number, target: any, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
+    static Window(title: any, sceneViewFunc: ((any, UnityEditor.SceneView) => void), order: number, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
+    static Window(title: any, sceneViewFunc: ((any, UnityEditor.SceneView) => void), order: number, target: any, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

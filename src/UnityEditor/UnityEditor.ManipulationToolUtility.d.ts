@@ -17,6 +17,6 @@ declare namespace UnityEditor {
     // properties
     static minDragDifference: any;
     // fields
-    static handleDragChange: UnityEditor.ManipulationToolUtility.HandleDragChange;
+    static handleDragChange: ((string, boolean) => void);
   }
 }

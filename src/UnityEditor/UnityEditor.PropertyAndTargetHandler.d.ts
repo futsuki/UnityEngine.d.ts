@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class PropertyAndTargetHandler {
     // constructors
-    constructor(property: UnityEditor.SerializedProperty, target: any, function_: UnityEditor.TargetChoiceHandler.TargetChoiceMenuFunction);
+    constructor(property: UnityEditor.SerializedProperty, target: any, function_: ((UnityEditor.SerializedProperty, any) => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11,6 +11,6 @@ declare namespace UnityEditor {
     // fields
     property: UnityEditor.SerializedProperty;
     target: any;
-    "function": UnityEditor.TargetChoiceHandler.TargetChoiceMenuFunction;
+    "function": ((UnityEditor.SerializedProperty, any) => void);
   }
 }

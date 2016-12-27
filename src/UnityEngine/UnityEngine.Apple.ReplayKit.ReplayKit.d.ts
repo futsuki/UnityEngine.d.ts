@@ -9,9 +9,9 @@ declare namespace UnityEngine.Apple.ReplayKit {
     static StopRecording(): boolean;
     static Preview(): boolean;
     static Discard(): boolean;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean, enableCamera: boolean): void;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback, enableMicrophone: boolean): void;
-    static StartBroadcasting(callback: UnityEngine.Apple.ReplayKit.ReplayKit.BroadcastStatusCallback): void;
+    static StartBroadcasting(callback: ((boolean, string) => void), enableMicrophone: boolean, enableCamera: boolean): void;
+    static StartBroadcasting(callback: ((boolean, string) => void), enableMicrophone: boolean): void;
+    static StartBroadcasting(callback: ((boolean, string) => void)): void;
     static StopBroadcasting(): void;
     static ShowCameraPreviewAt(posX: number, posY: number): boolean;
     static HideCameraPreview(): void;

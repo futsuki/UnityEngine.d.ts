@@ -1,7 +1,7 @@
 declare namespace UnityEditor.PreferencesWindow {
   class AppsListUserData {
     // constructors
-    constructor(paths: string[], str: UnityEditor.PreferencesWindow.RefString, onChanged: any);
+    constructor(paths: string[], str: UnityEditor.PreferencesWindow.RefString, onChanged: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -11,6 +11,6 @@ declare namespace UnityEditor.PreferencesWindow {
     // fields
     paths: string[];
     str: UnityEditor.PreferencesWindow.RefString;
-    onChanged: any;
+    onChanged: (() => void);
   }
 }

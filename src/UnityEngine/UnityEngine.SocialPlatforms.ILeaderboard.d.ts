@@ -4,7 +4,7 @@ declare namespace UnityEngine.SocialPlatforms {
     private constructor();
     // methods
     SetUserFilter(userIDs: string[]): void;
-    LoadScores(callback: any): void;
+    LoadScores(callback: ((boolean) => void)): void;
     // properties
     readonly loading: boolean;
     id: string;

@@ -12,7 +12,7 @@ declare namespace UnityEditor.TreeViewExamples {
     columnWidths: number[];
     minColumnWidth: number;
     dragWidth: number;
-    columnRenderer: any;
+    columnRenderer: ((number, any) => void);
     // fields
   }
 }

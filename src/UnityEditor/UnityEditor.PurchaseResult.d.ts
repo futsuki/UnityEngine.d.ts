@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class PurchaseResult {
     // constructors
-    constructor(c: any);
+    constructor(c: ((UnityEditor.PurchaseResult) => void));
     // methods
     Parse(response: UnityEditor.AssetStoreResponse): void;
     Equals(obj: any): boolean;

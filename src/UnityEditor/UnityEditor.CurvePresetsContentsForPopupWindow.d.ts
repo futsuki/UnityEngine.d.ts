@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class CurvePresetsContentsForPopupWindow {
     // constructors
-    constructor(animCurve: any, curveLibraryType: UnityEditor.CurveLibraryType, presetSelectedCallback: any);
+    constructor(animCurve: any, curveLibraryType: UnityEditor.CurveLibraryType, presetSelectedCallback: ((any) => void));
     // methods
     static GetBasePrefText(curveLibraryType: UnityEditor.CurveLibraryType): string;
     OnClose(): void;

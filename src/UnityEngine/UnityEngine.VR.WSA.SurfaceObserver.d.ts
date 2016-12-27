@@ -7,8 +7,8 @@ declare namespace UnityEngine.VR.WSA {
     SetVolumeAsSphere(origin: UnityEngine.Vector3, radiusMeters: number): void;
     SetVolumeAsOrientedBox(origin: UnityEngine.Vector3, extents: UnityEngine.Vector3, orientation: UnityEngine.Quaternion): void;
     SetVolumeAsFrustum(planes: UnityEngine.Plane[]): void;
-    Update(onSurfaceChanged: UnityEngine.VR.WSA.SurfaceObserver.SurfaceChangedDelegate): void;
-    RequestMeshAsync(dataRequest: UnityEngine.VR.WSA.SurfaceData, onDataReady: UnityEngine.VR.WSA.SurfaceObserver.SurfaceDataReadyDelegate): boolean;
+    Update(onSurfaceChanged: ((UnityEngine.VR.WSA.SurfaceId, UnityEngine.VR.WSA.SurfaceChange, UnityEngine.Bounds, any) => void)): void;
+    RequestMeshAsync(dataRequest: UnityEngine.VR.WSA.SurfaceData, onDataReady: ((UnityEngine.VR.WSA.SurfaceData, boolean, number) => void)): boolean;
     Dispose(): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;

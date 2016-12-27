@@ -4,7 +4,7 @@ declare namespace UnityEngine {
     constructor();
     // methods
     static CreateJavaProxy(delegateHandle: number, proxy: UnityEngine.AndroidJavaProxy): any;
-    static CreateJavaRunnable(jrunnable: UnityEngine.AndroidJavaRunnable): any;
+    static CreateJavaRunnable(jrunnable: (() => void)): any;
     static InvokeJavaProxyMethod(proxy: UnityEngine.AndroidJavaProxy, jmethodName: any, jargs: any): any;
     static CreateJNIArgArray(args: any[]): UnityEngine.jvalue[];
     static UnboxArray(obj: UnityEngine.AndroidJavaObject): any;

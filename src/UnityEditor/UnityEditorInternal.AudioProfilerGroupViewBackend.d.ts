@@ -12,7 +12,7 @@ declare namespace UnityEditorInternal {
     // properties
     readonly items: any;
     // fields
-    OnUpdate: UnityEditorInternal.AudioProfilerGroupViewBackend.DataUpdateDelegate;
+    OnUpdate: (() => void);
     m_TreeViewState: UnityEditorInternal.AudioProfilerGroupTreeViewState;
   }
 }

@@ -22,6 +22,6 @@ declare namespace UnityEditor {
     static instanceIDs: number[];
     static readonly assetGUIDs: string[];
     // fields
-    static selectionChanged: any;
+    static selectionChanged: (() => void);
   }
 }

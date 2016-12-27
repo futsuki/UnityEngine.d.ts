@@ -26,10 +26,10 @@ declare namespace UnityEditorInternal {
     // fields
     listElementStyle: any;
     renameOverlayStyle: any;
-    onGetNameAtIndex: any;
-    onNameChangedAtIndex: any;
-    onSelectionChanged: any;
-    onDeleteItemAtIndex: any;
-    onCustomDrawElement: UnityEditorInternal.ReorderableList.ElementCallbackDelegate;
+    onGetNameAtIndex: ((number) => string);
+    onNameChangedAtIndex: ((number, string) => void);
+    onSelectionChanged: ((number) => void);
+    onDeleteItemAtIndex: ((number) => void);
+    onCustomDrawElement: ((any, number, boolean, boolean) => void);
   }
 }

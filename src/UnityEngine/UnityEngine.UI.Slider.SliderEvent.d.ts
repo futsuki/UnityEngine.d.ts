@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.Slider {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((number) => void)): void;
+    RemoveListener(call: ((number) => void)): void;
     Invoke(arg0: number): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

@@ -11,8 +11,8 @@ declare namespace UnityEditor.MenuUtils {
     // fields
     menuItemPath: string;
     temporaryContext: any[];
-    onBeforeExecuteCallback: any;
-    onAfterExecuteCallback: any;
+    onBeforeExecuteCallback: ((string, any[], number) => void);
+    onAfterExecuteCallback: ((string, any[], number) => void);
     userData: number;
   }
 }

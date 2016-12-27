@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.CoroutineTween.ColorTween {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEngine.Color) => void)): void;
+    RemoveListener(call: ((UnityEngine.Color) => void)): void;
     Invoke(arg0: UnityEngine.Color): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

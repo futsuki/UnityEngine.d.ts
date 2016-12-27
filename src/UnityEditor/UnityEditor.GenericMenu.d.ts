@@ -3,8 +3,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    AddItem(content: any, on: boolean, func: UnityEditor.GenericMenu.MenuFunction): void;
-    AddItem(content: any, on: boolean, func: UnityEditor.GenericMenu.MenuFunction2, userData: any): void;
+    AddItem(content: any, on: boolean, func: (() => void)): void;
+    AddItem(content: any, on: boolean, func: ((any) => void), userData: any): void;
     AddDisabledItem(content: any): void;
     AddSeparator(path: string): void;
     GetItemCount(): number;

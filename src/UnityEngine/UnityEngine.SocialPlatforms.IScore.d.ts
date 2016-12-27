@@ -3,7 +3,7 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    ReportScore(callback: any): void;
+    ReportScore(callback: ((boolean) => void)): void;
     // properties
     leaderboardID: string;
     value: number;

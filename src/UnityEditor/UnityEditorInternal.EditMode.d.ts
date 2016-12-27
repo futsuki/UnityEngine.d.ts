@@ -17,7 +17,7 @@ declare namespace UnityEditorInternal {
     // properties
     static readonly editMode: UnityEditorInternal.EditMode.SceneViewEditMode;
     // fields
-    static onEditModeEndDelegate: UnityEditorInternal.EditMode.OnEditModeStopFunc;
-    static onEditModeStartDelegate: UnityEditorInternal.EditMode.OnEditModeStartFunc;
+    static onEditModeEndDelegate: ((UnityEditor.Editor) => void);
+    static onEditModeStartDelegate: ((UnityEditor.Editor, UnityEditorInternal.EditMode.SceneViewEditMode) => void);
   }
 }

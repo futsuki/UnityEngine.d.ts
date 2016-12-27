@@ -96,12 +96,12 @@ declare namespace UnityEngine {
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static BeginScrollView(scrollPosition: UnityEngine.Vector2, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: UnityEngine.GUIStyle, verticalScrollbar: UnityEngine.GUIStyle, background: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Vector2;
     static EndScrollView(): void;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    static Window(id: number, screenRect: UnityEngine.Rect, func: UnityEngine.GUI.WindowFunction, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), text: string, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), text: string, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
+    static Window(id: number, screenRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static Width(width: number): UnityEngine.GUILayoutOption;
     static MinWidth(minWidth: number): UnityEngine.GUILayoutOption;
     static MaxWidth(maxWidth: number): UnityEngine.GUILayoutOption;

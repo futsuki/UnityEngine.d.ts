@@ -17,6 +17,6 @@ declare namespace UnityEditor {
     // properties
     readonly name: string;
     // fields
-    OnSceneDrag: UnityEditor.EditorWrapper.VoidDelegate;
+    OnSceneDrag: ((UnityEditor.SceneView) => void);
   }
 }

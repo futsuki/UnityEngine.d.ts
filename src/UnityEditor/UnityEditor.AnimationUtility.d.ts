@@ -44,6 +44,6 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    static onCurveWasModified: UnityEditor.AnimationUtility.OnCurveWasModified;
+    static onCurveWasModified: ((any, UnityEditor.EditorCurveBinding, UnityEditor.AnimationUtility.CurveModifiedType) => void);
   }
 }

@@ -3,7 +3,7 @@ declare namespace UnityEditor.ScriptExecutionOrderInspector {
     // constructors
     constructor();
     // methods
-    static DragReorder(position: any, elementHeight: number, elements: any, drawElementDelegate: UnityEditor.ScriptExecutionOrderInspector.DragReorderGUI.DrawElementDelegate): number;
+    static DragReorder(position: any, elementHeight: number, elements: any, drawElementDelegate: ((any, any, boolean) => void)): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

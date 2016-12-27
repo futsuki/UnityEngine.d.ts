@@ -6,7 +6,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor(leaderboardID: string, value: number, userID: string, date: any, formattedValue: string, rank: number);
     // methods
     ToString(): string;
-    ReportScore(callback: any): void;
+    ReportScore(callback: ((boolean) => void)): void;
     SetDate(date: any): void;
     SetFormattedValue(value: string): void;
     SetUserID(userID: string): void;

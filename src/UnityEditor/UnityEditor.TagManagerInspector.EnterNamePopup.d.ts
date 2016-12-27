@@ -1,7 +1,7 @@
 declare namespace UnityEditor.TagManagerInspector {
   class EnterNamePopup {
     // constructors
-    constructor(tags: UnityEditor.SerializedProperty, cb: UnityEditor.TagManagerInspector.EnterNamePopup.EnterDelegate);
+    constructor(tags: UnityEditor.SerializedProperty, cb: ((string) => void));
     // methods
     GetWindowSize(): any;
     OnGUI(windowRect: any): void;

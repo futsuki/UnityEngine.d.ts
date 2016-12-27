@@ -8,11 +8,11 @@ declare namespace UnityEngine {
     GetData(data: number[], offsetSamples: number): boolean;
     SetData(data: number[], offsetSamples: number): boolean;
     static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback, pcmsetpositioncallback: UnityEngine.AudioClip.PCMSetPositionCallback): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((number[]) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((number[]) => void), pcmsetpositioncallback: ((number) => void)): UnityEngine.AudioClip;
     static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: UnityEngine.AudioClip.PCMReaderCallback, pcmsetpositioncallback: UnityEngine.AudioClip.PCMSetPositionCallback): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((number[]) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((number[]) => void), pcmsetpositioncallback: ((number) => void)): UnityEngine.AudioClip;
     ToString(): string;
     GetInstanceID(): number;
     GetHashCode(): number;

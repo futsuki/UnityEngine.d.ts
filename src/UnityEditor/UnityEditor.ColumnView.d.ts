@@ -5,8 +5,8 @@ declare namespace UnityEditor {
     // methods
     SetSelected(column: number, selectionIndex: number): void;
     SetKeyboardFocusColumn(column: number): void;
-    OnGUI(elements: any, previewColumnFunction: UnityEditor.ColumnView.ObjectColumnFunction): void;
-    OnGUI(elements: any, previewColumnFunction: UnityEditor.ColumnView.ObjectColumnFunction, selectedSearchItemFunction: UnityEditor.ColumnView.ObjectColumnFunction, selectedRegularItemFunction: UnityEditor.ColumnView.ObjectColumnFunction, getDataForDraggingFunction: UnityEditor.ColumnView.ObjectColumnGetDataFunction): void;
+    OnGUI(elements: any, previewColumnFunction: ((any) => void)): void;
+    OnGUI(elements: any, previewColumnFunction: ((any) => void), selectedSearchItemFunction: ((any) => void), selectedRegularItemFunction: ((any) => void), getDataForDraggingFunction: ((any) => any)): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;

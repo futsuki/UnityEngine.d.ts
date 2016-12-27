@@ -35,8 +35,8 @@ declare namespace UnityEditor {
     static UnloadUnusedAssetsImmediate(includeMonoReferencesAsRoots: boolean): void;
     static BuildResourceFile(selection: any[], pathName: string): boolean;
     static DisplayPopupMenu(position: any, menuItemPath: string, command: UnityEditor.MenuCommand): void;
-    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: UnityEditor.EditorUtility.SelectMenuItemFunction, userData: any): void;
-    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: UnityEditor.EditorUtility.SelectMenuItemFunction, userData: any, showHotkey: boolean): void;
+    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: ((any, string[], number) => void), userData: any): void;
+    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: ((any, string[], number) => void), userData: any, showHotkey: boolean): void;
     static FocusProjectWindow(): void;
     static FormatBytes(bytes: number): string;
     static FormatBytes(bytes: number): string;

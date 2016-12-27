@@ -12,8 +12,8 @@ declare namespace UnityEditorInternal {
     UpdateClip(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, newClip: any): void;
     UpdateTimeOffset(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, timeOffset: number): void;
     Exists(itemToFind: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
-    Exists(predicate: any): boolean;
-    Find(predicate: any): UnityEditorInternal.AnimationWindowSelectionItem;
+    Exists(predicate: ((UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): boolean;
+    Find(predicate: ((UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): UnityEditorInternal.AnimationWindowSelectionItem;
     First(): UnityEditorInternal.AnimationWindowSelectionItem;
     GetRefreshHash(): number;
     Refresh(): void;
@@ -33,6 +33,6 @@ declare namespace UnityEditorInternal {
     readonly canRecord: boolean;
     readonly canAddCurves: boolean;
     // fields
-    onSelectionChanged: any;
+    onSelectionChanged: (() => void);
   }
 }

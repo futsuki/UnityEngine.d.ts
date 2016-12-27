@@ -10,7 +10,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;

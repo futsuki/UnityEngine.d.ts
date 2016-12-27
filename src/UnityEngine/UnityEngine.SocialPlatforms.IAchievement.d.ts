@@ -3,7 +3,7 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    ReportProgress(callback: any): void;
+    ReportProgress(callback: ((boolean) => void)): void;
     // properties
     id: string;
     percentCompleted: number;

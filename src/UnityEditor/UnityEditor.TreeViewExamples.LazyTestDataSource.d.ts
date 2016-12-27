@@ -42,6 +42,6 @@ declare namespace UnityEditor.TreeViewExamples {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }

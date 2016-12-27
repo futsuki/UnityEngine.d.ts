@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Download(id: string, url: string, destination: string[], key: string, jsonData: string, resumeOK: boolean, doneCallback: UnityEditor.AssetStoreUtils.DownloadDoneCallback): void;
+    static Download(id: string, url: string, destination: string[], key: string, jsonData: string, resumeOK: boolean, doneCallback: ((string, string, number, number) => void)): void;
     static Download(id: string, url: string, destination: string[], key: string, jsonData: string, resumeOK: boolean): void;
     static CheckDownload(id: string, url: string, destination: string[], key: string): string;
     static RegisterDownloadDelegate(d: any): void;

@@ -11,12 +11,12 @@ declare namespace UnityEditorInternal {
     // fields
     triggerFramingOnSelection: boolean;
     unitialized: boolean;
-    SynchronizeGeometry: UnityEditorInternal.AnimationWindowPolicy.SynchronizeGeometryDelegate;
-    SynchronizeFrameRate: UnityEditorInternal.AnimationWindowPolicy.SynchronizeFrameRateDelegate;
-    SynchronizeCurrentTime: UnityEditorInternal.AnimationWindowPolicy.SynchronizeCurrentTimeDelegate;
-    SynchronizeZoomableArea: UnityEditorInternal.AnimationWindowPolicy.SynchronizeZoomableAreaDelegate;
-    OnGeometryChange: UnityEditorInternal.AnimationWindowPolicy.OnGeometryChangeDelegate;
-    OnCurrentTimeChange: UnityEditorInternal.AnimationWindowPolicy.OnCurrentTimeChangeDelegate;
-    OnZoomableAreaChange: UnityEditorInternal.AnimationWindowPolicy.OnZoomableAreaChangeDelegate;
+    SynchronizeGeometry: ((any, any) => boolean);
+    SynchronizeFrameRate: ((any) => boolean);
+    SynchronizeCurrentTime: ((any) => boolean);
+    SynchronizeZoomableArea: ((any, any) => boolean);
+    OnGeometryChange: ((number[]) => void);
+    OnCurrentTimeChange: ((number) => void);
+    OnZoomableAreaChange: ((number, number) => void);
   }
 }

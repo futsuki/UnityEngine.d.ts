@@ -3,9 +3,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Login(loginReason: string, callback: UnityEditor.AssetStoreLoginWindow.LoginCallback): void;
+    static Login(loginReason: string, callback: ((string) => void)): void;
     static Logout(): void;
-    static ShowAssetStoreLoginWindow(loginReason: string, callback: UnityEditor.AssetStoreLoginWindow.LoginCallback): void;
+    static ShowAssetStoreLoginWindow(loginReason: string, callback: ((string) => void)): void;
     OnDisable(): void;
     OnGUI(): void;
     BeginWindows(): void;

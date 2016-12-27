@@ -3,9 +3,9 @@ declare namespace UnityEngine.VR.WSA.Sharing {
     // constructors
     constructor();
     // methods
-    static ExportAsync(transferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, onDataAvailable: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationDataAvailableDelegate, onCompleted: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.SerializationCompleteDelegate): void;
-    static ImportAsync(serializedData: number[], onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): void;
-    static ImportAsync(serializedData: number[], offset: number, length: number, onComplete: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch.DeserializationCompleteDelegate): void;
+    static ExportAsync(transferBatch: UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch, onDataAvailable: ((number[]) => void), onCompleted: ((UnityEngine.VR.WSA.Sharing.SerializationCompletionReason) => void)): void;
+    static ImportAsync(serializedData: number[], onComplete: ((UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch) => void)): void;
+    static ImportAsync(serializedData: number[], offset: number, length: number, onComplete: ((UnityEngine.VR.WSA.Sharing.SerializationCompletionReason, UnityEngine.VR.WSA.Sharing.WorldAnchorTransferBatch) => void)): void;
     AddWorldAnchor(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
     GetAllIds(ids: string[]): number;
     GetAllIds(): string[];

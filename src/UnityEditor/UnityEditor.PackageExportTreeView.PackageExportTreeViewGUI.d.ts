@@ -29,13 +29,13 @@ declare namespace UnityEditor.PackageExportTreeView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
     readonly bottomRowMargin: number;
     // fields
-    itemWasToggled: any;
+    itemWasToggled: ((UnityEditor.PackageExportTreeView.PackageExportTreeViewItem) => void);
     k_LineHeight: number;
     k_BaseIndent: number;
     k_IndentWidth: number;

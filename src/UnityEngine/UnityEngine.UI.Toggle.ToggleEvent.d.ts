@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.Toggle {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((boolean) => void)): void;
+    RemoveListener(call: ((boolean) => void)): void;
     Invoke(arg0: boolean): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

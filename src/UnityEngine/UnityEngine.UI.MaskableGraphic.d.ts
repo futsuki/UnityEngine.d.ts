@@ -24,12 +24,12 @@ declare namespace UnityEngine.UI {
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean): void;
     CrossFadeColor(targetColor: UnityEngine.Color, duration: number, ignoreTimeScale: boolean, useAlpha: boolean, useRGB: boolean): void;
     CrossFadeAlpha(alpha: number, duration: number, ignoreTimeScale: boolean): void;
-    RegisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyLayoutCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyVerticesCallback(action: UnityEngine.Events.UnityAction): void;
-    RegisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
-    UnregisterDirtyMaterialCallback(action: UnityEngine.Events.UnityAction): void;
+    RegisterDirtyLayoutCallback(action: (() => void)): void;
+    UnregisterDirtyLayoutCallback(action: (() => void)): void;
+    RegisterDirtyVerticesCallback(action: (() => void)): void;
+    UnregisterDirtyVerticesCallback(action: (() => void)): void;
+    RegisterDirtyMaterialCallback(action: (() => void)): void;
+    UnregisterDirtyMaterialCallback(action: (() => void)): void;
     IsActive(): boolean;
     IsDestroyed(): boolean;
     Invoke(methodName: string, time: number): void;

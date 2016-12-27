@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
   class AndroidJavaRunnableProxy {
     // constructors
-    constructor(runnable: UnityEngine.AndroidJavaRunnable);
+    constructor(runnable: (() => void));
     // methods
     run(): void;
     Invoke(methodName: string, args: any[]): UnityEngine.AndroidJavaObject;

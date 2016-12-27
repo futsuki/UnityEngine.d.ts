@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class PopupWindowContentForNewLibrary {
     // constructors
-    constructor(createLibraryCallback: any);
+    constructor(createLibraryCallback: ((string, UnityEditor.PresetFileLocation) => string));
     // methods
     OnGUI(rect: any): void;
     GetWindowSize(): any;

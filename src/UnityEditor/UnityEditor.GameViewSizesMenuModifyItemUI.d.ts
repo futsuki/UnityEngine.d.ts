@@ -6,7 +6,7 @@ declare namespace UnityEditor {
     OnClose(): void;
     GetWindowSize(): any;
     OnGUI(rect: any): void;
-    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): void;
+    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: ((any) => void)): void;
     Accepted(): void;
     IsShowing(): boolean;
     OnOpen(): void;

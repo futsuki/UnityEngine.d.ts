@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class CallbackController {
     // constructors
-    constructor(callback: any, callbacksPerSecond: number);
+    constructor(callback: (() => void), callbacksPerSecond: number);
     // methods
     Start(): void;
     Stop(): void;

@@ -40,8 +40,8 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    static undoRedoPerformed: UnityEditor.Undo.UndoRedoCallback;
-    static willFlushUndoRecord: UnityEditor.Undo.WillFlushUndoRecord;
-    static postprocessModifications: UnityEditor.Undo.PostprocessModifications;
+    static undoRedoPerformed: (() => void);
+    static willFlushUndoRecord: (() => void);
+    static postprocessModifications: ((UnityEditor.UndoPropertyModification[]) => UnityEditor.UndoPropertyModification[]);
   }
 }

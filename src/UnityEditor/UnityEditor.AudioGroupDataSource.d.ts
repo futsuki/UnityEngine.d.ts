@@ -43,6 +43,6 @@ declare namespace UnityEditor {
     readonly rowCount: number;
     // fields
     m_Controller: UnityEditor.Audio.AudioMixerController;
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }

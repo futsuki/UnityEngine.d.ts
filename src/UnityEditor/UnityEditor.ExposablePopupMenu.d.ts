@@ -3,7 +3,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Init(items: any, itemSpacing: number, minWidthOfPopup: number, popupButtonData: UnityEditor.ExposablePopupMenu.PopupButtonData, selectionChangedCallback: any): void;
+    Init(items: any, itemSpacing: number, minWidthOfPopup: number, popupButtonData: UnityEditor.ExposablePopupMenu.PopupButtonData, selectionChangedCallback: ((UnityEditor.ExposablePopupMenu.ItemData) => void)): void;
     OnGUI(rect: any): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;

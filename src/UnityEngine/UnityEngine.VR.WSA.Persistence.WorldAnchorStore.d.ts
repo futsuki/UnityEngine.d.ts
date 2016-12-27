@@ -3,7 +3,7 @@ declare namespace UnityEngine.VR.WSA.Persistence {
     // constructors
     private constructor();
     // methods
-    static GetAsync(onCompleted: UnityEngine.VR.WSA.Persistence.WorldAnchorStore.GetAsyncDelegate): void;
+    static GetAsync(onCompleted: ((UnityEngine.VR.WSA.Persistence.WorldAnchorStore) => void)): void;
     Save(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
     Load(id: string, go: UnityEngine.GameObject): UnityEngine.VR.WSA.WorldAnchor;
     Delete(id: string): boolean;

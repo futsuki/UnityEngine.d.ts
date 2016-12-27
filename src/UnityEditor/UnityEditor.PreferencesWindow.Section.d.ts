@@ -1,9 +1,9 @@
 declare namespace UnityEditor.PreferencesWindow {
   class Section {
     // constructors
-    constructor(name: string, guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate);
-    constructor(name: string, icon: any, guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate);
-    constructor(content: any, guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate);
+    constructor(name: string, guiFunc: (() => void));
+    constructor(name: string, icon: any, guiFunc: (() => void));
+    constructor(content: any, guiFunc: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -12,6 +12,6 @@ declare namespace UnityEditor.PreferencesWindow {
     // properties
     // fields
     content: any;
-    guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate;
+    guiFunc: (() => void);
   }
 }

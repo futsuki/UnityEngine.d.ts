@@ -4,7 +4,7 @@ declare namespace UnityEditor.Collaboration {
     constructor();
     // methods
     static OnCompleteJob(): void;
-    static AddAction(action: any): void;
+    static AddAction(action: (() => void)): void;
     static Execute(): void;
     static DropAll(): void;
     Equals(obj: any): boolean;

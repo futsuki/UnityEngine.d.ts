@@ -61,6 +61,6 @@ declare namespace UnityEditor {
     static installInBuildFolder: boolean;
     static forceOptimizeScriptCompilation: boolean;
     // fields
-    static activeBuildTargetChanged: any;
+    static activeBuildTargetChanged: (() => void);
   }
 }

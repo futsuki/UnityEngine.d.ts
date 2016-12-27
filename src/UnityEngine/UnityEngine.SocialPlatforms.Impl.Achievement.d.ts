@@ -6,7 +6,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     constructor();
     // methods
     ToString(): string;
-    ReportProgress(callback: any): void;
+    ReportProgress(callback: ((boolean) => void)): void;
     SetCompleted(value: boolean): void;
     SetHidden(value: boolean): void;
     SetLastReportedDate(date: any): void;

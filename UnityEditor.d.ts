@@ -178,7 +178,7 @@ declare namespace NativeCompiler {
 declare namespace ParticleSystemCurveEditor {
   class CurveData {
     // constructors
-    constructor(name: string, displayName: any, min: UnityEditor.SerializedProperty, max: UnityEditor.SerializedProperty, color: any, signedRange: boolean, getAxisScalars: UnityEditor.CurveWrapper.GetAxisScalarsCallback, setAxisScalars: UnityEditor.CurveWrapper.SetAxisScalarsCallback, visible: boolean);
+    constructor(name: string, displayName: any, min: UnityEditor.SerializedProperty, max: UnityEditor.SerializedProperty, color: any, signedRange: boolean, getAxisScalars: (() => any), setAxisScalars: ((any) => void), visible: boolean);
     // methods
     IsRegion(): boolean;
     Equals(obj: any): boolean;
@@ -193,8 +193,8 @@ declare namespace ParticleSystemCurveEditor {
     m_Color: any;
     m_UniqueName: string;
     m_DisplayName: any;
-    m_GetAxisScalarsCallback: UnityEditor.CurveWrapper.GetAxisScalarsCallback;
-    m_SetAxisScalarsCallback: UnityEditor.CurveWrapper.SetAxisScalarsCallback;
+    m_GetAxisScalarsCallback: (() => any);
+    m_SetAxisScalarsCallback: ((any) => void);
     m_MaxId: number;
     m_MinId: number;
     m_Visible: boolean;
@@ -1059,8 +1059,8 @@ declare namespace UnityEditor.AnimatedValues {
     // constructors
     constructor();
     constructor(value: boolean);
-    constructor(callback: any);
-    constructor(value: boolean, callback: any);
+    constructor(callback: (() => void));
+    constructor(value: boolean, callback: (() => void));
     // methods
     Fade(from: number, to: number): number;
     Equals(obj: any): boolean;
@@ -1081,7 +1081,7 @@ declare namespace UnityEditor.AnimatedValues {
   class AnimFloat {
     // constructors
     constructor(value: number);
-    constructor(value: number, callback: any);
+    constructor(value: number, callback: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -1100,7 +1100,7 @@ declare namespace UnityEditor.AnimatedValues {
   class AnimQuaternion {
     // constructors
     constructor(value: any);
-    constructor(value: any, callback: any);
+    constructor(value: any, callback: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -1120,7 +1120,7 @@ declare namespace UnityEditor.AnimatedValues {
     // constructors
     constructor();
     constructor(value: any);
-    constructor(value: any, callback: any);
+    constructor(value: any, callback: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -1467,28 +1467,6 @@ declare namespace UnityEditor.AnimationEventTimeLine {
     m_Clip: any;
     m_Time: number;
     m_Index: number;
-  }
-}
-declare namespace UnityEditor.AnimationMode {
-  class AnimationModeChangedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(newValue: boolean): void;
-    BeginInvoke(newValue: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor {
@@ -2189,29 +2167,7 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    static onCurveWasModified: UnityEditor.AnimationUtility.OnCurveWasModified;
-  }
-}
-declare namespace UnityEditor.AnimationUtility {
-  class OnCurveWasModified {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(clip: any, binding: UnityEditor.EditorCurveBinding, deleted: UnityEditor.AnimationUtility.CurveModifiedType): void;
-    BeginInvoke(clip: any, binding: UnityEditor.EditorCurveBinding, deleted: UnityEditor.AnimationUtility.CurveModifiedType, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    static onCurveWasModified: ((any, UnityEditor.EditorCurveBinding, UnityEditor.AnimationUtility.CurveModifiedType) => void);
   }
 }
 declare namespace UnityEditor.AnimationUtility {
@@ -2402,77 +2358,11 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    onStartDrag: UnityEditor.AnimationWindowManipulator.OnStartDragDelegate;
-    onDrag: UnityEditor.AnimationWindowManipulator.OnDragDelegate;
-    onEndDrag: UnityEditor.AnimationWindowManipulator.OnEndDragDelegate;
+    onStartDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onEndDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
     rect: any;
     controlID: number;
-  }
-}
-declare namespace UnityEditor.AnimationWindowManipulator {
-  class OnDragDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(manipulator: UnityEditor.AnimationWindowManipulator, evt: any): boolean;
-    BeginInvoke(manipulator: UnityEditor.AnimationWindowManipulator, evt: any, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AnimationWindowManipulator {
-  class OnEndDragDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(manipulator: UnityEditor.AnimationWindowManipulator, evt: any): boolean;
-    BeginInvoke(manipulator: UnityEditor.AnimationWindowManipulator, evt: any, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AnimationWindowManipulator {
-  class OnStartDragDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(manipulator: UnityEditor.AnimationWindowManipulator, evt: any): boolean;
-    BeginInvoke(manipulator: UnityEditor.AnimationWindowManipulator, evt: any, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor {
@@ -2873,9 +2763,9 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    onStartDrag: UnityEditor.AnimationWindowManipulator.OnStartDragDelegate;
-    onDrag: UnityEditor.AnimationWindowManipulator.OnDragDelegate;
-    onEndDrag: UnityEditor.AnimationWindowManipulator.OnEndDragDelegate;
+    onStartDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onEndDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
     rect: any;
     controlID: number;
   }
@@ -3427,7 +3317,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static AssemblyReferenceCheckerWithUpdateProgressAction(action: any): UnityEditor.AssemblyReferenceChecker;
+    static AssemblyReferenceCheckerWithUpdateProgressAction(action: (() => void)): UnityEditor.AssemblyReferenceChecker;
     CollectReferencesFromRoots(dir: string, roots: any, collectMethods: boolean, progressValue: number, ignoreSystemDlls: boolean): void;
     CollectReferences(path: string, collectMethods: boolean, progressValue: number, ignoreSystemDlls: boolean): void;
     HasReferenceToMethod(methodName: string): boolean;
@@ -3708,50 +3598,6 @@ declare namespace UnityEditor {
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.AssetDatabase {
-  class ImportPackageCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(packageName: string): void;
-    BeginInvoke(packageName: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AssetDatabase {
-  class ImportPackageFailedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(packageName: string, errorMessage: string): void;
-    BeginInvoke(packageName: string, errorMessage: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -4466,35 +4312,13 @@ declare namespace UnityEditor.AssetStoreAssetInspector {
     assetStoreLogo: any;
   }
 }
-declare namespace UnityEditor.AssetStoreAssetSelection {
-  class AssetsRefreshed {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class AssetStoreAssetSelection {
     // constructors
     private constructor();
     // methods
     static AddAsset(searchResult: UnityEditor.AssetStoreAsset, placeholderPreviewImage: any): void;
-    static RefreshFromServer(callback: UnityEditor.AssetStoreAssetSelection.AssetsRefreshed): void;
+    static RefreshFromServer(callback: (() => void)): void;
     static ContainsAsset(id: number): boolean;
     static Clear(): void;
     static GetFirstAsset(): UnityEditor.AssetStoreAsset;
@@ -4570,50 +4394,6 @@ declare namespace UnityEditor {
   }
 }
 declare namespace UnityEditor.AssetStoreClient {
-  class DoneCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(response: UnityEditor.AssetStoreResponse): void;
-    BeginInvoke(response: UnityEditor.AssetStoreResponse, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AssetStoreClient {
-  class DoneLoginCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(errorMessage: string): void;
-    BeginInvoke(errorMessage: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AssetStoreClient {
   class LoginState {
     // constructors
     private constructor();
@@ -4680,7 +4460,7 @@ declare namespace UnityEditor {
     static OpenPackageInternal(id: string): boolean;
     OpenBrowser(url: string): void;
     Download(package_: UnityEditor.AssetStoreContext.Package, downloadInfo: UnityEditor.AssetStoreContext.DownloadInfo): void;
-    static Download(package_id: string, url: string, key: string, package_name: string, publisher_name: string, category_name: string, doneCallback: UnityEditor.AssetStoreUtils.DownloadDoneCallback): void;
+    static Download(package_id: string, url: string, key: string, package_name: string, publisher_name: string, category_name: string, doneCallback: ((string, string, number, number) => void)): void;
     static PackageStorePath(publisher_name: string, category_name: string, package_name: string, package_id: string, url: string): string[];
     GetPackageList(): UnityEditor.AssetStoreContext.PackageList;
     Equals(obj: any): boolean;
@@ -4857,9 +4637,9 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Login(loginReason: string, callback: UnityEditor.AssetStoreLoginWindow.LoginCallback): void;
+    static Login(loginReason: string, callback: ((string) => void)): void;
     static Logout(): void;
-    static ShowAssetStoreLoginWindow(loginReason: string, callback: UnityEditor.AssetStoreLoginWindow.LoginCallback): void;
+    static ShowAssetStoreLoginWindow(loginReason: string, callback: ((string) => void)): void;
     OnDisable(): void;
     OnGUI(): void;
     BeginWindows(): void;
@@ -4897,28 +4677,6 @@ declare namespace UnityEditor {
     position: any;
     name: string;
     hideFlags: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AssetStoreLoginWindow {
-  class LoginCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(errorMessage: string): void;
-    BeginInvoke(errorMessage: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -4996,7 +4754,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class AssetStoreSearchResults {
     // constructors
-    constructor(c: any);
+    constructor(c: ((UnityEditor.AssetStoreSearchResults) => void));
     // methods
     Parse(response: UnityEditor.AssetStoreResponse): void;
     Equals(obj: any): boolean;
@@ -5034,7 +4792,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static Download(id: string, url: string, destination: string[], key: string, jsonData: string, resumeOK: boolean, doneCallback: UnityEditor.AssetStoreUtils.DownloadDoneCallback): void;
+    static Download(id: string, url: string, destination: string[], key: string, jsonData: string, resumeOK: boolean, doneCallback: ((string, string, number, number) => void)): void;
     static Download(id: string, url: string, destination: string[], key: string, jsonData: string, resumeOK: boolean): void;
     static CheckDownload(id: string, url: string, destination: string[], key: string): string;
     static RegisterDownloadDelegate(d: any): void;
@@ -5049,28 +4807,6 @@ declare namespace UnityEditor {
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.AssetStoreUtils {
-  class DownloadDoneCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(package_id: string, message: string, bytes: number, total: number): void;
-    BeginInvoke(package_id: string, message: string, bytes: number, total: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -5182,7 +4918,7 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.AssetsTreeViewDataSource {
@@ -5296,7 +5032,7 @@ declare namespace UnityEditor {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -5435,75 +5171,9 @@ declare namespace UnityEditor {
     readonly responseCode: number;
     tag: string;
     // fields
-    statusCallback: UnityEditor.AsyncHTTPClient.StatusCallback;
-    doneCallback: UnityEditor.AsyncHTTPClient.DoneCallback;
+    statusCallback: ((UnityEditor.AsyncHTTPClient.State, number, number) => void);
+    doneCallback: ((UnityEditor.AsyncHTTPClient) => void);
     header: any;
-  }
-}
-declare namespace UnityEditor.AsyncHTTPClient {
-  class DoneCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(client: UnityEditor.AsyncHTTPClient): void;
-    BeginInvoke(client: UnityEditor.AsyncHTTPClient, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AsyncHTTPClient {
-  class RequestDoneCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(status: UnityEditor.AsyncHTTPClient.State, httpStatus: number): void;
-    BeginInvoke(status: UnityEditor.AsyncHTTPClient.State, httpStatus: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AsyncHTTPClient {
-  class RequestProgressCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(status: UnityEditor.AsyncHTTPClient.State, downloaded: number, totalSize: number): void;
-    BeginInvoke(status: UnityEditor.AsyncHTTPClient.State, downloaded: number, totalSize: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.AsyncHTTPClient {
@@ -5533,28 +5203,6 @@ declare namespace UnityEditor.AsyncHTTPClient {
     static DONE_FAILED: UnityEditor.AsyncHTTPClient.State;
     static ABORTED: UnityEditor.AsyncHTTPClient.State;
     static TIMEOUT: UnityEditor.AsyncHTTPClient.State;
-  }
-}
-declare namespace UnityEditor.AsyncHTTPClient {
-  class StatusCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(status: UnityEditor.AsyncHTTPClient.State, bytesDone: number, bytesTotal: number): void;
-    BeginInvoke(status: UnityEditor.AsyncHTTPClient.State, bytesDone: number, bytesTotal: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor {
@@ -5954,28 +5602,6 @@ declare namespace UnityEditor.Audio {
   }
 }
 declare namespace UnityEditor.Audio {
-  class ChangedExposedParameterHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.Audio {
   class ExposedAudioParameter {
     // constructors
     private constructor();
@@ -6209,72 +5835,6 @@ declare namespace UnityEditor {
     // fields
   }
 }
-declare namespace UnityEditor.AudioCurveRendering {
-  class AudioCurveAndColorEvaluator {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(x: number, col: any): number;
-    BeginInvoke(x: number, col: any, callback: any, object: any): any;
-    EndInvoke(col: any, result: any): number;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AudioCurveRendering {
-  class AudioCurveEvaluator {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(x: number): number;
-    BeginInvoke(x: number, callback: any, object: any): any;
-    EndInvoke(result: any): number;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.AudioCurveRendering {
-  class AudioMinMaxCurveAndColorEvaluator {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(x: number, col: any, minValue: any, maxValue: any): void;
-    BeginInvoke(x: number, col: any, minValue: any, maxValue: any, callback: any, object: any): any;
-    EndInvoke(col: any, minValue: any, maxValue: any, result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class AudioCurveRendering {
     // constructors
@@ -6284,11 +5844,11 @@ declare namespace UnityEditor {
     static EndCurveFrame(): void;
     static DrawCurveFrame(r: any): any;
     static DrawCurveBackground(r: any): void;
-    static DrawFilledCurve(r: any, eval_: UnityEditor.AudioCurveRendering.AudioCurveEvaluator, curveColor: any): void;
-    static DrawFilledCurve(r: any, eval_: UnityEditor.AudioCurveRendering.AudioCurveAndColorEvaluator): void;
-    static DrawMinMaxFilledCurve(r: any, eval_: UnityEditor.AudioCurveRendering.AudioMinMaxCurveAndColorEvaluator): void;
-    static DrawSymmetricFilledCurve(r: any, eval_: UnityEditor.AudioCurveRendering.AudioCurveAndColorEvaluator): void;
-    static DrawCurve(r: any, eval_: UnityEditor.AudioCurveRendering.AudioCurveEvaluator, curveColor: any): void;
+    static DrawFilledCurve(r: any, eval_: ((number) => number), curveColor: any): void;
+    static DrawFilledCurve(r: any, eval_: ((number, any) => number)): void;
+    static DrawMinMaxFilledCurve(r: any, eval_: ((number, any, any, any) => void)): void;
+    static DrawSymmetricFilledCurve(r: any, eval_: ((number, any) => number)): void;
+    static DrawCurve(r: any, eval_: ((number) => number), curveColor: any): void;
     static DrawGradientRect(r: any, c1: any, c2: any, blend: number, horizontal: boolean): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -6434,7 +5994,7 @@ declare namespace UnityEditor {
     readonly rowCount: number;
     // fields
     m_Controller: UnityEditor.Audio.AudioMixerController;
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -6491,13 +6051,13 @@ declare namespace UnityEditor {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
     readonly bottomRowMargin: number;
     // fields
-    NodeWasToggled: any;
+    NodeWasToggled: ((UnityEditor.AudioMixerTreeViewNode, boolean) => void);
     m_Controller: UnityEditor.Audio.AudioMixerController;
     k_LineHeight: number;
     k_BaseIndent: number;
@@ -7644,7 +7204,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class AudioMixersDataSource {
     // constructors
-    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, getAllControllersCallback: any);
+    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, getAllControllersCallback: (() => any));
     // methods
     FetchData(): void;
     IsRenamingItemAllowed(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
@@ -7685,7 +7245,7 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -7819,7 +7379,7 @@ declare namespace UnityEditor.AudioMixerSnapshotListView {
 declare namespace UnityEditor {
   class AudioMixersTreeView {
     // constructors
-    constructor(mixerWindow: UnityEditor.AudioMixerWindow, treeState: UnityEditor.IMGUI.Controls.TreeViewState, getAllControllersCallback: any);
+    constructor(mixerWindow: UnityEditor.AudioMixerWindow, treeState: UnityEditor.IMGUI.Controls.TreeViewState, getAllControllersCallback: (() => any));
     // methods
     ReloadTree(): void;
     OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): void;
@@ -7886,7 +7446,7 @@ declare namespace UnityEditor {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -7907,7 +7467,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class AudioMixerTreeViewDragging {
     // constructors
-    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, mixerDroppedOnMixerCallback: any);
+    constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, mixerDroppedOnMixerCallback: ((any, UnityEditor.Audio.AudioMixerController) => void));
     // methods
     StartDrag(draggedNode: UnityEditor.IMGUI.Controls.TreeViewItem, draggedNodes: any): void;
     DragElement(targetItem: UnityEditor.IMGUI.Controls.TreeViewItem, targetItemRect: any, firstItem: boolean): boolean;
@@ -7970,7 +7530,7 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static RepaintAudioMixerAndInspectors(): void;
-    static VisitGroupsRecursivly(group: UnityEditor.Audio.AudioMixerGroupController, visitorCallback: any): void;
+    static VisitGroupsRecursivly(group: UnityEditor.Audio.AudioMixerGroupController, visitorCallback: ((UnityEditor.Audio.AudioMixerGroupController) => void)): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -8583,35 +8143,13 @@ declare namespace UnityEditor.AvatarControl {
     static IKRed: UnityEditor.AvatarControl.BodyPartColor;
   }
 }
-declare namespace UnityEditor.AvatarControl {
-  class BodyPartFeedback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(bodyPart: UnityEditor.BodyPart): UnityEditor.AvatarControl.BodyPartColor;
-    BeginInvoke(bodyPart: UnityEditor.BodyPart, callback: any, object: any): any;
-    EndInvoke(result: any): UnityEditor.AvatarControl.BodyPartColor;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class AvatarControl {
     // constructors
     constructor();
     // methods
-    static ShowBoneMapping(shownBodyView: number, bodyPartCallback: UnityEditor.AvatarControl.BodyPartFeedback, bones: UnityEditor.AvatarSetupTool.BoneWrapper[], serializedObject: UnityEditor.SerializedObject, editor: UnityEditor.AvatarMappingEditor): number;
-    static DrawBodyParts(rect: any, shownBodyView: number, bodyPartCallback: UnityEditor.AvatarControl.BodyPartFeedback): void;
+    static ShowBoneMapping(shownBodyView: number, bodyPartCallback: ((UnityEditor.BodyPart) => UnityEditor.AvatarControl.BodyPartColor), bones: UnityEditor.AvatarSetupTool.BoneWrapper[], serializedObject: UnityEditor.SerializedObject, editor: UnityEditor.AvatarMappingEditor): number;
+    static DrawBodyParts(rect: any, shownBodyView: number, bodyPartCallback: ((UnityEditor.BodyPart) => UnityEditor.AvatarControl.BodyPartColor)): void;
     static GetViewsThatContainBone(bone: number): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -9008,28 +8546,6 @@ declare namespace UnityEditor {
     // fields
     timeControl: UnityEditor.TimeControl;
     fps: number;
-  }
-}
-declare namespace UnityEditor.AvatarPreview {
-  class OnAvatarChange {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.AvatarPreview {
@@ -9495,28 +9011,6 @@ declare namespace UnityEditor {
   }
 }
 declare namespace UnityEditor.BlendTreeInspector {
-  class GetFloatFromMotion {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(motion: any, mirrorMultiplier: number): number;
-    BeginInvoke(motion: any, mirrorMultiplier: number, callback: any, object: any): any;
-    EndInvoke(result: any): number;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.BlendTreeInspector {
   class Styles {
     // constructors
     constructor();
@@ -9744,8 +9238,8 @@ declare namespace UnityEditor {
     allowNegativeSize: boolean;
     backfaceAlphaMultiplier: number;
     // fields
-    drawMethodForHandles: UnityEditor.Handles.DrawCapFunction;
-    getHandleSizeMethod: any;
+    drawMethodForHandles: ((number, any, any, number) => void);
+    getHandleSizeMethod: ((any) => number);
   }
 }
 declare namespace UnityEditor {
@@ -10380,7 +9874,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class ButtonWithAnimatedIconRotation {
     // constructors
-    constructor(angleCallback: any, repaintCallback: any, repaintsPerSecond: number, mouseDownButton: boolean);
+    constructor(angleCallback: (() => number), repaintCallback: (() => void), repaintsPerSecond: number, mouseDownButton: boolean);
     // methods
     OnGUI(rect: any, guiContent: any, animate: boolean, style: any): boolean;
     Clear(): void;
@@ -10489,7 +9983,7 @@ declare namespace UnityEditor.CacheServerPreferences {
 declare namespace UnityEditor {
   class CallbackController {
     // constructors
-    constructor(callback: any, callbacksPerSecond: number);
+    constructor(callback: (() => void), callbacksPerSecond: number);
     // methods
     Start(): void;
     Stop(): void;
@@ -11087,7 +10581,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -11639,7 +11133,7 @@ declare namespace UnityEditor.Collaboration {
     constructor();
     // methods
     static OnCompleteJob(): void;
-    static AddAction(action: any): void;
+    static AddAction(action: (() => void)): void;
     static Execute(): void;
     static DropAll(): void;
     Equals(obj: any): boolean;
@@ -11747,28 +11241,6 @@ declare namespace UnityEditor.Collaboration {
     readonly machineID: string;
     readonly displayName: string;
     readonly timeStamp: number;
-    // fields
-  }
-}
-declare namespace UnityEditor.Collaboration {
-  class StateChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(info: UnityEditor.Collaboration.CollabInfo): void;
-    BeginInvoke(info: UnityEditor.Collaboration.CollabInfo, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -12061,7 +11533,7 @@ declare namespace UnityEditor {
     GetXAxisScalar(): number;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -12151,7 +11623,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -12218,7 +11690,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -12575,8 +12047,8 @@ declare namespace UnityEditor {
     // methods
     SetSelected(column: number, selectionIndex: number): void;
     SetKeyboardFocusColumn(column: number): void;
-    OnGUI(elements: any, previewColumnFunction: UnityEditor.ColumnView.ObjectColumnFunction): void;
-    OnGUI(elements: any, previewColumnFunction: UnityEditor.ColumnView.ObjectColumnFunction, selectedSearchItemFunction: UnityEditor.ColumnView.ObjectColumnFunction, selectedRegularItemFunction: UnityEditor.ColumnView.ObjectColumnFunction, getDataForDraggingFunction: UnityEditor.ColumnView.ObjectColumnGetDataFunction): void;
+    OnGUI(elements: any, previewColumnFunction: ((any) => void)): void;
+    OnGUI(elements: any, previewColumnFunction: ((any) => void), selectedSearchItemFunction: ((any) => void), selectedRegularItemFunction: ((any) => void), getDataForDraggingFunction: ((any) => any)): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -12587,50 +12059,6 @@ declare namespace UnityEditor {
     // fields
     columnWidth: number;
     minimumNumberOfColumns: number;
-  }
-}
-declare namespace UnityEditor.ColumnView {
-  class ObjectColumnFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(value: any): void;
-    BeginInvoke(value: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.ColumnView {
-  class ObjectColumnGetDataFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(value: any): any;
-    BeginInvoke(value: any, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.ColumnView {
@@ -12855,50 +12283,6 @@ declare namespace UnityEditor.Connect {
     readonly COPPA: UnityEditor.Connect.COPPACompliance;
     readonly coppaLock: boolean;
     readonly moveLock: boolean;
-    // fields
-  }
-}
-declare namespace UnityEditor.Connect {
-  class ProjectStateChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(state: UnityEditor.Connect.ProjectInfo): void;
-    BeginInvoke(state: UnityEditor.Connect.ProjectInfo, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.Connect {
-  class StateChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(state: UnityEditor.Connect.ConnectInfo): void;
-    BeginInvoke(state: UnityEditor.Connect.ConnectInfo, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -13164,28 +12548,6 @@ declare namespace UnityEditor.Connect {
     readonly organizationForeignKeys: string;
     readonly accessToken: string;
     readonly accessTokenValiditySeconds: number;
-    // fields
-  }
-}
-declare namespace UnityEditor.Connect {
-  class UserStateChangedDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(state: UnityEditor.Connect.UserInfo): void;
-    BeginInvoke(state: UnityEditor.Connect.UserInfo, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -13695,28 +13057,6 @@ declare namespace UnityEditor.CurveEditor {
     static Y: UnityEditor.CurveEditor.AxisLock;
   }
 }
-declare namespace UnityEditor.CurveEditor {
-  class CallbackFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class CurveEditor {
     // constructors
@@ -13841,7 +13181,7 @@ declare namespace UnityEditor {
     readonly drawingToViewMatrix: any;
     readonly mousePositionInDrawing: any;
     // fields
-    curvesUpdated: UnityEditor.CurveEditor.CallbackFunction;
+    curvesUpdated: (() => void);
     state: UnityEditor.ICurveEditorState;
     invSnap: number;
     m_UniformScale: boolean;
@@ -13901,28 +13241,6 @@ declare namespace UnityEditor.CurveEditor {
     // fields
     curveId: number;
     keys: any;
-  }
-}
-declare namespace UnityEditor.CurveEditor.SavedCurve {
-  class KeyFrameOperation {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(keyframe: UnityEditor.CurveEditor.SavedCurve.SavedKeyFrame, curve: UnityEditor.CurveEditor.SavedCurve): UnityEditor.CurveEditor.SavedCurve.SavedKeyFrame;
-    BeginInvoke(keyframe: UnityEditor.CurveEditor.SavedCurve.SavedKeyFrame, curve: UnityEditor.CurveEditor.SavedCurve, callback: any, object: any): any;
-    EndInvoke(result: any): UnityEditor.CurveEditor.SavedCurve.SavedKeyFrame;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.CurveEditor.SavedCurve {
@@ -14332,7 +13650,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class CurvePresetsContentsForPopupWindow {
     // constructors
-    constructor(animCurve: any, curveLibraryType: UnityEditor.CurveLibraryType, presetSelectedCallback: any);
+    constructor(animCurve: any, curveLibraryType: UnityEditor.CurveLibraryType, presetSelectedCallback: ((any) => void));
     // methods
     static GetBasePrefText(curveLibraryType: UnityEditor.CurveLibraryType): string;
     OnClose(): void;
@@ -14476,34 +13794,12 @@ declare namespace UnityEditor {
     wrapColorMultiplier: any;
     readOnly: boolean;
     hidden: boolean;
-    getAxisUiScalarsCallback: UnityEditor.CurveWrapper.GetAxisScalarsCallback;
-    setAxisUiScalarsCallback: UnityEditor.CurveWrapper.SetAxisScalarsCallback;
+    getAxisUiScalarsCallback: (() => any);
+    setAxisUiScalarsCallback: ((any) => void);
     selected: UnityEditor.CurveWrapper.SelectionMode;
     listIndex: number;
     vRangeMin: number;
     vRangeMax: number;
-  }
-}
-declare namespace UnityEditor.CurveWrapper {
-  class GetAxisScalarsCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): any;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.CurveWrapper {
@@ -14526,28 +13822,6 @@ declare namespace UnityEditor.CurveWrapper {
     static None: UnityEditor.CurveWrapper.SelectionMode;
     static Selected: UnityEditor.CurveWrapper.SelectionMode;
     static SemiSelected: UnityEditor.CurveWrapper.SelectionMode;
-  }
-}
-declare namespace UnityEditor.CurveWrapper {
-  class SetAxisScalarsCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(newAxisScalars: any): void;
-    BeginInvoke(newAxisScalars: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor {
@@ -14843,7 +14117,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class DelayedCallback {
     // constructors
-    constructor(function_: any, timeFromNow: number);
+    constructor(function_: (() => void), timeFromNow: number);
     // methods
     Clear(): void;
     Equals(obj: any): boolean;
@@ -15461,7 +14735,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class DoubleCurvePresetsContentsForPopupWindow {
     // constructors
-    constructor(doubleCurveToSave: UnityEditor.DoubleCurve, presetSelectedCallback: any);
+    constructor(doubleCurveToSave: UnityEditor.DoubleCurve, presetSelectedCallback: ((UnityEditor.DoubleCurve) => void));
     // methods
     OnClose(): void;
     GetPresetLibraryEditor(): any;
@@ -15863,28 +15137,6 @@ declare namespace UnityEditor.Editor {
     centerStyle: any;
   }
 }
-declare namespace UnityEditor.EditorApplication {
-  class CallbackFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class EditorApplication {
     // constructors
@@ -15932,59 +15184,15 @@ declare namespace UnityEditor {
     static readonly isSceneDirty: boolean;
     static currentScene: string;
     // fields
-    static projectWindowItemOnGUI: UnityEditor.EditorApplication.ProjectWindowItemCallback;
-    static hierarchyWindowItemOnGUI: UnityEditor.EditorApplication.HierarchyWindowItemCallback;
-    static update: UnityEditor.EditorApplication.CallbackFunction;
-    static delayCall: UnityEditor.EditorApplication.CallbackFunction;
-    static hierarchyWindowChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static projectWindowChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static searchChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static modifierKeysChanged: UnityEditor.EditorApplication.CallbackFunction;
-    static playmodeStateChanged: UnityEditor.EditorApplication.CallbackFunction;
-  }
-}
-declare namespace UnityEditor.EditorApplication {
-  class HierarchyWindowItemCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(instanceID: number, selectionRect: any): void;
-    BeginInvoke(instanceID: number, selectionRect: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.EditorApplication {
-  class ProjectWindowItemCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(guid: string, selectionRect: any): void;
-    BeginInvoke(guid: string, selectionRect: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    static projectWindowItemOnGUI: ((string, any) => void);
+    static hierarchyWindowItemOnGUI: ((number, any) => void);
+    static update: (() => void);
+    static delayCall: (() => void);
+    static hierarchyWindowChanged: (() => void);
+    static projectWindowChanged: (() => void);
+    static searchChanged: (() => void);
+    static modifierKeysChanged: (() => void);
+    static playmodeStateChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -16601,28 +15809,6 @@ declare namespace UnityEditor.EditorGUI {
     ToString(): string;
     GetType(): any;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.EditorGUI {
-  class ObjectFieldValidator {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(references: any[], objType: any, property: UnityEditor.SerializedProperty): any;
-    BeginInvoke(references: any[], objType: any, property: UnityEditor.SerializedProperty, callback: any, object: any): any;
-    EndInvoke(result: any): any;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -17872,7 +17058,7 @@ declare namespace UnityEditor {
     static installInBuildFolder: boolean;
     static forceOptimizeScriptCompilation: boolean;
     // fields
-    static activeBuildTargetChanged: any;
+    static activeBuildTargetChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -17934,8 +17120,8 @@ declare namespace UnityEditor {
     static UnloadUnusedAssetsImmediate(includeMonoReferencesAsRoots: boolean): void;
     static BuildResourceFile(selection: any[], pathName: string): boolean;
     static DisplayPopupMenu(position: any, menuItemPath: string, command: UnityEditor.MenuCommand): void;
-    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: UnityEditor.EditorUtility.SelectMenuItemFunction, userData: any): void;
-    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: UnityEditor.EditorUtility.SelectMenuItemFunction, userData: any, showHotkey: boolean): void;
+    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: ((any, string[], number) => void), userData: any): void;
+    static DisplayCustomMenu(position: any, options: any[], selected: number, callback: ((any, string[], number) => void), userData: any, showHotkey: boolean): void;
     static FocusProjectWindow(): void;
     static FormatBytes(bytes: number): string;
     static FormatBytes(bytes: number): string;
@@ -17965,28 +17151,6 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     static audioMasterMute: boolean;
-    // fields
-  }
-}
-declare namespace UnityEditor.EditorUtility {
-  class SelectMenuItemFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(userData: any, options: string[], selected: number): void;
-    BeginInvoke(userData: any, options: string[], selected: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -18080,29 +17244,7 @@ declare namespace UnityEditor {
     // properties
     readonly name: string;
     // fields
-    OnSceneDrag: UnityEditor.EditorWrapper.VoidDelegate;
-  }
-}
-declare namespace UnityEditor.EditorWrapper {
-  class VoidDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(sceneView: UnityEditor.SceneView): void;
-    BeginInvoke(sceneView: UnityEditor.SceneView, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    OnSceneDrag: ((UnityEditor.SceneView) => void);
   }
 }
 declare namespace UnityEditor {
@@ -18158,7 +17300,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -18305,20 +17447,20 @@ declare namespace UnityEditor.Events {
     // methods
     static AddPersistentListener(unityEvent: any): void;
     static RemovePersistentListener(unityEvent: any, index: number): void;
-    static AddPersistentListener(unityEvent: any, call: any): void;
-    static RegisterPersistentListener(unityEvent: any, index: number, call: any): void;
-    static RemovePersistentListener(unityEvent: any, call: any): void;
+    static AddPersistentListener(unityEvent: any, call: (() => void)): void;
+    static RegisterPersistentListener(unityEvent: any, index: number, call: (() => void)): void;
+    static RemovePersistentListener(unityEvent: any, call: (() => void)): void;
     static UnregisterPersistentListener(unityEvent: any, index: number): void;
-    static AddVoidPersistentListener(unityEvent: any, call: any): void;
-    static RegisterVoidPersistentListener(unityEvent: any, index: number, call: any): void;
-    static AddIntPersistentListener(unityEvent: any, call: any, argument: number): void;
-    static RegisterIntPersistentListener(unityEvent: any, index: number, call: any, argument: number): void;
-    static AddFloatPersistentListener(unityEvent: any, call: any, argument: number): void;
-    static RegisterFloatPersistentListener(unityEvent: any, index: number, call: any, argument: number): void;
-    static AddBoolPersistentListener(unityEvent: any, call: any, argument: boolean): void;
-    static RegisterBoolPersistentListener(unityEvent: any, index: number, call: any, argument: boolean): void;
-    static AddStringPersistentListener(unityEvent: any, call: any, argument: string): void;
-    static RegisterStringPersistentListener(unityEvent: any, index: number, call: any, argument: string): void;
+    static AddVoidPersistentListener(unityEvent: any, call: (() => void)): void;
+    static RegisterVoidPersistentListener(unityEvent: any, index: number, call: (() => void)): void;
+    static AddIntPersistentListener(unityEvent: any, call: ((number) => void), argument: number): void;
+    static RegisterIntPersistentListener(unityEvent: any, index: number, call: ((number) => void), argument: number): void;
+    static AddFloatPersistentListener(unityEvent: any, call: ((number) => void), argument: number): void;
+    static RegisterFloatPersistentListener(unityEvent: any, index: number, call: ((number) => void), argument: number): void;
+    static AddBoolPersistentListener(unityEvent: any, call: ((boolean) => void), argument: boolean): void;
+    static RegisterBoolPersistentListener(unityEvent: any, index: number, call: ((boolean) => void), argument: boolean): void;
+    static AddStringPersistentListener(unityEvent: any, call: ((string) => void), argument: string): void;
+    static RegisterStringPersistentListener(unityEvent: any, index: number, call: ((string) => void), argument: string): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -18466,7 +17608,7 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    Init(items: any, itemSpacing: number, minWidthOfPopup: number, popupButtonData: UnityEditor.ExposablePopupMenu.PopupButtonData, selectionChangedCallback: any): void;
+    Init(items: any, itemSpacing: number, minWidthOfPopup: number, popupButtonData: UnityEditor.ExposablePopupMenu.PopupButtonData, selectionChangedCallback: ((UnityEditor.ExposablePopupMenu.ItemData) => void)): void;
     OnGUI(rect: any): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -18601,7 +17743,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -18959,7 +18101,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class FlexibleMenu {
     // constructors
-    constructor(itemProvider: UnityEditor.IFlexibleMenuItemProvider, selectionIndex: number, modifyItemUi: UnityEditor.FlexibleMenuModifyItemUI, itemClickedCallback: any);
+    constructor(itemProvider: UnityEditor.IFlexibleMenuItemProvider, selectionIndex: number, modifyItemUi: UnityEditor.FlexibleMenuModifyItemUI, itemClickedCallback: ((number, any) => void));
     // methods
     GetWindowSize(): any;
     OnGUI(rect: any): void;
@@ -19011,7 +18153,7 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     OnClose(): void;
-    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): void;
+    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: ((any) => void)): void;
     Accepted(): void;
     IsShowing(): boolean;
     OnGUI(rect: any): void;
@@ -19262,7 +18404,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -19530,7 +18672,7 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     // fields
     sortingState: UnityEditor.HierarchySorting;
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -19563,7 +18705,7 @@ declare namespace UnityEditor {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -19954,7 +19096,7 @@ declare namespace UnityEditor {
     OnClose(): void;
     GetWindowSize(): any;
     OnGUI(rect: any): void;
-    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): void;
+    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: ((any) => void)): void;
     Accepted(): void;
     IsShowing(): boolean;
     OnOpen(): void;
@@ -20054,8 +19196,8 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    AddItem(content: any, on: boolean, func: UnityEditor.GenericMenu.MenuFunction): void;
-    AddItem(content: any, on: boolean, func: UnityEditor.GenericMenu.MenuFunction2, userData: any): void;
+    AddItem(content: any, on: boolean, func: (() => void)): void;
+    AddItem(content: any, on: boolean, func: ((any) => void), userData: any): void;
     AddDisabledItem(content: any): void;
     AddSeparator(path: string): void;
     GetItemCount(): number;
@@ -20070,54 +19212,10 @@ declare namespace UnityEditor {
   }
 }
 declare namespace UnityEditor.GenericMenu {
-  class MenuFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.GenericMenu {
-  class MenuFunction2 {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(userData: any): void;
-    BeginInvoke(userData: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.GenericMenu {
   class MenuItem {
     // constructors
-    constructor(_content: any, _separator: boolean, _on: boolean, _func: UnityEditor.GenericMenu.MenuFunction);
-    constructor(_content: any, _separator: boolean, _on: boolean, _func: UnityEditor.GenericMenu.MenuFunction2, _userData: any);
+    constructor(_content: any, _separator: boolean, _on: boolean, _func: (() => void));
+    constructor(_content: any, _separator: boolean, _on: boolean, _func: ((any) => void), _userData: any);
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -20128,8 +19226,8 @@ declare namespace UnityEditor.GenericMenu {
     content: any;
     separator: boolean;
     on: boolean;
-    func: UnityEditor.GenericMenu.MenuFunction;
-    func2: UnityEditor.GenericMenu.MenuFunction2;
+    func: (() => void);
+    func2: ((any) => void);
     userData: any;
   }
 }
@@ -21187,28 +20285,6 @@ declare namespace UnityEditor.GUIViewDebuggerWindow {
     centeredText: any;
   }
 }
-declare namespace UnityEditor.Handles {
-  class CapFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
-    BeginInvoke(controlID: number, position: any, rotation: any, size: number, eventType: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class Handles {
     // constructors
@@ -21220,29 +20296,29 @@ declare namespace UnityEditor {
     static RadiusHandle(rotation: any, position: any, radius: number, handlesOnly: boolean): number;
     static RadiusHandle(rotation: any, position: any, radius: number): number;
     static Slider(position: any, direction: any): any;
-    static Slider(position: any, direction: any, size: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: number): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any, drawHelper: boolean): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any, drawHelper: boolean): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any, drawHelper: boolean): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: number): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: number, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: number): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: number, drawHelper: boolean): any;
+    static Slider(position: any, direction: any, size: number, drawFunc: ((number, any, any, number) => void), snap: number): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: number): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: number, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: number): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: number, drawHelper: boolean): any;
     static FreeRotateHandle(rotation: any, position: any, size: number): any;
-    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunc: UnityEditor.Handles.DrawCapFunction): any;
+    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunc: ((number, any, any, number) => void)): any;
     static ScaleSlider(scale: number, position: any, direction: any, rotation: any, size: number, snap: number): number;
-    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunc: UnityEditor.Handles.DrawCapFunction, snap: number): number;
+    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunc: ((number, any, any, number) => void), snap: number): number;
     static Disc(rotation: any, position: any, axis: any, size: number, cutoffPlane: boolean, snap: number): any;
-    static Button(position: any, direction: any, size: number, pickSize: number, capFunc: UnityEditor.Handles.DrawCapFunction): boolean;
+    static Button(position: any, direction: any, size: number, pickSize: number, capFunc: ((number, any, any, number) => void)): boolean;
     static SnapValue(val: number, snap: number): number;
     static CubeCap(controlID: number, position: any, rotation: any, size: number): void;
     static SphereCap(controlID: number, position: any, rotation: any, size: number): void;
@@ -21295,10 +20371,10 @@ declare namespace UnityEditor {
     static DrawDottedLines(lineSegments: any[], screenSpaceSize: number): void;
     static DrawDottedLines(points: any[], segmentIndices: number[], screenSpaceSize: number): void;
     static DrawWireCube(center: any, size: any): void;
-    static Slider(position: any, direction: any, size: number, capFunction: UnityEditor.Handles.CapFunction, snap: number): any;
-    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunction: UnityEditor.Handles.CapFunction): any;
-    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunction: UnityEditor.Handles.CapFunction, snap: number): number;
-    static Button(position: any, direction: any, size: number, pickSize: number, capFunction: UnityEditor.Handles.CapFunction): boolean;
+    static Slider(position: any, direction: any, size: number, capFunction: ((number, any, any, number, any) => void), snap: number): any;
+    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunction: ((number, any, any, number, any) => void)): any;
+    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunction: ((number, any, any, number, any) => void), snap: number): number;
+    static Button(position: any, direction: any, size: number, pickSize: number, capFunction: ((number, any, any, number, any) => void)): boolean;
     static CubeHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static SphereHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static ConeHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
@@ -21327,28 +20403,6 @@ declare namespace UnityEditor {
     static matrix: any;
     static readonly inverseMatrix: any;
     currentCamera: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.Handles {
-  class DrawCapFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(controlID: number, position: any, rotation: any, size: number): void;
-    BeginInvoke(controlID: number, position: any, rotation: any, size: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -21518,28 +20572,6 @@ declare namespace UnityEditor.Hardware {
     // fields
   }
 }
-declare namespace UnityEditor.Hardware.DevDeviceList {
-  class OnChangedHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor.Hardware {
   class DevDeviceState {
     // constructors
@@ -21572,28 +20604,6 @@ declare namespace UnityEditor.Hardware {
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.Hardware.Usb {
-  class OnDevicesChangedHandler {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(devices: UnityEditor.Hardware.UsbDevice[]): void;
-    BeginInvoke(devices: UnityEditor.Hardware.UsbDevice[], callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -22283,28 +21293,6 @@ declare namespace UnityEditor {
   }
 }
 declare namespace UnityEditor.IconSelector {
-  class MonoScriptIconChangedCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(monoScript: UnityEditor.MonoScript): void;
-    BeginInvoke(monoScript: UnityEditor.MonoScript, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.IconSelector {
   class Styles {
     // constructors
     constructor();
@@ -22576,7 +21564,7 @@ declare namespace UnityEditor.IMGUI.Controls {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.IMGUI.Controls {
@@ -22635,28 +21623,6 @@ declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeader {
     static columnHeaderRightAligned: any;
     static background: any;
     static arrowStyle: any;
-  }
-}
-declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeader {
-  class HeaderCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(multiColumnHeader: UnityEditor.IMGUI.Controls.MultiColumnHeader): void;
-    BeginInvoke(multiColumnHeader: UnityEditor.IMGUI.Controls.MultiColumnHeader, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeaderState {
@@ -22932,7 +21898,7 @@ declare namespace UnityEditor.IMGUI.Controls.TreeView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.IMGUI.Controls.TreeView {
@@ -22993,7 +21959,7 @@ declare namespace UnityEditor.IMGUI.Controls.TreeView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -23034,7 +22000,7 @@ declare namespace UnityEditor.IMGUI.Controls {
     item: UnityEditor.IMGUI.Controls.TreeViewItem;
     treeView: UnityEditor.IMGUI.Controls.TreeViewController;
     // fields
-    animationEnded: any;
+    animationEnded: ((UnityEditor.IMGUI.Controls.TreeViewAnimationInput) => void);
   }
 }
 declare namespace UnityEditor.IMGUI.Controls {
@@ -23080,16 +22046,16 @@ declare namespace UnityEditor.IMGUI.Controls {
     GetType(): any;
     ToString(): string;
     // properties
-    selectionChangedCallback: any;
-    itemDoubleClickedCallback: any;
-    dragEndedCallback: any;
-    contextClickItemCallback: any;
-    contextClickOutsideItemsCallback: any;
-    keyboardInputCallback: any;
-    expandedStateChanged: any;
-    searchChanged: any;
-    scrollChanged: any;
-    onGUIRowCallback: any;
+    selectionChangedCallback: ((number[]) => void);
+    itemDoubleClickedCallback: ((number) => void);
+    dragEndedCallback: ((number[], boolean) => void);
+    contextClickItemCallback: ((number) => void);
+    contextClickOutsideItemsCallback: (() => void);
+    keyboardInputCallback: (() => void);
+    expandedStateChanged: (() => void);
+    searchChanged: ((string) => void);
+    scrollChanged: ((any) => void);
+    onGUIRowCallback: ((number, any) => void);
     data: UnityEditor.IMGUI.Controls.ITreeViewDataSource;
     dragging: UnityEditor.IMGUI.Controls.ITreeViewDragging;
     gui: UnityEditor.IMGUI.Controls.ITreeViewGUI;
@@ -23146,7 +22112,7 @@ declare namespace UnityEditor.IMGUI.Controls {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.IMGUI.Controls {
@@ -23245,7 +22211,7 @@ declare namespace UnityEditor.IMGUI.Controls {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -23660,7 +22626,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -23765,7 +22731,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -24577,56 +23543,12 @@ declare namespace UnityEditor {
     // constructors
     constructor();
     // methods
-    static DoGUI(title: string, show: any, scrollPos: any, getValue: UnityEditor.LayerMatrixGUI.GetValueFunc, setValue: UnityEditor.LayerMatrixGUI.SetValueFunc): void;
+    static DoGUI(title: string, show: any, scrollPos: any, getValue: ((number, number) => boolean), setValue: ((number, number, boolean) => void)): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.LayerMatrixGUI {
-  class GetValueFunc {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(layerA: number, layerB: number): boolean;
-    BeginInvoke(layerA: number, layerB: number, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.LayerMatrixGUI {
-  class SetValueFunc {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(layerA: number, layerB: number, val: boolean): void;
-    BeginInvoke(layerA: number, layerB: number, val: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -25430,7 +24352,7 @@ declare namespace UnityEditor {
     static lightingDataAsset: UnityEditor.LightingDataAsset;
     static lightmapSnapshot: UnityEditor.LightmapSnapshot;
     // fields
-    static completed: UnityEditor.Lightmapping.OnCompletedFunction;
+    static completed: (() => void);
   }
 }
 declare namespace UnityEditor.Lightmapping {
@@ -25453,28 +24375,6 @@ declare namespace UnityEditor.Lightmapping {
     static Iterative: UnityEditor.Lightmapping.GIWorkflowMode;
     static OnDemand: UnityEditor.Lightmapping.GIWorkflowMode;
     static Legacy: UnityEditor.Lightmapping.GIWorkflowMode;
-  }
-}
-declare namespace UnityEditor.Lightmapping {
-  class OnCompletedFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor {
@@ -25796,7 +24696,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -26273,32 +25173,10 @@ declare namespace UnityEditor {
     // fields
   }
 }
-declare namespace UnityEditor.LODGroupEditor.LODAction {
-  class Callback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor.LODGroupEditor {
   class LODAction {
     // constructors
-    constructor(lods: any, percentage: number, clickedPosition: any, propLODs: UnityEditor.SerializedProperty, callback: UnityEditor.LODGroupEditor.LODAction.Callback);
+    constructor(lods: any, percentage: number, clickedPosition: any, propLODs: UnityEditor.SerializedProperty, callback: (() => void));
     // methods
     InsertLOD(): void;
     DeleteLOD(): void;
@@ -26334,7 +25212,7 @@ declare namespace UnityEditor {
     static LinearizeScreenPercentage(percentage: number): number;
     static CalcLODButton(totalRect: any, percentage: number): any;
     static GetCulledBox(totalRect: any, previousLODPercentage: number): any;
-    static CreateLODInfos(numLODs: number, area: any, nameGen: any, heightGen: any): any;
+    static CreateLODInfos(numLODs: number, area: any, nameGen: ((number) => string), heightGen: ((number) => number)): any;
     static GetCameraPercent(position: any, sliderRect: any): number;
     static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): void;
     static DrawLODSlider(area: any, lods: any, selectedLevel: number): void;
@@ -27351,29 +26229,7 @@ declare namespace UnityEditor {
     // properties
     static minDragDifference: any;
     // fields
-    static handleDragChange: UnityEditor.ManipulationToolUtility.HandleDragChange;
-  }
-}
-declare namespace UnityEditor.ManipulationToolUtility {
-  class HandleDragChange {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(handleName: string, dragging: boolean): void;
-    BeginInvoke(handleName: string, dragging: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    static handleDragChange: ((string, boolean) => void);
   }
 }
 declare namespace UnityEditor {
@@ -27716,28 +26572,6 @@ declare namespace UnityEditor {
     // fields
   }
 }
-declare namespace UnityEditor.MaterialProperty {
-  class ApplyPropertyCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(prop: UnityEditor.MaterialProperty, changeMask: number, previousValue: any): boolean;
-    BeginInvoke(prop: UnityEditor.MaterialProperty, changeMask: number, previousValue: any, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class MaterialProperty {
     // constructors
@@ -27758,7 +26592,7 @@ declare namespace UnityEditor {
     readonly textureDimension: any;
     readonly rangeLimits: any;
     readonly hasMixedValue: boolean;
-    applyPropertyCallback: UnityEditor.MaterialProperty.ApplyPropertyCallback;
+    applyPropertyCallback: ((UnityEditor.MaterialProperty, number, any) => boolean);
     colorValue: any;
     vectorValue: any;
     floatValue: number;
@@ -28437,7 +27271,7 @@ declare namespace UnityEditor {
     // methods
     static MenuCallback(callbackObject: any): void;
     static ExtractSubMenuWithPath(path: string, menu: UnityEditor.GenericMenu, replacementPath: string, temporaryContext: any[]): void;
-    static ExtractMenuItemWithPath(menuString: string, menu: UnityEditor.GenericMenu, replacementMenuString: string, temporaryContext: any[], userData: number, onBeforeExecuteCallback: any, onAfterExecuteCallback: any): void;
+    static ExtractMenuItemWithPath(menuString: string, menu: UnityEditor.GenericMenu, replacementMenuString: string, temporaryContext: any[], userData: number, onBeforeExecuteCallback: ((string, any[], number) => void), onAfterExecuteCallback: ((string, any[], number) => void)): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -28459,8 +27293,8 @@ declare namespace UnityEditor.MenuUtils {
     // fields
     menuItemPath: string;
     temporaryContext: any[];
-    onBeforeExecuteCallback: any;
-    onAfterExecuteCallback: any;
+    onBeforeExecuteCallback: ((string, any[], number) => void);
+    onAfterExecuteCallback: ((string, any[], number) => void);
     userData: number;
   }
 }
@@ -30005,28 +28839,6 @@ declare namespace UnityEditor.ModuleUI {
   }
 }
 declare namespace UnityEditor.ModuleUI {
-  class CurveFieldMouseDownCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(button: number, drawRect: any, curveRanges: any): boolean;
-    BeginInvoke(button: number, drawRect: any, curveRanges: any, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.ModuleUI {
   class CurveStateCallbackData {
     // constructors
     constructor(state: UnityEditor.MinMaxCurveState, curves: UnityEditor.SerializedMinMaxCurve[]);
@@ -30071,7 +28883,7 @@ declare namespace UnityEditor {
     static GUIToggleWithIntField(guiContent: any, boolProp: UnityEditor.SerializedProperty, intProp: UnityEditor.SerializedProperty, invertToggle: boolean, layoutOptions: any[]): void;
     static GUIObject(label: any, objectProp: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
     static GUIObjectFieldAndToggle(label: any, objectProp: UnityEditor.SerializedProperty, boolProp: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     static GUIIntDraggable(label: any, intProp: UnityEditor.SerializedProperty, layoutOptions: any[]): number;
     static GUIIntDraggable(label: any, intValue: number, layoutOptions: any[]): number;
     static GUIIntDraggableX2(mainLabel: any, label1: any, intProp1: UnityEditor.SerializedProperty, label2: any, intProp2: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -31022,7 +29834,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -31284,12 +30096,12 @@ declare namespace UnityEditor {
     allowUserRenderingHook: boolean;
     allowFindNextShortcut: boolean;
     foldersFirst: boolean;
-    repaintCallback: any;
-    itemSelectedCallback: any;
-    keyboardCallback: any;
-    gotKeyboardFocus: any;
-    assetStoreSearchEnded: any;
-    drawLocalAssetHeader: any;
+    repaintCallback: (() => void);
+    itemSelectedCallback: ((boolean) => void);
+    keyboardCallback: (() => void);
+    gotKeyboardFocus: (() => void);
+    assetStoreSearchEnded: (() => void);
+    drawLocalAssetHeader: ((any) => number);
     gridSize: number;
     readonly minGridSize: number;
     readonly maxGridSize: number;
@@ -31652,7 +30464,7 @@ declare namespace UnityEditor {
     constructor();
     // methods
     IsInitialized(): boolean;
-    Init(position: any, owner: UnityEditor.EditorWindow, treeViewNeededCallback: any, selectionCallback: any, doubleClickedCallback: any, initialSelectedTreeViewItemID: number, userData: number): void;
+    Init(position: any, owner: UnityEditor.EditorWindow, treeViewNeededCallback: ((UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void), selectionCallback: ((UnityEditor.IMGUI.Controls.TreeViewItem) => void), doubleClickedCallback: (() => void), initialSelectedTreeViewItemID: number, userData: number): void;
     Clear(): void;
     GetSelection(): number[];
     SetTreeView(treeView: UnityEditor.IMGUI.Controls.TreeViewController): void;
@@ -31670,8 +30482,8 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: (() => void)): void;
+    RemoveListener(call: (() => void)): void;
     Invoke(): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): any;
@@ -31691,8 +30503,8 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEditor.IMGUI.Controls.TreeViewItem) => void)): void;
+    RemoveListener(call: ((UnityEditor.IMGUI.Controls.TreeViewItem) => void)): void;
     Invoke(arg0: UnityEditor.IMGUI.Controls.TreeViewItem): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): any;
@@ -31745,8 +30557,8 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     // constructors
     constructor();
     // methods
-    AddListener(call: any): void;
-    RemoveListener(call: any): void;
+    AddListener(call: ((UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
+    RemoveListener(call: ((UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
     Invoke(arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): any;
@@ -32221,7 +31033,7 @@ declare namespace UnityEditor.PackageExportTreeView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.PackageExportTreeView.PackageExportTreeViewGUI {
@@ -32269,13 +31081,13 @@ declare namespace UnityEditor.PackageExportTreeView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
     readonly bottomRowMargin: number;
     // fields
-    itemWasToggled: any;
+    itemWasToggled: ((UnityEditor.PackageExportTreeView.PackageExportTreeViewItem) => void);
     k_LineHeight: number;
     k_BaseIndent: number;
     k_IndentWidth: number;
@@ -32466,7 +31278,7 @@ declare namespace UnityEditor.PackageImportTreeView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.PackageImportTreeView.PackageImportTreeViewGUI {
@@ -32519,13 +31331,13 @@ declare namespace UnityEditor.PackageImportTreeView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
     readonly bottomRowMargin: number;
     // fields
-    itemWasToggled: any;
+    itemWasToggled: ((UnityEditor.PackageImportTreeView.PackageImportTreeViewItem) => void);
     k_LineHeight: number;
     k_BaseIndent: number;
     k_IndentWidth: number;
@@ -33278,7 +32090,7 @@ declare namespace UnityEditor {
     m_WaitTime: number;
     m_FadeOutTime: number;
     m_PeakScale: number;
-    m_ContentDraw: any;
+    m_ContentDraw: ((any) => void);
     m_ContentRect: any;
     m_AvailableWidth: number;
     m_PingStyle: any;
@@ -35088,50 +33900,6 @@ declare namespace UnityEditor {
     // fields
   }
 }
-declare namespace UnityEditor.PluginImporterInspector {
-  class GetComptability {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(imp: UnityEditor.PluginImporter): boolean;
-    BeginInvoke(imp: UnityEditor.PluginImporter, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.PluginImporterInspector {
-  class ValueSwitcher {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(value: UnityEditor.PluginImporterInspector.Compatibility): UnityEditor.PluginImporterInspector.Compatibility;
-    BeginInvoke(value: UnityEditor.PluginImporterInspector.Compatibility, callback: any, object: any): any;
-    EndInvoke(result: any): UnityEditor.PluginImporterInspector.Compatibility;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class PointEditor {
     // constructors
@@ -35338,7 +34106,7 @@ declare namespace UnityEditor.PopupList {
     m_AllowCustom: boolean;
     m_EnableAutoCompletion: boolean;
     m_SortAlphabetically: boolean;
-    m_OnSelectCallback: UnityEditor.PopupList.OnSelectCallback;
+    m_OnSelectCallback: ((UnityEditor.PopupList.ListElement) => void);
     m_MaxCount: number;
   }
 }
@@ -35362,28 +34130,6 @@ declare namespace UnityEditor.PopupList {
     text: string;
     // fields
     m_Content: any;
-  }
-}
-declare namespace UnityEditor.PopupList {
-  class OnSelectCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(element: UnityEditor.PopupList.ListElement): void;
-    BeginInvoke(element: UnityEditor.PopupList.ListElement, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.PopupList {
@@ -35508,7 +34254,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class PopupWindowContentForNewLibrary {
     // constructors
-    constructor(createLibraryCallback: any);
+    constructor(createLibraryCallback: ((string, UnityEditor.PresetFileLocation) => string));
     // methods
     OnGUI(rect: any): void;
     GetWindowSize(): any;
@@ -35787,29 +34533,7 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    static prefabInstanceUpdated: UnityEditor.PrefabUtility.PrefabInstanceUpdated;
-  }
-}
-declare namespace UnityEditor.PrefabUtility {
-  class PrefabInstanceUpdated {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(instance: any): void;
-    BeginInvoke(instance: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    static prefabInstanceUpdated: ((any) => void);
   }
 }
 declare namespace UnityEditor {
@@ -35851,7 +34575,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor.PreferencesWindow {
   class AppsListUserData {
     // constructors
-    constructor(paths: string[], str: UnityEditor.PreferencesWindow.RefString, onChanged: any);
+    constructor(paths: string[], str: UnityEditor.PreferencesWindow.RefString, onChanged: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -35861,7 +34585,7 @@ declare namespace UnityEditor.PreferencesWindow {
     // fields
     paths: string[];
     str: UnityEditor.PreferencesWindow.RefString;
-    onChanged: any;
+    onChanged: (() => void);
   }
 }
 declare namespace UnityEditor.PreferencesWindow {
@@ -35949,28 +34673,6 @@ declare namespace UnityEditor.PreferencesWindow {
   }
 }
 declare namespace UnityEditor.PreferencesWindow {
-  class OnGUIDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.PreferencesWindow {
   class RefString {
     // constructors
     constructor(s: string);
@@ -35987,9 +34689,9 @@ declare namespace UnityEditor.PreferencesWindow {
 declare namespace UnityEditor.PreferencesWindow {
   class Section {
     // constructors
-    constructor(name: string, guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate);
-    constructor(name: string, icon: any, guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate);
-    constructor(content: any, guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate);
+    constructor(name: string, guiFunc: (() => void));
+    constructor(name: string, icon: any, guiFunc: (() => void));
+    constructor(content: any, guiFunc: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -35998,7 +34700,7 @@ declare namespace UnityEditor.PreferencesWindow {
     // properties
     // fields
     content: any;
-    guiFunc: UnityEditor.PreferencesWindow.OnGUIDelegate;
+    guiFunc: (() => void);
   }
 }
 declare namespace UnityEditor.PreferencesWindow {
@@ -36578,8 +35280,8 @@ declare namespace UnityEditor {
     // fields
     Name: string;
     Enabled: boolean;
-    IsSelected: any;
-    ConnectTo: any;
+    IsSelected: (() => boolean);
+    ConnectTo: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -36952,7 +35654,7 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -37011,7 +35713,7 @@ declare namespace UnityEditor {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -37237,7 +35939,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class PropertyAndTargetHandler {
     // constructors
-    constructor(property: UnityEditor.SerializedProperty, target: any, function_: UnityEditor.TargetChoiceHandler.TargetChoiceMenuFunction);
+    constructor(property: UnityEditor.SerializedProperty, target: any, function_: ((UnityEditor.SerializedProperty, any) => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -37247,7 +35949,7 @@ declare namespace UnityEditor {
     // fields
     property: UnityEditor.SerializedProperty;
     target: any;
-    "function": UnityEditor.TargetChoiceHandler.TargetChoiceMenuFunction;
+    "function": ((UnityEditor.SerializedProperty, any) => void);
   }
 }
 declare namespace UnityEditor {
@@ -37428,7 +36130,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor {
   class PurchaseResult {
     // constructors
-    constructor(c: any);
+    constructor(c: ((UnityEditor.PurchaseResult) => void));
     // methods
     Parse(response: UnityEditor.AssetStoreResponse): void;
     Equals(obj: any): boolean;
@@ -37822,7 +36524,7 @@ declare namespace UnityEditor {
     constructor();
     // methods
     static AngleAroundAxis(dirA: any, dirB: any, axis: any): number;
-    static RotationSlider(id: number, cornerPos: any, rotation: number, pivot: any, handleDir: any, outwardsDir1: any, outwardsDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.CapFunction, snap: any): number;
+    static RotationSlider(id: number, cornerPos: any, rotation: number, pivot: any, handleDir: any, outwardsDir1: any, outwardsDir2: any, handleSize: number, drawFunc: ((number, any, any, number, any) => void), snap: any): number;
     static RectScalingHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static PivotHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static RenderRectWithShadow(active: boolean, corners: any[]): void;
@@ -37967,50 +36669,6 @@ declare namespace UnityEditor {
     readonly serializedObject: UnityEditor.SerializedObject;
     name: string;
     hideFlags: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.RectTransformEditor {
-  class FloatGetter {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(rect: any): number;
-    BeginInvoke(rect: any, callback: any, object: any): any;
-    EndInvoke(result: any): number;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.RectTransformEditor {
-  class FloatSetter {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(rect: any, f: number): void;
-    BeginInvoke(rect: any, f: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -38310,7 +36968,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -39020,7 +37678,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -39138,7 +37796,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -39340,7 +37998,7 @@ declare namespace UnityEditor {
     static SetName(instanceID: number, name: string): void;
     static UpdateExistingSavedFilter(instanceID: number, filter: UnityEditor.SearchFilter, previewSize: number): void;
     static ConvertToTreeView(): UnityEditor.IMGUI.Controls.TreeViewItem;
-    static AddChangeListener(callback: any): void;
+    static AddChangeListener(callback: (() => void)): void;
     static MoveSavedFilter(instanceID: number, parentInstanceID: number, targetInstanceID: number, after: boolean): void;
     static CanMoveSavedFilter(instanceID: number, parentInstanceID: number, targetInstanceID: number, after: boolean): boolean;
     static AllowsHierarchy(): boolean;
@@ -39538,28 +38196,6 @@ declare namespace UnityEditor.SceneHierarchySortingWindow {
     m_TypeName: string;
     m_Name: string;
     m_Selected: boolean;
-  }
-}
-declare namespace UnityEditor.SceneHierarchySortingWindow {
-  class OnSelectCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(element: UnityEditor.SceneHierarchySortingWindow.InputData): void;
-    BeginInvoke(element: UnityEditor.SceneHierarchySortingWindow.InputData, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.SceneHierarchySortingWindow {
@@ -39935,7 +38571,7 @@ declare namespace UnityEditor {
     m_SceneLighting: boolean;
     lastFramingTime: number;
     m_AudioPlay: boolean;
-    static onSceneGUIDelegate: UnityEditor.SceneView.OnSceneFunc;
+    static onSceneGUIDelegate: ((UnityEditor.SceneView) => void);
     m_RenderMode: UnityEditor.DrawCameraMode;
   }
 }
@@ -39959,28 +38595,6 @@ declare namespace UnityEditor.SceneView {
     static NotDragging: UnityEditor.SceneView.DraggingLockedState;
     static Dragging: UnityEditor.SceneView.DraggingLockedState;
     static LookAt: UnityEditor.SceneView.DraggingLockedState;
-  }
-}
-declare namespace UnityEditor.SceneView {
-  class OnSceneFunc {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(sceneView: UnityEditor.SceneView): void;
-    BeginInvoke(sceneView: UnityEditor.SceneView, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.SceneView {
@@ -40042,8 +38656,8 @@ declare namespace UnityEditor {
     // methods
     Begin(): void;
     End(): void;
-    static Window(title: any, sceneViewFunc: UnityEditor.SceneViewOverlay.WindowFunction, order: number, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
-    static Window(title: any, sceneViewFunc: UnityEditor.SceneViewOverlay.WindowFunction, order: number, target: any, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
+    static Window(title: any, sceneViewFunc: ((any, UnityEditor.SceneView) => void), order: number, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
+    static Window(title: any, sceneViewFunc: ((any, UnityEditor.SceneView) => void), order: number, target: any, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -40090,7 +38704,7 @@ declare namespace UnityEditor.SceneViewOverlay {
     // properties
     // fields
     m_Title: any;
-    m_SceneViewFunc: UnityEditor.SceneViewOverlay.WindowFunction;
+    m_SceneViewFunc: ((any, UnityEditor.SceneView) => void);
     m_PrimaryOrder: number;
     m_SecondaryOrder: number;
     m_Target: any;
@@ -40116,28 +38730,6 @@ declare namespace UnityEditor.SceneViewOverlay {
     static MultipleWindowsPerTarget: UnityEditor.SceneViewOverlay.WindowDisplayOption;
     static OneWindowPerTarget: UnityEditor.SceneViewOverlay.WindowDisplayOption;
     static OneWindowPerTitle: UnityEditor.SceneViewOverlay.WindowDisplayOption;
-  }
-}
-declare namespace UnityEditor.SceneViewOverlay {
-  class WindowFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(target: any, sceneView: UnityEditor.SceneView): void;
-    BeginInvoke(target: any, sceneView: UnityEditor.SceneView, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor {
@@ -40374,34 +38966,12 @@ declare namespace UnityEditor.ScriptExecutionOrderInspector {
     // constructors
     constructor();
     // methods
-    static DragReorder(position: any, elementHeight: number, elements: any, drawElementDelegate: UnityEditor.ScriptExecutionOrderInspector.DragReorderGUI.DrawElementDelegate): number;
+    static DragReorder(position: any, elementHeight: number, elements: any, drawElementDelegate: ((any, any, boolean) => void)): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.ScriptExecutionOrderInspector.DragReorderGUI {
-  class DrawElementDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(r: any, obj: any, dragging: boolean): void;
-    BeginInvoke(r: any, obj: any, dragging: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -41130,8 +39700,8 @@ declare namespace UnityEditor.Scripting.Compilers.UWPReferences {
 declare namespace UnityEditor.Scripting {
   class ManagedProgram {
     // constructors
-    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setupStartInfo: any);
-    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setMonoEnvironmentVariables: boolean, setupStartInfo: any);
+    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setupStartInfo: ((any) => void));
+    constructor(monodistribution: string, profile: string, executable: string, arguments_: string, setMonoEnvironmentVariables: boolean, setupStartInfo: ((any) => void));
     // methods
     Start(): void;
     GetProcessStartInfo(): any;
@@ -41540,7 +40110,7 @@ declare namespace UnityEditor {
     static instanceIDs: number[];
     static readonly assetGUIDs: string[];
     // fields
-    static selectionChanged: any;
+    static selectionChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -42333,52 +40903,30 @@ declare namespace UnityEditor {
     inEditMode: boolean;
     activeEdge: number;
     // fields
-    GetPointPosition: any;
-    SetPointPosition: any;
-    GetPointLTangent: any;
-    SetPointLTangent: any;
-    GetPointRTangent: any;
-    SetPointRTangent: any;
-    GetTangentMode: any;
-    SetTangentMode: any;
-    InsertPointAt: any;
-    RemovePointAt: any;
-    GetPointsCount: any;
-    ScreenToLocal: any;
-    LocalToScreen: any;
-    LocalToWorldMatrix: any;
-    DistanceToRectangle: any;
-    DistanceToDiamond: any;
-    DistanceToCircle: any;
-    Repaint: any;
-    RecordUndo: any;
-    Snap: any;
-    Frame: any;
-    OnPointClick: any;
-    OpenEnded: any;
-    GetHandleSize: any;
-  }
-}
-declare namespace UnityEditor.ShapeEditor {
-  class DistanceToControl {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(pos: any, rotation: any, handleSize: number): number;
-    BeginInvoke(pos: any, rotation: any, handleSize: number, callback: any, object: any): any;
-    EndInvoke(result: any): number;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    GetPointPosition: ((number) => any);
+    SetPointPosition: ((number, any) => void);
+    GetPointLTangent: ((number) => any);
+    SetPointLTangent: ((number, any) => void);
+    GetPointRTangent: ((number) => any);
+    SetPointRTangent: ((number, any) => void);
+    GetTangentMode: ((number) => UnityEditor.ShapeEditor.TangentMode);
+    SetTangentMode: ((number, UnityEditor.ShapeEditor.TangentMode) => void);
+    InsertPointAt: ((number, any) => void);
+    RemovePointAt: ((number) => void);
+    GetPointsCount: (() => number);
+    ScreenToLocal: ((any) => any);
+    LocalToScreen: ((any) => any);
+    LocalToWorldMatrix: (() => any);
+    DistanceToRectangle: (() => ((any, any, number) => number));
+    DistanceToDiamond: (() => ((any, any, number) => number));
+    DistanceToCircle: (() => ((any, any, number) => number));
+    Repaint: (() => void);
+    RecordUndo: (() => void);
+    Snap: ((any) => any);
+    Frame: ((any) => void);
+    OnPointClick: ((number) => void);
+    OpenEnded: (() => boolean);
+    GetHandleSize: (() => number);
   }
 }
 declare namespace UnityEditor.ShapeEditor {
@@ -42483,7 +41031,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -42631,7 +41179,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -42686,7 +41234,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -42772,7 +41320,7 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -43152,7 +41700,7 @@ declare namespace UnityEditor {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -45077,7 +43625,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -45478,7 +44026,7 @@ declare namespace UnityEditor {
 declare namespace UnityEditor.TagManagerInspector {
   class EnterNamePopup {
     // constructors
-    constructor(tags: UnityEditor.SerializedProperty, cb: UnityEditor.TagManagerInspector.EnterNamePopup.EnterDelegate);
+    constructor(tags: UnityEditor.SerializedProperty, cb: ((string) => void));
     // methods
     GetWindowSize(): any;
     OnGUI(windowRect: any): void;
@@ -45490,28 +44038,6 @@ declare namespace UnityEditor.TagManagerInspector {
     ToString(): string;
     // properties
     readonly editorWindow: UnityEditor.EditorWindow;
-    // fields
-  }
-}
-declare namespace UnityEditor.TagManagerInspector.EnterNamePopup {
-  class EnterDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(str: string): void;
-    BeginInvoke(str: string, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -45568,28 +44094,6 @@ declare namespace UnityEditor {
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditor.TargetChoiceHandler {
-  class TargetChoiceMenuFunction {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(property: UnityEditor.SerializedProperty, target: any): void;
-    BeginInvoke(property: UnityEditor.SerializedProperty, target: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -46456,28 +44960,6 @@ declare namespace UnityEditor {
   }
 }
 declare namespace UnityEditor.TextureImporterInspector {
-  class GUIMethod {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(guiElements: UnityEditor.TextureImporterInspector.TextureInspectorGUIElement): void;
-    BeginInvoke(guiElements: UnityEditor.TextureImporterInspector.TextureInspectorGUIElement, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.TextureImporterInspector {
   class Styles {
     // constructors
     constructor();
@@ -47299,9 +45781,9 @@ declare namespace UnityEditor {
     drawLine: boolean;
     drawHead: boolean;
     tooltip: string;
-    onStartDrag: UnityEditor.AnimationWindowManipulator.OnStartDragDelegate;
-    onDrag: UnityEditor.AnimationWindowManipulator.OnDragDelegate;
-    onEndDrag: UnityEditor.AnimationWindowManipulator.OnEndDragDelegate;
+    onStartDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onEndDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
     rect: any;
     controlID: number;
   }
@@ -47627,28 +46109,6 @@ declare namespace UnityEditor {
     // fields
   }
 }
-declare namespace UnityEditor.Tools {
-  class OnToolChangedFunc {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(from: UnityEditor.Tool, to: UnityEditor.Tool): void;
-    BeginInvoke(from: UnityEditor.Tool, to: UnityEditor.Tool, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditor {
   class TooltipView {
     // constructors
@@ -47709,7 +46169,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -48223,7 +46683,7 @@ declare namespace UnityEditor.TreeViewExamples {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.TreeViewExamples {
@@ -48270,7 +46730,7 @@ declare namespace UnityEditor.TreeViewExamples {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor.TreeViewExamples {
@@ -48341,7 +46801,7 @@ declare namespace UnityEditor.TreeViewExamples {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -48420,7 +46880,7 @@ declare namespace UnityEditor.TreeViewExamples {
     columnWidths: number[];
     minColumnWidth: number;
     dragWidth: number;
-    columnRenderer: any;
+    columnRenderer: ((number, any) => void);
     // fields
   }
 }
@@ -48564,7 +47024,7 @@ declare namespace UnityEditor.TreeViewForAudioMixerGroup {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -48626,7 +47086,7 @@ declare namespace UnityEditor.TreeViewForAudioMixerGroup {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditor {
@@ -48724,7 +47184,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -49005,75 +47465,9 @@ declare namespace UnityEditor {
     ToString(): string;
     // properties
     // fields
-    static undoRedoPerformed: UnityEditor.Undo.UndoRedoCallback;
-    static willFlushUndoRecord: UnityEditor.Undo.WillFlushUndoRecord;
-    static postprocessModifications: UnityEditor.Undo.PostprocessModifications;
-  }
-}
-declare namespace UnityEditor.Undo {
-  class PostprocessModifications {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(modifications: UnityEditor.UndoPropertyModification[]): UnityEditor.UndoPropertyModification[];
-    BeginInvoke(modifications: UnityEditor.UndoPropertyModification[], callback: any, object: any): any;
-    EndInvoke(result: any): UnityEditor.UndoPropertyModification[];
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.Undo {
-  class UndoRedoCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.Undo {
-  class WillFlushUndoRecord {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    static undoRedoPerformed: (() => void);
+    static willFlushUndoRecord: (() => void);
+    static postprocessModifications: ((UnityEditor.UndoPropertyModification[]) => UnityEditor.UndoPropertyModification[]);
   }
 }
 declare namespace UnityEditor {
@@ -49533,7 +47927,7 @@ declare namespace UnityEditor {
     UpdateCullingSupportedString(text: any): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -49596,7 +47990,7 @@ declare namespace UnityEditor {
     OnSceneGUI(s: any, initial: UnityEditor.InitialModuleUI): void;
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     AddToModuleCurves(curveProp: UnityEditor.SerializedProperty): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     GUIMinMaxGradient(label: any, minMaxGradient: UnityEditor.SerializedMinMaxGradient, layoutOptions: any[]): void;
     GUIMinMaxColor(label: any, minMaxColor: UnityEditor.SerializedMinMaxColor, layoutOptions: any[]): void;
     GUITripleMinMaxCurve(label: any, x: any, xCurve: UnityEditor.SerializedMinMaxCurve, y: any, yCurve: UnityEditor.SerializedMinMaxCurve, z: any, zCurve: UnityEditor.SerializedMinMaxCurve, randomizePerFrame: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
@@ -49723,17 +48117,17 @@ declare namespace UnityEditor.VersionControl {
     CopyTo(array: UnityEditor.VersionControl.Asset[]): void;
     CopyTo(array: UnityEditor.VersionControl.Asset[], arrayIndex: number): void;
     CopyTo(index: number, array: UnityEditor.VersionControl.Asset[], arrayIndex: number, count: number): void;
-    Exists(match: any): boolean;
-    Find(match: any): UnityEditor.VersionControl.Asset;
-    FindAll(match: any): any;
-    FindIndex(match: any): number;
-    FindIndex(startIndex: number, match: any): number;
-    FindIndex(startIndex: number, count: number, match: any): number;
-    FindLast(match: any): UnityEditor.VersionControl.Asset;
-    FindLastIndex(match: any): number;
-    FindLastIndex(startIndex: number, match: any): number;
-    FindLastIndex(startIndex: number, count: number, match: any): number;
-    ForEach(action: any): void;
+    Exists(match: ((UnityEditor.VersionControl.Asset) => boolean)): boolean;
+    Find(match: ((UnityEditor.VersionControl.Asset) => boolean)): UnityEditor.VersionControl.Asset;
+    FindAll(match: ((UnityEditor.VersionControl.Asset) => boolean)): any;
+    FindIndex(match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
+    FindIndex(startIndex: number, match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
+    FindIndex(startIndex: number, count: number, match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
+    FindLast(match: ((UnityEditor.VersionControl.Asset) => boolean)): UnityEditor.VersionControl.Asset;
+    FindLastIndex(match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
+    FindLastIndex(startIndex: number, match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
+    FindLastIndex(startIndex: number, count: number, match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
+    ForEach(action: ((UnityEditor.VersionControl.Asset) => void)): void;
     GetEnumerator(): any;
     GetRange(index: number, count: number): any;
     IndexOf(item: UnityEditor.VersionControl.Asset): number;
@@ -49745,18 +48139,18 @@ declare namespace UnityEditor.VersionControl {
     LastIndexOf(item: UnityEditor.VersionControl.Asset, index: number): number;
     LastIndexOf(item: UnityEditor.VersionControl.Asset, index: number, count: number): number;
     Remove(item: UnityEditor.VersionControl.Asset): boolean;
-    RemoveAll(match: any): number;
+    RemoveAll(match: ((UnityEditor.VersionControl.Asset) => boolean)): number;
     RemoveAt(index: number): void;
     RemoveRange(index: number, count: number): void;
     Reverse(): void;
     Reverse(index: number, count: number): void;
     Sort(): void;
     Sort(comparer: any): void;
-    Sort(comparison: any): void;
+    Sort(comparison: ((UnityEditor.VersionControl.Asset, UnityEditor.VersionControl.Asset) => number)): void;
     Sort(index: number, count: number, comparer: any): void;
     ToArray(): UnityEditor.VersionControl.Asset[];
     TrimExcess(): void;
-    TrueForAll(match: any): boolean;
+    TrueForAll(match: ((UnityEditor.VersionControl.Asset) => boolean)): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -49805,17 +48199,17 @@ declare namespace UnityEditor.VersionControl {
     CopyTo(array: UnityEditor.VersionControl.ChangeSet[]): void;
     CopyTo(array: UnityEditor.VersionControl.ChangeSet[], arrayIndex: number): void;
     CopyTo(index: number, array: UnityEditor.VersionControl.ChangeSet[], arrayIndex: number, count: number): void;
-    Exists(match: any): boolean;
-    Find(match: any): UnityEditor.VersionControl.ChangeSet;
-    FindAll(match: any): any;
-    FindIndex(match: any): number;
-    FindIndex(startIndex: number, match: any): number;
-    FindIndex(startIndex: number, count: number, match: any): number;
-    FindLast(match: any): UnityEditor.VersionControl.ChangeSet;
-    FindLastIndex(match: any): number;
-    FindLastIndex(startIndex: number, match: any): number;
-    FindLastIndex(startIndex: number, count: number, match: any): number;
-    ForEach(action: any): void;
+    Exists(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): boolean;
+    Find(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): UnityEditor.VersionControl.ChangeSet;
+    FindAll(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): any;
+    FindIndex(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
+    FindIndex(startIndex: number, match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
+    FindIndex(startIndex: number, count: number, match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
+    FindLast(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): UnityEditor.VersionControl.ChangeSet;
+    FindLastIndex(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
+    FindLastIndex(startIndex: number, match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
+    FindLastIndex(startIndex: number, count: number, match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
+    ForEach(action: ((UnityEditor.VersionControl.ChangeSet) => void)): void;
     GetEnumerator(): any;
     GetRange(index: number, count: number): any;
     IndexOf(item: UnityEditor.VersionControl.ChangeSet): number;
@@ -49827,18 +48221,18 @@ declare namespace UnityEditor.VersionControl {
     LastIndexOf(item: UnityEditor.VersionControl.ChangeSet, index: number): number;
     LastIndexOf(item: UnityEditor.VersionControl.ChangeSet, index: number, count: number): number;
     Remove(item: UnityEditor.VersionControl.ChangeSet): boolean;
-    RemoveAll(match: any): number;
+    RemoveAll(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): number;
     RemoveAt(index: number): void;
     RemoveRange(index: number, count: number): void;
     Reverse(): void;
     Reverse(index: number, count: number): void;
     Sort(): void;
     Sort(comparer: any): void;
-    Sort(comparison: any): void;
+    Sort(comparison: ((UnityEditor.VersionControl.ChangeSet, UnityEditor.VersionControl.ChangeSet) => number)): void;
     Sort(index: number, count: number, comparer: any): void;
     ToArray(): UnityEditor.VersionControl.ChangeSet[];
     TrimExcess(): void;
-    TrueForAll(match: any): boolean;
+    TrueForAll(match: ((UnityEditor.VersionControl.ChangeSet) => boolean)): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -51277,7 +49671,7 @@ declare namespace UnityEditor.Web {
     static DoTasks(): void;
     AddGlobalObject(referenceName: string, obj: any): void;
     RemoveGlobalObject(referenceName: string): void;
-    DoMessage(jsonRequest: string, callback: UnityEditor.Web.JSProxyMgr.ExecCallback, webView: UnityEditor.WebView): boolean;
+    DoMessage(jsonRequest: string, callback: ((any) => void), webView: UnityEditor.WebView): boolean;
     static FormatError(messageID: number, status: number, errorClass: string, message: string): UnityEditor.Web.JspmError;
     static FormatSuccess(messageID: number, result: any): UnityEditor.Web.JspmSuccess;
     GetDestinationObject(reference: string): any;
@@ -51301,50 +49695,6 @@ declare namespace UnityEditor.Web {
     static kTypeInvoke: string;
     static kTypeGetStubInfo: string;
     static kTypeOnEvent: string;
-  }
-}
-declare namespace UnityEditor.Web.JSProxyMgr {
-  class ExecCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(result: any): void;
-    BeginInvoke(result: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditor.Web.JSProxyMgr {
-  class TaskCallback {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditor.Web {
@@ -52537,28 +50887,6 @@ declare namespace UnityEditorInternal {
     // fields
   }
 }
-declare namespace UnityEditorInternal.AddCurvesPopup {
-  class OnNewCurveAdded {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(node: UnityEditorInternal.AddCurvesPopupPropertyNode): void;
-    BeginInvoke(node: UnityEditorInternal.AddCurvesPopupPropertyNode, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditorInternal {
   class AddCurvesPopupGameObjectNode {
     // constructors
@@ -52640,7 +50968,7 @@ declare namespace UnityEditorInternal {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditorInternal {
@@ -52674,7 +51002,7 @@ declare namespace UnityEditorInternal {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -53052,7 +51380,7 @@ declare namespace UnityEditorInternal {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditorInternal {
@@ -53087,7 +51415,7 @@ declare namespace UnityEditorInternal {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -53306,167 +51634,13 @@ declare namespace UnityEditorInternal {
     // fields
     triggerFramingOnSelection: boolean;
     unitialized: boolean;
-    SynchronizeGeometry: UnityEditorInternal.AnimationWindowPolicy.SynchronizeGeometryDelegate;
-    SynchronizeFrameRate: UnityEditorInternal.AnimationWindowPolicy.SynchronizeFrameRateDelegate;
-    SynchronizeCurrentTime: UnityEditorInternal.AnimationWindowPolicy.SynchronizeCurrentTimeDelegate;
-    SynchronizeZoomableArea: UnityEditorInternal.AnimationWindowPolicy.SynchronizeZoomableAreaDelegate;
-    OnGeometryChange: UnityEditorInternal.AnimationWindowPolicy.OnGeometryChangeDelegate;
-    OnCurrentTimeChange: UnityEditorInternal.AnimationWindowPolicy.OnCurrentTimeChangeDelegate;
-    OnZoomableAreaChange: UnityEditorInternal.AnimationWindowPolicy.OnZoomableAreaChangeDelegate;
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class OnCurrentTimeChangeDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(time: number): void;
-    BeginInvoke(time: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class OnGeometryChangeDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(sizes: number[]): void;
-    BeginInvoke(sizes: number[], callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class OnZoomableAreaChangeDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(horizontalScale: number, horizontalTranslation: number): void;
-    BeginInvoke(horizontalScale: number, horizontalTranslation: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class SynchronizeCurrentTimeDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(time: any): boolean;
-    BeginInvoke(time: any, callback: any, object: any): any;
-    EndInvoke(time: any, result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class SynchronizeFrameRateDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(frameRate: any): boolean;
-    BeginInvoke(frameRate: any, callback: any, object: any): any;
-    EndInvoke(frameRate: any, result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class SynchronizeGeometryDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(sizes: any, minSizes: any): boolean;
-    BeginInvoke(sizes: any, minSizes: any, callback: any, object: any): any;
-    EndInvoke(sizes: any, minSizes: any, result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.AnimationWindowPolicy {
-  class SynchronizeZoomableAreaDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(horizontalScale: any, horizontalTranslation: any): boolean;
-    BeginInvoke(horizontalScale: any, horizontalTranslation: any, callback: any, object: any): any;
-    EndInvoke(horizontalScale: any, horizontalTranslation: any, result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    SynchronizeGeometry: ((any, any) => boolean);
+    SynchronizeFrameRate: ((any) => boolean);
+    SynchronizeCurrentTime: ((any) => boolean);
+    SynchronizeZoomableArea: ((any, any) => boolean);
+    OnGeometryChange: ((number[]) => void);
+    OnCurrentTimeChange: ((number) => void);
+    OnZoomableAreaChange: ((number, number) => void);
   }
 }
 declare namespace UnityEditorInternal {
@@ -53483,8 +51657,8 @@ declare namespace UnityEditorInternal {
     UpdateClip(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, newClip: any): void;
     UpdateTimeOffset(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, timeOffset: number): void;
     Exists(itemToFind: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
-    Exists(predicate: any): boolean;
-    Find(predicate: any): UnityEditorInternal.AnimationWindowSelectionItem;
+    Exists(predicate: ((UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): boolean;
+    Find(predicate: ((UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): UnityEditorInternal.AnimationWindowSelectionItem;
     First(): UnityEditorInternal.AnimationWindowSelectionItem;
     GetRefreshHash(): number;
     Refresh(): void;
@@ -53504,7 +51678,7 @@ declare namespace UnityEditorInternal {
     readonly canRecord: boolean;
     readonly canAddCurves: boolean;
     // fields
-    onSelectionChanged: any;
+    onSelectionChanged: (() => void);
   }
 }
 declare namespace UnityEditorInternal {
@@ -53664,12 +51838,12 @@ declare namespace UnityEditorInternal {
     hierarchyState: UnityEditorInternal.AnimationWindowHierarchyState;
     animEditor: UnityEditor.AnimEditor;
     showCurveEditor: boolean;
-    onStartLiveEdit: any;
-    onEndLiveEdit: any;
+    onStartLiveEdit: (() => void);
+    onEndLiveEdit: (() => void);
     hierarchyData: UnityEditorInternal.AnimationWindowHierarchyDataSource;
     static kDefaultFrameRate: number;
     static kEditCurveUndoLabel: string;
-    onFrameRateChange: any;
+    onFrameRateChange: ((number) => void);
   }
 }
 declare namespace UnityEditorInternal.AnimationWindowState {
@@ -54063,7 +52237,7 @@ declare namespace UnityEditorInternal.AudioProfilerClipView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -54124,7 +52298,7 @@ declare namespace UnityEditorInternal.AudioProfilerClipView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditorInternal {
@@ -54158,30 +52332,8 @@ declare namespace UnityEditorInternal {
     // properties
     readonly items: any;
     // fields
-    OnUpdate: UnityEditorInternal.AudioProfilerClipViewBackend.DataUpdateDelegate;
+    OnUpdate: (() => void);
     m_TreeViewState: UnityEditorInternal.AudioProfilerClipTreeViewState;
-  }
-}
-declare namespace UnityEditorInternal.AudioProfilerClipViewBackend {
-  class DataUpdateDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditorInternal {
@@ -54460,7 +52612,7 @@ declare namespace UnityEditorInternal.AudioProfilerGroupView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditorInternal.AudioProfilerGroupView {
@@ -54532,7 +52684,7 @@ declare namespace UnityEditorInternal.AudioProfilerGroupView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -54581,30 +52733,8 @@ declare namespace UnityEditorInternal {
     // properties
     readonly items: any;
     // fields
-    OnUpdate: UnityEditorInternal.AudioProfilerGroupViewBackend.DataUpdateDelegate;
+    OnUpdate: (() => void);
     m_TreeViewState: UnityEditorInternal.AudioProfilerGroupTreeViewState;
-  }
-}
-declare namespace UnityEditorInternal.AudioProfilerGroupViewBackend {
-  class DataUpdateDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(): void;
-    BeginInvoke(callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
   }
 }
 declare namespace UnityEditorInternal {
@@ -54679,8 +52809,8 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static Do(id: number, position: any, direction: any, size: number, pickSize: number, capFunc: UnityEditor.Handles.DrawCapFunction): boolean;
-    static Do(id: number, position: any, direction: any, size: number, pickSize: number, capFunction: UnityEditor.Handles.CapFunction): boolean;
+    static Do(id: number, position: any, direction: any, size: number, pickSize: number, capFunc: ((number, any, any, number) => void)): boolean;
+    static Do(id: number, position: any, direction: any, size: number, pickSize: number, capFunction: ((number, any, any, number, any) => void)): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -54850,35 +52980,13 @@ declare namespace UnityEditorInternal {
     static CopyComponent(component: any): boolean;
     static PasteComponentValues(component: any): boolean;
     static PasteComponentAsNew(go: any): boolean;
-    static DestroyComponentsMatching(dst: any, componentFilter: UnityEditorInternal.ComponentUtility.IsDesiredComponent): void;
-    static ReplaceComponentsIfDifferent(src: any, dst: any, componentFilter: UnityEditorInternal.ComponentUtility.IsDesiredComponent): void;
+    static DestroyComponentsMatching(dst: any, componentFilter: ((any) => boolean)): void;
+    static ReplaceComponentsIfDifferent(src: any, dst: any, componentFilter: ((any) => boolean)): void;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
     // properties
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ComponentUtility {
-  class IsDesiredComponent {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(c: any): boolean;
-    BeginInvoke(c: any, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }
@@ -55199,52 +53307,8 @@ declare namespace UnityEditorInternal {
     // properties
     static readonly editMode: UnityEditorInternal.EditMode.SceneViewEditMode;
     // fields
-    static onEditModeEndDelegate: UnityEditorInternal.EditMode.OnEditModeStopFunc;
-    static onEditModeStartDelegate: UnityEditorInternal.EditMode.OnEditModeStartFunc;
-  }
-}
-declare namespace UnityEditorInternal.EditMode {
-  class OnEditModeStartFunc {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(editor: UnityEditor.Editor, mode: UnityEditorInternal.EditMode.SceneViewEditMode): void;
-    BeginInvoke(editor: UnityEditor.Editor, mode: UnityEditorInternal.EditMode.SceneViewEditMode, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.EditMode {
-  class OnEditModeStopFunc {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(editor: UnityEditor.Editor): void;
-    BeginInvoke(editor: UnityEditor.Editor, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
+    static onEditModeEndDelegate: ((UnityEditor.Editor) => void);
+    static onEditModeStartDelegate: ((UnityEditor.Editor, UnityEditorInternal.EditMode.SceneViewEditMode) => void);
   }
 }
 declare namespace UnityEditorInternal.EditMode {
@@ -55301,9 +53365,9 @@ declare namespace UnityEditorInternal {
     private constructor();
     // methods
     static MirrorFile(from: string, to: string): void;
-    static MirrorFile(from: string, to: string, comparer: any): void;
+    static MirrorFile(from: string, to: string, comparer: ((string, string) => boolean)): void;
     static MirrorFolder(from: string, to: string): void;
-    static MirrorFolder(from: string, to: string, comparer: any): void;
+    static MirrorFolder(from: string, to: string, comparer: ((string, string) => boolean)): void;
     static CanSkipCopy(from: string, to: string): boolean;
     Equals(obj: any): boolean;
     GetHashCode(): number;
@@ -55498,7 +53562,7 @@ declare namespace UnityEditorInternal.FrameDebuggerTreeView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }
 declare namespace UnityEditorInternal.FrameDebuggerTreeView.FDTreeViewDataSource {
@@ -55544,7 +53608,7 @@ declare namespace UnityEditorInternal.FrameDebuggerTreeView {
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: any;
+    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;
@@ -55659,8 +53723,8 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static Do(id: number, position: any, rotation: any, size: number, snap: any, capFunc: UnityEditor.Handles.DrawCapFunction): any;
-    static Do(id: number, position: any, rotation: any, size: number, snap: any, handleFunction: UnityEditor.Handles.CapFunction): any;
+    static Do(id: number, position: any, rotation: any, size: number, snap: any, capFunc: ((number, any, any, number) => void)): any;
+    static Do(id: number, position: any, rotation: any, size: number, snap: any, handleFunction: ((number, any, any, number, any) => void)): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -55826,7 +53890,7 @@ declare namespace UnityEditorInternal {
 declare namespace UnityEditorInternal {
   class IL2CPPBuilder {
     // constructors
-    constructor(tempFolder: string, stagingAreaData: string, platformProvider: UnityEditorInternal.IIl2CppPlatformProvider, modifyOutputBeforeCompile: any, runtimeClassRegistry: UnityEditor.RuntimeClassRegistry, developmentBuild: boolean);
+    constructor(tempFolder: string, stagingAreaData: string, platformProvider: UnityEditorInternal.IIl2CppPlatformProvider, modifyOutputBeforeCompile: ((string) => void), runtimeClassRegistry: UnityEditor.RuntimeClassRegistry, developmentBuild: boolean);
     // methods
     Run(): void;
     RunCompileAndLink(): void;
@@ -56842,7 +54906,7 @@ declare namespace UnityEditorInternal.ProfilerInstrumentationPopup {
     m_AllowCustom: boolean;
     m_EnableAutoCompletion: boolean;
     m_SortAlphabetically: boolean;
-    m_OnSelectCallback: UnityEditor.PopupList.OnSelectCallback;
+    m_OnSelectCallback: ((UnityEditor.PopupList.ListElement) => void);
     m_MaxCount: number;
   }
 }
@@ -57107,94 +55171,6 @@ declare namespace UnityEditorInternal {
     // fields
   }
 }
-declare namespace UnityEditorInternal.ReorderableList {
-  class AddCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(list: UnityEditorInternal.ReorderableList): void;
-    BeginInvoke(list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class AddDropdownCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(buttonRect: any, list: UnityEditorInternal.ReorderableList): void;
-    BeginInvoke(buttonRect: any, list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class CanRemoveCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(list: UnityEditorInternal.ReorderableList): boolean;
-    BeginInvoke(list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): boolean;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class ChangedCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(list: UnityEditorInternal.ReorderableList): void;
-    BeginInvoke(list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditorInternal {
   class ReorderableList {
     // constructors
@@ -57221,19 +55197,19 @@ declare namespace UnityEditorInternal {
     draggable: boolean;
     readonly count: number;
     // fields
-    drawHeaderCallback: UnityEditorInternal.ReorderableList.HeaderCallbackDelegate;
-    drawFooterCallback: UnityEditorInternal.ReorderableList.FooterCallbackDelegate;
-    drawElementCallback: UnityEditorInternal.ReorderableList.ElementCallbackDelegate;
-    drawElementBackgroundCallback: UnityEditorInternal.ReorderableList.ElementCallbackDelegate;
-    elementHeightCallback: UnityEditorInternal.ReorderableList.ElementHeightCallbackDelegate;
-    onReorderCallback: UnityEditorInternal.ReorderableList.ReorderCallbackDelegate;
-    onSelectCallback: UnityEditorInternal.ReorderableList.SelectCallbackDelegate;
-    onAddCallback: UnityEditorInternal.ReorderableList.AddCallbackDelegate;
-    onAddDropdownCallback: UnityEditorInternal.ReorderableList.AddDropdownCallbackDelegate;
-    onRemoveCallback: UnityEditorInternal.ReorderableList.RemoveCallbackDelegate;
-    onMouseUpCallback: UnityEditorInternal.ReorderableList.SelectCallbackDelegate;
-    onCanRemoveCallback: UnityEditorInternal.ReorderableList.CanRemoveCallbackDelegate;
-    onChangedCallback: UnityEditorInternal.ReorderableList.ChangedCallbackDelegate;
+    drawHeaderCallback: ((any) => void);
+    drawFooterCallback: ((any) => void);
+    drawElementCallback: ((any, number, boolean, boolean) => void);
+    drawElementBackgroundCallback: ((any, number, boolean, boolean) => void);
+    elementHeightCallback: ((number) => number);
+    onReorderCallback: ((UnityEditorInternal.ReorderableList) => void);
+    onSelectCallback: ((UnityEditorInternal.ReorderableList) => void);
+    onAddCallback: ((UnityEditorInternal.ReorderableList) => void);
+    onAddDropdownCallback: ((any, UnityEditorInternal.ReorderableList) => void);
+    onRemoveCallback: ((UnityEditorInternal.ReorderableList) => void);
+    onMouseUpCallback: ((UnityEditorInternal.ReorderableList) => void);
+    onCanRemoveCallback: ((UnityEditorInternal.ReorderableList) => boolean);
+    onChangedCallback: ((UnityEditorInternal.ReorderableList) => void);
     displayAdd: boolean;
     displayRemove: boolean;
     elementHeight: number;
@@ -57275,160 +55251,6 @@ declare namespace UnityEditorInternal.ReorderableList {
     static dragHandleWidth: number;
   }
 }
-declare namespace UnityEditorInternal.ReorderableList {
-  class ElementCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(rect: any, index: number, isActive: boolean, isFocused: boolean): void;
-    BeginInvoke(rect: any, index: number, isActive: boolean, isFocused: boolean, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class ElementHeightCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(index: number): number;
-    BeginInvoke(index: number, callback: any, object: any): any;
-    EndInvoke(result: any): number;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class FooterCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(rect: any): void;
-    BeginInvoke(rect: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class HeaderCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(rect: any): void;
-    BeginInvoke(rect: any, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class RemoveCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(list: UnityEditorInternal.ReorderableList): void;
-    BeginInvoke(list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class ReorderCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(list: UnityEditorInternal.ReorderableList): void;
-    BeginInvoke(list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.ReorderableList {
-  class SelectCallbackDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(list: UnityEditorInternal.ReorderableList): void;
-    BeginInvoke(list: UnityEditorInternal.ReorderableList, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditorInternal {
   class ReorderableListWithRenameAndScrollView {
     // constructors
@@ -57457,11 +55279,11 @@ declare namespace UnityEditorInternal {
     // fields
     listElementStyle: any;
     renameOverlayStyle: any;
-    onGetNameAtIndex: any;
-    onNameChangedAtIndex: any;
-    onSelectionChanged: any;
-    onDeleteItemAtIndex: any;
-    onCustomDrawElement: UnityEditorInternal.ReorderableList.ElementCallbackDelegate;
+    onGetNameAtIndex: ((number) => string);
+    onNameChangedAtIndex: ((number, string) => void);
+    onSelectionChanged: ((number) => void);
+    onDeleteItemAtIndex: ((number) => void);
+    onCustomDrawElement: ((any, number, boolean, boolean) => void);
   }
 }
 declare namespace UnityEditorInternal.ReorderableListWithRenameAndScrollView {
@@ -57646,12 +55468,12 @@ declare namespace UnityEditorInternal {
     // constructors
     constructor();
     // methods
-    static Do(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: number, drawHelper: boolean): any;
-    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: number, drawHelper: boolean): any;
-    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: UnityEditor.Handles.DrawCapFunction, snap: any, drawHelper: boolean): any;
-    static Do(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: number, drawHelper: boolean): any;
-    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: number, drawHelper: boolean): any;
-    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: UnityEditor.Handles.CapFunction, snap: any, drawHelper: boolean): any;
+    static Do(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: number, drawHelper: boolean): any;
+    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: number, drawHelper: boolean): any;
+    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
+    static Do(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: number, drawHelper: boolean): any;
+    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: number, drawHelper: boolean): any;
+    static Do(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -57666,8 +55488,8 @@ declare namespace UnityEditorInternal {
     constructor();
     // methods
     static DoAxis(id: number, scale: number, position: any, direction: any, rotation: any, size: number, snap: number): number;
-    static DoCenter(id: number, value: number, position: any, rotation: any, size: number, capFunc: UnityEditor.Handles.DrawCapFunction, snap: number): number;
-    static DoCenter(id: number, value: number, position: any, rotation: any, size: number, capFunction: UnityEditor.Handles.CapFunction, snap: number): number;
+    static DoCenter(id: number, value: number, position: any, rotation: any, size: number, capFunc: ((number, any, any, number) => void), snap: number): number;
+    static DoCenter(id: number, value: number, position: any, rotation: any, size: number, capFunction: ((number, any, any, number, any) => void), snap: number): number;
     Equals(obj: any): boolean;
     GetHashCode(): number;
     GetType(): any;
@@ -57941,28 +55763,6 @@ declare namespace UnityEditorInternal.VersionControl {
     // fields
   }
 }
-declare namespace UnityEditorInternal.VersionControl.ListControl {
-  class ActionDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(item: UnityEditorInternal.VersionControl.ListItem, actionIdx: number): void;
-    BeginInvoke(item: UnityEditorInternal.VersionControl.ListItem, actionIdx: number, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
 declare namespace UnityEditorInternal.VersionControl {
   class ListControl {
     // constructors
@@ -57986,9 +55786,9 @@ declare namespace UnityEditorInternal.VersionControl {
     ToString(): string;
     // properties
     readonly listState: UnityEditorInternal.VersionControl.ListControl.ListState;
-    ExpandEvent: UnityEditorInternal.VersionControl.ListControl.ExpandDelegate;
-    DragEvent: UnityEditorInternal.VersionControl.ListControl.DragDelegate;
-    ActionEvent: UnityEditorInternal.VersionControl.ListControl.ActionDelegate;
+    ExpandEvent: ((UnityEditor.VersionControl.ChangeSet, UnityEditorInternal.VersionControl.ListItem) => void);
+    DragEvent: ((UnityEditor.VersionControl.ChangeSet) => void);
+    ActionEvent: ((UnityEditorInternal.VersionControl.ListItem, number) => void);
     readonly Root: UnityEditorInternal.VersionControl.ListItem;
     readonly SelectedAssets: UnityEditor.VersionControl.AssetList;
     readonly SelectedChangeSets: UnityEditor.VersionControl.ChangeSets;
@@ -57998,50 +55798,6 @@ declare namespace UnityEditorInternal.VersionControl {
     MenuDefault: string;
     DragAcceptOnly: boolean;
     readonly Size: number;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.VersionControl.ListControl {
-  class DragDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(target: UnityEditor.VersionControl.ChangeSet): void;
-    BeginInvoke(target: UnityEditor.VersionControl.ChangeSet, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
-    // fields
-  }
-}
-declare namespace UnityEditorInternal.VersionControl.ListControl {
-  class ExpandDelegate {
-    // constructors
-    constructor(object: any, method: any);
-    // methods
-    Invoke(expand: UnityEditor.VersionControl.ChangeSet, item: UnityEditorInternal.VersionControl.ListItem): void;
-    BeginInvoke(expand: UnityEditor.VersionControl.ChangeSet, item: UnityEditorInternal.VersionControl.ListItem, callback: any, object: any): any;
-    EndInvoke(result: any): void;
-    GetObjectData(info: any, context: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetInvocationList(): any[];
-    DynamicInvoke(args: any[]): any;
-    Clone(): any;
-    GetType(): any;
-    ToString(): string;
-    // properties
-    readonly Method: any;
-    readonly Target: any;
     // fields
   }
 }

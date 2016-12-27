@@ -41,6 +41,6 @@ declare namespace UnityEditorInternal.AudioProfilerGroupView {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     readonly rowCount: number;
     // fields
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }

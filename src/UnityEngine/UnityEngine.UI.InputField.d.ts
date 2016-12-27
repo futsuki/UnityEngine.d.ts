@@ -94,7 +94,7 @@ declare namespace UnityEngine.UI {
     onEndEdit: UnityEngine.UI.InputField.SubmitEvent;
     onValueChange: UnityEngine.UI.InputField.OnChangeEvent;
     onValueChanged: UnityEngine.UI.InputField.OnChangeEvent;
-    onValidateInput: UnityEngine.UI.InputField.OnValidateInput;
+    onValidateInput: ((string, number, any) => any);
     characterLimit: number;
     contentType: UnityEngine.UI.InputField.ContentType;
     lineType: UnityEngine.UI.InputField.LineType;

@@ -3,9 +3,9 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // constructors
     constructor();
     // methods
-    Authenticate(callback: any): void;
-    Authenticate(callback: any): void;
-    LoadFriends(callback: any): void;
+    Authenticate(callback: ((boolean) => void)): void;
+    Authenticate(callback: ((boolean, string) => void)): void;
+    LoadFriends(callback: ((boolean) => void)): void;
     SetFriends(friends: UnityEngine.SocialPlatforms.IUserProfile[]): void;
     SetAuthenticated(value: boolean): void;
     SetUnderage(value: boolean): void;

@@ -28,7 +28,7 @@ declare namespace UnityEditor {
     static GUIToggleWithIntField(guiContent: any, boolProp: UnityEditor.SerializedProperty, intProp: UnityEditor.SerializedProperty, invertToggle: boolean, layoutOptions: any[]): void;
     static GUIObject(label: any, objectProp: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
     static GUIObjectFieldAndToggle(label: any, objectProp: UnityEditor.SerializedProperty, boolProp: UnityEditor.SerializedProperty, layoutOptions: any[]): void;
-    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: UnityEditor.EditorGUI.ObjectFieldValidator, buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
+    GUIListOfFloatObjectToggleFields(label: any, objectProps: UnityEditor.SerializedProperty[], validator: ((any[], any, UnityEditor.SerializedProperty) => any), buttonTooltip: any, allowCreation: boolean, layoutOptions: any[]): number;
     static GUIIntDraggable(label: any, intProp: UnityEditor.SerializedProperty, layoutOptions: any[]): number;
     static GUIIntDraggable(label: any, intValue: number, layoutOptions: any[]): number;
     static GUIIntDraggableX2(mainLabel: any, label1: any, intProp1: UnityEditor.SerializedProperty, label2: any, intProp2: UnityEditor.SerializedProperty, layoutOptions: any[]): void;

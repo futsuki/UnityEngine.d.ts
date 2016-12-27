@@ -7,7 +7,7 @@ declare namespace UnityEditor.Web {
     static DoTasks(): void;
     AddGlobalObject(referenceName: string, obj: any): void;
     RemoveGlobalObject(referenceName: string): void;
-    DoMessage(jsonRequest: string, callback: UnityEditor.Web.JSProxyMgr.ExecCallback, webView: UnityEditor.WebView): boolean;
+    DoMessage(jsonRequest: string, callback: ((any) => void), webView: UnityEditor.WebView): boolean;
     static FormatError(messageID: number, status: number, errorClass: string, message: string): UnityEditor.Web.JspmError;
     static FormatSuccess(messageID: number, result: any): UnityEditor.Web.JspmSuccess;
     GetDestinationObject(reference: string): any;

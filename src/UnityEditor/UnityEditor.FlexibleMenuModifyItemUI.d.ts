@@ -4,7 +4,7 @@ declare namespace UnityEditor {
     private constructor();
     // methods
     OnClose(): void;
-    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: any): void;
+    Init(menuType: UnityEditor.FlexibleMenuModifyItemUI.MenuType, obj: any, acceptedCallback: ((any) => void)): void;
     Accepted(): void;
     IsShowing(): boolean;
     OnGUI(rect: any): void;

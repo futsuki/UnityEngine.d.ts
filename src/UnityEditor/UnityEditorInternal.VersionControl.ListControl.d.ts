@@ -21,9 +21,9 @@ declare namespace UnityEditorInternal.VersionControl {
     ToString(): string;
     // properties
     readonly listState: UnityEditorInternal.VersionControl.ListControl.ListState;
-    ExpandEvent: UnityEditorInternal.VersionControl.ListControl.ExpandDelegate;
-    DragEvent: UnityEditorInternal.VersionControl.ListControl.DragDelegate;
-    ActionEvent: UnityEditorInternal.VersionControl.ListControl.ActionDelegate;
+    ExpandEvent: ((UnityEditor.VersionControl.ChangeSet, UnityEditorInternal.VersionControl.ListItem) => void);
+    DragEvent: ((UnityEditor.VersionControl.ChangeSet) => void);
+    ActionEvent: ((UnityEditorInternal.VersionControl.ListItem, number) => void);
     readonly Root: UnityEditorInternal.VersionControl.ListItem;
     readonly SelectedAssets: UnityEditor.VersionControl.AssetList;
     readonly SelectedChangeSets: UnityEditor.VersionControl.ChangeSets;

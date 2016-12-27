@@ -32,6 +32,6 @@ declare namespace UnityEditor {
     static lightingDataAsset: UnityEditor.LightingDataAsset;
     static lightmapSnapshot: UnityEditor.LightmapSnapshot;
     // fields
-    static completed: UnityEditor.Lightmapping.OnCompletedFunction;
+    static completed: (() => void);
   }
 }

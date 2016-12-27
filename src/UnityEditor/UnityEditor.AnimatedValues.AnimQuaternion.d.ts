@@ -2,7 +2,7 @@ declare namespace UnityEditor.AnimatedValues {
   class AnimQuaternion {
     // constructors
     constructor(value: any);
-    constructor(value: any, callback: any);
+    constructor(value: any, callback: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;

@@ -11,7 +11,7 @@ declare namespace UnityEditor {
     // fields
     Name: string;
     Enabled: boolean;
-    IsSelected: any;
-    ConnectTo: any;
+    IsSelected: (() => boolean);
+    ConnectTo: (() => void);
   }
 }

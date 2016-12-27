@@ -3,9 +3,9 @@ declare namespace UnityEngine.SocialPlatforms {
     // constructors
     private constructor();
     // methods
-    Authenticate(callback: any): void;
-    Authenticate(callback: any): void;
-    LoadFriends(callback: any): void;
+    Authenticate(callback: ((boolean) => void)): void;
+    Authenticate(callback: ((boolean, string) => void)): void;
+    LoadFriends(callback: ((boolean) => void)): void;
     // properties
     readonly friends: UnityEngine.SocialPlatforms.IUserProfile[];
     readonly authenticated: boolean;

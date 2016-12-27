@@ -4,12 +4,12 @@ declare namespace UnityEngine.Networking.Match {
     constructor();
     // methods
     SetProgramAppID(programAppID: UnityEngine.Networking.Types.AppID): void;
-    CreateMatch(matchName: string, matchSize: number, matchAdvertise: boolean, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForMatch: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
-    JoinMatch(netId: UnityEngine.Networking.Types.NetworkID, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForClient: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
-    DestroyMatch(netId: UnityEngine.Networking.Types.NetworkID, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
-    DropConnection(netId: UnityEngine.Networking.Types.NetworkID, dropNodeId: UnityEngine.Networking.Types.NodeID, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
-    ListMatches(startPageNumber: number, resultPageSize: number, matchNameFilter: string, filterOutPrivateMatchesFromResults: boolean, eloScoreTarget: number, requestDomain: number, callback: any): UnityEngine.Coroutine;
-    SetMatchAttributes(networkId: UnityEngine.Networking.Types.NetworkID, isListed: boolean, requestDomain: number, callback: UnityEngine.Networking.Match.NetworkMatch.BasicResponseDelegate): UnityEngine.Coroutine;
+    CreateMatch(matchName: string, matchSize: number, matchAdvertise: boolean, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForMatch: number, requestDomain: number, callback: ((boolean, string, UnityEngine.Networking.Match.MatchInfo) => void)): UnityEngine.Coroutine;
+    JoinMatch(netId: UnityEngine.Networking.Types.NetworkID, matchPassword: string, publicClientAddress: string, privateClientAddress: string, eloScoreForClient: number, requestDomain: number, callback: ((boolean, string, UnityEngine.Networking.Match.MatchInfo) => void)): UnityEngine.Coroutine;
+    DestroyMatch(netId: UnityEngine.Networking.Types.NetworkID, requestDomain: number, callback: ((boolean, string) => void)): UnityEngine.Coroutine;
+    DropConnection(netId: UnityEngine.Networking.Types.NetworkID, dropNodeId: UnityEngine.Networking.Types.NodeID, requestDomain: number, callback: ((boolean, string) => void)): UnityEngine.Coroutine;
+    ListMatches(startPageNumber: number, resultPageSize: number, matchNameFilter: string, filterOutPrivateMatchesFromResults: boolean, eloScoreTarget: number, requestDomain: number, callback: ((boolean, string, any) => void)): UnityEngine.Coroutine;
+    SetMatchAttributes(networkId: UnityEngine.Networking.Types.NetworkID, isListed: boolean, requestDomain: number, callback: ((boolean, string) => void)): UnityEngine.Coroutine;
     Invoke(methodName: string, time: number): void;
     InvokeRepeating(methodName: string, time: number, repeatRate: number): void;
     CancelInvoke(): void;

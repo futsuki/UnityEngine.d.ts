@@ -11,7 +11,7 @@ declare namespace UnityEngine {
     static GetFieldID(javaClass: any, fieldName: string, signature: string): any;
     static GetFieldID(javaClass: any, fieldName: string): any;
     static GetFieldID(javaClass: any, fieldName: string, signature: string, isStatic: boolean): any;
-    static CreateJavaRunnable(jrunnable: UnityEngine.AndroidJavaRunnable): any;
+    static CreateJavaRunnable(jrunnable: (() => void)): any;
     static CreateJavaProxy(proxy: UnityEngine.AndroidJavaProxy): any;
     static ConvertToJNIArray(array: any): any;
     static CreateJNIArgArray(args: any[]): UnityEngine.jvalue[];

@@ -20,7 +20,7 @@ declare namespace UnityEditor.PopupList {
     m_AllowCustom: boolean;
     m_EnableAutoCompletion: boolean;
     m_SortAlphabetically: boolean;
-    m_OnSelectCallback: UnityEditor.PopupList.OnSelectCallback;
+    m_OnSelectCallback: ((UnityEditor.PopupList.ListElement) => void);
     m_MaxCount: number;
   }
 }

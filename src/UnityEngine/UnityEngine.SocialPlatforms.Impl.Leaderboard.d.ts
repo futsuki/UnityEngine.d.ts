@@ -5,7 +5,7 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     // methods
     SetUserFilter(userIDs: string[]): void;
     ToString(): string;
-    LoadScores(callback: any): void;
+    LoadScores(callback: ((boolean) => void)): void;
     SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): void;
     SetMaxRange(maxRange: number): void;
     SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): void;

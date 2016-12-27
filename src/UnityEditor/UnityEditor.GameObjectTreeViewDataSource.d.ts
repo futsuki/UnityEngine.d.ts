@@ -47,6 +47,6 @@ declare namespace UnityEditor {
     readonly root: UnityEditor.IMGUI.Controls.TreeViewItem;
     // fields
     sortingState: UnityEditor.HierarchySorting;
-    onVisibleRowsChanged: any;
+    onVisibleRowsChanged: (() => void);
   }
 }

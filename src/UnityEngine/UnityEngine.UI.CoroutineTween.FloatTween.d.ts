@@ -4,7 +4,7 @@ declare namespace UnityEngine.UI.CoroutineTween {
     private constructor();
     // methods
     TweenValue(floatPercentage: number): void;
-    AddOnChangedCallback(callback: any): void;
+    AddOnChangedCallback(callback: ((number) => void)): void;
     GetIgnoreTimescale(): boolean;
     GetDuration(): number;
     ValidTarget(): boolean;

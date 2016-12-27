@@ -27,8 +27,8 @@ declare namespace UnityEditor {
     wrapColorMultiplier: any;
     readOnly: boolean;
     hidden: boolean;
-    getAxisUiScalarsCallback: UnityEditor.CurveWrapper.GetAxisScalarsCallback;
-    setAxisUiScalarsCallback: UnityEditor.CurveWrapper.SetAxisScalarsCallback;
+    getAxisUiScalarsCallback: (() => any);
+    setAxisUiScalarsCallback: ((any) => void);
     selected: UnityEditor.CurveWrapper.SelectionMode;
     listIndex: number;
     vRangeMin: number;

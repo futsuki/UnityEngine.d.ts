@@ -19,7 +19,7 @@ declare namespace UnityEditor {
     allowNegativeSize: boolean;
     backfaceAlphaMultiplier: number;
     // fields
-    drawMethodForHandles: UnityEditor.Handles.DrawCapFunction;
-    getHandleSizeMethod: any;
+    drawMethodForHandles: ((number, any, any, number) => void);
+    getHandleSizeMethod: ((any) => number);
   }
 }

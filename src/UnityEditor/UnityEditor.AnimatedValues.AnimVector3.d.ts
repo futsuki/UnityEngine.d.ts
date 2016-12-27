@@ -3,7 +3,7 @@ declare namespace UnityEditor.AnimatedValues {
     // constructors
     constructor();
     constructor(value: any);
-    constructor(value: any, callback: any);
+    constructor(value: any, callback: (() => void));
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
