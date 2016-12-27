@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Microphone {
+  class Microphone extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEngine {
     static IsRecording(deviceName: string): boolean;
     static GetPosition(deviceName: string): number;
     static GetDeviceCaps(deviceName: string, minFreq: any, maxFreq: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly devices: string[];
     // fields

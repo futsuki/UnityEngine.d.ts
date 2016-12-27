@@ -1,20 +1,12 @@
 declare namespace UnityEditor.Web {
-  class WebScriptObject {
+  class WebScriptObject extends UnityEngine.ScriptableObject {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ProcessMessage(jsonRequest: string, callback: UnityEditor.WebViewV8CallbackCSharp): boolean;
     processMessage(jsonRequest: string, callback: UnityEditor.WebViewV8CallbackCSharp): boolean;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     webView: UnityEditor.WebView;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

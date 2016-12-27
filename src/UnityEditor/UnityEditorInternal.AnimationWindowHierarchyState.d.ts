@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowHierarchyState {
+  class AnimationWindowHierarchyState extends UnityEditor.IMGUI.Controls.TreeViewState {
     // constructors
     constructor();
     // methods
@@ -7,16 +7,7 @@ declare namespace UnityEditorInternal {
     SetTallMode(node: UnityEditorInternal.AnimationWindowHierarchyNode, tallMode: boolean): void;
     GetTallInstancesCount(): number;
     AddTallInstance(id: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    selectedIDs: any;
-    lastClickedID: number;
-    expandedIDs: any;
-    searchString: string;
     // fields
-    scrollPos: any;
   }
 }

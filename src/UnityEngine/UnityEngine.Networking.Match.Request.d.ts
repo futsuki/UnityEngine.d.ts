@@ -1,13 +1,10 @@
 declare namespace UnityEngine.Networking.Match {
-  class Request {
+  class Request extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     IsValid(): boolean;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     version: number;
     sourceId: UnityEngine.Networking.Types.SourceID;

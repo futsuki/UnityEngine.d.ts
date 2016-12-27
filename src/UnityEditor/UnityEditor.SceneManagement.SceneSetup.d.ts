@@ -1,12 +1,8 @@
 declare namespace UnityEditor.SceneManagement {
-  class SceneSetup {
+  class SceneSetup extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     path: string;
     isLoaded: boolean;

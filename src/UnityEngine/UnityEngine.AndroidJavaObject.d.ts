@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AndroidJavaObject {
+  class AndroidJavaObject extends System.Object {
     // constructors
     constructor(className: string, args: any[]);
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEngine {
     CallStatic(methodName: string, args: any[]): void;
     GetRawObject(): any;
     GetRawClass(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

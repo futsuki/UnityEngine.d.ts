@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Connect {
-  class UnityConnect {
+  class UnityConnect extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetConfigurationURL(config: UnityEditor.Connect.CloudConfigUrl): string;
     GetEnvironment(): string;
@@ -22,6 +22,7 @@ declare namespace UnityEditor.Connect {
     OpenAuthorizedURLInWebBrowser(url: string): void;
     BindProject(projectGUID: string, projectName: string, organizationId: string): void;
     SetCOPPACompliance(compliance: UnityEditor.Connect.COPPACompliance): boolean;
+    SetCOPPACompliance(compliance: number): boolean;
     ClearErrors(): void;
     UnhandledError(request: string, responseCode: number, response: string): void;
     ComputerGoesToSleep(): void;
@@ -35,14 +36,9 @@ declare namespace UnityEditor.Connect {
     GetConfigurationUrlByIndex(index: number): string;
     GetCoreConfigurationUrl(): string;
     DisplayDialog(title: string, message: string, okBtn: string, cancelBtn: string): boolean;
-    SetCOPPACompliance(compliance: number): boolean;
     static TestComputerGoesToSleep(): void;
     static TestComputerDidWakeUp(): void;
     static TestClearAccessToken(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly preferencesEnabled: boolean;
     static readonly skipMissingUPID: boolean;

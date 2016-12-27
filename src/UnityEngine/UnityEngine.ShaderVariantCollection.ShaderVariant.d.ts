@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ShaderVariantCollection {
-  class ShaderVariant {
+  class ShaderVariant extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     shader: UnityEngine.Shader;

@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class ASServerAdminWindow {
+  class ASServerAdminWindow extends System.Object {
     // constructors
     constructor(parentWin: UnityEditor.ASMainWindow);
     // methods
     DoGUI(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

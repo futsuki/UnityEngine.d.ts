@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class ADBannerView {
+  class ADBannerView extends System.Object {
     // constructors
     constructor(type: UnityEngine.ADBannerView.Type, layout: UnityEngine.ADBannerView.Layout);
     // methods
     static IsAvailable(type: UnityEngine.ADBannerView.Type): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly loaded: boolean;
     visible: boolean;

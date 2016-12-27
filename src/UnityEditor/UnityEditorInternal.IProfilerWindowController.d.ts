@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
   class IProfilerWindowController {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetSelectedPropertyPath(path: string): void;
     ClearSelectedPropertyPath(): void;

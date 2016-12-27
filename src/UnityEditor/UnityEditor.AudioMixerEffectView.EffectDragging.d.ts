@@ -1,15 +1,11 @@
 declare namespace UnityEditor.AudioMixerEffectView {
-  class EffectDragging {
+  class EffectDragging extends System.Object {
     // constructors
     constructor();
     // methods
     IsDraggingIndex(effectIndex: number): boolean;
-    HandleDragElement(effectIndex: number, effectRect: any, dragRect: any, group: UnityEditor.Audio.AudioMixerGroupController, allGroups: any): void;
+    HandleDragElement(effectIndex: number, effectRect: any, dragRect: any, group: UnityEditor.Audio.AudioMixerGroupController, allGroups: UnityEditor.Audio.AudioMixerGroupController[]): void;
     HandleDragging(totalRect: any, group: UnityEditor.Audio.AudioMixerGroupController, controller: UnityEditor.Audio.AudioMixerController): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly dragControlID: number;
     // fields

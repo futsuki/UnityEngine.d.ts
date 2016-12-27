@@ -1,7 +1,7 @@
 declare namespace UnityEngine.SocialPlatforms {
   class IUserProfile {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly userName: string;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class DropInfo {
+  class DropInfo extends System.Object {
     // constructors
     constructor(source: UnityEditor.IDropArea);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     dropArea: UnityEditor.IDropArea;

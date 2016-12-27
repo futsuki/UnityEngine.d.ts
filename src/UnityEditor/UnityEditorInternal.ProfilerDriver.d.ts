@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ProfilerDriver {
+  class ProfilerDriver extends System.Object {
     // constructors
     constructor();
     // methods
@@ -28,10 +28,6 @@ declare namespace UnityEditorInternal {
     static SetAudioCaptureFlags(flags: number): void;
     static BeginInstrumentFunction(fullName: string): void;
     static EndInstrumentFunction(fullName: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly firstFrameIndex: number;
     static readonly lastFrameIndex: number;

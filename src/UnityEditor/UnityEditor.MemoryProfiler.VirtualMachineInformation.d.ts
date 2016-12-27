@@ -1,12 +1,8 @@
 declare namespace UnityEditor.MemoryProfiler {
-  class VirtualMachineInformation {
+  class VirtualMachineInformation extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly pointerSize: number;
     readonly objectHeaderSize: number;

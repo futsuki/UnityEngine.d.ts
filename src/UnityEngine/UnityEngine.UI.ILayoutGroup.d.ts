@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class ILayoutGroup {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     // fields

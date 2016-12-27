@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class HeightmapPainter {
+  class HeightmapPainter extends System.Object {
     // constructors
     constructor();
     // methods
     PaintHeight(xCenterNormalized: number, yCenterNormalized: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     size: number;

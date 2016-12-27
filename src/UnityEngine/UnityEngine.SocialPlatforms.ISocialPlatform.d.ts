@@ -1,22 +1,22 @@
 declare namespace UnityEngine.SocialPlatforms {
   class ISocialPlatform {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    LoadUsers(userIDs: string[], callback: ((UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
-    ReportProgress(achievementID: string, progress: number, callback: ((boolean) => void)): void;
-    LoadAchievementDescriptions(callback: ((UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
-    LoadAchievements(callback: ((UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
+    LoadUsers(userIDs: string[], callback: ((obj: UnityEngine.SocialPlatforms.IUserProfile[]) => void)): void;
+    ReportProgress(achievementID: string, progress: number, callback: ((obj: boolean) => void)): void;
+    LoadAchievementDescriptions(callback: ((obj: UnityEngine.SocialPlatforms.IAchievementDescription[]) => void)): void;
+    LoadAchievements(callback: ((obj: UnityEngine.SocialPlatforms.IAchievement[]) => void)): void;
     CreateAchievement(): UnityEngine.SocialPlatforms.IAchievement;
-    ReportScore(score: number, board: string, callback: ((boolean) => void)): void;
-    LoadScores(leaderboardID: string, callback: ((UnityEngine.SocialPlatforms.IScore[]) => void)): void;
+    ReportScore(score: number, board: string, callback: ((obj: boolean) => void)): void;
+    LoadScores(leaderboardID: string, callback: ((obj: UnityEngine.SocialPlatforms.IScore[]) => void)): void;
+    LoadScores(board: UnityEngine.SocialPlatforms.ILeaderboard, callback: ((obj: boolean) => void)): void;
     CreateLeaderboard(): UnityEngine.SocialPlatforms.ILeaderboard;
     ShowAchievementsUI(): void;
     ShowLeaderboardUI(): void;
-    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((boolean) => void)): void;
-    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((boolean, string) => void)): void;
-    LoadFriends(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((boolean) => void)): void;
-    LoadScores(board: UnityEngine.SocialPlatforms.ILeaderboard, callback: ((boolean) => void)): void;
+    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((obj: boolean) => void)): void;
+    Authenticate(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((arg1: boolean, arg2: string) => void)): void;
+    LoadFriends(user: UnityEngine.SocialPlatforms.ILocalUser, callback: ((obj: boolean) => void)): void;
     GetLoading(board: UnityEngine.SocialPlatforms.ILeaderboard): boolean;
     // properties
     readonly localUser: UnityEngine.SocialPlatforms.ILocalUser;

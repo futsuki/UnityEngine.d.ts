@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class QualitySettings {
+  class QualitySettings extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -10,11 +10,6 @@ declare namespace UnityEngine {
     static IncreaseLevel(): void;
     static DecreaseLevel(applyExpensiveChanges: boolean): void;
     static DecreaseLevel(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     static readonly names: string[];
     static currentLevel: UnityEngine.QualityLevel;
@@ -44,8 +39,6 @@ declare namespace UnityEngine {
     static blendWeights: UnityEngine.BlendWeights;
     static asyncUploadTimeSlice: number;
     static asyncUploadBufferSize: number;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

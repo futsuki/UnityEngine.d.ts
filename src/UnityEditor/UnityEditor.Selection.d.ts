@@ -1,24 +1,20 @@
 declare namespace UnityEditor {
-  class Selection {
+  class Selection extends System.Object {
     // constructors
     constructor();
     // methods
     static Contains(instanceID: number): boolean;
-    static Contains(obj: any): boolean;
+    static Contains(obj: UnityEngine.Object): boolean;
     static GetTransforms(mode: UnityEditor.SelectionMode): any[];
-    static GetFiltered(type: any, mode: UnityEditor.SelectionMode): any[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static GetFiltered(type: any, mode: UnityEditor.SelectionMode): UnityEngine.Object[];
     // properties
     static readonly transforms: any[];
     static activeTransform: any;
     static readonly gameObjects: any[];
     static activeGameObject: any;
-    static activeObject: any;
+    static activeObject: UnityEngine.Object;
     static activeInstanceID: number;
-    static objects: any[];
+    static objects: UnityEngine.Object[];
     static instanceIDs: number[];
     static readonly assetGUIDs: string[];
     // fields

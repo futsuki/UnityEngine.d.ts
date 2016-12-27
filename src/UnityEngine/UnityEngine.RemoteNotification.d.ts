@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class RemoteNotification {
+  class RemoteNotification extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly alertBody: string;
     readonly hasAction: boolean;

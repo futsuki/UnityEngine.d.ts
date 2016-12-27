@@ -1,5 +1,5 @@
 declare namespace UnityEngine.VR.WSA.Input {
-  class GestureRecognizer {
+  class GestureRecognizer extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEngine.VR.WSA.Input {
     StopCapturingGestures(): void;
     IsCapturingGestures(): boolean;
     CancelGestures(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

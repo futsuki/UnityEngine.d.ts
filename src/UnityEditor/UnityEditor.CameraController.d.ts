@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class CameraController {
+  class CameraController extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Update(cameraState: UnityEditor.CameraState, cam: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

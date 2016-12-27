@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Touch {
+  class Touch extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     fingerId: number;
     position: UnityEngine.Vector2;

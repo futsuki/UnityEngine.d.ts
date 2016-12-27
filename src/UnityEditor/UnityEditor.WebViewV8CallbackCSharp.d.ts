@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class WebViewV8CallbackCSharp {
+  class WebViewV8CallbackCSharp extends System.Object {
     // constructors
     constructor();
     // methods
     Callback(result: string): void;
     OnDestroy(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

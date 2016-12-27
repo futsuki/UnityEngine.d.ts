@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class CharacterInfo {
+  class CharacterInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     advance: number;
     glyphWidth: number;

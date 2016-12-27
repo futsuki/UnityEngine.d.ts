@@ -1,10 +1,10 @@
 declare namespace UnityEngine.SocialPlatforms {
   class ILeaderboard {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetUserFilter(userIDs: string[]): void;
-    LoadScores(callback: ((boolean) => void)): void;
+    LoadScores(callback: ((obj: boolean) => void)): void;
     // properties
     readonly loading: boolean;
     id: string;

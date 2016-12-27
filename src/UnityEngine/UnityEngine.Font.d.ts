@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Font {
+  class Font extends UnityEngine.Object {
     // constructors
     constructor();
     constructor(name: string);
@@ -15,11 +15,6 @@ declare namespace UnityEngine {
     GetCharacterInfo(ch: any, info: any, size: number, style: UnityEngine.FontStyle): boolean;
     GetCharacterInfo(ch: any, info: any, size: number): boolean;
     GetCharacterInfo(ch: any, info: any): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     material: UnityEngine.Material;
     fontNames: string[];
@@ -29,8 +24,6 @@ declare namespace UnityEngine {
     readonly ascent: number;
     readonly lineHeight: number;
     readonly fontSize: number;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

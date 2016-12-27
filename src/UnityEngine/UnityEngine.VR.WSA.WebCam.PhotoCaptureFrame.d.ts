@@ -1,19 +1,15 @@
 declare namespace UnityEngine.VR.WSA.WebCam {
-  class PhotoCaptureFrame {
+  class PhotoCaptureFrame extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     TryGetCameraToWorldMatrix(cameraToWorldMatrix: any): boolean;
     TryGetProjectionMatrix(projectionMatrix: any): boolean;
     TryGetProjectionMatrix(nearClipPlane: number, farClipPlane: number, projectionMatrix: any): boolean;
     UploadImageDataToTexture(targetTexture: UnityEngine.Texture2D): void;
     GetUnsafePointerToBuffer(): any;
-    CopyRawImageDataIntoBuffer(byteBuffer: any): void;
+    CopyRawImageDataIntoBuffer(byteBuffer: number[]): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly dataLength: number;
     readonly hasLocationData: boolean;

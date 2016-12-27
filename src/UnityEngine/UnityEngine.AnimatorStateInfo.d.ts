@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class AnimatorStateInfo {
+  class AnimatorStateInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     IsName(name: string): boolean;
     IsTag(tag: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly fullPathHash: number;
     readonly nameHash: number;

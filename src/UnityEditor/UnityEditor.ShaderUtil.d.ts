@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ShaderUtil {
+  class ShaderUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     static IsShaderPropertyHidden(s: any, propertyIdx: number): boolean;
     static CreateShaderAsset(source: string): any;
     static UpdateShaderAsset(shader: any, source: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly hardwareSupportsRectRenderTexture: boolean;
     // fields

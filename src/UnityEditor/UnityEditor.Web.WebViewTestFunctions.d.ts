@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Web {
-  class WebViewTestFunctions {
+  class WebViewTestFunctions extends System.Object {
     // constructors
     constructor();
     // methods
@@ -21,10 +21,6 @@ declare namespace UnityEditor.Web {
     ArrayReverse(input: string[]): string[];
     LogMessage(message: string): void;
     static RunTestScript(path: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

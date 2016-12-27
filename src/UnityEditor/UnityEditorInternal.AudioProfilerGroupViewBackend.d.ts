@@ -1,16 +1,12 @@
 declare namespace UnityEditorInternal {
-  class AudioProfilerGroupViewBackend {
+  class AudioProfilerGroupViewBackend extends System.Object {
     // constructors
     constructor(state: UnityEditorInternal.AudioProfilerGroupTreeViewState);
     // methods
-    SetData(data: any): void;
+    SetData(data: UnityEditorInternal.AudioProfilerGroupInfoWrapper[]): void;
     UpdateSorting(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly items: any;
+    readonly items: UnityEditorInternal.AudioProfilerGroupInfoWrapper[];
     // fields
     OnUpdate: (() => void);
     m_TreeViewState: UnityEditorInternal.AudioProfilerGroupTreeViewState;

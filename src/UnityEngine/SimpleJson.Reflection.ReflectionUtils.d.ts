@@ -1,10 +1,10 @@
 declare namespace SimpleJson.Reflection {
-  class ReflectionUtils {
+  class ReflectionUtils extends System.Object {
     // constructors
     constructor();
     // methods
-    static GetAttribute(info: any, type: any): any;
-    static GetAttribute(objectType: any, attributeType: any): any;
+    static GetAttribute(info: any, type: any): System.Attribute;
+    static GetAttribute(objectType: any, attributeType: any): System.Attribute;
     static GetGenericTypeArguments(type: any): any[];
     static IsTypeGenericeCollectionInterface(type: any): boolean;
     static IsAssignableFrom(type1: any, type2: any): boolean;
@@ -18,22 +18,18 @@ declare namespace SimpleJson.Reflection {
     static GetFields(type: any): any;
     static GetGetterMethodInfo(propertyInfo: any): any;
     static GetSetterMethodInfo(propertyInfo: any): any;
-    static GetContructor(constructorInfo: any): ((any[]) => any);
-    static GetContructor(type: any, argsType: any[]): ((any[]) => any);
-    static GetConstructorByReflection(constructorInfo: any): ((any[]) => any);
-    static GetConstructorByReflection(type: any, argsType: any[]): ((any[]) => any);
-    static GetGetMethod(propertyInfo: any): ((any) => any);
-    static GetGetMethod(fieldInfo: any): ((any) => any);
-    static GetGetMethodByReflection(propertyInfo: any): ((any) => any);
-    static GetGetMethodByReflection(fieldInfo: any): ((any) => any);
-    static GetSetMethod(propertyInfo: any): ((any, any) => void);
-    static GetSetMethod(fieldInfo: any): ((any, any) => void);
-    static GetSetMethodByReflection(propertyInfo: any): ((any, any) => void);
-    static GetSetMethodByReflection(fieldInfo: any): ((any, any) => void);
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static GetContructor(constructorInfo: any): ((args: any[]) => any);
+    static GetContructor(type: any, argsType: any[]): ((args: any[]) => any);
+    static GetConstructorByReflection(constructorInfo: any): ((args: any[]) => any);
+    static GetConstructorByReflection(type: any, argsType: any[]): ((args: any[]) => any);
+    static GetGetMethod(propertyInfo: any): ((source: any) => any);
+    static GetGetMethod(fieldInfo: any): ((source: any) => any);
+    static GetGetMethodByReflection(propertyInfo: any): ((source: any) => any);
+    static GetGetMethodByReflection(fieldInfo: any): ((source: any) => any);
+    static GetSetMethod(propertyInfo: any): ((source: any, value: any) => void);
+    static GetSetMethod(fieldInfo: any): ((source: any, value: any) => void);
+    static GetSetMethodByReflection(propertyInfo: any): ((source: any, value: any) => void);
+    static GetSetMethodByReflection(fieldInfo: any): ((source: any, value: any) => void);
     // properties
     // fields
   }

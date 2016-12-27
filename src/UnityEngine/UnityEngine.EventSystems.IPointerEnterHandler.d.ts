@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IPointerEnterHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnPointerEnter(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

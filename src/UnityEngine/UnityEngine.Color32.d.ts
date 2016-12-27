@@ -1,15 +1,12 @@
 declare namespace UnityEngine {
-  class Color32 {
+  class Color32 extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Lerp(a: UnityEngine.Color32, b: UnityEngine.Color32, t: number): UnityEngine.Color32;
     static LerpUnclamped(a: UnityEngine.Color32, b: UnityEngine.Color32, t: number): UnityEngine.Color32;
     ToString(): string;
     ToString(format: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     // fields
     r: number;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AudioUtil {
+  class AudioUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -44,10 +44,6 @@ declare namespace UnityEditor {
     static GetCustomFilterProcessTime(behaviour: any): number;
     static GetCustomFilterMaxIn(behaviour: any, channel: number): number;
     static GetCustomFilterMaxOut(behaviour: any, channel: number): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static resetAllAudioClipPlayCountsOnPlay: boolean;
     static readonly canUseSpatializerEffect: boolean;

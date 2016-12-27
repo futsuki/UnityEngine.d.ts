@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Assertions {
-  class AssertionMessageUtil {
+  class AssertionMessageUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEngine.Assertions {
     static GetEqualityMessage(actual: any, expected: any, expectEqual: boolean): string;
     static NullFailureMessage(value: any, expectNull: boolean): string;
     static BooleanFailureMessage(expected: boolean): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

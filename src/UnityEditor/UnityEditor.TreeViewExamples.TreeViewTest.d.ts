@@ -1,5 +1,5 @@
 declare namespace UnityEditor.TreeViewExamples {
-  class TreeViewTest {
+  class TreeViewTest extends System.Object {
     // constructors
     constructor(editorWindow: UnityEditor.EditorWindow, lazy: boolean);
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor.TreeViewExamples {
     GetNumItemsInTree(): number;
     Init(rect: any, backendData: UnityEditor.TreeViewExamples.BackendData): void;
     OnGUI(rect: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

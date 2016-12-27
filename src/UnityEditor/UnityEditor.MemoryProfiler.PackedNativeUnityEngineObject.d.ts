@@ -1,12 +1,8 @@
 declare namespace UnityEditor.MemoryProfiler {
-  class PackedNativeUnityEngineObject {
+  class PackedNativeUnityEngineObject extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly isPersistent: boolean;
     readonly isDontDestroyOnLoad: boolean;

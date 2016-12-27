@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal {
-  class FrameDebuggerRasterState {
+  class FrameDebuggerRasterState extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     cullMode: any;

@@ -1,14 +1,10 @@
 declare namespace UnityEditor.VisualStudioIntegration {
-  class DefaultSolutionSynchronizationSettings {
+  class DefaultSolutionSynchronizationSettings extends System.Object {
     // constructors
     constructor();
     // methods
     GetProjectHeaderTemplate(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;
     GetProjectFooterTemplate(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly VisualStudioVersion: number;
     readonly SolutionTemplate: string;

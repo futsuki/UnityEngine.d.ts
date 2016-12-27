@@ -1,12 +1,8 @@
 declare namespace UnityEditor.IMGUI.Controls.TreeView {
-  class OverriddenMethods {
+  class OverriddenMethods extends System.Object {
     // constructors
     constructor(treeView: UnityEditor.IMGUI.Controls.TreeView);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     hasItemGUI: boolean;

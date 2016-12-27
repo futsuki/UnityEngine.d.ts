@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Matrix4x4 {
+  class Matrix4x4 extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Inverse(m: UnityEngine.Matrix4x4): UnityEngine.Matrix4x4;
     static Transpose(m: UnityEngine.Matrix4x4): UnityEngine.Matrix4x4;
@@ -22,7 +22,6 @@ declare namespace UnityEngine {
     static Scale(v: UnityEngine.Vector3): UnityEngine.Matrix4x4;
     ToString(): string;
     ToString(format: string): string;
-    GetType(): any;
     // properties
     readonly inverse: UnityEngine.Matrix4x4;
     readonly transpose: UnityEngine.Matrix4x4;

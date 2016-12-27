@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Scripting {
-  class APIUpdaterHelper {
+  class APIUpdaterHelper extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor.Scripting {
     static IsReferenceToTypeWithChangedNamespace(simpleOrQualifiedName: string): boolean;
     static Run(commaSeparatedListOfAssemblies: string): void;
     static DoesAssemblyRequireUpgrade(assemblyFullPath: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

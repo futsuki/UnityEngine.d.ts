@@ -1,9 +1,9 @@
 declare namespace UnityEditor {
-  class ObjectPreview {
+  class ObjectPreview extends System.Object {
     // constructors
     constructor();
     // methods
-    Initialize(targets: any[]): void;
+    Initialize(targets: UnityEngine.Object[]): void;
     MoveNextTarget(): boolean;
     ResetTarget(): void;
     HasPreviewGUI(): boolean;
@@ -14,12 +14,8 @@ declare namespace UnityEditor {
     GetInfoString(): string;
     DrawPreview(previewArea: any): void;
     ReloadPreviewInstances(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly target: any;
+    readonly target: UnityEngine.Object;
     // fields
   }
 }

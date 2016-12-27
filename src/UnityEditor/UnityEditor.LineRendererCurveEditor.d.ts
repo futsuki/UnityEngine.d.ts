@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class LineRendererCurveEditor {
+  class LineRendererCurveEditor extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     GetAxisScalars(): any;
     CheckCurveChangedExternally(): void;
     OnInspectorGUI(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

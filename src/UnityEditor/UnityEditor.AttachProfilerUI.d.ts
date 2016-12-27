@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AttachProfilerUI {
+  class AttachProfilerUI extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     static DirectURLConnect(url: string): void;
     OnGUILayout(window: UnityEditor.EditorWindow): void;
     OnGUI(connectRect: any, profilerLabel: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

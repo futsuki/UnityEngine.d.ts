@@ -1,12 +1,8 @@
 declare namespace UnityEngine.SocialPlatforms {
-  class Range {
+  class Range extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     from: number;

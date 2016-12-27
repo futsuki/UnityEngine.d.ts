@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class SaveAssetsProcessor {
+  class SaveAssetsProcessor extends UnityEditor.AssetModificationProcessor {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

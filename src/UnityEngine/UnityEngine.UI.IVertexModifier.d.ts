@@ -1,9 +1,9 @@
 declare namespace UnityEngine.UI {
   class IVertexModifier {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    ModifyVertices(verts: any): void;
+    ModifyVertices(verts: UnityEngine.UIVertex[]): void;
     // properties
     // fields
   }

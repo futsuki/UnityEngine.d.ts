@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Rect {
+  class Rect extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static MinMaxRect(xmin: number, ymin: number, xmax: number, ymax: number): UnityEngine.Rect;
     Set(x: number, y: number, width: number, height: number): void;
@@ -16,7 +16,6 @@ declare namespace UnityEngine {
     Equals(other: any): boolean;
     ToString(): string;
     ToString(format: string): string;
-    GetType(): any;
     // properties
     static readonly zero: UnityEngine.Rect;
     x: number;

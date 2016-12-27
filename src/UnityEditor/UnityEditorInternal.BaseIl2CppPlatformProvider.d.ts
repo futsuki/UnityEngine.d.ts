@@ -1,14 +1,10 @@
 declare namespace UnityEditorInternal {
-  class BaseIl2CppPlatformProvider {
+  class BaseIl2CppPlatformProvider extends System.Object {
     // constructors
     constructor(target: UnityEditor.BuildTarget, libraryFolder: string);
     // methods
     CreateNativeCompiler(): INativeCompiler;
     CreateIl2CppNativeCodeBuilder(): UnityEditorInternal.Il2CppNativeCodeBuilder;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly target: UnityEditor.BuildTarget;
     readonly libraryFolder: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ObjectListArea {
+  class ObjectListArea extends System.Object {
     // constructors
     constructor(state: UnityEditor.ObjectListAreaState, owner: UnityEditor.EditorWindow, showNoneItem: boolean);
     // methods
@@ -27,10 +27,6 @@ declare namespace UnityEditor {
     IsShowingAny(instanceIDs: number[]): boolean;
     BeginPing(instanceID: number): void;
     EndPing(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     allowDragging: boolean;
     allowRenaming: boolean;
@@ -42,11 +38,11 @@ declare namespace UnityEditor {
     allowFindNextShortcut: boolean;
     foldersFirst: boolean;
     repaintCallback: (() => void);
-    itemSelectedCallback: ((boolean) => void);
+    itemSelectedCallback: ((obj: boolean) => void);
     keyboardCallback: (() => void);
     gotKeyboardFocus: (() => void);
     assetStoreSearchEnded: (() => void);
-    drawLocalAssetHeader: ((any) => number);
+    drawLocalAssetHeader: ((arg1: any) => number);
     gridSize: number;
     readonly minGridSize: number;
     readonly maxGridSize: number;

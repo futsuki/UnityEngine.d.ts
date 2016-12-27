@@ -3,11 +3,11 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     // constructors
     constructor();
     // methods
-    AddListener(call: ((UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
-    RemoveListener(call: ((UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
+    AddListener(call: ((arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
+    RemoveListener(call: ((arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
     Invoke(arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData): void;
     GetPersistentEventCount(): number;
-    GetPersistentTarget(index: number): any;
+    GetPersistentTarget(index: number): UnityEngine.Object;
     GetPersistentMethodName(index: number): string;
     SetPersistentListenerState(index: number, state: any): void;
     RemoveAllListeners(): void;

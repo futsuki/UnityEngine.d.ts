@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Bounds {
+  class Bounds extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Contains(point: UnityEngine.Vector3): boolean;
     SqrDistance(point: UnityEngine.Vector3): number;
@@ -18,7 +18,6 @@ declare namespace UnityEngine {
     Intersects(bounds: UnityEngine.Bounds): boolean;
     ToString(): string;
     ToString(format: string): string;
-    GetType(): any;
     // properties
     center: UnityEngine.Vector3;
     size: UnityEngine.Vector3;

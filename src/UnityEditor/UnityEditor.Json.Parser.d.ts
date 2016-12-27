@@ -1,15 +1,11 @@
 declare namespace UnityEditor.Json {
-  class Parser {
+  class Parser extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static IsWordBreak(c: any): boolean;
     static Parse(jsonString: string): any;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

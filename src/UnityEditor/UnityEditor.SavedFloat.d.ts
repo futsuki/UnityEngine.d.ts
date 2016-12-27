@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class SavedFloat {
+  class SavedFloat extends System.Object {
     // constructors
     constructor(name: string, value: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     value: number;
     // fields

@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class TreePrototype {
+  class TreePrototype extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     prefab: UnityEngine.GameObject;
     bendFactor: number;

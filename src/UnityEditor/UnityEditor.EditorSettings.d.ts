@@ -1,13 +1,8 @@
 declare namespace UnityEditor {
-  class EditorSettings {
+  class EditorSettings extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     static unityRemoteDevice: string;
     static unityRemoteCompression: string;
@@ -23,8 +18,6 @@ declare namespace UnityEditor {
     static projectGenerationUserExtensions: string[];
     static readonly projectGenerationBuiltinExtensions: string[];
     static projectGenerationRootNamespace: string;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

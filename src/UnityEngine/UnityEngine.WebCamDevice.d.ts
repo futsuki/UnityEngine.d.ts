@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class WebCamDevice {
+  class WebCamDevice extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly name: string;
     readonly isFrontFacing: boolean;

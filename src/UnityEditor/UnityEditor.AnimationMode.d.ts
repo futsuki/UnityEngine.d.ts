@@ -1,9 +1,9 @@
 declare namespace UnityEditor {
-  class AnimationMode {
+  class AnimationMode extends System.Object {
     // constructors
     constructor();
     // methods
-    static IsPropertyAnimated(target: any, propertyPath: string): boolean;
+    static IsPropertyAnimated(target: UnityEngine.Object, propertyPath: string): boolean;
     static StopAnimationMode(): void;
     static InAnimationMode(): boolean;
     static StartAnimationMode(): void;
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     static EndSampling(): void;
     static SampleAnimationClip(gameObject: any, clip: any, time: number): void;
     static AddPropertyModification(binding: UnityEditor.EditorCurveBinding, modification: UnityEditor.PropertyModification, keepPrefabOverride: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly animatedPropertyColor: any;
     // fields

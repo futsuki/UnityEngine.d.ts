@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Web {
-  class EditorProjectAccess {
+  class EditorProjectAccess extends System.Object {
     // constructors
     constructor();
     // methods
@@ -29,10 +29,6 @@ declare namespace UnityEditor.Web {
     ShowToolbarDropdown(): void;
     CloseToolbarWindow(): void;
     CloseToolbarWindowImmediately(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

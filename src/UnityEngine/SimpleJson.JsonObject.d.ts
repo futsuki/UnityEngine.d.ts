@@ -1,23 +1,20 @@
 declare namespace SimpleJson {
-  class JsonObject {
+  class JsonObject extends System.Object {
     // constructors
     constructor();
     constructor(comparer: any);
     // methods
     Add(key: string, value: any): void;
+    Add(item: any): void;
     ContainsKey(key: string): boolean;
     Remove(key: string): boolean;
+    Remove(item: any): boolean;
     TryGetValue(key: string, value: any): boolean;
-    Add(item: any): void;
     Clear(): void;
     Contains(item: any): boolean;
     CopyTo(array: any[], arrayIndex: number): void;
-    Remove(item: any): boolean;
     GetEnumerator(): any;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     get_Item(index: number): any;
     readonly Keys: any;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class WSASupportedFileType {
+  class WSASupportedFileType extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     contentType: string;

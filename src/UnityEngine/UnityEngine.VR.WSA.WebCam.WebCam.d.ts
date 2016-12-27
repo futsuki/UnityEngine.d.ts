@@ -1,12 +1,8 @@
 declare namespace UnityEngine.VR.WSA.WebCam {
-  class WebCam {
+  class WebCam extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly Mode: UnityEngine.VR.WSA.WebCam.WebCamMode;
     // fields

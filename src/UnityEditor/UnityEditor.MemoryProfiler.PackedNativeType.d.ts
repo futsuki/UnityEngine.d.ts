@@ -1,12 +1,8 @@
 declare namespace UnityEditor.MemoryProfiler {
-  class PackedNativeType {
+  class PackedNativeType extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly name: string;
     readonly baseClassId: number;

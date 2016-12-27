@@ -1,14 +1,10 @@
 declare namespace UnityEditor.Scripting.Compilers {
-  class UWPReferences {
+  class UWPReferences extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetReferences(): string[];
     static GetExtensionSDKs(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

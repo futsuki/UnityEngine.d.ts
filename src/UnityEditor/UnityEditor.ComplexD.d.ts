@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ComplexD {
+  class ComplexD extends System.Object {
     // constructors
     constructor(real: number, imag: number);
     // methods
@@ -19,10 +19,6 @@ declare namespace UnityEditor {
     static Pow(a: UnityEditor.ComplexD, b: number): UnityEditor.ComplexD;
     Mag2(): number;
     Mag(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     real: number;

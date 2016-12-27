@@ -1,14 +1,10 @@
 declare namespace UnityEditorInternal {
-  class AudioProfilerGroupInfoHelper {
+  class AudioProfilerGroupInfoHelper extends System.Object {
     // constructors
     constructor();
     // methods
     static GetColumnString(info: UnityEditorInternal.AudioProfilerGroupInfoWrapper, index: UnityEditorInternal.AudioProfilerGroupInfoHelper.ColumnIndices): string;
     static GetLastColumnIndex(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static AUDIOPROFILER_FLAGS_3D: number;

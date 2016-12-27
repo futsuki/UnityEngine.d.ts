@@ -1,12 +1,9 @@
 declare namespace UnityEngine.Networking.Match {
-  class MatchInfo {
+  class MatchInfo extends System.Object {
     // constructors
     constructor();
     // methods
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly address: string;
     readonly port: number;

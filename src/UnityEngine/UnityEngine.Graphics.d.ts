@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Graphics {
+  class Graphics extends System.Object {
     // constructors
     constructor();
     // methods
@@ -25,6 +25,10 @@ declare namespace UnityEngine {
     static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
     static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
     static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, material: UnityEngine.Material, layer: number, camera: UnityEngine.Camera, submeshIndex: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, probeAnchor: UnityEngine.Transform, useLightProbes: boolean): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): void;
+    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, materialIndex: number): void;
     static DrawMeshNow(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
     static DrawMeshNow(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): void;
     static DrawMeshNow(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): void;
@@ -40,12 +44,12 @@ declare namespace UnityEngine {
     static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number): void;
     static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[]): void;
     static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], count: number, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): void;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number): void;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock): void;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any): void;
-    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: any, properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], properties: UnityEngine.MaterialPropertyBlock): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[]): void;
+    static DrawMeshInstanced(mesh: UnityEngine.Mesh, submeshIndex: number, material: UnityEngine.Material, matrices: UnityEngine.Matrix4x4[], properties: UnityEngine.MaterialPropertyBlock, castShadows: UnityEngine.Rendering.ShadowCastingMode, receiveShadows: boolean, layer: number, camera: UnityEngine.Camera): void;
     static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material): void;
     static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture): void;
     static DrawTexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, mat: UnityEngine.Material, pass: number): void;
@@ -82,14 +86,6 @@ declare namespace UnityEngine {
     static SetRenderTarget(colorBuffer: UnityEngine.RenderBuffer, depthBuffer: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace, depthSlice: number): void;
     static SetRenderTarget(colorBuffers: UnityEngine.RenderBuffer[], depthBuffer: UnityEngine.RenderBuffer): void;
     static SetRenderTarget(setup: UnityEngine.RenderTargetSetup): void;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion): void;
-    static DrawMesh(mesh: UnityEngine.Mesh, position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion, materialIndex: number): void;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4): void;
-    static DrawMesh(mesh: UnityEngine.Mesh, matrix: UnityEngine.Matrix4x4, materialIndex: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly activeColorBuffer: UnityEngine.RenderBuffer;
     static readonly activeDepthBuffer: UnityEngine.RenderBuffer;

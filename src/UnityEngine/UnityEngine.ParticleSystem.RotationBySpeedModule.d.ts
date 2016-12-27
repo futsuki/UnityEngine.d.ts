@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ParticleSystem {
-  class RotationBySpeedModule {
+  class RotationBySpeedModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     x: UnityEngine.ParticleSystem.MinMaxCurve;

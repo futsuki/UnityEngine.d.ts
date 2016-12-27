@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class AudioMixersTreeView {
+  class AudioMixersTreeView extends System.Object {
     // constructors
-    constructor(mixerWindow: UnityEditor.AudioMixerWindow, treeState: UnityEditor.IMGUI.Controls.TreeViewState, getAllControllersCallback: (() => any));
+    constructor(mixerWindow: UnityEditor.AudioMixerWindow, treeState: UnityEditor.IMGUI.Controls.TreeViewState, getAllControllersCallback: (() => UnityEditor.Audio.AudioMixerController[]));
     // methods
     ReloadTree(): void;
     OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): void;
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     OnGUI(rect: any): void;
     EndRenaming(): void;
     OnUndoRedoPerformed(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class NavMeshEditorHelpers {
+  class NavMeshEditorHelpers extends System.Object {
     // constructors
     constructor();
     // methods
     static DrawAgentDiagram(rect: any, agentRadius: number, agentHeight: number, agentClimb: number, agentSlope: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

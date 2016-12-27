@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EventManipulationHandler {
+  class EventManipulationHandler extends System.Object {
     // constructors
     constructor(timeArea: UnityEditor.TimeArea);
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     EventLineContextMenuAdd(obj: any): void;
     EventLineContextMenuDelete(obj: any): void;
     Draw(window: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

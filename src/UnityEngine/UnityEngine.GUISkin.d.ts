@@ -1,17 +1,11 @@
 declare namespace UnityEngine {
-  class GUISkin {
+  class GUISkin extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
     GetStyle(styleName: string): UnityEngine.GUIStyle;
     FindStyle(styleName: string): UnityEngine.GUIStyle;
     GetEnumerator(): any;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     font: UnityEngine.Font;
     box: UnityEngine.GUIStyle;
@@ -36,8 +30,6 @@ declare namespace UnityEngine {
     scrollView: UnityEngine.GUIStyle;
     customStyles: UnityEngine.GUIStyle[];
     readonly settings: UnityEngine.GUISettings;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

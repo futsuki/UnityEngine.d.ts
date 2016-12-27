@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class ScriptingProceduralMaterialInformation {
+  class ScriptingProceduralMaterialInformation extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     offset: any;
     scale: any;

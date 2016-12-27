@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ShapeEditorSelection {
+  class ShapeEditorSelection extends System.Object {
     // constructors
     constructor(owner: UnityEditor.ShapeEditor);
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     RectSelect(rect: any, type: UnityEditor.ShapeEditor.SelectionType): void;
     OnGUI(): void;
     GetEnumerator(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Count: number;
     readonly isSelecting: boolean;

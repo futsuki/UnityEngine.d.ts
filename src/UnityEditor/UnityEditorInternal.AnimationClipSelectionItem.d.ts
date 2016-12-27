@@ -1,38 +1,13 @@
 declare namespace UnityEditorInternal {
-  class AnimationClipSelectionItem {
+  class AnimationClipSelectionItem extends UnityEditorInternal.AnimationWindowSelectionItem {
     // constructors
     constructor();
     // methods
-    static Create(animationClip: any, sourceObject: any): UnityEditorInternal.AnimationClipSelectionItem;
-    GetRefreshHash(): number;
-    ClearCache(): void;
-    Synchronize(): void;
-    Equals(other: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
-    GetEditorCurveValueType(curveBinding: UnityEditor.EditorCurveBinding): any;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
+    static Create(animationClip: any, sourceObject: UnityEngine.Object): UnityEditorInternal.AnimationClipSelectionItem;
     // properties
     readonly canRecord: boolean;
     readonly canChangeAnimationClip: boolean;
     readonly canSyncSceneSelection: boolean;
-    timeOffset: number;
-    id: number;
-    gameObject: any;
-    scriptableObject: any;
-    animationClip: any;
-    readonly rootGameObject: any;
-    readonly animationPlayer: any;
-    readonly animationIsEditable: boolean;
-    readonly clipIsEditable: boolean;
-    readonly objectIsPrefab: boolean;
-    readonly canAddCurves: boolean;
-    readonly curves: any;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

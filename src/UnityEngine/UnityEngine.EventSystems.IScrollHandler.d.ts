@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IScrollHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnScroll(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

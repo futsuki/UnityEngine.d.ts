@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class SplatPainter {
+  class SplatPainter extends System.Object {
     // constructors
     constructor();
     // methods
     Paint(xCenterNormalized: number, yCenterNormalized: number, splatIndex: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     size: number;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class CurveControlPointRenderer {
+  class CurveControlPointRenderer extends System.Object {
     // constructors
     constructor(style: UnityEditor.CurveEditor.Styles);
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     AddPoint(rect: any, color: any): void;
     AddSelectedPoint(rect: any, color: any): void;
     AddSemiSelectedPoint(rect: any, color: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

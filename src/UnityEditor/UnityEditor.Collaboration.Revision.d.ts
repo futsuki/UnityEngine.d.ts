@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Collaboration {
-  class Revision {
+  class Revision extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly authorName: string;
     readonly author: string;

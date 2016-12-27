@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class BuildPackageResult {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Parse(response: UnityEditor.AssetStoreResponse): void;
     Equals(obj: any): boolean;

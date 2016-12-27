@@ -1,13 +1,9 @@
 declare namespace UnityEngineInternal {
-  class APIUpdaterRuntimeServices {
+  class APIUpdaterRuntimeServices extends System.Object {
     // constructors
     constructor();
     // methods
     static AddComponent(go: UnityEngine.GameObject, sourceInfo: string, name: string): UnityEngine.Component;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

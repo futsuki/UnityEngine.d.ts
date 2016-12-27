@@ -1,13 +1,9 @@
 declare namespace UnityEditor.CurvePresetLibrary {
-  class CurvePreset {
+  class CurvePreset extends System.Object {
     // constructors
     constructor(preset: any, presetName: string);
     constructor(preset: any, preset2: any, presetName: string);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     curve: any;
     name: string;

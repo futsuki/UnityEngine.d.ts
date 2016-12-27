@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class CurvePresetLibrary {
+  class CurvePresetLibrary extends UnityEditor.PresetLibrary {
     // constructors
     constructor();
     // methods
@@ -13,15 +13,7 @@ declare namespace UnityEditor {
     Draw(rect: any, presetObject: any): void;
     GetName(index: number): string;
     SetName(index: number, presetName: string): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

@@ -1,12 +1,9 @@
 declare namespace UnityEditor {
-  class AssetStoreResponse {
+  class AssetStoreResponse extends System.Object {
     // constructors
     constructor();
     // methods
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly failed: boolean;
     readonly message: string;

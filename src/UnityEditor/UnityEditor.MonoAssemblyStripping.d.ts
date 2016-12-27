@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MonoAssemblyStripping {
+  class MonoAssemblyStripping extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     static GenerateBlackList(librariesFolder: string, usedClasses: UnityEditor.RuntimeClassRegistry, allAssemblies: string[]): string;
     static GenerateLinkXmlToPreserveDerivedTypes(stagingArea: string, librariesFolder: string, usedClasses: UnityEditor.RuntimeClassRegistry): string;
     static MonoLink(buildTarget: UnityEditor.BuildTarget, managedLibrariesDirectory: string, input: string[], allAssemblies: string[], usedClasses: UnityEditor.RuntimeClassRegistry): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class Android {
+  class Android extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static disableDepthAndStencilBuffers: boolean;
     static use24BitDepthBuffer: boolean;

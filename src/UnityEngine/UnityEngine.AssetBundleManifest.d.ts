@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AssetBundleManifest {
+  class AssetBundleManifest extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -8,14 +8,7 @@ declare namespace UnityEngine {
     GetAssetBundleHash(assetBundleName: string): UnityEngine.Hash128;
     GetDirectDependencies(assetBundleName: string): string[];
     GetAllDependencies(assetBundleName: string): string[];
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

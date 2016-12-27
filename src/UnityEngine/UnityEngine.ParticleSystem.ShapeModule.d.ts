@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ParticleSystem {
-  class ShapeModule {
+  class ShapeModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     shapeType: UnityEngine.ParticleSystemShapeType;

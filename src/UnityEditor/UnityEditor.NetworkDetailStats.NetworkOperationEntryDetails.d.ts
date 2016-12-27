@@ -1,15 +1,11 @@
 declare namespace UnityEditor.NetworkDetailStats {
-  class NetworkOperationEntryDetails {
+  class NetworkOperationEntryDetails extends System.Object {
     // constructors
     constructor();
     // methods
     NewProfilerTick(tickId: number): void;
     Clear(): void;
     AddStat(direction: UnityEditor.NetworkDetailStats.NetworkDirection, amount: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_EntryName: string;

@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IPreferenceWindowExtension {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ReadPreferences(): void;
     WritePreferences(): void;

@@ -1,16 +1,12 @@
 declare namespace UnityEditor {
-  class TypeSelection {
+  class TypeSelection extends System.Object {
     // constructors
-    constructor(typeName: string, objects: any[]);
+    constructor(typeName: string, objects: UnityEngine.Object[]);
     // methods
     CompareTo(o: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     label: any;
-    objects: any[];
+    objects: UnityEngine.Object[];
   }
 }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MaterialKeywordEnumDrawer {
+  class MaterialKeywordEnumDrawer extends UnityEditor.MaterialPropertyDrawer {
     // constructors
     constructor(kw1: string);
     constructor(kw1: string, kw2: string);
@@ -14,12 +14,8 @@ declare namespace UnityEditor {
     // methods
     GetPropertyHeight(prop: UnityEditor.MaterialProperty, label: string, editor: UnityEditor.MaterialEditor): number;
     OnGUI(position: any, prop: UnityEditor.MaterialProperty, label: any, editor: UnityEditor.MaterialEditor): void;
-    Apply(prop: UnityEditor.MaterialProperty): void;
     OnGUI(position: any, prop: UnityEditor.MaterialProperty, label: string, editor: UnityEditor.MaterialEditor): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    Apply(prop: UnityEditor.MaterialProperty): void;
     // properties
     // fields
   }

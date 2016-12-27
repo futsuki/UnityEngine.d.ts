@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Utils {
-  class Paths {
+  class Paths extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Combine(components: string[]): string;
     static Split(path: string): string[];
@@ -10,10 +10,6 @@ declare namespace UnityEditor.Utils {
     static NormalizePath(path: string): string;
     static UnifyDirectorySeparator(path: string): string;
     static AreEqual(pathA: string, pathB: string, ignoreCase: boolean): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

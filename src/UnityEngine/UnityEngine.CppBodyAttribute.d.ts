@@ -1,16 +1,9 @@
 declare namespace UnityEngine {
-  class CppBodyAttribute {
+  class CppBodyAttribute extends System.Attribute {
     // constructors
     constructor(body: string);
     // methods
-    GetHashCode(): number;
-    IsDefaultAttribute(): boolean;
-    Match(obj: any): boolean;
-    Equals(obj: any): boolean;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly TypeId: any;
     // fields
   }
 }

@@ -1,17 +1,9 @@
 declare namespace UnityEditorInternal {
-  class SpriteEditorMenuSetting {
+  class SpriteEditorMenuSetting extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
     gridCellCount: any;
     gridSpriteSize: any;

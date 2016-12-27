@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class iPhoneAccelerationEvent {
+  class iPhoneAccelerationEvent extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly timeDelta: number;
     readonly acceleration: UnityEngine.Vector3;

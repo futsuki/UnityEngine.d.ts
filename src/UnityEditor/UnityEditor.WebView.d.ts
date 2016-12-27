@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class WebView {
+  class WebView extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -8,8 +8,8 @@ declare namespace UnityEditor {
     ExecuteJavascript(scriptCode: string): void;
     LoadURL(url: string): void;
     LoadFile(path: string): void;
-    DefineScriptObject(path: string, obj: any): boolean;
-    SetDelegateObject(value: any): void;
+    DefineScriptObject(path: string, obj: UnityEngine.ScriptableObject): boolean;
+    SetDelegateObject(value: UnityEngine.ScriptableObject): void;
     SetHostView(view: UnityEditor.GUIView): void;
     SetSizeAndPosition(x: number, y: number, width: number, height: number): void;
     SetFocus(value: boolean): void;
@@ -24,15 +24,7 @@ declare namespace UnityEditor {
     AllowRightClickMenu(allowRightClickMenu: boolean): void;
     ShowDevTools(): void;
     ToggleMaximize(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

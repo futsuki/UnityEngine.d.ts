@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AudioImporter {
+  class AudioImporter extends UnityEditor.AssetImporter {
     // constructors
     constructor();
     // methods
@@ -7,13 +7,6 @@ declare namespace UnityEditor {
     GetOverrideSampleSettings(platform: string): UnityEditor.AudioImporterSampleSettings;
     SetOverrideSampleSettings(platform: string, settings: UnityEditor.AudioImporterSampleSettings): boolean;
     ClearSampleSettingOverride(platform: string): boolean;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
-    SaveAndReimport(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     defaultSampleSettings: UnityEditor.AudioImporterSampleSettings;
     forceToMono: boolean;
@@ -24,13 +17,6 @@ declare namespace UnityEditor {
     loopable: boolean;
     hardware: boolean;
     threeD: boolean;
-    readonly assetPath: string;
-    readonly assetTimeStamp: number;
-    userData: string;
-    assetBundleName: string;
-    assetBundleVariant: string;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

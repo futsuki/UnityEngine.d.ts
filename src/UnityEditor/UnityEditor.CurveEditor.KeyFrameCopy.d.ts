@@ -1,12 +1,8 @@
 declare namespace UnityEditor.CurveEditor {
-  class KeyFrameCopy {
+  class KeyFrameCopy extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     time: number;

@@ -1,7 +1,7 @@
 declare namespace UnityEngine.ParticleSystem {
-  class EmitParams {
+  class EmitParams extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ResetPosition(): void;
     ResetVelocity(): void;
@@ -12,10 +12,6 @@ declare namespace UnityEngine.ParticleSystem {
     ResetStartColor(): void;
     ResetRandomSeed(): void;
     ResetStartLifetime(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     position: UnityEngine.Vector3;
     applyShapeToPosition: boolean;

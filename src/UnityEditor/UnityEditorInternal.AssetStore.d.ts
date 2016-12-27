@@ -1,13 +1,9 @@
 declare namespace UnityEditorInternal {
-  class AssetStore {
+  class AssetStore extends System.Object {
     // constructors
     constructor();
     // methods
     static Open(assetStoreURL: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

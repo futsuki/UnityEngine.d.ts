@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
-  class LayoutUtility {
+  class LayoutUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetMinSize(rect: UnityEngine.RectTransform, axis: number): number;
     static GetPreferredSize(rect: UnityEngine.RectTransform, axis: number): number;
@@ -12,12 +12,8 @@ declare namespace UnityEngine.UI {
     static GetMinHeight(rect: UnityEngine.RectTransform): number;
     static GetPreferredHeight(rect: UnityEngine.RectTransform): number;
     static GetFlexibleHeight(rect: UnityEngine.RectTransform): number;
-    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((UnityEngine.UI.ILayoutElement) => number), defaultValue: number): number;
-    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((UnityEngine.UI.ILayoutElement) => number), defaultValue: number, source: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((arg1: UnityEngine.UI.ILayoutElement) => number), defaultValue: number): number;
+    static GetLayoutProperty(rect: UnityEngine.RectTransform, property: ((arg1: UnityEngine.UI.ILayoutElement) => number), defaultValue: number, source: any): number;
     // properties
     // fields
   }

@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class PresetLibraryEditorState {
+  class PresetLibraryEditorState extends System.Object {
     // constructors
     constructor(prefix: string);
     // methods
     static GetItemViewMode(prefix: string): UnityEditor.PresetLibraryEditorState.ItemViewMode;
     TransferEditorPrefsState(load: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     itemViewMode: UnityEditor.PresetLibraryEditorState.ItemViewMode;
     // fields

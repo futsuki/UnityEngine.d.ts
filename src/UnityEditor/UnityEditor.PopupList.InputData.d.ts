@@ -1,5 +1,5 @@
 declare namespace UnityEditor.PopupList {
-  class InputData {
+  class InputData extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,18 +9,14 @@ declare namespace UnityEditor.PopupList {
     GetFilteredList(prefix: string): any;
     GetFilteredCount(prefix: string): number;
     NewOrMatchingElement(label: string): UnityEditor.PopupList.ListElement;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    m_ListElements: any;
+    m_ListElements: UnityEditor.PopupList.ListElement[];
     m_CloseOnSelection: boolean;
     m_AllowCustom: boolean;
     m_EnableAutoCompletion: boolean;
     m_SortAlphabetically: boolean;
-    m_OnSelectCallback: ((UnityEditor.PopupList.ListElement) => void);
+    m_OnSelectCallback: ((element: UnityEditor.PopupList.ListElement) => void);
     m_MaxCount: number;
   }
 }

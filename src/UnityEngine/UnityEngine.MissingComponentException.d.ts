@@ -1,25 +1,11 @@
 declare namespace UnityEngine {
-  class MissingComponentException {
+  class MissingComponentException extends System.SystemException {
     // constructors
     constructor();
     constructor(message: string);
-    constructor(message: string, innerException: any);
+    constructor(message: string, innerException: System.Exception);
     // methods
-    GetBaseException(): any;
-    GetObjectData(info: any, context: any): void;
-    ToString(): string;
-    GetType(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
-    readonly InnerException: any;
-    HelpLink: string;
-    readonly Message: string;
-    Source: string;
-    readonly StackTrace: string;
-    readonly TargetSite: any;
-    readonly Data: any;
     // fields
   }
 }

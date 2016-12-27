@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ParentViewState {
+  class ParentViewState extends System.Object {
     // constructors
     constructor();
     // methods
@@ -14,10 +14,6 @@ declare namespace UnityEditor {
     Clear(): void;
     NextFileFolder(folder: any, file: any): boolean;
     IndexToFolderAndFile(index: number, folder: any, file: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     lv: UnityEditor.ListViewState;

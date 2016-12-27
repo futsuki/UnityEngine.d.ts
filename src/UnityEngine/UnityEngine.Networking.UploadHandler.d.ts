@@ -1,13 +1,9 @@
 declare namespace UnityEngine.Networking {
-  class UploadHandler {
+  class UploadHandler extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly data: number[];
     contentType: string;

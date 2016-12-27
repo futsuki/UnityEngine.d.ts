@@ -1,13 +1,9 @@
 declare namespace UnityEditor.EditorGUI {
-  class KnobContext {
+  class KnobContext extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Handle(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class SketchUpImportScene {
+  class SketchUpImportScene extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     camera: UnityEditor.SketchUpImportCamera;

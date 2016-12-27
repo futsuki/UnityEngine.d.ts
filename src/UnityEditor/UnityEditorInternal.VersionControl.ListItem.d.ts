@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal.VersionControl {
-  class ListItem {
+  class ListItem extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditorInternal.VersionControl {
     Remove(listItem: UnityEditorInternal.VersionControl.ListItem): boolean;
     RemoveAll(): void;
     FindWithIdentifierRecurse(inIdentifier: number): UnityEditorInternal.VersionControl.ListItem;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     Icon: any;
     readonly Identifier: number;

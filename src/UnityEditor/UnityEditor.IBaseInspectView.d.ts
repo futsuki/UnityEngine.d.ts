@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IBaseInspectView {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     UpdateInstructions(): void;
     DrawInstructionList(): void;

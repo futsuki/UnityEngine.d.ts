@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking {
-  class MultipartFormDataSection {
+  class MultipartFormDataSection extends System.Object {
     // constructors
     constructor(name: string, data: number[], contentType: string);
     constructor(name: string, data: number[]);
@@ -9,10 +9,6 @@ declare namespace UnityEngine.Networking {
     constructor(name: string, data: string);
     constructor(data: string);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly sectionName: string;
     readonly sectionData: number[];

@@ -1,12 +1,9 @@
 declare namespace UnityEngine {
-  class Resolution {
+  class Resolution extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     width: number;
     height: number;

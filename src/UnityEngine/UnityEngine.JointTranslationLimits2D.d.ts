@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class JointTranslationLimits2D {
+  class JointTranslationLimits2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     min: number;
     max: number;

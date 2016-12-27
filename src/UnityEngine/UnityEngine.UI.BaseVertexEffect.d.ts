@@ -1,13 +1,9 @@
 declare namespace UnityEngine.UI {
-  class BaseVertexEffect {
+  class BaseVertexEffect extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    ModifyVertices(vertices: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    ModifyVertices(vertices: UnityEngine.UIVertex[]): void;
     // properties
     // fields
   }

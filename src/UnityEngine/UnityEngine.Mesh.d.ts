@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Mesh {
+  class Mesh extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -7,8 +7,8 @@ declare namespace UnityEngine {
     Clear(): void;
     SetTriangles(triangles: number[], submesh: number): void;
     SetTriangles(triangles: number[], submesh: number, calculateBounds: boolean): void;
-    SetTriangles(triangles: any, submesh: number): void;
-    SetTriangles(triangles: any, submesh: number, calculateBounds: boolean): void;
+    SetTriangles(triangles: number[], submesh: number): void;
+    SetTriangles(triangles: number[], submesh: number, calculateBounds: boolean): void;
     SetIndices(indices: number[], topology: UnityEngine.MeshTopology, submesh: number): void;
     SetIndices(indices: number[], topology: UnityEngine.MeshTopology, submesh: number, calculateBounds: boolean): void;
     ClearBlendShapes(): void;
@@ -29,24 +29,19 @@ declare namespace UnityEngine {
     MarkDynamic(): void;
     UploadMeshData(markNoLogerReadable: boolean): void;
     GetBlendShapeIndex(blendShapeName: string): number;
-    SetVertices(inVertices: any): void;
-    SetNormals(inNormals: any): void;
-    SetTangents(inTangents: any): void;
-    SetColors(inColors: any): void;
-    SetColors(inColors: any): void;
-    SetUVs(channel: number, uvs: any): void;
-    SetUVs(channel: number, uvs: any): void;
-    SetUVs(channel: number, uvs: any): void;
-    GetUVs(channel: number, uvs: any): void;
-    GetUVs(channel: number, uvs: any): void;
-    GetUVs(channel: number, uvs: any): void;
+    SetVertices(inVertices: UnityEngine.Vector3[]): void;
+    SetNormals(inNormals: UnityEngine.Vector3[]): void;
+    SetTangents(inTangents: UnityEngine.Vector4[]): void;
+    SetColors(inColors: UnityEngine.Color[]): void;
+    SetColors(inColors: UnityEngine.Color32[]): void;
+    SetUVs(channel: number, uvs: UnityEngine.Vector2[]): void;
+    SetUVs(channel: number, uvs: UnityEngine.Vector3[]): void;
+    SetUVs(channel: number, uvs: UnityEngine.Vector4[]): void;
+    GetUVs(channel: number, uvs: UnityEngine.Vector2[]): void;
+    GetUVs(channel: number, uvs: UnityEngine.Vector3[]): void;
+    GetUVs(channel: number, uvs: UnityEngine.Vector4[]): void;
     GetTriangles(submesh: number): number[];
     GetIndices(submesh: number): number[];
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly isReadable: boolean;
     readonly blendShapeCount: number;
@@ -67,8 +62,6 @@ declare namespace UnityEngine {
     colors: UnityEngine.Color[];
     colors32: UnityEngine.Color32[];
     triangles: number[];
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

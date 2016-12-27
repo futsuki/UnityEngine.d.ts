@@ -1,18 +1,14 @@
 declare namespace UnityEngine.UI {
-  class ReflectionMethodsCache {
+  class ReflectionMethodsCache extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly Singleton: UnityEngine.UI.ReflectionMethodsCache;
     // fields
-    raycast3D: ((UnityEngine.Ray, any, number, number) => boolean);
-    raycast3DAll: ((UnityEngine.Ray, number, number) => UnityEngine.RaycastHit[]);
-    raycast2D: ((UnityEngine.Vector2, UnityEngine.Vector2, number, number) => UnityEngine.RaycastHit2D);
-    getRayIntersectionAll: ((UnityEngine.Ray, number, number) => UnityEngine.RaycastHit2D[]);
+    raycast3D: ((r: UnityEngine.Ray, hit: any, f: number, i: number) => boolean);
+    raycast3DAll: ((r: UnityEngine.Ray, f: number, i: number) => UnityEngine.RaycastHit[]);
+    raycast2D: ((p1: UnityEngine.Vector2, p2: UnityEngine.Vector2, f: number, i: number) => UnityEngine.RaycastHit2D);
+    getRayIntersectionAll: ((r: UnityEngine.Ray, f: number, i: number) => UnityEngine.RaycastHit2D[]);
   }
 }

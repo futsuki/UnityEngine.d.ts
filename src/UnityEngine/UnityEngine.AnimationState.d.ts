@@ -1,15 +1,11 @@
 declare namespace UnityEngine {
-  class AnimationState {
+  class AnimationState extends UnityEngine.TrackedReference {
     // constructors
     constructor();
     // methods
     AddMixingTransform(mix: UnityEngine.Transform, recursive: boolean): void;
     AddMixingTransform(mix: UnityEngine.Transform): void;
     RemoveMixingTransform(mix: UnityEngine.Transform): void;
-    Equals(o: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     enabled: boolean;
     weight: number;

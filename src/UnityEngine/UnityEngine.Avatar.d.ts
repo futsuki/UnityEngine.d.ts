@@ -1,18 +1,11 @@
 declare namespace UnityEngine {
-  class Avatar {
+  class Avatar extends UnityEngine.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly isValid: boolean;
     readonly isHuman: boolean;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

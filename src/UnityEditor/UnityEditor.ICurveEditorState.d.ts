@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class ICurveEditorState {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly syncTimeDuringDrag: boolean;

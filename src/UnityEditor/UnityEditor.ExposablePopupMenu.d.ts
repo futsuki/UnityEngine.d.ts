@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class ExposablePopupMenu {
+  class ExposablePopupMenu extends System.Object {
     // constructors
     constructor();
     // methods
-    Init(items: any, itemSpacing: number, minWidthOfPopup: number, popupButtonData: UnityEditor.ExposablePopupMenu.PopupButtonData, selectionChangedCallback: ((UnityEditor.ExposablePopupMenu.ItemData) => void)): void;
+    Init(items: UnityEditor.ExposablePopupMenu.ItemData[], itemSpacing: number, minWidthOfPopup: number, popupButtonData: UnityEditor.ExposablePopupMenu.PopupButtonData, selectionChangedCallback: ((obj: UnityEditor.ExposablePopupMenu.ItemData) => void)): void;
     OnGUI(rect: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

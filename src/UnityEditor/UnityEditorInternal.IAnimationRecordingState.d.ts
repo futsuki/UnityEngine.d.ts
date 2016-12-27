@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
   class IAnimationRecordingState {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SaveCurve(curve: UnityEditorInternal.AnimationWindowCurve): void;
     // properties

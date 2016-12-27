@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Texture3D {
+  class Texture3D extends UnityEngine.Texture {
     // constructors
     constructor(width: number, height: number, depth: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     // methods
@@ -14,26 +14,9 @@ declare namespace UnityEngine {
     Apply(updateMipmaps: boolean, makeNoLongerReadable: boolean): void;
     Apply(updateMipmaps: boolean): void;
     Apply(): void;
-    GetNativeTexturePtr(): any;
-    GetNativeTextureID(): number;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly depth: number;
     readonly format: UnityEngine.TextureFormat;
-    width: number;
-    height: number;
-    dimension: UnityEngine.Rendering.TextureDimension;
-    filterMode: UnityEngine.FilterMode;
-    anisoLevel: number;
-    wrapMode: UnityEngine.TextureWrapMode;
-    mipMapBias: number;
-    readonly texelSize: UnityEngine.Vector2;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

@@ -1,6 +1,6 @@
   class ICompilerSettings {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly LibPaths: string[];

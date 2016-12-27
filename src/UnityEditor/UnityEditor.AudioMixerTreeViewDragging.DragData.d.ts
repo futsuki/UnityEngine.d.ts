@@ -1,14 +1,10 @@
 declare namespace UnityEditor.AudioMixerTreeViewDragging {
-  class DragData {
+  class DragData extends System.Object {
     // constructors
-    constructor(draggedItems: any);
+    constructor(draggedItems: UnityEditor.AudioMixerItem[]);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    m_DraggedItems: any;
+    m_DraggedItems: UnityEditor.AudioMixerItem[];
   }
 }

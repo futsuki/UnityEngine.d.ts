@@ -1,15 +1,11 @@
 declare namespace UnityEngine.UI {
-  class ClipperRegistry {
+  class ClipperRegistry extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Cull(): void;
     static Register(c: UnityEngine.UI.IClipper): void;
     static Unregister(c: UnityEngine.UI.IClipper): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly instance: UnityEngine.UI.ClipperRegistry;
     // fields

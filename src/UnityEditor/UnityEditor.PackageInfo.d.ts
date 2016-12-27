@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class PackageInfo {
+  class PackageInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     packagePath: string;

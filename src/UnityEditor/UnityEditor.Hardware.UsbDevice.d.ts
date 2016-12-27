@@ -1,12 +1,9 @@
 declare namespace UnityEditor.Hardware {
-  class UsbDevice {
+  class UsbDevice extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     // fields
     vendorId: number;

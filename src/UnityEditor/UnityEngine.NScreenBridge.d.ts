@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class NScreenBridge {
+  class NScreenBridge extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -11,14 +11,7 @@ declare namespace UnityEngine {
     ResetInput(): void;
     GetScreenTexture(): any;
     Shutdown(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

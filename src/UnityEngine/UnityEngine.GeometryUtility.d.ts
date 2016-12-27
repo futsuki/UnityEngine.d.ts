@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GeometryUtility {
+  class GeometryUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine {
     static CalculateFrustumPlanes(worldToProjectionMatrix: UnityEngine.Matrix4x4): UnityEngine.Plane[];
     static TestPlanesAABB(planes: UnityEngine.Plane[], bounds: UnityEngine.Bounds): boolean;
     static CalculateBounds(positions: UnityEngine.Vector3[], transform: UnityEngine.Matrix4x4): UnityEngine.Bounds;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

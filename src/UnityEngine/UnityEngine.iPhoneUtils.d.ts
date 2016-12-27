@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class iPhoneUtils {
+  class iPhoneUtils extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEngine {
     static PlayMovieURL(url: string, bgColor: UnityEngine.Color, controlMode: UnityEngine.iPhoneMovieControlMode): void;
     static PlayMovieURL(url: string, bgColor: UnityEngine.Color): void;
     static Vibrate(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly isApplicationGenuine: boolean;
     static readonly isApplicationGenuineAvailable: boolean;

@@ -1,22 +1,13 @@
 declare namespace UnityEditorInternal {
-  class AudioProfilerClipTreeViewState {
+  class AudioProfilerClipTreeViewState extends UnityEditor.IMGUI.Controls.TreeViewState {
     // constructors
     constructor();
     // methods
     SetSelectedColumn(index: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    selectedIDs: any;
-    lastClickedID: number;
-    expandedIDs: any;
-    searchString: string;
     // fields
     selectedColumn: number;
     prevSelectedColumn: number;
     sortByDescendingOrder: boolean;
-    scrollPos: any;
   }
 }

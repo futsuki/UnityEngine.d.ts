@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class HumanLimit {
+  class HumanLimit extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     useDefaultValues: boolean;
     min: UnityEngine.Vector3;

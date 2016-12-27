@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class AnimationClipStats {
+  class AnimationClipStats extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Reset(): void;
     Combine(other: UnityEditor.AnimationClipStats): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     size: number;

@@ -1,9 +1,9 @@
 declare namespace UnityEngine.SocialPlatforms {
   class IAchievement {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    ReportProgress(callback: ((boolean) => void)): void;
+    ReportProgress(callback: ((obj: boolean) => void)): void;
     // properties
     id: string;
     percentCompleted: number;

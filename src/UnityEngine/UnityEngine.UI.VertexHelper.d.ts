@@ -1,5 +1,5 @@
 declare namespace UnityEngine.UI {
-  class VertexHelper {
+  class VertexHelper extends System.Object {
     // constructors
     constructor();
     constructor(m: UnityEngine.Mesh);
@@ -14,13 +14,9 @@ declare namespace UnityEngine.UI {
     AddVert(v: UnityEngine.UIVertex): void;
     AddTriangle(idx0: number, idx1: number, idx2: number): void;
     AddUIVertexQuad(verts: UnityEngine.UIVertex[]): void;
-    AddUIVertexStream(verts: any, indices: any): void;
-    AddUIVertexTriangleStream(verts: any): void;
-    GetUIVertexStream(stream: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    AddUIVertexStream(verts: UnityEngine.UIVertex[], indices: number[]): void;
+    AddUIVertexTriangleStream(verts: UnityEngine.UIVertex[]): void;
+    GetUIVertexStream(stream: UnityEngine.UIVertex[]): void;
     // properties
     readonly currentVertCount: number;
     readonly currentIndexCount: number;

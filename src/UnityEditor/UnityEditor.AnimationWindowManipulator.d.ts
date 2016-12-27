@@ -1,19 +1,15 @@
 declare namespace UnityEditor {
-  class AnimationWindowManipulator {
+  class AnimationWindowManipulator extends System.Object {
     // constructors
     constructor();
     // methods
     HandleEvents(): void;
     IgnoreEvents(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    onStartDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
-    onDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
-    onEndDrag: ((UnityEditor.AnimationWindowManipulator, any) => boolean);
+    onStartDrag: ((manipulator: UnityEditor.AnimationWindowManipulator, evt: any) => boolean);
+    onDrag: ((manipulator: UnityEditor.AnimationWindowManipulator, evt: any) => boolean);
+    onEndDrag: ((manipulator: UnityEditor.AnimationWindowManipulator, evt: any) => boolean);
     rect: any;
     controlID: number;
   }

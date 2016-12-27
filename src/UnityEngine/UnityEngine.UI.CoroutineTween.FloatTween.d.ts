@@ -1,17 +1,13 @@
 declare namespace UnityEngine.UI.CoroutineTween {
-  class FloatTween {
+  class FloatTween extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     TweenValue(floatPercentage: number): void;
-    AddOnChangedCallback(callback: ((number) => void)): void;
+    AddOnChangedCallback(callback: ((arg0: number) => void)): void;
     GetIgnoreTimescale(): boolean;
     GetDuration(): number;
     ValidTarget(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     startValue: number;
     targetValue: number;

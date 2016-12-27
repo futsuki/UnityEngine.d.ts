@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PreviewRenderUtility {
+  class PreviewRenderUtility extends System.Object {
     // constructors
     constructor();
     constructor(renderFullScene: boolean);
@@ -18,10 +18,6 @@ declare namespace UnityEditor {
     DrawMesh(mesh: any, pos: any, rot: any, mat: any, subMeshIndex: number, customProperties: any): void;
     DrawMesh(mesh: any, pos: any, rot: any, mat: any, subMeshIndex: number, customProperties: any, probeAnchor: any): void;
     DrawMesh(mesh: any, matrix: any, mat: any, subMeshIndex: number, customProperties: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_Camera: any;

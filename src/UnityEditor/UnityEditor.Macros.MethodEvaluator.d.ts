@@ -1,14 +1,10 @@
 declare namespace UnityEditor.Macros {
-  class MethodEvaluator {
+  class MethodEvaluator extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Eval(assemblyFile: string, typeName: string, methodName: string, paramTypes: any[], args: any[]): any;
     static ExecuteExternalCode(parcel: string): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

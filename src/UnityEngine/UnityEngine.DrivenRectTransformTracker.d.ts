@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class DrivenRectTransformTracker {
+  class DrivenRectTransformTracker extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Add(driver: UnityEngine.Object, rectTransform: UnityEngine.RectTransform, drivenProperties: UnityEngine.DrivenTransformProperties): void;
     Clear(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

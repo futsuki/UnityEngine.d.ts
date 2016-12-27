@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class IMask {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Enabled(): boolean;
     // properties

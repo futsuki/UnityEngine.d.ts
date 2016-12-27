@@ -1,12 +1,10 @@
 declare namespace UnityEngine {
-  class TrackedReference {
+  class TrackedReference extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Equals(o: any): boolean;
     GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

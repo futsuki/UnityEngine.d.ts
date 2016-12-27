@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class UnityStats {
+  class UnityStats extends System.Object {
     // constructors
     constructor();
     // methods
     static GetNetworkStats(i: number): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly batches: number;
     static readonly drawCalls: number;

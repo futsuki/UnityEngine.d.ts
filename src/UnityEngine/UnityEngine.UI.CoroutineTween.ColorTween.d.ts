@@ -1,17 +1,13 @@
 declare namespace UnityEngine.UI.CoroutineTween {
-  class ColorTween {
+  class ColorTween extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     TweenValue(floatPercentage: number): void;
-    AddOnChangedCallback(callback: ((UnityEngine.Color) => void)): void;
+    AddOnChangedCallback(callback: ((arg0: UnityEngine.Color) => void)): void;
     GetIgnoreTimescale(): boolean;
     GetDuration(): number;
     ValidTarget(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     startColor: UnityEngine.Color;
     targetColor: UnityEngine.Color;

@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class ContactPoint2D {
+  class ContactPoint2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly point: UnityEngine.Vector2;
     readonly normal: UnityEngine.Vector2;

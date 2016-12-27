@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class DuckVolumeGUI {
+  class DuckVolumeGUI extends UnityEditor.IAudioEffectPluginGUI {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     static DrawText(x: number, y: number, text: string): void;
     static DrawLine(x1: number, y1: number, x2: number, y2: number, col: any): void;
     OnGUI(plugin: UnityEditor.IAudioEffectPlugin): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Name: string;
     readonly Description: string;

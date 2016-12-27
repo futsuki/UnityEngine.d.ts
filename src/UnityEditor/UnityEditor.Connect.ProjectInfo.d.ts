@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Connect {
-  class ProjectInfo {
+  class ProjectInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly valid: boolean;
     readonly buildAllowed: boolean;

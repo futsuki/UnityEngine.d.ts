@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class InternalEditorUtility {
+  class InternalEditorUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,7 +8,7 @@ declare namespace UnityEditorInternal {
     static FixNormalmapTextureInternal(material: any, propName: string): void;
     static GetEditorAssemblyPath(): string;
     static GetEngineAssemblyPath(): string;
-    static CalculateHashForObjectsAndDependencies(objects: any[]): string;
+    static CalculateHashForObjectsAndDependencies(objects: UnityEngine.Object[]): string;
     static ExecuteCommandOnKeyWindow(commandName: string): void;
     static InstantiateMaterialsInEditMode(renderer: any): any[];
     static BuildCanBeAppended(target: UnityEditor.BuildTarget, location: string): UnityEditorInternal.CanAppendBuild;
@@ -17,13 +17,13 @@ declare namespace UnityEditorInternal {
     static RequestScriptReload(): void;
     static SwitchSkinAndRepaintAllViews(): void;
     static RepaintAllViews(): void;
-    static GetIsInspectorExpanded(obj: any): boolean;
-    static SetIsInspectorExpanded(obj: any, isExpanded: boolean): void;
-    static SaveToSerializedFileAndForget(obj: any[], path: string, allowTextSerialization: boolean): void;
-    static LoadSerializedFileAndForget(path: string): any[];
+    static GetIsInspectorExpanded(obj: UnityEngine.Object): boolean;
+    static SetIsInspectorExpanded(obj: UnityEngine.Object, isExpanded: boolean): void;
+    static SaveToSerializedFileAndForget(obj: UnityEngine.Object[], path: string, allowTextSerialization: boolean): void;
+    static LoadSerializedFileAndForget(path: string): UnityEngine.Object[];
     static ProjectWindowDrag(property: UnityEditor.HierarchyProperty, perform: boolean): UnityEditor.DragAndDropVisualMode;
     static HierarchyWindowDrag(property: UnityEditor.HierarchyProperty, perform: boolean, dropMode: UnityEditorInternal.InternalEditorUtility.HierarchyDropMode): UnityEditor.DragAndDropVisualMode;
-    static SceneViewDrag(dropUpon: any, worldPosition: any, viewportPosition: any, perform: boolean): UnityEditor.DragAndDropVisualMode;
+    static SceneViewDrag(dropUpon: UnityEngine.Object, worldPosition: any, viewportPosition: any, perform: boolean): UnityEditor.DragAndDropVisualMode;
     static SetRectTransformTemporaryRect(rectTransform: any, rect: any): void;
     static HasTeamLicense(): boolean;
     static HasPro(): boolean;
@@ -34,9 +34,9 @@ declare namespace UnityEditorInternal {
     static RemoveTag(tag: string): void;
     static AddTag(tag: string): void;
     static GetSpriteOuterUV(sprite: any, getAtlasData: boolean): any;
-    static GetObjectFromInstanceID(instanceID: number): any;
+    static GetObjectFromInstanceID(instanceID: number): UnityEngine.Object;
     static GetClassIDWithoutLoadingObject(instanceID: number): number;
-    static GetLoadedObjectFromInstanceID(instanceID: number): any;
+    static GetLoadedObjectFromInstanceID(instanceID: number): UnityEngine.Object;
     static GetLayerName(layer: number): string;
     static GetAssetsFolder(): string;
     static GetEditorFolder(): string;
@@ -99,14 +99,10 @@ declare namespace UnityEditorInternal {
     static TextAreaForDocBrowser(position: any, text: string, style: any): string;
     static GetSceneViewCameras(): any[];
     static ShowGameView(): void;
-    static GetNewSelection(clickedInstanceID: number, allInstanceIDs: any, selectedInstanceIDs: any, lastClickedInstanceID: number, keepMultiSelection: boolean, useShiftAsActionKey: boolean, allowMultiSelection: boolean): any;
+    static GetNewSelection(clickedInstanceID: number, allInstanceIDs: number[], selectedInstanceIDs: number[], lastClickedInstanceID: number, keepMultiSelection: boolean, useShiftAsActionKey: boolean, allowMultiSelection: boolean): number[];
     static IsValidFileName(filename: string): boolean;
     static RemoveInvalidCharsFromFileName(filename: string, logIfInvalidChars: boolean): string;
     static GetDisplayStringOfInvalidCharsOfFileName(filename: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly isApplicationActive: boolean;
     static readonly inBatchMode: boolean;

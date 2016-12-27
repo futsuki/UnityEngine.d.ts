@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal {
-  class EditorResourcesUtility {
+  class EditorResourcesUtility extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly lightSkinSourcePath: string;
     static readonly darkSkinSourcePath: string;

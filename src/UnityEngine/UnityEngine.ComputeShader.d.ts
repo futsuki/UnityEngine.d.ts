@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class ComputeShader {
+  class ComputeShader extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -27,14 +27,7 @@ declare namespace UnityEngine {
     Dispatch(kernelIndex: number, threadGroupsX: number, threadGroupsY: number, threadGroupsZ: number): void;
     DispatchIndirect(kernelIndex: number, argsBuffer: UnityEngine.ComputeBuffer): void;
     DispatchIndirect(kernelIndex: number, argsBuffer: UnityEngine.ComputeBuffer, argsOffset: number): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

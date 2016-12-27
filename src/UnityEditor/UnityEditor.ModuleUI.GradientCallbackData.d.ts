@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ModuleUI {
-  class GradientCallbackData {
+  class GradientCallbackData extends System.Object {
     // constructors
     constructor(state: UnityEditor.MinMaxGradientState, p: UnityEditor.SerializedMinMaxGradient);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     gradientProp: UnityEditor.SerializedMinMaxGradient;

@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IPointerUpHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnPointerUp(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

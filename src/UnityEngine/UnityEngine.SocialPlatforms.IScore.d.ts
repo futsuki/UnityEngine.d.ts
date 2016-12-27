@@ -1,9 +1,9 @@
 declare namespace UnityEngine.SocialPlatforms {
   class IScore {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    ReportScore(callback: ((boolean) => void)): void;
+    ReportScore(callback: ((obj: boolean) => void)): void;
     // properties
     leaderboardID: string;
     value: number;

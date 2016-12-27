@@ -1,14 +1,10 @@
 declare namespace UnityEditorInternal {
-  class ProfilerChart {
+  class ProfilerChart extends System.Object {
     // constructors
     constructor(area: UnityEditorInternal.ProfilerArea, type: UnityEditorInternal.Chart.ChartType, dataScale: number, seriesCount: number);
     // methods
     DoChartGUI(currentFrame: number, currentArea: UnityEditorInternal.ProfilerArea, action: any): number;
     LoadAndBindSettings(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     active: boolean;
     // fields

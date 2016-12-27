@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class LightmapVisualization {
+  class LightmapVisualization extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static enabled: boolean;
     static useLightmaps: boolean;

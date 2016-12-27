@@ -1,14 +1,10 @@
 declare namespace UnityEngine.Events {
-  class ArgumentCache {
+  class ArgumentCache extends System.Object {
     // constructors
     constructor();
     // methods
     OnBeforeSerialize(): void;
     OnAfterDeserialize(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     unityObjectArgument: UnityEngine.Object;
     readonly unityObjectArgumentAssemblyTypeName: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeViewItemExpansionAnimator {
+  class TreeViewItemExpansionAnimator extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor.IMGUI.Controls {
     OnBeforeAllRowsGUI(): void;
     OnAfterAllRowsGUI(): void;
     IsAnimating(itemID: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly expandedValueNormalized: number;
     readonly startRow: number;

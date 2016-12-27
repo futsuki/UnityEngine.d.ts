@@ -1,15 +1,11 @@
 declare namespace UnityEditorInternal.VR {
-  class VRCustomOptions {
+  class VRCustomOptions extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Initialize(vrEditorSettings: UnityEditor.SerializedProperty): void;
     Draw(rect: any): void;
     GetHeight(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     IsExpanded: boolean;
     // fields

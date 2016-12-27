@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class RotationCurveInterpolation {
+  class RotationCurveInterpolation extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     static RemapAnimationBindingForAddKey(binding: UnityEditor.EditorCurveBinding, clip: any): UnityEditor.EditorCurveBinding[];
     static RemapAnimationBindingForRotationAddKey(binding: UnityEditor.EditorCurveBinding, clip: any): UnityEditor.EditorCurveBinding[];
     static RemapAnimationBindingForRotationCurves(curveBinding: UnityEditor.EditorCurveBinding, clip: any): UnityEditor.EditorCurveBinding;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static kPostFix: any[];

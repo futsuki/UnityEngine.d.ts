@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Application {
+  class Application extends System.Object {
     // constructors
     constructor();
     // methods
@@ -16,15 +16,15 @@ declare namespace UnityEngine {
     static DontDestroyOnLoad(mono: UnityEngine.Object): void;
     static ExternalCall(functionName: string, args: any[]): void;
     static ExternalEval(script: string): void;
-    static RequestAdvertisingIdentifierAsync(delegateMethod: ((string, boolean, string) => void)): boolean;
+    static RequestAdvertisingIdentifierAsync(delegateMethod: ((advertisingId: string, trackingEnabled: boolean, errorMsg: string) => void)): boolean;
     static OpenURL(url: string): void;
     static ForceCrash(mode: number): void;
     static GetStackTraceLogType(logType: UnityEngine.LogType): UnityEngine.StackTraceLogType;
     static SetStackTraceLogType(logType: UnityEngine.LogType, stackTraceType: UnityEngine.StackTraceLogType): void;
     static RequestUserAuthorization(mode: UnityEngine.UserAuthorization): UnityEngine.AsyncOperation;
     static HasUserAuthorization(mode: UnityEngine.UserAuthorization): boolean;
-    static RegisterLogCallback(handler: ((string, string, UnityEngine.LogType) => void)): void;
-    static RegisterLogCallbackThreaded(handler: ((string, string, UnityEngine.LogType) => void)): void;
+    static RegisterLogCallback(handler: ((condition: string, stackTrace: string, type: UnityEngine.LogType) => void)): void;
+    static RegisterLogCallbackThreaded(handler: ((condition: string, stackTrace: string, type: UnityEngine.LogType) => void)): void;
     static LoadLevel(index: number): void;
     static LoadLevel(name: string): void;
     static LoadLevelAdditive(index: number): void;
@@ -35,10 +35,6 @@ declare namespace UnityEngine {
     static LoadLevelAdditiveAsync(levelName: string): UnityEngine.AsyncOperation;
     static UnloadLevel(index: number): boolean;
     static UnloadLevel(scenePath: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly isLoadingLevel: boolean;
     static readonly streamedBytes: number;

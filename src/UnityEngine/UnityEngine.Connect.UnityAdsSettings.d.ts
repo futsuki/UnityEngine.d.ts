@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Connect {
-  class UnityAdsSettings {
+  class UnityAdsSettings extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine.Connect {
     static SetPlatformEnabled(platform: UnityEngine.RuntimePlatform, value: boolean): void;
     static GetGameId(platform: UnityEngine.RuntimePlatform): string;
     static SetGameId(platform: UnityEngine.RuntimePlatform, gameId: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static enabled: boolean;
     static initializeOnStartup: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ReorderableList {
+  class ReorderableList extends System.Object {
     // constructors
     constructor(elements: any, elementType: any);
     constructor(elements: any, elementType: any, draggable: boolean, displayHeader: boolean, displayAddButton: boolean, displayRemoveButton: boolean);
@@ -12,10 +12,6 @@ declare namespace UnityEditorInternal {
     GrabKeyboardFocus(): void;
     ReleaseKeyboardFocus(): void;
     HasKeyboardControl(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly defaultBehaviours: UnityEditorInternal.ReorderableList.Defaults;
     serializedProperty: UnityEditor.SerializedProperty;
@@ -24,19 +20,19 @@ declare namespace UnityEditorInternal {
     draggable: boolean;
     readonly count: number;
     // fields
-    drawHeaderCallback: ((any) => void);
-    drawFooterCallback: ((any) => void);
-    drawElementCallback: ((any, number, boolean, boolean) => void);
-    drawElementBackgroundCallback: ((any, number, boolean, boolean) => void);
-    elementHeightCallback: ((number) => number);
-    onReorderCallback: ((UnityEditorInternal.ReorderableList) => void);
-    onSelectCallback: ((UnityEditorInternal.ReorderableList) => void);
-    onAddCallback: ((UnityEditorInternal.ReorderableList) => void);
-    onAddDropdownCallback: ((any, UnityEditorInternal.ReorderableList) => void);
-    onRemoveCallback: ((UnityEditorInternal.ReorderableList) => void);
-    onMouseUpCallback: ((UnityEditorInternal.ReorderableList) => void);
-    onCanRemoveCallback: ((UnityEditorInternal.ReorderableList) => boolean);
-    onChangedCallback: ((UnityEditorInternal.ReorderableList) => void);
+    drawHeaderCallback: ((rect: any) => void);
+    drawFooterCallback: ((rect: any) => void);
+    drawElementCallback: ((rect: any, index: number, isActive: boolean, isFocused: boolean) => void);
+    drawElementBackgroundCallback: ((rect: any, index: number, isActive: boolean, isFocused: boolean) => void);
+    elementHeightCallback: ((index: number) => number);
+    onReorderCallback: ((list: UnityEditorInternal.ReorderableList) => void);
+    onSelectCallback: ((list: UnityEditorInternal.ReorderableList) => void);
+    onAddCallback: ((list: UnityEditorInternal.ReorderableList) => void);
+    onAddDropdownCallback: ((buttonRect: any, list: UnityEditorInternal.ReorderableList) => void);
+    onRemoveCallback: ((list: UnityEditorInternal.ReorderableList) => void);
+    onMouseUpCallback: ((list: UnityEditorInternal.ReorderableList) => void);
+    onCanRemoveCallback: ((list: UnityEditorInternal.ReorderableList) => boolean);
+    onChangedCallback: ((list: UnityEditorInternal.ReorderableList) => void);
     displayAdd: boolean;
     displayRemove: boolean;
     elementHeight: number;

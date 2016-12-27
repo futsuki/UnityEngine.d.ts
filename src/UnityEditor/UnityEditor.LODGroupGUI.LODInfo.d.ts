@@ -1,12 +1,8 @@
 declare namespace UnityEditor.LODGroupGUI {
-  class LODInfo {
+  class LODInfo extends System.Object {
     // constructors
     constructor(lodLevel: number, name: string, screenPercentage: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly LODLevel: number;
     readonly LODName: string;

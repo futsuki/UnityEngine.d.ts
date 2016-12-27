@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class RenderTexture {
+  class RenderTexture extends UnityEngine.Texture {
     // constructors
     constructor(width: number, height: number, depth: number, format: UnityEngine.RenderTextureFormat, readWrite: UnityEngine.RenderTextureReadWrite);
     constructor(width: number, height: number, depth: number, format: UnityEngine.RenderTextureFormat);
@@ -23,13 +23,6 @@ declare namespace UnityEngine {
     GetTexelOffset(): UnityEngine.Vector2;
     static SupportsStencil(rt: UnityEngine.RenderTexture): boolean;
     SetBorderColor(color: UnityEngine.Color): void;
-    GetNativeTexturePtr(): any;
-    GetNativeTextureID(): number;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     width: number;
     height: number;
@@ -50,13 +43,6 @@ declare namespace UnityEngine {
     static active: UnityEngine.RenderTexture;
     static enabled: boolean;
     generateMips: boolean;
-    filterMode: UnityEngine.FilterMode;
-    anisoLevel: number;
-    wrapMode: UnityEngine.TextureWrapMode;
-    mipMapBias: number;
-    readonly texelSize: UnityEngine.Vector2;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

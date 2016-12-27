@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class JointMotor2D {
+  class JointMotor2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     motorSpeed: number;
     maxMotorTorque: number;

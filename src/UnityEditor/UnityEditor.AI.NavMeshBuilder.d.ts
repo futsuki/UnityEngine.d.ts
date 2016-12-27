@@ -1,5 +1,5 @@
 declare namespace UnityEditor.AI {
-  class NavMeshBuilder {
+  class NavMeshBuilder extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,12 +8,8 @@ declare namespace UnityEditor.AI {
     static ClearAllNavMeshes(): void;
     static Cancel(): void;
     static BuildNavMeshForMultipleScenes(paths: string[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    static readonly navMeshSettingsObject: any;
+    static readonly navMeshSettingsObject: UnityEngine.Object;
     static readonly isRunning: boolean;
     // fields
   }

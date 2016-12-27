@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Coroutine {
+  class Coroutine extends UnityEngine.YieldInstruction {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AudioMixerDrawUtils {
+  class AudioMixerDrawUtils extends System.Object {
     // constructors
     constructor();
     // methods
@@ -22,10 +22,6 @@ declare namespace UnityEditor {
     static DrawVerticalShow(rect: any, fadeToTheRight: boolean): void;
     static DrawScrollDropShadow(scrollViewRect: any, scrollY: number, contentHeight: number): void;
     static DrawRect(rect: any, color: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly styles: UnityEditor.AudioMixerDrawUtils.Styles;
     // fields

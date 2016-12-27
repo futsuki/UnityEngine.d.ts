@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PreviewResizer {
+  class PreviewResizer extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     SetExpanded(expanded: boolean): void;
     ToggleExpanded(): void;
     static PixelPreciseCollapsibleSlider(id: number, position: any, value: number, min: number, max: number, expanded: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

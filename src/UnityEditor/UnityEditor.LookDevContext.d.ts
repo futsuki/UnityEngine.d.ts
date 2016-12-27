@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class LookDevContext {
+  class LookDevContext extends System.Object {
     // constructors
     constructor();
     // methods
     GetProperty(property: UnityEditor.LookDevProperty): UnityEditor.LookDevContext.LookDevPropertyValue;
     UpdateProperty(property: UnityEditor.LookDevProperty, value: number): void;
     UpdateProperty(property: UnityEditor.LookDevProperty, value: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly exposureValue: number;
     envRotation: number;

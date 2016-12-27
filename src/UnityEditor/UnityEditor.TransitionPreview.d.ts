@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TransitionPreview {
+  class TransitionPreview extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditor {
     HasPreviewGUI(): boolean;
     OnPreviewSettings(): void;
     OnInteractivePreviewGUI(r: any, background: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     mustResample: boolean;
     // fields

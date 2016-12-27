@@ -1,5 +1,5 @@
 declare namespace UnityEditor.BuildReporting {
-  class BuildReport {
+  class BuildReport extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -12,15 +12,10 @@ declare namespace UnityEditor.BuildReporting {
     AddMessage(messageType: any, message: string): void;
     BeginBuildStepNoTiming(stepName: string): void;
     BeginBuildStep(stepName: string): void;
-    AddAppendix(obj: any): void;
-    GetAppendices(type: any): any[];
+    AddAppendix(obj: UnityEngine.Object): void;
+    GetAppendices(type: any): UnityEngine.Object[];
     static GetLatestReport(): UnityEditor.BuildReporting.BuildReport;
     SendChanged(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly crc: number;
     readonly totalTimeMS: number;
@@ -31,8 +26,6 @@ declare namespace UnityEditor.BuildReporting {
     readonly succeeded: boolean;
     readonly totalErrors: number;
     readonly totalWarnings: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

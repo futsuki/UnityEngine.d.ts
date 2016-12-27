@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ManipulationToolUtility {
+  class ManipulationToolUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,13 +10,9 @@ declare namespace UnityEditor {
     static BeginDragging(handleName: string): void;
     static EndDragging(handleName: string): void;
     static DetectDraggingBasedOnMouseDownUp(handleName: string, typeBefore: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static minDragDifference: any;
     // fields
-    static handleDragChange: ((string, boolean) => void);
+    static handleDragChange: ((handleName: string, dragging: boolean) => void);
   }
 }

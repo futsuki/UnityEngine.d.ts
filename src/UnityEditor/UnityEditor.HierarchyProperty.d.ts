@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class HierarchyProperty {
+  class HierarchyProperty extends System.Object {
     // constructors
     constructor(hierarchytType: UnityEditor.HierarchyType);
     // methods
@@ -17,13 +17,9 @@ declare namespace UnityEditor {
     FindAllAncestors(instanceIDs: number[]): number[];
     static ClearSceneObjectsFilter(): void;
     static FilterSingleSceneObject(instanceID: number, otherVisibilityState: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly instanceID: number;
-    readonly pptrValue: any;
+    readonly pptrValue: UnityEngine.Object;
     readonly name: string;
     readonly hasChildren: boolean;
     readonly depth: number;

@@ -1,13 +1,9 @@
 declare namespace UnityEditorInternal {
-  class ChartSeries {
+  class ChartSeries extends System.Object {
     // constructors
     constructor(name: string, len: number, clr: any);
     // methods
     CreateOverlayData(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     identifierName: string;

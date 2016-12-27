@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class Brush {
+  class Brush extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     GetStrengthInt(ix: number, iy: number): number;
     Dispose(): void;
     GetPreviewProjector(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

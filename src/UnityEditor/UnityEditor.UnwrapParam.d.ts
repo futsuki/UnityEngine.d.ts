@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class UnwrapParam {
+  class UnwrapParam extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static SetDefaults(param: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     angleError: number;

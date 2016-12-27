@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Physics {
+  class Physics extends System.Object {
     // constructors
     constructor();
     // methods
@@ -140,10 +140,6 @@ declare namespace UnityEngine {
     static IgnoreLayerCollision(layer1: number, layer2: number, ignore: boolean): void;
     static IgnoreLayerCollision(layer1: number, layer2: number): void;
     static GetIgnoreLayerCollision(layer1: number, layer2: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static gravity: UnityEngine.Vector3;
     static minPenetrationForPenalty: number;

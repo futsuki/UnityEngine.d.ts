@@ -1,5 +1,5 @@
 declare namespace UnityEditor.VersionControl {
-  class Provider {
+  class Provider extends System.Object {
     // constructors
     constructor();
     // methods
@@ -23,14 +23,14 @@ declare namespace UnityEditor.VersionControl {
     static Move(from: string, to: string): UnityEditor.VersionControl.Task;
     static CheckoutIsValid(assets: UnityEditor.VersionControl.AssetList): boolean;
     static CheckoutIsValid(assets: UnityEditor.VersionControl.AssetList, mode: UnityEditor.VersionControl.CheckoutMode): boolean;
-    static Checkout(assets: UnityEditor.VersionControl.AssetList, mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
-    static Checkout(assets: string[], mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
-    static Checkout(assets: any[], mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
     static CheckoutIsValid(asset: UnityEditor.VersionControl.Asset): boolean;
     static CheckoutIsValid(asset: UnityEditor.VersionControl.Asset, mode: UnityEditor.VersionControl.CheckoutMode): boolean;
+    static Checkout(assets: UnityEditor.VersionControl.AssetList, mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
+    static Checkout(assets: string[], mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
+    static Checkout(assets: UnityEngine.Object[], mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
     static Checkout(asset: UnityEditor.VersionControl.Asset, mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
     static Checkout(asset: string, mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
-    static Checkout(asset: any, mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
+    static Checkout(asset: UnityEngine.Object, mode: UnityEditor.VersionControl.CheckoutMode): UnityEditor.VersionControl.Task;
     static Delete(assetProjectPath: string): UnityEditor.VersionControl.Task;
     static Delete(assets: UnityEditor.VersionControl.AssetList): UnityEditor.VersionControl.Task;
     static Delete(asset: UnityEditor.VersionControl.Asset): UnityEditor.VersionControl.Task;
@@ -53,8 +53,8 @@ declare namespace UnityEditor.VersionControl {
     static Lock(assets: UnityEditor.VersionControl.AssetList, locked: boolean): UnityEditor.VersionControl.Task;
     static Lock(asset: UnityEditor.VersionControl.Asset, locked: boolean): UnityEditor.VersionControl.Task;
     static RevertIsValid(assets: UnityEditor.VersionControl.AssetList, mode: UnityEditor.VersionControl.RevertMode): boolean;
-    static Revert(assets: UnityEditor.VersionControl.AssetList, mode: UnityEditor.VersionControl.RevertMode): UnityEditor.VersionControl.Task;
     static RevertIsValid(asset: UnityEditor.VersionControl.Asset, mode: UnityEditor.VersionControl.RevertMode): boolean;
+    static Revert(assets: UnityEditor.VersionControl.AssetList, mode: UnityEditor.VersionControl.RevertMode): UnityEditor.VersionControl.Task;
     static Revert(asset: UnityEditor.VersionControl.Asset, mode: UnityEditor.VersionControl.RevertMode): UnityEditor.VersionControl.Task;
     static GetLatestIsValid(assets: UnityEditor.VersionControl.AssetList): boolean;
     static GetLatestIsValid(asset: UnityEditor.VersionControl.Asset): boolean;
@@ -70,10 +70,6 @@ declare namespace UnityEditor.VersionControl {
     static ChangeSetMove(assets: UnityEditor.VersionControl.AssetList, changesetID: string): UnityEditor.VersionControl.Task;
     static ChangeSetMove(asset: UnityEditor.VersionControl.Asset, changesetID: string): UnityEditor.VersionControl.Task;
     static GetAssetListFromSelection(): UnityEditor.VersionControl.AssetList;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly enabled: boolean;
     static readonly isActive: boolean;

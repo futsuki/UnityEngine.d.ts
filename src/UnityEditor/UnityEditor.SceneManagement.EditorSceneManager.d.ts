@@ -1,5 +1,5 @@
 declare namespace UnityEditor.SceneManagement {
-  class EditorSceneManager {
+  class EditorSceneManager extends UnityEngine.SceneManagement.SceneManager {
     // constructors
     constructor();
     // methods
@@ -22,10 +22,6 @@ declare namespace UnityEditor.SceneManagement {
     static GetSceneManagerSetup(): UnityEditor.SceneManagement.SceneSetup[];
     static RestoreSceneManagerSetup(value: UnityEditor.SceneManagement.SceneSetup[]): void;
     static DetectCrossSceneReferences(scene: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly loadedSceneCount: number;
     static preventCrossSceneReferences: boolean;

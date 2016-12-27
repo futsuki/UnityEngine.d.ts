@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class UnityType {
+  class UnityType extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     static FindTypeByName(name: string): UnityEditor.UnityType;
     static FindTypeByNameCaseInsensitive(name: string): UnityEditor.UnityType;
     static GetTypes(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly name: string;
     readonly nativeNamespace: string;

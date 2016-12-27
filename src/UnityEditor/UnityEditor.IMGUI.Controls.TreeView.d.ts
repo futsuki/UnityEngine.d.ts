@@ -1,24 +1,24 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeView {
+  class TreeView extends System.Object {
     // constructors
     constructor(state: UnityEditor.IMGUI.Controls.TreeViewState);
     constructor(state: UnityEditor.IMGUI.Controls.TreeViewState, multiColumnHeader: UnityEditor.IMGUI.Controls.MultiColumnHeader);
     // methods
     Reload(): void;
     GetCellRectForTreeFoldouts(rowRect: any): any;
-    SetCustomRowHeights(rowHeights: any): void;
-    GetRows(): any;
-    GetRowsFromIDs(ids: any): any;
+    SetCustomRowHeights(rowHeights: number[]): void;
+    GetRows(): UnityEditor.IMGUI.Controls.TreeViewItem[];
+    GetRowsFromIDs(ids: number[]): UnityEditor.IMGUI.Controls.TreeViewItem[];
     ExpandAll(): void;
     CollapseAll(): void;
     SetExpandedRecursive(id: number, expanded: boolean): void;
     SetExpanded(id: number, expanded: boolean): boolean;
-    SetExpanded(ids: any): void;
-    GetExpanded(): any;
+    SetExpanded(ids: number[]): void;
+    GetExpanded(): number[];
     IsExpanded(id: number): boolean;
-    GetSelection(): any;
-    SetSelection(selectedIDs: any): void;
-    SetSelection(selectedIDs: any, options: UnityEditor.IMGUI.Controls.TreeViewSelectionOptions): void;
+    GetSelection(): number[];
+    SetSelection(selectedIDs: number[]): void;
+    SetSelection(selectedIDs: number[], options: UnityEditor.IMGUI.Controls.TreeViewSelectionOptions): void;
     IsSelected(id: number): boolean;
     HasSelection(): boolean;
     BeginRename(item: UnityEditor.IMGUI.Controls.TreeViewItem): boolean;
@@ -28,11 +28,7 @@ declare namespace UnityEditor.IMGUI.Controls {
     OnGUI(rect: any): void;
     GetFoldoutIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     GetContentIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
-    static CreateChildListForCollapsedParent(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static CreateChildListForCollapsedParent(): UnityEditor.IMGUI.Controls.TreeViewItem[];
     // properties
     readonly state: UnityEditor.IMGUI.Controls.TreeViewState;
     readonly multiColumnHeader: UnityEditor.IMGUI.Controls.MultiColumnHeader;

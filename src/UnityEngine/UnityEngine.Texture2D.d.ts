@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Texture2D {
+  class Texture2D extends UnityEngine.Texture {
     // constructors
     constructor(width: number, height: number);
     constructor(width: number, height: number, format: UnityEngine.TextureFormat, mipmap: boolean);
@@ -43,29 +43,12 @@ declare namespace UnityEngine {
     EncodeToPNG(): number[];
     EncodeToJPG(quality: number): number[];
     EncodeToJPG(): number[];
-    GetNativeTexturePtr(): any;
-    GetNativeTextureID(): number;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly mipmapCount: number;
     readonly format: UnityEngine.TextureFormat;
     static readonly whiteTexture: UnityEngine.Texture2D;
     static readonly blackTexture: UnityEngine.Texture2D;
     alphaIsTransparency: boolean;
-    width: number;
-    height: number;
-    dimension: UnityEngine.Rendering.TextureDimension;
-    filterMode: UnityEngine.FilterMode;
-    anisoLevel: number;
-    wrapMode: UnityEngine.TextureWrapMode;
-    mipMapBias: number;
-    readonly texelSize: UnityEngine.Vector2;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

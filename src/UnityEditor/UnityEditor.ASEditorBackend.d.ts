@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ASEditorBackend {
+  class ASEditorBackend extends System.Object {
     // constructors
     constructor();
     // methods
@@ -24,10 +24,6 @@ declare namespace UnityEditor {
     static Testing_GetAllDatabaseNames(): string[];
     static Testing_SetConflictResolutionFunction(klass: string, fn: string): void;
     static Testing_DummyConflictResolutionFunction(conflicting: string[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly ASWin: UnityEditor.ASMainWindow;
     // fields

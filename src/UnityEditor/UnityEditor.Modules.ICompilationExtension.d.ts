@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class ICompilationExtension {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetCsCompiler(buildingForEditor: boolean, assemblyName: string): UnityEditor.Modules.CSharpCompiler;
     GetCompilerExtraAssemblyPaths(isEditor: boolean, assemblyPathName: string): string[];

@@ -1,13 +1,11 @@
 declare namespace UnityEditor {
-  class CurveSelection {
+  class CurveSelection extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     CompareTo(_other: any): number;
     Equals(_other: any): boolean;
     GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     curveID: number;

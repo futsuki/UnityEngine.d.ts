@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class CurveEditor {
+  class CurveEditor extends UnityEditor.TimeArea {
     // constructors
     constructor(rect: any, curves: UnityEditor.CurveWrapper[], minimalGUI: boolean);
     // methods
@@ -10,8 +10,8 @@ declare namespace UnityEditor {
     InvalidateBounds(): void;
     FrameClip(horizontally: boolean, vertically: boolean): void;
     FrameSelected(horizontally: boolean, vertically: boolean): void;
-    UpdateCurves(curveIds: any, undoText: string): void;
-    UpdateCurves(changedCurves: any, undoText: string): void;
+    UpdateCurves(curveIds: number[], undoText: string): void;
+    UpdateCurves(changedCurves: UnityEditor.ChangedCurve[], undoText: string): void;
     StartLiveEdit(): void;
     EndLiveEdit(): void;
     InLiveEdit(): boolean;
@@ -32,46 +32,6 @@ declare namespace UnityEditor {
     SaveKeySelection(undoLabel: string): void;
     DrawRegion(curve1: UnityEditor.CurveWrapper, curve2: UnityEditor.CurveWrapper, hasFocus: boolean): void;
     GridGUI(): void;
-    SetTickMarkerRanges(): void;
-    DrawMajorTicks(position: any, frameRate: number): void;
-    TimeRuler(position: any, frameRate: number): void;
-    TimeRuler(position: any, frameRate: number, labels: boolean, useEntireHeight: boolean, alpha: number): void;
-    TimeRuler(position: any, frameRate: number, labels: boolean, useEntireHeight: boolean, alpha: number, timeFormat: UnityEditor.TimeArea.TimeFormat): void;
-    BrowseRuler(position: any, time: any, frameRate: number, pickAnywhere: boolean, thumbStyle: any): UnityEditor.TimeArea.TimeRulerDragMode;
-    BrowseRuler(position: any, id: number, time: any, frameRate: number, pickAnywhere: boolean, thumbStyle: any): UnityEditor.TimeArea.TimeRulerDragMode;
-    FrameToPixel(i: number, frameRate: number, rect: any): number;
-    TimeField(rect: any, id: number, time: number, frameRate: number, timeFormat: UnityEditor.TimeArea.TimeFormat): number;
-    ValueField(rect: any, id: number, value: number): number;
-    FormatTime(time: number, frameRate: number, timeFormat: UnityEditor.TimeArea.TimeFormat): string;
-    FormatValue(value: number): string;
-    SnapTimeToWholeFPS(time: number, frameRate: number): number;
-    SetShownHRangeInsideMargins(min: number, max: number): void;
-    SetShownHRange(min: number, max: number): void;
-    SetShownVRangeInsideMargins(min: number, max: number): void;
-    SetShownVRange(min: number, max: number): void;
-    DrawingToViewTransformPoint(lhs: any): any;
-    DrawingToViewTransformPoint(lhs: any): any;
-    ViewToDrawingTransformPoint(lhs: any): any;
-    ViewToDrawingTransformPoint(lhs: any): any;
-    DrawingToViewTransformVector(lhs: any): any;
-    DrawingToViewTransformVector(lhs: any): any;
-    ViewToDrawingTransformVector(lhs: any): any;
-    ViewToDrawingTransformVector(lhs: any): any;
-    NormalizeInViewSpace(vec: any): any;
-    BeginViewGUI(): void;
-    HandleZoomAndPanEvents(area: any): void;
-    EndViewGUI(): void;
-    SetScaleFocused(focalPoint: any, newScale: any): void;
-    SetScaleFocused(focalPoint: any, newScale: any, lockHorizontal: boolean, lockVertical: boolean): void;
-    SetTransform(newTranslation: any, newScale: any): void;
-    EnforceScaleAndRange(): void;
-    PixelToTime(pixelX: number, rect: any): number;
-    TimeToPixel(time: number, rect: any): number;
-    PixelDeltaToTime(rect: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     animationCurves: UnityEditor.CurveWrapper[];
     readonly syncTimeDuringDrag: boolean;
@@ -82,49 +42,9 @@ declare namespace UnityEditor {
     readonly selectionBounds: any;
     readonly curveBounds: any;
     readonly drawingBounds: any;
-    hTicks: UnityEditor.TickHandler;
-    vTicks: UnityEditor.TickHandler;
-    hRangeLocked: boolean;
-    vRangeLocked: boolean;
-    hBaseRangeMin: number;
-    hBaseRangeMax: number;
-    vBaseRangeMin: number;
-    vBaseRangeMax: number;
-    hAllowExceedBaseRangeMin: boolean;
-    hAllowExceedBaseRangeMax: boolean;
-    vAllowExceedBaseRangeMin: boolean;
-    vAllowExceedBaseRangeMax: boolean;
-    hRangeMin: number;
-    hRangeMax: number;
-    vRangeMin: number;
-    vRangeMax: number;
-    hScaleMin: number;
-    hScaleMax: number;
-    vScaleMin: number;
-    vScaleMax: number;
-    scaleWithWindow: boolean;
-    hSlider: boolean;
-    vSlider: boolean;
-    ignoreScrollWheelUntilClicked: boolean;
-    enableMouseInput: boolean;
-    uniformScale: boolean;
-    upDirection: UnityEditor.ZoomableArea.YDirection;
-    readonly scale: any;
-    readonly translation: any;
-    leftmargin: number;
-    rightmargin: number;
-    topmargin: number;
-    bottommargin: number;
-    rect: any;
-    readonly drawRect: any;
-    shownArea: any;
-    shownAreaInsideMargins: any;
-    readonly drawingToViewMatrix: any;
-    readonly mousePositionInDrawing: any;
     // fields
     curvesUpdated: (() => void);
     state: UnityEditor.ICurveEditorState;
     invSnap: number;
-    m_UniformScale: boolean;
   }
 }

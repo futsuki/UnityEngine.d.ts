@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Collaboration {
-  class SoftLock {
+  class SoftLock extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly userID: string;
     readonly machineID: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class GenerateIconsWithMipLevels {
+  class GenerateIconsWithMipLevels extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditorInternal {
     static GenerateSelectedIconsWithMips(): void;
     static GenerateIconWithMipLevels(assetPath: string, mipTextures: any, fileInfo: any): void;
     static MipLevelForAssetPath(assetPath: string, separator: string): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

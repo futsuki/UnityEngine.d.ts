@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IPlatformSupportModule {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetDisplayNames(): any[];
     CreateBuildPostprocessor(): UnityEditor.Modules.IBuildPostprocessor;

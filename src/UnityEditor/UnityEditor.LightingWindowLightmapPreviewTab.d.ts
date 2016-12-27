@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class LightingWindowLightmapPreviewTab {
+  class LightingWindowLightmapPreviewTab extends System.Object {
     // constructors
     constructor();
     // methods
     LightmapPreview(r: any): void;
     UpdateLightmapSelection(): void;
     Maps(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

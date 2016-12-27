@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SnapGuideCollection {
+  class SnapGuideCollection extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     SnapToGuides(value: number, snapDistance: number): number;
     OnGUI(): void;
     DrawGuides(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

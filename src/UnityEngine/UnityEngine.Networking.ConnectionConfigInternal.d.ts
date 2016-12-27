@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking {
-  class ConnectionConfigInternal {
+  class ConnectionConfigInternal extends System.Object {
     // constructors
     constructor(config: UnityEngine.Networking.ConnectionConfig);
     // methods
@@ -26,10 +26,6 @@ declare namespace UnityEngine.Networking {
     InitUsePlatformSpecificProtocols(value: boolean): void;
     InitWebSocketReceiveBufferMaxSize(value: number): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly ChannelSize: number;
     // fields

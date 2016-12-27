@@ -1,14 +1,10 @@
 declare namespace UnityEngine.VR.WSA.Input {
-  class InteractionSourceLocation {
+  class InteractionSourceLocation extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     TryGetPosition(position: any): boolean;
     TryGetVelocity(velocity: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

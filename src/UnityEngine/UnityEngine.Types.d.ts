@@ -1,13 +1,10 @@
 declare namespace UnityEngine {
-  class Types {
+  class Types extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetType(typeName: string, assemblyName: string): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
     GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

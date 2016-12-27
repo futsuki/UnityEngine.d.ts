@@ -1,5 +1,5 @@
 declare namespace UnityEngine.GUILayout {
-  class VerticalScope {
+  class VerticalScope extends UnityEngine.GUI.Scope {
     // constructors
     constructor(options: UnityEngine.GUILayoutOption[]);
     constructor(style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
@@ -7,11 +7,6 @@ declare namespace UnityEngine.GUILayout {
     constructor(image: UnityEngine.Texture, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     constructor(content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
     // methods
-    Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

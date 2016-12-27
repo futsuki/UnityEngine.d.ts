@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Web {
-  class HubAccess {
+  class HubAccess extends UnityEditor.Web.CloudServiceAccess {
     // constructors
     constructor();
     // methods
@@ -8,15 +8,6 @@ declare namespace UnityEditor.Web {
     GetServices(): UnityEditor.Connect.UnityConnectServiceCollection.ServiceInfo[];
     ShowService(name: string): void;
     EnableCloudService(name: string, enabled: boolean): void;
-    IsServiceEnabled(): boolean;
-    EnableService(enabled: boolean): void;
-    OnProjectUnbound(): void;
-    ShowServicePage(): void;
-    GoBackToHub(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly instance: UnityEditor.Web.HubAccess;
     // fields

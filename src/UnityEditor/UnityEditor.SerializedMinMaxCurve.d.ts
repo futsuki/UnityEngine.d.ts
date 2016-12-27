@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SerializedMinMaxCurve {
+  class SerializedMinMaxCurve extends System.Object {
     // constructors
     constructor(m: UnityEditor.ModuleUI, displayName: any);
     constructor(m: UnityEditor.ModuleUI, displayName: any, name: string);
@@ -16,10 +16,6 @@ declare namespace UnityEditor {
     ToggleCurveInEditor(): void;
     GetUniqueCurveName(): string;
     SupportsProcedural(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     state: UnityEditor.MinMaxCurveState;
     readonly signedRange: boolean;

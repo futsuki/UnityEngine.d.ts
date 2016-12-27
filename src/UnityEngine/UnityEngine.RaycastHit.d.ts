@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class RaycastHit {
+  class RaycastHit extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     point: UnityEngine.Vector3;
     normal: UnityEngine.Vector3;

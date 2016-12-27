@@ -1,12 +1,8 @@
 declare namespace UnityEditor.IMGUI.Controls.TreeView {
-  class ItemGUIEventArgs {
+  class ItemGUIEventArgs extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     item: UnityEditor.IMGUI.Controls.TreeViewItem;

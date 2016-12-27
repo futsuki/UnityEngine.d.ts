@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal.UnityEventDrawer {
-  class State {
+  class State extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     lastSelectedIndex: number;

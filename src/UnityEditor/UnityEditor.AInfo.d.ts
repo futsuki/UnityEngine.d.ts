@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AInfo {
+  class AInfo extends System.Object {
     // constructors
     constructor(gizmoEnabled: boolean, iconEnabled: boolean, flags: number, classID: number, scriptClass: string);
     // methods
@@ -8,9 +8,6 @@ declare namespace UnityEditor {
     CompareTo(obj: any): number;
     Equals(other: UnityEditor.AInfo): boolean;
     Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_IconEnabled: boolean;

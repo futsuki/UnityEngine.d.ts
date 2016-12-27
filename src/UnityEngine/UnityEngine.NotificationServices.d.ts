@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class NotificationServices {
+  class NotificationServices extends System.Object {
     // constructors
     constructor();
     // methods
     static RegisterForRemoteNotificationTypes(notificationTypes: UnityEngine.RemoteNotificationType): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

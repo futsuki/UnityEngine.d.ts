@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class BoxEditor {
+  class BoxEditor extends System.Object {
     // constructors
     constructor(useLossyScale: boolean, controlIdHint: number);
     constructor(useLossyScale: boolean, controlIdHint: number, disableZaxis: boolean);
@@ -11,15 +11,11 @@ declare namespace UnityEditor {
     OnSceneGUI(transform: any, color: any, handlesOnly: boolean, center: any, size: any): boolean;
     OnSceneGUI(transform: any, color: any, handlesOnly: boolean, center: any, size: any): boolean;
     OnSceneGUI(transform: any, boxColor: any, midPointHandleColor: any, handlesOnly: boolean, center: any, size: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     allowNegativeSize: boolean;
     backfaceAlphaMultiplier: number;
     // fields
-    drawMethodForHandles: ((number, any, any, number) => void);
-    getHandleSizeMethod: ((any) => number);
+    drawMethodForHandles: ((controlID: number, position: any, rotation: any, size: number) => void);
+    getHandleSizeMethod: ((arg1: any) => number);
   }
 }

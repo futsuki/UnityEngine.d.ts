@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Vector3 {
+  class Vector3 extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Slerp(a: UnityEngine.Vector3, b: UnityEngine.Vector3, t: number): UnityEngine.Vector3;
     static SlerpUnclamped(a: UnityEngine.Vector3, b: UnityEngine.Vector3, t: number): UnityEngine.Vector3;
@@ -37,7 +37,6 @@ declare namespace UnityEngine {
     ToString(): string;
     ToString(format: string): string;
     static AngleBetween(from: UnityEngine.Vector3, to: UnityEngine.Vector3): number;
-    GetType(): any;
     // properties
     get_Item(index: number): number;
     set_Item(index: number, value: number): void;

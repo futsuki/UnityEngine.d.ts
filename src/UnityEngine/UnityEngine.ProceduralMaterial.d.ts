@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class ProceduralMaterial {
+  class ProceduralMaterial extends UnityEngine.Material {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetProceduralPropertyDescriptions(): UnityEngine.ProceduralPropertyDescription[];
     HasProceduralProperty(inputName: string): boolean;
@@ -27,85 +27,6 @@ declare namespace UnityEngine {
     GetGeneratedTextures(): UnityEngine.Texture[];
     GetGeneratedTexture(textureName: string): UnityEngine.ProceduralTexture;
     FreezeAndReleaseSourceData(): void;
-    SetColor(propertyName: string, color: UnityEngine.Color): void;
-    SetColor(nameID: number, color: UnityEngine.Color): void;
-    GetColor(propertyName: string): UnityEngine.Color;
-    GetColor(nameID: number): UnityEngine.Color;
-    SetVector(propertyName: string, vector: UnityEngine.Vector4): void;
-    SetVector(nameID: number, vector: UnityEngine.Vector4): void;
-    GetVector(propertyName: string): UnityEngine.Vector4;
-    GetVector(nameID: number): UnityEngine.Vector4;
-    SetTexture(propertyName: string, texture: UnityEngine.Texture): void;
-    SetTexture(nameID: number, texture: UnityEngine.Texture): void;
-    GetTexture(propertyName: string): UnityEngine.Texture;
-    GetTexture(nameID: number): UnityEngine.Texture;
-    SetTextureOffset(propertyName: string, offset: UnityEngine.Vector2): void;
-    GetTextureOffset(propertyName: string): UnityEngine.Vector2;
-    SetTextureScale(propertyName: string, scale: UnityEngine.Vector2): void;
-    GetTextureScale(propertyName: string): UnityEngine.Vector2;
-    SetMatrix(propertyName: string, matrix: UnityEngine.Matrix4x4): void;
-    SetMatrix(nameID: number, matrix: UnityEngine.Matrix4x4): void;
-    GetMatrix(propertyName: string): UnityEngine.Matrix4x4;
-    GetMatrix(nameID: number): UnityEngine.Matrix4x4;
-    SetFloat(propertyName: string, value: number): void;
-    SetFloat(nameID: number, value: number): void;
-    GetFloat(propertyName: string): number;
-    GetFloat(nameID: number): number;
-    SetFloatArray(name: string, values: any): void;
-    SetFloatArray(nameID: number, values: any): void;
-    SetFloatArray(name: string, values: number[]): void;
-    SetFloatArray(nameID: number, values: number[]): void;
-    SetVectorArray(name: string, values: any): void;
-    SetVectorArray(nameID: number, values: any): void;
-    SetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
-    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
-    SetColorArray(name: string, values: any): void;
-    SetColorArray(nameID: number, values: any): void;
-    SetColorArray(name: string, values: UnityEngine.Color[]): void;
-    SetColorArray(nameID: number, values: UnityEngine.Color[]): void;
-    SetMatrixArray(name: string, values: any): void;
-    SetMatrixArray(nameID: number, values: any): void;
-    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
-    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
-    GetFloatArray(name: string, values: any): void;
-    GetFloatArray(nameID: number, values: any): void;
-    GetFloatArray(name: string): number[];
-    GetFloatArray(nameID: number): number[];
-    GetVectorArray(name: string, values: any): void;
-    GetVectorArray(nameID: number, values: any): void;
-    GetVectorArray(name: string): UnityEngine.Vector4[];
-    GetVectorArray(nameID: number): UnityEngine.Vector4[];
-    GetColorArray(name: string, values: any): void;
-    GetColorArray(nameID: number, values: any): void;
-    GetColorArray(name: string): UnityEngine.Color[];
-    GetColorArray(nameID: number): UnityEngine.Color[];
-    GetMatrixArray(name: string, values: any): void;
-    GetMatrixArray(nameID: number, values: any): void;
-    GetMatrixArray(name: string): UnityEngine.Matrix4x4[];
-    GetMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
-    SetInt(propertyName: string, value: number): void;
-    SetInt(nameID: number, value: number): void;
-    GetInt(propertyName: string): number;
-    GetInt(nameID: number): number;
-    SetBuffer(propertyName: string, buffer: UnityEngine.ComputeBuffer): void;
-    HasProperty(propertyName: string): boolean;
-    HasProperty(nameID: number): boolean;
-    GetTag(tag: string, searchFallbacks: boolean, defaultValue: string): string;
-    GetTag(tag: string, searchFallbacks: boolean): string;
-    SetOverrideTag(tag: string, val: string): void;
-    Lerp(start: UnityEngine.Material, end: UnityEngine.Material, t: number): void;
-    SetPass(pass: number): boolean;
-    GetPassName(pass: number): string;
-    FindPass(passName: string): number;
-    CopyPropertiesFromMaterial(mat: UnityEngine.Material): void;
-    EnableKeyword(keyword: string): void;
-    DisableKeyword(keyword: string): void;
-    IsKeywordEnabled(keyword: string): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     cacheSize: UnityEngine.ProceduralCacheSize;
     animationUpdateRate: number;
@@ -118,17 +39,6 @@ declare namespace UnityEngine {
     preset: string;
     isReadable: boolean;
     readonly isFrozen: boolean;
-    shader: UnityEngine.Shader;
-    color: UnityEngine.Color;
-    mainTexture: UnityEngine.Texture;
-    mainTextureOffset: UnityEngine.Vector2;
-    mainTextureScale: UnityEngine.Vector2;
-    readonly passCount: number;
-    renderQueue: number;
-    shaderKeywords: string[];
-    globalIlluminationFlags: UnityEngine.MaterialGlobalIlluminationFlags;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

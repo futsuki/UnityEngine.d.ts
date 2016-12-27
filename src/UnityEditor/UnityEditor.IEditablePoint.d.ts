@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IEditablePoint {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetPosition(idx: number): any;
     SetPosition(idx: number, position: any): void;

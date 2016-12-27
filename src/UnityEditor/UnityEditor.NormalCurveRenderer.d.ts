@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class NormalCurveRenderer {
+  class NormalCurveRenderer extends System.Object {
     // constructors
     constructor(curve: any);
     // methods
@@ -19,10 +19,6 @@ declare namespace UnityEditor {
     GetBounds(): any;
     GetBounds(minTime: number, maxTime: number): any;
     FlushCache(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly curveMaterial: any;
     // fields

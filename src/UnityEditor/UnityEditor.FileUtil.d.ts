@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class FileUtil {
+  class FileUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     static GetProjectRelativePath(path: string): string;
     static ReplaceFile(src: string, dst: string): void;
     static ReplaceDirectory(src: string, dst: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

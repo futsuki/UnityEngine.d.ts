@@ -1,5 +1,5 @@
 declare namespace UnityEngine.UI {
-  class LayoutRebuilder {
+  class LayoutRebuilder extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,7 +12,6 @@ declare namespace UnityEngine.UI {
     GetHashCode(): number;
     Equals(obj: any): boolean;
     ToString(): string;
-    GetType(): any;
     // properties
     readonly transform: UnityEngine.Transform;
     // fields

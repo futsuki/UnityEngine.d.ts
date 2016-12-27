@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Color {
+  class Color extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ToString(): string;
     ToString(format: string): string;
@@ -12,7 +12,6 @@ declare namespace UnityEngine {
     static RGBToHSV(rgbColor: UnityEngine.Color, H: any, S: any, V: any): void;
     static HSVToRGB(H: number, S: number, V: number): UnityEngine.Color;
     static HSVToRGB(H: number, S: number, V: number, hdr: boolean): UnityEngine.Color;
-    GetType(): any;
     // properties
     static readonly red: UnityEngine.Color;
     static readonly green: UnityEngine.Color;

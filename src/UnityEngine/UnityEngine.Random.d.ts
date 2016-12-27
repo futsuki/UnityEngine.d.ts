@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Random {
+  class Random extends System.Object {
     // constructors
     constructor();
     // methods
@@ -13,10 +13,6 @@ declare namespace UnityEngine {
     static ColorHSV(hueMin: number, hueMax: number, saturationMin: number, saturationMax: number): UnityEngine.Color;
     static ColorHSV(hueMin: number, hueMax: number, saturationMin: number, saturationMax: number, valueMin: number, valueMax: number): UnityEngine.Color;
     static ColorHSV(hueMin: number, hueMax: number, saturationMin: number, saturationMax: number, valueMin: number, valueMax: number, alphaMin: number, alphaMax: number): UnityEngine.Color;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static seed: number;
     static state: UnityEngine.Random.State;

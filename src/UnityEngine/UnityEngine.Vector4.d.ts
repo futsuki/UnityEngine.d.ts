@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Vector4 {
+  class Vector4 extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Set(new_x: number, new_y: number, new_z: number, new_w: number): void;
     static Lerp(a: UnityEngine.Vector4, b: UnityEngine.Vector4, t: number): UnityEngine.Vector4;
@@ -23,7 +23,6 @@ declare namespace UnityEngine {
     ToString(format: string): string;
     static SqrMagnitude(a: UnityEngine.Vector4): number;
     SqrMagnitude(): number;
-    GetType(): any;
     // properties
     get_Item(index: number): number;
     set_Item(index: number, value: number): void;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ShapeEditor {
+  class ShapeEditor extends System.Object {
     // constructors
     constructor();
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEditor {
     static RectCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static CircleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static DiamondCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     lineTexture: any;
     activePoint: number;
@@ -27,28 +23,28 @@ declare namespace UnityEditor {
     inEditMode: boolean;
     activeEdge: number;
     // fields
-    GetPointPosition: ((number) => any);
-    SetPointPosition: ((number, any) => void);
-    GetPointLTangent: ((number) => any);
-    SetPointLTangent: ((number, any) => void);
-    GetPointRTangent: ((number) => any);
-    SetPointRTangent: ((number, any) => void);
-    GetTangentMode: ((number) => UnityEditor.ShapeEditor.TangentMode);
-    SetTangentMode: ((number, UnityEditor.ShapeEditor.TangentMode) => void);
-    InsertPointAt: ((number, any) => void);
-    RemovePointAt: ((number) => void);
+    GetPointPosition: ((arg1: number) => any);
+    SetPointPosition: ((arg1: number, arg2: any) => void);
+    GetPointLTangent: ((arg1: number) => any);
+    SetPointLTangent: ((arg1: number, arg2: any) => void);
+    GetPointRTangent: ((arg1: number) => any);
+    SetPointRTangent: ((arg1: number, arg2: any) => void);
+    GetTangentMode: ((arg1: number) => UnityEditor.ShapeEditor.TangentMode);
+    SetTangentMode: ((arg1: number, arg2: UnityEditor.ShapeEditor.TangentMode) => void);
+    InsertPointAt: ((arg1: number, arg2: any) => void);
+    RemovePointAt: ((obj: number) => void);
     GetPointsCount: (() => number);
-    ScreenToLocal: ((any) => any);
-    LocalToScreen: ((any) => any);
+    ScreenToLocal: ((arg1: any) => any);
+    LocalToScreen: ((arg1: any) => any);
     LocalToWorldMatrix: (() => any);
-    DistanceToRectangle: (() => ((any, any, number) => number));
-    DistanceToDiamond: (() => ((any, any, number) => number));
-    DistanceToCircle: (() => ((any, any, number) => number));
+    DistanceToRectangle: (() => ((pos: any, rotation: any, handleSize: number) => number));
+    DistanceToDiamond: (() => ((pos: any, rotation: any, handleSize: number) => number));
+    DistanceToCircle: (() => ((pos: any, rotation: any, handleSize: number) => number));
     Repaint: (() => void);
     RecordUndo: (() => void);
-    Snap: ((any) => any);
-    Frame: ((any) => void);
-    OnPointClick: ((number) => void);
+    Snap: ((arg1: any) => any);
+    Frame: ((obj: any) => void);
+    OnPointClick: ((obj: number) => void);
     OpenEnded: (() => boolean);
     GetHandleSize: (() => number);
   }

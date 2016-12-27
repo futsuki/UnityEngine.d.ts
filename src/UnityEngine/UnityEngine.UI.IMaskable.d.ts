@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class IMaskable {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     RecalculateMasking(): void;
     // properties

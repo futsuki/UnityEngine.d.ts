@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class ClusterInput {
+  class ClusterInput extends System.Object {
     // constructors
     constructor();
     // methods
@@ -14,10 +14,6 @@ declare namespace UnityEngine {
     static AddInput(name: string, deviceName: string, serverUrl: string, index: number, type: UnityEngine.ClusterInputType): boolean;
     static EditInput(name: string, deviceName: string, serverUrl: string, index: number, type: UnityEngine.ClusterInputType): boolean;
     static CheckConnectionToServer(name: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

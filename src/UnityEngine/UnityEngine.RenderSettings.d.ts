@@ -1,13 +1,8 @@
 declare namespace UnityEngine {
-  class RenderSettings {
+  class RenderSettings extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     static fog: boolean;
     static fogMode: UnityEngine.FogMode;
@@ -33,8 +28,6 @@ declare namespace UnityEngine {
     static defaultReflectionResolution: number;
     static customReflection: UnityEngine.Cubemap;
     static ambientSkyboxAmount: number;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

@@ -1,14 +1,10 @@
 declare namespace UnityEngine.SceneManagement {
-  class SceneUtility {
+  class SceneUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetScenePathByBuildIndex(buildIndex: number): string;
     static GetBuildIndexByScenePath(scenePath: string): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

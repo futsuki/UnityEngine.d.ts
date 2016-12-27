@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
-  class AnimatorControllerPlayable {
+  class AnimatorControllerPlayable extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Create(controller: UnityEngine.RuntimeAnimatorController): UnityEngine.Experimental.Director.AnimatorControllerPlayable;
     Destroy(): void;
@@ -31,11 +31,11 @@ declare namespace UnityEngine.Experimental.Director {
     GetNextAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
     GetAnimatorTransitionInfo(layerIndex: number): UnityEngine.AnimatorTransitionInfo;
     GetCurrentAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
-    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): void;
-    GetNextAnimatorClipInfo(layerIndex: number, clips: any): void;
+    GetCurrentAnimatorClipInfo(layerIndex: number, clips: UnityEngine.AnimatorClipInfo[]): void;
+    GetNextAnimatorClipInfo(layerIndex: number, clips: UnityEngine.AnimatorClipInfo[]): void;
+    GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
     GetCurrentAnimatorClipInfoCount(layerIndex: number): number;
     GetNextAnimatorClipInfoCount(layerIndex: number): number;
-    GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
     IsInTransition(layerIndex: number): boolean;
     GetParameter(index: number): UnityEngine.AnimatorControllerParameter;
     CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number): void;
@@ -66,8 +66,6 @@ declare namespace UnityEngine.Experimental.Director {
     IsValid(): boolean;
     Equals(p: any): boolean;
     GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly animatorController: UnityEngine.RuntimeAnimatorController;
     readonly layerCount: number;

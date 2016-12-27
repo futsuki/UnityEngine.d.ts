@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
-  class DefaultPlayerSettingsEditorExtension {
+  class DefaultPlayerSettingsEditorExtension extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnEnable(settingsEditor: UnityEditor.PlayerSettingsEditor): void;
     HasPublishSection(): boolean;
@@ -19,10 +19,6 @@ declare namespace UnityEditor.Modules {
     SupportsDynamicBatching(): boolean;
     ResolutionSectionGUI(h: number, midWidth: number, maxWidth: number): void;
     HasBundleIdentifier(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

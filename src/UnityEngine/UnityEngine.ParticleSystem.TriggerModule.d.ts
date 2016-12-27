@@ -1,14 +1,10 @@
 declare namespace UnityEngine.ParticleSystem {
-  class TriggerModule {
+  class TriggerModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetCollider(index: number, collider: UnityEngine.Component): void;
     GetCollider(index: number): UnityEngine.Component;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     inside: UnityEngine.ParticleSystemOverlapAction;

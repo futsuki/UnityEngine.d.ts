@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal {
-  class FrameDebuggerEvent {
+  class FrameDebuggerEvent extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     type: UnityEditorInternal.FrameEventType;

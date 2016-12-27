@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AudioMixerGroupTreeView {
+  class AudioMixerGroupTreeView extends System.Object {
     // constructors
     constructor(mixerWindow: UnityEditor.AudioMixerWindow, treeState: UnityEditor.IMGUI.Controls.TreeViewState);
     // methods
@@ -9,8 +9,8 @@ declare namespace UnityEditor {
     AddChildGroupPopupCallback(obj: any): void;
     AddSiblingGroupPopupCallback(obj: any): void;
     AddAudioMixerGroup(parent: UnityEditor.Audio.AudioMixerGroupController): void;
-    DeleteGroups(groups: any, recordUndo: boolean): void;
-    DuplicateGroups(groups: any, recordUndo: boolean): void;
+    DeleteGroups(groups: UnityEditor.Audio.AudioMixerGroupController[], recordUndo: boolean): void;
+    DuplicateGroups(groups: UnityEditor.Audio.AudioMixerGroupController[], recordUndo: boolean): void;
     OnTreeViewContextClick(index: number): void;
     OnTreeSelectionChanged(selection: number[]): void;
     InitSelection(revealSelectionAndFrameLastSelected: boolean): void;
@@ -19,10 +19,6 @@ declare namespace UnityEditor {
     OnMixerControllerChanged(controller: UnityEditor.Audio.AudioMixerController): void;
     EndRenaming(): void;
     OnUndoRedoPerformed(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Controller: UnityEditor.Audio.AudioMixerController;
     readonly ScrollToItem: UnityEditor.Audio.AudioMixerGroupController;

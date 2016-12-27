@@ -1,13 +1,9 @@
 declare namespace UnityEngine.UI {
-  class SetPropertyUtility {
+  class SetPropertyUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static SetColor(currentValue: any, newValue: UnityEngine.Color): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SearchFilter {
+  class SearchFilter extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,9 +9,6 @@ declare namespace UnityEditor {
     SetNewFilter(newFilter: UnityEditor.SearchFilter): boolean;
     ToString(): string;
     static Split(text: string): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     nameFilter: string;
     classNames: string[];

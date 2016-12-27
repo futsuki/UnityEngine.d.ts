@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class FilteredHierarchyProperty {
+  class FilteredHierarchyProperty extends System.Object {
     // constructors
     constructor(filter: UnityEditor.FilteredHierarchy);
     // methods
@@ -14,13 +14,9 @@ declare namespace UnityEditor {
     FindAllAncestors(instanceIDs: number[]): number[];
     Skip(count: number, expanded: number[]): boolean;
     CountRemaining(expanded: number[]): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly instanceID: number;
-    readonly pptrValue: any;
+    readonly pptrValue: UnityEngine.Object;
     readonly name: string;
     readonly hasChildren: boolean;
     readonly isMainRepresentation: boolean;

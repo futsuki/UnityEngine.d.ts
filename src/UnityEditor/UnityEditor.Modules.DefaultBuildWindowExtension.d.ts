@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Modules {
-  class DefaultBuildWindowExtension {
+  class DefaultBuildWindowExtension extends System.Object {
     // constructors
     constructor();
     // methods
@@ -13,10 +13,6 @@ declare namespace UnityEditor.Modules {
     ShouldDrawExplicitNullCheckbox(): boolean;
     ShouldDrawExplicitDivideByZeroCheckbox(): boolean;
     ShouldDrawForceOptimizeScriptsCheckbox(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

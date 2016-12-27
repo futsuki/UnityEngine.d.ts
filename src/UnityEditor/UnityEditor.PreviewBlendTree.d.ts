@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PreviewBlendTree {
+  class PreviewBlendTree extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     HasPreviewGUI(): boolean;
     OnPreviewSettings(): void;
     OnInteractivePreviewGUI(r: any, background: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly PreviewAnimator: any;
     // fields

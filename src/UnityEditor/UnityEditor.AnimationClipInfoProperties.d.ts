@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AnimationClipInfoProperties {
+  class AnimationClipInfoProperties extends System.Object {
     // constructors
     constructor(prop: UnityEditor.SerializedProperty);
     // methods
@@ -25,10 +25,6 @@ declare namespace UnityEditor {
     GetEvents(): any[];
     AssignToPreviewClip(clip: any): void;
     ExtractFromPreviewClip(clip: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     name: string;
     takeName: string;

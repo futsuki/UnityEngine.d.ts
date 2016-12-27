@@ -1,16 +1,12 @@
 declare namespace UnityEditor.Animations {
-  class AnimatorControllerLayer {
+  class AnimatorControllerLayer extends System.Object {
     // constructors
     constructor();
     // methods
-    GetOverrideMotion(state: UnityEditor.Animations.AnimatorState): any;
-    SetOverrideMotion(state: UnityEditor.Animations.AnimatorState, motion: any): void;
+    GetOverrideMotion(state: UnityEditor.Animations.AnimatorState): UnityEngine.Motion;
+    SetOverrideMotion(state: UnityEditor.Animations.AnimatorState, motion: UnityEngine.Motion): void;
     GetOverrideBehaviours(state: UnityEditor.Animations.AnimatorState): any[];
     SetOverrideBehaviours(state: UnityEditor.Animations.AnimatorState, behaviours: any[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     name: string;
     stateMachine: UnityEditor.Animations.AnimatorStateMachine;

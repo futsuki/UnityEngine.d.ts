@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class HandleUtility {
+  class HandleUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -35,10 +35,6 @@ declare namespace UnityEditor {
     static PopCamera(camera: any): void;
     static RaySnap(ray: any): any;
     static Repaint(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly acceleration: number;
     static readonly niceMouseDelta: number;

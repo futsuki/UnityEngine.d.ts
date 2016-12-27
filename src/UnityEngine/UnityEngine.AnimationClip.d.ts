@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AnimationClip {
+  class AnimationClip extends UnityEngine.Motion {
     // constructors
     constructor();
     // methods
@@ -8,12 +8,6 @@ declare namespace UnityEngine {
     EnsureQuaternionContinuity(): void;
     ClearCurves(): void;
     AddEvent(evt: UnityEngine.AnimationEvent): void;
-    ValidateIfRetargetable(val: boolean): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly length: number;
     frameRate: number;
@@ -22,15 +16,6 @@ declare namespace UnityEngine {
     legacy: boolean;
     readonly humanMotion: boolean;
     events: UnityEngine.AnimationEvent[];
-    readonly averageDuration: number;
-    readonly averageAngularSpeed: number;
-    readonly averageSpeed: UnityEngine.Vector3;
-    readonly apparentSpeed: number;
-    readonly isLooping: boolean;
-    readonly isHumanMotion: boolean;
-    readonly isAnimatorMotion: boolean;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

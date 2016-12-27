@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ParticleSystem {
-  class ForceOverLifetimeModule {
+  class ForceOverLifetimeModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     x: UnityEngine.ParticleSystem.MinMaxCurve;

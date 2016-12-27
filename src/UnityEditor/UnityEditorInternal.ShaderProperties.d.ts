@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal {
-  class ShaderProperties {
+  class ShaderProperties extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     floats: UnityEditorInternal.ShaderFloatInfo[];

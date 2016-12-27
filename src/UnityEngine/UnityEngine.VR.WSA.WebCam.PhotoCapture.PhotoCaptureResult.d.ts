@@ -1,12 +1,8 @@
 declare namespace UnityEngine.VR.WSA.WebCam.PhotoCapture {
-  class PhotoCaptureResult {
+  class PhotoCaptureResult extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly success: boolean;
     // fields

@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Collaboration {
-  class Collab {
+  class Collab extends UnityEditor.AssetPostprocessor {
     // constructors
     constructor();
     // methods
@@ -43,24 +43,11 @@ declare namespace UnityEditor.Collaboration {
     static IsDiffToolsAvailable(): boolean;
     SaveAssets(): void;
     static SwitchToDefaultMode(): void;
-    LogWarning(warning: string): void;
-    LogWarning(warning: string, context: any): void;
-    LogError(warning: string): void;
-    LogError(warning: string, context: any): void;
-    GetVersion(): number;
-    GetPostprocessOrder(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly collabInfo: UnityEditor.Collaboration.CollabInfo;
     projectBrowserSingleSelectionPath: string;
     projectBrowserSingleMetaSelectionPath: string;
     static readonly instance: UnityEditor.Collaboration.Collab;
-    assetPath: string;
-    readonly assetImporter: UnityEditor.AssetImporter;
-    preview: any;
     // fields
     currentProjectBrowserSelection: string[];
     static clientType: string[];

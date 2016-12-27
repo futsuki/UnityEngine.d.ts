@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class MaterialPropertyBlock {
+  class MaterialPropertyBlock extends System.Object {
     // constructors
     constructor();
     // methods
@@ -21,30 +21,30 @@ declare namespace UnityEngine {
     GetVector(nameID: number): UnityEngine.Vector4;
     GetMatrix(name: string): UnityEngine.Matrix4x4;
     GetMatrix(nameID: number): UnityEngine.Matrix4x4;
-    GetFloatArray(name: string, values: any): void;
-    GetFloatArray(nameID: number, values: any): void;
+    GetFloatArray(name: string, values: number[]): void;
+    GetFloatArray(nameID: number, values: number[]): void;
     GetFloatArray(name: string): number[];
     GetFloatArray(nameID: number): number[];
-    GetVectorArray(name: string, values: any): void;
-    GetVectorArray(nameID: number, values: any): void;
+    GetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    GetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
     GetVectorArray(name: string): UnityEngine.Vector4[];
     GetVectorArray(nameID: number): UnityEngine.Vector4[];
-    GetMatrixArray(name: string, values: any): void;
-    GetMatrixArray(nameID: number, values: any): void;
+    GetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    GetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     GetMatrixArray(name: string): UnityEngine.Matrix4x4[];
     GetMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
     GetTexture(name: string): UnityEngine.Texture;
     GetTexture(nameID: number): UnityEngine.Texture;
-    SetFloatArray(name: string, values: any): void;
-    SetFloatArray(nameID: number, values: any): void;
     SetFloatArray(name: string, values: number[]): void;
     SetFloatArray(nameID: number, values: number[]): void;
-    SetVectorArray(name: string, values: any): void;
-    SetVectorArray(nameID: number, values: any): void;
+    SetFloatArray(name: string, values: number[]): void;
+    SetFloatArray(nameID: number, values: number[]): void;
     SetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
     SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
-    SetMatrixArray(name: string, values: any): void;
-    SetMatrixArray(nameID: number, values: any): void;
+    SetVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    SetVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     SetMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
     SetMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     Clear(): void;
@@ -58,10 +58,6 @@ declare namespace UnityEngine {
     AddMatrix(nameID: number, value: UnityEngine.Matrix4x4): void;
     AddTexture(name: string, value: UnityEngine.Texture): void;
     AddTexture(nameID: number, value: UnityEngine.Texture): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isEmpty: boolean;
     // fields

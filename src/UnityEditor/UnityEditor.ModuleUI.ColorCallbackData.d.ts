@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ModuleUI {
-  class ColorCallbackData {
+  class ColorCallbackData extends System.Object {
     // constructors
     constructor(state: boolean, bp: UnityEditor.SerializedProperty);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     boolProp: UnityEditor.SerializedProperty;

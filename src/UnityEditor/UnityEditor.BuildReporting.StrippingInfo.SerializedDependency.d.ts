@@ -1,16 +1,12 @@
 declare namespace UnityEditor.BuildReporting.StrippingInfo {
-  class SerializedDependency {
+  class SerializedDependency extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     key: string;
-    value: any;
+    value: string[];
     icon: string;
   }
 }

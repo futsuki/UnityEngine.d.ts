@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class RenameOverlay {
+  class RenameOverlay extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     OnEvent(): boolean;
     OnGUI(): boolean;
     OnGUI(textFieldStyle: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly name: string;
     readonly originalName: string;

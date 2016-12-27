@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IHasCustomMenu {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     AddItemsToMenu(menu: UnityEditor.GenericMenu): void;
     // properties

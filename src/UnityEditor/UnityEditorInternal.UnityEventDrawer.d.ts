@@ -1,19 +1,13 @@
 declare namespace UnityEditorInternal {
-  class UnityEventDrawer {
+  class UnityEventDrawer extends UnityEditor.PropertyDrawer {
     // constructors
     constructor();
     // methods
     OnGUI(position: any, property: UnityEditor.SerializedProperty, label: any): void;
-    GetPropertyHeight(property: UnityEditor.SerializedProperty, label: any): number;
     OnGUI(position: any): void;
-    static IsPersistantListenerValid(dummyEvent: any, methodName: string, uObject: any, modeEnum: any, argumentType: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    GetPropertyHeight(property: UnityEditor.SerializedProperty, label: any): number;
+    static IsPersistantListenerValid(dummyEvent: UnityEngine.Events.UnityEventBase, methodName: string, uObject: UnityEngine.Object, modeEnum: any, argumentType: any): boolean;
     // properties
-    readonly attribute: any;
-    readonly fieldInfo: any;
     // fields
   }
 }

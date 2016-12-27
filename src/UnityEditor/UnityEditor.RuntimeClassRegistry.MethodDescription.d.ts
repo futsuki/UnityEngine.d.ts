@@ -1,12 +1,8 @@
 declare namespace UnityEditor.RuntimeClassRegistry {
-  class MethodDescription {
+  class MethodDescription extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     assembly: string;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class MultiColumnHeaderState {
+  class MultiColumnHeaderState extends System.Object {
     // constructors
     constructor(columns: UnityEditor.IMGUI.Controls.MultiColumnHeaderState.Column[]);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     sortedColumnIndex: number;
     readonly previousSortedColumnIndex: number;

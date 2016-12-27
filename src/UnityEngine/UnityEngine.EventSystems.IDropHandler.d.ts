@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IDropHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnDrop(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

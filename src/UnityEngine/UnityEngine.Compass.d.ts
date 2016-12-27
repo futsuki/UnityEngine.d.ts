@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Compass {
+  class Compass extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly magneticHeading: number;
     readonly trueHeading: number;

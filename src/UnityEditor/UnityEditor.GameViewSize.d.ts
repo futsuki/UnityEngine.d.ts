@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class GameViewSize {
+  class GameViewSize extends System.Object {
     // constructors
     constructor(type: UnityEditor.GameViewSizeType, width: number, height: number, baseText: string);
     constructor(other: UnityEditor.GameViewSize);
     // methods
     Set(other: UnityEditor.GameViewSize): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     baseText: string;
     sizeType: UnityEditor.GameViewSizeType;

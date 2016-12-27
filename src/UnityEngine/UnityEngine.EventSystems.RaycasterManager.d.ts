@@ -1,15 +1,11 @@
 declare namespace UnityEngine.EventSystems {
-  class RaycasterManager {
+  class RaycasterManager extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static AddRaycaster(baseRaycaster: UnityEngine.EventSystems.BaseRaycaster): void;
-    static GetRaycasters(): any;
+    static GetRaycasters(): UnityEngine.EventSystems.BaseRaycaster[];
     static RemoveRaycasters(baseRaycaster: UnityEngine.EventSystems.BaseRaycaster): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

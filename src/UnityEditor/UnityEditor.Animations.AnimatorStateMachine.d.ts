@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Animations {
-  class AnimatorStateMachine {
+  class AnimatorStateMachine extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -27,11 +27,6 @@ declare namespace UnityEditor.Animations {
     AddEntryTransition(destinationState: UnityEditor.Animations.AnimatorState): UnityEditor.Animations.AnimatorTransition;
     AddEntryTransition(destinationStateMachine: UnityEditor.Animations.AnimatorStateMachine): UnityEditor.Animations.AnimatorTransition;
     RemoveEntryTransition(transition: UnityEditor.Animations.AnimatorTransition): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     states: UnityEditor.Animations.ChildAnimatorState[];
     stateMachines: UnityEditor.Animations.ChildAnimatorStateMachine[];
@@ -43,8 +38,6 @@ declare namespace UnityEditor.Animations {
     anyStateTransitions: UnityEditor.Animations.AnimatorStateTransition[];
     entryTransitions: UnityEditor.Animations.AnimatorTransition[];
     behaviours: any[];
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

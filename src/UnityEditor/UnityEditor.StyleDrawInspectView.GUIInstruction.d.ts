@@ -1,13 +1,9 @@
 declare namespace UnityEditor.StyleDrawInspectView {
-  class GUIInstruction {
+  class GUIInstruction extends System.Object {
     // constructors
     constructor();
     // methods
     Reset(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     rect: any;

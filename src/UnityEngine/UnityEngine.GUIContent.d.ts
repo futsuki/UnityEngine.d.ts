@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GUIContent {
+  class GUIContent extends System.Object {
     // constructors
     constructor();
     constructor(text: string);
@@ -10,10 +10,6 @@ declare namespace UnityEngine {
     constructor(text: string, image: UnityEngine.Texture, tooltip: string);
     constructor(src: UnityEngine.GUIContent);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     text: string;
     image: UnityEngine.Texture;

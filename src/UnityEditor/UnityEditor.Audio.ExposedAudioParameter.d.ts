@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Audio {
-  class ExposedAudioParameter {
+  class ExposedAudioParameter extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     guid: UnityEditor.GUID;

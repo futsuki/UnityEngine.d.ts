@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class StaticOcclusionCullingVisualization {
+  class StaticOcclusionCullingVisualization extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static showOcclusionCulling: boolean;
     static showPreVisualization: boolean;

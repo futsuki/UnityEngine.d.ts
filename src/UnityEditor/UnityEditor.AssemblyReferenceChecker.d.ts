@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AssemblyReferenceChecker {
+  class AssemblyReferenceChecker extends System.Object {
     // constructors
     constructor();
     // methods
@@ -14,10 +14,6 @@ declare namespace UnityEditor {
     WhoReferencesClass(klass: string, ignoreSystemDlls: boolean): string;
     static IsIgnoredSystemDll(name: string): boolean;
     static GetScriptsHaveMouseEvents(path: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly HasMouseEvent: boolean;
     // fields

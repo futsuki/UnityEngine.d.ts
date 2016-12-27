@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class StateMachine {
+  class StateMachine extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -11,17 +11,10 @@ declare namespace UnityEditorInternal {
     AddAnyStateTransition(dst: UnityEditorInternal.State): UnityEditorInternal.Transition;
     GetStateMachinePosition(i: number): UnityEngine.Vector3;
     GetTransitionsFromState(srcState: UnityEditorInternal.State): UnityEditorInternal.Transition[];
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     defaultState: UnityEditorInternal.State;
     anyStatePosition: UnityEngine.Vector3;
     parentStateMachinePosition: UnityEngine.Vector3;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

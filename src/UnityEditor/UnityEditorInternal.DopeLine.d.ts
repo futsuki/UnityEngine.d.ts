@@ -1,20 +1,16 @@
 declare namespace UnityEditorInternal {
-  class DopeLine {
+  class DopeLine extends System.Object {
     // constructors
     constructor(hierarchyNodeID: number, curves: UnityEditorInternal.AnimationWindowCurve[]);
     // methods
     InvalidateKeyframes(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly valueType: any;
     readonly isPptrDopeline: boolean;
     readonly isEditable: boolean;
     readonly hierarchyNodeID: number;
     readonly curves: UnityEditorInternal.AnimationWindowCurve[];
-    readonly keys: any;
+    readonly keys: UnityEditorInternal.AnimationWindowKeyframe[];
     // fields
     static dopekeyStyle: any;
     position: any;

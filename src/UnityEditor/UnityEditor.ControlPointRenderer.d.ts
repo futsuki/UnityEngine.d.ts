@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ControlPointRenderer {
+  class ControlPointRenderer extends System.Object {
     // constructors
     constructor(icon: any);
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     Clear(): void;
     Render(): void;
     AddPoint(rect: any, color: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly material: any;
     // fields

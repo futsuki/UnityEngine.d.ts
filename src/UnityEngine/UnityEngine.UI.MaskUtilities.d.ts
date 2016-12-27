@@ -1,5 +1,5 @@
 declare namespace UnityEngine.UI {
-  class MaskUtilities {
+  class MaskUtilities extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,11 +9,7 @@ declare namespace UnityEngine.UI {
     static GetStencilDepth(transform: UnityEngine.Transform, stopAfter: UnityEngine.Transform): number;
     static IsDescendantOrSelf(father: UnityEngine.Transform, child: UnityEngine.Transform): boolean;
     static GetRectMaskForClippable(clippable: UnityEngine.UI.IClippable): UnityEngine.UI.RectMask2D;
-    static GetRectMasksForClip(clipper: UnityEngine.UI.RectMask2D, masks: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static GetRectMasksForClip(clipper: UnityEngine.UI.RectMask2D, masks: UnityEngine.UI.RectMask2D[]): void;
     // properties
     // fields
   }

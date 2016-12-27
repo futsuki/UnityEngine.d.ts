@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class IAudioEffectPlugin {
+  class IAudioEffectPlugin extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetFloatParameter(name: string, value: number): boolean;
     GetFloatParameter(name: string, value: any): boolean;
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     GetFloatBuffer(name: string, data: any, numsamples: number): boolean;
     GetSampleRate(): number;
     IsPluginEditableAndEnabled(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

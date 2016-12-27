@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class RectangleTool {
+  class RectangleTool extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     TimeToPixel(time: number): number;
     ValueToPixel(value: number): number;
     HandleClutchKeys(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly timeArea: UnityEditor.TimeArea;
     readonly styles: UnityEditor.RectangleTool.Styles;

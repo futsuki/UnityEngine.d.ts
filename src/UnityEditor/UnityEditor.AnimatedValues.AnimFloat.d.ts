@@ -14,6 +14,6 @@ declare namespace UnityEditor.AnimatedValues {
     value: number;
     // fields
     speed: number;
-    valueChanged: any;
+    valueChanged: UnityEngine.Events.UnityEvent;
   }
 }

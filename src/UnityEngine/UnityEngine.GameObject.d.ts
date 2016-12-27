@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GameObject {
+  class GameObject extends UnityEngine.Object {
     // constructors
     constructor(name: string);
     constructor();
@@ -12,7 +12,7 @@ declare namespace UnityEngine {
     GetComponentInChildren(type: any): UnityEngine.Component;
     GetComponentInParent(type: any): UnityEngine.Component;
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): void;
+    GetComponents(type: any, results: UnityEngine.Component[]): void;
     GetComponentsInChildren(type: any): UnityEngine.Component[];
     GetComponentsInChildren(type: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponentsInParent(type: any): UnityEngine.Component[];
@@ -36,16 +36,11 @@ declare namespace UnityEngine {
     BroadcastMessage(methodName: string): void;
     BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
     AddComponent(componentType: any): UnityEngine.Component;
+    AddComponent(className: string): UnityEngine.Component;
     static Find(name: string): UnityEngine.GameObject;
     SampleAnimation(clip: UnityEngine.Object, time: number): void;
-    AddComponent(className: string): UnityEngine.Component;
     PlayAnimation(animation: UnityEngine.Object): void;
     StopAnimation(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly transform: UnityEngine.Transform;
     layer: number;
@@ -73,8 +68,6 @@ declare namespace UnityEngine {
     readonly hingeJoint: UnityEngine.Component;
     readonly particleEmitter: UnityEngine.Component;
     readonly particleSystem: UnityEngine.Component;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

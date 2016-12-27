@@ -1,13 +1,9 @@
 declare namespace UnityEngine.GUILayout {
-  class LayoutedWindow {
+  class LayoutedWindow extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     DoWindow(windowID: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

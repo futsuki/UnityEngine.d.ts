@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Audio {
-  class AudioParameterPath {
+  class AudioParameterPath extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ResolveStringPath(getOnlyBasePath: boolean): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     parameter: UnityEditor.GUID;

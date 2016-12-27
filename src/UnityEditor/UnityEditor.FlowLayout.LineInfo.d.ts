@@ -1,12 +1,8 @@
 declare namespace UnityEditor.FlowLayout {
-  class LineInfo {
+  class LineInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     minSize: number;

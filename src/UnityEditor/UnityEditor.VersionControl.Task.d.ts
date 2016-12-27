@@ -1,15 +1,11 @@
 declare namespace UnityEditor.VersionControl {
-  class Task {
+  class Task extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Wait(): void;
     SetCompletionAction(action: UnityEditor.VersionControl.CompletionAction): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     userIdentifier: number;
     readonly text: string;

@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class JointDrive {
+  class JointDrive extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     mode: UnityEngine.JointDriveMode;
     positionSpring: number;

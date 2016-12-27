@@ -1,10 +1,10 @@
 declare namespace UnityEditor {
-  class MemoryElement {
+  class MemoryElement extends System.Object {
     // constructors
     constructor();
     constructor(n: string);
     constructor(memInfo: UnityEditor.ObjectInfo, finalize: boolean);
-    constructor(n: string, groups: any);
+    constructor(n: string, groups: UnityEditor.MemoryElement[]);
     // methods
     ExpandChildren(): void;
     AccumulatedChildCount(): number;
@@ -17,13 +17,9 @@ declare namespace UnityEditor {
     GetRoot(): UnityEditor.MemoryElement;
     FirstChild(): UnityEditor.MemoryElement;
     LastChild(): UnityEditor.MemoryElement;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    children: any;
+    children: UnityEditor.MemoryElement[];
     parent: UnityEditor.MemoryElement;
     memoryInfo: UnityEditor.ObjectInfo;
     totalMemory: number;

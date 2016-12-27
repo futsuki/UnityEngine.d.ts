@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AsyncHTTPClient {
+  class AsyncHTTPClient extends System.Object {
     // constructors
     constructor(_toUrl: string);
     constructor(_toUrl: string, _method: string);
@@ -13,10 +13,6 @@ declare namespace UnityEditor {
     IsSuccess(): boolean;
     static IsSuccess(state: UnityEditor.AsyncHTTPClient.State): boolean;
     Begin(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly url: string;
     readonly text: string;
@@ -26,8 +22,8 @@ declare namespace UnityEditor {
     readonly responseCode: number;
     tag: string;
     // fields
-    statusCallback: ((UnityEditor.AsyncHTTPClient.State, number, number) => void);
-    doneCallback: ((UnityEditor.AsyncHTTPClient) => void);
+    statusCallback: ((status: UnityEditor.AsyncHTTPClient.State, bytesDone: number, bytesTotal: number) => void);
+    doneCallback: ((client: UnityEditor.AsyncHTTPClient) => void);
     header: any;
   }
 }

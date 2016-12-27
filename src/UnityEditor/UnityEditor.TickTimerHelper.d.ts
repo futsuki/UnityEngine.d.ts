@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class TickTimerHelper {
+  class TickTimerHelper extends System.Object {
     // constructors
     constructor(intervalBetweenTicksInSeconds: number);
     // methods
     DoTick(): boolean;
     Reset(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

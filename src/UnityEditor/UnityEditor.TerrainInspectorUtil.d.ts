@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TerrainInspectorUtil {
+  class TerrainInspectorUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     static GetPrototypeCount(terrainData: any): number;
     static PrototypeIsRenderable(terrainData: any, prototypeIndex: number): boolean;
     static RefreshPhysicsInEditMode(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

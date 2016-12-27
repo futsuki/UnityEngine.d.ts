@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class PS4 {
+  class PS4 extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static npTrophyPackPath: string;
     static npAgeRating: number;

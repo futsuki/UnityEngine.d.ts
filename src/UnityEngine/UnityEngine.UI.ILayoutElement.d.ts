@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class ILayoutElement {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     CalculateLayoutInputHorizontal(): void;
     CalculateLayoutInputVertical(): void;

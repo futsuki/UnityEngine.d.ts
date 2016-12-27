@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class VisualizationBlendTree {
+  class VisualizationBlendTree extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     Reset(): void;
     Destroy(): void;
     Update(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly animator: any;
     readonly controllerDirty: boolean;

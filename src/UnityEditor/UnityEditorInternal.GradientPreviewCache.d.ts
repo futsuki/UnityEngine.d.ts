@@ -1,15 +1,11 @@
 declare namespace UnityEditorInternal {
-  class GradientPreviewCache {
+  class GradientPreviewCache extends System.Object {
     // constructors
     constructor();
     // methods
     static ClearCache(): void;
     static GetPropertyPreview(property: UnityEditor.SerializedProperty): any;
     static GetGradientPreview(curve: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

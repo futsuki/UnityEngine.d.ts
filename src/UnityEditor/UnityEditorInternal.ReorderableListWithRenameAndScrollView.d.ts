@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ReorderableListWithRenameAndScrollView {
+  class ReorderableListWithRenameAndScrollView extends System.Object {
     // constructors
     constructor(list: UnityEditorInternal.ReorderableList, state: UnityEditorInternal.ReorderableListWithRenameAndScrollView.State);
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEditorInternal {
     MouseUpCallback(list: UnityEditorInternal.ReorderableList): void;
     SelectCallback(list: UnityEditorInternal.ReorderableList): void;
     FrameItem(index: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly list: UnityEditorInternal.ReorderableList;
     readonly elementStyle: any;
@@ -26,10 +22,10 @@ declare namespace UnityEditorInternal {
     // fields
     listElementStyle: any;
     renameOverlayStyle: any;
-    onGetNameAtIndex: ((number) => string);
-    onNameChangedAtIndex: ((number, string) => void);
-    onSelectionChanged: ((number) => void);
-    onDeleteItemAtIndex: ((number) => void);
-    onCustomDrawElement: ((any, number, boolean, boolean) => void);
+    onGetNameAtIndex: ((arg1: number) => string);
+    onNameChangedAtIndex: ((arg1: number, arg2: string) => void);
+    onSelectionChanged: ((obj: number) => void);
+    onDeleteItemAtIndex: ((obj: number) => void);
+    onCustomDrawElement: ((rect: any, index: number, isActive: boolean, isFocused: boolean) => void);
   }
 }

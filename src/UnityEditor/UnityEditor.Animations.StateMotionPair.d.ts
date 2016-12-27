@@ -1,15 +1,11 @@
 declare namespace UnityEditor.Animations {
-  class StateMotionPair {
+  class StateMotionPair extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     m_State: UnityEditor.Animations.AnimatorState;
-    m_Motion: any;
+    m_Motion: UnityEngine.Motion;
   }
 }

@@ -1,14 +1,10 @@
 declare namespace UnityEditor.Animations {
-  class ChildMotion {
+  class ChildMotion extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
-    motion: any;
+    motion: UnityEngine.Motion;
     threshold: number;
     position: any;
     timeScale: number;

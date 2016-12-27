@@ -1,5 +1,5 @@
 declare namespace UnityEngine.SceneManagement {
-  class SceneManager {
+  class SceneManager extends System.Object {
     // constructors
     constructor();
     // methods
@@ -27,10 +27,6 @@ declare namespace UnityEngine.SceneManagement {
     static UnloadSceneAsync(scene: UnityEngine.SceneManagement.Scene): UnityEngine.AsyncOperation;
     static MergeScenes(sourceScene: UnityEngine.SceneManagement.Scene, destinationScene: UnityEngine.SceneManagement.Scene): void;
     static MoveGameObjectToScene(go: UnityEngine.GameObject, scene: UnityEngine.SceneManagement.Scene): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly sceneCount: number;
     static readonly sceneCountInBuildSettings: number;

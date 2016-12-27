@@ -1,14 +1,10 @@
 declare namespace UnityEngine.UI.Dropdown {
-  class OptionDataList {
+  class OptionDataList extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    options: any;
+    options: UnityEngine.UI.Dropdown.OptionData[];
     // fields
   }
 }

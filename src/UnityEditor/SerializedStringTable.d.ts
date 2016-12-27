@@ -1,4 +1,4 @@
-  class SerializedStringTable {
+  class SerializedStringTable extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@
     Contains(key: string): boolean;
     Get(key: string): number;
     Remove(key: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly hashtable: any;
     readonly Length: number;

@@ -1,15 +1,11 @@
 declare namespace UnityEngine {
-  class LayerMask {
+  class LayerMask extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static LayerToName(layer: number): string;
     static NameToLayer(layerName: string): number;
     static GetMask(layerNames: string[]): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     value: number;
     // fields

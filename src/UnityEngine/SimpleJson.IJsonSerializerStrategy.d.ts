@@ -1,7 +1,7 @@
 declare namespace SimpleJson {
   class IJsonSerializerStrategy {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     TrySerializeNonPrimitiveObject(input: any, output: any): boolean;
     DeserializeObject(value: any, type: any): any;

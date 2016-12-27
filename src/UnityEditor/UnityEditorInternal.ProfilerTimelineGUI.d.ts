@@ -1,13 +1,9 @@
 declare namespace UnityEditorInternal {
-  class ProfilerTimelineGUI {
+  class ProfilerTimelineGUI extends System.Object {
     // constructors
     constructor(window: UnityEditorInternal.IProfilerWindowController);
     // methods
     DoGUI(frameIndex: number, width: number, ypos: number, height: number, detailView: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

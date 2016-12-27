@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class AnimatorTransitionInfo {
+  class AnimatorTransitionInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     IsName(name: string): boolean;
     IsUserName(name: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly fullPathHash: number;
     readonly nameHash: number;

@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class DetailPrototype {
+  class DetailPrototype extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     prototype: UnityEngine.GameObject;
     prototypeTexture: UnityEngine.Texture2D;

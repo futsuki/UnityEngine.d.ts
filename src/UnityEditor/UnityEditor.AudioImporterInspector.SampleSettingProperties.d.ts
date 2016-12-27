@@ -1,14 +1,10 @@
 declare namespace UnityEditor.AudioImporterInspector {
-  class SampleSettingProperties {
+  class SampleSettingProperties extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     HasModified(): boolean;
     ClearChangedFlags(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     settings: UnityEditor.AudioImporterSampleSettings;

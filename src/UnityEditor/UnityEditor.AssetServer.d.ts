@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AssetServer {
+  class AssetServer extends System.Object {
     // constructors
     constructor();
     // methods
@@ -97,10 +97,6 @@ declare namespace UnityEditor {
     static SaveString(strName: string, strValue: string): void;
     static GetAndRemoveString(strName: string): string;
     static GetString(strName: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

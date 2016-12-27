@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Rendering {
-  class GraphicsSettings {
+  class GraphicsSettings extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -7,14 +7,7 @@ declare namespace UnityEngine.Rendering {
     static GetShaderMode(type: UnityEngine.Rendering.BuiltinShaderType): UnityEngine.Rendering.BuiltinShaderMode;
     static SetCustomShader(type: UnityEngine.Rendering.BuiltinShaderType, shader: UnityEngine.Shader): void;
     static GetCustomShader(type: UnityEngine.Rendering.BuiltinShaderType): UnityEngine.Shader;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

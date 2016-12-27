@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ColorPicker {
-  class HDRValues {
+  class HDRValues extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_TonemappingType: UnityEditor.ColorPicker.TonemappingType;

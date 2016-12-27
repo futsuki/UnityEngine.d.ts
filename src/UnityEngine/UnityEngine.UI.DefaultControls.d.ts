@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
-  class DefaultControls {
+  class DefaultControls extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static CreatePanel(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
     static CreateButton(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
@@ -14,10 +14,6 @@ declare namespace UnityEngine.UI {
     static CreateInputField(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
     static CreateDropdown(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
     static CreateScrollView(resources: UnityEngine.UI.DefaultControls.Resources): UnityEngine.GameObject;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TickHandler {
+  class TickHandler extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     GetPeriodOfLevel(level: number): number;
     GetLevelWithMinSeparation(pixelSeparation: number): number;
     SetTickStrengths(tickMinSpacing: number, tickMaxSpacing: number, sqrt: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly tickLevels: number;
     // fields

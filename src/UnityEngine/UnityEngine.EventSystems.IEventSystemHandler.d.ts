@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IEventSystemHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     // fields

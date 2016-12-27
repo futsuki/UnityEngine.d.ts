@@ -1,18 +1,11 @@
 declare namespace UnityEditor.TagManagerInspector {
-  class EnterNamePopup {
+  class EnterNamePopup extends UnityEditor.PopupWindowContent {
     // constructors
-    constructor(tags: UnityEditor.SerializedProperty, cb: ((string) => void));
+    constructor(tags: UnityEditor.SerializedProperty, cb: ((str: string) => void));
     // methods
     GetWindowSize(): any;
     OnGUI(windowRect: any): void;
-    OnOpen(): void;
-    OnClose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }

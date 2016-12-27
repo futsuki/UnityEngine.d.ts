@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AudioMixerExposedParameterView {
+  class AudioMixerExposedParameterView extends System.Object {
     // constructors
     constructor(state: UnityEditorInternal.ReorderableListWithRenameAndScrollView.State);
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     NameChanged(index: number, newName: string): void;
     EndDragChild(list: UnityEditorInternal.ReorderableList): void;
     OnEvent(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

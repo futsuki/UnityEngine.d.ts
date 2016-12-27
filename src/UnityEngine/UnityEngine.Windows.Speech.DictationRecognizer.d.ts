@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Windows.Speech {
-  class DictationRecognizer {
+  class DictationRecognizer extends System.Object {
     // constructors
     constructor();
     constructor(confidenceLevel: UnityEngine.Windows.Speech.ConfidenceLevel);
@@ -9,10 +9,6 @@ declare namespace UnityEngine.Windows.Speech {
     Start(): void;
     Stop(): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Status: UnityEngine.Windows.Speech.SpeechSystemStatus;
     AutoSilenceTimeoutSeconds: number;

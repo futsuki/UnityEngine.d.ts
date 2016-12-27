@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class CubemapInfo {
+  class CubemapInfo extends System.Object {
     // constructors
     constructor();
     // methods
     SetCubemapShadowInfo(newCubemapShadowInfo: UnityEditor.CubemapInfo): void;
     ResetEnvInfos(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     cubemap: any;

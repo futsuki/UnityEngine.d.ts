@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal.VersionControl {
-  class ListControl {
+  class ListControl extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,15 +15,11 @@ declare namespace UnityEditorInternal.VersionControl {
     SelectedSet(item: UnityEditorInternal.VersionControl.ListItem): void;
     SelectedAll(): void;
     SelectedAdd(item: UnityEditorInternal.VersionControl.ListItem): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly listState: UnityEditorInternal.VersionControl.ListControl.ListState;
-    ExpandEvent: ((UnityEditor.VersionControl.ChangeSet, UnityEditorInternal.VersionControl.ListItem) => void);
-    DragEvent: ((UnityEditor.VersionControl.ChangeSet) => void);
-    ActionEvent: ((UnityEditorInternal.VersionControl.ListItem, number) => void);
+    ExpandEvent: ((expand: UnityEditor.VersionControl.ChangeSet, item: UnityEditorInternal.VersionControl.ListItem) => void);
+    DragEvent: ((target: UnityEditor.VersionControl.ChangeSet) => void);
+    ActionEvent: ((item: UnityEditorInternal.VersionControl.ListItem, actionIdx: number) => void);
     readonly Root: UnityEditorInternal.VersionControl.ListItem;
     readonly SelectedAssets: UnityEditor.VersionControl.AssetList;
     readonly SelectedChangeSets: UnityEditor.VersionControl.ChangeSets;

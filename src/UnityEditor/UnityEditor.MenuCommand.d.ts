@@ -1,16 +1,12 @@
 declare namespace UnityEditor {
-  class MenuCommand {
+  class MenuCommand extends System.Object {
     // constructors
-    constructor(inContext: any, inUserData: number);
-    constructor(inContext: any);
+    constructor(inContext: UnityEngine.Object, inUserData: number);
+    constructor(inContext: UnityEngine.Object);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    context: any;
+    context: UnityEngine.Object;
     userData: number;
   }
 }

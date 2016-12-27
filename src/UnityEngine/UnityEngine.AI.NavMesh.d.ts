@@ -1,5 +1,5 @@
 declare namespace UnityEngine.AI {
-  class NavMesh {
+  class NavMesh extends System.Object {
     // constructors
     constructor();
     // methods
@@ -17,10 +17,6 @@ declare namespace UnityEngine.AI {
     static Triangulate(vertices: any, indices: any): void;
     static AddOffMeshLinks(): void;
     static RestoreNavMesh(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static avoidancePredictionTime: number;
     static pathfindingIterationsPerFrame: number;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class LightProbeGroupEditor {
+  class LightProbeGroupEditor extends System.Object {
     // constructors
     constructor(group: any, inspector: UnityEditor.LightProbeGroupInspector);
     // methods
@@ -25,10 +25,6 @@ declare namespace UnityEditor {
     UpdateSelectedPosition(idx: number, position: any): void;
     GetPositions(): any;
     GetUnselectedPositions(): any[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     drawTetrahedra: boolean;
     readonly selectedProbeBounds: any;

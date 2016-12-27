@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SplitterState {
+  class SplitterState extends System.Object {
     // constructors
     constructor(relativeSizes: number[]);
     constructor(realSizes: number[], minSizes: number[], maxSizes: number[]);
@@ -10,10 +10,6 @@ declare namespace UnityEditor {
     RealToRelativeSizes(): void;
     RelativeToRealSizes(totalSpace: number): void;
     DoSplitter(i1: number, i2: number, diff: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     ID: number;

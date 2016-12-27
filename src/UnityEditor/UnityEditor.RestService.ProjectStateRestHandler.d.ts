@@ -1,12 +1,8 @@
 declare namespace UnityEditor.RestService {
-  class ProjectStateRestHandler {
+  class ProjectStateRestHandler extends UnityEditor.RestService.Handler {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

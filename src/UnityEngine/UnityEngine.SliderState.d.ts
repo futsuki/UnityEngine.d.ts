@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class SliderState {
+  class SliderState extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     dragStartPos: number;

@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class IMaterialModifier {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetModifiedMaterial(baseMaterial: UnityEngine.Material): UnityEngine.Material;
     // properties

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ZoomableArea {
+  class ZoomableArea extends System.Object {
     // constructors
     constructor();
     constructor(minimalGUI: boolean);
@@ -28,10 +28,6 @@ declare namespace UnityEditor {
     PixelToTime(pixelX: number, rect: any): number;
     TimeToPixel(time: number, rect: any): number;
     PixelDeltaToTime(rect: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     hRangeLocked: boolean;
     vRangeLocked: boolean;

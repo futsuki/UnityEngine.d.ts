@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AvatarMappingEditor {
+  class AvatarMappingEditor extends UnityEditor.AvatarSubEditor {
     // constructors
     constructor();
     // methods
@@ -9,16 +9,7 @@ declare namespace UnityEditor {
     OnInspectorGUI(): void;
     static MatchName(transformName: string, boneName: string): boolean;
     OnSceneGUI(): void;
-    ApplyAndImport(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

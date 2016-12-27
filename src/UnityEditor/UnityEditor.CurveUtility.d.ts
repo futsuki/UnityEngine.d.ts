@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class CurveUtility {
+  class CurveUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetPathAndTypeID(path: string, type: any): number;
     static GetIconCurve(): any;
@@ -13,10 +13,6 @@ declare namespace UnityEditor {
     static GetClipName(clip: any): string;
     static GetBalancedColor(c: any): any;
     static GetPropertyColor(name: string): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

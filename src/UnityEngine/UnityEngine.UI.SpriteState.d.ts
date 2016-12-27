@@ -1,13 +1,10 @@
 declare namespace UnityEngine.UI {
-  class SpriteState {
+  class SpriteState extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Equals(other: UnityEngine.UI.SpriteState): boolean;
     Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     highlightedSprite: UnityEngine.Sprite;
     pressedSprite: UnityEngine.Sprite;

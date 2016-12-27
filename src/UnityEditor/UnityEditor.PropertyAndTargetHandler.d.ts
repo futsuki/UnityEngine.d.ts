@@ -1,16 +1,12 @@
 declare namespace UnityEditor {
-  class PropertyAndTargetHandler {
+  class PropertyAndTargetHandler extends System.Object {
     // constructors
-    constructor(property: UnityEditor.SerializedProperty, target: any, function_: ((UnityEditor.SerializedProperty, any) => void));
+    constructor(property: UnityEditor.SerializedProperty, target: UnityEngine.Object, function_: ((property: UnityEditor.SerializedProperty, target: UnityEngine.Object) => void));
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     property: UnityEditor.SerializedProperty;
-    target: any;
-    "function": ((UnityEditor.SerializedProperty, any) => void);
+    target: UnityEngine.Object;
+    "function": ((property: UnityEditor.SerializedProperty, target: UnityEngine.Object) => void);
   }
 }

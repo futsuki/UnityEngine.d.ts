@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationCurvePreviewCache {
+  class AnimationCurvePreviewCache extends System.Object {
     // constructors
     constructor();
     // methods
@@ -28,10 +28,6 @@ declare namespace UnityEditorInternal {
     static GetPreview(previewWidth: number, previewHeight: number, curve: any, color: any, curveRanges: any): any;
     static GetPreview(previewWidth: number, previewHeight: number, curve: any, color: any, topFillColor: any, bottomFillColor: any): any;
     static GetPreview(previewWidth: number, previewHeight: number, curve: any, color: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

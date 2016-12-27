@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class RenderDoc {
+  class RenderDoc extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditorInternal {
     static IsLoaded(): boolean;
     static IsSupported(): boolean;
     static Load(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

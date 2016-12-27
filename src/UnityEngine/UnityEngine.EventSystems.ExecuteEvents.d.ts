@@ -1,30 +1,26 @@
 declare namespace UnityEngine.EventSystems {
-  class ExecuteEvents {
+  class ExecuteEvents extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    static readonly pointerEnterHandler: ((UnityEngine.EventSystems.IPointerEnterHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly pointerExitHandler: ((UnityEngine.EventSystems.IPointerExitHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly pointerDownHandler: ((UnityEngine.EventSystems.IPointerDownHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly pointerUpHandler: ((UnityEngine.EventSystems.IPointerUpHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly pointerClickHandler: ((UnityEngine.EventSystems.IPointerClickHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly initializePotentialDrag: ((UnityEngine.EventSystems.IInitializePotentialDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly beginDragHandler: ((UnityEngine.EventSystems.IBeginDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly dragHandler: ((UnityEngine.EventSystems.IDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly endDragHandler: ((UnityEngine.EventSystems.IEndDragHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly dropHandler: ((UnityEngine.EventSystems.IDropHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly scrollHandler: ((UnityEngine.EventSystems.IScrollHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly updateSelectedHandler: ((UnityEngine.EventSystems.IUpdateSelectedHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly selectHandler: ((UnityEngine.EventSystems.ISelectHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly deselectHandler: ((UnityEngine.EventSystems.IDeselectHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly moveHandler: ((UnityEngine.EventSystems.IMoveHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly submitHandler: ((UnityEngine.EventSystems.ISubmitHandler, UnityEngine.EventSystems.BaseEventData) => void);
-    static readonly cancelHandler: ((UnityEngine.EventSystems.ICancelHandler, UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerEnterHandler: ((handler: UnityEngine.EventSystems.IPointerEnterHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerExitHandler: ((handler: UnityEngine.EventSystems.IPointerExitHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerDownHandler: ((handler: UnityEngine.EventSystems.IPointerDownHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerUpHandler: ((handler: UnityEngine.EventSystems.IPointerUpHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly pointerClickHandler: ((handler: UnityEngine.EventSystems.IPointerClickHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly initializePotentialDrag: ((handler: UnityEngine.EventSystems.IInitializePotentialDragHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly beginDragHandler: ((handler: UnityEngine.EventSystems.IBeginDragHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly dragHandler: ((handler: UnityEngine.EventSystems.IDragHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly endDragHandler: ((handler: UnityEngine.EventSystems.IEndDragHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly dropHandler: ((handler: UnityEngine.EventSystems.IDropHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly scrollHandler: ((handler: UnityEngine.EventSystems.IScrollHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly updateSelectedHandler: ((handler: UnityEngine.EventSystems.IUpdateSelectedHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly selectHandler: ((handler: UnityEngine.EventSystems.ISelectHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly deselectHandler: ((handler: UnityEngine.EventSystems.IDeselectHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly moveHandler: ((handler: UnityEngine.EventSystems.IMoveHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly submitHandler: ((handler: UnityEngine.EventSystems.ISubmitHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
+    static readonly cancelHandler: ((handler: UnityEngine.EventSystems.ICancelHandler, eventData: UnityEngine.EventSystems.BaseEventData) => void);
     // fields
   }
 }

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.StyleDrawInspectView {
-  class CachedInstructionInfo {
+  class CachedInstructionInfo extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     styleContainerSerializedObject: UnityEditor.SerializedObject;

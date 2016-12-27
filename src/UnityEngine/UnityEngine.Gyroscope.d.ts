@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Gyroscope {
+  class Gyroscope extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly rotationRate: UnityEngine.Vector3;
     readonly rotationRateUnbiased: UnityEngine.Vector3;

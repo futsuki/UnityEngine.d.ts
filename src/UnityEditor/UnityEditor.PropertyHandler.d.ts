@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PropertyHandler {
+  class PropertyHandler extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,15 +10,11 @@ declare namespace UnityEditor {
     GetHeight(property: UnityEditor.SerializedProperty, label: any, includeChildren: boolean): number;
     AddMenuItems(property: UnityEditor.SerializedProperty, menu: UnityEditor.GenericMenu): void;
     CallMenuCallback(targets: any[], method: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly hasPropertyDrawer: boolean;
     readonly empty: boolean;
     // fields
     tooltip: string;
-    contextMenuItems: any;
+    contextMenuItems: any[];
   }
 }

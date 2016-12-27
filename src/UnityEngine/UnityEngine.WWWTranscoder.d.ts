@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class WWWTranscoder {
+  class WWWTranscoder extends System.Object {
     // constructors
     constructor();
     // methods
@@ -20,10 +20,6 @@ declare namespace UnityEngine {
     static SevenBitClean(s: string): boolean;
     static SevenBitClean(s: string, e: any): boolean;
     static SevenBitClean(input: number[]): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

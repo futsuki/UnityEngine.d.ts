@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class HierarchySorting {
+  class HierarchySorting extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly content: any;
     // fields

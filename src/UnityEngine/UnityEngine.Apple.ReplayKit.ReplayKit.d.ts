@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Apple.ReplayKit {
-  class ReplayKit {
+  class ReplayKit extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static StartRecording(enableMicrophone: boolean, enableCamera: boolean): boolean;
     static StartRecording(enableMicrophone: boolean): boolean;
@@ -9,16 +9,12 @@ declare namespace UnityEngine.Apple.ReplayKit {
     static StopRecording(): boolean;
     static Preview(): boolean;
     static Discard(): boolean;
-    static StartBroadcasting(callback: ((boolean, string) => void), enableMicrophone: boolean, enableCamera: boolean): void;
-    static StartBroadcasting(callback: ((boolean, string) => void), enableMicrophone: boolean): void;
-    static StartBroadcasting(callback: ((boolean, string) => void)): void;
+    static StartBroadcasting(callback: ((hasStarted: boolean, errorMessage: string) => void), enableMicrophone: boolean, enableCamera: boolean): void;
+    static StartBroadcasting(callback: ((hasStarted: boolean, errorMessage: string) => void), enableMicrophone: boolean): void;
+    static StartBroadcasting(callback: ((hasStarted: boolean, errorMessage: string) => void)): void;
     static StopBroadcasting(): void;
     static ShowCameraPreviewAt(posX: number, posY: number): boolean;
     static HideCameraPreview(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly APIAvailable: boolean;
     static readonly recordingAvailable: boolean;

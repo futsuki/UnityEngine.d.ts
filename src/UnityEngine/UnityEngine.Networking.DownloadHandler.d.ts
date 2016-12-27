@@ -1,13 +1,9 @@
 declare namespace UnityEngine.Networking {
-  class DownloadHandler {
+  class DownloadHandler extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isDone: boolean;
     readonly data: number[];

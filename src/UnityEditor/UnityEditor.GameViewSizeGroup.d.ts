@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class GameViewSizeGroup {
+  class GameViewSizeGroup extends System.Object {
     // constructors
     constructor();
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEditor {
     IsCustomSize(index: number): boolean;
     TotalIndexToCustomIndex(index: number): number;
     IndexOf(view: UnityEditor.GameViewSize): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

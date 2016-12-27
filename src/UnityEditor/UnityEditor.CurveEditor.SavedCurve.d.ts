@@ -1,15 +1,11 @@
 declare namespace UnityEditor.CurveEditor {
-  class SavedCurve {
+  class SavedCurve extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     curveId: number;
-    keys: any;
+    keys: UnityEditor.CurveEditor.SavedCurve.SavedKeyFrame[];
   }
 }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class LightingWindowObjectTab {
+  class LightingWindowObjectTab extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     EditRenderers(): boolean;
     ObjectSettings(): void;
     static LightmapParametersGUI(prop: UnityEditor.SerializedProperty, content: any, advancedParameters: boolean): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

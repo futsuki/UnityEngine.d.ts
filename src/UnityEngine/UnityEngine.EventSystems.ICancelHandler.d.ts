@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class ICancelHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnCancel(eventData: UnityEngine.EventSystems.BaseEventData): void;
     // properties

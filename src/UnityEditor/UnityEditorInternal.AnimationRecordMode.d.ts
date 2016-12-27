@@ -1,13 +1,9 @@
 declare namespace UnityEditorInternal {
-  class AnimationRecordMode {
+  class AnimationRecordMode extends System.Object {
     // constructors
     constructor();
     // methods
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly canEnable: boolean;
     enable: boolean;

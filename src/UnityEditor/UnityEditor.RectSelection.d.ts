@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class RectSelection {
+  class RectSelection extends System.Object {
     // constructors
     constructor(window: UnityEditor.EditorWindow);
     // methods
     OnGUI(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,14 +1,12 @@
 declare namespace UnityEditor {
-  class EditorCurveBinding {
+  class EditorCurveBinding extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetHashCode(): number;
     Equals(other: any): boolean;
     static FloatCurve(inPath: string, inType: any, inPropertyName: string): UnityEditor.EditorCurveBinding;
     static PPtrCurve(inPath: string, inType: any, inPropertyName: string): UnityEditor.EditorCurveBinding;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly isPPtrCurve: boolean;
     type: any;

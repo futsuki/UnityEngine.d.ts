@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class iOSDeviceRequirementGroup {
+  class iOSDeviceRequirementGroup extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     RemoveAt(index: number): void;
     Add(requirement: UnityEditor.iOSDeviceRequirement): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly count: number;
     get_Item(index: number): UnityEditor.iOSDeviceRequirement;

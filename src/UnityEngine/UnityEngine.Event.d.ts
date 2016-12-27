@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Event {
+  class Event extends System.Object {
     // constructors
     constructor();
     constructor(displayIndex: number);
@@ -13,7 +13,6 @@ declare namespace UnityEngine {
     GetTypeForControl(controlID: number): UnityEngine.EventType;
     static PopEvent(outEvent: UnityEngine.Event): boolean;
     static GetEventCount(): number;
-    GetType(): any;
     // properties
     mousePosition: UnityEngine.Vector2;
     delta: UnityEngine.Vector2;

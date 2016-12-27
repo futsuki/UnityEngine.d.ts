@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class UndoPropertyModification {
+  class UndoPropertyModification extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     keepPrefabOverride: boolean;
     // fields

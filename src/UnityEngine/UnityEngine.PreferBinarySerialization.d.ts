@@ -1,16 +1,9 @@
 declare namespace UnityEngine {
-  class PreferBinarySerialization {
+  class PreferBinarySerialization extends System.Attribute {
     // constructors
     constructor();
     // methods
-    GetHashCode(): number;
-    IsDefaultAttribute(): boolean;
-    Match(obj: any): boolean;
-    Equals(obj: any): boolean;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly TypeId: any;
     // fields
   }
 }

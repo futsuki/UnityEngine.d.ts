@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class BaseObjectTools {
+  class BaseObjectTools extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditorInternal {
     static IsBaseObject(ID: number): boolean;
     static IsDerivedFromClassID(classID: number, derivedFromClassID: number): boolean;
     static GetSuperClassID(ID: number): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

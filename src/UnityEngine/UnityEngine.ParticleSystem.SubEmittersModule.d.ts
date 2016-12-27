@@ -1,7 +1,7 @@
 declare namespace UnityEngine.ParticleSystem {
-  class SubEmittersModule {
+  class SubEmittersModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     AddSubEmitter(subEmitter: UnityEngine.ParticleSystem, type: UnityEngine.ParticleSystemSubEmitterType, properties: UnityEngine.ParticleSystemSubEmitterProperties): void;
     RemoveSubEmitter(index: number): void;
@@ -11,10 +11,6 @@ declare namespace UnityEngine.ParticleSystem {
     GetSubEmitterSystem(index: number): UnityEngine.ParticleSystem;
     GetSubEmitterType(index: number): UnityEngine.ParticleSystemSubEmitterType;
     GetSubEmitterProperties(index: number): UnityEngine.ParticleSystemSubEmitterProperties;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     readonly subEmittersCount: number;

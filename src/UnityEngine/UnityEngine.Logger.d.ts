@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Logger {
+  class Logger extends System.Object {
     // constructors
     constructor(logHandler: UnityEngine.ILogHandler);
     // methods
@@ -16,13 +16,9 @@ declare namespace UnityEngine {
     LogError(tag: string, message: any): void;
     LogError(tag: string, message: any, context: UnityEngine.Object): void;
     LogFormat(logType: UnityEngine.LogType, format: string, args: any[]): void;
-    LogException(exception: any): void;
     LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): void;
-    LogException(exception: any, context: UnityEngine.Object): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    LogException(exception: System.Exception): void;
+    LogException(exception: System.Exception, context: UnityEngine.Object): void;
     // properties
     logHandler: UnityEngine.ILogHandler;
     logEnabled: boolean;

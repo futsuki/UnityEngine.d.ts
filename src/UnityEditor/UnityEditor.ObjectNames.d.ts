@@ -1,20 +1,16 @@
 declare namespace UnityEditor {
-  class ObjectNames {
+  class ObjectNames extends System.Object {
     // constructors
     constructor();
     // methods
     static NicifyVariableName(name: string): string;
-    static GetInspectorTitle(obj: any): string;
-    static GetClassName(obj: any): string;
-    static GetDragAndDropTitle(obj: any): string;
-    static SetNameSmart(obj: any, name: string): void;
+    static GetInspectorTitle(obj: UnityEngine.Object): string;
+    static GetClassName(obj: UnityEngine.Object): string;
+    static GetDragAndDropTitle(obj: UnityEngine.Object): string;
+    static SetNameSmart(obj: UnityEngine.Object, name: string): void;
     static MangleVariableName(name: string): string;
-    static GetPropertyEditorTitle(obj: any): string;
+    static GetPropertyEditorTitle(obj: UnityEngine.Object): string;
     static GetUniqueName(existingNames: string[], name: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

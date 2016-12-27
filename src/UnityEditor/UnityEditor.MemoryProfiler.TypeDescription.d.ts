@@ -1,12 +1,8 @@
 declare namespace UnityEditor.MemoryProfiler {
-  class TypeDescription {
+  class TypeDescription extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly isValueType: boolean;
     readonly isArray: boolean;

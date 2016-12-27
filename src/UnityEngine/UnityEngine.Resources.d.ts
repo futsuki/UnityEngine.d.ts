@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Resources {
+  class Resources extends System.Object {
     // constructors
     constructor();
     // methods
@@ -14,10 +14,6 @@ declare namespace UnityEngine {
     static UnloadAsset(assetToUnload: UnityEngine.Object): void;
     static UnloadUnusedAssets(): UnityEngine.AsyncOperation;
     static LoadAssetAtPath(assetPath: string, type: any): UnityEngine.Object;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

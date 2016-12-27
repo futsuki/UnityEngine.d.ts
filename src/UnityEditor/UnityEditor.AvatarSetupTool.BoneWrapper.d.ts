@@ -1,5 +1,5 @@
 declare namespace UnityEditor.AvatarSetupTool {
-  class BoneWrapper {
+  class BoneWrapper extends System.Object {
     // constructors
     constructor(humanBoneName: string, serializedObject: UnityEditor.SerializedObject, bones: any);
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor.AvatarSetupTool {
     GetSerializedProperty(serializedObject: UnityEditor.SerializedObject, createIfMissing: boolean): UnityEditor.SerializedProperty;
     BoneDotGUI(rect: any, boneIndex: number, doClickSelect: boolean, doDragDrop: boolean, serializedObject: UnityEditor.SerializedObject, editor: UnityEditor.AvatarMappingEditor): void;
     HandleClickSelection(selectRect: any, boneIndex: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly humanBoneName: string;
     readonly messageName: string;

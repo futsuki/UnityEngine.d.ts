@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class HumanTrait {
+  class HumanTrait extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngine {
     static GetMuscleDefaultMin(i: number): number;
     static GetMuscleDefaultMax(i: number): number;
     static GetParentBone(i: number): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly MuscleCount: number;
     static readonly MuscleName: string[];

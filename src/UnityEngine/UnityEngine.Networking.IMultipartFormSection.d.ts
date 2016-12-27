@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Networking {
   class IMultipartFormSection {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly sectionName: string;

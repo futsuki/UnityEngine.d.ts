@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
   class ILogger {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     IsLogTypeAllowed(logType: UnityEngine.LogType): boolean;
     Log(logType: UnityEngine.LogType, message: any): void;
@@ -16,7 +16,7 @@ declare namespace UnityEngine {
     LogError(tag: string, message: any): void;
     LogError(tag: string, message: any, context: UnityEngine.Object): void;
     LogFormat(logType: UnityEngine.LogType, format: string, args: any[]): void;
-    LogException(exception: any): void;
+    LogException(exception: System.Exception): void;
     // properties
     logHandler: UnityEngine.ILogHandler;
     logEnabled: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Input {
+  class Input extends System.Object {
     // constructors
     constructor();
     // methods
@@ -22,10 +22,6 @@ declare namespace UnityEngine {
     static ResetInputAxes(): void;
     static GetAccelerationEvent(index: number): UnityEngine.AccelerationEvent;
     static GetTouch(index: number): UnityEngine.Touch;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static compensateSensors: boolean;
     static readonly isGyroAvailable: boolean;

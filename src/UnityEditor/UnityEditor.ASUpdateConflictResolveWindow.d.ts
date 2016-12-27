@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ASUpdateConflictResolveWindow {
+  class ASUpdateConflictResolveWindow extends System.Object {
     // constructors
     constructor(conflicting: string[]);
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     CanContinue(): boolean;
     OnSelectionChange(parentWin: UnityEditor.ASUpdateWindow): void;
     DoGUI(parentWin: UnityEditor.ASUpdateWindow): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

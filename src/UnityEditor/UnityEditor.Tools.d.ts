@@ -1,14 +1,8 @@
 declare namespace UnityEditor {
-  class Tools {
+  class Tools extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     static current: UnityEditor.Tool;
     static viewTool: UnityEditor.ViewTool;
@@ -22,8 +16,6 @@ declare namespace UnityEditor {
     static hidden: boolean;
     static visibleLayers: number;
     static lockedLayers: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

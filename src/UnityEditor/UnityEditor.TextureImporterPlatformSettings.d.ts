@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class TextureImporterPlatformSettings {
+  class TextureImporterPlatformSettings extends System.Object {
     // constructors
     constructor();
     // methods
     CopyTo(target: UnityEditor.TextureImporterPlatformSettings): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     name: string;
     overridden: boolean;

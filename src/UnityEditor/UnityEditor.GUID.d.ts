@@ -1,14 +1,12 @@
 declare namespace UnityEditor {
-  class GUID {
+  class GUID extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Equals(obj: any): boolean;
     GetHashCode(): number;
     Empty(): boolean;
     ParseExact(hex: string): boolean;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

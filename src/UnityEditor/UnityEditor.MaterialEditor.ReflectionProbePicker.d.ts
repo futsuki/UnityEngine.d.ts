@@ -1,5 +1,5 @@
 declare namespace UnityEditor.MaterialEditor {
-  class ReflectionProbePicker {
+  class ReflectionProbePicker extends UnityEditor.PopupWindowContent {
     // constructors
     constructor();
     // methods
@@ -7,15 +7,8 @@ declare namespace UnityEditor.MaterialEditor {
     OnEnable(): void;
     OnDisable(): void;
     OnGUI(rc: any): void;
-    OnOpen(): void;
-    OnClose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Target: any;
-    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }

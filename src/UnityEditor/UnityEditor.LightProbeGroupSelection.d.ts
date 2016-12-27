@@ -1,18 +1,10 @@
 declare namespace UnityEditor {
-  class LightProbeGroupSelection {
+  class LightProbeGroupSelection extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
-    m_Selection: any;
+    m_Selection: number[];
   }
 }

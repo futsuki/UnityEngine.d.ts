@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowSelectionItem {
+  class AnimationWindowSelectionItem extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -8,18 +8,13 @@ declare namespace UnityEditorInternal {
     ClearCache(): void;
     Synchronize(): void;
     Equals(other: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
-    GetEditorCurveValueType(curveBinding: UnityEditor.EditorCurveBinding): any;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
     Equals(other: any): boolean;
-    GetType(): any;
+    GetEditorCurveValueType(curveBinding: UnityEditor.EditorCurveBinding): any;
     // properties
     timeOffset: number;
     id: number;
     gameObject: any;
-    scriptableObject: any;
+    scriptableObject: UnityEngine.ScriptableObject;
     animationClip: any;
     readonly rootGameObject: any;
     readonly animationPlayer: any;
@@ -30,9 +25,7 @@ declare namespace UnityEditorInternal {
     readonly canChangeAnimationClip: boolean;
     readonly canAddCurves: boolean;
     readonly canSyncSceneSelection: boolean;
-    readonly curves: any;
-    name: string;
-    hideFlags: any;
+    readonly curves: UnityEditorInternal.AnimationWindowCurve[];
     // fields
   }
 }

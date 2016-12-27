@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IHierarchyProperty {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Reset(): void;
     IsExpanded(expanded: number[]): boolean;
@@ -15,7 +15,7 @@ declare namespace UnityEditor {
     CountRemaining(expanded: number[]): number;
     // properties
     readonly instanceID: number;
-    readonly pptrValue: any;
+    readonly pptrValue: UnityEngine.Object;
     readonly name: string;
     readonly hasChildren: boolean;
     readonly depth: number;

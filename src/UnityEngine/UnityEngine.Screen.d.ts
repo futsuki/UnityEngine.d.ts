@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class Screen {
+  class Screen extends System.Object {
     // constructors
     constructor();
     // methods
     static SetResolution(width: number, height: number, fullscreen: boolean, preferredRefreshRate: number): void;
     static SetResolution(width: number, height: number, fullscreen: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly resolutions: UnityEngine.Resolution[];
     static lockCursor: boolean;

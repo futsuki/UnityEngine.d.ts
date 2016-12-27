@@ -1,12 +1,11 @@
 declare namespace UnityEngine {
-  class NetworkPlayer {
+  class NetworkPlayer extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetHashCode(): number;
     Equals(other: any): boolean;
     ToString(): string;
-    GetType(): any;
     // properties
     readonly ipAddress: string;
     readonly port: number;

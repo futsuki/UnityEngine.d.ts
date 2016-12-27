@@ -1,7 +1,7 @@
 declare namespace UnityEditor.VisualStudioIntegration {
   class ISolutionSynchronizationSettings {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetProjectHeaderTemplate(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;
     GetProjectFooterTemplate(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;

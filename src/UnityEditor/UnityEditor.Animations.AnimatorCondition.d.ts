@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Animations {
-  class AnimatorCondition {
+  class AnimatorCondition extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     mode: UnityEditor.Animations.AnimatorConditionMode;
     parameter: string;

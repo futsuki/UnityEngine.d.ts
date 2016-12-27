@@ -1,14 +1,10 @@
 declare namespace UnityEditor.RestService {
-  class Logger {
+  class Logger extends System.Object {
     // constructors
     constructor();
     // methods
-    static Log(an_exception: any): void;
+    static Log(an_exception: System.Exception): void;
     static Log(a_message: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

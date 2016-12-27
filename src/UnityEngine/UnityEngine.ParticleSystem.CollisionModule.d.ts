@@ -1,14 +1,10 @@
 declare namespace UnityEngine.ParticleSystem {
-  class CollisionModule {
+  class CollisionModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetPlane(index: number, transform: UnityEngine.Transform): void;
     GetPlane(index: number): UnityEngine.Transform;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     type: UnityEngine.ParticleSystemCollisionType;

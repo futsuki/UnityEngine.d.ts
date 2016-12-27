@@ -1,13 +1,9 @@
 declare namespace UnityEditor.AvatarAutoMapper {
-  class BoneMappingItem {
+  class BoneMappingItem extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetChildren(mappingData: UnityEditor.AvatarAutoMapper.BoneMappingItem[]): number[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     parent: number;

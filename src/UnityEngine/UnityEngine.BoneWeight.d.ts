@@ -1,12 +1,10 @@
 declare namespace UnityEngine {
-  class BoneWeight {
+  class BoneWeight extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetHashCode(): number;
     Equals(other: any): boolean;
-    ToString(): string;
-    GetType(): any;
     // properties
     weight0: number;
     weight1: number;

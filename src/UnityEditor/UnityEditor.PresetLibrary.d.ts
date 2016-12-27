@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class PresetLibrary {
+  class PresetLibrary extends UnityEngine.ScriptableObject {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Count(): number;
     GetPreset(index: number): any;
@@ -13,15 +13,7 @@ declare namespace UnityEditor {
     Draw(rect: any, presetObject: any): void;
     GetName(index: number): string;
     SetName(index: number, name: string): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

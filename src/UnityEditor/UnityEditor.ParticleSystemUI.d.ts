@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ParticleSystemUI {
+  class ParticleSystemUI extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     ApplyProperties(): void;
     UpdateProperties(): void;
     static GetUIModuleNames(): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_ParticleEffectUI: UnityEditor.ParticleEffectUI;

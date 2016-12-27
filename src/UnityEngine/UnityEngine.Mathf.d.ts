@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Mathf {
+  class Mathf extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static ClosestPowerOfTwo(value: number): number;
     static GammaToLinearSpace(value: number): number;
@@ -62,10 +62,6 @@ declare namespace UnityEngine {
     static PingPong(t: number, length: number): number;
     static InverseLerp(a: number, b: number, value: number): number;
     static DeltaAngle(current: number, target: number): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     static PI: number;

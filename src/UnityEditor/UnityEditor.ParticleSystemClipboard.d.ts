@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ParticleSystemClipboard {
+  class ParticleSystemClipboard extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     static HasDoubleAnimationCurve(): boolean;
     static CopyAnimationCurves(animCurve: any, animCurve2: any, scalar: number): void;
     static PasteAnimationCurves(animCurveProperty: UnityEditor.SerializedProperty, animCurveProperty2: UnityEditor.SerializedProperty, scalarProperty: UnityEditor.SerializedProperty, curveRanges: any, particleSystemCurveEditor: ParticleSystemCurveEditor): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

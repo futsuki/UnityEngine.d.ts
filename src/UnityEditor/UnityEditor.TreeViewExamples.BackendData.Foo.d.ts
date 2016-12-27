@@ -1,18 +1,14 @@
 declare namespace UnityEditor.TreeViewExamples.BackendData {
-  class Foo {
+  class Foo extends System.Object {
     // constructors
     constructor(name: string, depth: number, id: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     name: string;
     id: number;
     depth: number;
     parent: UnityEditor.TreeViewExamples.BackendData.Foo;
-    children: any;
+    children: UnityEditor.TreeViewExamples.BackendData.Foo[];
     readonly hasChildren: boolean;
     // fields
   }

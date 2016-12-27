@@ -1,14 +1,10 @@
 declare namespace UnityEditorInternal.UnityEventDrawer {
-  class UnityEventFunction {
+  class UnityEventFunction extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Assign(): void;
     Clear(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

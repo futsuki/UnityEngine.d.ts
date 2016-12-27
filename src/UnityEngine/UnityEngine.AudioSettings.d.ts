@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AudioSettings {
+  class AudioSettings extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine {
     static SetDSPBufferSize(bufferLength: number, numBuffers: number): void;
     static GetConfiguration(): UnityEngine.AudioConfiguration;
     static Reset(config: UnityEngine.AudioConfiguration): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly driverCapabilities: UnityEngine.AudioSpeakerMode;
     static speakerMode: UnityEngine.AudioSpeakerMode;

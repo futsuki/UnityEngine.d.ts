@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Collaboration {
-  class CollabTesting {
+  class CollabTesting extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor.Collaboration {
     static AddAction(action: (() => void)): void;
     static Execute(): void;
     static DropAll(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly ActionsCount: number;
     // fields

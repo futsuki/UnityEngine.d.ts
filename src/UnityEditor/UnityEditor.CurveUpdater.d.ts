@@ -1,9 +1,9 @@
 declare namespace UnityEditor {
   class CurveUpdater {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    UpdateCurves(curve: any, undoText: string): void;
+    UpdateCurves(curve: UnityEditor.ChangedCurve[], undoText: string): void;
     // properties
     // fields
   }

@@ -1,14 +1,10 @@
 declare namespace UnityEngine.iOS {
-  class Device {
+  class Device extends System.Object {
     // constructors
     constructor();
     // methods
     static SetNoBackupFlag(path: string): void;
     static ResetNoBackupFlag(path: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly generation: UnityEngine.iOS.DeviceGeneration;
     static readonly systemVersion: string;

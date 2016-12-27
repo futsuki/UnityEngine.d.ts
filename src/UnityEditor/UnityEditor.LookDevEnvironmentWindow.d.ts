@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class LookDevEnvironmentWindow {
+  class LookDevEnvironmentWindow extends System.Object {
     // constructors
     constructor(lookDevView: UnityEditor.LookDevView);
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditor {
     static PositionToLatLong(position: any): any;
     ResetShadowCubemap(): void;
     OnGUI(windowID: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly styles: UnityEditor.LookDevEnvironmentWindow.Styles;
     // fields

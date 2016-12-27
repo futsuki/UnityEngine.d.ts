@@ -1,5 +1,5 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class MultiColumnHeader {
+  class MultiColumnHeader extends System.Object {
     // constructors
     constructor(state: UnityEditor.IMGUI.Controls.MultiColumnHeaderState);
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor.IMGUI.Controls {
     GetColumnRect(visibleColumnIndex: number): any;
     OnGUI(rect: any, xScroll: number): void;
     Repaint(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     sortedColumnIndex: number;
     readonly previousSortedColumnIndex: number;

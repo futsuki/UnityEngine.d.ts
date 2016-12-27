@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorGUI {
+  class EditorGUI extends System.Object {
     // constructors
     constructor();
     // methods
@@ -95,16 +95,16 @@ declare namespace UnityEditor {
     static Popup(position: any, label: string, selectedIndex: number, displayedOptions: string[], style: any): number;
     static Popup(position: any, label: any, selectedIndex: number, displayedOptions: any[]): number;
     static Popup(position: any, label: any, selectedIndex: number, displayedOptions: any[], style: any): number;
-    static EnumPopup(position: any, selected: any): any;
-    static EnumPopup(position: any, selected: any, style: any): any;
-    static EnumPopup(position: any, label: string, selected: any): any;
-    static EnumPopup(position: any, label: string, selected: any, style: any): any;
-    static EnumPopup(position: any, label: any, selected: any): any;
-    static EnumPopup(position: any, label: any, selected: any, style: any): any;
-    static EnumMaskPopup(position: any, label: string, selected: any): any;
-    static EnumMaskPopup(position: any, label: string, selected: any, style: any): any;
-    static EnumMaskPopup(position: any, label: any, selected: any): any;
-    static EnumMaskPopup(position: any, label: any, selected: any, style: any): any;
+    static EnumPopup(position: any, selected: System.Enum): System.Enum;
+    static EnumPopup(position: any, selected: System.Enum, style: any): System.Enum;
+    static EnumPopup(position: any, label: string, selected: System.Enum): System.Enum;
+    static EnumPopup(position: any, label: string, selected: System.Enum, style: any): System.Enum;
+    static EnumPopup(position: any, label: any, selected: System.Enum): System.Enum;
+    static EnumPopup(position: any, label: any, selected: System.Enum, style: any): System.Enum;
+    static EnumMaskPopup(position: any, label: string, selected: System.Enum): System.Enum;
+    static EnumMaskPopup(position: any, label: string, selected: System.Enum, style: any): System.Enum;
+    static EnumMaskPopup(position: any, label: any, selected: System.Enum): System.Enum;
+    static EnumMaskPopup(position: any, label: any, selected: System.Enum, style: any): System.Enum;
     static IntPopup(position: any, selectedValue: number, displayedOptions: string[], optionValues: number[]): number;
     static IntPopup(position: any, selectedValue: number, displayedOptions: string[], optionValues: number[], style: any): number;
     static IntPopup(position: any, selectedValue: number, displayedOptions: any[], optionValues: number[]): number;
@@ -133,12 +133,12 @@ declare namespace UnityEditor {
     static MaskField(position: any, label: string, mask: number, displayedOptions: string[], style: any): number;
     static MaskField(position: any, mask: number, displayedOptions: string[]): number;
     static MaskField(position: any, mask: number, displayedOptions: string[], style: any): number;
-    static EnumMaskField(position: any, label: any, enumValue: any): any;
-    static EnumMaskField(position: any, label: any, enumValue: any, style: any): any;
-    static EnumMaskField(position: any, label: string, enumValue: any): any;
-    static EnumMaskField(position: any, label: string, enumValue: any, style: any): any;
-    static EnumMaskField(position: any, enumValue: any): any;
-    static EnumMaskField(position: any, enumValue: any, style: any): any;
+    static EnumMaskField(position: any, label: any, enumValue: System.Enum): System.Enum;
+    static EnumMaskField(position: any, label: any, enumValue: System.Enum, style: any): System.Enum;
+    static EnumMaskField(position: any, label: string, enumValue: System.Enum): System.Enum;
+    static EnumMaskField(position: any, label: string, enumValue: System.Enum, style: any): System.Enum;
+    static EnumMaskField(position: any, enumValue: System.Enum): System.Enum;
+    static EnumMaskField(position: any, enumValue: System.Enum, style: any): System.Enum;
     static Foldout(position: any, foldout: boolean, content: string): boolean;
     static Foldout(position: any, foldout: boolean, content: string, style: any): boolean;
     static Foldout(position: any, foldout: boolean, content: string, toggleOnLabelClick: boolean): boolean;
@@ -163,6 +163,7 @@ declare namespace UnityEditor {
     static GetPropertyHeight(property: UnityEditor.SerializedProperty, label: any): number;
     static GetPropertyHeight(property: UnityEditor.SerializedProperty): number;
     static GetPropertyHeight(property: UnityEditor.SerializedProperty, label: any, includeChildren: boolean): number;
+    static GetPropertyHeight(type: UnityEditor.SerializedPropertyType, label: any): number;
     static PropertyField(position: any, property: UnityEditor.SerializedProperty): boolean;
     static PropertyField(position: any, property: UnityEditor.SerializedProperty, includeChildren: boolean): boolean;
     static PropertyField(position: any, property: UnityEditor.SerializedProperty, label: any): boolean;
@@ -204,12 +205,12 @@ declare namespace UnityEditor {
     static ObjectField(position: any, property: UnityEditor.SerializedProperty, label: any): void;
     static ObjectField(position: any, property: UnityEditor.SerializedProperty, objType: any): void;
     static ObjectField(position: any, property: UnityEditor.SerializedProperty, objType: any, label: any): void;
-    static ObjectField(position: any, obj: any, objType: any, allowSceneObjects: boolean): any;
-    static ObjectField(position: any, obj: any, objType: any): any;
-    static ObjectField(position: any, label: string, obj: any, objType: any, allowSceneObjects: boolean): any;
-    static ObjectField(position: any, label: string, obj: any, objType: any): any;
-    static ObjectField(position: any, label: any, obj: any, objType: any, allowSceneObjects: boolean): any;
-    static ObjectField(position: any, label: any, obj: any, objType: any): any;
+    static ObjectField(position: any, obj: UnityEngine.Object, objType: any, allowSceneObjects: boolean): UnityEngine.Object;
+    static ObjectField(position: any, obj: UnityEngine.Object, objType: any): UnityEngine.Object;
+    static ObjectField(position: any, label: string, obj: UnityEngine.Object, objType: any, allowSceneObjects: boolean): UnityEngine.Object;
+    static ObjectField(position: any, label: string, obj: UnityEngine.Object, objType: any): UnityEngine.Object;
+    static ObjectField(position: any, label: any, obj: UnityEngine.Object, objType: any, allowSceneObjects: boolean): UnityEngine.Object;
+    static ObjectField(position: any, label: any, obj: UnityEngine.Object, objType: any): UnityEngine.Object;
     static IndentedRect(source: any): any;
     static Vector2Field(position: any, label: string, value: any): any;
     static Vector2Field(position: any, label: any, value: any): any;
@@ -239,9 +240,9 @@ declare namespace UnityEditor {
     static CurveField(position: any, label: any, value: any, color: any, ranges: any): any;
     static CurveField(position: any, property: UnityEditor.SerializedProperty, color: any, ranges: any): void;
     static CurveField(position: any, property: UnityEditor.SerializedProperty, color: any, ranges: any, label: any): void;
-    static InspectorTitlebar(position: any, targetObjs: any[]): void;
-    static InspectorTitlebar(position: any, foldout: boolean, targetObj: any, expandable: boolean): boolean;
-    static InspectorTitlebar(position: any, foldout: boolean, targetObjs: any[], expandable: boolean): boolean;
+    static InspectorTitlebar(position: any, targetObjs: UnityEngine.Object[]): void;
+    static InspectorTitlebar(position: any, foldout: boolean, targetObj: UnityEngine.Object, expandable: boolean): boolean;
+    static InspectorTitlebar(position: any, foldout: boolean, targetObjs: UnityEngine.Object[], expandable: boolean): boolean;
     static ProgressBar(position: any, value: number, text: string): void;
     static HelpBox(position: any, message: string, type: UnityEditor.MessageType): void;
     static PrefixLabel(totalPosition: any, label: any): any;
@@ -250,12 +251,7 @@ declare namespace UnityEditor {
     static PrefixLabel(totalPosition: any, id: number, label: any, style: any): any;
     static BeginProperty(totalPosition: any, label: any, property: UnityEditor.SerializedProperty): any;
     static EndProperty(): void;
-    static GetPropertyHeight(type: UnityEditor.SerializedPropertyType, label: any): number;
     static DrawRect(rect: any, color: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static showMixedValue: boolean;
     static readonly actionKey: boolean;

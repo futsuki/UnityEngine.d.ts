@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal.VR {
-  class VREditor {
+  class VREditor extends System.Object {
     // constructors
     constructor();
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEditorInternal.VR {
     static GetVREnabledDevicesOnTargetGroup(targetGroup: UnityEditor.BuildTargetGroup): string[];
     static GetVREnabledDevicesOnTarget(target: UnityEditor.BuildTarget): string[];
     static SetVREnabledDevicesOnTargetGroup(targetGroup: UnityEditor.BuildTargetGroup, devices: string[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Audio {
-  class AudioMixerEffectController {
+  class AudioMixerEffectController extends UnityEngine.Object {
     // constructors
     constructor(name: string);
     // methods
@@ -21,19 +21,12 @@ declare namespace UnityEditor.Audio {
     GetFloatBuffer(controller: UnityEditor.Audio.AudioMixerController, name: string, data: any, numsamples: number): boolean;
     GetCPUUsage(controller: UnityEditor.Audio.AudioMixerController): number;
     ContainsParameterGUID(guid: UnityEditor.GUID): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly effectID: UnityEditor.GUID;
     readonly effectName: string;
     sendTarget: UnityEditor.Audio.AudioMixerEffectController;
     enableWetMix: boolean;
     bypass: boolean;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

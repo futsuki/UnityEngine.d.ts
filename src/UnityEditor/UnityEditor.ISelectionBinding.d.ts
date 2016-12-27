@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class ISelectionBinding {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly rootGameObject: any;

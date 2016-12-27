@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IUserAssembliesValidator {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Validate(userAssemblies: string[]): void;
     Cleanup(): void;

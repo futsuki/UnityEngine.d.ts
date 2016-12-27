@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Networking {
-  class NetworkTransport {
+  class NetworkTransport extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static ConnectEndPoint(hostId: number, endPoint: any, exceptionConnectionId: number, error: any): number;
     static Init(): void;
@@ -53,10 +53,6 @@ declare namespace UnityEngine.Networking {
     static GetBroadcastConnectionInfo(hostId: number, port: any, error: any): string;
     static GetBroadcastConnectionInfo(hostId: number, address: any, port: any, error: any): void;
     static GetBroadcastConnectionMessage(hostId: number, buffer: number[], bufferSize: number, receivedSize: any, error: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly IsStarted: boolean;
     // fields

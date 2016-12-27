@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EulerCurveRenderer {
+  class EulerCurveRenderer extends System.Object {
     // constructors
     constructor(component: number, renderer: UnityEditor.EulerCurveCombinedRenderer);
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEditor {
     GetBounds(): any;
     GetBounds(minTime: number, maxTime: number): any;
     FlushCache(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

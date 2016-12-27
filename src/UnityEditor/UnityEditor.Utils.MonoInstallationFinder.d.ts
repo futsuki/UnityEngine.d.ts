@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Utils {
-  class MonoInstallationFinder {
+  class MonoInstallationFinder extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditor.Utils {
     static GetEtcDirectory(monoInstallation: string): string;
     static GetMonoInstallation(): string;
     static GetMonoInstallation(monoName: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static MonoInstallation: string;

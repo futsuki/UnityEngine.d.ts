@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TextureImporterSettings {
+  class TextureImporterSettings extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     CopyTo(target: UnityEditor.TextureImporterSettings): void;
     ApplyTextureType(type: UnityEditor.TextureImporterType, applyAll: boolean): void;
     ApplyTextureType(type: UnityEditor.TextureImporterType): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     textureType: UnityEditor.TextureImporterType;
     textureShape: UnityEditor.TextureImporterShape;

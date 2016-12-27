@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Rendering {
-  class TierSettings {
+  class TierSettings extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     standardShaderQuality: UnityEditor.Rendering.ShaderQuality;

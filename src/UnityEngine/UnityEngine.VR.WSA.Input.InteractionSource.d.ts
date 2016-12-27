@@ -1,12 +1,8 @@
 declare namespace UnityEngine.VR.WSA.Input {
-  class InteractionSource {
+  class InteractionSource extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly id: number;
     readonly kind: UnityEngine.VR.WSA.Input.InteractionSourceKind;

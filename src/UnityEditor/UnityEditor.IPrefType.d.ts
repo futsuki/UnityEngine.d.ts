@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IPrefType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ToUniqueString(): string;
     FromUniqueString(sstr: string): void;

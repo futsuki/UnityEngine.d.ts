@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class AccelerationEvent {
+  class AccelerationEvent extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly acceleration: UnityEngine.Vector3;
     readonly deltaTime: number;

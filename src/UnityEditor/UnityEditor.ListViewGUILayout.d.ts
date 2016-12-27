@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ListViewGUILayout {
+  class ListViewGUILayout extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     static HasMouseUp(r: any): boolean;
     static HasMouseDown(r: any): boolean;
     static HasMouseDown(r: any, button: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

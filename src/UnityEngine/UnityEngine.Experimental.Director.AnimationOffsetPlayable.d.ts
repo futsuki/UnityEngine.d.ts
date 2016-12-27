@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
-  class AnimationOffsetPlayable {
+  class AnimationOffsetPlayable extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.AnimationOffsetPlayable;
     Destroy(): void;
@@ -15,8 +15,6 @@ declare namespace UnityEngine.Experimental.Director {
     AddInput(input: UnityEngine.Experimental.Director.Playable): number;
     RemoveInput(index: number): boolean;
     RemoveAllInputs(): boolean;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly inputCount: number;
     readonly outputCount: number;

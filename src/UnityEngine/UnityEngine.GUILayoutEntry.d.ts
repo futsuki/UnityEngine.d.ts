@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GUILayoutEntry {
+  class GUILayoutEntry extends System.Object {
     // constructors
     constructor(_minWidth: number, _maxWidth: number, _minHeight: number, _maxHeight: number, _style: UnityEngine.GUIStyle);
     constructor(_minWidth: number, _maxWidth: number, _minHeight: number, _maxHeight: number, _style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
@@ -10,9 +10,6 @@ declare namespace UnityEngine {
     SetVertical(y: number, height: number): void;
     ApplyOptions(options: UnityEngine.GUILayoutOption[]): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     style: UnityEngine.GUIStyle;
     readonly margin: UnityEngine.RectOffset;

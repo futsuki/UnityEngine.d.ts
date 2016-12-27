@@ -1,15 +1,11 @@
 declare namespace UnityEditor.Scripting.Compilers {
-  class CommandLineFormatter {
+  class CommandLineFormatter extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static EscapeCharsQuote(input: string): string;
     static PrepareFileName(input: string): string;
     static EscapeCharsWindows(input: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

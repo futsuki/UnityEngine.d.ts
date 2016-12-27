@@ -1,14 +1,9 @@
 declare namespace UnityEditor.EditorGUILayout {
-  class ToggleGroupScope {
+  class ToggleGroupScope extends UnityEngine.GUI.Scope {
     // constructors
     constructor(label: string, toggle: boolean);
     constructor(label: any, toggle: boolean);
     // methods
-    Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly enabled: boolean;
     // fields

@@ -1,5 +1,5 @@
 declare namespace UnityEngineInternal {
-  class GIDebugVisualisation {
+  class GIDebugVisualisation extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngineInternal {
     static StopCycleMode(): void;
     static CycleSkipInstances(skip: number): void;
     static CycleSkipSystems(skip: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly cycleMode: boolean;
     static readonly pauseCycleMode: boolean;

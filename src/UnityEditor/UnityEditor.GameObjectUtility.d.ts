@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class GameObjectUtility {
+  class GameObjectUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEditor {
     static GetNavMeshAreaNames(): string[];
     static GetUniqueNameForSibling(parent: any, name: string): string;
     static SetParentAndAlign(child: any, parent: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

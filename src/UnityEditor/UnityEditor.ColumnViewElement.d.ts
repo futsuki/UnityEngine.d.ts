@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class ColumnViewElement {
+  class ColumnViewElement extends System.Object {
     // constructors
     constructor(name: string, value: any);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     name: string;

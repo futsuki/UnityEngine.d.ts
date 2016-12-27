@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class PSVita {
+  class PSVita extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static npTrophyPackPath: string;
     static powerMode: UnityEditor.PlayerSettings.PSVita.PSVitaPowerMode;

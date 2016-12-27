@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PolygonEditor {
+  class PolygonEditor extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEditor {
     static InsertPoint(pathIndex: number, pointIndex: number, value: any): void;
     static RemovePoint(pathIndex: number, pointIndex: number): void;
     static TestPointMove(pathIndex: number, pointIndex: number, movePosition: any, leftIntersect: any, rightIntersect: any, loop: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

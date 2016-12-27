@@ -1,13 +1,8 @@
 declare namespace UnityEditor.EditorGUILayout {
-  class FadeGroupScope {
+  class FadeGroupScope extends UnityEngine.GUI.Scope {
     // constructors
     constructor(value: number);
     // methods
-    Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly visible: boolean;
     // fields

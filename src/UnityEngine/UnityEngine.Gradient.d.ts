@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class Gradient {
+  class Gradient extends System.Object {
     // constructors
     constructor();
     // methods
     Evaluate(time: number): UnityEngine.Color;
     SetKeys(colorKeys: UnityEngine.GradientColorKey[], alphaKeys: UnityEngine.GradientAlphaKey[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     colorKeys: UnityEngine.GradientColorKey[];
     alphaKeys: UnityEngine.GradientAlphaKey[];

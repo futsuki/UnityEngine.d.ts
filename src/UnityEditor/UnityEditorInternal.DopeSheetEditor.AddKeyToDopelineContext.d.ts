@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal.DopeSheetEditor {
-  class AddKeyToDopelineContext {
+  class AddKeyToDopelineContext extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     dopeline: UnityEditorInternal.DopeLine;

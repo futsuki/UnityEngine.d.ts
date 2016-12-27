@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Profiling {
-  class Profiler {
+  class Profiler extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEngine.Profiling {
     static GetTotalAllocatedMemory(): number;
     static GetTotalUnusedReservedMemory(): number;
     static GetTotalReservedMemory(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly supported: boolean;
     static logFile: string;

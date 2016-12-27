@@ -1,16 +1,12 @@
 declare namespace UnityEditorInternal {
-  class AudioProfilerClipViewBackend {
+  class AudioProfilerClipViewBackend extends System.Object {
     // constructors
     constructor(state: UnityEditorInternal.AudioProfilerClipTreeViewState);
     // methods
-    SetData(data: any): void;
+    SetData(data: UnityEditorInternal.AudioProfilerClipInfoWrapper[]): void;
     UpdateSorting(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly items: any;
+    readonly items: UnityEditorInternal.AudioProfilerClipInfoWrapper[];
     // fields
     OnUpdate: (() => void);
     m_TreeViewState: UnityEditorInternal.AudioProfilerClipTreeViewState;

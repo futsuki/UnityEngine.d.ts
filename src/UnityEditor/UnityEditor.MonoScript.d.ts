@@ -1,21 +1,12 @@
 declare namespace UnityEditor {
-  class MonoScript {
+  class MonoScript extends UnityEngine.TextAsset {
     // constructors
     constructor();
     // methods
     GetClass(): any;
     static FromMonoBehaviour(behaviour: any): UnityEditor.MonoScript;
-    static FromScriptableObject(scriptableObject: any): UnityEditor.MonoScript;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
+    static FromScriptableObject(scriptableObject: UnityEngine.ScriptableObject): UnityEditor.MonoScript;
     // properties
-    readonly text: string;
-    readonly bytes: number[];
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

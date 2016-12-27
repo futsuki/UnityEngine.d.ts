@@ -1,13 +1,9 @@
 declare namespace UnityEditor.RestService {
-  class Request {
+  class Request extends System.Object {
     // constructors
     constructor();
     // methods
     GetParam(paramName: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Payload: string;
     readonly Url: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class DynamicGI {
+  class DynamicGI extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEngine {
     static UpdateMaterials(terrain: UnityEngine.Terrain): void;
     static UpdateMaterials(terrain: UnityEngine.Terrain, x: number, y: number, width: number, height: number): void;
     static UpdateEnvironment(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static indirectScale: number;
     static updateThreshold: number;

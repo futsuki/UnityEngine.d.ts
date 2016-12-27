@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorWindow {
+  class EditorWindow extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -26,12 +26,6 @@ declare namespace UnityEditor {
     Close(): void;
     Repaint(): void;
     SendEvent(e: any): boolean;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     wantsMouseMove: boolean;
     autoRepaintOnSceneChange: boolean;
@@ -45,8 +39,6 @@ declare namespace UnityEditor {
     depthBufferBits: number;
     antiAlias: number;
     position: any;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

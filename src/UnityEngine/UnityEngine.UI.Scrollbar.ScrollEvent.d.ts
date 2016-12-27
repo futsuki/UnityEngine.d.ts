@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.Scrollbar {
     // constructors
     constructor();
     // methods
-    AddListener(call: ((number) => void)): void;
-    RemoveListener(call: ((number) => void)): void;
+    AddListener(call: ((arg0: number) => void)): void;
+    RemoveListener(call: ((arg0: number) => void)): void;
     Invoke(arg0: number): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ReflectionProbeEditor {
-  class Styles {
+  class Styles extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static richTextMiniLabel: any;
@@ -35,8 +31,8 @@ declare namespace UnityEditor.ReflectionProbeEditor {
     static typeText: any;
     static reflectionProbeMode: any[];
     static reflectionProbeModeValues: number[];
-    static renderTextureSizesValues: any;
-    static renderTextureSizes: any;
+    static renderTextureSizesValues: number[];
+    static renderTextureSizes: any[];
     static clearFlags: any[];
     static clearFlagsValues: number[];
     static toolContents: any[];

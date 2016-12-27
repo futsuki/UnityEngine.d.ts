@@ -1,12 +1,8 @@
 declare namespace UnityEditor.TransformInspector {
-  class Contents {
+  class Contents extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     positionContent: any;

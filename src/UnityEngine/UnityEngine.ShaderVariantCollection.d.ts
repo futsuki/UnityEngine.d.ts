@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class ShaderVariantCollection {
+  class ShaderVariantCollection extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -8,17 +8,10 @@ declare namespace UnityEngine {
     Contains(variant: UnityEngine.ShaderVariantCollection.ShaderVariant): boolean;
     Clear(): void;
     WarmUp(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly shaderCount: number;
     readonly variantCount: number;
     readonly isWarmedUp: boolean;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

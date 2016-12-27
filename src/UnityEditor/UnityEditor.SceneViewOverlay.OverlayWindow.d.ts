@@ -1,19 +1,15 @@
 declare namespace UnityEditor.SceneViewOverlay {
-  class OverlayWindow {
+  class OverlayWindow extends System.Object {
     // constructors
     constructor();
     // methods
     CompareTo(other: UnityEditor.SceneViewOverlay.OverlayWindow): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_Title: any;
-    m_SceneViewFunc: ((any, UnityEditor.SceneView) => void);
+    m_SceneViewFunc: ((target: UnityEngine.Object, sceneView: UnityEditor.SceneView) => void);
     m_PrimaryOrder: number;
     m_SecondaryOrder: number;
-    m_Target: any;
+    m_Target: UnityEngine.Object;
   }
 }

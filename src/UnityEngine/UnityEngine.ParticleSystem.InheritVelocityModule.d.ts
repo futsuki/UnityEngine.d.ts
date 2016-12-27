@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ParticleSystem {
-  class InheritVelocityModule {
+  class InheritVelocityModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     mode: UnityEngine.ParticleSystemInheritVelocityMode;

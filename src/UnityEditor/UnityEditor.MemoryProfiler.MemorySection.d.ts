@@ -1,12 +1,8 @@
 declare namespace UnityEditor.MemoryProfiler {
-  class MemorySection {
+  class MemorySection extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly bytes: number[];
     readonly startAddress: number;

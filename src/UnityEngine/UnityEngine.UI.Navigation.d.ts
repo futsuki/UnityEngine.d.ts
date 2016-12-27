@@ -1,13 +1,10 @@
 declare namespace UnityEngine.UI {
-  class Navigation {
+  class Navigation extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Equals(other: UnityEngine.UI.Navigation): boolean;
     Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     mode: UnityEngine.UI.Navigation.Mode;
     selectOnUp: UnityEngine.UI.Selectable;

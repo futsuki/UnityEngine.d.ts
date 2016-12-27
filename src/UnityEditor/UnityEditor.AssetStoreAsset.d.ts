@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class AssetStoreAsset {
+  class AssetStoreAsset extends System.Object {
     // constructors
     constructor();
     // methods
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly Preview: any;
+    readonly Preview: UnityEngine.Object;
     readonly HasLivePreview: boolean;
     // fields
     id: number;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PackageUtility {
+  class PackageUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     static ExtractAndPrepareAssetList(packagePath: string, packageIconPath: any, canPerformReInstall: any): UnityEditor.ImportPackageItem[];
     static ImportPackageAssets(packageName: string, items: UnityEditor.ImportPackageItem[], performReInstall: boolean): void;
     static ImportPackageAssetsImmediately(packageName: string, items: UnityEditor.ImportPackageItem[], performReInstall: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

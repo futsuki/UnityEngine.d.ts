@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class AssetInspector {
+  class AssetInspector extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Get(): UnityEditor.AssetInspector;
-    OnAssetStatusGUI(r: any, id: number, target: any, style: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    OnAssetStatusGUI(r: any, id: number, target: UnityEngine.Object, style: any): void;
     // properties
     // fields
   }

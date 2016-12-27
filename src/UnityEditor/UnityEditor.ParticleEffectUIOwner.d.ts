@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class ParticleEffectUIOwner {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Repaint(): void;
     // properties

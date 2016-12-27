@@ -1,13 +1,9 @@
 declare namespace UnityEditor.ASMainWindow {
-  class SearchField {
+  class SearchField extends System.Object {
     // constructors
     constructor();
     // methods
     DoGUI(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly FilterText: string;
     Show: boolean;

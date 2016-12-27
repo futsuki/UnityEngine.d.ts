@@ -1,21 +1,17 @@
 declare namespace UnityEditor {
-  class LODGroupGUI {
+  class LODGroupGUI extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static DelinearizeScreenPercentage(percentage: number): number;
     static LinearizeScreenPercentage(percentage: number): number;
     static CalcLODButton(totalRect: any, percentage: number): any;
     static GetCulledBox(totalRect: any, previousLODPercentage: number): any;
-    static CreateLODInfos(numLODs: number, area: any, nameGen: ((number) => string), heightGen: ((number) => number)): any;
+    static CreateLODInfos(numLODs: number, area: any, nameGen: ((arg1: number) => string), heightGen: ((arg1: number) => number)): UnityEditor.LODGroupGUI.LODInfo[];
     static GetCameraPercent(position: any, sliderRect: any): number;
-    static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: any): void;
-    static DrawLODSlider(area: any, lods: any, selectedLevel: number): void;
+    static SetSelectedLODLevelPercentage(newScreenPercentage: number, lod: number, lods: UnityEditor.LODGroupGUI.LODInfo[]): void;
+    static DrawLODSlider(area: any, lods: UnityEditor.LODGroupGUI.LODInfo[], selectedLevel: number): void;
     static DrawMixedValueLODSlider(area: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly Styles: UnityEditor.LODGroupGUI.GUIStyles;
     // fields

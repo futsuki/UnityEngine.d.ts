@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MemoryElementSelection {
+  class MemoryElementSelection extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     MoveFirst(): void;
     MoveLast(): void;
     MoveParent(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Selected: UnityEditor.MemoryElement;
     // fields

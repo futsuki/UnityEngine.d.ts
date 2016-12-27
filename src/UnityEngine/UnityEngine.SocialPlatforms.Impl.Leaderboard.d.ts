@@ -1,19 +1,16 @@
 declare namespace UnityEngine.SocialPlatforms.Impl {
-  class Leaderboard {
+  class Leaderboard extends System.Object {
     // constructors
     constructor();
     // methods
     SetUserFilter(userIDs: string[]): void;
     ToString(): string;
-    LoadScores(callback: ((boolean) => void)): void;
+    LoadScores(callback: ((obj: boolean) => void)): void;
     SetLocalUserScore(score: UnityEngine.SocialPlatforms.IScore): void;
     SetMaxRange(maxRange: number): void;
     SetScores(scores: UnityEngine.SocialPlatforms.IScore[]): void;
     SetTitle(title: string): void;
     GetUserFilter(): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly loading: boolean;
     id: string;

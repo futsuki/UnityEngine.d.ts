@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorGUIUtility {
+  class EditorGUIUtility extends UnityEngine.GUIUtility {
     // constructors
     constructor();
     // methods
@@ -7,15 +7,15 @@ declare namespace UnityEditor {
     static SetMenuLocalizationTestMode(onoff: boolean): void;
     static IconContent(name: string): any;
     static IconContent(name: string, text: string): any;
-    static ObjectContent(obj: any, type: any): any;
+    static ObjectContent(obj: UnityEngine.Object, type: any): any;
     static HasObjectThumbnail(objType: any): boolean;
     static SetIconSize(size: any): void;
     static GetIconSize(): any;
     static FindTexture(name: string): any;
     static GetBuiltinSkin(skin: UnityEditor.EditorSkin): any;
-    static LoadRequired(path: string): any;
-    static Load(path: string): any;
-    static PingObject(obj: any): void;
+    static LoadRequired(path: string): UnityEngine.Object;
+    static Load(path: string): UnityEngine.Object;
+    static PingObject(obj: UnityEngine.Object): void;
     static PingObject(targetInstanceID: number): void;
     static RenderGameViewCameras(target: any, targetDisplay: number, screenRect: any, mousePosition: any, gizmos: boolean): void;
     static RenderGameViewCameras(cameraRect: any, gizmos: boolean, gui: boolean): void;
@@ -40,17 +40,13 @@ declare namespace UnityEditor {
     static AddCursorRect(position: any, mouse: UnityEditor.MouseCursor): void;
     static AddCursorRect(position: any, mouse: UnityEditor.MouseCursor, controlID: number): void;
     static SetWantsMouseJumping(wantz: number): void;
-    static GetObjectPickerObject(): any;
+    static GetObjectPickerObject(): UnityEngine.Object;
     static GetObjectPickerControlID(): number;
     static PointsToPixels(rect: any): any;
-    static PixelsToPoints(rect: any): any;
     static PointsToPixels(position: any): any;
+    static PixelsToPoints(rect: any): any;
     static PixelsToPoints(position: any): any;
-    static GetFlowLayoutedRects(rect: any, style: any, horizontalSpacing: number, verticalSpacing: number, items: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static GetFlowLayoutedRects(rect: any, style: any, horizontalSpacing: number, verticalSpacing: number, items: string[]): any[];
     // properties
     static readonly singleLineHeight: number;
     static readonly standardVerticalSpacing: number;

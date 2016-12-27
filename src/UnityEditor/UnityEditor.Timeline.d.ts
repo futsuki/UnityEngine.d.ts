@@ -1,17 +1,13 @@
 declare namespace UnityEditor {
-  class Timeline {
+  class Timeline extends System.Object {
     // constructors
     constructor();
     // methods
     ResetRange(): void;
     DoTimeline(timeRect: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    SrcPivotList: any;
-    DstPivotList: any;
+    SrcPivotList: UnityEditor.Timeline.PivotSample[];
+    DstPivotList: UnityEditor.Timeline.PivotSample[];
     srcLoop: boolean;
     dstLoop: boolean;
     Time: number;

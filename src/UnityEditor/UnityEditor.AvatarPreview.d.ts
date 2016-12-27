@@ -1,12 +1,12 @@
 declare namespace UnityEditor {
-  class AvatarPreview {
+  class AvatarPreview extends System.Object {
     // constructors
-    constructor(previewObjectInScene: any, objectOnSameAsset: any);
+    constructor(previewObjectInScene: any, objectOnSameAsset: UnityEngine.Motion);
     // methods
     static GetAnimationType(go: any): UnityEditor.ModelImporterAnimationType;
-    static GetAnimationType(motion: any): UnityEditor.ModelImporterAnimationType;
+    static GetAnimationType(motion: UnityEngine.Motion): UnityEditor.ModelImporterAnimationType;
     static IsValidPreviewGameObject(target: any, requiredClipType: UnityEditor.ModelImporterAnimationType): boolean;
-    static FindBestFittingRenderableGameObjectFromModelAsset(asset: any, animationType: UnityEditor.ModelImporterAnimationType): any;
+    static FindBestFittingRenderableGameObjectFromModelAsset(asset: UnityEngine.Object, animationType: UnityEditor.ModelImporterAnimationType): any;
     ResetPreviewInstance(): void;
     OnDestroy(): void;
     DoSelectionChange(): void;
@@ -19,10 +19,6 @@ declare namespace UnityEditor {
     DoAvatarPreviewFrame(evt: any, type: any, previewRect: any): void;
     DoAvatarPreviewZoom(evt: any, delta: number): void;
     DoAvatarPreview(rect: any, background: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly IKOnFeet: boolean;
     ShowIKOnFeetButton: boolean;

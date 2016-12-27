@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Audio {
-  class AudioMixerGroupController {
+  class AudioMixerGroupController extends UnityEngine.Audio.AudioMixerGroup {
     // constructors
-    constructor(owner: any);
+    constructor(owner: UnityEngine.Audio.AudioMixer);
     // methods
     PreallocateGUIDs(): void;
     GetGUIDForVolume(): UnityEditor.GUID;
@@ -16,10 +16,6 @@ declare namespace UnityEditor.Audio {
     DumpHierarchy(title: string, level: number): void;
     GetDisplayString(): string;
     ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly groupID: UnityEditor.GUID;
     userColorIndex: number;
@@ -29,9 +25,6 @@ declare namespace UnityEditor.Audio {
     mute: boolean;
     solo: boolean;
     bypassEffects: boolean;
-    readonly audioMixer: any;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

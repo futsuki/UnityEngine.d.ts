@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class AnimatorClipInfo {
+  class AnimatorClipInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly clip: UnityEngine.AnimationClip;
     readonly weight: number;

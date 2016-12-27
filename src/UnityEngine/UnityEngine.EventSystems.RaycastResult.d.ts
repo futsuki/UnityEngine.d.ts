@@ -1,13 +1,10 @@
 declare namespace UnityEngine.EventSystems {
-  class RaycastResult {
+  class RaycastResult extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Clear(): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     gameObject: UnityEngine.GameObject;
     readonly isValid: boolean;

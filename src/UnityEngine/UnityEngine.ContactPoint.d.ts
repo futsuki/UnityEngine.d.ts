@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class ContactPoint {
+  class ContactPoint extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly point: UnityEngine.Vector3;
     readonly normal: UnityEngine.Vector3;

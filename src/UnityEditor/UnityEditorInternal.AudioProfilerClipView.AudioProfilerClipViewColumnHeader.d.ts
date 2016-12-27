@@ -1,13 +1,9 @@
 declare namespace UnityEditorInternal.AudioProfilerClipView {
-  class AudioProfilerClipViewColumnHeader {
+  class AudioProfilerClipViewColumnHeader extends System.Object {
     // constructors
     constructor(state: UnityEditorInternal.AudioProfilerClipTreeViewState, backend: UnityEditorInternal.AudioProfilerClipViewBackend);
     // methods
     OnGUI(rect: any, allowSorting: boolean, headerStyle: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     columnWidths: number[];
     minColumnWidth: number;

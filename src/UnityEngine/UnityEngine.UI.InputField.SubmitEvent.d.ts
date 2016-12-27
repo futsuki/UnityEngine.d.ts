@@ -3,8 +3,8 @@ declare namespace UnityEngine.UI.InputField {
     // constructors
     constructor();
     // methods
-    AddListener(call: ((string) => void)): void;
-    RemoveListener(call: ((string) => void)): void;
+    AddListener(call: ((arg0: string) => void)): void;
+    RemoveListener(call: ((arg0: string) => void)): void;
     Invoke(arg0: string): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

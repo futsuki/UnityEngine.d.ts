@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GUI {
+  class GUI extends System.Object {
     // constructors
     constructor();
     // methods
@@ -74,6 +74,7 @@ declare namespace UnityEngine {
     static VerticalScrollbar(position: UnityEngine.Rect, value: number, size: number, topValue: number, bottomValue: number): number;
     static VerticalScrollbar(position: UnityEngine.Rect, value: number, size: number, topValue: number, bottomValue: number, style: UnityEngine.GUIStyle): number;
     static BeginClip(position: UnityEngine.Rect, scrollOffset: UnityEngine.Vector2, renderOffset: UnityEngine.Vector2, resetOffset: boolean): void;
+    static BeginClip(position: UnityEngine.Rect): void;
     static BeginGroup(position: UnityEngine.Rect): void;
     static BeginGroup(position: UnityEngine.Rect, text: string): void;
     static BeginGroup(position: UnityEngine.Rect, image: UnityEngine.Texture): void;
@@ -83,7 +84,6 @@ declare namespace UnityEngine {
     static BeginGroup(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle): void;
     static BeginGroup(position: UnityEngine.Rect, content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): void;
     static EndGroup(): void;
-    static BeginClip(position: UnityEngine.Rect): void;
     static EndClip(): void;
     static BeginScrollView(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect): UnityEngine.Vector2;
     static BeginScrollView(position: UnityEngine.Rect, scrollPosition: UnityEngine.Vector2, viewRect: UnityEngine.Rect, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean): UnityEngine.Vector2;
@@ -93,31 +93,27 @@ declare namespace UnityEngine {
     static EndScrollView(handleScrollWheel: boolean): void;
     static ScrollTo(position: UnityEngine.Rect): void;
     static ScrollTowards(position: UnityEngine.Rect, maxDelta: number): boolean;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static Window(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), title: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
-    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((number) => void), content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), text: string): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), image: UnityEngine.Texture): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), content: UnityEngine.GUIContent): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static Window(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), title: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), text: string): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), image: UnityEngine.Texture): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), content: UnityEngine.GUIContent): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), text: string, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), image: UnityEngine.Texture, style: UnityEngine.GUIStyle): UnityEngine.Rect;
+    static ModalWindow(id: number, clientRect: UnityEngine.Rect, func: ((id: number) => void), content: UnityEngine.GUIContent, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static DragWindow(): void;
+    static DragWindow(position: UnityEngine.Rect): void;
     static SetNextControlName(name: string): void;
     static GetNameOfFocusedControl(): string;
     static FocusControl(name: string): void;
-    static DragWindow(position: UnityEngine.Rect): void;
     static BringWindowToFront(windowID: number): void;
     static BringWindowToBack(windowID: number): void;
     static FocusWindow(windowID: number): void;
     static UnfocusWindow(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static skin: UnityEngine.GUISkin;
     static matrix: UnityEngine.Matrix4x4;

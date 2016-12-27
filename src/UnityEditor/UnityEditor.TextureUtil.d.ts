@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TextureUtil {
+  class TextureUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -38,10 +38,6 @@ declare namespace UnityEditor {
     static DoesTextureStillNeedToBeCompressed(assetPath: string): boolean;
     static IsCubemapReadable(cubemapRef: any): boolean;
     static MarkCubemapReadable(cubemapRef: any, readable: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

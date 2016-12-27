@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal.VR {
-  class VRDeviceInfoEditor {
+  class VRDeviceInfoEditor extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     deviceNameKey: string;

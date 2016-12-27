@@ -1,16 +1,12 @@
 declare namespace UnityEditor.AssetStoreSearchResults {
-  class Group {
+  class Group extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Create(): UnityEditor.AssetStoreSearchResults.Group;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
-    assets: any;
+    assets: UnityEditor.AssetStoreAsset[];
     totalFound: number;
     label: string;
     name: string;

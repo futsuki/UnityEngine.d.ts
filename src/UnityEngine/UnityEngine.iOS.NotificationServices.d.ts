@@ -1,5 +1,5 @@
 declare namespace UnityEngine.iOS {
-  class NotificationServices {
+  class NotificationServices extends System.Object {
     // constructors
     constructor();
     // methods
@@ -14,10 +14,6 @@ declare namespace UnityEngine.iOS {
     static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType): void;
     static RegisterForNotifications(notificationTypes: UnityEngine.iOS.NotificationType, registerForRemote: boolean): void;
     static UnregisterForRemoteNotifications(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly localNotificationCount: number;
     static readonly localNotifications: UnityEngine.iOS.LocalNotification[];

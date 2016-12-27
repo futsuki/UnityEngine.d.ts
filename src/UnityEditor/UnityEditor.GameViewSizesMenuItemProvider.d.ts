@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class GameViewSizesMenuItemProvider {
+  class GameViewSizesMenuItemProvider extends System.Object {
     // constructors
     constructor(gameViewSizeGroupType: UnityEditor.GameViewSizeGroupType);
     // methods
@@ -13,10 +13,6 @@ declare namespace UnityEditor {
     GetName(index: number): string;
     IsModificationAllowed(index: number): boolean;
     GetSeperatorIndices(): number[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

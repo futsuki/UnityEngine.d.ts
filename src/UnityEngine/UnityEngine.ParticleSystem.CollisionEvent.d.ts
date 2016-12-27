@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ParticleSystem {
-  class CollisionEvent {
+  class CollisionEvent extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly intersection: UnityEngine.Vector3;
     readonly normal: UnityEngine.Vector3;

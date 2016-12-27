@@ -1,16 +1,12 @@
 declare namespace UnityEditorInternal.AnimationWindowState {
-  class LiveEditCurve {
+  class LiveEditCurve extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     curve: UnityEditorInternal.AnimationWindowCurve;
-    selectedKeys: any;
-    unselectedKeys: any;
+    selectedKeys: UnityEditorInternal.AnimationWindowState.LiveEditKeyframe[];
+    unselectedKeys: UnityEditorInternal.AnimationWindowState.LiveEditKeyframe[];
   }
 }

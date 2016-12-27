@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ContainerWindow {
+  class ContainerWindow extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -22,12 +22,6 @@ declare namespace UnityEditor {
     WindowToScreenPoint(windowPoint: any): any;
     HandleWindowDecorationEnd(windowPosition: any): void;
     HandleWindowDecorationStart(windowPosition: any): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly maximized: boolean;
     position: any;
@@ -35,8 +29,6 @@ declare namespace UnityEditor {
     static readonly windows: UnityEditor.ContainerWindow[];
     rootView: UnityEditor.View;
     readonly rootSplitView: UnityEditor.SplitView;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

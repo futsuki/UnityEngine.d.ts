@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ObjectTreeForSelector {
-  class TreeSelectorData {
+  class TreeSelectorData extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     objectTreeForSelector: UnityEditor.ObjectTreeForSelector;

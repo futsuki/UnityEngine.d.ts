@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class iPhoneTouch {
+  class iPhoneTouch extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly positionDelta: UnityEngine.Vector2;
     readonly timeDelta: number;

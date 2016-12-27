@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class PingData {
+  class PingData extends System.Object {
     // constructors
     constructor();
     // methods
     HandlePing(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isPinging: boolean;
     // fields
@@ -16,7 +12,7 @@ declare namespace UnityEditor {
     m_WaitTime: number;
     m_FadeOutTime: number;
     m_PeakScale: number;
-    m_ContentDraw: ((any) => void);
+    m_ContentDraw: ((obj: any) => void);
     m_ContentRect: any;
     m_AvailableWidth: number;
     m_PingStyle: any;

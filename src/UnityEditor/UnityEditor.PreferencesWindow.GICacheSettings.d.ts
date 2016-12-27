@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PreferencesWindow {
-  class GICacheSettings {
+  class GICacheSettings extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     m_EnableCustomPath: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AvatarSubEditor {
+  class AvatarSubEditor extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -9,15 +9,7 @@ declare namespace UnityEditor {
     OnInspectorGUI(): void;
     OnSceneGUI(): void;
     ApplyAndImport(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

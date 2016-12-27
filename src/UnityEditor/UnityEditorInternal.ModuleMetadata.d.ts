@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ModuleMetadata {
+  class ModuleMetadata extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditorInternal {
     static GetModuleTypes(moduleName: string): UnityEditor.UnityType[];
     static GetModuleClasses(moduleName: string): number[];
     static GetICallModule(icall: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

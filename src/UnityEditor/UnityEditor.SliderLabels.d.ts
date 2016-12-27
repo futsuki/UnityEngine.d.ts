@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class SliderLabels {
+  class SliderLabels extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetLabels(leftLabel: any, rightLabel: any): void;
     HasLabels(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     leftLabel: any;

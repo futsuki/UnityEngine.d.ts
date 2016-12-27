@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking {
-  class HostTopologyInternal {
+  class HostTopologyInternal extends System.Object {
     // constructors
     constructor(topology: UnityEngine.Networking.HostTopology);
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngine.Networking {
     InitSentMessagePoolSize(pool: number): void;
     InitMessagePoolSizeGrowthFactor(factor: number): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

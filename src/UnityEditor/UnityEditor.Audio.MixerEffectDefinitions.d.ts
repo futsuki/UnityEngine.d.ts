@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Audio {
-  class MixerEffectDefinitions {
+  class MixerEffectDefinitions extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor.Audio {
     static ClearDefinitions(): void;
     static GetEffectParameters(effect: string): UnityEditor.Audio.MixerParameterDefinition[];
     static RegisterAudioMixerEffect(name: string, definitions: UnityEditor.Audio.MixerParameterDefinition[]): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

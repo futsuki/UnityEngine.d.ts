@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class ICleanuppable {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Cleanup(): void;
     // properties

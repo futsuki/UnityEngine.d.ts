@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class Highlighter {
+  class Highlighter extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     static Highlight(windowTitle: string, text: string): boolean;
     static Highlight(windowTitle: string, text: string, mode: UnityEditor.HighlightSearchMode): boolean;
     static HighlightIdentifier(position: any, identifier: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly active: boolean;
     static readonly activeVisible: boolean;

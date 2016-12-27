@@ -1,16 +1,12 @@
 declare namespace UnityEditor.Animations {
-  class StateMachineBehaviourContext {
+  class StateMachineBehaviourContext extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     animatorController: UnityEditor.Animations.AnimatorController;
-    animatorObject: any;
+    animatorObject: UnityEngine.Object;
     layerIndex: number;
   }
 }

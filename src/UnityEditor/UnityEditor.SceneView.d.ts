@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SceneView {
+  class SceneView extends UnityEditor.SearchableEditorWindow {
     // constructors
     constructor();
     // methods
@@ -17,11 +17,11 @@ declare namespace UnityEditor {
     FixNegativeSize(): void;
     LookAt(pos: any): void;
     LookAt(pos: any, rot: any): void;
-    LookAtDirect(pos: any, rot: any): void;
     LookAt(pos: any, rot: any, newSize: number): void;
-    LookAtDirect(pos: any, rot: any, newSize: number): void;
     LookAt(pos: any, rot: any, newSize: number, ortho: boolean): void;
     LookAt(pos: any, rot: any, newSize: number, ortho: boolean, instant: boolean): void;
+    LookAtDirect(pos: any, rot: any): void;
+    LookAtDirect(pos: any, rot: any, newSize: number): void;
     AlignViewToObject(t: any): void;
     AlignWithView(): void;
     MoveToView(): void;
@@ -29,27 +29,6 @@ declare namespace UnityEditor {
     FrameSelected(): boolean;
     FrameSelected(lockView: boolean): boolean;
     static ShowCompileErrorNotification(): void;
-    BeginWindows(): void;
-    EndWindows(): void;
-    ShowNotification(notification: any): void;
-    RemoveNotification(): void;
-    ShowTab(): void;
-    Focus(): void;
-    ShowUtility(): void;
-    ShowPopup(): void;
-    ShowAsDropDown(buttonRect: any, windowSize: any): void;
-    Show(): void;
-    Show(immediateDisplay: boolean): void;
-    ShowAuxWindow(): void;
-    Close(): void;
-    Repaint(): void;
-    SendEvent(e: any): boolean;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     static readonly lastActiveSceneView: UnityEditor.SceneView;
     static readonly currentDrawingSceneView: UnityEditor.SceneView;
@@ -63,23 +42,11 @@ declare namespace UnityEditor {
     rotation: any;
     size: number;
     orthographic: boolean;
-    wantsMouseMove: boolean;
-    autoRepaintOnSceneChange: boolean;
-    maximized: boolean;
-    minSize: any;
-    maxSize: any;
-    title: string;
-    titleContent: any;
-    depthBufferBits: number;
-    antiAlias: number;
-    position: any;
-    name: string;
-    hideFlags: any;
     // fields
     m_SceneLighting: boolean;
     lastFramingTime: number;
     m_AudioPlay: boolean;
-    static onSceneGUIDelegate: ((UnityEditor.SceneView) => void);
+    static onSceneGUIDelegate: ((sceneView: UnityEditor.SceneView) => void);
     m_RenderMode: UnityEditor.DrawCameraMode;
   }
 }

@@ -1,21 +1,13 @@
 declare namespace UnityEngine.iOS {
-  class OnDemandResourcesRequest {
+  class OnDemandResourcesRequest extends UnityEngine.AsyncOperation {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetResourcePath(resourceName: string): string;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly error: string;
     loadingPriority: number;
-    readonly isDone: boolean;
-    readonly progress: number;
-    priority: number;
-    allowSceneActivation: boolean;
     // fields
   }
 }

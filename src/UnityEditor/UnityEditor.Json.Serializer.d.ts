@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Json {
-  class Serializer {
+  class Serializer extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Serialize(obj: any): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

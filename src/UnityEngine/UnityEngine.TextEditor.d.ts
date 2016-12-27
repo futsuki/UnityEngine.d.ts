@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class TextEditor {
+  class TextEditor extends System.Object {
     // constructors
     constructor();
     // methods
@@ -67,10 +67,6 @@ declare namespace UnityEngine {
     Copy(): void;
     Paste(): boolean;
     DetectFocusChange(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     content: UnityEngine.GUIContent;
     text: string;

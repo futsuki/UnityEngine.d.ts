@@ -1,13 +1,9 @@
 declare namespace PreviewGUI {
-  class Styles {
+  class Styles extends System.Object {
     // constructors
     constructor();
     // methods
     static Init(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static preButton: any;

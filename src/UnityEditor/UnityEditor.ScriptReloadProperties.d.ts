@@ -1,17 +1,9 @@
 declare namespace UnityEditor {
-  class ScriptReloadProperties {
+  class ScriptReloadProperties extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
     EditorGUI_IsActuallEditing: boolean;
     EditorGUI_TextEditor_cursorIndex: number;

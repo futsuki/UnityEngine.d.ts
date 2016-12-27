@@ -1,12 +1,8 @@
 declare namespace UnityEditor.SnapSettings {
-  class Styles {
+  class Styles extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     buttonLeft: any;

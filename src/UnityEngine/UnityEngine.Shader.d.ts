@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Shader {
+  class Shader extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -19,16 +19,16 @@ declare namespace UnityEngine {
     static SetGlobalMatrix(nameID: number, mat: UnityEngine.Matrix4x4): void;
     static SetGlobalTexture(propertyName: string, tex: UnityEngine.Texture): void;
     static SetGlobalTexture(nameID: number, tex: UnityEngine.Texture): void;
-    static SetGlobalFloatArray(name: string, values: any): void;
-    static SetGlobalFloatArray(nameID: number, values: any): void;
+    static SetGlobalFloatArray(name: string, values: number[]): void;
+    static SetGlobalFloatArray(nameID: number, values: number[]): void;
     static SetGlobalFloatArray(propertyName: string, values: number[]): void;
     static SetGlobalFloatArray(nameID: number, values: number[]): void;
-    static SetGlobalVectorArray(name: string, values: any): void;
-    static SetGlobalVectorArray(nameID: number, values: any): void;
+    static SetGlobalVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    static SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
     static SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): void;
     static SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
-    static SetGlobalMatrixArray(name: string, values: any): void;
-    static SetGlobalMatrixArray(nameID: number, values: any): void;
+    static SetGlobalMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    static SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     static SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): void;
     static SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     static SetGlobalBuffer(name: string, buffer: UnityEngine.ComputeBuffer): void;
@@ -45,35 +45,28 @@ declare namespace UnityEngine {
     static GetGlobalMatrix(nameID: number): UnityEngine.Matrix4x4;
     static GetGlobalTexture(name: string): UnityEngine.Texture;
     static GetGlobalTexture(nameID: number): UnityEngine.Texture;
-    static GetGlobalFloatArray(name: string, values: any): void;
-    static GetGlobalFloatArray(nameID: number, values: any): void;
+    static GetGlobalFloatArray(name: string, values: number[]): void;
+    static GetGlobalFloatArray(nameID: number, values: number[]): void;
     static GetGlobalFloatArray(name: string): number[];
     static GetGlobalFloatArray(nameID: number): number[];
-    static GetGlobalVectorArray(name: string, values: any): void;
-    static GetGlobalVectorArray(nameID: number, values: any): void;
+    static GetGlobalVectorArray(name: string, values: UnityEngine.Vector4[]): void;
+    static GetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
     static GetGlobalVectorArray(name: string): UnityEngine.Vector4[];
     static GetGlobalVectorArray(nameID: number): UnityEngine.Vector4[];
-    static GetGlobalMatrixArray(name: string, values: any): void;
-    static GetGlobalMatrixArray(nameID: number, values: any): void;
+    static GetGlobalMatrixArray(name: string, values: UnityEngine.Matrix4x4[]): void;
+    static GetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     static GetGlobalMatrixArray(name: string): UnityEngine.Matrix4x4[];
     static GetGlobalMatrixArray(nameID: number): UnityEngine.Matrix4x4[];
     static PropertyToID(name: string): number;
     static WarmupAllShaders(): void;
     static SetGlobalTexGenMode(propertyName: string, mode: UnityEngine.TexGenMode): void;
     static SetGlobalTextureMatrixName(propertyName: string, matrixName: string): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly isSupported: boolean;
     maximumLOD: number;
     static globalMaximumLOD: number;
     readonly renderQueue: number;
     static globalShaderHardwareTier: UnityEngine.Rendering.ShaderHardwareTier;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

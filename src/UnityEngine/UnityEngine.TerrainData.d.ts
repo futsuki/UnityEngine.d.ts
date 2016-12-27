@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class TerrainData {
+  class TerrainData extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -19,11 +19,6 @@ declare namespace UnityEngine {
     SetTreeInstance(index: number, instance: UnityEngine.TreeInstance): void;
     GetAlphamaps(x: number, y: number, width: number, height: number): number[];
     SetAlphamaps(x: number, y: number, map: number[]): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly heightmapWidth: number;
     readonly heightmapHeight: number;
@@ -50,8 +45,6 @@ declare namespace UnityEngine {
     baseMapResolution: number;
     readonly alphamapTextures: UnityEngine.Texture2D[];
     splatPrototypes: UnityEngine.SplatPrototype[];
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

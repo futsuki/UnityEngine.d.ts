@@ -1,12 +1,8 @@
 declare namespace UnityEngine.AI {
-  class NavMeshTriangulation {
+  class NavMeshTriangulation extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly layers: number[];
     // fields

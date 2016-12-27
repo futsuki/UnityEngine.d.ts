@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
-  class AnimationClipPlayable {
+  class AnimationClipPlayable extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Create(clip: UnityEngine.AnimationClip): UnityEngine.Experimental.Director.AnimationClipPlayable;
     Destroy(): void;
@@ -9,8 +9,6 @@ declare namespace UnityEngine.Experimental.Director {
     GetHashCode(): number;
     IsValid(): boolean;
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
-    ToString(): string;
-    GetType(): any;
     // properties
     state: UnityEngine.Experimental.Director.PlayState;
     time: number;

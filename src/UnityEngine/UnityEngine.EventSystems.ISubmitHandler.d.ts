@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class ISubmitHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnSubmit(eventData: UnityEngine.EventSystems.BaseEventData): void;
     // properties

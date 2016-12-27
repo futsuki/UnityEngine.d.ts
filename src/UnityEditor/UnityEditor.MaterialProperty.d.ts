@@ -1,16 +1,12 @@
 declare namespace UnityEditor {
-  class MaterialProperty {
+  class MaterialProperty extends System.Object {
     // constructors
     constructor();
     // methods
     ReadFromMaterialPropertyBlock(block: any): void;
     WriteToMaterialPropertyBlock(materialblock: any, changedPropertyMask: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly targets: any[];
+    readonly targets: UnityEngine.Object[];
     readonly type: UnityEditor.MaterialProperty.PropType;
     readonly name: string;
     readonly displayName: string;
@@ -18,7 +14,7 @@ declare namespace UnityEditor {
     readonly textureDimension: any;
     readonly rangeLimits: any;
     readonly hasMixedValue: boolean;
-    applyPropertyCallback: ((UnityEditor.MaterialProperty, number, any) => boolean);
+    applyPropertyCallback: ((prop: UnityEditor.MaterialProperty, changeMask: number, previousValue: any) => boolean);
     colorValue: any;
     vectorValue: any;
     floatValue: number;

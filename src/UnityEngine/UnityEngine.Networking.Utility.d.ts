@@ -1,17 +1,13 @@
 declare namespace UnityEngine.Networking {
-  class Utility {
+  class Utility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetSourceID(): UnityEngine.Networking.Types.SourceID;
     static SetAppID(newAppID: UnityEngine.Networking.Types.AppID): void;
     static GetAppID(): UnityEngine.Networking.Types.AppID;
     static SetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID, accessToken: UnityEngine.Networking.Types.NetworkAccessToken): void;
     static GetAccessTokenForNetwork(netId: UnityEngine.Networking.Types.NetworkID): UnityEngine.Networking.Types.NetworkAccessToken;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static useRandomSourceID: boolean;
     // fields

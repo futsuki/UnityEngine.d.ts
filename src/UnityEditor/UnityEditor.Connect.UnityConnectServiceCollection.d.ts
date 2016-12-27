@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Connect {
-  class UnityConnectServiceCollection {
+  class UnityConnectServiceCollection extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     CloseServices(): void;
     ReloadServices(): void;
@@ -14,15 +14,11 @@ declare namespace UnityEditor.Connect {
     EnableService(name: string, enabled: boolean): void;
     GetUrlForService(serviceName: string): string;
     GetServiceFromUrl(searchUrl: string): UnityEditor.Connect.UnityConnectServiceData;
-    GetAllServiceNames(): any;
-    GetAllServiceUrls(): any;
+    GetAllServiceNames(): string[];
+    GetAllServiceUrls(): string[];
     GetAllServiceInfos(): UnityEditor.Connect.UnityConnectServiceCollection.ServiceInfo[];
     GetWebViewFromServiceName(serviceName: string): UnityEditor.WebView;
     UnbindAllServices(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isDrawerOpen: boolean;
     static readonly instance: UnityEditor.Connect.UnityConnectServiceCollection;

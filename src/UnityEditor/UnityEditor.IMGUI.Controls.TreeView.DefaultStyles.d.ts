@@ -1,12 +1,8 @@
 declare namespace UnityEditor.IMGUI.Controls.TreeView {
-  class DefaultStyles {
+  class DefaultStyles extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static label: any;

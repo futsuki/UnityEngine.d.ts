@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IBuildPostprocessor {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     LaunchPlayer(args: UnityEditor.Modules.BuildLaunchPlayerArgs): void;
     PostProcess(args: UnityEditor.Modules.BuildPostProcessArgs): void;

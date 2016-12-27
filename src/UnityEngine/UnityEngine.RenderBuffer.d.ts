@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class RenderBuffer {
+  class RenderBuffer extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetNativeRenderBufferPtr(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

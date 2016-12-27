@@ -1,9 +1,9 @@
 declare namespace UnityEditor {
   class IPreviewable {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Initialize(targets: any[]): void;
+    Initialize(targets: UnityEngine.Object[]): void;
     MoveNextTarget(): boolean;
     ResetTarget(): void;
     HasPreviewGUI(): boolean;
@@ -15,7 +15,7 @@ declare namespace UnityEditor {
     GetInfoString(): string;
     ReloadPreviewInstances(): void;
     // properties
-    readonly target: any;
+    readonly target: UnityEngine.Object;
     // fields
   }
 }

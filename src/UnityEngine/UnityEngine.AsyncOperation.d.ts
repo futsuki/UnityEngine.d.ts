@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class AsyncOperation {
+  class AsyncOperation extends UnityEngine.YieldInstruction {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isDone: boolean;
     readonly progress: number;

@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowKeyframe {
+  class AnimationWindowKeyframe extends System.Object {
     // constructors
     constructor();
     constructor(key: UnityEditorInternal.AnimationWindowKeyframe);
@@ -8,10 +8,6 @@ declare namespace UnityEditorInternal {
     // methods
     GetHash(): number;
     GetIndex(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     time: number;
     value: any;

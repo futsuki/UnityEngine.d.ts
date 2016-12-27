@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Time {
+  class Time extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly time: number;
     static readonly timeSinceLevelLoad: number;

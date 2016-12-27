@@ -1,5 +1,5 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeViewController {
+  class TreeViewController extends System.Object {
     // constructors
     constructor(editorWindow: UnityEditor.EditorWindow, treeViewState: UnityEditor.IMGUI.Controls.TreeViewState);
     // methods
@@ -35,22 +35,18 @@ declare namespace UnityEditor.IMGUI.Controls {
     Frame(id: number, frame: boolean, ping: boolean): void;
     Frame(id: number, frame: boolean, ping: boolean, animated: boolean): void;
     EndPing(): void;
-    SortIDsInVisiblityOrder(ids: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    SortIDsInVisiblityOrder(ids: number[]): number[];
     // properties
-    selectionChangedCallback: ((number[]) => void);
-    itemDoubleClickedCallback: ((number) => void);
-    dragEndedCallback: ((number[], boolean) => void);
-    contextClickItemCallback: ((number) => void);
+    selectionChangedCallback: ((obj: number[]) => void);
+    itemDoubleClickedCallback: ((obj: number) => void);
+    dragEndedCallback: ((arg1: number[], arg2: boolean) => void);
+    contextClickItemCallback: ((obj: number) => void);
     contextClickOutsideItemsCallback: (() => void);
     keyboardInputCallback: (() => void);
     expandedStateChanged: (() => void);
-    searchChanged: ((string) => void);
-    scrollChanged: ((any) => void);
-    onGUIRowCallback: ((number, any) => void);
+    searchChanged: ((obj: string) => void);
+    scrollChanged: ((obj: any) => void);
+    onGUIRowCallback: ((arg1: number, arg2: any) => void);
     data: UnityEditor.IMGUI.Controls.ITreeViewDataSource;
     dragging: UnityEditor.IMGUI.Controls.ITreeViewDragging;
     gui: UnityEditor.IMGUI.Controls.ITreeViewGUI;

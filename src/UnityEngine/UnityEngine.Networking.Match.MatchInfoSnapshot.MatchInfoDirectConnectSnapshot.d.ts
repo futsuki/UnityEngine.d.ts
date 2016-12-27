@@ -1,12 +1,8 @@
 declare namespace UnityEngine.Networking.Match.MatchInfoSnapshot {
-  class MatchInfoDirectConnectSnapshot {
+  class MatchInfoDirectConnectSnapshot extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly nodeId: UnityEngine.Networking.Types.NodeID;
     readonly publicAddress: string;

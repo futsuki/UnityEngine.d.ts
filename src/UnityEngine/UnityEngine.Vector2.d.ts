@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Vector2 {
+  class Vector2 extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Set(newX: number, newY: number): void;
     static Lerp(a: UnityEngine.Vector2, b: UnityEngine.Vector2, t: number): UnityEngine.Vector2;
@@ -24,7 +24,6 @@ declare namespace UnityEngine {
     static Min(lhs: UnityEngine.Vector2, rhs: UnityEngine.Vector2): UnityEngine.Vector2;
     static Max(lhs: UnityEngine.Vector2, rhs: UnityEngine.Vector2): UnityEngine.Vector2;
     static SmoothDamp(current: UnityEngine.Vector2, target: UnityEngine.Vector2, currentVelocity: any, smoothTime: number, maxSpeed: number, deltaTime: number): UnityEngine.Vector2;
-    GetType(): any;
     // properties
     get_Item(index: number): number;
     set_Item(index: number, value: number): void;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Analytics {
-  class AnalyticsSettings {
+  class AnalyticsSettings extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static enabled: boolean;
     static testMode: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Animator {
+  class Animator extends UnityEngine.Experimental.Director.DirectorPlayer {
     // constructors
     constructor();
     // methods
@@ -51,10 +51,10 @@ declare namespace UnityEngine {
     GetAnimatorTransitionInfo(layerIndex: number): UnityEngine.AnimatorTransitionInfo;
     GetCurrentAnimatorClipInfoCount(layerIndex: number): number;
     GetCurrentAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
-    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): void;
+    GetCurrentAnimatorClipInfo(layerIndex: number, clips: UnityEngine.AnimatorClipInfo[]): void;
     GetNextAnimatorClipInfoCount(layerIndex: number): number;
     GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
-    GetNextAnimatorClipInfo(layerIndex: number, clips: any): void;
+    GetNextAnimatorClipInfo(layerIndex: number, clips: UnityEngine.AnimatorClipInfo[]): void;
     IsInTransition(layerIndex: number): boolean;
     GetParameter(index: number): UnityEngine.AnimatorControllerParameter;
     MatchTarget(matchPosition: UnityEngine.Vector3, matchRotation: UnityEngine.Quaternion, targetBodyPart: UnityEngine.AvatarTarget, weightMask: UnityEngine.MatchTargetWeightMask, startNormalizedTime: number, targetNormalizedTime: number): void;
@@ -86,6 +86,7 @@ declare namespace UnityEngine {
     Play(stateNameHash: number, layer: number, normalizedTime: number): void;
     Play(stateNameHash: number, layer: number): void;
     Play(stateNameHash: number): void;
+    Play(pStruct: UnityEngine.Experimental.Director.Playable): void;
     SetTarget(targetIndex: UnityEngine.AvatarTarget, targetNormalizedTime: number): void;
     IsControlled(transform: UnityEngine.Transform): boolean;
     GetBoneTransform(humanBoneId: UnityEngine.HumanBodyBones): UnityEngine.Transform;
@@ -108,41 +109,6 @@ declare namespace UnityEngine {
     SetQuaternion(id: number, value: UnityEngine.Quaternion): void;
     GetCurrentAnimationClipState(layerIndex: number): UnityEngine.AnimationInfo[];
     GetNextAnimationClipState(layerIndex: number): UnityEngine.AnimationInfo[];
-    Play(pStruct: UnityEngine.Experimental.Director.Playable): void;
-    Stop(): void;
-    SetTime(time: number): void;
-    GetTime(): number;
-    SetTimeUpdateMode(mode: UnityEngine.Experimental.Director.DirectorUpdateMode): void;
-    GetTimeUpdateMode(): UnityEngine.Experimental.Director.DirectorUpdateMode;
-    GetComponent(type: any): UnityEngine.Component;
-    GetComponent(type: string): UnityEngine.Component;
-    GetComponentInChildren(t: any, includeInactive: boolean): UnityEngine.Component;
-    GetComponentInChildren(t: any): UnityEngine.Component;
-    GetComponentsInChildren(t: any): UnityEngine.Component[];
-    GetComponentsInChildren(t: any, includeInactive: boolean): UnityEngine.Component[];
-    GetComponentInParent(t: any): UnityEngine.Component;
-    GetComponentsInParent(t: any): UnityEngine.Component[];
-    GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
-    GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): void;
-    CompareTag(tag: string): boolean;
-    SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
-    SendMessageUpwards(methodName: string, value: any): void;
-    SendMessageUpwards(methodName: string): void;
-    SendMessageUpwards(methodName: string, options: UnityEngine.SendMessageOptions): void;
-    SendMessage(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
-    SendMessage(methodName: string, value: any): void;
-    SendMessage(methodName: string): void;
-    SendMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
-    BroadcastMessage(methodName: string, parameter: any, options: UnityEngine.SendMessageOptions): void;
-    BroadcastMessage(methodName: string, parameter: any): void;
-    BroadcastMessage(methodName: string): void;
-    BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly isOptimizable: boolean;
     readonly isHuman: boolean;
@@ -186,30 +152,6 @@ declare namespace UnityEngine {
     readonly rightFeetBottomHeight: number;
     logWarnings: boolean;
     fireEvents: boolean;
-    enabled: boolean;
-    readonly isActiveAndEnabled: boolean;
-    readonly transform: UnityEngine.Transform;
-    readonly gameObject: UnityEngine.GameObject;
-    tag: string;
-    readonly rigidbody: UnityEngine.Component;
-    readonly rigidbody2D: UnityEngine.Component;
-    readonly camera: UnityEngine.Component;
-    readonly light: UnityEngine.Component;
-    readonly animation: UnityEngine.Component;
-    readonly constantForce: UnityEngine.Component;
-    readonly renderer: UnityEngine.Component;
-    readonly audio: UnityEngine.Component;
-    readonly guiText: UnityEngine.Component;
-    readonly networkView: UnityEngine.Component;
-    readonly guiElement: UnityEngine.Component;
-    readonly guiTexture: UnityEngine.Component;
-    readonly collider: UnityEngine.Component;
-    readonly collider2D: UnityEngine.Component;
-    readonly hingeJoint: UnityEngine.Component;
-    readonly particleEmitter: UnityEngine.Component;
-    readonly particleSystem: UnityEngine.Component;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

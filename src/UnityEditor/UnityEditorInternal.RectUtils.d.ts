@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class RectUtils {
+  class RectUtils extends System.Object {
     // constructors
     constructor();
     // methods
@@ -14,10 +14,6 @@ declare namespace UnityEditorInternal {
     static Offset(r: any, offsetX: number, offsetY: number): any;
     static Offset(a: any, b: any): any;
     static Move(r: any, delta: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.AttributeHelper {
-  class MonoCreateAssetItem {
+  class MonoCreateAssetItem extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     menuItem: string;

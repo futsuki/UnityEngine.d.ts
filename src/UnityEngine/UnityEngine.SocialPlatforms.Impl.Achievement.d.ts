@@ -1,18 +1,15 @@
 declare namespace UnityEngine.SocialPlatforms.Impl {
-  class Achievement {
+  class Achievement extends System.Object {
     // constructors
     constructor(id: string, percentCompleted: number, completed: boolean, hidden: boolean, lastReportedDate: any);
     constructor(id: string, percent: number);
     constructor();
     // methods
     ToString(): string;
-    ReportProgress(callback: ((boolean) => void)): void;
+    ReportProgress(callback: ((obj: boolean) => void)): void;
     SetCompleted(value: boolean): void;
     SetHidden(value: boolean): void;
     SetLastReportedDate(date: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     id: string;
     percentCompleted: number;

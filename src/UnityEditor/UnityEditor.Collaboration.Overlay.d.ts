@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Collaboration {
-  class Overlay {
+  class Overlay extends System.Object {
     // constructors
     constructor();
     // methods
     static DrawOverlays(assetState: UnityEditor.Collaboration.Collab.CollabStates, itemRect: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

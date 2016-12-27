@@ -1,5 +1,5 @@
 declare namespace UnityEditor.VisualStudioIntegration {
-  class SolutionSynchronizer {
+  class SolutionSynchronizer extends System.Object {
     // constructors
     constructor(projectDirectory: string, settings: UnityEditor.VisualStudioIntegration.ISolutionSynchronizationSettings);
     constructor(projectDirectory: string);
@@ -12,10 +12,6 @@ declare namespace UnityEditor.VisualStudioIntegration {
     ProjectFile(island: UnityEditor.Scripting.MonoIsland): string;
     static IsManagedAssembly(file: string): boolean;
     static GetProjectExtension(language: UnityEditor.VisualStudioIntegration.ScriptingLanguage): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static DefaultSynchronizationSettings: UnityEditor.VisualStudioIntegration.ISolutionSynchronizationSettings;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AssetStoreClient {
+  class AssetStoreClient extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     static LoginError(): boolean;
     static LoginInProgress(): boolean;
     static Logout(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly LoginErrorMessage: string;
     static readonly HasSavedSessionID: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AnimationEventTimeLine {
+  class AnimationEventTimeLine extends System.Object {
     // constructors
     constructor(owner: UnityEditor.EditorWindow);
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditor {
     EventLineContextMenuAdd(obj: any): void;
     EventLineContextMenuEdit(obj: any): void;
     EventLineContextMenuDelete(obj: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

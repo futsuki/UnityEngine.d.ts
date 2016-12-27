@@ -1,17 +1,10 @@
 declare namespace UnityEngine {
-  class PropertyAttribute {
+  class PropertyAttribute extends System.Attribute {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    GetHashCode(): number;
-    IsDefaultAttribute(): boolean;
-    Match(obj: any): boolean;
-    Equals(obj: any): boolean;
-    GetType(): any;
-    ToString(): string;
     // properties
     order: number;
-    readonly TypeId: any;
     // fields
   }
 }

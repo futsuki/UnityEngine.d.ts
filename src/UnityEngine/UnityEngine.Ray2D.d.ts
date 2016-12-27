@@ -1,14 +1,11 @@
 declare namespace UnityEngine {
-  class Ray2D {
+  class Ray2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetPoint(distance: number): UnityEngine.Vector2;
     ToString(): string;
     ToString(format: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     origin: UnityEngine.Vector2;
     direction: UnityEngine.Vector2;

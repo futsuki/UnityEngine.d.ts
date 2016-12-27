@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class GUISlideGroup {
+  class GUISlideGroup extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     BeginHorizontal(id: number, options: any[]): any;
     EndHorizontal(): void;
     GetRect(id: number, r: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

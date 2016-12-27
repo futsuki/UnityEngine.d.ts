@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class ColorPickerHDRConfig {
+  class ColorPickerHDRConfig extends System.Object {
     // constructors
     constructor(minBrightness: number, maxBrightness: number, minExposureValue: number, maxExposureValue: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     minBrightness: number;

@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowSelection {
+  class AnimationWindowSelection extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,8 +12,8 @@ declare namespace UnityEditorInternal {
     UpdateClip(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, newClip: any): void;
     UpdateTimeOffset(itemToUpdate: UnityEditorInternal.AnimationWindowSelectionItem, timeOffset: number): void;
     Exists(itemToFind: UnityEditorInternal.AnimationWindowSelectionItem): boolean;
-    Exists(predicate: ((UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): boolean;
-    Find(predicate: ((UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): UnityEditorInternal.AnimationWindowSelectionItem;
+    Exists(predicate: ((obj: UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): boolean;
+    Find(predicate: ((obj: UnityEditorInternal.AnimationWindowSelectionItem) => boolean)): UnityEditorInternal.AnimationWindowSelectionItem;
     First(): UnityEditorInternal.AnimationWindowSelectionItem;
     GetRefreshHash(): number;
     Refresh(): void;
@@ -21,13 +21,9 @@ declare namespace UnityEditorInternal {
     Clear(): void;
     ClearCache(): void;
     Synchronize(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly count: number;
-    readonly curves: any;
+    readonly curves: UnityEditorInternal.AnimationWindowCurve[];
     locked: boolean;
     readonly disabled: boolean;
     readonly canRecord: boolean;

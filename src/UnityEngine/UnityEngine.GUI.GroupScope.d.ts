@@ -1,5 +1,5 @@
 declare namespace UnityEngine.GUI {
-  class GroupScope {
+  class GroupScope extends UnityEngine.GUI.Scope {
     // constructors
     constructor(position: UnityEngine.Rect);
     constructor(position: UnityEngine.Rect, text: string);
@@ -9,11 +9,6 @@ declare namespace UnityEngine.GUI {
     constructor(position: UnityEngine.Rect, text: string, style: UnityEngine.GUIStyle);
     constructor(position: UnityEngine.Rect, image: UnityEngine.Texture, style: UnityEngine.GUIStyle);
     // methods
-    Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

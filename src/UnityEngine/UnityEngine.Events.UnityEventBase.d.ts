@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Events {
-  class UnityEventBase {
+  class UnityEventBase extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;
@@ -10,9 +10,6 @@ declare namespace UnityEngine.Events {
     RemoveAllListeners(): void;
     ToString(): string;
     static GetValidMethodInfo(obj: any, functionName: string, argumentTypes: any[]): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     // fields
   }

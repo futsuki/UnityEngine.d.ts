@@ -1,19 +1,15 @@
 declare namespace UnityEditor {
-  class ObjectListAreaState {
+  class ObjectListAreaState extends System.Object {
     // constructors
     constructor();
     // methods
     OnAwake(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    m_SelectedInstanceIDs: any;
+    m_SelectedInstanceIDs: number[];
     m_LastClickedInstanceID: number;
     m_HadKeyboardFocusLastEvent: boolean;
-    m_ExpandedInstanceIDs: any;
+    m_ExpandedInstanceIDs: number[];
     m_RenameOverlay: UnityEditor.RenameOverlay;
     m_CreateAssetUtility: UnityEditor.CreateAssetUtility;
     m_NewAssetIndexInList: number;

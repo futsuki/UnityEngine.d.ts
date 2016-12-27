@@ -1,15 +1,13 @@
 declare namespace UnityEngine.SceneManagement {
-  class Scene {
+  class Scene extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     IsValid(): boolean;
     GetRootGameObjects(): UnityEngine.GameObject[];
-    GetRootGameObjects(rootGameObjects: any): void;
+    GetRootGameObjects(rootGameObjects: UnityEngine.GameObject[]): void;
     GetHashCode(): number;
     Equals(other: any): boolean;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly path: string;
     readonly name: string;

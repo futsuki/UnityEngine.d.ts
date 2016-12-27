@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class WheelHit {
+  class WheelHit extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     collider: UnityEngine.Collider;
     point: UnityEngine.Vector3;

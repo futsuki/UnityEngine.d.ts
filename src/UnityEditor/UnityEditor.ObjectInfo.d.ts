@@ -1,18 +1,14 @@
 declare namespace UnityEditor {
-  class ObjectInfo {
+  class ObjectInfo extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     instanceId: number;
     memorySize: number;
     reason: number;
-    referencedBy: any;
+    referencedBy: UnityEditor.ObjectInfo[];
     name: string;
     className: string;
   }

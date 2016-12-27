@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking.Types {
-  class NetworkAccessToken {
+  class NetworkAccessToken extends System.Object {
     // constructors
     constructor();
     constructor(array: number[]);
@@ -7,10 +7,6 @@ declare namespace UnityEngine.Networking.Types {
     // methods
     GetByteString(): string;
     IsValid(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     array: number[];

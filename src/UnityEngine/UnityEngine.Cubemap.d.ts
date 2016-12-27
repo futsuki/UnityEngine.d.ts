@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Cubemap {
+  class Cubemap extends UnityEngine.Texture {
     // constructors
     constructor(size: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     // methods
@@ -14,26 +14,9 @@ declare namespace UnityEngine {
     Apply(): void;
     SmoothEdges(smoothRegionWidthInPixels: number): void;
     SmoothEdges(): void;
-    GetNativeTexturePtr(): any;
-    GetNativeTextureID(): number;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly mipmapCount: number;
     readonly format: UnityEngine.TextureFormat;
-    width: number;
-    height: number;
-    dimension: UnityEngine.Rendering.TextureDimension;
-    filterMode: UnityEngine.FilterMode;
-    anisoLevel: number;
-    wrapMode: UnityEngine.TextureWrapMode;
-    mipMapBias: number;
-    readonly texelSize: UnityEngine.Vector2;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

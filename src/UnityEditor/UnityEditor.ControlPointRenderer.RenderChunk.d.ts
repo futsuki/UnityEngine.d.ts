@@ -1,19 +1,15 @@
 declare namespace UnityEditor.ControlPointRenderer {
-  class RenderChunk {
+  class RenderChunk extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     mesh: any;
-    vertices: any;
-    colors: any;
-    uvs: any;
-    indices: any;
+    vertices: any[];
+    colors: any[];
+    uvs: any[];
+    indices: number[];
     isDirty: boolean;
   }
 }

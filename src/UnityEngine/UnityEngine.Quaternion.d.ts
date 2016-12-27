@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Quaternion {
+  class Quaternion extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static AngleAxis(angle: number, axis: UnityEngine.Vector3): UnityEngine.Quaternion;
     ToAngleAxis(angle: any, axis: any): void;
@@ -40,7 +40,6 @@ declare namespace UnityEngine {
     Equals(other: any): boolean;
     ToString(): string;
     ToString(format: string): string;
-    GetType(): any;
     // properties
     eulerAngles: UnityEngine.Vector3;
     get_Item(index: number): number;

@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
-  class DefaultPlatformSupportModule {
+  class DefaultPlatformSupportModule extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetDisplayNames(): any[];
     CreateBuildAnalyzer(): UnityEditor.Modules.IBuildAnalyzer;
@@ -21,10 +21,6 @@ declare namespace UnityEditor.Modules {
     OnDeactivate(): void;
     OnLoad(): void;
     OnUnload(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly TargetName: string;
     readonly JamTarget: string;

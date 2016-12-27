@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class LookDevResources {
+  class LookDevResources extends System.Object {
     // constructors
     constructor();
     // methods
     static Initialize(): void;
     static Cleanup(): void;
     static UpdateShadowInfoWithBrightestSpot(cubemapInfo: UnityEditor.CubemapInfo): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static m_ZeroAmbientProbe: any;

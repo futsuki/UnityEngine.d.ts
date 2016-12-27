@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class SleepTimeout {
+  class SleepTimeout extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static NeverSleep: number;

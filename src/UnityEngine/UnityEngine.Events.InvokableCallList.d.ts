@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Events {
-  class InvokableCallList {
+  class InvokableCallList extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngine.Events {
     Clear(): void;
     ClearPersistent(): void;
     Invoke(parameters: any[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Count: number;
     // fields

@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class IClipper {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     PerformClipping(): void;
     // properties

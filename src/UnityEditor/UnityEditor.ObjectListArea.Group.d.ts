@@ -1,5 +1,5 @@
 declare namespace UnityEditor.ObjectListArea {
-  class Group {
+  class Group extends System.Object {
     // constructors
     constructor(owner: UnityEditor.ObjectListArea, groupTitle: string);
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor.ObjectListArea {
     UpdateHeight(): void;
     UpdateFilter(hierarchyType: UnityEditor.HierarchyType, searchFilter: UnityEditor.SearchFilter, showFoldersFirst: boolean): void;
     Draw(yOffset: number, scrollPos: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Height: number;
     readonly ItemCount: number;

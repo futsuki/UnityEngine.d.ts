@@ -1,16 +1,9 @@
 declare namespace UnityEditor {
-  class ModelImporter {
+  class ModelImporter extends UnityEditor.AssetImporter {
     // constructors
     constructor();
     // methods
     CreateDefaultMaskForClip(clip: UnityEditor.ModelImporterClipAnimation): void;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
-    SaveAndReimport(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     generateMaterials: UnityEditor.ModelImporterGenerateMaterials;
     importMaterials: boolean;
@@ -63,13 +56,6 @@ declare namespace UnityEditor {
     splitAnimations: boolean;
     clipAnimations: UnityEditor.ModelImporterClipAnimation[];
     readonly defaultClipAnimations: UnityEditor.ModelImporterClipAnimation[];
-    readonly assetPath: string;
-    readonly assetTimeStamp: number;
-    userData: string;
-    assetBundleName: string;
-    assetBundleVariant: string;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

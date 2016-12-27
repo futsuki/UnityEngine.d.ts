@@ -1,7 +1,7 @@
 declare namespace UnityEngine.WSA {
-  class Tile {
+  class Tile extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetTemplate(templ: UnityEngine.WSA.TileTemplate): string;
     Update(xml: string): void;
@@ -20,15 +20,11 @@ declare namespace UnityEngine.WSA {
     static GetSecondary(tileId: string): UnityEngine.WSA.Tile;
     static GetSecondaries(): UnityEngine.WSA.Tile[];
     Delete(): void;
-    static DeleteSecondary(tileId: string): void;
     Delete(pos: UnityEngine.Vector2): void;
-    static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): void;
     Delete(area: UnityEngine.Rect): void;
+    static DeleteSecondary(tileId: string): void;
+    static DeleteSecondary(tileId: string, pos: UnityEngine.Vector2): void;
     static DeleteSecondary(tileId: string, area: UnityEngine.Rect): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly main: UnityEngine.WSA.Tile;
     readonly id: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Web {
-  class AnalyticsAccess {
+  class AnalyticsAccess extends UnityEditor.Web.CloudServiceAccess {
     // constructors
     constructor();
     // methods
@@ -9,13 +9,6 @@ declare namespace UnityEditor.Web {
     EnableService(enabled: boolean): void;
     IsTestModeEnabled(): boolean;
     SetTestModeEnabled(enabled: boolean): void;
-    OnProjectUnbound(): void;
-    ShowServicePage(): void;
-    GoBackToHub(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

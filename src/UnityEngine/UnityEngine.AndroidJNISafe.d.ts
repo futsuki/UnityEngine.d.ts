@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AndroidJNISafe {
+  class AndroidJNISafe extends System.Object {
     // constructors
     constructor();
     // methods
@@ -100,10 +100,6 @@ declare namespace UnityEngine {
     static ToIntArray(array: number[]): any;
     static GetObjectArrayElement(array: any, index: number): any;
     static GetArrayLength(array: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class Lightmapping {
+  class Lightmapping extends System.Object {
     // constructors
     constructor();
     // methods
@@ -17,10 +17,6 @@ declare namespace UnityEditor {
     static BakeSelected(): boolean;
     static BakeLightProbesOnlyAsync(): boolean;
     static BakeLightProbesOnly(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static giWorkflowMode: UnityEditor.Lightmapping.GIWorkflowMode;
     static realtimeGI: boolean;

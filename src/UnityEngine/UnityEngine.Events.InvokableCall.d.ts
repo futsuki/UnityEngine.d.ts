@@ -1,15 +1,11 @@
 declare namespace UnityEngine.Events {
-  class InvokableCall {
+  class InvokableCall extends UnityEngine.Events.BaseInvokableCall {
     // constructors
     constructor(target: any, theFunction: any);
     constructor(action: (() => void));
     // methods
     Invoke(args: any[]): void;
     Find(targetObj: any, method: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

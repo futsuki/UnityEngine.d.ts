@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AndroidReflection {
+  class AndroidReflection extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngine {
     static GetMethodMember(jclass: any, methodName: string, signature: string, isStatic: boolean): any;
     static GetFieldMember(jclass: any, fieldName: string, signature: string, isStatic: boolean): any;
     static NewProxyInstance(delegateHandle: number, interfaze: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

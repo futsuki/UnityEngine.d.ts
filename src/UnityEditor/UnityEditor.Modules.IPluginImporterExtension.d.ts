@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IPluginImporterExtension {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ResetValues(inspector: UnityEditor.PluginImporterInspector): void;
     HasModified(inspector: UnityEditor.PluginImporterInspector): boolean;

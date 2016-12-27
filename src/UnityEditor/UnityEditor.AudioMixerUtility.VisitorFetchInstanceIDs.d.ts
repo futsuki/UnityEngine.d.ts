@@ -1,15 +1,11 @@
 declare namespace UnityEditor.AudioMixerUtility {
-  class VisitorFetchInstanceIDs {
+  class VisitorFetchInstanceIDs extends System.Object {
     // constructors
     constructor();
     // methods
     Visitor(group: UnityEditor.Audio.AudioMixerGroupController): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    instanceIDs: any;
+    instanceIDs: number[];
   }
 }

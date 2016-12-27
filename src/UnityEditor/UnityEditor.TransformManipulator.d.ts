@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TransformManipulator {
+  class TransformManipulator extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     static SetResizeDelta(scaleDelta: any, pivotPosition: any, pivotRotation: any): void;
     static SetPositionDelta(positionDelta: any): void;
     static DebugAlignment(targetRotation: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly mouseDownHandlePosition: any;
     static readonly active: boolean;

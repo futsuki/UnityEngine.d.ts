@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class OptimizedGUIBlock {
+  class OptimizedGUIBlock extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     BeginRecording(): void;
     EndRecording(): void;
     Execute(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     valid: boolean;
     // fields

@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
   class IIl2CppPlatformProvider {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     CreateNativeCompiler(): INativeCompiler;
     CreateIl2CppNativeCodeBuilder(): UnityEditorInternal.Il2CppNativeCodeBuilder;

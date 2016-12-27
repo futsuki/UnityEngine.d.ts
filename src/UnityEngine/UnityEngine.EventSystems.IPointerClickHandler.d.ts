@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IPointerClickHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnPointerClick(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

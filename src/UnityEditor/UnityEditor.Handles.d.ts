@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class Handles {
+  class Handles extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,29 +9,33 @@ declare namespace UnityEditor {
     static RadiusHandle(rotation: any, position: any, radius: number, handlesOnly: boolean): number;
     static RadiusHandle(rotation: any, position: any, radius: number): number;
     static Slider(position: any, direction: any): any;
-    static Slider(position: any, direction: any, size: number, drawFunc: ((number, any, any, number) => void), snap: number): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any): any;
-    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: any, drawHelper: boolean): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any): any;
-    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: any, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: number): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((number, any, any, number) => void), snap: number, drawHelper: boolean): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: number): any;
-    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((number, any, any, number, any) => void), snap: number, drawHelper: boolean): any;
+    static Slider(position: any, direction: any, size: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: number): any;
+    static Slider(position: any, direction: any, size: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: number): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, offset: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: any): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: any): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: any): any;
+    static Slider2D(id: number, handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: any, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: number): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, drawFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: number, drawHelper: boolean): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: number): any;
+    static Slider2D(handlePos: any, handleDir: any, slideDir1: any, slideDir2: any, handleSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: number, drawHelper: boolean): any;
     static FreeRotateHandle(rotation: any, position: any, size: number): any;
-    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunc: ((number, any, any, number) => void)): any;
+    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunc: ((controlID: number, position: any, rotation: any, size: number) => void)): any;
+    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void)): any;
     static ScaleSlider(scale: number, position: any, direction: any, rotation: any, size: number, snap: number): number;
-    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunc: ((number, any, any, number) => void), snap: number): number;
+    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunc: ((controlID: number, position: any, rotation: any, size: number) => void), snap: number): number;
+    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void), snap: number): number;
     static Disc(rotation: any, position: any, axis: any, size: number, cutoffPlane: boolean, snap: number): any;
-    static Button(position: any, direction: any, size: number, pickSize: number, capFunc: ((number, any, any, number) => void)): boolean;
+    static Button(position: any, direction: any, size: number, pickSize: number, capFunc: ((controlID: number, position: any, rotation: any, size: number) => void)): boolean;
+    static Button(position: any, direction: any, size: number, pickSize: number, capFunction: ((controlID: number, position: any, rotation: any, size: number, eventType: any) => void)): boolean;
     static SnapValue(val: number, snap: number): number;
     static CubeCap(controlID: number, position: any, rotation: any, size: number): void;
     static SphereCap(controlID: number, position: any, rotation: any, size: number): void;
@@ -84,10 +88,6 @@ declare namespace UnityEditor {
     static DrawDottedLines(lineSegments: any[], screenSpaceSize: number): void;
     static DrawDottedLines(points: any[], segmentIndices: number[], screenSpaceSize: number): void;
     static DrawWireCube(center: any, size: any): void;
-    static Slider(position: any, direction: any, size: number, capFunction: ((number, any, any, number, any) => void), snap: number): any;
-    static FreeMoveHandle(position: any, rotation: any, size: number, snap: any, capFunction: ((number, any, any, number, any) => void)): any;
-    static ScaleValueHandle(value: number, position: any, rotation: any, size: number, capFunction: ((number, any, any, number, any) => void), snap: number): number;
-    static Button(position: any, direction: any, size: number, pickSize: number, capFunction: ((number, any, any, number, any) => void)): boolean;
     static CubeHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static SphereHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
     static ConeHandleCap(controlID: number, position: any, rotation: any, size: number, eventType: any): void;
@@ -100,10 +100,6 @@ declare namespace UnityEditor {
     static DoPositionHandle(position: any, rotation: any): any;
     static DoRotationHandle(rotation: any, position: any): any;
     static DoScaleHandle(scale: any, position: any, rotation: any, size: number): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly xAxisColor: any;
     static readonly yAxisColor: any;

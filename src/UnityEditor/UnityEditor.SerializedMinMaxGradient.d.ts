@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class SerializedMinMaxGradient {
+  class SerializedMinMaxGradient extends System.Object {
     // constructors
     constructor(m: UnityEditor.SerializedModule);
     constructor(m: UnityEditor.SerializedModule, name: string);
     // methods
     static GetGradientAsColor(gradientProp: UnityEditor.SerializedProperty): any;
     static SetGradientAsColor(gradientProp: UnityEditor.SerializedProperty, color: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     state: UnityEditor.MinMaxGradientState;
     // fields

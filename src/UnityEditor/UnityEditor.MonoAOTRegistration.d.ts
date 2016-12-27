@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MonoAOTRegistration {
+  class MonoAOTRegistration extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     static GenerateRegisterClassesForStripping(nativeClassesAndBaseClasses: any, output: any): void;
     static GenerateRegisterClasses(allClasses: any, output: any): void;
     static GenerateRegisterInternalCalls(assemblies: any[], output: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

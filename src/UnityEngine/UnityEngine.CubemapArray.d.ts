@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class CubemapArray {
+  class CubemapArray extends UnityEngine.Texture {
     // constructors
     constructor(faceSize: number, cubemapCount: number, format: UnityEngine.TextureFormat, mipmap: boolean);
     constructor(faceSize: number, cubemapCount: number, format: UnityEngine.TextureFormat, mipmap: boolean, linear: boolean);
@@ -15,26 +15,9 @@ declare namespace UnityEngine {
     GetPixels(face: UnityEngine.CubemapFace, arrayElement: number): UnityEngine.Color[];
     GetPixels32(face: UnityEngine.CubemapFace, arrayElement: number, miplevel: number): UnityEngine.Color32[];
     GetPixels32(face: UnityEngine.CubemapFace, arrayElement: number): UnityEngine.Color32[];
-    GetNativeTexturePtr(): any;
-    GetNativeTextureID(): number;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly cubemapCount: number;
     readonly format: UnityEngine.TextureFormat;
-    width: number;
-    height: number;
-    dimension: UnityEngine.Rendering.TextureDimension;
-    filterMode: UnityEngine.FilterMode;
-    anisoLevel: number;
-    wrapMode: UnityEngine.TextureWrapMode;
-    mipMapBias: number;
-    readonly texelSize: UnityEngine.Vector2;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

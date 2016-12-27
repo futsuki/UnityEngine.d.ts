@@ -1,13 +1,8 @@
 declare namespace UnityEditor {
-  class LightmapParameters {
+  class LightmapParameters extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     resolution: number;
     clusterResolution: number;
@@ -25,8 +20,6 @@ declare namespace UnityEditor {
     antiAliasingSamples: number;
     bakedLightmapTag: number;
     edgeStitching: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

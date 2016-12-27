@@ -1,14 +1,12 @@
 declare namespace UnityEditor.MonoAssemblyStripping {
-  class AssemblyDefinitionComparer {
+  class AssemblyDefinitionComparer extends System.Object {
     // constructors
     constructor();
     // methods
     Equals(x: any, y: any): boolean;
-    GetHashCode(obj: any): number;
     Equals(obj: any): boolean;
+    GetHashCode(obj: any): number;
     GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

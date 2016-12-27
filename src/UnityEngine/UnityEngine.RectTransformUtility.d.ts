@@ -1,9 +1,10 @@
 declare namespace UnityEngine {
-  class RectTransformUtility {
+  class RectTransformUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static RectangleContainsScreenPoint(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2): boolean;
+    static RectangleContainsScreenPoint(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2, cam: UnityEngine.Camera): boolean;
     static ScreenPointToWorldPointInRectangle(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2, cam: UnityEngine.Camera, worldPoint: any): boolean;
     static ScreenPointToLocalPointInRectangle(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2, cam: UnityEngine.Camera, localPoint: any): boolean;
     static ScreenPointToRay(cam: UnityEngine.Camera, screenPos: UnityEngine.Vector2): UnityEngine.Ray;
@@ -12,13 +13,8 @@ declare namespace UnityEngine {
     static CalculateRelativeRectTransformBounds(trans: UnityEngine.Transform): UnityEngine.Bounds;
     static FlipLayoutOnAxis(rect: UnityEngine.RectTransform, axis: number, keepPositioning: boolean, recursive: boolean): void;
     static FlipLayoutAxes(rect: UnityEngine.RectTransform, keepPositioning: boolean, recursive: boolean): void;
-    static RectangleContainsScreenPoint(rect: UnityEngine.RectTransform, screenPoint: UnityEngine.Vector2, cam: UnityEngine.Camera): boolean;
     static PixelAdjustPoint(point: UnityEngine.Vector2, elementTransform: UnityEngine.Transform, canvas: UnityEngine.Canvas): UnityEngine.Vector2;
     static PixelAdjustRect(rectTransform: UnityEngine.RectTransform, canvas: UnityEngine.Canvas): UnityEngine.Rect;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

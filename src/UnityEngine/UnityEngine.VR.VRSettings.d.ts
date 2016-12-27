@@ -1,14 +1,10 @@
 declare namespace UnityEngine.VR {
-  class VRSettings {
+  class VRSettings extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static LoadDeviceByName(deviceName: string): void;
     static LoadDeviceByName(prioritizedDeviceNameList: string[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static enabled: boolean;
     static readonly isDeviceActive: boolean;

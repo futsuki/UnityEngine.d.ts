@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class CurveRenderer {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     DrawCurve(minTime: number, maxTime: number, color: any, transform: any, wrapColor: any): void;
     GetCurve(): any;

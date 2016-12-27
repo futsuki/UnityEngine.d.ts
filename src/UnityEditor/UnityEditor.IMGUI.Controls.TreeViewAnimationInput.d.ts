@@ -1,13 +1,10 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeViewAnimationInput {
+  class TreeViewAnimationInput extends System.Object {
     // constructors
     constructor();
     // methods
     FireAnimationEndedEvent(): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly elapsedTimeNormalized: number;
     elapsedTime: number;
@@ -21,6 +18,6 @@ declare namespace UnityEditor.IMGUI.Controls {
     item: UnityEditor.IMGUI.Controls.TreeViewItem;
     treeView: UnityEditor.IMGUI.Controls.TreeViewController;
     // fields
-    animationEnded: ((UnityEditor.IMGUI.Controls.TreeViewAnimationInput) => void);
+    animationEnded: ((obj: UnityEditor.IMGUI.Controls.TreeViewAnimationInput) => void);
   }
 }

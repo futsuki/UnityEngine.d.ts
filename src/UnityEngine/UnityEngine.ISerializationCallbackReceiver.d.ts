@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
   class ISerializationCallbackReceiver {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnBeforeSerialize(): void;
     OnAfterDeserialize(): void;

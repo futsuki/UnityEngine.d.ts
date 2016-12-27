@@ -1,42 +1,14 @@
 declare namespace UnityEditor {
-  class AnimationWindowEventInspector {
+  class AnimationWindowEventInspector extends UnityEditor.Editor {
     // constructors
     constructor();
     // methods
     OnInspectorGUI(): void;
     static OnEditAnimationEvent(awevt: UnityEditor.AnimationWindowEvent): void;
     static OnDisabledAnimationEvent(): void;
-    static CollectSupportedMethods(awevt: UnityEditor.AnimationWindowEvent): any;
+    static CollectSupportedMethods(awevt: UnityEditor.AnimationWindowEvent): UnityEditor.AnimationWindowEventMethod[];
     static FormatEvent(root: any, evt: any): string;
-    DrawDefaultInspector(): boolean;
-    RequiresConstantRepaint(): boolean;
-    Repaint(): void;
-    HasPreviewGUI(): boolean;
-    GetPreviewTitle(): any;
-    RenderStaticPreview(assetPath: string, subAssets: any[], width: number, height: number): any;
-    OnPreviewGUI(r: any, background: any): void;
-    OnInteractivePreviewGUI(r: any, background: any): void;
-    OnPreviewSettings(): void;
-    GetInfoString(): string;
-    ReloadPreviewInstances(): void;
-    DrawHeader(): void;
-    DrawPreview(previewArea: any): void;
-    UseDefaultMargins(): boolean;
-    Initialize(targets: any[]): void;
-    MoveNextTarget(): boolean;
-    ResetTarget(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    target: any;
-    readonly targets: any[];
-    readonly serializedObject: UnityEditor.SerializedObject;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

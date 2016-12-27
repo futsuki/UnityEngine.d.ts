@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class BuildVerifier {
+  class BuildVerifier extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static VerifyBuild(target: UnityEditor.BuildTarget, managedDllFolder: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,12 +1,8 @@
 declare namespace UnityEngine.VR.WSA.WebCam {
-  class CameraParameters {
+  class CameraParameters extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     hologramOpacity: number;
     frameRate: number;

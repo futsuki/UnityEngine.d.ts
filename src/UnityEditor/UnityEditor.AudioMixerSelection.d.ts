@@ -1,21 +1,17 @@
 declare namespace UnityEditor {
-  class AudioMixerSelection {
+  class AudioMixerSelection extends System.Object {
     // constructors
     constructor(controller: UnityEditor.Audio.AudioMixerController);
     // methods
     SyncToUnitySelection(): void;
-    SetChannelStrips(newSelection: any): void;
+    SetChannelStrips(newSelection: UnityEditor.Audio.AudioMixerGroupController[]): void;
     SetSingleChannelStrip(group: UnityEditor.Audio.AudioMixerGroupController): void;
     ToggleChannelStrip(group: UnityEditor.Audio.AudioMixerGroupController): void;
     ClearChannelStrips(): void;
     HasSingleChannelStripSelection(): boolean;
     Sanitize(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly ChannelStripSelection: any;
+    readonly ChannelStripSelection: UnityEditor.Audio.AudioMixerGroupController[];
     // fields
   }
 }

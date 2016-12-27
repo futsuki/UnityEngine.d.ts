@@ -1,14 +1,10 @@
 declare namespace UnityEditor.ObjectListArea.LocalGroup {
-  class ItemFader {
+  class ItemFader extends System.Object {
     // constructors
     constructor();
     // methods
-    Start(instanceIDs: any): void;
+    Start(instanceIDs: number[]): void;
     GetAlpha(instanceID: number): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

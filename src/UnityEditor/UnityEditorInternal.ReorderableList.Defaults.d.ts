@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal.ReorderableList {
-  class Defaults {
+  class Defaults extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditorInternal.ReorderableList {
     DrawElementDraggingHandle(rect: any, index: number, selected: boolean, focused: boolean, draggable: boolean): void;
     DrawElement(rect: any, element: UnityEditor.SerializedProperty, listItem: any, selected: boolean, focused: boolean, draggable: boolean): void;
     DrawNoneElement(rect: any, draggable: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     iconToolbarPlus: any;

@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal.DopeSheetEditor {
-  class DopeSheetControlPointRenderer {
+  class DopeSheetControlPointRenderer extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditorInternal.DopeSheetEditor {
     AddUnselectedKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): void;
     AddSelectedKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): void;
     AddDragDropKey(element: UnityEditorInternal.DopeSheetEditor.DrawElement): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

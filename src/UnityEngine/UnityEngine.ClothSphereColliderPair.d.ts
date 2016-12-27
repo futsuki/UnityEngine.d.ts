@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class ClothSphereColliderPair {
+  class ClothSphereColliderPair extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     first: UnityEngine.SphereCollider;
     second: UnityEngine.SphereCollider;

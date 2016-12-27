@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Sprites {
-  class DataUtility {
+  class DataUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine.Sprites {
     static GetOuterUV(sprite: UnityEngine.Sprite): UnityEngine.Vector4;
     static GetPadding(sprite: UnityEngine.Sprite): UnityEngine.Vector4;
     static GetMinSize(sprite: UnityEngine.Sprite): UnityEngine.Vector2;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

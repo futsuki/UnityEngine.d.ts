@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Connect {
-  class UnityConnectPrefs {
+  class UnityConnectPrefs extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor.Connect {
     static FixUrl(url: string, serviceName: string): string;
     static ShowPanelPrefUI(): void;
     static StorePanelPrefs(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static kEnvironmentFamilies: string[];

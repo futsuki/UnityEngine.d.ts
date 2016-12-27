@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Experimental.Director {
-  class CustomAnimationPlayable {
+  class CustomAnimationPlayable extends UnityEngine.Experimental.Director.ScriptPlayable {
     // constructors
     constructor();
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEngine.Experimental.Director {
     SetInputs(sources: any): boolean;
     RemoveInput(index: number): boolean;
     RemoveAllInputs(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly inputCount: number;
     readonly outputCount: number;

@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IBeginDragHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnBeginDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

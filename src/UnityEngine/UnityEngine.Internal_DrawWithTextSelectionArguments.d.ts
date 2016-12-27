@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Internal_DrawWithTextSelectionArguments {
+  class Internal_DrawWithTextSelectionArguments extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     target: any;

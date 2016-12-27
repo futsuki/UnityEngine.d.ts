@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorUserBuildSettings {
+  class EditorUserBuildSettings extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEditor {
     static SetBuildLocation(target: UnityEditor.BuildTarget, location: string): void;
     static SetPlatformSettings(platformName: string, name: string, value: string): void;
     static GetPlatformSettings(platformName: string, name: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static selectedBuildTargetGroup: UnityEditor.BuildTargetGroup;
     static selectedStandaloneTarget: UnityEditor.BuildTarget;

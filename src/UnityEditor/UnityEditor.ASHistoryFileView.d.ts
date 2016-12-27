@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ASHistoryFileView {
+  class ASHistoryFileView extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor {
     DoDeletedItemsGUI(parentWin: UnityEditor.ASHistoryWindow, theRect: any, s: any, offset: number, endOffset: number, focused: boolean): void;
     DoGUI(parentWin: UnityEditor.ASHistoryWindow, theRect: any, focused: boolean): void;
     GetImplicitProjectViewSelection(): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     SelType: UnityEditor.ASHistoryFileView.SelectionType;
     // fields

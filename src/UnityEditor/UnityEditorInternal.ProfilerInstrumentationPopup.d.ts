@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ProfilerInstrumentationPopup {
+  class ProfilerInstrumentationPopup extends UnityEditor.PopupWindowContent {
     // constructors
     constructor(functions: any, showAllCheckbox: boolean, showAutoInstrumemtationParams: boolean);
     // methods
@@ -11,14 +11,8 @@ declare namespace UnityEditorInternal {
     static Show(r: any): void;
     static Show(r: any, funcName: string): void;
     static FunctionHasInstrumentationPopup(funcName: string): boolean;
-    OnOpen(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly InstrumentationEnabled: boolean;
-    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }

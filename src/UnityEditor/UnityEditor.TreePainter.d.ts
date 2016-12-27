@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class TreePainter {
+  class TreePainter extends System.Object {
     // constructors
     constructor();
     // methods
     static PlaceTrees(terrain: any, xBase: number, yBase: number): void;
     static RemoveTrees(terrain: any, xBase: number, yBase: number, clearSelectedOnly: boolean): void;
     static MassPlaceTrees(terrainData: any, numberOfTrees: number, randomTreeColor: boolean, keepExistingTrees: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static brushSize: number;

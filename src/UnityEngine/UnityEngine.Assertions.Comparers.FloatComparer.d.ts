@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Assertions.Comparers {
-  class FloatComparer {
+  class FloatComparer extends System.Object {
     // constructors
     constructor();
     constructor(relative: boolean);
@@ -7,13 +7,11 @@ declare namespace UnityEngine.Assertions.Comparers {
     constructor(error: number, relative: boolean);
     // methods
     Equals(a: number, b: number): boolean;
+    Equals(obj: any): boolean;
     GetHashCode(obj: number): number;
+    GetHashCode(): number;
     static AreEqual(expected: number, actual: number, error: number): boolean;
     static AreEqualRelative(expected: number, actual: number, error: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static s_ComparerWithDefaultTolerance: UnityEngine.Assertions.Comparers.FloatComparer;

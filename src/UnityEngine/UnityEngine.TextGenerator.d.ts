@@ -1,13 +1,13 @@
 declare namespace UnityEngine {
-  class TextGenerator {
+  class TextGenerator extends System.Object {
     // constructors
     constructor();
     constructor(initialCapacity: number);
     // methods
     Invalidate(): void;
-    GetCharacters(characters: any): void;
-    GetLines(lines: any): void;
-    GetVertices(vertices: any): void;
+    GetCharacters(characters: UnityEngine.UICharInfo[]): void;
+    GetLines(lines: UnityEngine.UILineInfo[]): void;
+    GetVertices(vertices: UnityEngine.UIVertex[]): void;
     GetPreferredWidth(str: string, settings: UnityEngine.TextGenerationSettings): number;
     GetPreferredHeight(str: string, settings: UnityEngine.TextGenerationSettings): number;
     PopulateWithErrors(str: string, settings: UnityEngine.TextGenerationSettings, context: UnityEngine.GameObject): boolean;
@@ -15,14 +15,10 @@ declare namespace UnityEngine {
     GetVerticesArray(): UnityEngine.UIVertex[];
     GetCharactersArray(): UnityEngine.UICharInfo[];
     GetLinesArray(): UnityEngine.UILineInfo[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly verts: any;
-    readonly characters: any;
-    readonly lines: any;
+    readonly verts: UnityEngine.UIVertex[];
+    readonly characters: UnityEngine.UICharInfo[];
+    readonly lines: UnityEngine.UILineInfo[];
     readonly rectExtents: UnityEngine.Rect;
     readonly vertexCount: number;
     readonly characterCount: number;

@@ -1,16 +1,10 @@
 declare namespace UnityEditor {
-  class SpaceDrawer {
+  class SpaceDrawer extends UnityEditor.DecoratorDrawer {
     // constructors
     constructor();
     // methods
     GetHeight(): number;
-    OnGUI(position: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly attribute: any;
     // fields
   }
 }

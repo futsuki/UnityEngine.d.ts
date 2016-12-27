@@ -1,18 +1,18 @@
 declare namespace UnityEditor {
-  class AssetDatabase {
+  class AssetDatabase extends System.Object {
     // constructors
     constructor();
     // methods
-    static Contains(obj: any): boolean;
+    static Contains(obj: UnityEngine.Object): boolean;
     static Contains(instanceID: number): boolean;
     static CreateFolder(parentFolder: string, newFolderName: string): string;
-    static IsMainAsset(obj: any): boolean;
+    static IsMainAsset(obj: UnityEngine.Object): boolean;
     static IsMainAsset(instanceID: number): boolean;
-    static IsSubAsset(obj: any): boolean;
+    static IsSubAsset(obj: UnityEngine.Object): boolean;
     static IsSubAsset(instanceID: number): boolean;
-    static IsForeignAsset(obj: any): boolean;
+    static IsForeignAsset(obj: UnityEngine.Object): boolean;
     static IsForeignAsset(instanceID: number): boolean;
-    static IsNativeAsset(obj: any): boolean;
+    static IsNativeAsset(obj: UnityEngine.Object): boolean;
     static IsNativeAsset(instanceID: number): boolean;
     static GenerateUniqueAssetPath(path: string): string;
     static StartAssetEditing(): void;
@@ -28,20 +28,20 @@ declare namespace UnityEditor {
     static WriteImportSettingsIfDirty(path: string): boolean;
     static GetSubFolders(path: string): string[];
     static IsValidFolder(path: string): boolean;
-    static CreateAsset(asset: any, path: string): void;
-    static AddObjectToAsset(objectToAdd: any, path: string): void;
-    static AddObjectToAsset(objectToAdd: any, assetObject: any): void;
-    static GetAssetPath(assetObject: any): string;
+    static CreateAsset(asset: UnityEngine.Object, path: string): void;
+    static AddObjectToAsset(objectToAdd: UnityEngine.Object, path: string): void;
+    static AddObjectToAsset(objectToAdd: UnityEngine.Object, assetObject: UnityEngine.Object): void;
+    static GetAssetPath(assetObject: UnityEngine.Object): string;
     static GetAssetPath(instanceID: number): string;
-    static GetAssetOrScenePath(assetObject: any): string;
+    static GetAssetOrScenePath(assetObject: UnityEngine.Object): string;
     static GetTextMetaFilePathFromAssetPath(path: string): string;
     static GetAssetPathFromTextMetaFilePath(path: string): string;
-    static LoadAssetAtPath(assetPath: string, type: any): any;
-    static LoadMainAssetAtPath(assetPath: string): any;
+    static LoadAssetAtPath(assetPath: string, type: any): UnityEngine.Object;
+    static LoadMainAssetAtPath(assetPath: string): UnityEngine.Object;
     static GetMainAssetTypeAtPath(assetPath: string): any;
     static IsMainAssetAtPathLoaded(assetPath: string): boolean;
-    static LoadAllAssetRepresentationsAtPath(assetPath: string): any[];
-    static LoadAllAssetsAtPath(assetPath: string): any[];
+    static LoadAllAssetRepresentationsAtPath(assetPath: string): UnityEngine.Object[];
+    static LoadAllAssetsAtPath(assetPath: string): UnityEngine.Object[];
     static GetAllAssetPaths(): string[];
     static RefreshDelayed(options: UnityEditor.ImportAssetOptions): void;
     static RefreshDelayed(): void;
@@ -49,17 +49,17 @@ declare namespace UnityEditor {
     static Refresh(): void;
     static OpenAsset(instanceID: number, lineNumber: number): boolean;
     static OpenAsset(instanceID: number): boolean;
-    static OpenAsset(target: any): boolean;
-    static OpenAsset(target: any, lineNumber: number): boolean;
-    static OpenAsset(objects: any[]): boolean;
+    static OpenAsset(target: UnityEngine.Object): boolean;
+    static OpenAsset(target: UnityEngine.Object, lineNumber: number): boolean;
+    static OpenAsset(objects: UnityEngine.Object[]): boolean;
     static AssetPathToGUID(path: string): string;
     static GUIDToAssetPath(guid: string): string;
     static GetAssetDependencyHash(path: string): any;
     static SaveAssets(): void;
     static GetCachedIcon(path: string): any;
-    static SetLabels(obj: any, labels: string[]): void;
-    static GetLabels(obj: any): string[];
-    static ClearLabels(obj: any): void;
+    static SetLabels(obj: UnityEngine.Object, labels: string[]): void;
+    static GetLabels(obj: UnityEngine.Object): string[];
+    static ClearLabels(obj: UnityEngine.Object): void;
     static GetAllAssetBundleNames(): string[];
     GetAssetBundleNames(): string[];
     static GetUnusedAssetBundleNames(): string[];
@@ -77,20 +77,16 @@ declare namespace UnityEditor {
     static ExportPackage(assetPathNames: string[], fileName: string, flags: UnityEditor.ExportPackageOptions): void;
     static ExportPackage(assetPathNames: string[], fileName: string): void;
     static ImportPackage(packagePath: string, interactive: boolean): void;
-    static IsOpenForEdit(assetObject: any): boolean;
+    static IsOpenForEdit(assetObject: UnityEngine.Object): boolean;
     static IsOpenForEdit(assetOrMetaFilePath: string): boolean;
-    static IsOpenForEdit(assetObject: any, message: any): boolean;
+    static IsOpenForEdit(assetObject: UnityEngine.Object, message: any): boolean;
     static IsOpenForEdit(assetOrMetaFilePath: string, message: any): boolean;
-    static IsMetaFileOpenForEdit(assetObject: any): boolean;
-    static IsMetaFileOpenForEdit(assetObject: any, message: any): boolean;
-    static GetBuiltinExtraResource(type: any, path: string): any;
+    static IsMetaFileOpenForEdit(assetObject: UnityEngine.Object): boolean;
+    static IsMetaFileOpenForEdit(assetObject: UnityEngine.Object, message: any): boolean;
+    static GetBuiltinExtraResource(type: any, path: string): UnityEngine.Object;
     static GetTextMetaDataPathFromAssetPath(path: string): string;
     static FindAssets(filter: string): string[];
     static FindAssets(filter: string, searchInFolders: string[]): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

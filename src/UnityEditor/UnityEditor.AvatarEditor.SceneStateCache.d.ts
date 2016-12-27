@@ -1,12 +1,8 @@
 declare namespace UnityEditor.AvatarEditor {
-  class SceneStateCache {
+  class SceneStateCache extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     view: UnityEditor.SceneView;

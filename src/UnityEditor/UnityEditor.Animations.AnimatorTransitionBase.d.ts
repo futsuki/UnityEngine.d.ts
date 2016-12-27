@@ -1,16 +1,11 @@
 declare namespace UnityEditor.Animations {
-  class AnimatorTransitionBase {
+  class AnimatorTransitionBase extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
-    GetDisplayName(source: any): string;
+    GetDisplayName(source: UnityEngine.Object): string;
     AddCondition(mode: UnityEditor.Animations.AnimatorConditionMode, threshold: number, parameter: string): void;
     RemoveCondition(condition: UnityEditor.Animations.AnimatorCondition): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     solo: boolean;
     mute: boolean;
@@ -18,8 +13,6 @@ declare namespace UnityEditor.Animations {
     destinationStateMachine: UnityEditor.Animations.AnimatorStateMachine;
     destinationState: UnityEditor.Animations.AnimatorState;
     conditions: UnityEditor.Animations.AnimatorCondition[];
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

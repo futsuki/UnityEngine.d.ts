@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class _AndroidJNIHelper {
+  class _AndroidJNIHelper extends System.Object {
     // constructors
     constructor();
     // methods
@@ -13,16 +13,12 @@ declare namespace UnityEngine {
     static DeleteJNIArgArray(args: any[], jniArgs: UnityEngine.jvalue[]): void;
     static ConvertToJNIArray(array: any): any;
     static GetConstructorID(jclass: any, args: any[]): any;
-    static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
     static GetConstructorID(jclass: any, signature: string): any;
+    static GetMethodID(jclass: any, methodName: string, args: any[], isStatic: boolean): any;
     static GetMethodID(jclass: any, methodName: string, signature: string, isStatic: boolean): any;
     static GetFieldID(jclass: any, fieldName: string, signature: string, isStatic: boolean): any;
     static GetSignature(obj: any): string;
     static GetSignature(args: any[]): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

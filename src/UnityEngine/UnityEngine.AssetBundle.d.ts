@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AssetBundle {
+  class AssetBundle extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -38,16 +38,9 @@ declare namespace UnityEngine {
     static CreateFromFile(path: string): UnityEngine.AssetBundle;
     static CreateFromMemory(binary: number[]): UnityEngine.AssetBundleCreateRequest;
     static CreateFromMemoryImmediate(binary: number[]): UnityEngine.AssetBundle;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly mainAsset: UnityEngine.Object;
     readonly isStreamedSceneAssetBundle: boolean;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

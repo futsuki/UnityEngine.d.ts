@@ -1,16 +1,12 @@
 declare namespace UnityEditor.ListViewShared {
-  class ListViewElementsEnumerator {
+  class ListViewElementsEnumerator extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     MoveNext(): boolean;
     Reset(): void;
     GetEnumerator(): any;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

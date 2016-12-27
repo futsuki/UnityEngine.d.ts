@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class TickStyle {
+  class TickStyle extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     tickColor: UnityEditor.EditorGUIUtility.SkinnedColor;

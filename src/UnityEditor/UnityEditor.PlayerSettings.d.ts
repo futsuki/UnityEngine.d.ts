@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PlayerSettings {
+  class PlayerSettings extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -45,11 +45,6 @@ declare namespace UnityEditor {
     static SetAdditionalIl2CppArgs(additionalArgs: string): void;
     static GetStackTraceLogType(logType: any): any;
     static SetStackTraceLogType(logType: any, stackTraceType: any): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     static companyName: string;
     static productName: string;
@@ -142,8 +137,6 @@ declare namespace UnityEditor {
     static locationUsageDescription: string;
     static renderingPath: any;
     static mobileRenderingPath: any;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

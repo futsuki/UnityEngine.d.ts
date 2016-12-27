@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class AsyncProgressBar {
+  class AsyncProgressBar extends System.Object {
     // constructors
     constructor();
     // methods
     static Display(progressInfo: string, progress: number): void;
     static Clear(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly progress: number;
     static readonly progressInfo: string;

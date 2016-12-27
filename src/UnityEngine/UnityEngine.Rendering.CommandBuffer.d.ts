@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Rendering {
-  class CommandBuffer {
+  class CommandBuffer extends System.Object {
     // constructors
     constructor();
     // methods
@@ -54,16 +54,16 @@ declare namespace UnityEngine.Rendering {
     SetGlobalColor(nameID: number, value: UnityEngine.Color): void;
     SetGlobalMatrix(name: string, value: UnityEngine.Matrix4x4): void;
     SetGlobalMatrix(nameID: number, value: UnityEngine.Matrix4x4): void;
-    SetGlobalFloatArray(propertyName: string, values: any): void;
-    SetGlobalFloatArray(nameID: number, values: any): void;
     SetGlobalFloatArray(propertyName: string, values: number[]): void;
     SetGlobalFloatArray(nameID: number, values: number[]): void;
-    SetGlobalVectorArray(propertyName: string, values: any): void;
-    SetGlobalVectorArray(nameID: number, values: any): void;
+    SetGlobalFloatArray(propertyName: string, values: number[]): void;
+    SetGlobalFloatArray(nameID: number, values: number[]): void;
     SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): void;
     SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
-    SetGlobalMatrixArray(propertyName: string, values: any): void;
-    SetGlobalMatrixArray(nameID: number, values: any): void;
+    SetGlobalVectorArray(propertyName: string, values: UnityEngine.Vector4[]): void;
+    SetGlobalVectorArray(nameID: number, values: UnityEngine.Vector4[]): void;
+    SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): void;
+    SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     SetGlobalMatrixArray(propertyName: string, values: UnityEngine.Matrix4x4[]): void;
     SetGlobalMatrixArray(nameID: number, values: UnityEngine.Matrix4x4[]): void;
     SetGlobalTexture(name: string, value: UnityEngine.Rendering.RenderTargetIdentifier): void;
@@ -72,10 +72,6 @@ declare namespace UnityEngine.Rendering {
     SetGlobalBuffer(nameID: number, value: UnityEngine.ComputeBuffer): void;
     SetShadowSamplingMode(shadowmap: UnityEngine.Rendering.RenderTargetIdentifier, mode: UnityEngine.Rendering.ShadowSamplingMode): void;
     IssuePluginEvent(callback: any, eventID: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     name: string;
     readonly sizeInBytes: number;

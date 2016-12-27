@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Handheld {
+  class Handheld extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEngine {
     static StartActivityIndicator(): void;
     static StopActivityIndicator(): void;
     static ClearShaderCache(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static use32BitDisplayBuffer: boolean;
     // fields

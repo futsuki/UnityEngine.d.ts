@@ -1,12 +1,8 @@
 declare namespace UnityEditor.Animations {
-  class ChildAnimatorState {
+  class ChildAnimatorState extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     state: UnityEditor.Animations.AnimatorState;
     position: any;

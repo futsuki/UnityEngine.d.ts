@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MonoCrossCompile {
+  class MonoCrossCompile extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,12 +7,8 @@ declare namespace UnityEditor {
     static CrossCompileAOTDirectory(buildTarget: UnityEditor.BuildTarget, crossCompileOptions: UnityEditor.CrossCompileOptions, sourceAssembliesFolder: string, targetCrossCompiledASMFolder: string, pathExtension: string, additionalOptions: string): void;
     static CrossCompileAOTDirectoryParallel(buildTarget: UnityEditor.BuildTarget, crossCompileOptions: UnityEditor.CrossCompileOptions, sourceAssembliesFolder: string, targetCrossCompiledASMFolder: string, additionalOptions: string): boolean;
     static CrossCompileAOTDirectoryParallel(buildTarget: UnityEditor.BuildTarget, crossCompileOptions: UnityEditor.CrossCompileOptions, sourceAssembliesFolder: string, targetCrossCompiledASMFolder: string, pathExtension: string, additionalOptions: string): boolean;
-    static DisplayAOTProgressBar(totalFiles: number, filesFinished: number): void;
     static CrossCompileAOTDirectoryParallel(crossCompilerPath: string, buildTarget: UnityEditor.BuildTarget, crossCompileOptions: UnityEditor.CrossCompileOptions, sourceAssembliesFolder: string, targetCrossCompiledASMFolder: string, additionalOptions: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static DisplayAOTProgressBar(totalFiles: number, filesFinished: number): void;
     // properties
     // fields
     static ArtifactsPath: string;

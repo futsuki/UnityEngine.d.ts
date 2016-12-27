@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Display {
+  class Display extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Activate(): void;
     Activate(width: number, height: number, refreshRate: number): void;
@@ -9,10 +9,6 @@ declare namespace UnityEngine {
     SetRenderingResolution(w: number, h: number): void;
     static MultiDisplayLicense(): boolean;
     static RelativeMouseAt(inputMouseCoordinates: UnityEngine.Vector3): UnityEngine.Vector3;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly renderingWidth: number;
     readonly renderingHeight: number;

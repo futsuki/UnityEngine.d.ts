@@ -1,14 +1,10 @@
 declare namespace UnityEditor.Scripting.Compilers {
-  class CompilerOutputParserBase {
+  class CompilerOutputParserBase extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Parse(errorOutput: string[], compilationHadFailure: boolean): any;
     Parse(errorOutput: string[], standardOutput: string[], compilationHadFailure: boolean): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

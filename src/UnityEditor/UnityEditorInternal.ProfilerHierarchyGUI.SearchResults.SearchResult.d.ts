@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal.ProfilerHierarchyGUI.SearchResults {
-  class SearchResult {
+  class SearchResult extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     propertyPath: string;

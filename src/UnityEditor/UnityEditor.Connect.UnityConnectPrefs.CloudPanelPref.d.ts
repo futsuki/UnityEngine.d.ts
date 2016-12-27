@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Connect.UnityConnectPrefs {
-  class CloudPanelPref {
+  class CloudPanelPref extends System.Object {
     // constructors
     constructor(serviceName: string);
     // methods
     StoreCloudServicePref(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_ServiceName: string;

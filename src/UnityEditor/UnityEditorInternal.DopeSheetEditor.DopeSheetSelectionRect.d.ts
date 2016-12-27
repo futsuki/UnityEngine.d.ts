@@ -1,15 +1,11 @@
 declare namespace UnityEditorInternal.DopeSheetEditor {
-  class DopeSheetSelectionRect {
+  class DopeSheetSelectionRect extends System.Object {
     // constructors
     constructor(owner: UnityEditorInternal.DopeSheetEditor);
     // methods
     OnGUI(position: any): void;
     GetCurrentPixelRect(): any;
     GetCurrentTimeRect(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     createRect: any;

@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
-  class AnimationLayerMixerPlayable {
+  class AnimationLayerMixerPlayable extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Create(): UnityEngine.Experimental.Director.AnimationLayerMixerPlayable;
     Destroy(): void;
@@ -17,8 +17,6 @@ declare namespace UnityEngine.Experimental.Director {
     SetInputs(sources: any): boolean;
     RemoveInput(index: number): boolean;
     RemoveAllInputs(): boolean;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly inputCount: number;
     readonly outputCount: number;

@@ -1,13 +1,9 @@
 declare namespace UnityEditor.ZoomableArea {
-  class Styles {
+  class Styles extends System.Object {
     // constructors
     constructor(minimalGUI: boolean);
     // methods
     InitGUIStyles(minimalGUI: boolean, enableSliderZoom: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     horizontalScrollbar: any;

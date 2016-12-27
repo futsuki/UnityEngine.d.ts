@@ -1,5 +1,5 @@
 declare namespace UnityEditor.TreeViewExamples {
-  class BackendData {
+  class BackendData extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,12 +7,8 @@ declare namespace UnityEditor.TreeViewExamples {
     Find(id: number): UnityEditor.TreeViewExamples.BackendData.Foo;
     FindRecursive(id: number, parent: UnityEditor.TreeViewExamples.BackendData.Foo): UnityEditor.TreeViewExamples.BackendData.Foo;
     GetParentsBelow(id: number): any;
-    ReparentSelection(parentItem: UnityEditor.TreeViewExamples.BackendData.Foo, insertionIndex: number, draggedItems: any): void;
+    ReparentSelection(parentItem: UnityEditor.TreeViewExamples.BackendData.Foo, insertionIndex: number, draggedItems: UnityEditor.TreeViewExamples.BackendData.Foo[]): void;
     static FindItemRecursive(item: UnityEditor.TreeViewExamples.BackendData.Foo, id: number): UnityEditor.TreeViewExamples.BackendData.Foo;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly root: UnityEditor.TreeViewExamples.BackendData.Foo;
     readonly IDCounter: number;

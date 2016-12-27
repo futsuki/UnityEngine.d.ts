@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class LocationService {
+  class LocationService extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine {
     Start(desiredAccuracyInMeters: number): void;
     Start(): void;
     Stop(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isEnabledByUser: boolean;
     readonly status: UnityEngine.LocationServiceStatus;

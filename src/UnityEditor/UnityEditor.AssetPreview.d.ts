@@ -1,18 +1,14 @@
 declare namespace UnityEditor {
-  class AssetPreview {
+  class AssetPreview extends System.Object {
     // constructors
     constructor();
     // methods
-    static GetAssetPreview(asset: any): any;
+    static GetAssetPreview(asset: UnityEngine.Object): any;
     static IsLoadingAssetPreview(instanceID: number): boolean;
     static IsLoadingAssetPreviews(): boolean;
     static SetPreviewTextureCacheSize(size: number): void;
-    static GetMiniThumbnail(obj: any): any;
+    static GetMiniThumbnail(obj: UnityEngine.Object): any;
     static GetMiniTypeThumbnail(type: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

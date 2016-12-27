@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class MatchTargetWeightMask {
+  class MatchTargetWeightMask extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     positionXYZWeight: UnityEngine.Vector3;
     rotationWeight: number;

@@ -1,17 +1,13 @@
 declare namespace UnityEditor {
-  class PropertyModification {
+  class PropertyModification extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
-    target: any;
+    target: UnityEngine.Object;
     propertyPath: string;
     value: string;
-    objectReference: any;
+    objectReference: UnityEngine.Object;
   }
 }

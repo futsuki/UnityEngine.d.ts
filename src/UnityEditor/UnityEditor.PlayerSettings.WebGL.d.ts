@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class WebGL {
+  class WebGL extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static memorySize: number;
     static exceptionSupport: UnityEditor.WebGLExceptionSupport;

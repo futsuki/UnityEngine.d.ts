@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ParticleEffectUI {
+  class ParticleEffectUI extends System.Object {
     // constructors
     constructor(owner: UnityEditor.ParticleEffectUIOwner);
     // methods
@@ -13,15 +13,11 @@ declare namespace UnityEditor {
     PlayOnAwakeChanged(newPlayOnAwake: boolean): void;
     ValidateParticleSystemProperty(shurikenProperty: UnityEditor.SerializedProperty): boolean;
     CreateParticleSystem(parentOfNewParticleSystem: any, defaultType: UnityEditor.SubModuleUI.SubEmitterType): any;
-    GetParticleSystemUIList(shurikens: any): any;
+    GetParticleSystemUIList(shurikens: any[]): UnityEditor.ParticleSystemUI[];
     GetParticleSystemCurveEditor(): ParticleSystemCurveEditor;
     OnSceneViewGUI(): void;
     OnSceneGUI(): void;
     OnGUI(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_Owner: UnityEditor.ParticleEffectUIOwner;

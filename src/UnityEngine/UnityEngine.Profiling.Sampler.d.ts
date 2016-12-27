@@ -1,12 +1,8 @@
 declare namespace UnityEngine.Profiling {
-  class Sampler {
+  class Sampler extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly name: string;
     enabled: boolean;

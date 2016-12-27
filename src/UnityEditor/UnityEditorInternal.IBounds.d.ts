@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
   class IBounds {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly boundingRect: any;

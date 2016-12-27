@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal {
-  class AudioProfilerGroupInfoWrapper {
+  class AudioProfilerGroupInfoWrapper extends System.Object {
     // constructors
     constructor(info: UnityEditorInternal.AudioProfilerGroupInfo, assetName: string, objectName: string, addToRoot: boolean);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     info: UnityEditorInternal.AudioProfilerGroupInfo;

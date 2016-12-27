@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AnimationCurve {
+  class AnimationCurve extends System.Object {
     // constructors
     constructor(keys: UnityEngine.Keyframe[]);
     constructor();
@@ -12,10 +12,6 @@ declare namespace UnityEngine {
     SmoothTangents(index: number, weight: number): void;
     static Linear(timeStart: number, valueStart: number, timeEnd: number, valueEnd: number): UnityEngine.AnimationCurve;
     static EaseInOut(timeStart: number, valueStart: number, timeEnd: number, valueEnd: number): UnityEngine.AnimationCurve;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     keys: UnityEngine.Keyframe[];
     get_Item(index: number): UnityEngine.Keyframe;

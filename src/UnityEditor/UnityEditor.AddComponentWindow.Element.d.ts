@@ -1,13 +1,9 @@
 declare namespace UnityEditor.AddComponentWindow {
-  class Element {
+  class Element extends System.Object {
     // constructors
     constructor();
     // methods
     CompareTo(o: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly name: string;
     // fields

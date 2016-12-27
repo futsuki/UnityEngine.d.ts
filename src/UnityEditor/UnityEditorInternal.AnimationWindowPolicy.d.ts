@@ -1,22 +1,18 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowPolicy {
+  class AnimationWindowPolicy extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     triggerFramingOnSelection: boolean;
     unitialized: boolean;
-    SynchronizeGeometry: ((any, any) => boolean);
-    SynchronizeFrameRate: ((any) => boolean);
-    SynchronizeCurrentTime: ((any) => boolean);
-    SynchronizeZoomableArea: ((any, any) => boolean);
-    OnGeometryChange: ((number[]) => void);
-    OnCurrentTimeChange: ((number) => void);
-    OnZoomableAreaChange: ((number, number) => void);
+    SynchronizeGeometry: ((sizes: any, minSizes: any) => boolean);
+    SynchronizeFrameRate: ((frameRate: any) => boolean);
+    SynchronizeCurrentTime: ((time: any) => boolean);
+    SynchronizeZoomableArea: ((horizontalScale: any, horizontalTranslation: any) => boolean);
+    OnGeometryChange: ((sizes: number[]) => void);
+    OnCurrentTimeChange: ((time: number) => void);
+    OnZoomableAreaChange: ((horizontalScale: number, horizontalTranslation: number) => void);
   }
 }

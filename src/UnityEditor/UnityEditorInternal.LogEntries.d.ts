@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class LogEntries {
+  class LogEntries extends System.Object {
     // constructors
     constructor();
     // methods
@@ -17,10 +17,6 @@ declare namespace UnityEditorInternal {
     static Clear(): void;
     static GetStatusViewErrorIndex(): number;
     static ClickStatusBar(count: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static consoleFlags: number;
     // fields

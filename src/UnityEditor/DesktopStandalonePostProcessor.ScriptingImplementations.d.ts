@@ -1,14 +1,10 @@
 declare namespace DesktopStandalonePostProcessor {
-  class ScriptingImplementations {
+  class ScriptingImplementations extends System.Object {
     // constructors
     constructor();
     // methods
     Supported(): UnityEditor.ScriptingImplementation[];
     Enabled(): UnityEditor.ScriptingImplementation[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

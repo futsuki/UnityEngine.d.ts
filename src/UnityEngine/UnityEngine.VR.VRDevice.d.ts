@@ -1,13 +1,9 @@
 declare namespace UnityEngine.VR {
-  class VRDevice {
+  class VRDevice extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetNativePtr(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly isPresent: boolean;
     static readonly family: string;

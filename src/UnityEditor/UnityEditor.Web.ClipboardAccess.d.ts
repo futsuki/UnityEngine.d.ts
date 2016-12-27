@@ -1,14 +1,10 @@
 declare namespace UnityEditor.Web {
-  class ClipboardAccess {
+  class ClipboardAccess extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     CopyToClipboard(value: string): void;
     PasteFromClipboard(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class WebTemplateManagerBase {
+  class WebTemplateManagerBase extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetTemplateIndex(path: string): number;
     ClearTemplates(): void;
     SelectionUI(templateProp: UnityEditor.SerializedProperty): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly customTemplatesFolder: string;
     readonly builtinTemplatesFolder: string;

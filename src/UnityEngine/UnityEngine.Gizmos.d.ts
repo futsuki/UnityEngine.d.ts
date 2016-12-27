@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Gizmos {
+  class Gizmos extends System.Object {
     // constructors
     constructor();
     // methods
@@ -33,10 +33,6 @@ declare namespace UnityEngine {
     static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number, mat: UnityEngine.Material): void;
     static DrawGUITexture(screenRect: UnityEngine.Rect, texture: UnityEngine.Texture, leftBorder: number, rightBorder: number, topBorder: number, bottomBorder: number): void;
     static DrawFrustum(center: UnityEngine.Vector3, fov: number, maxRange: number, minRange: number, aspect: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static color: UnityEngine.Color;
     static matrix: UnityEngine.Matrix4x4;

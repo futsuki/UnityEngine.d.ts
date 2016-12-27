@@ -1,14 +1,10 @@
 declare namespace UnityEditor.Connect {
-  class UnityConnectServiceData {
+  class UnityConnectServiceData extends System.Object {
     // constructors
     constructor(serviceName: string, htmlSourcePath: string, jsGlobalObject: UnityEditor.Web.CloudServiceAccess, jsGlobalObjectName: string);
     // methods
     EnableService(enabled: boolean): void;
     OnProjectUnbound(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly serviceName: string;
     readonly serviceUrl: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowState {
+  class AnimationWindowState extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -21,7 +21,7 @@ declare namespace UnityEditorInternal {
     UnselectKey(keyframe: UnityEditorInternal.AnimationWindowKeyframe): void;
     UnselectKeysFromDopeline(dopeline: UnityEditorInternal.DopeLine): void;
     DeleteSelectedKeys(): void;
-    DeleteKeys(keys: any): void;
+    DeleteKeys(keys: UnityEditorInternal.AnimationWindowKeyframe[]): void;
     StartLiveEdit(): void;
     EndLiveEdit(): void;
     InLiveEdit(): boolean;
@@ -36,7 +36,7 @@ declare namespace UnityEditorInternal {
     ClearHierarchySelection(): void;
     ResampleAnimation(): void;
     Repaint(): void;
-    GetAggregateKeys(hierarchyNode: UnityEditorInternal.AnimationWindowHierarchyNode): any;
+    GetAggregateKeys(hierarchyNode: UnityEditorInternal.AnimationWindowHierarchyNode): UnityEditorInternal.AnimationWindowKeyframe[];
     OnHierarchySelectionChanged(selectedInstanceIDs: number[]): void;
     HandleHierarchySelectionChanged(selectedInstanceIDs: number[], triggerSceneSelectionSync: boolean): void;
     SelectHierarchyItem(dopeline: UnityEditorInternal.DopeLine, additive: boolean): void;
@@ -44,14 +44,16 @@ declare namespace UnityEditorInternal {
     SelectHierarchyItem(hierarchyNodeID: number, additive: boolean, triggerSceneSelectionSync: boolean): void;
     UnSelectHierarchyItem(dopeline: UnityEditorInternal.DopeLine): void;
     UnSelectHierarchyItem(hierarchyNodeID: number): void;
-    GetAffectedHierarchyIDs(keyframes: any): any;
-    GetAffectedDopelines(keyframes: any): any;
-    GetAffectedCurves(keyframes: any): any;
+    GetAffectedHierarchyIDs(keyframes: UnityEditorInternal.AnimationWindowKeyframe[]): number[];
+    GetAffectedDopelines(keyframes: UnityEditorInternal.AnimationWindowKeyframe[]): UnityEditorInternal.DopeLine[];
+    GetAffectedCurves(keyframes: UnityEditorInternal.AnimationWindowKeyframe[]): UnityEditorInternal.AnimationWindowCurve[];
     GetDopeline(selectedInstanceID: number): UnityEditorInternal.DopeLine;
     PixelToTime(pixel: number): number;
     PixelToTime(pixel: number, snap: UnityEditorInternal.AnimationWindowState.SnapMode): number;
+    PixelToTime(pixelX: number, rect: any): number;
     TimeToPixel(time: number): number;
     TimeToPixel(time: number, snap: UnityEditorInternal.AnimationWindowState.SnapMode): number;
+    TimeToPixel(time: number, rect: any): number;
     SnapToFrame(time: number, snap: UnityEditorInternal.AnimationWindowState.SnapMode): number;
     SnapToFrame(time: number, fps: number): number;
     FormatFrame(frame: number, frameDigits: number): string;
@@ -61,15 +63,7 @@ declare namespace UnityEditorInternal {
     TimeToFrameRound(time: number): number;
     FrameToPixel(i: number, rect: any): number;
     FrameDeltaToPixel(rect: any): number;
-    TimeToPixel(time: number, rect: any): number;
-    PixelToTime(pixelX: number, rect: any): number;
     PixelDeltaToTime(rect: any): number;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly selection: UnityEditorInternal.AnimationWindowSelection;
     selectedItem: UnityEditorInternal.AnimationWindowSelectionItem;
@@ -81,13 +75,13 @@ declare namespace UnityEditorInternal {
     locked: boolean;
     readonly disabled: boolean;
     refresh: UnityEditorInternal.AnimationWindowState.RefreshType;
-    readonly allCurves: any;
-    readonly activeCurves: any;
-    readonly activeCurveWrappers: any;
-    readonly dopelines: any;
-    readonly selectedHierarchyNodes: any;
+    readonly allCurves: UnityEditorInternal.AnimationWindowCurve[];
+    readonly activeCurves: UnityEditorInternal.AnimationWindowCurve[];
+    readonly activeCurveWrappers: UnityEditor.CurveWrapper[];
+    readonly dopelines: UnityEditorInternal.DopeLine[];
+    readonly selectedHierarchyNodes: UnityEditorInternal.AnimationWindowHierarchyNode[];
     activeKeyframe: UnityEditorInternal.AnimationWindowKeyframe;
-    readonly selectedKeys: any;
+    readonly selectedKeys: UnityEditorInternal.AnimationWindowKeyframe[];
     readonly syncTimeDuringDrag: boolean;
     clipFrameRate: number;
     frameRate: number;
@@ -111,8 +105,6 @@ declare namespace UnityEditorInternal {
     readonly minTime: number;
     readonly maxTime: number;
     readonly timeRange: any;
-    name: string;
-    hideFlags: any;
     // fields
     hierarchyState: UnityEditorInternal.AnimationWindowHierarchyState;
     animEditor: UnityEditor.AnimEditor;
@@ -122,6 +114,6 @@ declare namespace UnityEditorInternal {
     hierarchyData: UnityEditorInternal.AnimationWindowHierarchyDataSource;
     static kDefaultFrameRate: number;
     static kEditCurveUndoLabel: string;
-    onFrameRateChange: ((number) => void);
+    onFrameRateChange: ((obj: number) => void);
   }
 }

@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Analytics {
-  class UnityAnalyticsHandler {
+  class UnityAnalyticsHandler extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEngine.Analytics {
     Transaction(productId: string, amount: number, currency: string, receiptPurchaseData: string, signature: string): UnityEngine.Analytics.AnalyticsResult;
     CustomEvent(customEventName: string): UnityEngine.Analytics.AnalyticsResult;
     CustomEvent(eventData: UnityEngine.Analytics.CustomEventData): UnityEngine.Analytics.AnalyticsResult;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,20 +1,11 @@
 declare namespace UnityEditor.Web {
-  class UnetAccess {
+  class UnetAccess extends UnityEditor.Web.CloudServiceAccess {
     // constructors
     constructor();
     // methods
     GetServiceName(): string;
     GetServiceDisplayName(): string;
     SetMultiplayerId(id: number): void;
-    IsServiceEnabled(): boolean;
-    EnableService(enabled: boolean): void;
-    OnProjectUnbound(): void;
-    ShowServicePage(): void;
-    GoBackToHub(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

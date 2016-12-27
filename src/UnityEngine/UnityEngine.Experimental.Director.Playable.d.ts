@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
-  class Playable {
+  class Playable extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Destroy(): void;
     IsValid(): boolean;
@@ -18,8 +18,6 @@ declare namespace UnityEngine.Experimental.Director {
     GetInputWeight(index: number): number;
     Equals(p: any): boolean;
     GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     static readonly Null: UnityEngine.Experimental.Director.Playable;
     readonly inputCount: number;

@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class ISettingEditorExtension {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnEnable(settingsEditor: UnityEditor.PlayerSettingsEditor): void;
     HasPublishSection(): boolean;

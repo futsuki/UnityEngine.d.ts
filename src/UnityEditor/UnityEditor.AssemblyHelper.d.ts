@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AssemblyHelper {
+  class AssemblyHelper extends System.Object {
     // constructors
     constructor();
     // methods
@@ -13,10 +13,6 @@ declare namespace UnityEditor {
     static ExtractAssemblyTypeInfo(targetPlatform: UnityEditor.BuildTarget, isEditor: boolean, assemblyPathName: string, searchDirs: string[]): UnityEditor.AssemblyTypeInfoGenerator.ClassInfo[];
     static IsManagedAssembly(file: string): boolean;
     static IsInternalAssembly(file: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

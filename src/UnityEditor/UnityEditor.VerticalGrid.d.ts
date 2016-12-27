@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class VerticalGrid {
+  class VerticalGrid extends System.Object {
     // constructors
     constructor();
     // methods
@@ -10,9 +10,6 @@ declare namespace UnityEditor {
     GetMaxVisibleItems(height: number): number;
     IsVisibleInScrollView(scrollViewHeight: number, scrollPos: number, gridStartY: number, maxIndex: number, startIndex: any, endIndex: any): boolean;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly columns: number;
     readonly rows: number;

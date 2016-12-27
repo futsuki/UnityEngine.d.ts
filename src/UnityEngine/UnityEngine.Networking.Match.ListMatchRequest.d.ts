@@ -1,13 +1,10 @@
 declare namespace UnityEngine.Networking.Match {
-  class ListMatchRequest {
+  class ListMatchRequest extends UnityEngine.Networking.Match.Request {
     // constructors
     constructor();
     // methods
     ToString(): string;
     IsValid(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     pageSize: number;
     pageNum: number;
@@ -17,12 +14,6 @@ declare namespace UnityEngine.Networking.Match {
     matchAttributeFilterLessThan: any;
     matchAttributeFilterEqualTo: any;
     matchAttributeFilterGreaterThan: any;
-    version: number;
-    sourceId: UnityEngine.Networking.Types.SourceID;
-    projectId: string;
-    appId: UnityEngine.Networking.Types.AppID;
-    accessTokenString: string;
-    domain: number;
     // fields
     includePasswordMatches: boolean;
   }

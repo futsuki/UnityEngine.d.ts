@@ -1,13 +1,11 @@
 declare namespace UnityEngine.UI {
-  class ColorBlock {
+  class ColorBlock extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Equals(obj: any): boolean;
     Equals(other: UnityEngine.UI.ColorBlock): boolean;
     GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     normalColor: UnityEngine.Color;
     highlightedColor: UnityEngine.Color;

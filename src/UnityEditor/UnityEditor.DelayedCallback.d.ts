@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class DelayedCallback {
+  class DelayedCallback extends System.Object {
     // constructors
     constructor(function_: (() => void), timeFromNow: number);
     // methods
     Clear(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

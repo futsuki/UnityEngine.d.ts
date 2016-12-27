@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowHierarchy {
+  class AnimationWindowHierarchy extends System.Object {
     // constructors
     constructor(state: UnityEditorInternal.AnimationWindowState, owner: UnityEditor.EditorWindow, position: any);
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditorInternal {
     Init(owner: UnityEditor.EditorWindow, rect: any): void;
     IsIDVisible(id: number): boolean;
     EndNameEditing(acceptChanges: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

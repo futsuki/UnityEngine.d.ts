@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class Ping {
+  class Ping extends System.Object {
     // constructors
     constructor(address: string);
     // methods
     DestroyPing(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isDone: boolean;
     readonly time: number;

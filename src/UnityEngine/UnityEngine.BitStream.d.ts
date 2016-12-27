@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class BitStream {
+  class BitStream extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEngine {
     Serialize(value: any, maxDelta: number): void;
     Serialize(value: any): void;
     Serialize(viewID: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isReading: boolean;
     readonly isWriting: boolean;

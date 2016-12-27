@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class WindowLayout {
+  class WindowLayout extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEditor {
     static EnsureMainWindowHasBeenLoaded(): void;
     static SaveGUI(): void;
     static DeleteGUI(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

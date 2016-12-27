@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TreeViewGUIWithCustomItemsHeights {
+  class TreeViewGUIWithCustomItemsHeights extends System.Object {
     // constructors
     constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController);
     // methods
@@ -20,10 +20,6 @@ declare namespace UnityEditor {
     EndRename(): void;
     GetFoldoutIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     GetContentIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;

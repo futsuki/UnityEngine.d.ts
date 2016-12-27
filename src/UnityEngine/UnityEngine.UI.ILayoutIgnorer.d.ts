@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class ILayoutIgnorer {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     readonly ignoreLayout: boolean;

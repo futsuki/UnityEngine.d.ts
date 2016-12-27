@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class GUISettings {
+  class GUISettings extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     doubleClickSelectsWord: boolean;
     tripleClickSelectsLine: boolean;

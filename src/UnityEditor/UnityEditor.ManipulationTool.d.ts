@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class ManipulationTool {
+  class ManipulationTool extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ToolGUI(view: UnityEditor.SceneView, handlePosition: any, isStatic: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

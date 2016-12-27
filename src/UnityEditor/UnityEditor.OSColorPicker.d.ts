@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class OSColorPicker {
+  class OSColorPicker extends System.Object {
     // constructors
     constructor();
     // methods
     static Show(showAlpha: boolean): void;
     static Close(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly visible: boolean;
     static color: any;

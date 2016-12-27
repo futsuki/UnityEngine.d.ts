@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class LocationInfo {
+  class LocationInfo extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly latitude: number;
     readonly longitude: number;

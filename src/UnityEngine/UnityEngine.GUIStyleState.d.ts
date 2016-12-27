@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class GUIStyleState {
+  class GUIStyleState extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     background: UnityEngine.Texture2D;
     scaledBackgrounds: UnityEngine.Texture2D[];

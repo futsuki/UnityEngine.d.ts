@@ -1,16 +1,12 @@
 declare namespace UnityEditor {
-  class SceneViewOverlay {
+  class SceneViewOverlay extends System.Object {
     // constructors
     constructor(sceneView: UnityEditor.SceneView);
     // methods
     Begin(): void;
     End(): void;
-    static Window(title: any, sceneViewFunc: ((any, UnityEditor.SceneView) => void), order: number, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
-    static Window(title: any, sceneViewFunc: ((any, UnityEditor.SceneView) => void), order: number, target: any, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static Window(title: any, sceneViewFunc: ((target: UnityEngine.Object, sceneView: UnityEditor.SceneView) => void), order: number, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
+    static Window(title: any, sceneViewFunc: ((target: UnityEngine.Object, sceneView: UnityEditor.SceneView) => void), order: number, target: UnityEngine.Object, option: UnityEditor.SceneViewOverlay.WindowDisplayOption): void;
     // properties
     // fields
   }

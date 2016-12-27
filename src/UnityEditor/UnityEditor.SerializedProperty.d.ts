@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class SerializedProperty {
+  class SerializedProperty extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Dispose(): void;
     static EqualContents(x: UnityEditor.SerializedProperty, y: UnityEditor.SerializedProperty): boolean;
@@ -22,10 +22,6 @@ declare namespace UnityEditor {
     DeleteArrayElementAtIndex(index: number): void;
     ClearArray(): void;
     MoveArrayElement(srcIndex: number, dstIndex: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly serializedObject: UnityEditor.SerializedObject;
     readonly hasMultipleDifferentValues: boolean;
@@ -51,7 +47,7 @@ declare namespace UnityEditor {
     stringValue: string;
     colorValue: any;
     animationCurveValue: any;
-    objectReferenceValue: any;
+    objectReferenceValue: UnityEngine.Object;
     objectReferenceInstanceIDValue: number;
     enumValueIndex: number;
     readonly enumNames: string[];

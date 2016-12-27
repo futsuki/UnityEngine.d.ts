@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class ColorClipboard {
+  class ColorClipboard extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static SetColor(color: any): void;
     static HasColor(): boolean;
     static TryGetColor(allowHDR: boolean, color: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

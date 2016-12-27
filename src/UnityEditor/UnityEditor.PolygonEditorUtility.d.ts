@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PolygonEditorUtility {
+  class PolygonEditorUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     StartEditing(collider: any): void;
     StopEditing(): void;
     OnSceneGUI(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

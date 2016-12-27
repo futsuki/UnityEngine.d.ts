@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Animations {
-  class PushUndoIfNeeded {
+  class PushUndoIfNeeded extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    DoUndo(target: any, undoOperation: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
+    DoUndo(target: UnityEngine.Object, undoOperation: string): void;
     // properties
     pushUndo: boolean;
     // fields

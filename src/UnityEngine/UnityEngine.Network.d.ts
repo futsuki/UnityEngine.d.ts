@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Network {
+  class Network extends System.Object {
     // constructors
     constructor();
     // methods
@@ -37,10 +37,6 @@ declare namespace UnityEngine {
     static TestConnectionNAT(forceTest: boolean): UnityEngine.ConnectionTesterStatus;
     static TestConnectionNAT(): UnityEngine.ConnectionTesterStatus;
     static HavePublicAddress(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static incomingPassword: string;
     static logLevel: UnityEngine.NetworkLogLevel;

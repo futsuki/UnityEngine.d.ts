@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class QuaternionCurveTangentCalculation {
+  class QuaternionCurveTangentCalculation extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetCurve(index: number): any;
     SetCurve(index: number, curve: any): void;
@@ -14,10 +14,6 @@ declare namespace UnityEditor {
     UpdateTangentsFromMode(componentIndex: number): void;
     UpdateTangentsFromMode(index: number, componentIndex: number): void;
     static UpdateTangentsFromMode(curve: any, clip: any, curveBinding: UnityEditor.EditorCurveBinding): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
   }

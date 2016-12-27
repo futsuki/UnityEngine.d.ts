@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class WWWForm {
+  class WWWForm extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngine {
     AddBinaryData(fieldName: string, contents: number[], fileName: string): void;
     AddBinaryData(fieldName: string, contents: number[]): void;
     AddBinaryData(fieldName: string, contents: number[], fileName: string, mimeType: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly headers: any;
     readonly data: number[];

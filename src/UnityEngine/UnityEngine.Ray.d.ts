@@ -1,14 +1,11 @@
 declare namespace UnityEngine {
-  class Ray {
+  class Ray extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetPoint(distance: number): UnityEngine.Vector3;
     ToString(): string;
     ToString(format: string): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     origin: UnityEngine.Vector3;
     direction: UnityEngine.Vector3;

@@ -1,7 +1,7 @@
 declare namespace UnityEditor.IMGUI.Controls {
   class ITreeViewGUI {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnInitialize(): void;
     GetTotalSize(): any;

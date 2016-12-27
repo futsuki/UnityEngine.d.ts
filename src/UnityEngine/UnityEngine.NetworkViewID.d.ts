@@ -1,12 +1,11 @@
 declare namespace UnityEngine {
-  class NetworkViewID {
+  class NetworkViewID extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetHashCode(): number;
     Equals(other: any): boolean;
     ToString(): string;
-    GetType(): any;
     // properties
     static readonly unassigned: UnityEngine.NetworkViewID;
     readonly isMine: boolean;

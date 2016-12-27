@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ASUpdateWindow {
+  class ASUpdateWindow extends System.Object {
     // constructors
     constructor(parentWin: UnityEditor.ASMainWindow, changesets: UnityEditor.Changeset[]);
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditor {
     UpdateGUI(): void;
     Repaint(): void;
     DoGUI(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly ShowingConflicts: boolean;
     readonly CanContinue: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GUIStyle {
+  class GUIStyle extends System.Object {
     // constructors
     constructor();
     constructor(other: UnityEngine.GUIStyle);
@@ -19,9 +19,6 @@ declare namespace UnityEngine {
     CalcHeight(content: UnityEngine.GUIContent, width: number): number;
     CalcMinMaxWidth(content: UnityEngine.GUIContent, minWidth: any, maxWidth: any): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     normal: UnityEngine.GUIStyleState;
     hover: UnityEngine.GUIStyleState;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class AlphabeticalSorting {
+  class AlphabeticalSorting extends UnityEditor.HierarchySorting {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly content: any;
     // fields

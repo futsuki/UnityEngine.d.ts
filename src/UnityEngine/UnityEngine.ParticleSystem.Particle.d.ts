@@ -1,15 +1,11 @@
 declare namespace UnityEngine.ParticleSystem {
-  class Particle {
+  class Particle extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetCurrentSize(system: UnityEngine.ParticleSystem): number;
     GetCurrentSize3D(system: UnityEngine.ParticleSystem): UnityEngine.Vector3;
     GetCurrentColor(system: UnityEngine.ParticleSystem): UnityEngine.Color32;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     position: UnityEngine.Vector3;
     velocity: UnityEngine.Vector3;

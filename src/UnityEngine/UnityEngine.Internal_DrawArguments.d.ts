@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Internal_DrawArguments {
+  class Internal_DrawArguments extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     target: any;

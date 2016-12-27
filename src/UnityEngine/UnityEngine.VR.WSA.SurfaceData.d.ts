@@ -1,12 +1,8 @@
 declare namespace UnityEngine.VR.WSA {
-  class SurfaceData {
+  class SurfaceData extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     id: UnityEngine.VR.WSA.SurfaceId;

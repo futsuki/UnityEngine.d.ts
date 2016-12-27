@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class SavedFilter {
+  class SavedFilter extends System.Object {
     // constructors
     constructor(name: string, filter: UnityEditor.SearchFilter, depth: number, previewSize: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_Name: string;

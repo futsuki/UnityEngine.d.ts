@@ -1,5 +1,5 @@
 declare namespace UnityEditor.PlayerSettings {
-  class WSA {
+  class WSA extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor.PlayerSettings {
     static SetVisualAssetsImage(image: string, type: UnityEditor.PlayerSettings.WSAImageType, scale: UnityEditor.PlayerSettings.WSAImageScale): void;
     static SetCapability(capability: UnityEditor.PlayerSettings.WSACapability, value: boolean): void;
     static GetCapability(capability: UnityEditor.PlayerSettings.WSACapability): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static packageName: string;
     static packageLogo: string;

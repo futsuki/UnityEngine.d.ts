@@ -1,12 +1,8 @@
 declare namespace UnityEngine.Windows.Speech {
-  class PhraseRecognizedEventArgs {
+  class PhraseRecognizedEventArgs extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     confidence: UnityEngine.Windows.Speech.ConfidenceLevel;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorGUIExt {
+  class EditorGUIExt extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     static MinMaxSlider(position: any, value: any, size: any, visualStart: number, visualEnd: number, startLimit: number, endLimit: number, slider: any, thumb: any, horiz: boolean): void;
     static DragSelection(positions: any[], selections: any, style: any): boolean;
     static MultiSelection(rect: any, positions: any[], content: any, hitPositions: any[], selections: any, readOnly: boolean[], clickedIndex: any, offset: any, startSelect: any, endSelect: any, style: any): UnityEditor.HighLevelEvent;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

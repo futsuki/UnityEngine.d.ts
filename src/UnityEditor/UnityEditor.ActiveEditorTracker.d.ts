@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ActiveEditorTracker {
+  class ActiveEditorTracker extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,8 @@ declare namespace UnityEditor {
     RebuildIfNecessary(): void;
     ForceRebuild(): void;
     VerifyModifiedMonoBehaviours(): void;
-    static MakeCustomEditor(obj: any): UnityEditor.Editor;
-    static HasCustomEditor(obj: any): boolean;
-    GetType(): any;
-    ToString(): string;
+    static MakeCustomEditor(obj: UnityEngine.Object): UnityEditor.Editor;
+    static HasCustomEditor(obj: UnityEngine.Object): boolean;
     // properties
     readonly activeEditors: UnityEditor.Editor[];
     readonly isDirty: boolean;

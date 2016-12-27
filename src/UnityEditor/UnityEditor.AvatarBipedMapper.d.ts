@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class AvatarBipedMapper {
+  class AvatarBipedMapper extends System.Object {
     // constructors
     constructor();
     // methods
-    static IsBiped(root: any, report: any): boolean;
+    static IsBiped(root: any, report: string[]): boolean;
     static MapBones(root: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

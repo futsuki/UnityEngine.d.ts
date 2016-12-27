@@ -1,18 +1,10 @@
 declare namespace UnityEditor {
-  class CurveEditorSelection {
+  class CurveEditorSelection extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    selectedCurves: any;
-    name: string;
-    hideFlags: any;
+    selectedCurves: UnityEditor.CurveSelection[];
     // fields
   }
 }

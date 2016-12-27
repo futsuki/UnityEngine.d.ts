@@ -1,15 +1,11 @@
 declare namespace UnityEditorInternal {
-  class AnimationKeyTime {
+  class AnimationKeyTime extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Time(time: number, frameRate: number): UnityEditorInternal.AnimationKeyTime;
     static Frame(frame: number, frameRate: number): UnityEditorInternal.AnimationKeyTime;
     ContainsTime(time: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly time: number;
     readonly frame: number;

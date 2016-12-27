@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorPrefs {
+  class EditorPrefs extends System.Object {
     // constructors
     constructor();
     // methods
@@ -18,10 +18,6 @@ declare namespace UnityEditor {
     static HasKey(key: string): boolean;
     static DeleteKey(key: string): void;
     static DeleteAll(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

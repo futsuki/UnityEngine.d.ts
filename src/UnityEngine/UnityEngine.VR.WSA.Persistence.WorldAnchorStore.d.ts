@@ -1,19 +1,15 @@
 declare namespace UnityEngine.VR.WSA.Persistence {
-  class WorldAnchorStore {
+  class WorldAnchorStore extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    static GetAsync(onCompleted: ((UnityEngine.VR.WSA.Persistence.WorldAnchorStore) => void)): void;
+    static GetAsync(onCompleted: ((store: UnityEngine.VR.WSA.Persistence.WorldAnchorStore) => void)): void;
     Save(id: string, anchor: UnityEngine.VR.WSA.WorldAnchor): boolean;
     Load(id: string, go: UnityEngine.GameObject): UnityEngine.VR.WSA.WorldAnchor;
     Delete(id: string): boolean;
     Clear(): void;
     GetAllIds(ids: string[]): number;
     GetAllIds(): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly anchorCount: number;
     // fields

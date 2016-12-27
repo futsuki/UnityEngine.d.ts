@@ -1,15 +1,15 @@
 declare namespace UnityEditor {
-  class CurveMenuManager {
+  class CurveMenuManager extends System.Object {
     // constructors
     constructor(updater: UnityEditor.CurveUpdater);
     // methods
-    AddTangentMenuItems(menu: UnityEditor.GenericMenu, keyList: any): void;
+    AddTangentMenuItems(menu: UnityEditor.GenericMenu, keyList: UnityEditor.KeyIdentifier[]): void;
     SetClampedAuto(keysToSet: any): void;
     SetAuto(keysToSet: any): void;
     SetEditable(keysToSet: any): void;
     SetFlat(keysToSet: any): void;
-    SetBoth(mode: UnityEditor.AnimationUtility.TangentMode, keysToSet: any): void;
-    Flatten(keysToSet: any): void;
+    SetBoth(mode: UnityEditor.AnimationUtility.TangentMode, keysToSet: UnityEditor.KeyIdentifier[]): void;
+    Flatten(keysToSet: UnityEditor.KeyIdentifier[]): void;
     SetBroken(_keysToSet: any): void;
     SetLeftEditable(keysToSet: any): void;
     SetLeftLinear(keysToSet: any): void;
@@ -20,11 +20,7 @@ declare namespace UnityEditor {
     SetBothEditable(keysToSet: any): void;
     SetBothLinear(keysToSet: any): void;
     SetBothConstant(keysToSet: any): void;
-    SetTangent(leftRight: number, mode: UnityEditor.AnimationUtility.TangentMode, keysToSet: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    SetTangent(leftRight: number, mode: UnityEditor.AnimationUtility.TangentMode, keysToSet: UnityEditor.KeyIdentifier[]): void;
     // properties
     // fields
   }

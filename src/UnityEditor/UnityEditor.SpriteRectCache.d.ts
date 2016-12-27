@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SpriteRectCache {
+  class SpriteRectCache extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -9,17 +9,9 @@ declare namespace UnityEditor {
     ClearAll(): void;
     GetIndex(spriteRect: UnityEditor.SpriteRect): number;
     Contains(spriteRect: UnityEditor.SpriteRect): boolean;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly Count: number;
-    name: string;
-    hideFlags: any;
     // fields
-    m_Rects: any;
+    m_Rects: UnityEditor.SpriteRect[];
   }
 }

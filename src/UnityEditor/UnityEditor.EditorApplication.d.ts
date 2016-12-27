@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorApplication {
+  class EditorApplication extends System.Object {
     // constructors
     constructor();
     // methods
@@ -28,10 +28,6 @@ declare namespace UnityEditor {
     static SaveScene(path: string, saveAsCopy: boolean): boolean;
     static SaveCurrentSceneIfUserWantsTo(): boolean;
     static MarkSceneDirty(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static isPlaying: boolean;
     static readonly isPlayingOrWillChangePlaymode: boolean;
@@ -45,8 +41,8 @@ declare namespace UnityEditor {
     static readonly isSceneDirty: boolean;
     static currentScene: string;
     // fields
-    static projectWindowItemOnGUI: ((string, any) => void);
-    static hierarchyWindowItemOnGUI: ((number, any) => void);
+    static projectWindowItemOnGUI: ((guid: string, selectionRect: any) => void);
+    static hierarchyWindowItemOnGUI: ((instanceID: number, selectionRect: any) => void);
     static update: (() => void);
     static delayCall: (() => void);
     static hierarchyWindowChanged: (() => void);

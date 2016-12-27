@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Utils {
-  class Program {
+  class Program extends System.Object {
     // constructors
     constructor(si: any);
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEditor.Utils {
     GetErrorOutputAsString(): string;
     WaitForExit(): void;
     WaitForExit(milliseconds: number): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly HasExited: boolean;
     readonly ExitCode: number;

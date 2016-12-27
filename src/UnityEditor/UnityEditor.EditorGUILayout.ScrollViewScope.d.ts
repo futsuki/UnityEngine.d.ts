@@ -1,5 +1,5 @@
 declare namespace UnityEditor.EditorGUILayout {
-  class ScrollViewScope {
+  class ScrollViewScope extends UnityEngine.GUI.Scope {
     // constructors
     constructor(scrollPosition: any, options: any[]);
     constructor(scrollPosition: any, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, options: any[]);
@@ -7,11 +7,6 @@ declare namespace UnityEditor.EditorGUILayout {
     constructor(scrollPosition: any, style: any, options: any[]);
     constructor(scrollPosition: any, alwaysShowHorizontal: boolean, alwaysShowVertical: boolean, horizontalScrollbar: any, verticalScrollbar: any, background: any, options: any[]);
     // methods
-    Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly scrollPosition: any;
     handleScrollWheel: boolean;

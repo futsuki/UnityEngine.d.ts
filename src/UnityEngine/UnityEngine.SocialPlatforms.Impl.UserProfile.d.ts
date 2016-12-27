@@ -1,5 +1,5 @@
 declare namespace UnityEngine.SocialPlatforms.Impl {
-  class UserProfile {
+  class UserProfile extends System.Object {
     // constructors
     constructor();
     constructor(name: string, id: string, friend: boolean);
@@ -11,9 +11,6 @@ declare namespace UnityEngine.SocialPlatforms.Impl {
     SetImage(image: UnityEngine.Texture2D): void;
     SetIsFriend(value: boolean): void;
     SetState(state: UnityEngine.SocialPlatforms.UserState): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly userName: string;
     readonly id: string;

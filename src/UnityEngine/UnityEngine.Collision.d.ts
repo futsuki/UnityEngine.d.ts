@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class Collision {
+  class Collision extends System.Object {
     // constructors
     constructor();
     // methods
     GetEnumerator(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly relativeVelocity: UnityEngine.Vector3;
     readonly rigidbody: UnityEngine.Rigidbody;

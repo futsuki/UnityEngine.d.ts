@@ -1,13 +1,9 @@
 declare namespace UnityEditor.AudioMixerChannelStripView {
-  class ChannelStripParams {
+  class ChannelStripParams extends System.Object {
     // constructors
     constructor();
     // methods
     Init(controller: UnityEditor.Audio.AudioMixerController, channelStripRect: any, maxNumEffects: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     index: number;
@@ -18,15 +14,15 @@ declare namespace UnityEditor.AudioMixerChannelStripView {
     maxEffects: number;
     drawingBuses: boolean;
     anySoloActive: boolean;
-    busConnections: any;
-    rectSelectionGroups: any;
-    allGroups: any;
-    shownGroups: any;
+    busConnections: UnityEditor.AudioMixerChannelStripView.BusConnection[];
+    rectSelectionGroups: UnityEditor.Audio.AudioMixerGroupController[];
+    allGroups: UnityEditor.Audio.AudioMixerGroupController[];
+    shownGroups: UnityEditor.Audio.AudioMixerGroupController[];
     numChannels: number;
     vuinfo_level: number[];
     vuinfo_peak: number[];
     effectMap: any;
-    bgRects: any;
+    bgRects: any[];
     kHeaderIndex: number;
     kVUMeterFaderIndex: number;
     kTotalVULevelIndex: number;

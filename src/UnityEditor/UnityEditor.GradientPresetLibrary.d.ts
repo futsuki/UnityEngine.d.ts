@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class GradientPresetLibrary {
+  class GradientPresetLibrary extends UnityEditor.PresetLibrary {
     // constructors
     constructor();
     // methods
@@ -14,15 +14,7 @@ declare namespace UnityEditor {
     GetName(index: number): string;
     SetName(index: number, presetName: string): void;
     DebugCreateTonsOfPresets(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

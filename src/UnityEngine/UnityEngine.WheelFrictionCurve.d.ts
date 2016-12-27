@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class WheelFrictionCurve {
+  class WheelFrictionCurve extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     extremumSlip: number;
     extremumValue: number;

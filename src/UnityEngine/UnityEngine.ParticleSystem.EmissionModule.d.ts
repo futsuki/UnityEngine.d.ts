@@ -1,15 +1,11 @@
 declare namespace UnityEngine.ParticleSystem {
-  class EmissionModule {
+  class EmissionModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): void;
     SetBursts(bursts: UnityEngine.ParticleSystem.Burst[], size: number): void;
     GetBursts(bursts: UnityEngine.ParticleSystem.Burst[]): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     rateOverTime: UnityEngine.ParticleSystem.MinMaxCurve;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine.WSA {
-  class Application {
+  class Application extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEngine.WSA {
     static TryInvokeOnUIThread(item: (() => void), waitUntilDone: boolean): boolean;
     static RunningOnAppThread(): boolean;
     static RunningOnUIThread(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly "arguments": string;
     static readonly advertisingIdentifier: string;

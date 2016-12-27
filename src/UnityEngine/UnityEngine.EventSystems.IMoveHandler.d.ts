@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IMoveHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnMove(eventData: UnityEngine.EventSystems.AxisEventData): void;
     // properties

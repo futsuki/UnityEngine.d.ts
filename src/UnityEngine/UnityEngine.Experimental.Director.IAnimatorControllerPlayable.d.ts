@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
   class IAnimatorControllerPlayable {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetFloat(name: string): number;
     GetFloat(id: number): number;
@@ -29,11 +29,11 @@ declare namespace UnityEngine.Experimental.Director {
     GetNextAnimatorStateInfo(layerIndex: number): UnityEngine.AnimatorStateInfo;
     GetAnimatorTransitionInfo(layerIndex: number): UnityEngine.AnimatorTransitionInfo;
     GetCurrentAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
+    GetCurrentAnimatorClipInfo(layerIndex: number, clips: UnityEngine.AnimatorClipInfo[]): void;
     GetNextAnimatorClipInfo(layerIndex: number): UnityEngine.AnimatorClipInfo[];
+    GetNextAnimatorClipInfo(layerIndex: number, clips: UnityEngine.AnimatorClipInfo[]): void;
     GetCurrentAnimatorClipInfoCount(layerIndex: number): number;
-    GetCurrentAnimatorClipInfo(layerIndex: number, clips: any): void;
     GetNextAnimatorClipInfoCount(layerIndex: number): number;
-    GetNextAnimatorClipInfo(layerIndex: number, clips: any): void;
     IsInTransition(layerIndex: number): boolean;
     GetParameter(index: number): UnityEngine.AnimatorControllerParameter;
     CrossFadeInFixedTime(stateName: string, transitionDuration: number, layer: number, fixedTime: number): void;

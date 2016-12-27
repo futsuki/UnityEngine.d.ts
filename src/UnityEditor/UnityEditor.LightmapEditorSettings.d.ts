@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class LightmapEditorSettings {
+  class LightmapEditorSettings extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static maxAtlasWidth: number;
     static maxAtlasHeight: number;

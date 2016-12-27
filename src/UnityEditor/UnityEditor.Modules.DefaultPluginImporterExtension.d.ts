@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Modules {
-  class DefaultPluginImporterExtension {
+  class DefaultPluginImporterExtension extends System.Object {
     // constructors
     constructor(properties: UnityEditor.Modules.DefaultPluginImporterExtension.Property[]);
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditor.Modules {
     OnPlatformSettingsGUI(inspector: UnityEditor.PluginImporterInspector): void;
     CalculateFinalPluginPath(platformName: string, imp: UnityEditor.PluginImporter): string;
     CheckFileCollisions(buildTargetName: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

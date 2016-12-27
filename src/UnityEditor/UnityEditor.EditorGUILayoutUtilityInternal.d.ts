@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class EditorGUILayoutUtilityInternal {
+  class EditorGUILayoutUtilityInternal extends UnityEngine.GUILayoutUtility {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

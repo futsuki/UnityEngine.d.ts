@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class PopupList {
+  class PopupList extends UnityEditor.PopupWindowContent {
     // constructors
     constructor(inputData: UnityEditor.PopupList.InputData);
     constructor(inputData: UnityEditor.PopupList.InputData, initialSelectionLabel: string);
@@ -9,13 +9,7 @@ declare namespace UnityEditor {
     GetWindowWidth(): number;
     GetWindowSize(): any;
     OnGUI(windowRect: any): void;
-    OnOpen(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }

@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class ComputeBuffer {
+  class ComputeBuffer extends System.Object {
     // constructors
     constructor(count: number, stride: number);
     constructor(count: number, stride: number, type: UnityEngine.ComputeBufferType);
@@ -11,10 +11,6 @@ declare namespace UnityEngine {
     GetData(data: any): void;
     static CopyCount(src: UnityEngine.ComputeBuffer, dst: UnityEngine.ComputeBuffer, dstOffset: number): void;
     GetNativeBufferPtr(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly count: number;
     readonly stride: number;

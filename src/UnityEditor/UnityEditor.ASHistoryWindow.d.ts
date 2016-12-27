@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ASHistoryWindow {
+  class ASHistoryWindow extends System.Object {
     // constructors
     constructor(parent: UnityEditor.EditorWindow);
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     DoLocalSelectionChange(): void;
     OnSelectionChange(): void;
     DoGUI(hasFocus: boolean): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

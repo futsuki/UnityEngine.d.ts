@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IDevice {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     StartRemoteSupport(): UnityEditor.Modules.RemoteAddress;
     StopRemoteSupport(): void;

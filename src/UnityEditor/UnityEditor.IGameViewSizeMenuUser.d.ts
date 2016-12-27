@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IGameViewSizeMenuUser {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SizeSelectionCallback(indexClicked: number, objectSelected: any): void;
     // properties

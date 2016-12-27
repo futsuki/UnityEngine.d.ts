@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class StaticOcclusionCulling {
+  class StaticOcclusionCulling extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditor {
     static Cancel(): void;
     static Clear(): void;
     static SetDefaultOcclusionBakeSettings(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly isRunning: boolean;
     static smallestOccluder: number;

@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
-  class JSONValue {
+  class JSONValue extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     IsString(): boolean;
     IsFloat(): boolean;
@@ -16,8 +16,8 @@ declare namespace UnityEditorInternal {
     AsFloat(): number;
     AsBool(nothrow: boolean): boolean;
     AsBool(): boolean;
-    AsList(nothrow: boolean): any;
-    AsList(): any;
+    AsList(nothrow: boolean): UnityEditorInternal.JSONValue[];
+    AsList(): UnityEditorInternal.JSONValue[];
     AsDict(nothrow: boolean): any;
     AsDict(): any;
     static NewString(val: string): UnityEditorInternal.JSONValue;
@@ -35,9 +35,6 @@ declare namespace UnityEditorInternal {
     Add(value: number): void;
     Add(value: boolean): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     get_Item(index: string): UnityEditorInternal.JSONValue;
     set_Item(index: string, value: UnityEditorInternal.JSONValue): void;

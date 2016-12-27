@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ProfilerHierarchyGUI {
+  class ProfilerHierarchyGUI extends System.Object {
     // constructors
     constructor(window: UnityEditorInternal.IProfilerWindowController, columnSettingsName: string, columnsToShow: UnityEditorInternal.ProfilerColumn[], columnNames: string[], detailPane: boolean, sort: UnityEditorInternal.ProfilerColumn);
     // methods
@@ -8,10 +8,6 @@ declare namespace UnityEditorInternal {
     GetDetailedProperty(property: UnityEditorInternal.ProfilerProperty): UnityEditorInternal.ProfilerProperty;
     FrameSelection(): void;
     DoGUI(property: UnityEditorInternal.ProfilerProperty, searchString: string, expandAll: boolean): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     selectedIndex: number;
     readonly sortType: UnityEditorInternal.ProfilerColumn;

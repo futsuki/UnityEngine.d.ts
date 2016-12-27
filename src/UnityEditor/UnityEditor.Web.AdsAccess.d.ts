@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Web {
-  class AdsAccess {
+  class AdsAccess extends UnityEditor.Web.CloudServiceAccess {
     // constructors
     constructor();
     // methods
@@ -20,12 +20,6 @@ declare namespace UnityEditor.Web {
     SetAndroidGameId(value: string): void;
     IsTestModeEnabled(): boolean;
     SetTestModeEnabled(enabled: boolean): void;
-    ShowServicePage(): void;
-    GoBackToHub(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

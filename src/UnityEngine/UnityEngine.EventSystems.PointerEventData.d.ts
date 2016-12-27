@@ -1,16 +1,11 @@
 declare namespace UnityEngine.EventSystems {
-  class PointerEventData {
+  class PointerEventData extends UnityEngine.EventSystems.BaseEventData {
     // constructors
     constructor(eventSystem: UnityEngine.EventSystems.EventSystem);
     // methods
     IsPointerMoving(): boolean;
     IsScrolling(): boolean;
     ToString(): string;
-    Reset(): void;
-    Use(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     pointerEnter: UnityEngine.GameObject;
     readonly lastPress: UnityEngine.GameObject;
@@ -34,10 +29,7 @@ declare namespace UnityEngine.EventSystems {
     readonly enterEventCamera: UnityEngine.Camera;
     readonly pressEventCamera: UnityEngine.Camera;
     pointerPress: UnityEngine.GameObject;
-    readonly currentInputModule: UnityEngine.EventSystems.BaseInputModule;
-    selectedObject: UnityEngine.GameObject;
-    readonly used: boolean;
     // fields
-    hovered: any;
+    hovered: UnityEngine.GameObject[];
   }
 }

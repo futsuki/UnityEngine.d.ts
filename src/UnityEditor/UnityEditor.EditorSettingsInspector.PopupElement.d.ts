@@ -1,12 +1,8 @@
 declare namespace UnityEditor.EditorSettingsInspector {
-  class PopupElement {
+  class PopupElement extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly Enabled: boolean;
     // fields

@@ -1,5 +1,5 @@
 declare namespace UnityEditor.PlayerSettings {
-  class XboxOne {
+  class XboxOne extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEditor.PlayerSettings {
     static UpdateAllowedProductId(idx: number, id: string): void;
     static SetGameRating(name: string, value: number): void;
     static GetGameRating(name: string): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static defaultLoggingLevel: UnityEditor.XboxOneLoggingLevel;
     static ProductId: string;

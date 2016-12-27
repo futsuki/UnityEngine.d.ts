@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI.CoroutineTween {
   class ITweenValue {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     TweenValue(floatPercentage: number): void;
     ValidTarget(): boolean;

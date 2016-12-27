@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class AvatarSetupTool {
+  class AvatarSetupTool extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetModelBones(root: any, includeAll: boolean, humanBones: UnityEditor.AvatarSetupTool.BoneWrapper[]): any;
     static GetFirstHumanBoneAncestor(bones: UnityEditor.AvatarSetupTool.BoneWrapper[], boneIndex: number): number;
@@ -30,10 +30,6 @@ declare namespace UnityEditor {
     static MakeBoneAlignmentValid(bones: UnityEditor.AvatarSetupTool.BoneWrapper[], avatarOrientation: any, boneIndex: number): void;
     static AvatarComputeOrientation(bones: UnityEditor.AvatarSetupTool.BoneWrapper[]): any;
     static AvatarComputeOrientation(leftUpLeg: any, rightUpLeg: any, leftArm: any, rightArm: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

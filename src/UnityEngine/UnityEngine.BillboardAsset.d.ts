@@ -1,25 +1,20 @@
 declare namespace UnityEngine {
-  class BillboardAsset {
+  class BillboardAsset extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
-    GetImageTexCoords(imageTexCoords: any): void;
+    GetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): void;
     GetImageTexCoords(): UnityEngine.Vector4[];
-    SetImageTexCoords(imageTexCoords: any): void;
     SetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): void;
-    GetVertices(vertices: any): void;
+    SetImageTexCoords(imageTexCoords: UnityEngine.Vector4[]): void;
+    GetVertices(vertices: UnityEngine.Vector2[]): void;
     GetVertices(): UnityEngine.Vector2[];
-    SetVertices(vertices: any): void;
     SetVertices(vertices: UnityEngine.Vector2[]): void;
-    GetIndices(indices: any): void;
+    SetVertices(vertices: UnityEngine.Vector2[]): void;
+    GetIndices(indices: number[]): void;
     GetIndices(): number[];
-    SetIndices(indices: any): void;
     SetIndices(indices: number[]): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
+    SetIndices(indices: number[]): void;
     // properties
     width: number;
     height: number;
@@ -28,8 +23,6 @@ declare namespace UnityEngine {
     readonly vertexCount: number;
     readonly indexCount: number;
     material: UnityEngine.Material;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

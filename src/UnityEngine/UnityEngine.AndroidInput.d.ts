@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class AndroidInput {
+  class AndroidInput extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetSecondaryTouch(index: number): UnityEngine.Touch;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly touchCountSecondary: number;
     static readonly secondaryTouchEnabled: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class iPhoneSettings {
+  class iPhoneSettings extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine {
     static StartLocationServiceUpdates(desiredAccuracyInMeters: number): void;
     static StartLocationServiceUpdates(): void;
     static StopLocationServiceUpdates(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly verticalOrientation: boolean;
     static readonly screenCanDarken: boolean;

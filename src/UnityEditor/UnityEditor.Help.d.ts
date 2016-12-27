@@ -1,17 +1,13 @@
 declare namespace UnityEditor {
-  class Help {
+  class Help extends System.Object {
     // constructors
     constructor();
     // methods
-    static HasHelpForObject(obj: any): boolean;
-    static GetHelpURLForObject(obj: any): string;
-    static ShowHelpForObject(obj: any): void;
+    static HasHelpForObject(obj: UnityEngine.Object): boolean;
+    static GetHelpURLForObject(obj: UnityEngine.Object): string;
+    static ShowHelpForObject(obj: UnityEngine.Object): void;
     static ShowHelpPage(page: string): void;
     static BrowseURL(url: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

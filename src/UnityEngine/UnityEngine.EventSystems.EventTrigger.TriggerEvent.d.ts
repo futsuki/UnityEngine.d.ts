@@ -3,8 +3,8 @@ declare namespace UnityEngine.EventSystems.EventTrigger {
     // constructors
     constructor();
     // methods
-    AddListener(call: ((UnityEngine.EventSystems.BaseEventData) => void)): void;
-    RemoveListener(call: ((UnityEngine.EventSystems.BaseEventData) => void)): void;
+    AddListener(call: ((arg0: UnityEngine.EventSystems.BaseEventData) => void)): void;
+    RemoveListener(call: ((arg0: UnityEngine.EventSystems.BaseEventData) => void)): void;
     Invoke(arg0: UnityEngine.EventSystems.BaseEventData): void;
     GetPersistentEventCount(): number;
     GetPersistentTarget(index: number): UnityEngine.Object;

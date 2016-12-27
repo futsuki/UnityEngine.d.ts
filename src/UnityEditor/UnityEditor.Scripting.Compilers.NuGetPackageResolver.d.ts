@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Scripting.Compilers {
-  class NuGetPackageResolver {
+  class NuGetPackageResolver extends System.Object {
     // constructors
     constructor();
     // methods
     Resolve(): string[];
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     PackagesDirectory: string;
     ProjectLockFile: string;

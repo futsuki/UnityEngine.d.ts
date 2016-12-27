@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking {
-  class ConnectionConfig {
+  class ConnectionConfig extends System.Object {
     // constructors
     constructor();
     constructor(config: UnityEngine.Networking.ConnectionConfig);
@@ -7,10 +7,6 @@ declare namespace UnityEngine.Networking {
     static Validate(config: UnityEngine.Networking.ConnectionConfig): void;
     AddChannel(value: UnityEngine.Networking.QosType): number;
     GetChannel(idx: number): UnityEngine.Networking.QosType;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     PacketSize: number;
     FragmentSize: number;
@@ -32,7 +28,7 @@ declare namespace UnityEngine.Networking {
     UsePlatformSpecificProtocols: boolean;
     WebSocketReceiveBufferMaxSize: number;
     readonly ChannelCount: number;
-    readonly Channels: any;
+    readonly Channels: UnityEngine.Networking.ChannelQOS[];
     // fields
   }
 }

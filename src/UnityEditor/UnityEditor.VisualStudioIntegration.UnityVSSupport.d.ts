@@ -1,5 +1,5 @@
 declare namespace UnityEditor.VisualStudioIntegration {
-  class UnityVSSupport {
+  class UnityVSSupport extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor.VisualStudioIntegration {
     static IsUnityVSEnabled(): boolean;
     static ScriptEditorChanged(editorPath: string): void;
     static GetAboutWindowLabel(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static s_UnityVSBridgeToLoad: string;

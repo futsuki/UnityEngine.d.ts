@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AudioMixerSnapshotListView {
+  class AudioMixerSnapshotListView extends System.Object {
     // constructors
     constructor(state: UnityEditorInternal.ReorderableListWithRenameAndScrollView.State);
     // methods
@@ -13,10 +13,6 @@ declare namespace UnityEditor {
     NameChanged(index: number, newName: string): void;
     EndDragChild(list: UnityEditorInternal.ReorderableList): void;
     OnUndoRedoPerformed(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

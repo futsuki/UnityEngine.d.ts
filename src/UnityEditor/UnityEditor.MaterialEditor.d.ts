@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MaterialEditor {
+  class MaterialEditor extends UnityEditor.Editor {
     // constructors
     constructor();
     // methods
@@ -22,26 +22,32 @@ declare namespace UnityEditor {
     SetTextureOffset(propertyName: string, value: any, coord: number): void;
     RangeProperty(prop: UnityEditor.MaterialProperty, label: string): number;
     RangeProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): number;
+    RangeProperty(propertyName: string, label: string, v2: number, v3: number): number;
     FloatProperty(prop: UnityEditor.MaterialProperty, label: string): number;
     FloatProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): number;
+    FloatProperty(propertyName: string, label: string): number;
     ColorProperty(prop: UnityEditor.MaterialProperty, label: string): any;
     ColorProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): any;
+    ColorProperty(propertyName: string, label: string): any;
     VectorProperty(prop: UnityEditor.MaterialProperty, label: string): any;
     VectorProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): any;
+    VectorProperty(propertyName: string, label: string): any;
     TextureScaleOffsetProperty(property: UnityEditor.MaterialProperty): void;
     TextureScaleOffsetProperty(position: any, property: UnityEditor.MaterialProperty): number;
     TextureScaleOffsetProperty(position: any, property: UnityEditor.MaterialProperty, partOfTexturePropertyControl: boolean): number;
+    static TextureScaleOffsetProperty(position: any, scaleOffset: any): any;
+    static TextureScaleOffsetProperty(position: any, scaleOffset: any, partOfTexturePropertyControl: boolean): any;
     TextureProperty(prop: UnityEditor.MaterialProperty, label: string): any;
     TextureProperty(prop: UnityEditor.MaterialProperty, label: string, scaleOffset: boolean): any;
+    TextureProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): any;
+    TextureProperty(position: any, prop: UnityEditor.MaterialProperty, label: string, scaleOffset: boolean): any;
+    TextureProperty(position: any, prop: UnityEditor.MaterialProperty, label: string, tooltip: string, scaleOffset: boolean): any;
+    TextureProperty(propertyName: string, label: string, texDim: UnityEditor.ShaderUtil.ShaderPropertyTexDim): any;
+    TextureProperty(propertyName: string, label: string, texDim: UnityEditor.ShaderUtil.ShaderPropertyTexDim, scaleOffset: boolean): any;
     HelpBoxWithButton(messageContent: any, buttonContent: any): boolean;
     TextureCompatibilityWarning(prop: UnityEditor.MaterialProperty): void;
     TexturePropertyMiniThumbnail(position: any, prop: UnityEditor.MaterialProperty, label: string, tooltip: string): any;
     GetTexturePropertyCustomArea(position: any): any;
-    TextureProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): any;
-    TextureProperty(position: any, prop: UnityEditor.MaterialProperty, label: string, scaleOffset: boolean): any;
-    TextureProperty(position: any, prop: UnityEditor.MaterialProperty, label: string, tooltip: string, scaleOffset: boolean): any;
-    static TextureScaleOffsetProperty(position: any, scaleOffset: any): any;
-    static TextureScaleOffsetProperty(position: any, scaleOffset: any, partOfTexturePropertyControl: boolean): any;
     GetPropertyHeight(prop: UnityEditor.MaterialProperty): number;
     GetPropertyHeight(prop: UnityEditor.MaterialProperty, label: string): number;
     static GetDefaultPropertyHeight(prop: UnityEditor.MaterialProperty): number;
@@ -55,31 +61,25 @@ declare namespace UnityEditor {
     ShaderProperty(position: any, prop: UnityEditor.MaterialProperty, label: any): void;
     ShaderProperty(position: any, prop: UnityEditor.MaterialProperty, label: string, labelIndent: number): void;
     ShaderProperty(position: any, prop: UnityEditor.MaterialProperty, label: any, labelIndent: number): void;
+    ShaderProperty(shader: any, propertyIndex: number): void;
     LightmapEmissionProperty(): void;
     LightmapEmissionProperty(labelIndent: number): void;
     LightmapEmissionProperty(position: any, labelIndent: number): void;
     DefaultShaderProperty(prop: UnityEditor.MaterialProperty, label: string): void;
     DefaultShaderProperty(position: any, prop: UnityEditor.MaterialProperty, label: string): void;
-    RangeProperty(propertyName: string, label: string, v2: number, v3: number): number;
-    FloatProperty(propertyName: string, label: string): number;
-    ColorProperty(propertyName: string, label: string): any;
-    VectorProperty(propertyName: string, label: string): any;
-    TextureProperty(propertyName: string, label: string, texDim: UnityEditor.ShaderUtil.ShaderPropertyTexDim): any;
-    TextureProperty(propertyName: string, label: string, texDim: UnityEditor.ShaderUtil.ShaderPropertyTexDim, scaleOffset: boolean): any;
-    ShaderProperty(shader: any, propertyIndex: number): void;
-    static GetMaterialProperties(mats: any[]): UnityEditor.MaterialProperty[];
-    static GetMaterialProperty(mats: any[], name: string): UnityEditor.MaterialProperty;
-    static GetMaterialProperty(mats: any[], propertyIndex: number): UnityEditor.MaterialProperty;
+    static GetMaterialProperties(mats: UnityEngine.Object[]): UnityEditor.MaterialProperty[];
+    static GetMaterialProperty(mats: UnityEngine.Object[], name: string): UnityEditor.MaterialProperty;
+    static GetMaterialProperty(mats: UnityEngine.Object[], propertyIndex: number): UnityEditor.MaterialProperty;
     static PrepareMaterialPropertiesForAnimationMode(properties: UnityEditor.MaterialProperty[], isMaterialEditable: boolean): any;
     SetDefaultGUIWidths(): void;
     PropertiesGUI(): boolean;
     PropertiesDefaultGUI(props: UnityEditor.MaterialProperty[]): void;
     static ApplyMaterialPropertyDrawers(material: any): void;
-    static ApplyMaterialPropertyDrawers(targets: any[]): void;
+    static ApplyMaterialPropertyDrawers(targets: UnityEngine.Object[]): void;
     RegisterPropertyChangeUndo(label: string): void;
     OnPreviewSettings(): void;
     DefaultPreviewSettingsGUI(): void;
-    RenderStaticPreview(assetPath: string, subAssets: any[], width: number, height: number): any;
+    RenderStaticPreview(assetPath: string, subAssets: UnityEngine.Object[], width: number, height: number): any;
     HasPreviewGUI(): boolean;
     RequiresConstantRepaint(): boolean;
     OnInteractivePreviewGUI(r: any, background: any): void;
@@ -100,30 +100,8 @@ declare namespace UnityEditor {
     static GetFlexibleRectBetweenLabelAndField(r: any): any;
     static GetFlexibleRectBetweenFieldAndRightEdge(r: any): any;
     static GetRectAfterLabelWidth(r: any): any;
-    DrawDefaultInspector(): boolean;
-    Repaint(): void;
-    GetPreviewTitle(): any;
-    GetInfoString(): string;
-    ReloadPreviewInstances(): void;
-    DrawHeader(): void;
-    DrawPreview(previewArea: any): void;
-    UseDefaultMargins(): boolean;
-    Initialize(targets: any[]): void;
-    MoveNextTarget(): boolean;
-    ResetTarget(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly isVisible: boolean;
-    target: any;
-    readonly targets: any[];
-    readonly serializedObject: UnityEditor.SerializedObject;
-    name: string;
-    hideFlags: any;
     // fields
     static kMiniTextureFieldLabelIndentLevel: number;
   }

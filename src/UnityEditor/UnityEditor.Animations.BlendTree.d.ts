@@ -1,20 +1,14 @@
 declare namespace UnityEditor.Animations {
-  class BlendTree {
+  class BlendTree extends UnityEngine.Motion {
     // constructors
     constructor();
     // methods
-    AddChild(motion: any): void;
-    AddChild(motion: any, position: any): void;
-    AddChild(motion: any, threshold: number): void;
+    AddChild(motion: UnityEngine.Motion): void;
+    AddChild(motion: UnityEngine.Motion, position: any): void;
+    AddChild(motion: UnityEngine.Motion, threshold: number): void;
     RemoveChild(index: number): void;
     CreateBlendTreeChild(threshold: number): UnityEditor.Animations.BlendTree;
     CreateBlendTreeChild(position: any): UnityEditor.Animations.BlendTree;
-    ValidateIfRetargetable(val: boolean): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     blendParameter: string;
     blendParameterY: string;
@@ -23,16 +17,6 @@ declare namespace UnityEditor.Animations {
     useAutomaticThresholds: boolean;
     minThreshold: number;
     maxThreshold: number;
-    readonly averageDuration: number;
-    readonly averageAngularSpeed: number;
-    readonly averageSpeed: any;
-    readonly apparentSpeed: number;
-    readonly isLooping: boolean;
-    readonly legacy: boolean;
-    readonly isHumanMotion: boolean;
-    readonly isAnimatorMotion: boolean;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

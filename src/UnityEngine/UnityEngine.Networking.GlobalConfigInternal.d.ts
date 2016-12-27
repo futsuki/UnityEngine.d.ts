@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking {
-  class GlobalConfigInternal {
+  class GlobalConfigInternal extends System.Object {
     // constructors
     constructor(config: UnityEngine.Networking.GlobalConfig);
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEngine.Networking {
     InitReactorMaximumSentMessages(size: number): void;
     InitMaxPacketSize(size: number): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,14 +1,10 @@
 declare namespace UnityEngine.ParticleSystem {
-  class MinMaxCurve {
+  class MinMaxCurve extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Evaluate(time: number): number;
     Evaluate(time: number, lerpFactor: number): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     mode: UnityEngine.ParticleSystemCurveMode;
     curveScalar: number;

@@ -1,16 +1,12 @@
 declare namespace UnityEngine.MeshSubsetCombineUtility {
-  class MeshContainer {
+  class MeshContainer extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     gameObject: UnityEngine.GameObject;
     instance: UnityEngine.MeshSubsetCombineUtility.MeshInstance;
-    subMeshInstances: any;
+    subMeshInstances: UnityEngine.MeshSubsetCombineUtility.SubMeshInstance[];
   }
 }

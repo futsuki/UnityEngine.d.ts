@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
-  class CanvasUpdateRegistry {
+  class CanvasUpdateRegistry extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static RegisterCanvasElementForLayoutRebuild(element: UnityEngine.UI.ICanvasElement): void;
     static TryRegisterCanvasElementForLayoutRebuild(element: UnityEngine.UI.ICanvasElement): boolean;
@@ -10,10 +10,6 @@ declare namespace UnityEngine.UI {
     static UnRegisterCanvasElementForRebuild(element: UnityEngine.UI.ICanvasElement): void;
     static IsRebuildingLayout(): boolean;
     static IsRebuildingGraphics(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly instance: UnityEngine.UI.CanvasUpdateRegistry;
     // fields

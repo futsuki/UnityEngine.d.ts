@@ -1,16 +1,12 @@
 declare namespace UnityEditor.ProceduralMaterialInspector {
-  class ProceduralPlatformSetting {
+  class ProceduralPlatformSetting extends System.Object {
     // constructors
-    constructor(objects: any[], _name: string, _target: UnityEditor.BuildTarget, _icon: any);
+    constructor(objects: UnityEngine.Object[], _name: string, _target: UnityEditor.BuildTarget, _icon: any);
     // methods
     SetOverride(master: UnityEditor.ProceduralMaterialInspector.ProceduralPlatformSetting): void;
     ClearOverride(master: UnityEditor.ProceduralMaterialInspector.ProceduralPlatformSetting): void;
     HasChanged(): boolean;
     Apply(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly isDefault: boolean;
     textureFormat: number;

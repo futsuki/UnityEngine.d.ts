@@ -1,12 +1,8 @@
 declare namespace UnityEditor.AudioMixerColorCodes {
-  class ItemData {
+  class ItemData extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     groups: UnityEditor.Audio.AudioMixerGroupController[];

@@ -1,12 +1,8 @@
 declare namespace UnityEngine.Networking {
-  class GlobalConfig {
+  class GlobalConfig extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     ThreadAwakeTimeout: number;
     ReactorModel: UnityEngine.Networking.ReactorModel;

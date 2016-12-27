@@ -1,10 +1,10 @@
 declare namespace UnityEngine {
   class ILogHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     LogFormat(logType: UnityEngine.LogType, context: UnityEngine.Object, format: string, args: any[]): void;
-    LogException(exception: any, context: UnityEngine.Object): void;
+    LogException(exception: System.Exception, context: UnityEngine.Object): void;
     // properties
     // fields
   }

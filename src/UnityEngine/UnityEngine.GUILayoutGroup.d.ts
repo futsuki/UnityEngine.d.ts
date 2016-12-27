@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GUILayoutGroup {
+  class GUILayoutGroup extends UnityEngine.GUILayoutEntry {
     // constructors
     constructor();
     constructor(_style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]);
@@ -15,26 +15,15 @@ declare namespace UnityEngine {
     CalcHeight(): void;
     SetVertical(y: number, height: number): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly margin: UnityEngine.RectOffset;
-    style: UnityEngine.GUIStyle;
     // fields
-    entries: any;
+    entries: UnityEngine.GUILayoutEntry[];
     isVertical: boolean;
     resetCoords: boolean;
     spacing: number;
     sameSize: boolean;
     isWindow: boolean;
     windowID: number;
-    minWidth: number;
-    maxWidth: number;
-    minHeight: number;
-    maxHeight: number;
-    rect: UnityEngine.Rect;
-    stretchWidth: number;
-    stretchHeight: number;
   }
 }

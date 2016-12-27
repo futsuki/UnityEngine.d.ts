@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class WaitForFixedUpdate {
+  class WaitForFixedUpdate extends UnityEngine.YieldInstruction {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,9 +1,9 @@
 declare namespace UnityEditor {
-  class AnimEditor {
+  class AnimEditor extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
-    static GetAllAnimationWindows(): any;
+    static GetAllAnimationWindows(): UnityEditor.AnimEditor[];
     OnAnimEditorGUI(parent: UnityEditor.EditorWindow, position: any): void;
     Update(): void;
     OnEnable(): void;
@@ -14,12 +14,6 @@ declare namespace UnityEditor {
     OnEndLiveEdit(): void;
     OnLostFocus(): void;
     Repaint(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     locked: boolean;
     readonly stateDisabled: boolean;
@@ -27,8 +21,6 @@ declare namespace UnityEditor {
     readonly selection: UnityEditorInternal.AnimationWindowSelection;
     selectedItem: UnityEditorInternal.AnimationWindowSelectionItem;
     policy: UnityEditorInternal.AnimationWindowPolicy;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

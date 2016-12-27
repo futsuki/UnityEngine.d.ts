@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal.VR {
-  class PlayerSettingsEditorVR {
+  class PlayerSettingsEditorVR extends System.Object {
     // constructors
     constructor(settingsEditor: UnityEditor.SerializedProperty);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

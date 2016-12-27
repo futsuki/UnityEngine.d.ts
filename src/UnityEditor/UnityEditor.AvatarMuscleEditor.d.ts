@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class AvatarMuscleEditor {
+  class AvatarMuscleEditor extends UnityEditor.AvatarSubEditor {
     // constructors
     constructor();
     // methods
@@ -7,18 +7,7 @@ declare namespace UnityEditor {
     OnInspectorGUI(): void;
     DrawMuscleHandle(t: any, humanId: number): void;
     OnSceneGUI(): void;
-    Disable(): void;
-    OnDestroy(): void;
-    ApplyAndImport(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

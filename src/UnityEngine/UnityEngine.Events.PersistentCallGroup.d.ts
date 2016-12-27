@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Events {
-  class PersistentCallGroup {
+  class PersistentCallGroup extends System.Object {
     // constructors
     constructor();
     // methods
@@ -19,10 +19,6 @@ declare namespace UnityEngine.Events {
     UnregisterPersistentListener(index: number): void;
     RemoveListeners(target: UnityEngine.Object, methodName: string): void;
     Initialize(invokableList: UnityEngine.Events.InvokableCallList, unityEventBase: UnityEngine.Events.UnityEventBase): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly Count: number;
     // fields

@@ -1,12 +1,8 @@
 declare namespace UnityEngine.SamsungTV {
-  class OpenAPI {
+  class OpenAPI extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly serverType: UnityEngine.SamsungTV.OpenAPI.OpenAPIServerType;
     static readonly timeOnTV: string;

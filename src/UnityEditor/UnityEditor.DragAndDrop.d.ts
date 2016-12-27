@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class DragAndDrop {
+  class DragAndDrop extends System.Object {
     // constructors
     constructor();
     // methods
@@ -8,12 +8,8 @@ declare namespace UnityEditor {
     static AcceptDrag(): void;
     static GetGenericData(type: string): any;
     static SetGenericData(type: string, data: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    static objectReferences: any[];
+    static objectReferences: UnityEngine.Object[];
     static paths: string[];
     static visualMode: UnityEditor.DragAndDropVisualMode;
     static activeControlID: number;

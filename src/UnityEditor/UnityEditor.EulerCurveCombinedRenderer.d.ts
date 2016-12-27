@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EulerCurveCombinedRenderer {
+  class EulerCurveCombinedRenderer extends System.Object {
     // constructors
     constructor(quaternionX: any, quaternionY: any, quaternionZ: any, quaternionW: any, eulerX: any, eulerY: any, eulerZ: any);
     // methods
@@ -15,10 +15,6 @@ declare namespace UnityEditor {
     EvaluateCurveSlow(time: number, component: number): number;
     DrawCurve(minTime: number, maxTime: number, color: any, transform: any, component: number, wrapColor: any): void;
     GetBounds(minTime: number, maxTime: number, component: number): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

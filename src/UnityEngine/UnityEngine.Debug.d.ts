@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Debug {
+  class Debug extends System.Object {
     // constructors
     constructor();
     // methods
@@ -22,8 +22,8 @@ declare namespace UnityEngine {
     static LogErrorFormat(format: string, args: any[]): void;
     static LogErrorFormat(context: UnityEngine.Object, format: string, args: any[]): void;
     static ClearDeveloperConsole(): void;
-    static LogException(exception: any): void;
-    static LogException(exception: any, context: UnityEngine.Object): void;
+    static LogException(exception: System.Exception): void;
+    static LogException(exception: System.Exception, context: UnityEngine.Object): void;
     static LogWarning(message: any): void;
     static LogWarning(message: any, context: UnityEngine.Object): void;
     static LogWarningFormat(format: string, args: any[]): void;
@@ -34,17 +34,13 @@ declare namespace UnityEngine {
     static Assert(condition: boolean, message: string): void;
     static Assert(condition: boolean, message: any, context: UnityEngine.Object): void;
     static Assert(condition: boolean, message: string, context: UnityEngine.Object): void;
+    static Assert(condition: boolean, format: string, args: any[]): void;
     static AssertFormat(condition: boolean, format: string, args: any[]): void;
     static AssertFormat(condition: boolean, context: UnityEngine.Object, format: string, args: any[]): void;
     static LogAssertion(message: any): void;
     static LogAssertion(message: any, context: UnityEngine.Object): void;
     static LogAssertionFormat(format: string, args: any[]): void;
     static LogAssertionFormat(context: UnityEngine.Object, format: string, args: any[]): void;
-    static Assert(condition: boolean, format: string, args: any[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly logger: UnityEngine.ILogger;
     static developerConsoleVisible: boolean;

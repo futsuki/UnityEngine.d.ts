@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class SystemInfo {
+  class SystemInfo extends System.Object {
     // constructors
     constructor();
     // methods
     static SupportsRenderTextureFormat(format: UnityEngine.RenderTextureFormat): boolean;
     static SupportsTextureFormat(format: UnityEngine.TextureFormat): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly operatingSystem: string;
     static readonly operatingSystemFamily: UnityEngine.OperatingSystemFamily;

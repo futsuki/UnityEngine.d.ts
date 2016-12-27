@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Collaboration {
-  class TextureUtility {
+  class TextureUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static LoadTextureFromApplicationContents(path: string): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

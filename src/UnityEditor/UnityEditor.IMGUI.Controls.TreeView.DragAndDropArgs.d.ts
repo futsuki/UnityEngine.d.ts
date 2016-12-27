@@ -1,12 +1,8 @@
 declare namespace UnityEditor.IMGUI.Controls.TreeView {
-  class DragAndDropArgs {
+  class DragAndDropArgs extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     parentItem: UnityEditor.IMGUI.Controls.TreeViewItem;

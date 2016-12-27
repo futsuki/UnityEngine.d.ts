@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Physics2D {
+  class Physics2D extends System.Object {
     // constructors
     constructor();
     // methods
@@ -155,10 +155,6 @@ declare namespace UnityEngine {
     static OverlapCapsuleNonAlloc(point: UnityEngine.Vector2, size: UnityEngine.Vector2, direction: UnityEngine.CapsuleDirection2D, angle: number, results: UnityEngine.Collider2D[], layerMask: number, minDepth: number): number;
     static OverlapCapsuleNonAlloc(point: UnityEngine.Vector2, size: UnityEngine.Vector2, direction: UnityEngine.CapsuleDirection2D, angle: number, results: UnityEngine.Collider2D[], layerMask: number): number;
     static OverlapCapsuleNonAlloc(point: UnityEngine.Vector2, size: UnityEngine.Vector2, direction: UnityEngine.CapsuleDirection2D, angle: number, results: UnityEngine.Collider2D[]): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static raycastsHitTriggers: boolean;
     static raycastsStartInColliders: boolean;

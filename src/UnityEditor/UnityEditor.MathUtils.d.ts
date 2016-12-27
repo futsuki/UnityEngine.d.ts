@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class MathUtils {
+  class MathUtils extends System.Object {
     // constructors
     constructor();
     // methods
@@ -18,10 +18,6 @@ declare namespace UnityEditor {
     static ClosestPtSegmentRay(p1: any, q1: any, ray: any, squaredDist: any, s: any, closestRay: any): any;
     static IntersectRaySphere(ray: any, sphereOrigin: any, sphereRadius: number, t: any, q: any): boolean;
     static ClosestPtRaySphere(ray: any, sphereOrigin: any, sphereRadius: number, t: any, q: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

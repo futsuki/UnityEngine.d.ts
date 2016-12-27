@@ -1,5 +1,5 @@
 declare namespace UnityEditor.BuildReporting {
-  class StrippingInfo {
+  class StrippingInfo extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -11,20 +11,12 @@ declare namespace UnityEditor.BuildReporting {
     AddModuleSize(module: string, size: number): void;
     static GetBuildReportData(report: UnityEditor.BuildReporting.BuildReport): UnityEditor.BuildReporting.StrippingInfo;
     static ModuleName(module: string): string;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    name: string;
-    hideFlags: any;
     // fields
     static RequiredByScripts: string;
-    serializedDependencies: any;
-    modules: any;
-    serializedSizes: any;
+    serializedDependencies: UnityEditor.BuildReporting.StrippingInfo.SerializedDependency[];
+    modules: string[];
+    serializedSizes: number[];
     dependencies: any;
     sizes: any;
     icons: any;

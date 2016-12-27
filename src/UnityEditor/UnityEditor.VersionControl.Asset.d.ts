@@ -1,5 +1,5 @@
 declare namespace UnityEditor.VersionControl {
-  class Asset {
+  class Asset extends System.Object {
     // constructors
     constructor(clientPath: string);
     // methods
@@ -8,11 +8,7 @@ declare namespace UnityEditor.VersionControl {
     IsState(state: UnityEditor.VersionControl.Asset.States): boolean;
     IsOneOfStates(states: UnityEditor.VersionControl.Asset.States[]): boolean;
     Edit(): void;
-    Load(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    Load(): UnityEngine.Object;
     // properties
     readonly state: UnityEditor.VersionControl.Asset.States;
     readonly path: string;

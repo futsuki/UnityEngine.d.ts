@@ -1,15 +1,11 @@
 declare namespace UnityEditor {
-  class TimeControl {
+  class TimeControl extends System.Object {
     // constructors
     constructor();
     // methods
     DoTimeControl(rect: any): void;
     OnDisable(): void;
     Update(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     deltaTime: number;
     normalizedTime: number;

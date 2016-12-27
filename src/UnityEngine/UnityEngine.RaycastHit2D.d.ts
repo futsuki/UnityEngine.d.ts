@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class RaycastHit2D {
+  class RaycastHit2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     CompareTo(other: UnityEngine.RaycastHit2D): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     centroid: UnityEngine.Vector2;
     point: UnityEngine.Vector2;

@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
   class IBuildWindowExtension {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ShowPlatformBuildOptions(): void;
     ShowInternalPlatformBuildOptions(): void;

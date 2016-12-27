@@ -1,13 +1,9 @@
 declare namespace UnityEditor.PostprocessScene {
-  class UnityBuildPostprocessor {
+  class UnityBuildPostprocessor extends System.Object {
     // constructors
     constructor();
     // methods
     static OnPostprocessScene(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

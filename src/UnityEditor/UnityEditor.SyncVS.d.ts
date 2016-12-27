@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SyncVS {
+  class SyncVS extends UnityEditor.AssetPostprocessor {
     // constructors
     constructor();
     // methods
@@ -10,20 +10,7 @@ declare namespace UnityEditor {
     static PostprocessSyncProject(importedAssets: string[], addedAssets: string[], deletedAssets: string[], movedAssets: string[], movedFromAssetPaths: string[]): void;
     static SyncSolution(): void;
     static SyncIfFirstFileOpenSinceDomainLoad(): void;
-    LogWarning(warning: string): void;
-    LogWarning(warning: string, context: any): void;
-    LogError(warning: string): void;
-    LogError(warning: string, context: any): void;
-    GetVersion(): number;
-    GetPostprocessOrder(): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    assetPath: string;
-    readonly assetImporter: UnityEditor.AssetImporter;
-    preview: any;
     // fields
   }
 }

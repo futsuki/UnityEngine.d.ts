@@ -1,13 +1,9 @@
 declare namespace UnityEngine.UI {
-  class Clipping {
+  class Clipping extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    static FindCullAndClipWorldRect(rectMaskParents: any, validRect: any): UnityEngine.Rect;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    static FindCullAndClipWorldRect(rectMaskParents: UnityEngine.UI.RectMask2D[], validRect: any): UnityEngine.Rect;
     // properties
     // fields
   }

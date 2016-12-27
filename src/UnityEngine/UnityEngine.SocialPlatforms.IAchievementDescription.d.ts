@@ -1,7 +1,7 @@
 declare namespace UnityEngine.SocialPlatforms {
   class IAchievementDescription {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     // properties
     id: string;

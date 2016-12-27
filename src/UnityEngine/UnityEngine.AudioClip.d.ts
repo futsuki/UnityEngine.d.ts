@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class AudioClip {
+  class AudioClip extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -8,16 +8,11 @@ declare namespace UnityEngine {
     GetData(data: number[], offsetSamples: number): boolean;
     SetData(data: number[], offsetSamples: number): boolean;
     static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((number[]) => void)): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((number[]) => void), pcmsetpositioncallback: ((number) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((data: number[]) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, _3D: boolean, stream: boolean, pcmreadercallback: ((data: number[]) => void), pcmsetpositioncallback: ((position: number) => void)): UnityEngine.AudioClip;
     static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((number[]) => void)): UnityEngine.AudioClip;
-    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((number[]) => void), pcmsetpositioncallback: ((number) => void)): UnityEngine.AudioClip;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((data: number[]) => void)): UnityEngine.AudioClip;
+    static Create(name: string, lengthSamples: number, channels: number, frequency: number, stream: boolean, pcmreadercallback: ((data: number[]) => void), pcmsetpositioncallback: ((position: number) => void)): UnityEngine.AudioClip;
     // properties
     readonly length: number;
     readonly samples: number;
@@ -28,8 +23,6 @@ declare namespace UnityEngine {
     readonly preloadAudioData: boolean;
     readonly loadState: UnityEngine.AudioDataLoadState;
     readonly loadInBackground: boolean;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

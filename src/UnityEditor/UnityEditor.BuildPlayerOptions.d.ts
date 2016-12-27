@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class BuildPlayerOptions {
+  class BuildPlayerOptions extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     scenes: string[];
     locationPathName: string;

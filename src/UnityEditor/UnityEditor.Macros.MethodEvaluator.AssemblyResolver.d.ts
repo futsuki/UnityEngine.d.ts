@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Macros.MethodEvaluator {
-  class AssemblyResolver {
+  class AssemblyResolver extends System.Object {
     // constructors
     constructor(assemblyDirectory: string);
     // methods
     AssemblyResolve(sender: any, args: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

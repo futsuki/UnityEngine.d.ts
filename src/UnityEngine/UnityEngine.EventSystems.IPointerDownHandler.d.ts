@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IPointerDownHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnPointerDown(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

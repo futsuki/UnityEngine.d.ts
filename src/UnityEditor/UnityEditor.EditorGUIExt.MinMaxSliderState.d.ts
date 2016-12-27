@@ -1,12 +1,8 @@
 declare namespace UnityEditor.EditorGUIExt {
-  class MinMaxSliderState {
+  class MinMaxSliderState extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     dragStartPos: number;

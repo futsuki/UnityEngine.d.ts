@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
-  class SpriteEditorUtility {
+  class SpriteEditorUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetPivotValue(alignment: any, customOffset: any): any;
     static RoundedRect(rect: any): any;
@@ -11,10 +11,6 @@ declare namespace UnityEditorInternal {
     static DrawLine(p1: any, p2: any): void;
     static BeginLines(color: any): void;
     static EndLines(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

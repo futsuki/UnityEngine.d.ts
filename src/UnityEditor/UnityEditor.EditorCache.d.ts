@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class EditorCache {
+  class EditorCache extends System.Object {
     // constructors
     constructor();
     constructor(requirements: UnityEditor.EditorFeatures);
@@ -7,12 +7,8 @@ declare namespace UnityEditor {
     CleanupUntouchedEditors(): void;
     CleanupAllEditors(): void;
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    get_Item(o: any): UnityEditor.EditorWrapper;
+    get_Item(o: UnityEngine.Object): UnityEditor.EditorWrapper;
     // fields
   }
 }

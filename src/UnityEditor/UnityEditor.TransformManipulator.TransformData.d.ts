@@ -1,16 +1,12 @@
 declare namespace UnityEditor.TransformManipulator {
-  class TransformData {
+  class TransformData extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static GetData(t: any): UnityEditor.TransformManipulator.TransformData;
     SetScaleDelta(scaleDelta: any, scalePivot: any, scaleRotation: any, preferRectResize: boolean): void;
     SetPositionDelta(positionDelta: any): void;
     DebugAlignment(targetRotation: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     static s_Alignments: any[];

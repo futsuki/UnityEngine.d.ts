@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class SamsungTV {
+  class SamsungTV extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static deviceAddress: string;
     static productDescription: string;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.SceneView {
-  class CursorRect {
+  class CursorRect extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     rect: any;

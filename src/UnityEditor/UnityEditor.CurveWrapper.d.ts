@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class CurveWrapper {
+  class CurveWrapper extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     renderer: UnityEditor.CurveRenderer;
     readonly curve: any;
@@ -28,7 +24,7 @@ declare namespace UnityEditor {
     readOnly: boolean;
     hidden: boolean;
     getAxisUiScalarsCallback: (() => any);
-    setAxisUiScalarsCallback: ((any) => void);
+    setAxisUiScalarsCallback: ((newAxisScalars: any) => void);
     selected: UnityEditor.CurveWrapper.SelectionMode;
     listIndex: number;
     vRangeMin: number;

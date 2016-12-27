@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class ILayoutController {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetLayoutHorizontal(): void;
     SetLayoutVertical(): void;

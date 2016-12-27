@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class WWW {
+  class WWW extends System.Object {
     // constructors
     constructor(url: string);
     constructor(url: string, form: UnityEngine.WWWForm);
@@ -26,10 +26,6 @@ declare namespace UnityEngine {
     static LoadFromCacheOrDownload(url: string, version: number, crc: number): UnityEngine.WWW;
     static LoadFromCacheOrDownload(url: string, hash: UnityEngine.Hash128): UnityEngine.WWW;
     static LoadFromCacheOrDownload(url: string, hash: UnityEngine.Hash128, crc: number): UnityEngine.WWW;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly responseHeaders: any;
     readonly text: string;

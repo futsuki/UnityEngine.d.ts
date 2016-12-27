@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class WebTemplate {
+  class WebTemplate extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,7 +7,6 @@ declare namespace UnityEditor {
     GetHashCode(): number;
     ToString(): string;
     ToGUIContent(defaultIcon: any): any;
-    GetType(): any;
     // properties
     readonly CustomKeys: string[];
     // fields

@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class EditorStyles {
+  class EditorStyles extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly label: any;
     static readonly miniLabel: any;

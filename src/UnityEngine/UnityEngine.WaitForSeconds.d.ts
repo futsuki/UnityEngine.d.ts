@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class WaitForSeconds {
+  class WaitForSeconds extends UnityEngine.YieldInstruction {
     // constructors
     constructor(seconds: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

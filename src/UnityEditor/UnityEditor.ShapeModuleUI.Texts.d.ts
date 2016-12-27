@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ShapeModuleUI {
-  class Texts {
+  class Texts extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     shape: any;

@@ -1,13 +1,9 @@
 declare namespace UnityEngine {
-  class EventProvider {
+  class EventProvider extends System.Object {
     // constructors
     constructor();
     // methods
     static WriteCustomEvent(value: number, text: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

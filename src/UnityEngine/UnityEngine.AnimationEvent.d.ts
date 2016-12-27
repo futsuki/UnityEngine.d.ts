@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class AnimationEvent {
+  class AnimationEvent extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     data: string;
     stringParameter: string;

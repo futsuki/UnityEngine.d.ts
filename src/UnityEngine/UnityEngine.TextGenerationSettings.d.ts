@@ -1,13 +1,10 @@
 declare namespace UnityEngine {
-  class TextGenerationSettings {
+  class TextGenerationSettings extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Equals(other: UnityEngine.TextGenerationSettings): boolean;
     Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     font: UnityEngine.Font;

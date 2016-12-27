@@ -1,8 +1,8 @@
 declare namespace UnityEditor {
-  class SerializedObject {
+  class SerializedObject extends System.Object {
     // constructors
-    constructor(obj: any);
-    constructor(objs: any[]);
+    constructor(obj: UnityEngine.Object);
+    constructor(objs: UnityEngine.Object[]);
     // methods
     Update(): void;
     SetIsDifferentCacheDirty(): void;
@@ -13,13 +13,9 @@ declare namespace UnityEditor {
     ApplyModifiedProperties(): boolean;
     ApplyModifiedPropertiesWithoutUndo(): boolean;
     CopyFromSerializedProperty(prop: UnityEditor.SerializedProperty): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    readonly targetObject: any;
-    readonly targetObjects: any[];
+    readonly targetObject: UnityEngine.Object;
+    readonly targetObjects: UnityEngine.Object[];
     readonly isEditingMultipleObjects: boolean;
     maxArraySizeForMultiEditing: number;
     // fields

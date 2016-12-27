@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class ShadowCascadeSplitGUI {
+  class ShadowCascadeSplitGUI extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static HandleCascadeSliderGUI(normalizedCascadePartitions: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

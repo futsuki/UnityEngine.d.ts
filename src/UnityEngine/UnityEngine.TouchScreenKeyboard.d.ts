@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class TouchScreenKeyboard {
+  class TouchScreenKeyboard extends System.Object {
     // constructors
     constructor(text: string, keyboardType: UnityEngine.TouchScreenKeyboardType, autocorrection: boolean, multiline: boolean, secure: boolean, alert: boolean, textPlaceholder: string);
     // methods
@@ -10,10 +10,6 @@ declare namespace UnityEngine {
     static Open(text: string, keyboardType: UnityEngine.TouchScreenKeyboardType): UnityEngine.TouchScreenKeyboard;
     static Open(text: string): UnityEngine.TouchScreenKeyboard;
     static Open(text: string, keyboardType: UnityEngine.TouchScreenKeyboardType, autocorrection: boolean, multiline: boolean, secure: boolean, alert: boolean, textPlaceholder: string): UnityEngine.TouchScreenKeyboard;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly isSupported: boolean;
     text: string;

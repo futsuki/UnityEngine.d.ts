@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class ParticleSystemStyles {
+  class ParticleSystemStyles extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Get(): UnityEditor.ParticleSystemStyles;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     label: any;

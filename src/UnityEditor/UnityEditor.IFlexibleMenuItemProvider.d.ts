@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
   class IFlexibleMenuItemProvider {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Count(): number;
     GetItem(index: number): any;

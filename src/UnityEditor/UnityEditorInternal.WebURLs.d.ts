@@ -1,12 +1,8 @@
 declare namespace UnityEditorInternal {
-  class WebURLs {
+  class WebURLs extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly unity: string;
     static readonly unityConnect: string;

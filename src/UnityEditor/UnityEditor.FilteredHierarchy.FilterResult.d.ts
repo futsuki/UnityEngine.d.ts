@@ -1,12 +1,8 @@
 declare namespace UnityEditor.FilteredHierarchy {
-  class FilterResult {
+  class FilterResult extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     icon: any;
     readonly guid: string;

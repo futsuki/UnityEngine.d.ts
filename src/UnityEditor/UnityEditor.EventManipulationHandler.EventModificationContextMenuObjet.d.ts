@@ -1,12 +1,8 @@
 declare namespace UnityEditor.EventManipulationHandler {
-  class EventModificationContextMenuObjet {
+  class EventModificationContextMenuObjet extends System.Object {
     // constructors
     constructor(info: UnityEditor.AnimationClipInfoProperties, time: number, index: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_Info: UnityEditor.AnimationClipInfoProperties;

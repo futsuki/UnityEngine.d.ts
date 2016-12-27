@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Sprites {
-  class Packer {
+  class Packer extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor.Sprites {
     static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget, displayProgressBar: boolean): void;
     static RebuildAtlasCacheIfNeeded(target: UnityEditor.BuildTarget): void;
     static GetAtlasDataForSprite(sprite: any, atlasName: any, atlasTexture: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly atlasNames: string[];
     static readonly Policies: string[];

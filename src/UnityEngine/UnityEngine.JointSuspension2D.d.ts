@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class JointSuspension2D {
+  class JointSuspension2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     dampingRatio: number;
     frequency: number;

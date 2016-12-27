@@ -1,5 +1,5 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeViewItem {
+  class TreeViewItem extends System.Object {
     // constructors
     constructor(id: number);
     constructor(id: number, depth: number);
@@ -7,15 +7,12 @@ declare namespace UnityEditor.IMGUI.Controls {
     // methods
     CompareTo(other: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     id: number;
     displayName: string;
     depth: number;
     readonly hasChildren: boolean;
-    children: any;
+    children: UnityEditor.IMGUI.Controls.TreeViewItem[];
     parent: UnityEditor.IMGUI.Controls.TreeViewItem;
     icon: any;
     // fields

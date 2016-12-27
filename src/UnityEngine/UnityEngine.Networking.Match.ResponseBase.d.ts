@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Networking.Match {
-  class ResponseBase {
+  class ResponseBase extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Parse(obj: any): void;
     ParseJSONString(name: string, obj: any, dictJsonObj: any): string;
@@ -13,11 +13,7 @@ declare namespace UnityEngine.Networking.Match {
     ParseJSONUInt64(name: string, obj: any, dictJsonObj: any): number;
     ParseJSONBool(name: string, obj: any, dictJsonObj: any): boolean;
     ParseJSONDateTime(name: string, obj: any, dictJsonObj: any): any;
-    ParseJSONListOfStrings(name: string, obj: any, dictJsonObj: any): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
+    ParseJSONListOfStrings(name: string, obj: any, dictJsonObj: any): string[];
     // properties
     // fields
   }

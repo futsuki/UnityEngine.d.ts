@@ -1,14 +1,10 @@
 declare namespace UnityEngine.EventSystems {
-  class AbstractEventData {
+  class AbstractEventData extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Reset(): void;
     Use(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly used: boolean;
     // fields

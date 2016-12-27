@@ -1,13 +1,9 @@
 declare namespace UnityEditor {
-  class HorizontalLayout {
+  class HorizontalLayout extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static DoLayout(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

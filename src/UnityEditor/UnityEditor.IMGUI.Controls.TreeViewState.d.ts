@@ -1,16 +1,12 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeViewState {
+  class TreeViewState extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    selectedIDs: any;
+    selectedIDs: number[];
     lastClickedID: number;
-    expandedIDs: any;
+    expandedIDs: number[];
     searchString: string;
     // fields
     scrollPos: any;

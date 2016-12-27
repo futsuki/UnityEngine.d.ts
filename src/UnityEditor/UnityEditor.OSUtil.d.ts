@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class OSUtil {
+  class OSUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEditor {
     static GetAppFriendlyName(app: string): string;
     static GetDefaultAppPath(fileType: string): string;
     static GetDefaultCachePath(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

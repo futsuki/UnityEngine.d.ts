@@ -1,12 +1,9 @@
 declare namespace UnityEditor {
-  class ChangedCurve {
+  class ChangedCurve extends System.Object {
     // constructors
     constructor(curve: any, curveId: number, binding: UnityEditor.EditorCurveBinding);
     // methods
     GetHashCode(): number;
-    Equals(obj: any): boolean;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     curve: any;

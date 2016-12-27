@@ -1,12 +1,8 @@
 declare namespace UnityEditor.AI {
-  class NavMeshVisualizationSettings {
+  class NavMeshVisualizationSettings extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static showNavigation: number;
     static showNavMesh: boolean;

@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Analytics {
-  class CustomEventData {
+  class CustomEventData extends System.Object {
     // constructors
     constructor(name: string);
     // methods
@@ -20,10 +20,6 @@ declare namespace UnityEngine.Analytics {
     Add(key: string, value: number): boolean;
     Add(eventData: any): boolean;
     InternalCreate(name: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

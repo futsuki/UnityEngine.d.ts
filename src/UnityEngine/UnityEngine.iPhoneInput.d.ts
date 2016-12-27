@@ -1,14 +1,10 @@
 declare namespace UnityEngine {
-  class iPhoneInput {
+  class iPhoneInput extends System.Object {
     // constructors
     constructor();
     // methods
     static GetTouch(index: number): UnityEngine.iPhoneTouch;
     static GetAccelerationEvent(index: number): UnityEngine.iPhoneAccelerationEvent;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly orientation: UnityEngine.iPhoneOrientation;
     static readonly lastLocation: UnityEngine.LocationInfo;

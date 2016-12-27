@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class BaseInspectView {
+  class BaseInspectView extends System.Object {
     // constructors
     constructor(guiViewDebuggerWindow: UnityEditor.GUIViewDebuggerWindow);
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     Unselect(): void;
     SelectRow(index: number): void;
     ShowOverlay(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_ListViewState: UnityEditor.ListViewState;

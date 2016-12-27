@@ -1,12 +1,8 @@
 declare namespace UnityEditor {
-  class AssetServerConfig {
+  class AssetServerConfig extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     connectionSettings: string;
     server: string;

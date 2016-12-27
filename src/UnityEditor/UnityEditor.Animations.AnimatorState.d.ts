@@ -1,26 +1,21 @@
 declare namespace UnityEditor.Animations {
-  class AnimatorState {
+  class AnimatorState extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
     AddStateMachineBehaviour(stateMachineBehaviourType: any): any;
     AddTransition(transition: UnityEditor.Animations.AnimatorStateTransition): void;
-    RemoveTransition(transition: UnityEditor.Animations.AnimatorStateTransition): void;
     AddTransition(destinationState: UnityEditor.Animations.AnimatorState): UnityEditor.Animations.AnimatorStateTransition;
     AddTransition(destinationStateMachine: UnityEditor.Animations.AnimatorStateMachine): UnityEditor.Animations.AnimatorStateTransition;
     AddTransition(destinationState: UnityEditor.Animations.AnimatorState, defaultExitTime: boolean): UnityEditor.Animations.AnimatorStateTransition;
     AddTransition(destinationStateMachine: UnityEditor.Animations.AnimatorStateMachine, defaultExitTime: boolean): UnityEditor.Animations.AnimatorStateTransition;
+    RemoveTransition(transition: UnityEditor.Animations.AnimatorStateTransition): void;
     AddExitTransition(): UnityEditor.Animations.AnimatorStateTransition;
     AddExitTransition(defaultExitTime: boolean): UnityEditor.Animations.AnimatorStateTransition;
-    GetMotion(): any;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
+    GetMotion(): UnityEngine.Motion;
     // properties
     readonly nameHash: number;
-    motion: any;
+    motion: UnityEngine.Motion;
     speed: number;
     cycleOffset: number;
     mirror: boolean;
@@ -37,8 +32,6 @@ declare namespace UnityEditor.Animations {
     behaviours: any[];
     readonly uniqueName: string;
     readonly uniqueNameHash: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

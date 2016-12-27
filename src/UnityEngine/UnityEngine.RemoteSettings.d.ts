@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class RemoteSettings {
+  class RemoteSettings extends System.Object {
     // constructors
     constructor();
     // methods
@@ -13,10 +13,6 @@ declare namespace UnityEngine {
     static GetBool(key: string, defaultValue: boolean): boolean;
     static GetBool(key: string): boolean;
     static HasKey(key: string): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

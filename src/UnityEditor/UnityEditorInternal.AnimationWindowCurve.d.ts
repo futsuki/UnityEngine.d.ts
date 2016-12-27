@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowCurve {
+  class AnimationWindowCurve extends System.Object {
     // constructors
     constructor(clip: any, binding: UnityEditor.EditorCurveBinding, valueType: any);
     // methods
@@ -15,9 +15,6 @@ declare namespace UnityEditorInternal {
     HasKeyframe(time: UnityEditorInternal.AnimationKeyTime): boolean;
     GetKeyframeIndex(time: UnityEditorInternal.AnimationKeyTime): number;
     RemoveKeysAtRange(startTime: number, endTime: number): void;
-    Equals(obj: any): boolean;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly binding: UnityEditor.EditorCurveBinding;
     readonly isPPtrCurve: boolean;
@@ -30,7 +27,7 @@ declare namespace UnityEditorInternal {
     readonly depth: number;
     readonly clip: any;
     readonly rootGameObject: any;
-    readonly scriptableObject: any;
+    readonly scriptableObject: UnityEngine.ScriptableObject;
     readonly timeOffset: number;
     readonly clipIsEditable: boolean;
     readonly animationIsEditable: boolean;
@@ -38,6 +35,6 @@ declare namespace UnityEditorInternal {
     selectionBinding: UnityEditorInternal.AnimationWindowSelectionItem;
     // fields
     static timeEpsilon: number;
-    m_Keyframes: any;
+    m_Keyframes: UnityEditorInternal.AnimationWindowKeyframe[];
   }
 }

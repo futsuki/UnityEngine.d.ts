@@ -1,7 +1,7 @@
 declare namespace UnityEditor.Modules {
-  class DefaultBuildPostprocessor {
+  class DefaultBuildPostprocessor extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     LaunchPlayer(args: UnityEditor.Modules.BuildLaunchPlayerArgs): void;
     PostProcess(args: UnityEditor.Modules.BuildPostProcessArgs): void;
@@ -11,10 +11,6 @@ declare namespace UnityEditor.Modules {
     GetScriptLayoutFileFromBuild(options: UnityEditor.BuildOptions, installPath: string, fileName: string): string;
     PrepareForBuild(options: UnityEditor.BuildOptions, target: UnityEditor.BuildTarget): string;
     GetExtension(target: UnityEditor.BuildTarget, options: UnityEditor.BuildOptions): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class iOS {
+  class iOS extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static applicationDisplayName: string;
     static buildNumber: string;

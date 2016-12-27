@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class AssemblyReloadEvents {
+  class AssemblyReloadEvents extends System.Object {
     // constructors
     constructor();
     // methods
     static OnBeforeAssemblyReload(): void;
     static OnAfterAssemblyReload(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

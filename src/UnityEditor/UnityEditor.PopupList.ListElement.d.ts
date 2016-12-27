@@ -1,15 +1,11 @@
 declare namespace UnityEditor.PopupList {
-  class ListElement {
+  class ListElement extends System.Object {
     // constructors
     constructor(text: string, selected: boolean, score: number);
     constructor(text: string, selected: boolean);
     constructor(text: string);
     // methods
     ResetScore(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     filterScore: number;
     selected: boolean;

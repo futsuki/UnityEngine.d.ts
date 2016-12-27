@@ -1,9 +1,10 @@
 declare namespace UnityEngine.Assertions {
-  class Assert {
+  class Assert extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static Equals(obj1: any, obj2: any): boolean;
+    Equals(obj: any): boolean;
     static ReferenceEquals(obj1: any, obj2: any): boolean;
     static IsTrue(condition: boolean): void;
     static IsTrue(condition: boolean, message: string): void;
@@ -21,10 +22,6 @@ declare namespace UnityEngine.Assertions {
     static AreNotEqual(expected: UnityEngine.Object, actual: UnityEngine.Object, message: string): void;
     static IsNull(value: UnityEngine.Object, message: string): void;
     static IsNotNull(value: UnityEngine.Object, message: string): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static raiseExceptions: boolean;

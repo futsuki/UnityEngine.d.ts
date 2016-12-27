@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class CullingGroup {
+  class CullingGroup extends System.Object {
     // constructors
     constructor();
     // methods
@@ -15,12 +15,8 @@ declare namespace UnityEngine {
     SetBoundingDistances(distances: number[]): void;
     SetDistanceReferencePoint(point: UnityEngine.Vector3): void;
     SetDistanceReferencePoint(transform: UnityEngine.Transform): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
-    onStateChanged: ((UnityEngine.CullingGroupEvent) => void);
+    onStateChanged: ((sphere: UnityEngine.CullingGroupEvent) => void);
     enabled: boolean;
     targetCamera: UnityEngine.Camera;
     // fields

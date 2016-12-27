@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class ModelImporterClipAnimation {
+  class ModelImporterClipAnimation extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,8 +7,6 @@ declare namespace UnityEditor {
     ConfigureClipFromMask(mask: UnityEditor.Animations.AvatarMask): void;
     Equals(o: any): boolean;
     GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     takeName: string;
     name: string;

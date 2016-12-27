@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Networking {
-  class UnityWebRequest {
+  class UnityWebRequest extends System.Object {
     // constructors
     constructor();
     constructor(url: string);
@@ -20,10 +20,10 @@ declare namespace UnityEngine.Networking {
     static Put(uri: string, bodyData: string): UnityEngine.Networking.UnityWebRequest;
     static Post(uri: string, postData: string): UnityEngine.Networking.UnityWebRequest;
     static Post(uri: string, formData: UnityEngine.WWWForm): UnityEngine.Networking.UnityWebRequest;
-    static Post(uri: string, multipartFormSections: any): UnityEngine.Networking.UnityWebRequest;
-    static Post(uri: string, multipartFormSections: any, boundary: number[]): UnityEngine.Networking.UnityWebRequest;
+    static Post(uri: string, multipartFormSections: UnityEngine.Networking.IMultipartFormSection[]): UnityEngine.Networking.UnityWebRequest;
+    static Post(uri: string, multipartFormSections: UnityEngine.Networking.IMultipartFormSection[], boundary: number[]): UnityEngine.Networking.UnityWebRequest;
     static Post(uri: string, formFields: any): UnityEngine.Networking.UnityWebRequest;
-    static SerializeFormSections(multipartFormSections: any, boundary: number[]): number[];
+    static SerializeFormSections(multipartFormSections: UnityEngine.Networking.IMultipartFormSection[], boundary: number[]): number[];
     static GenerateBoundary(): number[];
     static SerializeSimpleForm(formFields: any): number[];
     Dispose(): void;
@@ -33,10 +33,6 @@ declare namespace UnityEngine.Networking {
     SetRequestHeader(name: string, value: string): void;
     GetResponseHeader(name: string): string;
     GetResponseHeaders(): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     disposeDownloadHandlerOnDispose: boolean;
     disposeUploadHandlerOnDispose: boolean;

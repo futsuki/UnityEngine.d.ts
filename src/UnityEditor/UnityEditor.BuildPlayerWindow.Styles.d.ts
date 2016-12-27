@@ -1,14 +1,10 @@
 declare namespace UnityEditor.BuildPlayerWindow {
-  class Styles {
+  class Styles extends System.Object {
     // constructors
     constructor();
     // methods
     GetTargetNotInstalled(index: number, item: number): any;
     GetDownloadErrorForTarget(target: UnityEditor.BuildTarget): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static invalidColorSpaceMessage: any;

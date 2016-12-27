@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Web {
-  class JspmResult {
+  class JspmResult extends System.Object {
     // constructors
     constructor();
     constructor(messageID: number, status: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     version: number;

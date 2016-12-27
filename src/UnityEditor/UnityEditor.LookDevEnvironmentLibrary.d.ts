@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class LookDevEnvironmentLibrary {
+  class LookDevEnvironmentLibrary extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
@@ -10,18 +10,10 @@ declare namespace UnityEditor {
     SetLookDevView(lookDevView: UnityEditor.LookDevView): void;
     OnBeforeSerialize(): void;
     OnAfterDeserialize(): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     dirty: boolean;
-    readonly hdriList: any;
+    readonly hdriList: UnityEditor.CubemapInfo[];
     readonly hdriCount: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

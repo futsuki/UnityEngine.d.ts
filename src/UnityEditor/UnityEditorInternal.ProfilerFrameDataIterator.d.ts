@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class ProfilerFrameDataIterator {
+  class ProfilerFrameDataIterator extends System.Object {
     // constructors
     constructor();
     // methods
@@ -11,10 +11,6 @@ declare namespace UnityEditorInternal {
     GetGroupName(): string;
     GetThreadName(): string;
     SetRoot(frame: number, threadIdx: number): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly group: number;
     readonly depth: number;

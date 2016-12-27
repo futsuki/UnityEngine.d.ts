@@ -1,14 +1,10 @@
 declare namespace UnityEditor.PlayerSettings {
-  class Tizen {
+  class Tizen extends System.Object {
     // constructors
     constructor();
     // methods
     static SetCapability(capability: UnityEditor.PlayerSettings.TizenCapability, value: boolean): void;
     static GetCapability(capability: UnityEditor.PlayerSettings.TizenCapability): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static productDescription: string;
     static productURL: string;

@@ -1,13 +1,10 @@
 declare namespace UnityEditor.AssetStoreContext {
-  class Package {
+  class Package extends System.Object {
     // constructors
     constructor();
     // methods
     Initialize(json: UnityEditorInternal.JSONValue): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     // fields
     title: string;

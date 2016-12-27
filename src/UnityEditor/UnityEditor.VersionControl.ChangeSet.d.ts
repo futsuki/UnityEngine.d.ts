@@ -1,5 +1,5 @@
 declare namespace UnityEditor.VersionControl {
-  class ChangeSet {
+  class ChangeSet extends System.Object {
     // constructors
     constructor();
     constructor(description: string);
@@ -7,10 +7,6 @@ declare namespace UnityEditor.VersionControl {
     constructor(other: UnityEditor.VersionControl.ChangeSet);
     // methods
     Dispose(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly description: string;
     readonly id: string;

@@ -1,5 +1,5 @@
 declare namespace UnityEditor.IMGUI.Controls {
-  class TreeViewGUI {
+  class TreeViewGUI extends System.Object {
     // constructors
     constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController);
     constructor(treeView: UnityEditor.IMGUI.Controls.TreeViewController, useHorizontalScroll: boolean);
@@ -21,15 +21,11 @@ declare namespace UnityEditor.IMGUI.Controls {
     DoRenameOverlay(): void;
     GetFoldoutIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
     GetContentIndent(item: UnityEditor.IMGUI.Controls.TreeViewItem): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     iconLeftPadding: number;
     iconRightPadding: number;
     readonly iconTotalPadding: number;
-    iconOverlayGUI: ((UnityEditor.IMGUI.Controls.TreeViewItem, any) => void);
+    iconOverlayGUI: ((arg1: UnityEditor.IMGUI.Controls.TreeViewItem, arg2: any) => void);
     readonly indentWidth: number;
     readonly halfDropBetweenHeight: number;
     readonly topRowMargin: number;

@@ -1,15 +1,11 @@
 declare namespace UnityEditorInternal {
-  class ChartData {
+  class ChartData extends System.Object {
     // constructors
     constructor();
     // methods
     Assign(items: UnityEditorInternal.ChartSeries[], firstFrame: number, firstSelectableFrame: number): void;
     AssignScale(scale: number[]): void;
     SetGrid(grid: number[], labels: string[]): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly NumberOfFrames: number;
     // fields

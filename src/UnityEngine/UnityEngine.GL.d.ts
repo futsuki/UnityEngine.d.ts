@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GL {
+  class GL extends System.Object {
     // constructors
     constructor();
     // methods
@@ -33,10 +33,6 @@ declare namespace UnityEngine {
     static IssuePluginEvent(eventID: number): void;
     static IssuePluginEvent(callback: any, eventID: number): void;
     static RenderTargetBarrier(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static modelview: UnityEngine.Matrix4x4;
     static wireframe: boolean;

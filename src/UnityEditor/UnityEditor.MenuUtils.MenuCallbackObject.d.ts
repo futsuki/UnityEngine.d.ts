@@ -1,18 +1,14 @@
 declare namespace UnityEditor.MenuUtils {
-  class MenuCallbackObject {
+  class MenuCallbackObject extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     menuItemPath: string;
-    temporaryContext: any[];
-    onBeforeExecuteCallback: ((string, any[], number) => void);
-    onAfterExecuteCallback: ((string, any[], number) => void);
+    temporaryContext: UnityEngine.Object[];
+    onBeforeExecuteCallback: ((arg1: string, arg2: UnityEngine.Object[], arg3: number) => void);
+    onAfterExecuteCallback: ((arg1: string, arg2: UnityEngine.Object[], arg3: number) => void);
     userData: number;
   }
 }

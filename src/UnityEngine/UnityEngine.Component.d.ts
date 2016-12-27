@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Component {
+  class Component extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -13,7 +13,7 @@ declare namespace UnityEngine {
     GetComponentsInParent(t: any): UnityEngine.Component[];
     GetComponentsInParent(t: any, includeInactive: boolean): UnityEngine.Component[];
     GetComponents(type: any): UnityEngine.Component[];
-    GetComponents(type: any, results: any): void;
+    GetComponents(type: any, results: UnityEngine.Component[]): void;
     CompareTag(tag: string): boolean;
     SendMessageUpwards(methodName: string, value: any, options: UnityEngine.SendMessageOptions): void;
     SendMessageUpwards(methodName: string, value: any): void;
@@ -27,11 +27,6 @@ declare namespace UnityEngine {
     BroadcastMessage(methodName: string, parameter: any): void;
     BroadcastMessage(methodName: string): void;
     BroadcastMessage(methodName: string, options: UnityEngine.SendMessageOptions): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly transform: UnityEngine.Transform;
     readonly gameObject: UnityEngine.GameObject;
@@ -53,8 +48,6 @@ declare namespace UnityEngine {
     readonly hingeJoint: UnityEngine.Component;
     readonly particleEmitter: UnityEngine.Component;
     readonly particleSystem: UnityEngine.Component;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

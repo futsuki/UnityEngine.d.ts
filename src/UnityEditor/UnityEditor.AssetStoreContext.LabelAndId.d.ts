@@ -1,13 +1,10 @@
 declare namespace UnityEditor.AssetStoreContext {
-  class LabelAndId {
+  class LabelAndId extends System.Object {
     // constructors
     constructor();
     // methods
     Initialize(json: UnityEditorInternal.JSONValue): void;
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     // fields
     label: string;

@@ -1,12 +1,8 @@
 declare namespace UnityEditor.IMGUI.Controls.MultiColumnHeader {
-  class DefaultGUI {
+  class DefaultGUI extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly defaultHeight: number;
     static readonly minimumHeight: number;

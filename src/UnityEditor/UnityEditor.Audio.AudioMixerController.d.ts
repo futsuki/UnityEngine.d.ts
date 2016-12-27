@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Audio {
-  class AudioMixerController {
+  class AudioMixerController extends UnityEngine.Audio.AudioMixer {
     // constructors
     constructor();
     // methods
@@ -17,9 +17,9 @@ declare namespace UnityEditor.Audio {
     static CreateMixerControllerAtPath(path: string): UnityEditor.Audio.AudioMixerController;
     CreateDefaultAsset(path: string): void;
     BuildTestSetup(minSpan: number, maxSpan: number, maxGroups: number): void;
-    GetAllAudioGroupsSlow(): any;
+    GetAllAudioGroupsSlow(): UnityEditor.Audio.AudioMixerGroupController[];
     HasMoreThanOneGroup(): boolean;
-    AreAnyOfTheGroupsInTheListAncestors(groups: any): boolean;
+    AreAnyOfTheGroupsInTheListAncestors(groups: UnityEditor.Audio.AudioMixerGroupController[]): boolean;
     DeleteGroups(groups: UnityEditor.Audio.AudioMixerGroupController[]): void;
     RemoveEffect(effect: UnityEditor.Audio.AudioMixerEffectController, group: UnityEditor.Audio.AudioMixerGroupController): void;
     OnSubAssetChanged(): void;
@@ -31,19 +31,19 @@ declare namespace UnityEditor.Audio {
     RemoveGroupsFromParent(groups: UnityEditor.Audio.AudioMixerGroupController[], storeUndoState: boolean): void;
     FindParentGroup(node: UnityEditor.Audio.AudioMixerGroupController, group: UnityEditor.Audio.AudioMixerGroupController): UnityEditor.Audio.AudioMixerGroupController;
     CopyEffect(sourceEffect: UnityEditor.Audio.AudioMixerEffectController): UnityEditor.Audio.AudioMixerEffectController;
-    DuplicateGroups(sourceGroups: UnityEditor.Audio.AudioMixerGroupController[]): any;
+    DuplicateGroups(sourceGroups: UnityEditor.Audio.AudioMixerGroupController[]): UnityEditor.Audio.AudioMixerGroupController[];
     CopyEffectSettingsToAllSnapshots(group: UnityEditor.Audio.AudioMixerGroupController, effectIndex: number, snapshot: UnityEditor.Audio.AudioMixerSnapshotController, includeWetParam: boolean): void;
     CopyAllSettingsToAllSnapshots(group: UnityEditor.Audio.AudioMixerGroupController, snapshot: UnityEditor.Audio.AudioMixerSnapshotController): void;
     CopyAttenuationToAllSnapshots(group: UnityEditor.Audio.AudioMixerGroupController, snapshot: UnityEditor.Audio.AudioMixerSnapshotController): void;
-    ReparentSelection(newParent: UnityEditor.Audio.AudioMixerGroupController, insertionIndex: number, selection: any): void;
+    ReparentSelection(newParent: UnityEditor.Audio.AudioMixerGroupController, insertionIndex: number, selection: UnityEditor.Audio.AudioMixerGroupController[]): void;
     static InsertEffect(effect: UnityEditor.Audio.AudioMixerEffectController, targetEffects: any, targetIndex: number): boolean;
     static MoveEffect(sourceEffects: any, sourceIndex: number, targetEffects: any, targetIndex: number): boolean;
     static FixNameForPopupMenu(s: string): string;
     ClearSendConnectionsTo(sendTarget: UnityEditor.Audio.AudioMixerEffectController): void;
-    static DoesTheTemporaryGraphHaveAnyCycles(allGroups: any, identifiedLoop: any, graph: any): boolean;
-    static WillChangeOfEffectTargetCauseFeedback(allGroups: any, groupWhoseEffectIsChanged: UnityEditor.Audio.AudioMixerGroupController, effectWhoseTargetIsChanged: number, targetToTest: UnityEditor.Audio.AudioMixerEffectController, identifiedLoop: any): boolean;
-    static WillModificationOfTopologyCauseFeedback(allGroups: any, groupsToBeMoved: any, newParentForMovedGroups: UnityEditor.Audio.AudioMixerGroupController, identifiedLoop: any): boolean;
-    static WillMovingEffectCauseFeedback(allGroups: any, sourceGroup: UnityEditor.Audio.AudioMixerGroupController, sourceIndex: number, targetGroup: UnityEditor.Audio.AudioMixerGroupController, targetIndex: number, identifiedLoop: any): boolean;
+    static DoesTheTemporaryGraphHaveAnyCycles(allGroups: UnityEditor.Audio.AudioMixerGroupController[], identifiedLoop: UnityEditor.Audio.AudioMixerController.ConnectionNode[], graph: any): boolean;
+    static WillChangeOfEffectTargetCauseFeedback(allGroups: UnityEditor.Audio.AudioMixerGroupController[], groupWhoseEffectIsChanged: UnityEditor.Audio.AudioMixerGroupController, effectWhoseTargetIsChanged: number, targetToTest: UnityEditor.Audio.AudioMixerEffectController, identifiedLoop: UnityEditor.Audio.AudioMixerController.ConnectionNode[]): boolean;
+    static WillModificationOfTopologyCauseFeedback(allGroups: UnityEditor.Audio.AudioMixerGroupController[], groupsToBeMoved: UnityEditor.Audio.AudioMixerGroupController[], newParentForMovedGroups: UnityEditor.Audio.AudioMixerGroupController, identifiedLoop: UnityEditor.Audio.AudioMixerController.ConnectionNode[]): boolean;
+    static WillMovingEffectCauseFeedback(allGroups: UnityEditor.Audio.AudioMixerGroupController[], sourceGroup: UnityEditor.Audio.AudioMixerGroupController, sourceIndex: number, targetGroup: UnityEditor.Audio.AudioMixerGroupController, targetIndex: number, identifiedLoop: UnityEditor.Audio.AudioMixerController.ConnectionNode[]): boolean;
     static DbToLin(x: number): number;
     CloneViewFromCurrent(): void;
     DeleteView(index: number): void;
@@ -55,33 +55,18 @@ declare namespace UnityEditor.Audio {
     GetCurrentViewGroupList(): UnityEditor.Audio.AudioMixerGroupController[];
     static VolumeToScreenMapping(value: number, screenRange: number, forward: boolean): number;
     OnUnitySelectionChanged(): void;
-    FindMatchingGroups(subPath: string): any[];
-    FindSnapshot(name: string): any;
-    TransitionToSnapshots(snapshots: any[], weights: number[], timeToReach: number): void;
-    SetFloat(name: string, value: number): boolean;
-    ClearFloat(name: string): boolean;
-    GetFloat(name: string, value: any): boolean;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly allGroups: UnityEditor.Audio.AudioMixerGroupController[];
     readonly numExposedParameters: number;
     exposedParameters: UnityEditor.Audio.ExposedAudioParameter[];
     masterGroup: UnityEditor.Audio.AudioMixerGroupController;
-    startSnapshot: any;
+    startSnapshot: UnityEngine.Audio.AudioMixerSnapshot;
     TargetSnapshot: UnityEditor.Audio.AudioMixerSnapshotController;
     snapshots: UnityEditor.Audio.AudioMixerSnapshotController[];
-    readonly CachedSelection: any;
+    readonly CachedSelection: UnityEditor.Audio.AudioMixerGroupController[];
     currentViewIndex: number;
     views: UnityEditor.Audio.MixerGroupView[];
     readonly isSuspended: boolean;
-    outputAudioMixerGroup: any;
-    updateMode: any;
-    name: string;
-    hideFlags: any;
     // fields
     m_HighlightEffectIndex: number;
     static kMinVolume: number;

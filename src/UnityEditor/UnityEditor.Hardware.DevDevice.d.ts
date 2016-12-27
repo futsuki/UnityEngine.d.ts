@@ -1,12 +1,9 @@
 declare namespace UnityEditor.Hardware {
-  class DevDevice {
+  class DevDevice extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     ToString(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
     // properties
     readonly isConnected: boolean;
     static readonly none: UnityEditor.Hardware.DevDevice;

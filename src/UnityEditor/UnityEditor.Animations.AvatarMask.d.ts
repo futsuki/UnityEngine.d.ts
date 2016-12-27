@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Animations {
-  class AvatarMask {
+  class AvatarMask extends UnityEngine.Object {
     // constructors
     constructor();
     // methods
@@ -9,15 +9,8 @@ declare namespace UnityEditor.Animations {
     SetTransformPath(index: number, path: string): void;
     GetTransformActive(index: number): boolean;
     SetTransformActive(index: number, value: boolean): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     transformCount: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

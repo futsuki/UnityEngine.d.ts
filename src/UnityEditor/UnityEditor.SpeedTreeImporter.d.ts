@@ -1,16 +1,9 @@
 declare namespace UnityEditor {
-  class SpeedTreeImporter {
+  class SpeedTreeImporter extends UnityEditor.AssetImporter {
     // constructors
     constructor();
     // methods
     GenerateMaterials(): void;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
-    SaveAndReimport(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     readonly hasImported: boolean;
     readonly materialFolderPath: string;
@@ -34,13 +27,6 @@ declare namespace UnityEditor {
     enableHue: boolean[];
     readonly bestWindQuality: number;
     windQualities: number[];
-    readonly assetPath: string;
-    readonly assetTimeStamp: number;
-    userData: string;
-    assetBundleName: string;
-    assetBundleVariant: string;
-    name: string;
-    hideFlags: any;
     // fields
     static windQualityNames: string[];
   }

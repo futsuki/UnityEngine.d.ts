@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TextureImportPlatformSettings {
+  class TextureImportPlatformSettings extends System.Object {
     // constructors
     constructor(name: string, target: UnityEditor.BuildTarget, inspector: UnityEditor.TextureImporterInspector);
     // methods
@@ -16,10 +16,6 @@ declare namespace UnityEditor {
     HasChanged(): boolean;
     Sync(): void;
     Apply(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly platformTextureSettings: UnityEditor.TextureImporterPlatformSettings;
     readonly name: string;

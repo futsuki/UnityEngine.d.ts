@@ -1,12 +1,8 @@
 declare namespace UnityEditor.GameObjectTreeViewGUI {
-  class GameObjectStyles {
+  class GameObjectStyles extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     disabledLabel: any;

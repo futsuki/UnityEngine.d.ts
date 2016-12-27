@@ -1,5 +1,5 @@
 declare namespace UnityEngine.Events {
-  class PersistentCall {
+  class PersistentCall extends System.Object {
     // constructors
     constructor();
     // methods
@@ -7,10 +7,6 @@ declare namespace UnityEngine.Events {
     GetRuntimeCall(theEvent: UnityEngine.Events.UnityEventBase): UnityEngine.Events.BaseInvokableCall;
     RegisterPersistentListener(ttarget: UnityEngine.Object, mmethodName: string): void;
     UnregisterPersistentListener(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly target: UnityEngine.Object;
     readonly methodName: string;

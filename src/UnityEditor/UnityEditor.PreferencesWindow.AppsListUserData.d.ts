@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PreferencesWindow {
-  class AppsListUserData {
+  class AppsListUserData extends System.Object {
     // constructors
     constructor(paths: string[], str: UnityEditor.PreferencesWindow.RefString, onChanged: (() => void));
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     paths: string[];

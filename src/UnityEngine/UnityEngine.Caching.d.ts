@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Caching {
+  class Caching extends System.Object {
     // constructors
     constructor();
     // methods
@@ -19,10 +19,6 @@ declare namespace UnityEngine {
     static SetNoBackupFlag(url: string, hash: UnityEngine.Hash128): void;
     static ResetNoBackupFlag(url: string, version: number): void;
     static ResetNoBackupFlag(url: string, hash: UnityEngine.Hash128): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly index: UnityEngine.CacheIndex[];
     static readonly spaceFree: number;

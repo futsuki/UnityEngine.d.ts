@@ -1,13 +1,9 @@
 declare namespace UnityEditor.Scripting {
-  class MonoIsland {
+  class MonoIsland extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     GetExtensionOfSourceFiles(): string;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     _target: UnityEditor.BuildTarget;

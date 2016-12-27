@@ -1,12 +1,8 @@
 declare namespace UnityEngine.ParticleSystem {
-  class LightsModule {
+  class LightsModule extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     enabled: boolean;
     ratio: number;

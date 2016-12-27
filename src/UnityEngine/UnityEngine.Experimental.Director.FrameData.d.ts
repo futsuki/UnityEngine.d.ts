@@ -1,12 +1,8 @@
 declare namespace UnityEngine.Experimental.Director {
-  class FrameData {
+  class FrameData extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     readonly updateId: number;
     readonly time: number;

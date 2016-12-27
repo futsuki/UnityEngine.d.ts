@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class SubstanceImporter {
+  class SubstanceImporter extends UnityEditor.AssetImporter {
     // constructors
     constructor();
     // methods
@@ -28,21 +28,7 @@ declare namespace UnityEditor {
     SetGenerateMipMaps(material: any, mode: boolean): void;
     ExportBitmaps(material: any, exportPath: string, alphaRemap: boolean): void;
     ExportPreset(material: any, exportPath: string): void;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
-    SaveAndReimport(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
-    readonly assetPath: string;
-    readonly assetTimeStamp: number;
-    userData: string;
-    assetBundleName: string;
-    assetBundleVariant: string;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

@@ -1,4 +1,4 @@
-  class ParticleSystemCurveEditor {
+  class ParticleSystemCurveEditor extends System.Object {
     // constructors
     constructor();
     // methods
@@ -16,10 +16,6 @@
     SetVisible(curveProp: UnityEditor.SerializedProperty, visible: boolean): void;
     GetAvailableColor(): any;
     OnGUI(rect: any): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     static k_PresetsHeight: number;

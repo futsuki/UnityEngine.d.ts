@@ -1,7 +1,7 @@
 declare namespace UnityEditorInternal {
-  class AnimationWindowUtility {
+  class AnimationWindowUtility extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     static CreateDefaultCurves(state: UnityEditorInternal.IAnimationRecordingState, selectionItem: UnityEditorInternal.AnimationWindowSelectionItem, properties: UnityEditor.EditorCurveBinding[]): void;
     static CreateDefaultCurve(selectionItem: UnityEditorInternal.AnimationWindowSelectionItem, binding: UnityEditor.EditorCurveBinding): UnityEditorInternal.AnimationWindowCurve;
@@ -13,16 +13,16 @@ declare namespace UnityEditorInternal {
     static AddKeyframes(state: UnityEditorInternal.AnimationWindowState, curves: UnityEditorInternal.AnimationWindowCurve[], time: UnityEditorInternal.AnimationKeyTime): void;
     static RemoveKeyframes(state: UnityEditorInternal.AnimationWindowState, curves: UnityEditorInternal.AnimationWindowCurve[], time: UnityEditorInternal.AnimationKeyTime): void;
     static AddKeyframeToCurve(curve: UnityEditorInternal.AnimationWindowCurve, value: any, type: any, time: UnityEditorInternal.AnimationKeyTime): UnityEditorInternal.AnimationWindowKeyframe;
-    static FilterCurves(curves: UnityEditorInternal.AnimationWindowCurve[], path: string, entireHierarchy: boolean): any;
-    static FilterCurves(curves: UnityEditorInternal.AnimationWindowCurve[], path: string, animatableObjectType: any): any;
+    static FilterCurves(curves: UnityEditorInternal.AnimationWindowCurve[], path: string, entireHierarchy: boolean): UnityEditorInternal.AnimationWindowCurve[];
+    static FilterCurves(curves: UnityEditorInternal.AnimationWindowCurve[], path: string, animatableObjectType: any): UnityEditorInternal.AnimationWindowCurve[];
+    static FilterCurves(curves: UnityEditorInternal.AnimationWindowCurve[], path: string, animatableObjectType: any, propertyName: string): UnityEditorInternal.AnimationWindowCurve[];
     static IsCurveCreated(clip: any, binding: UnityEditor.EditorCurveBinding): boolean;
     static IsRectTransformPosition(curveBinding: UnityEditor.EditorCurveBinding): boolean;
-    static ContainsFloatKeyframes(keyframes: any): boolean;
-    static FilterCurves(curves: UnityEditorInternal.AnimationWindowCurve[], path: string, animatableObjectType: any, propertyName: string): any;
+    static ContainsFloatKeyframes(keyframes: UnityEditorInternal.AnimationWindowKeyframe[]): boolean;
     static GetCurrentValue(rootGameObject: any, curveBinding: UnityEditor.EditorCurveBinding): any;
-    static GetAnimatableProperties(gameObject: any, root: any, valueType: any): any;
-    static GetAnimatableProperties(gameObject: any, root: any, objectType: any, valueType: any): any;
-    static GetAnimatableProperties(scriptableObject: any, valueType: any): any;
+    static GetAnimatableProperties(gameObject: any, root: any, valueType: any): UnityEditor.EditorCurveBinding[];
+    static GetAnimatableProperties(gameObject: any, root: any, objectType: any, valueType: any): UnityEditor.EditorCurveBinding[];
+    static GetAnimatableProperties(scriptableObject: UnityEngine.ScriptableObject, valueType: any): UnityEditor.EditorCurveBinding[];
     static CurveExists(binding: UnityEditor.EditorCurveBinding, curves: UnityEditorInternal.AnimationWindowCurve[]): boolean;
     static GetRenamedBinding(binding: UnityEditor.EditorCurveBinding, newPath: string): UnityEditor.EditorCurveBinding;
     static RenameCurvePath(curve: UnityEditorInternal.AnimationWindowCurve, newBinding: UnityEditor.EditorCurveBinding, clip: any): void;
@@ -50,16 +50,12 @@ declare namespace UnityEditorInternal {
     static DrawRangeOfSelection(rect: any, startPixel: number, endPixel: number): void;
     static DrawPlayHead(positionX: number, minY: number, maxY: number, alpha: number): void;
     static GetCurveWrapper(curve: UnityEditorInternal.AnimationWindowCurve, clip: any): UnityEditor.CurveWrapper;
-    static CurveSelectionToAnimationWindowKeyframe(curveSelection: UnityEditor.CurveSelection, allCurves: any): UnityEditorInternal.AnimationWindowKeyframe;
+    static CurveSelectionToAnimationWindowKeyframe(curveSelection: UnityEditor.CurveSelection, allCurves: UnityEditorInternal.AnimationWindowCurve[]): UnityEditorInternal.AnimationWindowKeyframe;
     static AnimationWindowKeyframeToCurveSelection(keyframe: UnityEditorInternal.AnimationWindowKeyframe, curveEditor: UnityEditor.CurveEditor): UnityEditor.CurveSelection;
-    static BestMatchForPaste(binding: UnityEditor.EditorCurveBinding, clipboardCurves: any, targetCurves: any): UnityEditorInternal.AnimationWindowCurve;
+    static BestMatchForPaste(binding: UnityEditor.EditorCurveBinding, clipboardCurves: UnityEditorInternal.AnimationWindowCurve[], targetCurves: UnityEditorInternal.AnimationWindowCurve[]): UnityEditorInternal.AnimationWindowCurve;
     static IsTransformType(type: any): boolean;
     static ForceGrouping(binding: UnityEditor.EditorCurveBinding): boolean;
     static ControllerChanged(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

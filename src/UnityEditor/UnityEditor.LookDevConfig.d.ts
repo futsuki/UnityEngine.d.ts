@@ -1,16 +1,16 @@
 declare namespace UnityEditor {
-  class LookDevConfig {
+  class LookDevConfig extends UnityEngine.ScriptableObject {
     // constructors
     constructor();
     // methods
     UpdateFloatProperty(type: UnityEditor.LookDevProperty, value: number): void;
     UpdateFloatProperty(type: UnityEditor.LookDevProperty, value: number, recordUndo: boolean): void;
+    UpdateFloatProperty(property: UnityEditor.LookDevProperty, value: number, recordUndo: boolean, forceLinked: boolean): void;
     UpdateIntProperty(property: UnityEditor.LookDevProperty, value: number): void;
     UpdateIntProperty(property: UnityEditor.LookDevProperty, value: number, recordUndo: boolean): void;
+    UpdateIntProperty(property: UnityEditor.LookDevProperty, value: number, recordUndo: boolean, forceLinked: boolean): void;
     GetFloatProperty(property: UnityEditor.LookDevProperty, context: UnityEditor.LookDevEditionContext): number;
     GetIntProperty(property: UnityEditor.LookDevProperty, context: UnityEditor.LookDevEditionContext): number;
-    UpdateFloatProperty(property: UnityEditor.LookDevProperty, value: number, recordUndo: boolean, forceLinked: boolean): void;
-    UpdateIntProperty(property: UnityEditor.LookDevProperty, value: number, recordUndo: boolean, forceLinked: boolean): void;
     IsPropertyLinked(type: UnityEditor.LookDevProperty): boolean;
     UpdatePropertyLink(property: UnityEditor.LookDevProperty, value: boolean): void;
     GetObjectLoDCount(context: UnityEditor.LookDevEditionContext): number;
@@ -24,12 +24,6 @@ declare namespace UnityEditor {
     OnDestroy(): void;
     Cleanup(): void;
     SetLookDevView(lookDevView: UnityEditor.LookDevView): void;
-    SetDirty(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     enableShadowCubemap: boolean;
     sideBySideCameraLinked: boolean;
@@ -55,8 +49,6 @@ declare namespace UnityEditor {
     objRotationSpeed: number;
     rotateEnvMode: boolean;
     envRotationSpeed: number;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class GradientAlphaKey {
+  class GradientAlphaKey extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     // fields
     alpha: number;

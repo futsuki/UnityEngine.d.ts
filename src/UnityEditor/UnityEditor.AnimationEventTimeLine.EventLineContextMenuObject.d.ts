@@ -1,12 +1,8 @@
 declare namespace UnityEditor.AnimationEventTimeLine {
-  class EventLineContextMenuObject {
+  class EventLineContextMenuObject extends System.Object {
     // constructors
     constructor(animated: any, clip: any, time: number, index: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_Animated: any;

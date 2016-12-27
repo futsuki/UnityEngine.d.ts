@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class InternalMeshUtil {
+  class InternalMeshUtil extends System.Object {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor {
     static GetVertexFormat(mesh: any): string;
     static GetCachedMeshSurfaceArea(meshRenderer: any): number;
     static GetCachedSkinnedMeshSurfaceArea(skinnedMeshRenderer: any): number;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

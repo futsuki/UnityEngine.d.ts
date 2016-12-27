@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ExposablePopupMenu {
-  class ItemData {
+  class ItemData extends System.Object {
     // constructors
     constructor(content: any, style: any, on: boolean, enabled: boolean, userData: any);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_GUIContent: any;

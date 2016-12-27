@@ -1,14 +1,10 @@
 declare namespace UnityEditor {
-  class ListViewState {
+  class ListViewState extends System.Object {
     // constructors
     constructor();
     constructor(totalRows: number);
     constructor(totalRows: number, rowHeight: number);
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     row: number;

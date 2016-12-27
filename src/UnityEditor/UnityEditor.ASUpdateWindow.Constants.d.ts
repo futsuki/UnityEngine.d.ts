@@ -1,12 +1,8 @@
 declare namespace UnityEditor.ASUpdateWindow {
-  class Constants {
+  class Constants extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     box: any;

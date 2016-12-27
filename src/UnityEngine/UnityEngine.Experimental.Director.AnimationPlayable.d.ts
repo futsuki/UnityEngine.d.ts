@@ -1,7 +1,7 @@
 declare namespace UnityEngine.Experimental.Director {
-  class AnimationPlayable {
+  class AnimationPlayable extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Destroy(): void;
     AddInput(input: UnityEngine.Experimental.Director.Playable): number;
@@ -17,8 +17,6 @@ declare namespace UnityEngine.Experimental.Director {
     GetOutput(outputPort: number): UnityEngine.Experimental.Director.Playable;
     GetInputWeight(index: number): number;
     SetInputWeight(inputIndex: number, weight: number): void;
-    ToString(): string;
-    GetType(): any;
     // properties
     static readonly Null: UnityEngine.Experimental.Director.AnimationPlayable;
     readonly inputCount: number;

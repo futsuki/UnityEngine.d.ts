@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class Particle {
+  class Particle extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     position: UnityEngine.Vector3;
     velocity: UnityEngine.Vector3;

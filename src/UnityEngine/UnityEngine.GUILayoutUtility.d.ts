@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class GUILayoutUtility {
+  class GUILayoutUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -20,10 +20,6 @@ declare namespace UnityEngine {
     static GetAspectRect(aspect: number, style: UnityEngine.GUIStyle): UnityEngine.Rect;
     static GetAspectRect(aspect: number, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
     static GetAspectRect(aspect: number, style: UnityEngine.GUIStyle, options: UnityEngine.GUILayoutOption[]): UnityEngine.Rect;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

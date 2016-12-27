@@ -1,7 +1,7 @@
 declare namespace UnityEngine {
-  class Plane {
+  class Plane extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     SetNormalAndPosition(inNormal: UnityEngine.Vector3, inPoint: UnityEngine.Vector3): void;
     Set3Points(a: UnityEngine.Vector3, b: UnityEngine.Vector3, c: UnityEngine.Vector3): void;
@@ -9,10 +9,6 @@ declare namespace UnityEngine {
     GetSide(inPt: UnityEngine.Vector3): boolean;
     SameSide(inPt0: UnityEngine.Vector3, inPt1: UnityEngine.Vector3): boolean;
     Raycast(ray: UnityEngine.Ray, enter: any): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     normal: UnityEngine.Vector3;
     distance: number;

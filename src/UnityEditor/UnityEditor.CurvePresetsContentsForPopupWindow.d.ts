@@ -1,7 +1,7 @@
 declare namespace UnityEditor {
-  class CurvePresetsContentsForPopupWindow {
+  class CurvePresetsContentsForPopupWindow extends UnityEditor.PopupWindowContent {
     // constructors
-    constructor(animCurve: any, curveLibraryType: UnityEditor.CurveLibraryType, presetSelectedCallback: ((any) => void));
+    constructor(animCurve: any, curveLibraryType: UnityEditor.CurveLibraryType, presetSelectedCallback: ((obj: any) => void));
     // methods
     static GetBasePrefText(curveLibraryType: UnityEditor.CurveLibraryType): string;
     OnClose(): void;
@@ -9,15 +9,9 @@ declare namespace UnityEditor {
     InitIfNeeded(): void;
     OnGUI(rect: any): void;
     GetWindowSize(): any;
-    OnOpen(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     curveToSaveAsPreset: any;
     currentPresetLibrary: string;
-    readonly editorWindow: UnityEditor.EditorWindow;
     // fields
   }
 }

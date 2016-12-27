@@ -1,5 +1,5 @@
 declare namespace UnityEditorInternal {
-  class FrameDebuggerUtility {
+  class FrameDebuggerUtility extends System.Object {
     // constructors
     constructor();
     // methods
@@ -12,10 +12,6 @@ declare namespace UnityEditorInternal {
     static GetFrameEventData(index: number, frameDebuggerEventData: any): boolean;
     static GetFrameEventInfoName(index: number): string;
     static GetFrameEventGameObject(index: number): any;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static readonly receivingRemoteFrameEventData: boolean;
     static readonly locallySupported: boolean;

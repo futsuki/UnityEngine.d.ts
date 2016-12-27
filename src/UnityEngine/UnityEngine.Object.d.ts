@@ -1,5 +1,5 @@
 declare namespace UnityEngine {
-  class Object {
+  class Object extends System.Object {
     // constructors
     constructor();
     // methods
@@ -24,7 +24,6 @@ declare namespace UnityEngine {
     static Instantiate(original: UnityEngine.Object, parent: UnityEngine.Transform): UnityEngine.Object;
     static Instantiate(original: UnityEngine.Object, parent: UnityEngine.Transform, instantiateInWorldSpace: boolean): UnityEngine.Object;
     static FindObjectOfType(type: any): UnityEngine.Object;
-    GetType(): any;
     // properties
     name: string;
     hideFlags: UnityEngine.HideFlags;

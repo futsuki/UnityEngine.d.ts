@@ -1,5 +1,5 @@
 declare namespace UnityEditor.Audio {
-  class AudioMixerEffectPlugin {
+  class AudioMixerEffectPlugin extends UnityEditor.IAudioEffectPlugin {
     // constructors
     constructor();
     // methods
@@ -9,10 +9,6 @@ declare namespace UnityEditor.Audio {
     GetFloatBuffer(name: string, data: any, numsamples: number): boolean;
     GetSampleRate(): number;
     IsPluginEditableAndEnabled(): boolean;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
   }

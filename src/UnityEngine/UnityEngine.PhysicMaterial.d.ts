@@ -1,14 +1,9 @@
 declare namespace UnityEngine {
-  class PhysicMaterial {
+  class PhysicMaterial extends UnityEngine.Object {
     // constructors
     constructor();
     constructor(name: string);
     // methods
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     dynamicFriction: number;
     staticFriction: number;
@@ -20,8 +15,6 @@ declare namespace UnityEngine {
     frictionCombine: UnityEngine.PhysicMaterialCombine;
     bounceCombine: UnityEngine.PhysicMaterialCombine;
     frictionDirection: UnityEngine.Vector3;
-    name: string;
-    hideFlags: UnityEngine.HideFlags;
     // fields
   }
 }

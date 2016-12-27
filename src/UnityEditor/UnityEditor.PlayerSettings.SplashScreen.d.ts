@@ -1,12 +1,8 @@
 declare namespace UnityEditor.PlayerSettings {
-  class SplashScreen {
+  class SplashScreen extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     static animationMode: UnityEditor.PlayerSettings.SplashScreen.AnimationMode;
     static animationBackgroundZoom: number;

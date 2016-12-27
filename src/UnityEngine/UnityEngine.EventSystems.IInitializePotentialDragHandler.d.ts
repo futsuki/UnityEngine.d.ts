@@ -1,7 +1,7 @@
 declare namespace UnityEngine.EventSystems {
   class IInitializePotentialDragHandler {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     OnInitializePotentialDrag(eventData: UnityEngine.EventSystems.PointerEventData): void;
     // properties

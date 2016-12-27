@@ -1,12 +1,8 @@
 declare namespace UnityEngine {
-  class JointAngleLimits2D {
+  class JointAngleLimits2D extends System.ValueType {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    ToString(): string;
-    GetType(): any;
     // properties
     min: number;
     max: number;

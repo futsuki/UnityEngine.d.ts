@@ -1,14 +1,10 @@
 declare namespace UnityEditor.VersionControl {
-  class Message {
+  class Message extends System.Object {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     Dispose(): void;
     Show(): void;
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly severity: UnityEditor.VersionControl.Message.Severity;
     readonly message: string;

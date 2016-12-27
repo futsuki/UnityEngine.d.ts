@@ -1,12 +1,8 @@
 declare namespace UnityEngine.Networking.Match {
-  class MatchInfoSnapshot {
+  class MatchInfoSnapshot extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     readonly networkId: UnityEngine.Networking.Types.NetworkID;
     readonly hostNodeId: UnityEngine.Networking.Types.NodeID;
@@ -16,7 +12,7 @@ declare namespace UnityEngine.Networking.Match {
     readonly currentSize: number;
     readonly isPrivate: boolean;
     readonly matchAttributes: any;
-    readonly directConnectInfos: any;
+    readonly directConnectInfos: UnityEngine.Networking.Match.MatchInfoSnapshot.MatchInfoDirectConnectSnapshot[];
     // fields
   }
 }

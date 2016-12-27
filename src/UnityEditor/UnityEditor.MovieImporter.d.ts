@@ -1,26 +1,12 @@
 declare namespace UnityEditor {
-  class MovieImporter {
+  class MovieImporter extends UnityEditor.AssetImporter {
     // constructors
     constructor();
     // methods
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
-    SaveAndReimport(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     quality: number;
     linearTexture: boolean;
     readonly duration: number;
-    readonly assetPath: string;
-    readonly assetTimeStamp: number;
-    userData: string;
-    assetBundleName: string;
-    assetBundleVariant: string;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

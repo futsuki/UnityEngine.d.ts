@@ -1,5 +1,5 @@
 declare namespace UnityEditor {
-  class TextureImporter {
+  class TextureImporter extends UnityEditor.AssetImporter {
     // constructors
     constructor();
     // methods
@@ -21,13 +21,6 @@ declare namespace UnityEditor {
     ReadTextureSettings(dest: UnityEditor.TextureImporterSettings): void;
     SetTextureSettings(src: UnityEditor.TextureImporterSettings): void;
     ReadTextureImportInstructions(target: UnityEditor.BuildTarget, desiredFormat: any, colorSpace: any, compressionQuality: any): void;
-    SetAssetBundleNameAndVariant(assetBundleName: string, assetBundleVariant: string): void;
-    SaveAndReimport(): void;
-    ToString(): string;
-    GetInstanceID(): number;
-    GetHashCode(): number;
-    Equals(other: any): boolean;
-    GetType(): any;
     // properties
     textureFormat: UnityEditor.TextureImporterFormat;
     maxTextureSize: number;
@@ -70,13 +63,6 @@ declare namespace UnityEditor {
     spriteBorder: any;
     textureType: UnityEditor.TextureImporterType;
     textureShape: UnityEditor.TextureImporterShape;
-    readonly assetPath: string;
-    readonly assetTimeStamp: number;
-    userData: string;
-    assetBundleName: string;
-    assetBundleVariant: string;
-    name: string;
-    hideFlags: any;
     // fields
   }
 }

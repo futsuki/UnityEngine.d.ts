@@ -1,7 +1,7 @@
 declare namespace UnityEngine.UI {
   class IClippable {
     // constructors
-    private constructor();
+    protected constructor();
     // methods
     RecalculateClipping(): void;
     Cull(clipRect: UnityEngine.Rect, validRect: boolean): void;

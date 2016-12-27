@@ -1,12 +1,8 @@
 declare namespace UnityEditor.LookDevView {
-  class PreviewContext {
+  class PreviewContext extends System.Object {
     // constructors
     constructor();
     // methods
-    Equals(obj: any): boolean;
-    GetHashCode(): number;
-    GetType(): any;
-    ToString(): string;
     // properties
     // fields
     m_PreviewUtility: UnityEditor.PreviewRenderUtility[];
