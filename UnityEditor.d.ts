@@ -9908,10 +9908,10 @@ declare namespace UnityEditor.NScreen {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.NScreen.NScreenManager, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
+declare namespace UnityEditor {
+  class ScriptableSingleton<T> extends UnityEngine.ScriptableObject {
     protected constructor();
-    static readonly instance: UnityEditor.NScreen.NScreenManager;
+    static readonly instance: T;
   }
 }
 declare namespace UnityEditor.NScreen {
@@ -10597,12 +10597,6 @@ declare namespace UnityEditor {
     static readonly validTargets: any[];
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.GridPaintingState, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.GridPaintingState;
-  }
-}
 declare namespace UnityEditor {
   class GridPaintPaletteClipboard extends UnityEditor.PaintableGrid {
     constructor();
@@ -10784,12 +10778,6 @@ declare namespace UnityEditor {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.GridPaletteBrushes, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.GridPaletteBrushes;
-  }
-}
 declare namespace UnityEditor.GridPaletteBrushes {
   class AssetProcessor extends UnityEditor.AssetPostprocessor {
     constructor();
@@ -10808,12 +10796,6 @@ declare namespace UnityEditor {
     hideFlags: any;
     name: string;
     static readonly palettes: any[];
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.GridPalettes, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.GridPalettes;
   }
 }
 declare namespace UnityEditor.GridPalettes {
@@ -10925,12 +10907,6 @@ declare namespace UnityEditor {
     ToString(): string;
     hideFlags: any;
     name: string;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.TileDragAndDropManager, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.TileDragAndDropManager;
   }
 }
 declare namespace UnityEditor {
@@ -11913,12 +11889,12 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     ToString(): string;
   }
 }
-declare namespace UnityEngine.Events.UnityEvent`1[[UnityEditor.IMGUI.Controls.TreeViewItem, UnityEditor, Version=0.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
+declare namespace UnityEngine.Events {
+  class UnityEvent<T0> extends UnityEngine.Events.UnityEventBase {
     constructor();
-    AddListener(call: ((arg0: UnityEditor.IMGUI.Controls.TreeViewItem) => void)): void;
-    Invoke(arg0: UnityEditor.IMGUI.Controls.TreeViewItem): void;
-    RemoveListener(call: ((arg0: UnityEditor.IMGUI.Controls.TreeViewItem) => void)): void;
+    AddListener(call: ((arg0: T0) => void)): void;
+    Invoke(arg0: T0): void;
+    RemoveListener(call: ((arg0: T0) => void)): void;
   }
 }
 declare namespace UnityEngine.Events {
@@ -11948,14 +11924,6 @@ declare namespace UnityEditor.ObjectTreeForSelector {
     RemoveListener(call: ((arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
     SetPersistentListenerState(index: number, state: any): void;
     ToString(): string;
-  }
-}
-declare namespace UnityEngine.Events.UnityEvent`1[[UnityEditor.ObjectTreeForSelector.TreeSelectorData, UnityEditor, Version=0.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
-    Invoke(arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData): void;
-    RemoveListener(call: ((arg0: UnityEditor.ObjectTreeForSelector.TreeSelectorData) => void)): void;
   }
 }
 declare namespace UnityEditor.ObjectTreeForSelector {
@@ -15448,12 +15416,6 @@ declare namespace UnityEditor {
     time: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.LocalCacheServer, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.LocalCacheServer;
-  }
-}
 declare namespace UnityEditor {
   class ClipAnimationMaskType extends System.Enum {
     protected constructor();
@@ -15773,9 +15735,9 @@ declare namespace UnityEditor {
     warnings: string;
   }
 }
-declare namespace UnityEditor.AssetStoreResultBase`1[[UnityEditor.AssetStoreSearchResults, UnityEditor, Version=0.0.0 {
-  class AssetStoreResultBase`1 extends System.Object {
-    constructor(cb: ((res: UnityEditor.AssetStoreSearchResults) => void));
+declare namespace UnityEditor {
+  class AssetStoreResultBase<Derived> extends System.Object {
+    constructor(cb: ((res: Derived) => void));
     Parse(response: UnityEditor.AssetStoreResponse): void;
     error: string;
     warnings: string;
@@ -15805,14 +15767,6 @@ declare namespace UnityEditor {
     warnings: string;
   }
 }
-declare namespace UnityEditor.AssetStoreResultBase`1[[UnityEditor.AssetStoreAssetsInfo, UnityEditor, Version=0.0.0 {
-  class AssetStoreResultBase`1 extends System.Object {
-    constructor(cb: ((res: UnityEditor.AssetStoreAssetsInfo) => void));
-    Parse(response: UnityEditor.AssetStoreResponse): void;
-    error: string;
-    warnings: string;
-  }
-}
 declare namespace UnityEditor.AssetStoreAssetsInfo {
   class Status extends System.Enum {
     protected constructor();
@@ -15838,14 +15792,6 @@ declare namespace UnityEditor {
     warnings: string;
   }
 }
-declare namespace UnityEditor.AssetStoreResultBase`1[[UnityEditor.PurchaseResult, UnityEditor, Version=0.0.0 {
-  class AssetStoreResultBase`1 extends System.Object {
-    constructor(cb: ((res: UnityEditor.PurchaseResult) => void));
-    Parse(response: UnityEditor.AssetStoreResponse): void;
-    error: string;
-    warnings: string;
-  }
-}
 declare namespace UnityEditor.PurchaseResult {
   class Status extends System.Enum {
     protected constructor();
@@ -15867,14 +15813,6 @@ declare namespace UnityEditor {
     GetType(): any;
     Parse(response: UnityEditor.AssetStoreResponse): void;
     ToString(): string;
-    error: string;
-    warnings: string;
-  }
-}
-declare namespace UnityEditor.AssetStoreResultBase`1[[UnityEditor.BuildPackageResult, UnityEditor, Version=0.0.0 {
-  class AssetStoreResultBase`1 extends System.Object {
-    constructor(cb: ((res: UnityEditor.BuildPackageResult) => void));
-    Parse(response: UnityEditor.AssetStoreResponse): void;
     error: string;
     warnings: string;
   }
@@ -17185,10 +17123,10 @@ declare namespace UnityEditor {
     constructor();
     static GenerateDependencies(strippedAssemblyDir: string, icallsListFile: string, rcr: UnityEditor.RuntimeClassRegistry, doStripping: boolean, nativeClasses: any, nativeModules: any, platformProvider: UnityEditorInternal.IIl2CppPlatformProvider): void;
     static GetDependentModules(moduleXml: string): string[];
-    static GetModulesFromICalls(icallsListFile: string): System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]];
+    static GetModulesFromICalls(icallsListFile: string): any;
     static GetModuleWhitelist(module: string, moduleStrippingInformationFolder: string): string;
-    static GetNativeModulesToRegister(nativeClasses: any, strippingInfo: UnityEditor.BuildReporting.StrippingInfo): System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]];
-    static InjectCustomDependencies(target: UnityEditor.BuildTarget, strippingInfo: UnityEditor.BuildReporting.StrippingInfo, nativeClasses: any, nativeModules: System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]): void;
+    static GetNativeModulesToRegister(nativeClasses: any, strippingInfo: UnityEditor.BuildReporting.StrippingInfo): any;
+    static InjectCustomDependencies(target: UnityEditor.BuildTarget, strippingInfo: UnityEditor.BuildReporting.StrippingInfo, nativeClasses: any, nativeModules: any): void;
     static WriteModuleAndClassRegistrationFile(strippedAssemblyDir: string, icallsListFile: string, outputDir: string, rcr: UnityEditor.RuntimeClassRegistry, classesToSkip: any, platformProvider: UnityEditorInternal.IIl2CppPlatformProvider): void;
     static readonly BlackListNativeClasses: UnityEditor.UnityType[];
     static readonly BlackListNativeClassesDependency: any;
@@ -17316,11 +17254,11 @@ declare namespace UnityEditor.MonoCrossCompile {
 declare namespace UnityEditor {
   class MonoAOTRegistration extends System.Object {
     constructor();
-    static BuildReferencedTypeList(assemblies: any[]): System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]];
+    static BuildReferencedTypeList(assemblies: any[]): any;
     static GenerateRegisterClasses(allClasses: any, output: any): void;
     static GenerateRegisterClassesForStripping(nativeClassesAndBaseClasses: any, output: any): void;
     static GenerateRegisterInternalCalls(assemblies: any[], output: any): void;
-    static GenerateRegisterModules(nativeClasses: any, nativeModules: System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], output: any, strippingEnabled: boolean): void;
+    static GenerateRegisterModules(nativeClasses: any, nativeModules: any, output: any, strippingEnabled: boolean): void;
     static WriteCPlusPlusFileForStaticAOTModuleRegistration(buildTarget: UnityEditor.BuildTarget, file: string, crossCompileOptions: UnityEditor.CrossCompileOptions, advancedLic: boolean, targetDevice: string, stripping: boolean, usedClassRegistry: UnityEditor.RuntimeClassRegistry, checker: UnityEditor.AssemblyReferenceChecker, stagingAreaDataManaged: string): void;
     static WriteCPlusPlusFileForStaticAOTModuleRegistration(buildTarget: UnityEditor.BuildTarget, file: string, crossCompileOptions: UnityEditor.CrossCompileOptions, advancedLic: boolean, targetDevice: string, stripping: boolean, usedClassRegistry: UnityEditor.RuntimeClassRegistry, checker: UnityEditor.AssemblyReferenceChecker, stagingAreaDataManaged: string, platformProvider: UnityEditorInternal.IIl2CppPlatformProvider): void;
   }
@@ -17773,12 +17711,6 @@ declare namespace UnityEditor {
     ToString(): string;
     hideFlags: any;
     name: string;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.WebViewStatic, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.WebViewStatic;
   }
 }
 declare namespace UnityEditor {
@@ -18312,12 +18244,6 @@ declare namespace UnityEditor {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.GameViewSizes, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.GameViewSizes;
-  }
-}
 declare namespace UnityEditor.GameViewSizes {
   class BuildTargetChangedHandler extends System.Object {
     constructor();
@@ -18471,12 +18397,12 @@ declare namespace UnityEditor.AnimatedValues {
     valueChanged: UnityEngine.Events.UnityEvent;
   }
 }
-declare namespace UnityEditor.AnimatedValues.BaseAnimValue`1[[System.Single, mscorlib, Version=4.0.0 {
-  class BaseAnimValue`1 extends System.Object {
+declare namespace UnityEditor.AnimatedValues {
+  class BaseAnimValue<T> extends System.Object {
     protected constructor();
     readonly isAnimating: boolean;
-    target: number;
-    value: number;
+    target: T;
+    value: T;
     speed: number;
     valueChanged: UnityEngine.Events.UnityEvent;
   }
@@ -18490,16 +18416,6 @@ declare namespace UnityEditor.AnimatedValues {
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
-    readonly isAnimating: boolean;
-    target: any;
-    value: any;
-    speed: number;
-    valueChanged: UnityEngine.Events.UnityEvent;
-  }
-}
-declare namespace UnityEditor.AnimatedValues.BaseAnimValue`1[[UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0 {
-  class BaseAnimValue`1 extends System.Object {
-    protected constructor();
     readonly isAnimating: boolean;
     target: any;
     value: any;
@@ -18526,16 +18442,6 @@ declare namespace UnityEditor.AnimatedValues {
     valueChanged: UnityEngine.Events.UnityEvent;
   }
 }
-declare namespace UnityEditor.AnimatedValues.BaseAnimValue`1[[System.Boolean, mscorlib, Version=4.0.0 {
-  class BaseAnimValue`1 extends System.Object {
-    protected constructor();
-    readonly isAnimating: boolean;
-    target: boolean;
-    value: boolean;
-    speed: number;
-    valueChanged: UnityEngine.Events.UnityEvent;
-  }
-}
 declare namespace UnityEditor.AnimatedValues {
   class AnimQuaternion {
     constructor(value: any);
@@ -18544,16 +18450,6 @@ declare namespace UnityEditor.AnimatedValues {
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
-    readonly isAnimating: boolean;
-    target: any;
-    value: any;
-    speed: number;
-    valueChanged: UnityEngine.Events.UnityEvent;
-  }
-}
-declare namespace UnityEditor.AnimatedValues.BaseAnimValue`1[[UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0 {
-  class BaseAnimValue`1 extends System.Object {
-    protected constructor();
     readonly isAnimating: boolean;
     target: any;
     value: any;
@@ -22391,12 +22287,6 @@ declare namespace UnityEditor {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.AvatarPreviewSelection, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.AvatarPreviewSelection;
-  }
-}
 declare namespace UnityEditor {
   class BillboardAssetInspector extends UnityEditor.Editor {
     constructor();
@@ -22658,8 +22548,8 @@ declare namespace UnityEditor {
     readonly targets: UnityEngine.Object[];
   }
 }
-declare namespace UnityEditor.JointEditor`1[[UnityEngine.CharacterJoint, UnityEngine.PhysicsModule, Version=0.0.0 {
-  class JointEditor`1 extends UnityEditor.Editor {
+declare namespace UnityEditor {
+  class JointEditor<T> extends UnityEditor.Editor {
     protected constructor();
     OnInspectorGUI(): void;
   }
@@ -22689,12 +22579,6 @@ declare namespace UnityEditor {
     PaintMaxDistance: number;
     PaintMaxDistanceEnabled: boolean;
     ToolMode: UnityEditor.ClothInspector.ToolMode;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.ClothInspectorState, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.ClothInspectorState;
   }
 }
 declare namespace UnityEditor {
@@ -22813,12 +22697,6 @@ declare namespace UnityEditor {
     readonly serializedObject: UnityEditor.SerializedObject;
     target: UnityEngine.Object;
     readonly targets: UnityEngine.Object[];
-  }
-}
-declare namespace UnityEditor.JointEditor`1[[UnityEngine.ConfigurableJoint, UnityEngine.PhysicsModule, Version=0.0.0 {
-  class JointEditor`1 extends UnityEditor.Editor {
-    protected constructor();
-    OnInspectorGUI(): void;
   }
 }
 declare namespace UnityEditor {
@@ -23247,12 +23125,6 @@ declare namespace UnityEditor {
     readonly serializedObject: UnityEditor.SerializedObject;
     target: UnityEngine.Object;
     readonly targets: UnityEngine.Object[];
-  }
-}
-declare namespace UnityEditor.JointEditor`1[[UnityEngine.HingeJoint, UnityEngine.PhysicsModule, Version=0.0.0 {
-  class JointEditor`1 extends UnityEditor.Editor {
-    protected constructor();
-    OnInspectorGUI(): void;
   }
 }
 declare namespace UnityEditor {
@@ -26845,12 +26717,6 @@ declare namespace UnityEditor.Networking.PlayerConnection {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.Networking.PlayerConnection.EditorConnection, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.Networking.PlayerConnection.EditorConnection;
-  }
-}
 declare namespace UnityEditor {
   class ParticleEffectUIOwner {
     protected constructor();
@@ -28630,12 +28496,6 @@ declare namespace UnityEditor {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.PresetLibraryManager, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.PresetLibraryManager;
-  }
-}
 declare namespace UnityEditor.PresetLibraryManager {
   class LibraryCache extends System.Object {
     constructor(identifier: string);
@@ -28691,12 +28551,6 @@ declare namespace UnityEditor {
     static UpdateExistingSavedFilter(instanceID: number, filter: UnityEditor.SearchFilter, previewSize: number): void;
     hideFlags: any;
     name: string;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.SavedSearchFilters, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.SavedSearchFilters;
   }
 }
 declare namespace UnityEditor {
@@ -29475,12 +29329,6 @@ declare namespace UnityEditor {
     ToString(): string;
     hideFlags: any;
     name: string;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.SceneViewGridManager, UnityEditor, Version=0.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.SceneViewGridManager;
   }
 }
 declare namespace UnityEditor {
@@ -30274,7 +30122,7 @@ declare namespace UnityEditor.Scripting.ScriptCompilation.EditorBuildRules {
     DirtySourceFiles: any;
     NotCompiledTargetAssemblies: any;
     ProjectDirectory: string;
-    RunUpdaterAssemblies: System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]];
+    RunUpdaterAssemblies: any;
     Settings: UnityEditor.Scripting.ScriptCompilation.ScriptAssemblySettings;
   }
 }
@@ -32429,45 +32277,45 @@ declare namespace UnityEditor.VersionControl {
     set_Item(index: number, value: UnityEditor.VersionControl.Asset): void;
   }
 }
-declare namespace System.Collections.Generic.List`1[[UnityEditor.VersionControl.Asset, UnityEditor, Version=0.0.0 {
-  class List`1 extends System.Object {
+declare namespace System.Collections.Generic {
+  class List<T> extends System.Object {
     constructor();
     constructor(capacity: number);
     constructor(collection: any);
-    Add(item: UnityEditor.VersionControl.Asset): void;
+    Add(item: T): void;
     AddRange(collection: any): void;
     AsReadOnly(): any;
-    BinarySearch(index: number, count: number, item: UnityEditor.VersionControl.Asset, comparer: any): number;
-    BinarySearch(item: UnityEditor.VersionControl.Asset): number;
-    BinarySearch(item: UnityEditor.VersionControl.Asset, comparer: any): number;
+    BinarySearch(index: number, count: number, item: T, comparer: any): number;
+    BinarySearch(item: T): number;
+    BinarySearch(item: T, comparer: any): number;
     Clear(): void;
-    Contains(item: UnityEditor.VersionControl.Asset): boolean;
-    CopyTo(index: number, array: UnityEditor.VersionControl.Asset[], arrayIndex: number, count: number): void;
-    CopyTo(array: UnityEditor.VersionControl.Asset[]): void;
-    CopyTo(array: UnityEditor.VersionControl.Asset[], arrayIndex: number): void;
-    Exists(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): boolean;
-    Find(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): UnityEditor.VersionControl.Asset;
-    FindAll(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): UnityEditor.VersionControl.Asset[];
-    FindIndex(startIndex: number, count: number, match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
-    FindIndex(startIndex: number, match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
-    FindIndex(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
-    FindLast(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): UnityEditor.VersionControl.Asset;
-    FindLastIndex(startIndex: number, count: number, match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
-    FindLastIndex(startIndex: number, match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
-    FindLastIndex(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
-    ForEach(action: ((obj: UnityEditor.VersionControl.Asset) => void)): void;
+    Contains(item: T): boolean;
+    CopyTo(index: number, array: T[], arrayIndex: number, count: number): void;
+    CopyTo(array: T[]): void;
+    CopyTo(array: T[], arrayIndex: number): void;
+    Exists(match: ((obj: T) => boolean)): boolean;
+    Find(match: ((obj: T) => boolean)): T;
+    FindAll(match: ((obj: T) => boolean)): T[];
+    FindIndex(startIndex: number, count: number, match: ((obj: T) => boolean)): number;
+    FindIndex(startIndex: number, match: ((obj: T) => boolean)): number;
+    FindIndex(match: ((obj: T) => boolean)): number;
+    FindLast(match: ((obj: T) => boolean)): T;
+    FindLastIndex(startIndex: number, count: number, match: ((obj: T) => boolean)): number;
+    FindLastIndex(startIndex: number, match: ((obj: T) => boolean)): number;
+    FindLastIndex(match: ((obj: T) => boolean)): number;
+    ForEach(action: ((obj: T) => void)): void;
     GetEnumerator(): any;
-    GetRange(index: number, count: number): UnityEditor.VersionControl.Asset[];
-    IndexOf(item: UnityEditor.VersionControl.Asset): number;
-    IndexOf(item: UnityEditor.VersionControl.Asset, index: number): number;
-    IndexOf(item: UnityEditor.VersionControl.Asset, index: number, count: number): number;
-    Insert(index: number, item: UnityEditor.VersionControl.Asset): void;
+    GetRange(index: number, count: number): T[];
+    IndexOf(item: T): number;
+    IndexOf(item: T, index: number): number;
+    IndexOf(item: T, index: number, count: number): number;
+    Insert(index: number, item: T): void;
     InsertRange(index: number, collection: any): void;
-    LastIndexOf(item: UnityEditor.VersionControl.Asset): number;
-    LastIndexOf(item: UnityEditor.VersionControl.Asset, index: number): number;
-    LastIndexOf(item: UnityEditor.VersionControl.Asset, index: number, count: number): number;
-    Remove(item: UnityEditor.VersionControl.Asset): boolean;
-    RemoveAll(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): number;
+    LastIndexOf(item: T): number;
+    LastIndexOf(item: T, index: number): number;
+    LastIndexOf(item: T, index: number, count: number): number;
+    Remove(item: T): boolean;
+    RemoveAll(match: ((obj: T) => boolean)): number;
     RemoveAt(index: number): void;
     RemoveRange(index: number, count: number): void;
     Reverse(): void;
@@ -32475,14 +32323,14 @@ declare namespace System.Collections.Generic.List`1[[UnityEditor.VersionControl.
     Sort(): void;
     Sort(index: number, count: number, comparer: any): void;
     Sort(comparer: any): void;
-    Sort(comparison: ((x: UnityEditor.VersionControl.Asset, y: UnityEditor.VersionControl.Asset) => number)): void;
-    ToArray(): UnityEditor.VersionControl.Asset[];
+    Sort(comparison: ((x: T, y: T) => number)): void;
+    ToArray(): T[];
     TrimExcess(): void;
-    TrueForAll(match: ((obj: UnityEditor.VersionControl.Asset) => boolean)): boolean;
+    TrueForAll(match: ((obj: T) => boolean)): boolean;
     Capacity: number;
     readonly Count: number;
-    get_Item(index: number): UnityEditor.VersionControl.Asset;
-    set_Item(index: number, value: UnityEditor.VersionControl.Asset): void;
+    get_Item(index: number): T;
+    set_Item(index: number, value: T): void;
   }
 }
 declare namespace UnityEditorInternal.VersionControl {
@@ -32543,62 +32391,6 @@ declare namespace UnityEditor.VersionControl {
     Sort(comparison: ((x: UnityEditor.VersionControl.ChangeSet, y: UnityEditor.VersionControl.ChangeSet) => number)): void;
     ToArray(): UnityEditor.VersionControl.ChangeSet[];
     ToString(): string;
-    TrimExcess(): void;
-    TrueForAll(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): boolean;
-    Capacity: number;
-    readonly Count: number;
-    get_Item(index: number): UnityEditor.VersionControl.ChangeSet;
-    set_Item(index: number, value: UnityEditor.VersionControl.ChangeSet): void;
-  }
-}
-declare namespace System.Collections.Generic.List`1[[UnityEditor.VersionControl.ChangeSet, UnityEditor, Version=0.0.0 {
-  class List`1 extends System.Object {
-    constructor();
-    constructor(capacity: number);
-    constructor(collection: any);
-    Add(item: UnityEditor.VersionControl.ChangeSet): void;
-    AddRange(collection: any): void;
-    AsReadOnly(): any;
-    BinarySearch(index: number, count: number, item: UnityEditor.VersionControl.ChangeSet, comparer: any): number;
-    BinarySearch(item: UnityEditor.VersionControl.ChangeSet): number;
-    BinarySearch(item: UnityEditor.VersionControl.ChangeSet, comparer: any): number;
-    Clear(): void;
-    Contains(item: UnityEditor.VersionControl.ChangeSet): boolean;
-    CopyTo(index: number, array: UnityEditor.VersionControl.ChangeSet[], arrayIndex: number, count: number): void;
-    CopyTo(array: UnityEditor.VersionControl.ChangeSet[]): void;
-    CopyTo(array: UnityEditor.VersionControl.ChangeSet[], arrayIndex: number): void;
-    Exists(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): boolean;
-    Find(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): UnityEditor.VersionControl.ChangeSet;
-    FindAll(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): UnityEditor.VersionControl.ChangeSet[];
-    FindIndex(startIndex: number, count: number, match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    FindIndex(startIndex: number, match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    FindIndex(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    FindLast(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): UnityEditor.VersionControl.ChangeSet;
-    FindLastIndex(startIndex: number, count: number, match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    FindLastIndex(startIndex: number, match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    FindLastIndex(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    ForEach(action: ((obj: UnityEditor.VersionControl.ChangeSet) => void)): void;
-    GetEnumerator(): any;
-    GetRange(index: number, count: number): UnityEditor.VersionControl.ChangeSet[];
-    IndexOf(item: UnityEditor.VersionControl.ChangeSet): number;
-    IndexOf(item: UnityEditor.VersionControl.ChangeSet, index: number): number;
-    IndexOf(item: UnityEditor.VersionControl.ChangeSet, index: number, count: number): number;
-    Insert(index: number, item: UnityEditor.VersionControl.ChangeSet): void;
-    InsertRange(index: number, collection: any): void;
-    LastIndexOf(item: UnityEditor.VersionControl.ChangeSet): number;
-    LastIndexOf(item: UnityEditor.VersionControl.ChangeSet, index: number): number;
-    LastIndexOf(item: UnityEditor.VersionControl.ChangeSet, index: number, count: number): number;
-    Remove(item: UnityEditor.VersionControl.ChangeSet): boolean;
-    RemoveAll(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): number;
-    RemoveAt(index: number): void;
-    RemoveRange(index: number, count: number): void;
-    Reverse(): void;
-    Reverse(index: number, count: number): void;
-    Sort(): void;
-    Sort(index: number, count: number, comparer: any): void;
-    Sort(comparer: any): void;
-    Sort(comparison: ((x: UnityEditor.VersionControl.ChangeSet, y: UnityEditor.VersionControl.ChangeSet) => number)): void;
-    ToArray(): UnityEditor.VersionControl.ChangeSet[];
     TrimExcess(): void;
     TrueForAll(match: ((obj: UnityEditor.VersionControl.ChangeSet) => boolean)): boolean;
     Capacity: number;
@@ -34466,18 +34258,18 @@ declare namespace UnityEditor.Android {
     static ProjectPropertiesFileName: string;
   }
 }
-declare namespace System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0 {
-  class HashSet`1 extends System.Object {
+declare namespace System.Collections.Generic {
+  class HashSet<T> extends System.Object {
     constructor();
     constructor(comparer: any);
     constructor(collection: any);
     constructor(collection: any, comparer: any);
-    Add(item: string): boolean;
+    Add(item: T): boolean;
     Clear(): void;
-    Contains(item: string): boolean;
-    CopyTo(array: string[]): void;
-    CopyTo(array: string[], arrayIndex: number): void;
-    CopyTo(array: string[], arrayIndex: number, count: number): void;
+    Contains(item: T): boolean;
+    CopyTo(array: T[]): void;
+    CopyTo(array: T[], arrayIndex: number): void;
+    CopyTo(array: T[], arrayIndex: number, count: number): void;
     static CreateSetComparer(): any;
     ExceptWith(other: any): void;
     GetEnumerator(): any;
@@ -34489,8 +34281,8 @@ declare namespace System.Collections.Generic.HashSet`1[[System.String, mscorlib,
     IsSupersetOf(other: any): boolean;
     OnDeserialization(sender: any): void;
     Overlaps(other: any): boolean;
-    Remove(item: string): boolean;
-    RemoveWhere(match: ((obj: string) => boolean)): number;
+    Remove(item: T): boolean;
+    RemoveWhere(match: ((obj: T) => boolean)): number;
     SetEquals(other: any): boolean;
     SymmetricExceptWith(other: any): void;
     TrimExcess(): void;
@@ -37029,62 +36821,6 @@ declare namespace UnityEditor.iOS.Xcode.Extensions.PBXProjectExtensions {
     set_Item(index: number, value: any): void;
   }
 }
-declare namespace System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0 {
-  class List`1 extends System.Object {
-    constructor();
-    constructor(capacity: number);
-    constructor(collection: any);
-    Add(item: any): void;
-    AddRange(collection: any): void;
-    AsReadOnly(): any;
-    BinarySearch(index: number, count: number, item: any, comparer: any): number;
-    BinarySearch(item: any): number;
-    BinarySearch(item: any, comparer: any): number;
-    Clear(): void;
-    Contains(item: any): boolean;
-    CopyTo(index: number, array: any[], arrayIndex: number, count: number): void;
-    CopyTo(array: any[]): void;
-    CopyTo(array: any[], arrayIndex: number): void;
-    Exists(match: ((obj: any) => boolean)): boolean;
-    Find(match: ((obj: any) => boolean)): any;
-    FindAll(match: ((obj: any) => boolean)): any[];
-    FindIndex(startIndex: number, count: number, match: ((obj: any) => boolean)): number;
-    FindIndex(startIndex: number, match: ((obj: any) => boolean)): number;
-    FindIndex(match: ((obj: any) => boolean)): number;
-    FindLast(match: ((obj: any) => boolean)): any;
-    FindLastIndex(startIndex: number, count: number, match: ((obj: any) => boolean)): number;
-    FindLastIndex(startIndex: number, match: ((obj: any) => boolean)): number;
-    FindLastIndex(match: ((obj: any) => boolean)): number;
-    ForEach(action: ((obj: any) => void)): void;
-    GetEnumerator(): any;
-    GetRange(index: number, count: number): any[];
-    IndexOf(item: any): number;
-    IndexOf(item: any, index: number): number;
-    IndexOf(item: any, index: number, count: number): number;
-    Insert(index: number, item: any): void;
-    InsertRange(index: number, collection: any): void;
-    LastIndexOf(item: any): number;
-    LastIndexOf(item: any, index: number): number;
-    LastIndexOf(item: any, index: number, count: number): number;
-    Remove(item: any): boolean;
-    RemoveAll(match: ((obj: any) => boolean)): number;
-    RemoveAt(index: number): void;
-    RemoveRange(index: number, count: number): void;
-    Reverse(): void;
-    Reverse(index: number, count: number): void;
-    Sort(): void;
-    Sort(index: number, count: number, comparer: any): void;
-    Sort(comparer: any): void;
-    Sort(comparison: ((x: any, y: any) => number)): void;
-    ToArray(): any[];
-    TrimExcess(): void;
-    TrueForAll(match: ((obj: any) => boolean)): boolean;
-    Capacity: number;
-    readonly Count: number;
-    get_Item(index: number): any;
-    set_Item(index: number, value: any): void;
-  }
-}
 declare namespace UnityEditor.iOS.Xcode {
   class PlistElement extends System.Object {
     protected constructor();
@@ -37438,62 +37174,6 @@ declare namespace UnityEditor.iOS.Xcode.PBX {
     set_Item(index: number, value: UnityEditor.iOS.Xcode.PBX.Token): void;
   }
 }
-declare namespace System.Collections.Generic.List`1[[UnityEditor.iOS.Xcode.PBX.Token, UnityEditor.iOS.Extensions.Xcode, Version=1.0.0 {
-  class List`1 extends System.Object {
-    constructor();
-    constructor(capacity: number);
-    constructor(collection: any);
-    Add(item: UnityEditor.iOS.Xcode.PBX.Token): void;
-    AddRange(collection: any): void;
-    AsReadOnly(): any;
-    BinarySearch(index: number, count: number, item: UnityEditor.iOS.Xcode.PBX.Token, comparer: any): number;
-    BinarySearch(item: UnityEditor.iOS.Xcode.PBX.Token): number;
-    BinarySearch(item: UnityEditor.iOS.Xcode.PBX.Token, comparer: any): number;
-    Clear(): void;
-    Contains(item: UnityEditor.iOS.Xcode.PBX.Token): boolean;
-    CopyTo(index: number, array: UnityEditor.iOS.Xcode.PBX.Token[], arrayIndex: number, count: number): void;
-    CopyTo(array: UnityEditor.iOS.Xcode.PBX.Token[]): void;
-    CopyTo(array: UnityEditor.iOS.Xcode.PBX.Token[], arrayIndex: number): void;
-    Exists(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): boolean;
-    Find(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): UnityEditor.iOS.Xcode.PBX.Token;
-    FindAll(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): UnityEditor.iOS.Xcode.PBX.Token[];
-    FindIndex(startIndex: number, count: number, match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    FindIndex(startIndex: number, match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    FindIndex(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    FindLast(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): UnityEditor.iOS.Xcode.PBX.Token;
-    FindLastIndex(startIndex: number, count: number, match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    FindLastIndex(startIndex: number, match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    FindLastIndex(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    ForEach(action: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => void)): void;
-    GetEnumerator(): any;
-    GetRange(index: number, count: number): UnityEditor.iOS.Xcode.PBX.Token[];
-    IndexOf(item: UnityEditor.iOS.Xcode.PBX.Token): number;
-    IndexOf(item: UnityEditor.iOS.Xcode.PBX.Token, index: number): number;
-    IndexOf(item: UnityEditor.iOS.Xcode.PBX.Token, index: number, count: number): number;
-    Insert(index: number, item: UnityEditor.iOS.Xcode.PBX.Token): void;
-    InsertRange(index: number, collection: any): void;
-    LastIndexOf(item: UnityEditor.iOS.Xcode.PBX.Token): number;
-    LastIndexOf(item: UnityEditor.iOS.Xcode.PBX.Token, index: number): number;
-    LastIndexOf(item: UnityEditor.iOS.Xcode.PBX.Token, index: number, count: number): number;
-    Remove(item: UnityEditor.iOS.Xcode.PBX.Token): boolean;
-    RemoveAll(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): number;
-    RemoveAt(index: number): void;
-    RemoveRange(index: number, count: number): void;
-    Reverse(): void;
-    Reverse(index: number, count: number): void;
-    Sort(): void;
-    Sort(index: number, count: number, comparer: any): void;
-    Sort(comparer: any): void;
-    Sort(comparison: ((x: UnityEditor.iOS.Xcode.PBX.Token, y: UnityEditor.iOS.Xcode.PBX.Token) => number)): void;
-    ToArray(): UnityEditor.iOS.Xcode.PBX.Token[];
-    TrimExcess(): void;
-    TrueForAll(match: ((obj: UnityEditor.iOS.Xcode.PBX.Token) => boolean)): boolean;
-    Capacity: number;
-    readonly Count: number;
-    get_Item(index: number): UnityEditor.iOS.Xcode.PBX.Token;
-    set_Item(index: number, value: UnityEditor.iOS.Xcode.PBX.Token): void;
-  }
-}
 declare namespace UnityEditor.iOS.Xcode.PBX {
   class Lexer extends System.Object {
     constructor();
@@ -37772,10 +37452,10 @@ declare namespace UnityEditor.iOS.Xcode.PBX {
     readonly project: UnityEditor.iOS.Xcode.PBX.PBXProjectObjectData;
   }
 }
-declare namespace UnityEditor.iOS.Xcode.PBX.KnownSectionBase`1[[UnityEditor.iOS.Xcode.PBX.PBXProjectObjectData, UnityEditor.iOS.Extensions.Xcode, Version=1.0.0 {
-  class KnownSectionBase`1 extends UnityEditor.iOS.Xcode.PBX.SectionBase {
+declare namespace UnityEditor.iOS.Xcode.PBX {
+  class KnownSectionBase<T> extends UnityEditor.iOS.Xcode.PBX.SectionBase {
     constructor(sectionName: string);
-    AddEntry(obj: UnityEditor.iOS.Xcode.PBX.PBXProjectObjectData): void;
+    AddEntry(obj: T): void;
     AddObject(key: string, value: UnityEditor.iOS.Xcode.PBX.PBXElementDict): void;
     GetEntries(): any;
     GetGuids(): any;
@@ -37783,7 +37463,7 @@ declare namespace UnityEditor.iOS.Xcode.PBX.KnownSectionBase`1[[UnityEditor.iOS.
     HasEntry(guid: string): boolean;
     RemoveEntry(guid: string): void;
     WriteSection(sb: any, comments: UnityEditor.iOS.Xcode.PBX.GUIDToCommentMap): void;
-    get_Item(guid: string): UnityEditor.iOS.Xcode.PBX.PBXProjectObjectData;
+    get_Item(guid: string): T;
   }
 }
 declare namespace UnityEditor.iOS.Xcode.PBX {
@@ -38228,12 +37908,6 @@ declare namespace UnityEditor.TestRunner.GUI {
     name: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.TestRunner.GUI.PlayerResultWindowUpdater, UnityEditor.TestRunner, Version=1.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.TestRunner.GUI.PlayerResultWindowUpdater;
-  }
-}
 declare namespace UnityEditor.TestTools.TestRunner.GUI {
   class TestRunnerUIFilter extends System.Object {
     constructor();
@@ -38468,12 +38142,6 @@ declare namespace UnityEditor.TestRunner.TestLaunchers {
     ToString(): string;
     hideFlags: any;
     name: string;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.TestRunner.TestLaunchers.RemoteTestRunController, UnityEditor.TestRunner, Version=1.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.TestRunner.TestLaunchers.RemoteTestRunController;
   }
 }
 declare namespace UnityEditor.TestTools.TestRunner {
@@ -39568,11 +39236,11 @@ declare namespace UnityEditor.Timeline {
     timelineName: string;
   }
 }
-declare namespace UnityEditor.Timeline.EditorItem`1[[UnityEngine.Timeline.TimelineClip, UnityEngine.Timeline, Version=1.0.0 {
-  class EditorItem`1 extends UnityEngine.ScriptableObject {
+declare namespace UnityEditor.Timeline {
+  class EditorItem<T> extends UnityEngine.ScriptableObject {
     protected constructor();
     GetHashCode(): number;
-    SetItem(newItem: any): void;
+    SetItem(newItem: T): void;
     asset: UnityEngine.Object;
     readonly item: any;
     lastHash: number;
@@ -39597,18 +39265,6 @@ declare namespace UnityEditor.Timeline {
     readonly locked: boolean;
     name: string;
     theMarker: any;
-    timelineName: string;
-  }
-}
-declare namespace UnityEditor.Timeline.EditorItem`1[[UnityEngine.Timeline.TimelineMarker, UnityEngine.Timeline, Version=1.0.0 {
-  class EditorItem`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    GetHashCode(): number;
-    SetItem(newItem: any): void;
-    asset: UnityEngine.Object;
-    readonly item: any;
-    lastHash: number;
-    readonly locked: boolean;
     timelineName: string;
   }
 }
@@ -40563,15 +40219,15 @@ declare namespace UnityEditor.Timeline {
     ToString(): string;
   }
 }
-declare namespace UnityEditor.Timeline.ItemAction`1[[UnityEngine.Timeline.TimelineClip, UnityEngine.Timeline, Version=1.0.0 {
-  class ItemAction`1 extends UnityEditor.Timeline.MenuItemActionBase {
+declare namespace UnityEditor.Timeline {
+  class ItemAction<T> extends UnityEditor.Timeline.MenuItemActionBase {
     protected constructor();
     static AddToMenu(menu: UnityEditor.GenericMenu, state: UnityEditor.Timeline.TimelineWindow.TimelineState): void;
-    CanExecute(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: any[]): boolean;
-    Execute(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: any[]): boolean;
-    GetDisplayState(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: any[]): UnityEditor.Timeline.MenuActionDisplayState;
-    static HandleShortcut(state: UnityEditor.Timeline.TimelineWindow.TimelineState, evt: any, item: any): boolean;
-    static readonly actions: UnityEditor.Timeline.ItemAction`1[[UnityEngine.Timeline.TimelineClip, UnityEngine.Timeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][];
+    CanExecute(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: T[]): boolean;
+    Execute(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: T[]): boolean;
+    GetDisplayState(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: T[]): UnityEditor.Timeline.MenuActionDisplayState;
+    static HandleShortcut(state: UnityEditor.Timeline.TimelineWindow.TimelineState, evt: any, item: T): boolean;
+    static readonly actions: UnityEditor.Timeline.ItemAction<T>[];
   }
 }
 declare namespace UnityEditor.Timeline {
@@ -40777,17 +40433,6 @@ declare namespace UnityEditor.Timeline {
     GetHashCode(): number;
     GetType(): any;
     ToString(): string;
-  }
-}
-declare namespace UnityEditor.Timeline.ItemAction`1[[UnityEngine.Timeline.TimelineMarker, UnityEngine.Timeline, Version=1.0.0 {
-  class ItemAction`1 extends UnityEditor.Timeline.MenuItemActionBase {
-    protected constructor();
-    static AddToMenu(menu: UnityEditor.GenericMenu, state: UnityEditor.Timeline.TimelineWindow.TimelineState): void;
-    CanExecute(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: any[]): boolean;
-    Execute(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: any[]): boolean;
-    GetDisplayState(state: UnityEditor.Timeline.TimelineWindow.TimelineState, items: any[]): UnityEditor.Timeline.MenuActionDisplayState;
-    static HandleShortcut(state: UnityEditor.Timeline.TimelineWindow.TimelineState, evt: any, item: any): boolean;
-    static readonly actions: UnityEditor.Timeline.ItemAction`1[[UnityEngine.Timeline.TimelineMarker, UnityEngine.Timeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][];
   }
 }
 declare namespace UnityEditor.Timeline {
@@ -41529,13 +41174,13 @@ declare namespace UnityEditor.Timeline {
     name: string;
   }
 }
-declare namespace UnityEditor.Timeline.ScriptableObjectViewPrefs`1[[UnityEditor.Timeline.TimelineAssetViewModel, UnityEditor.Timeline, Version=1.0.0 {
-  class ScriptableObjectViewPrefs`1 extends UnityEngine.ScriptableObject {
+declare namespace UnityEditor.Timeline {
+  class ScriptableObjectViewPrefs<VIEWMODEL> extends UnityEngine.ScriptableObject {
     constructor();
-    CreateNewViewModel(): UnityEditor.Timeline.TimelineAssetViewModel;
+    CreateNewViewModel(): VIEWMODEL;
     SetActiveAsset(asset: UnityEngine.ScriptableObject): void;
     readonly activeAsset: UnityEngine.ScriptableObject;
-    readonly activeViewModel: UnityEditor.Timeline.TimelineAssetViewModel;
+    readonly activeViewModel: VIEWMODEL;
   }
 }
 declare namespace TreeEditor {
@@ -42644,12 +42289,6 @@ declare namespace UnityEditor.WebGL {
     time: string;
   }
 }
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.WebGL.HttpServerEditorWrapper, UnityEditor.WebGL.Extensions, Version=1.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.WebGL.HttpServerEditorWrapper;
-  }
-}
 declare namespace UnityEditor.WebGL {
   class ProgramUtils extends System.Object {
     protected constructor();
@@ -42710,12 +42349,6 @@ declare namespace UnityEditor.WebGL {
     ToString(): string;
     hideFlags: any;
     name: string;
-  }
-}
-declare namespace UnityEditor.ScriptableSingleton`1[[UnityEditor.WebGL.WebsockifyEditorWrapper, UnityEditor.WebGL.Extensions, Version=1.0.0 {
-  class ScriptableSingleton`1 extends UnityEngine.ScriptableObject {
-    protected constructor();
-    static readonly instance: UnityEditor.WebGL.WebsockifyEditorWrapper;
   }
 }
 declare namespace UnityEditor.WebGL.Emscripten {

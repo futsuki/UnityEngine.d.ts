@@ -9632,7 +9632,7 @@ declare namespace UnityEngine {
     static DownArrow: UnityEngine.KeyCode;
     static E: UnityEngine.KeyCode;
     static End: UnityEngine.KeyCode;
-    static Equals: UnityEngine.KeyCode;
+    //static Equals: UnityEngine.KeyCode;
     static Escape: UnityEngine.KeyCode;
     static Exclaim: UnityEngine.KeyCode;
     static F: UnityEngine.KeyCode;
@@ -10475,7 +10475,7 @@ declare namespace UnityEngine.Events {
   }
 }
 declare namespace UnityEngine.Events {
-  class UnityEvent extends UnityEngine.Events.UnityEventBase {
+  class UnityEvent0 extends UnityEngine.Events.UnityEventBase {
     constructor();
     AddListener(call: (() => void)): void;
     Invoke(): void;
@@ -11665,7 +11665,7 @@ declare namespace UnityEngine.Networking.PlayerConnection {
 declare namespace UnityEngine.Networking.PlayerConnection {
   class PlayerEditorConnectionEvents extends System.Object {
     constructor();
-    AddAndCreate(messageId: any): UnityEngine.Events.UnityEvent`1[[UnityEngine.Networking.PlayerConnection.MessageEventArgs, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]];
+    AddAndCreate(messageId: any): any;
     InvokeMessageIdSubscribers(messageId: any, data: number[], playerId: number): void;
     UnregisterManagedCallback(messageId: any, callback: ((arg0: UnityEngine.Networking.PlayerConnection.MessageEventArgs) => void)): void;
     connectionEvent: UnityEngine.Networking.PlayerConnection.PlayerEditorConnectionEvents.ConnectionChangeEvent;
@@ -11690,12 +11690,12 @@ declare namespace UnityEngine.Networking.PlayerConnection.PlayerEditorConnection
     ToString(): string;
   }
 }
-declare namespace UnityEngine.Events.UnityEvent`1[[UnityEngine.Networking.PlayerConnection.MessageEventArgs, UnityEngine.CoreModule, Version=0.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
+declare namespace UnityEngine.Events {
+  class UnityEvent<T0> extends UnityEngine.Events.UnityEventBase {
     constructor();
-    AddListener(call: ((arg0: UnityEngine.Networking.PlayerConnection.MessageEventArgs) => void)): void;
-    Invoke(arg0: UnityEngine.Networking.PlayerConnection.MessageEventArgs): void;
-    RemoveListener(call: ((arg0: UnityEngine.Networking.PlayerConnection.MessageEventArgs) => void)): void;
+    AddListener(call: ((arg0: T0) => void)): void;
+    Invoke(arg0: T0): void;
+    RemoveListener(call: ((arg0: T0) => void)): void;
   }
 }
 declare namespace UnityEngine.Networking.PlayerConnection.PlayerEditorConnectionEvents {
@@ -11713,14 +11713,6 @@ declare namespace UnityEngine.Networking.PlayerConnection.PlayerEditorConnection
     RemoveListener(call: ((arg0: number) => void)): void;
     SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
     ToString(): string;
-  }
-}
-declare namespace UnityEngine.Events.UnityEvent`1[[System.Int32, mscorlib, Version=4.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: number) => void)): void;
-    Invoke(arg0: number): void;
-    RemoveListener(call: ((arg0: number) => void)): void;
   }
 }
 declare namespace UnityEngine.Networking.PlayerConnection.PlayerEditorConnectionEvents {
@@ -16144,26 +16136,26 @@ declare namespace UnityEngine.Networking {
     set_Item(i: number, value: string): void;
   }
 }
-declare namespace UnityEngine.Networking.SyncList`1[[System.String, mscorlib, Version=4.0.0 {
-  class SyncList`1 extends System.Object {
+declare namespace UnityEngine.Networking {
+  class SyncList<T> extends System.Object {
     protected constructor();
-    Add(item: string): void;
+    Add(item: T): void;
     Clear(): void;
-    Contains(item: string): boolean;
-    CopyTo(array: string[], index: number): void;
+    Contains(item: T): boolean;
+    CopyTo(array: T[], index: number): void;
     Dirty(index: number): void;
     GetEnumerator(): any;
     HandleMsg(reader: UnityEngine.Networking.NetworkReader): void;
-    IndexOf(item: string): number;
+    IndexOf(item: T): number;
     InitializeBehaviour(beh: UnityEngine.Networking.NetworkBehaviour, cmdHash: number): void;
-    Insert(index: number, item: string): void;
-    Remove(item: string): boolean;
+    Insert(index: number, item: T): void;
+    Remove(item: T): boolean;
     RemoveAt(index: number): void;
     Callback: ((op: any, itemIndex: number) => void);
     readonly Count: number;
     readonly IsReadOnly: boolean;
-    get_Item(i: number): string;
-    set_Item(i: number, value: string): void;
+    get_Item(i: number): T;
+    set_Item(i: number, value: T): void;
   }
 }
 declare namespace UnityEngine.Networking {
@@ -16188,28 +16180,6 @@ declare namespace UnityEngine.Networking {
     RemoveAt(index: number): void;
     ToString(): string;
     static WriteInstance(writer: UnityEngine.Networking.NetworkWriter, items: UnityEngine.Networking.SyncListFloat): void;
-    Callback: ((op: any, itemIndex: number) => void);
-    readonly Count: number;
-    readonly IsReadOnly: boolean;
-    get_Item(i: number): number;
-    set_Item(i: number, value: number): void;
-  }
-}
-declare namespace UnityEngine.Networking.SyncList`1[[System.Single, mscorlib, Version=4.0.0 {
-  class SyncList`1 extends System.Object {
-    protected constructor();
-    Add(item: number): void;
-    Clear(): void;
-    Contains(item: number): boolean;
-    CopyTo(array: number[], index: number): void;
-    Dirty(index: number): void;
-    GetEnumerator(): any;
-    HandleMsg(reader: UnityEngine.Networking.NetworkReader): void;
-    IndexOf(item: number): number;
-    InitializeBehaviour(beh: UnityEngine.Networking.NetworkBehaviour, cmdHash: number): void;
-    Insert(index: number, item: number): void;
-    Remove(item: number): boolean;
-    RemoveAt(index: number): void;
     Callback: ((op: any, itemIndex: number) => void);
     readonly Count: number;
     readonly IsReadOnly: boolean;
@@ -16246,28 +16216,6 @@ declare namespace UnityEngine.Networking {
     set_Item(i: number, value: number): void;
   }
 }
-declare namespace UnityEngine.Networking.SyncList`1[[System.Int32, mscorlib, Version=4.0.0 {
-  class SyncList`1 extends System.Object {
-    protected constructor();
-    Add(item: number): void;
-    Clear(): void;
-    Contains(item: number): boolean;
-    CopyTo(array: number[], index: number): void;
-    Dirty(index: number): void;
-    GetEnumerator(): any;
-    HandleMsg(reader: UnityEngine.Networking.NetworkReader): void;
-    IndexOf(item: number): number;
-    InitializeBehaviour(beh: UnityEngine.Networking.NetworkBehaviour, cmdHash: number): void;
-    Insert(index: number, item: number): void;
-    Remove(item: number): boolean;
-    RemoveAt(index: number): void;
-    Callback: ((op: any, itemIndex: number) => void);
-    readonly Count: number;
-    readonly IsReadOnly: boolean;
-    get_Item(i: number): number;
-    set_Item(i: number, value: number): void;
-  }
-}
 declare namespace UnityEngine.Networking {
   class SyncListUInt {
     constructor();
@@ -16297,28 +16245,6 @@ declare namespace UnityEngine.Networking {
     set_Item(i: number, value: number): void;
   }
 }
-declare namespace UnityEngine.Networking.SyncList`1[[System.UInt32, mscorlib, Version=4.0.0 {
-  class SyncList`1 extends System.Object {
-    protected constructor();
-    Add(item: number): void;
-    Clear(): void;
-    Contains(item: number): boolean;
-    CopyTo(array: number[], index: number): void;
-    Dirty(index: number): void;
-    GetEnumerator(): any;
-    HandleMsg(reader: UnityEngine.Networking.NetworkReader): void;
-    IndexOf(item: number): number;
-    InitializeBehaviour(beh: UnityEngine.Networking.NetworkBehaviour, cmdHash: number): void;
-    Insert(index: number, item: number): void;
-    Remove(item: number): boolean;
-    RemoveAt(index: number): void;
-    Callback: ((op: any, itemIndex: number) => void);
-    readonly Count: number;
-    readonly IsReadOnly: boolean;
-    get_Item(i: number): number;
-    set_Item(i: number, value: number): void;
-  }
-}
 declare namespace UnityEngine.Networking {
   class SyncListBool {
     constructor();
@@ -16341,28 +16267,6 @@ declare namespace UnityEngine.Networking {
     RemoveAt(index: number): void;
     ToString(): string;
     static WriteInstance(writer: UnityEngine.Networking.NetworkWriter, items: UnityEngine.Networking.SyncListBool): void;
-    Callback: ((op: any, itemIndex: number) => void);
-    readonly Count: number;
-    readonly IsReadOnly: boolean;
-    get_Item(i: number): boolean;
-    set_Item(i: number, value: boolean): void;
-  }
-}
-declare namespace UnityEngine.Networking.SyncList`1[[System.Boolean, mscorlib, Version=4.0.0 {
-  class SyncList`1 extends System.Object {
-    protected constructor();
-    Add(item: boolean): void;
-    Clear(): void;
-    Contains(item: boolean): boolean;
-    CopyTo(array: boolean[], index: number): void;
-    Dirty(index: number): void;
-    GetEnumerator(): any;
-    HandleMsg(reader: UnityEngine.Networking.NetworkReader): void;
-    IndexOf(item: boolean): number;
-    InitializeBehaviour(beh: UnityEngine.Networking.NetworkBehaviour, cmdHash: number): void;
-    Insert(index: number, item: boolean): void;
-    Remove(item: boolean): boolean;
-    RemoveAt(index: number): void;
     Callback: ((op: any, itemIndex: number) => void);
     readonly Count: number;
     readonly IsReadOnly: boolean;
@@ -20173,14 +20077,6 @@ declare namespace UnityEngine.TestTools.TestRunner {
     ToString(): string;
   }
 }
-declare namespace UnityEngine.Events.UnityEvent`1[[NUnit.Framework.Interfaces.ITestResult, nunit.framework, Version=3.5.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: any) => void)): void;
-    Invoke(arg0: any): void;
-    RemoveListener(call: ((arg0: any) => void)): void;
-  }
-}
 declare namespace UnityEngine.TestTools.TestRunner {
   class TestStartedEvent {
     constructor();
@@ -20196,14 +20092,6 @@ declare namespace UnityEngine.TestTools.TestRunner {
     RemoveListener(call: ((arg0: any) => void)): void;
     SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
     ToString(): string;
-  }
-}
-declare namespace UnityEngine.Events.UnityEvent`1[[NUnit.Framework.Interfaces.ITest, nunit.framework, Version=3.5.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: any) => void)): void;
-    Invoke(arg0: any): void;
-    RemoveListener(call: ((arg0: any) => void)): void;
   }
 }
 declare namespace UnityEngine.TestTools.TestRunner {
@@ -21738,14 +21626,6 @@ declare namespace UnityEngine.EventSystems.EventTrigger {
     ToString(): string;
   }
 }
-declare namespace UnityEngine.Events.UnityEvent`1[[UnityEngine.EventSystems.BaseEventData, UnityEngine.UI, Version=1.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: UnityEngine.EventSystems.BaseEventData) => void)): void;
-    Invoke(arg0: UnityEngine.EventSystems.BaseEventData): void;
-    RemoveListener(call: ((arg0: UnityEngine.EventSystems.BaseEventData) => void)): void;
-  }
-}
 declare namespace UnityEngine.EventSystems.EventTrigger {
   class Entry extends System.Object {
     constructor();
@@ -22031,14 +21911,6 @@ declare namespace UnityEngine.UI.CoroutineTween.ColorTween {
     ToString(): string;
   }
 }
-declare namespace UnityEngine.Events.UnityEvent`1[[UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: UnityEngine.Color) => void)): void;
-    Invoke(arg0: UnityEngine.Color): void;
-    RemoveListener(call: ((arg0: UnityEngine.Color) => void)): void;
-  }
-}
 declare namespace UnityEngine.UI.CoroutineTween {
   class FloatTween extends System.ValueType {
     protected constructor();
@@ -22068,14 +21940,6 @@ declare namespace UnityEngine.UI.CoroutineTween.FloatTween {
     RemoveListener(call: ((arg0: number) => void)): void;
     SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
     ToString(): string;
-  }
-}
-declare namespace UnityEngine.Events.UnityEvent`1[[System.Single, mscorlib, Version=4.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: number) => void)): void;
-    Invoke(arg0: number): void;
-    RemoveListener(call: ((arg0: number) => void)): void;
   }
 }
 declare namespace UnityEngine.UI {
@@ -22125,7 +21989,7 @@ declare namespace UnityEngine.UI {
   }
 }
 declare namespace UnityEngine.UI.Button {
-  class ButtonClickedEvent extends UnityEngine.Events.UnityEvent {
+  class ButtonClickedEvent extends UnityEngine.Events.UnityEvent0 {
     constructor();
   }
 }
@@ -22630,14 +22494,6 @@ declare namespace UnityEngine.UI.InputField {
     ToString(): string;
   }
 }
-declare namespace UnityEngine.Events.UnityEvent`1[[System.String, mscorlib, Version=4.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: string) => void)): void;
-    Invoke(arg0: string): void;
-    RemoveListener(call: ((arg0: string) => void)): void;
-  }
-}
 declare namespace UnityEngine.UI.InputField {
   class OnChangeEvent {
     constructor();
@@ -22690,14 +22546,6 @@ declare namespace UnityEngine.UI.MaskableGraphic {
     RemoveListener(call: ((arg0: boolean) => void)): void;
     SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
     ToString(): string;
-  }
-}
-declare namespace UnityEngine.Events.UnityEvent`1[[System.Boolean, mscorlib, Version=4.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: boolean) => void)): void;
-    Invoke(arg0: boolean): void;
-    RemoveListener(call: ((arg0: boolean) => void)): void;
   }
 }
 declare namespace UnityEngine.UI {
@@ -22902,14 +22750,6 @@ declare namespace UnityEngine.UI.ScrollRect {
     RemoveListener(call: ((arg0: UnityEngine.Vector2) => void)): void;
     SetPersistentListenerState(index: number, state: UnityEngine.Events.UnityEventCallState): void;
     ToString(): string;
-  }
-}
-declare namespace UnityEngine.Events.UnityEvent`1[[UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0 {
-  class UnityEvent`1 extends UnityEngine.Events.UnityEventBase {
-    constructor();
-    AddListener(call: ((arg0: UnityEngine.Vector2) => void)): void;
-    Invoke(arg0: UnityEngine.Vector2): void;
-    RemoveListener(call: ((arg0: UnityEngine.Vector2) => void)): void;
   }
 }
 declare namespace UnityEngine.UI.Selectable {
@@ -24226,10 +24066,10 @@ declare namespace UnityEngine.Experimental.UIElements {
   class UQueryExtensions extends System.Object {
     protected constructor();
     static Q(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, className?: string): UnityEngine.Experimental.UIElements.VisualElement;
-    static Q(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, classes: string[]): UnityEngine.Experimental.UIElements.VisualElement;
+    static Q(e: UnityEngine.Experimental.UIElements.VisualElement, name: string, classes: string[]): UnityEngine.Experimental.UIElements.VisualElement;
     static Query(e: UnityEngine.Experimental.UIElements.VisualElement): any;
     static Query(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, className?: string): any;
-    static Query(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, classes: string[]): any;
+    static Query(e: UnityEngine.Experimental.UIElements.VisualElement, name: string, classes: string[]): any;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements.VisualContainer {
@@ -24301,7 +24141,7 @@ declare namespace UnityEngine.Experimental.UIElements {
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
-  class VisualElementAsset extends UnityEngine.ScriptableObject {
+  class VisualElementAsset0 extends UnityEngine.ScriptableObject {
     protected constructor();
     Create(): UnityEngine.Experimental.UIElements.VisualElement;
     classes: string[];
@@ -24330,8 +24170,8 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.Button, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
+declare namespace UnityEngine.Experimental.UIElements {
+  class VisualElementAsset<T> extends UnityEngine.Experimental.UIElements.VisualElementAsset0 {
     protected constructor();
     Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
@@ -24355,12 +24195,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.Image, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
-  }
-}
 declare namespace UnityEngine.Experimental.UIElements {
   class LabelAsset {
     constructor();
@@ -24378,12 +24212,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     parentId: number;
     ruleIndex: number;
     text: string;
-  }
-}
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.Label, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
@@ -24405,12 +24233,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.RepeatButton, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
-  }
-}
 declare namespace UnityEngine.Experimental.UIElements {
   class ScrollerAsset {
     constructor();
@@ -24428,12 +24250,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     parentId: number;
     ruleIndex: number;
     text: string;
-  }
-}
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.Scroller, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
@@ -24455,12 +24271,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.ScrollerButton, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
-  }
-}
 declare namespace UnityEngine.Experimental.UIElements {
   class ScrollViewAsset {
     constructor();
@@ -24478,12 +24288,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     parentId: number;
     ruleIndex: number;
     text: string;
-  }
-}
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.ScrollView, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
@@ -24505,12 +24309,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.Slider, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
-  }
-}
 declare namespace UnityEngine.Experimental.UIElements {
   class TextFieldAsset {
     constructor();
@@ -24528,12 +24326,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     parentId: number;
     ruleIndex: number;
     text: string;
-  }
-}
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.TextField, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
@@ -24555,12 +24347,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.Toggle, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
-  }
-}
 declare namespace UnityEngine.Experimental.UIElements {
   class VisualContainerAsset {
     constructor();
@@ -24580,12 +24366,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     text: string;
   }
 }
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.VisualContainer, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
-  }
-}
 declare namespace UnityEngine.Experimental.UIElements {
   class IMGUIContainerAsset {
     constructor();
@@ -24603,12 +24383,6 @@ declare namespace UnityEngine.Experimental.UIElements {
     parentId: number;
     ruleIndex: number;
     text: string;
-  }
-}
-declare namespace UnityEngine.Experimental.UIElements.VisualElementAsset`1[[UnityEngine.Experimental.UIElements.IMGUIContainer, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class VisualElementAsset`1 extends UnityEngine.Experimental.UIElements.VisualElementAsset {
-    protected constructor();
-    Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
@@ -24730,45 +24504,45 @@ declare namespace UnityEngine.Experimental.UIElements {
     set_Item(index: number, value: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): void;
   }
 }
-declare namespace System.Collections.Generic.List`1[[UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, UnityEngine.UIElementsModule, Version=0.0.0 {
-  class List`1 extends System.Object {
+declare namespace System.Collections.Generic {
+  class List<T> extends System.Object {
     constructor();
     constructor(capacity: number);
     constructor(collection: any);
-    Add(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): void;
+    Add(item: T): void;
     AddRange(collection: any): void;
     AsReadOnly(): any;
-    BinarySearch(index: number, count: number, item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, comparer: any): number;
-    BinarySearch(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): number;
-    BinarySearch(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, comparer: any): number;
+    BinarySearch(index: number, count: number, item: T, comparer: any): number;
+    BinarySearch(item: T): number;
+    BinarySearch(item: T, comparer: any): number;
     Clear(): void;
-    Contains(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): boolean;
-    CopyTo(index: number, array: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase[], arrayIndex: number, count: number): void;
-    CopyTo(array: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase[]): void;
-    CopyTo(array: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase[], arrayIndex: number): void;
-    Exists(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): boolean;
-    Find(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): UnityEngine.Experimental.UIElements.EventCallbackFunctorBase;
-    FindAll(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): UnityEngine.Experimental.UIElements.EventCallbackFunctorBase[];
-    FindIndex(startIndex: number, count: number, match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
-    FindIndex(startIndex: number, match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
-    FindIndex(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
-    FindLast(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): UnityEngine.Experimental.UIElements.EventCallbackFunctorBase;
-    FindLastIndex(startIndex: number, count: number, match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
-    FindLastIndex(startIndex: number, match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
-    FindLastIndex(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
-    ForEach(action: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => void)): void;
+    Contains(item: T): boolean;
+    CopyTo(index: number, array: T[], arrayIndex: number, count: number): void;
+    CopyTo(array: T[]): void;
+    CopyTo(array: T[], arrayIndex: number): void;
+    Exists(match: ((obj: T) => boolean)): boolean;
+    Find(match: ((obj: T) => boolean)): T;
+    FindAll(match: ((obj: T) => boolean)): T[];
+    FindIndex(startIndex: number, count: number, match: ((obj: T) => boolean)): number;
+    FindIndex(startIndex: number, match: ((obj: T) => boolean)): number;
+    FindIndex(match: ((obj: T) => boolean)): number;
+    FindLast(match: ((obj: T) => boolean)): T;
+    FindLastIndex(startIndex: number, count: number, match: ((obj: T) => boolean)): number;
+    FindLastIndex(startIndex: number, match: ((obj: T) => boolean)): number;
+    FindLastIndex(match: ((obj: T) => boolean)): number;
+    ForEach(action: ((obj: T) => void)): void;
     GetEnumerator(): any;
-    GetRange(index: number, count: number): UnityEngine.Experimental.UIElements.EventCallbackFunctorBase[];
-    IndexOf(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): number;
-    IndexOf(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, index: number): number;
-    IndexOf(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, index: number, count: number): number;
-    Insert(index: number, item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): void;
+    GetRange(index: number, count: number): T[];
+    IndexOf(item: T): number;
+    IndexOf(item: T, index: number): number;
+    IndexOf(item: T, index: number, count: number): number;
+    Insert(index: number, item: T): void;
     InsertRange(index: number, collection: any): void;
-    LastIndexOf(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): number;
-    LastIndexOf(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, index: number): number;
-    LastIndexOf(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, index: number, count: number): number;
-    Remove(item: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): boolean;
-    RemoveAll(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): number;
+    LastIndexOf(item: T): number;
+    LastIndexOf(item: T, index: number): number;
+    LastIndexOf(item: T, index: number, count: number): number;
+    Remove(item: T): boolean;
+    RemoveAll(match: ((obj: T) => boolean)): number;
     RemoveAt(index: number): void;
     RemoveRange(index: number, count: number): void;
     Reverse(): void;
@@ -24776,14 +24550,14 @@ declare namespace System.Collections.Generic.List`1[[UnityEngine.Experimental.UI
     Sort(): void;
     Sort(index: number, count: number, comparer: any): void;
     Sort(comparer: any): void;
-    Sort(comparison: ((x: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase, y: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => number)): void;
-    ToArray(): UnityEngine.Experimental.UIElements.EventCallbackFunctorBase[];
+    Sort(comparison: ((x: T, y: T) => number)): void;
+    ToArray(): T[];
     TrimExcess(): void;
-    TrueForAll(match: ((obj: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase) => boolean)): boolean;
+    TrueForAll(match: ((obj: T) => boolean)): boolean;
     Capacity: number;
     readonly Count: number;
-    get_Item(index: number): UnityEngine.Experimental.UIElements.EventCallbackFunctorBase;
-    set_Item(index: number, value: UnityEngine.Experimental.UIElements.EventCallbackFunctorBase): void;
+    get_Item(index: number): T;
+    set_Item(index: number, value: T): void;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
@@ -27398,62 +27172,6 @@ declare namespace SimpleJson {
     Sort(comparison: ((x: any, y: any) => number)): void;
     ToArray(): any[];
     ToString(): string;
-    TrimExcess(): void;
-    TrueForAll(match: ((obj: any) => boolean)): boolean;
-    Capacity: number;
-    readonly Count: number;
-    get_Item(index: number): any;
-    set_Item(index: number, value: any): void;
-  }
-}
-declare namespace System.Collections.Generic.List`1[[System.Object, mscorlib, Version=4.0.0 {
-  class List`1 extends System.Object {
-    constructor();
-    constructor(capacity: number);
-    constructor(collection: any);
-    Add(item: any): void;
-    AddRange(collection: any): void;
-    AsReadOnly(): any;
-    BinarySearch(index: number, count: number, item: any, comparer: any): number;
-    BinarySearch(item: any): number;
-    BinarySearch(item: any, comparer: any): number;
-    Clear(): void;
-    Contains(item: any): boolean;
-    CopyTo(index: number, array: any[], arrayIndex: number, count: number): void;
-    CopyTo(array: any[]): void;
-    CopyTo(array: any[], arrayIndex: number): void;
-    Exists(match: ((obj: any) => boolean)): boolean;
-    Find(match: ((obj: any) => boolean)): any;
-    FindAll(match: ((obj: any) => boolean)): any[];
-    FindIndex(startIndex: number, count: number, match: ((obj: any) => boolean)): number;
-    FindIndex(startIndex: number, match: ((obj: any) => boolean)): number;
-    FindIndex(match: ((obj: any) => boolean)): number;
-    FindLast(match: ((obj: any) => boolean)): any;
-    FindLastIndex(startIndex: number, count: number, match: ((obj: any) => boolean)): number;
-    FindLastIndex(startIndex: number, match: ((obj: any) => boolean)): number;
-    FindLastIndex(match: ((obj: any) => boolean)): number;
-    ForEach(action: ((obj: any) => void)): void;
-    GetEnumerator(): any;
-    GetRange(index: number, count: number): any[];
-    IndexOf(item: any): number;
-    IndexOf(item: any, index: number): number;
-    IndexOf(item: any, index: number, count: number): number;
-    Insert(index: number, item: any): void;
-    InsertRange(index: number, collection: any): void;
-    LastIndexOf(item: any): number;
-    LastIndexOf(item: any, index: number): number;
-    LastIndexOf(item: any, index: number, count: number): number;
-    Remove(item: any): boolean;
-    RemoveAll(match: ((obj: any) => boolean)): number;
-    RemoveAt(index: number): void;
-    RemoveRange(index: number, count: number): void;
-    Reverse(): void;
-    Reverse(index: number, count: number): void;
-    Sort(): void;
-    Sort(index: number, count: number, comparer: any): void;
-    Sort(comparer: any): void;
-    Sort(comparison: ((x: any, y: any) => number)): void;
-    ToArray(): any[];
     TrimExcess(): void;
     TrueForAll(match: ((obj: any) => boolean)): boolean;
     Capacity: number;

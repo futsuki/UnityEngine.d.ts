@@ -100,13 +100,24 @@ namespace TypescriptDefinitionWriter
                     CLRTypeToTSType(r),
                     tail);
             }
+            if (t.IsGenericParameter)
+            {
+                return t.Name + tail;
+            }
             return "any" + tail;
         }
         void DefineTypeDic(Dictionary<Type, string> typedic, List<System.Type> types)
         {
             foreach (var t in types)
             {
-                typedic[t] = t.FullName.Replace("+", ".");
+                var p = t.FullName;
+                var generic1 = new System.Text.RegularExpressions.Regex(@"`1\[\[([^,\]]*), ([^\]]*)\]\]");
+                if (generic1.IsMatch(p))
+                {
+                    p = generic1.Replace(p, "<$1>");
+                }
+                p = p.Replace("+", ".");
+                typedic[t] = p;
             }
             typedic[typeof(string)] = "string";
             typedic[typeof(sbyte)] = "number";
@@ -131,8 +142,14 @@ namespace TypescriptDefinitionWriter
         }
         static string TypeToPath(Type t)
         {
-            var path = t.FullName.Replace("+", ".");
-            return path;
+            var p = t.FullName;
+            var generic1 = new System.Text.RegularExpressions.Regex(@"`1\[\[([^,\]]*), ([^,\]]*)\]\]");
+            if (generic1.IsMatch(p))
+            {
+                p = generic1.Replace(p, "<$1>");
+            }
+            p = p.Replace("+", ".");
+            return p;
         }
         static Dictionary<string, string> JSkeywords;
         static bool IsJSKeyword(string str)
@@ -144,9 +161,8 @@ namespace TypescriptDefinitionWriter
             }
             return JSkeywords.ContainsKey(str);
         }
-        public Dictionary<string, string> MakeDefineFile(Assembly[] assemblies)
+        List<Type> GetAssemblyInternalTypes(Assembly[] assemblies)
         {
-            var ret = new Dictionary<string, string>();
             var types = assemblies.Select(e => GetCLRTypes(e)).SelectMany(e => e).ToList();
             var tdic = new Dictionary<Type, bool>();
             Action<System.Type> tf = null;
@@ -162,12 +178,37 @@ namespace TypescriptDefinitionWriter
             };
             ignoredType.ToList().ForEach(e => tdic.Remove(e));
             types = tdic.Keys.Where(e => e != null && !e.IsArray).ToList();
+            return types;
+        }
+
+        public Dictionary<string, string> MakeDefineFile(Assembly[] assemblies)
+        {
+            var resultDic = new Dictionary<string, string>();
+            var types = assemblies.Select(e => GetCLRTypes(e)).SelectMany(e => e).ToList();
+            var tdic = new Dictionary<Type, bool>();
+            Action<System.Type> tf = null;
+            tf = (t) =>
+            {
+                if (t == null) return;
+                tdic[t] = true;
+                tf(t.BaseType);
+            };
+            types.ForEach(e => tf(e));
+            var ignoredType = new HashSet<Type>
+            {
+            };
+            ignoredType.ToList().ForEach(e => tdic.Remove(e));
+            types = tdic.Keys.Where(e => e != null && !e.IsArray).Select(e => e.IsGenericType ? e.GetGenericTypeDefinition() : e).Distinct().ToList();
 
             MakeTypeDic(types);
             foreach (var t in types)
             {
                 var typePath = TypeToPath(t);
                 string ns = "";
+                if (typePath.IndexOf('`') != -1)
+                {
+                    typePath = typePath.Substring(0, typePath.IndexOf('`')+1);
+                }
                 if (typePath.LastIndexOf('.') != -1)
                 {
                     ns = typePath.Substring(0, typePath.LastIndexOf('.'));
@@ -177,13 +218,37 @@ namespace TypescriptDefinitionWriter
                     sb.AppendFormat("declare namespace {0} {{\n", ns);
                 var bt = t.BaseType;
                 if (ignoredType.Contains(bt)) bt = null;
-                if (bt == null || bt.IsGenericType)
+                if (t.IsGenericTypeDefinition)
                 {
-                    sb.AppendFormat("  class {0} {{\n", t.Name);
+                    sb.AppendFormat("  class ");
+                    var tn = t.Name;
+                    tn = tn.Substring(0, tn.IndexOf('`'));
+                    sb.AppendFormat(tn);
+                    bool first = true;
+                    sb.Append("<");
+                    foreach (var pt in t.GetGenericArguments())
+                    {
+                        if (!first)
+                            sb.Append(", ");
+                        sb.Append(pt.Name);
+                    }
+                    sb.Append("> ");
+                    if (bt != null && !bt.IsGenericType)
+                    {
+                        sb.AppendFormat("extends {0} ", TypeToPath(t.BaseType));
+                    }
+                    sb.AppendLine("{");
                 }
                 else
                 {
-                    sb.AppendFormat("  class {0} extends {1} {{\n", t.Name, TypeToPath(t.BaseType));
+                    if (bt == null || bt.IsGenericType)
+                    {
+                        sb.AppendFormat("  class {0} {{\n", t.Name);
+                    }
+                    else
+                    {
+                        sb.AppendFormat("  class {0} extends {1} {{\n", t.Name, TypeToPath(t.BaseType));
+                    }
                 }
 
                 //constructors
@@ -354,9 +419,9 @@ namespace TypescriptDefinitionWriter
                 if (!string.IsNullOrEmpty(ns))
                     sb.AppendFormat("}}\n");
                 var data = sb.ToString().Replace("\n", "\r\n").Replace("\r\r", "\r");
-                ret[typePath] = data;
+                resultDic[typePath] = data;
             }
-            return ret;
+            return resultDic;
         }
     }
 }
