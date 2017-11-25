@@ -260,8 +260,8 @@ namespace TypescriptDefinitionWriter
                     BindingFlags.DeclaredOnly |
                     BindingFlags.Instance))
                 {
-                    if (t.IsValueType)
-                        continue;
+                    //if (t.IsValueType)
+                        //continue;
                     if (m.IsGenericMethod)
                         continue;
                     anyCtor = true;

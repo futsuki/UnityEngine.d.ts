@@ -464,7 +464,8 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor.AssetImporter {
   class SourceAssetIdentifier extends System.ValueType {
-    protected constructor();
+    constructor(asset: UnityEngine.Object);
+    constructor(type: any, name: string);
     name: string;
     type: any;
   }
@@ -2790,7 +2791,7 @@ declare namespace UnityEngine.GUI {
 }
 declare namespace UnityEditor.EditorGUI {
   class DisabledScope extends System.ValueType {
-    protected constructor();
+    constructor(disabled: boolean);
     Dispose(): void;
   }
 }
@@ -2964,7 +2965,7 @@ declare namespace UnityEditor.EditorGUI {
 }
 declare namespace UnityEditor.EditorGUI {
   class KnobContext extends System.ValueType {
-    protected constructor();
+    constructor(position: any, knobSize: any, currentValue: number, start: number, end: number, unit: string, backgroundColor: any, activeColor: any, showValue: boolean, id: number);
     Handle(): number;
   }
 }
@@ -3711,7 +3712,9 @@ declare namespace UnityEditor.Handles {
 }
 declare namespace UnityEditor.Handles {
   class DrawingScope extends System.ValueType {
-    protected constructor();
+    constructor(color: any);
+    constructor(matrix: any);
+    constructor(color: any, matrix: any);
     Dispose(): void;
     readonly originalColor: any;
     readonly originalMatrix: any;
@@ -3919,7 +3922,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor {
   class ExternalVersionControl extends System.ValueType {
-    protected constructor();
+    constructor(value: string);
     ToString(): string;
     static AssetServer: string;
     static AutoDetect: string;
@@ -4201,7 +4204,7 @@ declare namespace UnityEditor.Hardware {
 }
 declare namespace UnityEditor.Hardware {
   class DevDevice extends System.ValueType {
-    protected constructor();
+    constructor(id: string, name: string, type: string, module: string, state: UnityEditor.Hardware.DevDeviceState, features: UnityEditor.Hardware.DevDeviceFeatures);
     ToString(): string;
     readonly isConnected: boolean;
     static readonly none: UnityEditor.Hardware.DevDevice;
@@ -11319,7 +11322,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor.DataWatchService {
   class Spy extends System.ValueType {
-    protected constructor();
+    constructor(handleID: number, watcher: UnityEngine.Experimental.UIElements.VisualElement, onDataChanged: (() => void));
     handleID: number;
     onDataChanged: (() => void);
     watcher: UnityEngine.Experimental.UIElements.VisualElement;
@@ -11502,7 +11505,7 @@ declare namespace UnityEditorInternal.GenerateIconsWithMipLevels {
 }
 declare namespace UnityEditor {
   class GUID extends System.ValueType {
-    protected constructor();
+    constructor(hexRepresentation: string);
     CompareTo(obj: any): number;
     CompareTo(rhs: UnityEditor.GUID): number;
     Empty(): boolean;
@@ -13267,7 +13270,7 @@ declare namespace UnityEditor.Animations {
   }
 declare namespace UnityEditor.Animations {
   class PushUndoIfNeeded extends System.ValueType {
-    protected constructor();
+    constructor(pushUndo: boolean);
     DoUndo(target: UnityEngine.Object, undoOperation: string): void;
     pushUndo: boolean;
   }
@@ -14535,7 +14538,7 @@ declare namespace UnityEditor.CurveEditor {
 }
 declare namespace UnityEditor.CurveEditor {
   class KeyFrameCopy extends System.ValueType {
-    protected constructor();
+    constructor(idx: number, selectionIdx: number, source: any);
     idx: number;
     inTangent: number;
     outTangent: number;
@@ -14830,7 +14833,7 @@ declare namespace UnityEditorInternal {
 }
 declare namespace UnityEditorInternal.DopeSheetEditor {
   class DrawElement extends System.ValueType {
-    protected constructor();
+    constructor(position: any, color: any, texture: any);
     color: any;
     position: any;
     texture: any;
@@ -15941,7 +15944,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditorInternal {
   class JSONValue extends System.ValueType {
-    protected constructor();
+    constructor(o: any);
     Add(value: boolean): void;
     Add(value: number): void;
     Add(value: string): void;
@@ -16027,7 +16030,7 @@ declare namespace UnityEditor.StreamedAudioClipPreview {
 }
 declare namespace UnityEditor.StreamedAudioClipPreview {
   class ClipPreviewDetails extends System.ValueType {
-    protected constructor();
+    constructor(clip: any, isLooping: boolean, size: number, localStart: number, localLength: number);
     IsCandidateForStreaming(): boolean;
     clip: any;
     deltaStep: number;
@@ -17850,7 +17853,7 @@ declare namespace UnityEditor.DeploymentTargets {
 }
 declare namespace UnityEditor.DeploymentTargets {
   class DeploymentTargetId extends System.ValueType {
-    protected constructor();
+    constructor(id: string);
     id: string;
   }
 }
@@ -19096,7 +19099,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor {
   class PropertyGUIData extends System.ValueType {
-    protected constructor();
+    constructor(property: UnityEditor.SerializedProperty, totalPosition: any, wasBoldDefaultFont: boolean, wasEnabled: boolean, color: any);
     color: any;
     property: UnityEditor.SerializedProperty;
     totalPosition: any;
@@ -21435,7 +21438,7 @@ declare namespace UnityEditor.TextureImporterInspector {
 }
 declare namespace UnityEditor.TextureImporterInspector {
   class TextureInspectorTypeGUIProperties extends System.ValueType {
-    protected constructor();
+    constructor(_commonElements: UnityEditor.TextureImporterInspector.TextureInspectorGUIElement, _advancedElements: UnityEditor.TextureImporterInspector.TextureInspectorGUIElement, _shapeCaps: UnityEditor.TextureImporterShape);
     advancedElements: UnityEditor.TextureImporterInspector.TextureInspectorGUIElement;
     commonElements: UnityEditor.TextureImporterInspector.TextureInspectorGUIElement;
     shapeCaps: UnityEditor.TextureImporterShape;
@@ -21966,7 +21969,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor.AudioExtensionEditor {
   class ExtensionPropertyInfo extends System.ValueType {
-    protected constructor();
+    constructor(nameIn: string, defaultValueIn: number);
     defaultValue: number;
     propertyName: any;
     serializedProperty: UnityEditor.SerializedProperty;
@@ -22980,7 +22983,8 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor.EditorSettingsInspector {
   class PopupElement extends System.ValueType {
-    protected constructor();
+    constructor(content: string);
+    constructor(content: string, requiresTeamLicense: boolean);
     readonly Enabled: boolean;
     content: any;
     id: string;
@@ -23739,7 +23743,7 @@ declare namespace UnityEditor.MaterialEditor {
 }
 declare namespace UnityEditor.MaterialEditor {
   class AnimatedCheckData extends System.ValueType {
-    protected constructor();
+    constructor(property: UnityEditor.MaterialProperty, totalPosition: any, color: any);
     color: any;
     property: UnityEditor.MaterialProperty;
     totalPosition: any;
@@ -25091,7 +25095,7 @@ declare namespace UnityEditorInternal.UnityEventDrawer {
 }
 declare namespace UnityEditorInternal.UnityEventDrawer {
   class UnityEventFunction extends System.ValueType {
-    protected constructor();
+    constructor(listener: UnityEditor.SerializedProperty, target: UnityEngine.Object, method: any, mode: any);
     Assign(): void;
     Clear(): void;
   }
@@ -25222,7 +25226,10 @@ declare namespace UnityEditor.AvatarAutoMapper {
 }
 declare namespace UnityEditor.AvatarAutoMapper {
   class BoneMappingItem extends System.ValueType {
-    protected constructor();
+    constructor(parent: number, bone: number, minStep: number, maxStep: number, lengthRatio: number, dir: any, side: UnityEditor.AvatarAutoMapper.Side, optional: boolean, alwaysInclude: boolean, keywords: string[]);
+    constructor(parent: number, bone: number, minStep: number, maxStep: number, lengthRatio: number, side: UnityEditor.AvatarAutoMapper.Side, optional: boolean, alwaysInclude: boolean, keywords: string[]);
+    constructor(parent: number, bone: number, minStep: number, maxStep: number, lengthRatio: number, dir: any, side: UnityEditor.AvatarAutoMapper.Side, keywords: string[]);
+    constructor(parent: number, bone: number, minStep: number, maxStep: number, lengthRatio: number, side: UnityEditor.AvatarAutoMapper.Side, keywords: string[]);
     GetChildren(mappingData: UnityEditor.AvatarAutoMapper.BoneMappingItem[]): number[];
     alwaysInclude: boolean;
     bone: number;
@@ -25254,7 +25261,7 @@ declare namespace UnityEditor.AvatarAutoMapper {
 }
 declare namespace UnityEditor.AvatarAutoMapper {
   class QueuedBone extends System.ValueType {
-    protected constructor();
+    constructor(bone: any, level: number);
     bone: any;
     level: number;
   }
@@ -25268,7 +25275,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor.AvatarBipedMapper {
   class BipedBone extends System.ValueType {
-    protected constructor();
+    constructor(name: string, index: number);
     index: number;
     name: string;
   }
@@ -25721,7 +25728,7 @@ declare namespace UnityEditor.PlayerSettingsEditor {
 }
 declare namespace UnityEditor.PlayerSettingsEditor {
   class ChangeGraphicsApiAction extends System.ValueType {
-    protected constructor();
+    constructor(doChange: boolean, doReload: boolean);
     changeList: boolean;
     reloadGfx: boolean;
   }
@@ -26603,7 +26610,7 @@ declare namespace UnityEditor.Modules {
 }
 declare namespace UnityEditor.Modules {
   class RemoteAddress extends System.ValueType {
-    protected constructor();
+    constructor(ip: string, port: number);
     ip: string;
     port: number;
   }
@@ -29297,7 +29304,7 @@ declare namespace UnityEditor.SceneView {
 }
 declare namespace UnityEditor.SceneView {
   class CursorRect extends System.ValueType {
-    protected constructor();
+    constructor(rect: any, cursor: UnityEditor.MouseCursor);
     cursor: UnityEditor.MouseCursor;
     rect: any;
   }
@@ -29693,7 +29700,8 @@ declare namespace UnityEditor.Scripting {
 }
 declare namespace UnityEditor.Scripting {
   class MonoIsland extends System.ValueType {
-    protected constructor();
+    constructor(target: UnityEditor.BuildTarget, api_compatibility_level: UnityEditor.ApiCompatibilityLevel, files: string[], references: string[], defines: string[], output: string);
+    constructor(target: UnityEditor.BuildTarget, editor: boolean, development_player: boolean, api_compatibility_level: UnityEditor.ApiCompatibilityLevel, files: string[], references: string[], defines: string[], output: string);
     GetExtensionOfSourceFiles(): string;
     _api_compatibility_level: UnityEditor.ApiCompatibilityLevel;
     _defines: string[];
@@ -29924,7 +29932,7 @@ declare namespace UnityEditor.Scripting.Compilers {
 }
 declare namespace UnityEditor.Scripting.Compilers {
   class UWPExtensionSDK extends System.ValueType {
-    protected constructor();
+    constructor(name: string, version: string, manifestPath: string);
     ManifestPath: string;
     Name: string;
     Version: string;
@@ -30043,7 +30051,7 @@ declare namespace UnityEditor.Scripting.ScriptCompilation {
 }
 declare namespace UnityEditor.Scripting.ScriptCompilation {
   class CustomScriptAssemblyPlatform extends System.ValueType {
-    protected constructor();
+    constructor(name: string, buildTarget: UnityEditor.BuildTarget);
     BuildTarget: UnityEditor.BuildTarget;
     Name: string;
   }
@@ -31026,7 +31034,7 @@ declare namespace UnityEditor.Sprites.PackerWindow {
 }
 declare namespace UnityEditor.Sprites.PackerWindow {
   class Edge extends System.ValueType {
-    protected constructor();
+    constructor(a: number, b: number);
     Equals(obj: any): boolean;
     GetHashCode(): number;
     v0: number;
@@ -31134,7 +31142,7 @@ declare namespace UnityEditor.StyleSheets {
 }
 declare namespace UnityEditor.StyleSheets.StyleSheetBuilder {
   class ComplexSelectorScope extends System.ValueType {
-    protected constructor();
+    constructor(builder: UnityEditor.StyleSheets.StyleSheetBuilder);
     Dispose(): void;
   }
 }
@@ -31192,7 +31200,7 @@ declare namespace UnityEditor.StyleSheets {
 }
 declare namespace UnityEditor.StyleSheets.StyleSheetImportErrors {
   class Error extends System.ValueType {
-    protected constructor();
+    constructor(error: UnityEditor.StyleSheets.StyleSheetImportErrorType, code: UnityEditor.StyleSheets.StyleSheetImportErrorCode, context: string);
     ToString(): string;
     code: UnityEditor.StyleSheets.StyleSheetImportErrorCode;
     context: string;
@@ -32014,7 +32022,7 @@ declare namespace UnityEditor.ExpressionEvaluator {
 }
 declare namespace UnityEditor.ExpressionEvaluator {
   class Operator extends System.ValueType {
-    protected constructor();
+    constructor(character: any, presedence: number, inputs: number, associativity: UnityEditor.ExpressionEvaluator.Associativity);
     associativity: UnityEditor.ExpressionEvaluator.Associativity;
     character: any;
     inputs: number;
@@ -33878,7 +33886,7 @@ declare namespace UnityEditor.TrackablePropertyDrawer {
 }
 declare namespace UnityEditor.TrackablePropertyDrawer {
   class PropertySetter extends System.ValueType {
-    protected constructor();
+    constructor(p: UnityEditor.SerializedProperty, target: any, fp: string);
     Assign(): void;
     Clear(): void;
   }
@@ -33918,7 +33926,7 @@ declare namespace UnityEditor {
 }
 declare namespace UnityEditor.AndroidPluginImporterExtension {
   class PluginInfo extends System.ValueType {
-    protected constructor();
+    constructor(buildTargetName: string, plugin: UnityEditor.PluginImporter);
     ConflictsWith(other: UnityEditor.AndroidPluginImporterExtension.PluginInfo): boolean;
     assetName: string;
     assetPath: string;
@@ -34574,7 +34582,7 @@ declare namespace UnityEditor.Android {
 }
 declare namespace UnityEditor.Android.GradleInvokationException {
   class GradleError extends System.ValueType {
-    protected constructor();
+    constructor(regex: string, msg: string, id: string);
     id: string;
     message: string;
     regex: any;
@@ -35345,7 +35353,7 @@ declare namespace UnityEditor.Graphs.Explore {
 }
 declare namespace UnityEditor.Graphs.Explore {
   class SearchEvent extends System.ValueType {
-    protected constructor();
+    constructor(n: UnityEditor.Graphs.Node, e: UnityEditor.Graphs.Edge);
     edge: UnityEditor.Graphs.Edge;
     node: UnityEditor.Graphs.Node;
   }
@@ -36613,7 +36621,7 @@ declare namespace UnityEditor.iOS.Xcode {
 }
 declare namespace UnityEditor.iOS.Xcode.PBXCapabilityType {
   class TargetCapabilityPair extends System.ValueType {
-    protected constructor();
+    constructor(guid: string, type: UnityEditor.iOS.Xcode.PBXCapabilityType);
     capability: UnityEditor.iOS.Xcode.PBXCapabilityType;
     targetGuid: string;
   }
@@ -40103,7 +40111,7 @@ declare namespace UnityEditor.Timeline {
 }
 declare namespace UnityEditor.Timeline {
   class Edge extends System.ValueType {
-    protected constructor();
+    constructor(edgeTime: number);
     time: number;
   }
 }
@@ -40487,13 +40495,13 @@ declare namespace UnityEditor.Timeline {
 }
 declare namespace UnityEditor.Timeline {
   class GUIColorOverride extends System.ValueType {
-    protected constructor();
+    constructor(newColor: any);
     Dispose(): void;
   }
 }
 declare namespace UnityEditor {
   class GUIViewportScope extends System.ValueType {
-    protected constructor();
+    constructor(position: any);
     Dispose(): void;
   }
 }
@@ -40803,7 +40811,7 @@ declare namespace UnityEditor.Timeline {
 }
 declare namespace UnityEditor.Timeline {
   class TrackBindingValidationResult extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEditor.Timeline.TimelineTrackBindingState, bindName?: string);
     IsValid(): boolean;
     readonly bindingName: string;
     readonly bindingState: UnityEditor.Timeline.TimelineTrackBindingState;
@@ -42152,7 +42160,7 @@ declare namespace UnityEditor.UIAutomation.Easing {
 }
 declare namespace UnityEditor.UIAutomation {
   class Wait extends System.ValueType {
-    protected constructor();
+    constructor(seconds: number);
     static Seconds(seconds: number): void;
     readonly keepWaiting: boolean;
     static readonly waiting: boolean;
@@ -42244,7 +42252,7 @@ declare namespace UnityEditor.WebGL {
 }
 declare namespace UnityEditor.WebGL.WebGlBuildPostprocessor {
   class DataFile extends System.ValueType {
-    protected constructor();
+    constructor(path: string, internalPath: string);
     internalPath: number[];
     length: number;
     path: string;

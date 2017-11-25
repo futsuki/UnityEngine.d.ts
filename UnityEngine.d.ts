@@ -968,7 +968,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class MatchTargetWeightMask extends System.ValueType {
-    protected constructor();
+    constructor(positionXYZWeight: UnityEngine.Vector3, rotationWeight: number);
     positionXYZWeight: UnityEngine.Vector3;
     rotationWeight: number;
   }
@@ -2580,7 +2580,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class ClothSphereColliderPair extends System.ValueType {
-    protected constructor();
+    constructor(a: UnityEngine.SphereCollider);
+    constructor(a: UnityEngine.SphereCollider, b: UnityEngine.SphereCollider);
     first: UnityEngine.SphereCollider;
     second: UnityEngine.SphereCollider;
   }
@@ -3532,7 +3533,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class BoundingSphere extends System.ValueType {
-    protected constructor();
+    constructor(pos: UnityEngine.Vector3, rad: number);
+    constructor(packedSphere: UnityEngine.Vector4);
     position: UnityEngine.Vector3;
     radius: number;
   }
@@ -3809,14 +3811,14 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class GradientColorKey extends System.ValueType {
-    protected constructor();
+    constructor(col: UnityEngine.Color, time: number);
     color: UnityEngine.Color;
     time: number;
   }
 }
 declare namespace UnityEngine {
   class GradientAlphaKey extends System.ValueType {
-    protected constructor();
+    constructor(alpha: number, time: number);
     alpha: number;
     time: number;
   }
@@ -4852,7 +4854,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class LOD extends System.ValueType {
-    protected constructor();
+    constructor(screenRelativeTransitionHeight: number, renderers: UnityEngine.Renderer[]);
     fadeTransitionWidth: number;
     renderers: UnityEngine.Renderer[];
     screenRelativeTransitionHeight: number;
@@ -4877,7 +4879,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Vector3 extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number, z: number);
+    constructor(x: number, y: number);
     static Angle(from: UnityEngine.Vector3, to: UnityEngine.Vector3): number;
     static AngleBetween(from: UnityEngine.Vector3, to: UnityEngine.Vector3): number;
     static ClampMagnitude(vector: UnityEngine.Vector3, maxLength: number): UnityEngine.Vector3;
@@ -4937,7 +4940,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Quaternion extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number, z: number, w: number);
     static Angle(a: UnityEngine.Quaternion, b: UnityEngine.Quaternion): number;
     static AngleAxis(angle: number, axis: UnityEngine.Vector3): UnityEngine.Quaternion;
     static AxisAngle(axis: UnityEngine.Vector3, angle: number): UnityEngine.Quaternion;
@@ -4999,7 +5002,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Matrix4x4 extends System.ValueType {
-    protected constructor();
+    constructor(column0: UnityEngine.Vector4, column1: UnityEngine.Vector4, column2: UnityEngine.Vector4, column3: UnityEngine.Vector4);
     static Determinant(m: UnityEngine.Matrix4x4): number;
     Equals(other: any): boolean;
     static Frustum(left: number, right: number, bottom: number, top: number, zNear: number, zFar: number): UnityEngine.Matrix4x4;
@@ -5059,7 +5062,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Bounds extends System.ValueType {
-    protected constructor();
+    constructor(center: UnityEngine.Vector3, size: UnityEngine.Vector3);
     ClosestPoint(point: UnityEngine.Vector3): UnityEngine.Vector3;
     Contains(point: UnityEngine.Vector3): boolean;
     Encapsulate(bounds: UnityEngine.Bounds): void;
@@ -5155,7 +5158,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Keyframe extends System.ValueType {
-    protected constructor();
+    constructor(time: number, value: number);
+    constructor(time: number, value: number, inTangent: number, outTangent: number);
     inTangent: number;
     outTangent: number;
     tangentMode: number;
@@ -5400,7 +5404,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class NetworkPlayer extends System.ValueType {
-    protected constructor();
+    constructor(ip: string, port: number);
     Equals(other: any): boolean;
     GetHashCode(): number;
     ToString(): string;
@@ -6074,7 +6078,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine.ShaderVariantCollection {
   class ShaderVariant extends System.ValueType {
-    protected constructor();
+    constructor(shader: UnityEngine.Shader, passType: UnityEngine.Rendering.PassType, keywords: string[]);
     keywords: string[];
     passType: UnityEngine.Rendering.PassType;
     shader: UnityEngine.Shader;
@@ -6642,7 +6646,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Hash128 extends System.ValueType {
-    protected constructor();
+    constructor(u32_0: number, u32_1: number, u32_2: number, u32_3: number);
     Equals(obj: any): boolean;
     GetHashCode(): number;
     static Parse(hashString: string): UnityEngine.Hash128;
@@ -7176,12 +7180,12 @@ declare namespace UnityEngine.SceneManagement {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class ShaderPassName extends System.ValueType {
-    protected constructor();
+    constructor(name: string);
   }
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class DrawRendererSettings extends System.ValueType {
-    protected constructor();
+    constructor(cullResults: UnityEngine.Experimental.Rendering.CullResults, camera: UnityEngine.Camera, shaderPassName: UnityEngine.Experimental.Rendering.ShaderPassName);
     flags: UnityEngine.Experimental.Rendering.DrawRendererFlags;
     inputFilter: UnityEngine.Experimental.Rendering.InputFilter;
     rendererConfiguration: UnityEngine.Experimental.Rendering.RendererConfiguration;
@@ -7464,7 +7468,7 @@ declare namespace UnityEngine.WSA {
 }
 declare namespace UnityEngine.WSA {
   class SecondaryTileData extends System.ValueType {
-    protected constructor();
+    constructor(id: string, displayName: string);
     backgroundColor: UnityEngine.Color32;
     "arguments": string;
     backgroundColorSet: boolean;
@@ -8249,7 +8253,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class BoundsInt extends System.ValueType {
-    protected constructor();
+    constructor(xMin: number, yMin: number, zMin: number, sizeX: number, sizeY: number, sizeZ: number);
+    constructor(position: UnityEngine.Vector3Int, size: UnityEngine.Vector3Int);
     ClampToBounds(bounds: UnityEngine.BoundsInt): void;
     Contains(position: UnityEngine.Vector3Int): boolean;
     Equals(other: any): boolean;
@@ -8275,7 +8280,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine.BoundsInt {
   class PositionEnumerator extends System.ValueType {
-    protected constructor();
+    constructor(min: UnityEngine.Vector3Int, max: UnityEngine.Vector3Int);
     GetEnumerator(): UnityEngine.BoundsInt.PositionEnumerator;
     MoveNext(): boolean;
     Reset(): void;
@@ -8284,7 +8289,7 @@ declare namespace UnityEngine.BoundsInt {
 }
 declare namespace UnityEngine {
   class CachedAssetBundle extends System.ValueType {
-    protected constructor();
+    constructor(name: string, hash: UnityEngine.Hash128);
     hash: UnityEngine.Hash128;
     name: string;
   }
@@ -8296,7 +8301,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Color extends System.ValueType {
-    protected constructor();
+    constructor(r: number, g: number, b: number, a: number);
+    constructor(r: number, g: number, b: number);
     Equals(other: any): boolean;
     GetHashCode(): number;
     static HSVToRGB(H: number, S: number, V: number): UnityEngine.Color;
@@ -8331,7 +8337,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Color32 extends System.ValueType {
-    protected constructor();
+    constructor(r: number, g: number, b: number, a: number);
     static Lerp(a: UnityEngine.Color32, b: UnityEngine.Color32, t: number): UnityEngine.Color32;
     static LerpUnclamped(a: UnityEngine.Color32, b: UnityEngine.Color32, t: number): UnityEngine.Color32;
     ToString(): string;
@@ -8397,7 +8403,14 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class RenderTargetSetup extends System.ValueType {
-    protected constructor();
+    constructor(color: UnityEngine.RenderBuffer[], depth: UnityEngine.RenderBuffer, mip: number, face: UnityEngine.CubemapFace, colorLoad: UnityEngine.Rendering.RenderBufferLoadAction[], colorStore: UnityEngine.Rendering.RenderBufferStoreAction[], depthLoad: UnityEngine.Rendering.RenderBufferLoadAction, depthStore: UnityEngine.Rendering.RenderBufferStoreAction);
+    constructor(color: UnityEngine.RenderBuffer, depth: UnityEngine.RenderBuffer);
+    constructor(color: UnityEngine.RenderBuffer, depth: UnityEngine.RenderBuffer, mipLevel: number);
+    constructor(color: UnityEngine.RenderBuffer, depth: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace);
+    constructor(color: UnityEngine.RenderBuffer, depth: UnityEngine.RenderBuffer, mipLevel: number, face: UnityEngine.CubemapFace, depthSlice: number);
+    constructor(color: UnityEngine.RenderBuffer[], depth: UnityEngine.RenderBuffer);
+    constructor(color: UnityEngine.RenderBuffer[], depth: UnityEngine.RenderBuffer, mipLevel: number);
+    constructor(color: UnityEngine.RenderBuffer[], depth: UnityEngine.RenderBuffer, mip: number, face: UnityEngine.CubemapFace);
     color: UnityEngine.RenderBuffer[];
     colorLoad: UnityEngine.Rendering.RenderBufferLoadAction[];
     colorStore: UnityEngine.Rendering.RenderBufferStoreAction[];
@@ -9268,7 +9281,14 @@ declare namespace UnityEngine.Rendering {
 }
 declare namespace UnityEngine.Rendering {
   class RenderTargetIdentifier extends System.ValueType {
-    protected constructor();
+    constructor(type: UnityEngine.Rendering.BuiltinRenderTextureType);
+    constructor(name: string);
+    constructor(name: string, mipLevel?: number, cubeFace?: UnityEngine.CubemapFace, depthSlice?: number);
+    constructor(nameID: number);
+    constructor(nameID: number, mipLevel?: number, cubeFace?: UnityEngine.CubemapFace, depthSlice?: number);
+    constructor(tex: UnityEngine.Texture);
+    constructor(tex: UnityEngine.Texture, mipLevel?: number, cubeFace?: UnityEngine.CubemapFace, depthSlice?: number);
+    constructor(buf: UnityEngine.RenderBuffer, mipLevel?: number, cubeFace?: UnityEngine.CubemapFace, depthSlice?: number);
     Equals(obj: any): boolean;
     Equals(rhs: UnityEngine.Rendering.RenderTargetIdentifier): boolean;
     GetHashCode(): number;
@@ -9632,7 +9652,7 @@ declare namespace UnityEngine {
     static DownArrow: UnityEngine.KeyCode;
     static E: UnityEngine.KeyCode;
     static End: UnityEngine.KeyCode;
-    //static Equals: UnityEngine.KeyCode;
+    static Equals: UnityEngine.KeyCode;
     static Escape: UnityEngine.KeyCode;
     static Exclaim: UnityEngine.KeyCode;
     static F: UnityEngine.KeyCode;
@@ -9992,7 +10012,9 @@ declare namespace UnityEngine.SendMouseEvents {
 }
 declare namespace UnityEngine {
   class Plane extends System.ValueType {
-    protected constructor();
+    constructor(inNormal: UnityEngine.Vector3, inPoint: UnityEngine.Vector3);
+    constructor(inNormal: UnityEngine.Vector3, d: number);
+    constructor(a: UnityEngine.Vector3, b: UnityEngine.Vector3, c: UnityEngine.Vector3);
     ClosestPointOnPlane(point: UnityEngine.Vector3): UnityEngine.Vector3;
     Flip(): void;
     GetDistanceToPoint(point: UnityEngine.Vector3): number;
@@ -10012,7 +10034,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Pose extends System.ValueType {
-    protected constructor();
+    constructor(position: UnityEngine.Vector3, rotation: UnityEngine.Quaternion);
     GetTransformedBy(lhs: UnityEngine.Pose): UnityEngine.Pose;
     GetTransformedBy(lhs: UnityEngine.Transform): UnityEngine.Pose;
     ToString(): string;
@@ -10106,7 +10128,9 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class PropertyName extends System.ValueType {
-    protected constructor();
+    constructor(name: string);
+    constructor(other: UnityEngine.PropertyName);
+    constructor(id: number);
     Equals(other: any): boolean;
     GetHashCode(): number;
     static IsNullOrEmpty(prop: UnityEngine.PropertyName): boolean;
@@ -10115,7 +10139,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class RangeInt extends System.ValueType {
-    protected constructor();
+    constructor(start: number, length: number);
     readonly end: number;
     length: number;
     start: number;
@@ -10123,7 +10147,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Ray extends System.ValueType {
-    protected constructor();
+    constructor(origin: UnityEngine.Vector3, direction: UnityEngine.Vector3);
     GetPoint(distance: number): UnityEngine.Vector3;
     ToString(): string;
     ToString(format: string): string;
@@ -10133,7 +10157,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Ray2D extends System.ValueType {
-    protected constructor();
+    constructor(origin: UnityEngine.Vector2, direction: UnityEngine.Vector2);
     GetPoint(distance: number): UnityEngine.Vector2;
     ToString(): string;
     ToString(format: string): string;
@@ -10143,7 +10167,9 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Rect extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number, width: number, height: number);
+    constructor(position: UnityEngine.Vector2, size: UnityEngine.Vector2);
+    constructor(source: UnityEngine.Rect);
     Contains(point: UnityEngine.Vector2): boolean;
     Contains(point: UnityEngine.Vector3): boolean;
     Contains(point: UnityEngine.Vector3, allowInverse: boolean): boolean;
@@ -10179,7 +10205,8 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class RectInt extends System.ValueType {
-    protected constructor();
+    constructor(xMin: number, yMin: number, width: number, height: number);
+    constructor(position: UnityEngine.Vector2Int, size: UnityEngine.Vector2Int);
     ClampToBounds(bounds: UnityEngine.RectInt): void;
     Contains(position: UnityEngine.Vector2Int): boolean;
     SetMinMax(minPosition: UnityEngine.Vector2Int, maxPosition: UnityEngine.Vector2Int): void;
@@ -10202,7 +10229,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine.RectInt {
   class PositionEnumerator extends System.ValueType {
-    protected constructor();
+    constructor(min: UnityEngine.Vector2Int, max: UnityEngine.Vector2Int);
     GetEnumerator(): UnityEngine.RectInt.PositionEnumerator;
     MoveNext(): boolean;
     Reset(): void;
@@ -10322,7 +10349,9 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class RenderTextureDescriptor extends System.ValueType {
-    protected constructor();
+    constructor(width: number, height: number);
+    constructor(width: number, height: number, colorFormat: UnityEngine.RenderTextureFormat);
+    constructor(width: number, height: number, colorFormat: UnityEngine.RenderTextureFormat, depthBufferBits: number);
     autoGenerateMips: boolean;
     colorFormat: UnityEngine.RenderTextureFormat;
     depthBufferBits: number;
@@ -10475,7 +10504,7 @@ declare namespace UnityEngine.Events {
   }
 }
 declare namespace UnityEngine.Events {
-  class UnityEvent0 extends UnityEngine.Events.UnityEventBase {
+  class UnityEvent extends UnityEngine.Events.UnityEventBase {
     constructor();
     AddListener(call: (() => void)): void;
     Invoke(): void;
@@ -10511,13 +10540,13 @@ declare namespace System.Threading {
 }
 declare namespace UnityEngine.UnitySynchronizationContext {
   class WorkRequest extends System.ValueType {
-    protected constructor();
+    constructor(callback: ((state: any) => void), state: any, waitHandle?: any);
     Invoke(): void;
   }
 }
 declare namespace UnityEngine {
   class Vector2 extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number);
     static Angle(from: UnityEngine.Vector2, to: UnityEngine.Vector2): number;
     static ClampMagnitude(vector: UnityEngine.Vector2, maxLength: number): UnityEngine.Vector2;
     static Distance(a: UnityEngine.Vector2, b: UnityEngine.Vector2): number;
@@ -10560,7 +10589,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Vector2Int extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number);
     static CeilToInt(v: UnityEngine.Vector2): UnityEngine.Vector2Int;
     Clamp(min: UnityEngine.Vector2Int, max: UnityEngine.Vector2Int): void;
     static Distance(a: UnityEngine.Vector2Int, b: UnityEngine.Vector2Int): number;
@@ -10590,7 +10619,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Vector3Int extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number, z: number);
     static CeilToInt(v: UnityEngine.Vector3): UnityEngine.Vector3Int;
     Clamp(min: UnityEngine.Vector3Int, max: UnityEngine.Vector3Int): void;
     static Distance(a: UnityEngine.Vector3Int, b: UnityEngine.Vector3Int): number;
@@ -10622,7 +10651,9 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class Vector4 extends System.ValueType {
-    protected constructor();
+    constructor(x: number, y: number, z: number, w: number);
+    constructor(x: number, y: number, z: number);
+    constructor(x: number, y: number);
     static Distance(a: UnityEngine.Vector4, b: UnityEngine.Vector4): number;
     static Dot(a: UnityEngine.Vector4, b: UnityEngine.Vector4): number;
     Equals(other: any): boolean;
@@ -11725,7 +11756,7 @@ declare namespace UnityEngine.Networking.PlayerConnection.PlayerEditorConnection
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class BlendState extends System.ValueType {
-    protected constructor();
+    constructor(separateMRTBlend?: boolean, alphaToMask?: boolean);
     alphaToMask: boolean;
     blendState0: UnityEngine.Experimental.Rendering.RenderTargetBlendState;
     blendState1: UnityEngine.Experimental.Rendering.RenderTargetBlendState;
@@ -11776,7 +11807,7 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class DepthState extends System.ValueType {
-    protected constructor();
+    constructor(writeEnabled?: boolean, compareFunction?: UnityEngine.Rendering.CompareFunction);
     compareFunction: UnityEngine.Rendering.CompareFunction;
     static readonly Default: UnityEngine.Experimental.Rendering.DepthState;
     writeEnabled: boolean;
@@ -11802,7 +11833,7 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class DrawShadowsSettings extends System.ValueType {
-    protected constructor();
+    constructor(cullResults: UnityEngine.Experimental.Rendering.CullResults, lightIndex: number);
     lightIndex: number;
     splitData: UnityEngine.Experimental.Rendering.ShadowSplitData;
   }
@@ -11845,7 +11876,7 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class RasterState extends System.ValueType {
-    protected constructor();
+    constructor(cullingMode?: UnityEngine.Rendering.CullMode, offsetUnits?: number, offsetFactor?: number, depthClip?: boolean);
     cullingMode: UnityEngine.Rendering.CullMode;
     depthClip: boolean;
     offsetFactor: number;
@@ -11909,7 +11940,7 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class RenderStateBlock extends System.ValueType {
-    protected constructor();
+    constructor(mask: UnityEngine.Experimental.Rendering.RenderStateMask);
     blendState: UnityEngine.Experimental.Rendering.BlendState;
     depthState: UnityEngine.Experimental.Rendering.DepthState;
     mask: UnityEngine.Experimental.Rendering.RenderStateMask;
@@ -11920,7 +11951,8 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class RenderStateMapping extends System.ValueType {
-    protected constructor();
+    constructor(renderType: string, stateBlock: UnityEngine.Experimental.Rendering.RenderStateBlock);
+    constructor(stateBlock: UnityEngine.Experimental.Rendering.RenderStateBlock);
     renderType: string;
     stateBlock: UnityEngine.Experimental.Rendering.RenderStateBlock;
   }
@@ -11939,7 +11971,7 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class RenderTargetBlendState extends System.ValueType {
-    protected constructor();
+    constructor(writeMask?: UnityEngine.Rendering.ColorWriteMask, sourceColorBlendMode?: UnityEngine.Rendering.BlendMode, destinationColorBlendMode?: UnityEngine.Rendering.BlendMode, sourceAlphaBlendMode?: UnityEngine.Rendering.BlendMode, destinationAlphaBlendMode?: UnityEngine.Rendering.BlendMode, colorBlendOperation?: UnityEngine.Rendering.BlendOp, alphaBlendOperation?: UnityEngine.Rendering.BlendOp);
     alphaBlendOperation: UnityEngine.Rendering.BlendOp;
     colorBlendOperation: UnityEngine.Rendering.BlendOp;
     static readonly Default: UnityEngine.Experimental.Rendering.RenderTargetBlendState;
@@ -11976,7 +12008,8 @@ declare namespace UnityEngine.Experimental.Rendering {
 }
 declare namespace UnityEngine.Experimental.Rendering {
   class StencilState extends System.ValueType {
-    protected constructor();
+    constructor(enabled?: boolean, readMask?: number, writeMask?: number, compareFunction?: UnityEngine.Rendering.CompareFunction, passOperation?: UnityEngine.Rendering.StencilOp, failOperation?: UnityEngine.Rendering.StencilOp, zFailOperation?: UnityEngine.Rendering.StencilOp);
+    constructor(enabled: boolean, readMask: number, writeMask: number, compareFunctionFront: UnityEngine.Rendering.CompareFunction, passOperationFront: UnityEngine.Rendering.StencilOp, failOperationFront: UnityEngine.Rendering.StencilOp, zFailOperationFront: UnityEngine.Rendering.StencilOp, compareFunctionBack: UnityEngine.Rendering.CompareFunction, passOperationBack: UnityEngine.Rendering.StencilOp, failOperationBack: UnityEngine.Rendering.StencilOp, zFailOperationBack: UnityEngine.Rendering.StencilOp);
     compareFunctionBack: UnityEngine.Rendering.CompareFunction;
     compareFunctionFront: UnityEngine.Rendering.CompareFunction;
     static readonly Default: UnityEngine.Experimental.Rendering.StencilState;
@@ -12966,7 +12999,7 @@ declare namespace UnityEngine.SocialPlatforms {
 }
 declare namespace UnityEngine.SocialPlatforms {
   class Range extends System.ValueType {
-    protected constructor();
+    constructor(fromValue: number, valueCount: number);
     count: number;
     from: number;
   }
@@ -14309,7 +14342,7 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine {
   class SliderHandler extends System.ValueType {
-    protected constructor();
+    constructor(position: UnityEngine.Rect, currentValue: number, size: number, start: number, end: number, slider: UnityEngine.GUIStyle, thumb: UnityEngine.GUIStyle, horiz: boolean, id: number);
     Handle(): number;
   }
 }
@@ -14588,7 +14621,7 @@ declare namespace UnityEngineInternal.Input {
 }
 declare namespace UnityEngineInternal.Input {
   class NativeInputEvent extends System.ValueType {
-    protected constructor();
+    constructor(type: UnityEngineInternal.Input.NativeInputEventType, sizeInBytes: number, deviceId: number, time: number);
     deviceId: number;
     sizeInBytes: number;
     time: number;
@@ -14731,7 +14764,7 @@ declare namespace UnityEngine.Networking {
 }
 declare namespace UnityEngine.Networking {
   class ChannelPacket extends System.ValueType {
-    protected constructor();
+    constructor(packetSize: number, isReliable: boolean);
     HasSpace(numBytes: number): boolean;
     IsEmpty(): boolean;
     Reset(): void;
@@ -15474,7 +15507,7 @@ declare namespace UnityEngine.Networking {
 }
 declare namespace UnityEngine.Networking {
   class NetworkInstanceId extends System.ValueType {
-    protected constructor();
+    constructor(value: number);
     Equals(obj: any): boolean;
     GetHashCode(): number;
     IsEmpty(): boolean;
@@ -15803,7 +15836,7 @@ declare namespace UnityEngine.Networking {
 }
 declare namespace UnityEngine.Networking {
   class NetworkSceneId extends System.ValueType {
-    protected constructor();
+    constructor(value: number);
     Equals(obj: any): boolean;
     GetHashCode(): number;
     IsEmpty(): boolean;
@@ -16882,7 +16915,11 @@ declare namespace UnityEngine {
 }
 declare namespace UnityEngine.ParticleSystem {
   class Burst extends System.ValueType {
-    protected constructor();
+    constructor(_time: number, _count: number);
+    constructor(_time: number, _minCount: number, _maxCount: number);
+    constructor(_time: number, _minCount: number, _maxCount: number, _cycleCount: number, _repeatInterval: number);
+    constructor(_time: number, _count: UnityEngine.ParticleSystem.MinMaxCurve);
+    constructor(_time: number, _count: UnityEngine.ParticleSystem.MinMaxCurve, _cycleCount: number, _repeatInterval: number);
     count: UnityEngine.ParticleSystem.MinMaxCurve;
     cycleCount: number;
     maxCount: number;
@@ -16893,7 +16930,10 @@ declare namespace UnityEngine.ParticleSystem {
 }
 declare namespace UnityEngine.ParticleSystem {
   class MinMaxCurve extends System.ValueType {
-    protected constructor();
+    constructor(constant: number);
+    constructor(multiplier: number, curve: UnityEngine.AnimationCurve);
+    constructor(multiplier: number, min: UnityEngine.AnimationCurve, max: UnityEngine.AnimationCurve);
+    constructor(min: number, max: number);
     Evaluate(time: number): number;
     Evaluate(time: number, lerpFactor: number): number;
     constant: number;
@@ -16909,7 +16949,10 @@ declare namespace UnityEngine.ParticleSystem {
 }
 declare namespace UnityEngine.ParticleSystem {
   class MinMaxGradient extends System.ValueType {
-    protected constructor();
+    constructor(color: UnityEngine.Color);
+    constructor(gradient: UnityEngine.Gradient);
+    constructor(min: UnityEngine.Color, max: UnityEngine.Color);
+    constructor(min: UnityEngine.Gradient, max: UnityEngine.Gradient);
     Evaluate(time: number): UnityEngine.Color;
     Evaluate(time: number, lerpFactor: number): UnityEngine.Color;
     color: UnityEngine.Color;
@@ -20767,7 +20810,11 @@ declare namespace UnityEngine.Timeline {
 }
 declare namespace UnityEngine.Timeline {
   class DiscreteTime extends System.ValueType {
-    protected constructor();
+    constructor(time: UnityEngine.Timeline.DiscreteTime);
+    constructor(time: number);
+    constructor(time: number);
+    constructor(time: number);
+    constructor(frame: number, fps: number);
     CompareTo(obj: any): number;
     Equals(obj: any): boolean;
     Equals(other: UnityEngine.Timeline.DiscreteTime): boolean;
@@ -21989,7 +22036,7 @@ declare namespace UnityEngine.UI {
   }
 }
 declare namespace UnityEngine.UI.Button {
-  class ButtonClickedEvent extends UnityEngine.Events.UnityEvent0 {
+  class ButtonClickedEvent extends UnityEngine.Events.UnityEvent {
     constructor();
   }
 }
@@ -23475,7 +23522,7 @@ declare namespace UnityEngine.Experimental.UIElements.ClampedDragger {
 }
 declare namespace UnityEngine.Experimental.UIElements {
   class MouseEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(pos: UnityEngine.Vector2, clickCount: number, modifiers: UnityEngine.EventModifiers);
     readonly clickCount: number;
     readonly mousePosition: UnityEngine.Vector2;
     readonly shift: boolean;
@@ -23483,7 +23530,7 @@ declare namespace UnityEngine.Experimental.UIElements {
 }
 declare namespace UnityEngine.Experimental.UIElements {
   class KeyboardEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(character: any, keyCode: UnityEngine.KeyCode, modifiers: UnityEngine.EventModifiers);
     ToEvent(): UnityEngine.Event;
     readonly alt: boolean;
     readonly character: any;
@@ -23893,7 +23940,7 @@ declare namespace UnityEngine.Experimental.UIElements.Slider {
 }
 declare namespace UnityEngine.Experimental.UIElements {
   class Spacing extends System.ValueType {
-    protected constructor();
+    constructor(left: number, top: number, right: number, bottom: number);
     readonly horizontal: number;
     readonly vertical: number;
     bottom: number;
@@ -24066,15 +24113,15 @@ declare namespace UnityEngine.Experimental.UIElements {
   class UQueryExtensions extends System.Object {
     protected constructor();
     static Q(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, className?: string): UnityEngine.Experimental.UIElements.VisualElement;
-    static Q(e: UnityEngine.Experimental.UIElements.VisualElement, name: string, classes: string[]): UnityEngine.Experimental.UIElements.VisualElement;
+    static Q(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, classes: string[]): UnityEngine.Experimental.UIElements.VisualElement;
     static Query(e: UnityEngine.Experimental.UIElements.VisualElement): any;
     static Query(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, className?: string): any;
-    static Query(e: UnityEngine.Experimental.UIElements.VisualElement, name: string, classes: string[]): any;
+    static Query(e: UnityEngine.Experimental.UIElements.VisualElement, name?: string, classes: string[]): any;
   }
 }
 declare namespace UnityEngine.Experimental.UIElements.VisualContainer {
   class Enumerator extends System.ValueType {
-    protected constructor();
+    constructor(list: any);
     Dispose(): void;
     MoveNext(): boolean;
     Reset(): void;
@@ -24141,7 +24188,7 @@ declare namespace UnityEngine.Experimental.UIElements {
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
-  class VisualElementAsset0 extends UnityEngine.ScriptableObject {
+  class VisualElementAsset extends UnityEngine.ScriptableObject {
     protected constructor();
     Create(): UnityEngine.Experimental.UIElements.VisualElement;
     classes: string[];
@@ -24171,7 +24218,7 @@ declare namespace UnityEngine.Experimental.UIElements {
   }
 }
 declare namespace UnityEngine.Experimental.UIElements {
-  class VisualElementAsset<T> extends UnityEngine.Experimental.UIElements.VisualElementAsset0 {
+  class VisualElementAsset<T> extends UnityEngine.Experimental.UIElements.VisualElementAsset {
     protected constructor();
     Create(): UnityEngine.Experimental.UIElements.VisualElement;
   }
@@ -24746,7 +24793,7 @@ declare namespace UnityEngine.Experimental.UIElements.StyleSheets {
 }
 declare namespace UnityEngine.Experimental.UIElements.StyleSheets.StyleComplexSelectorExtensions {
   class PseudoStateData extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEngine.Experimental.UIElements.PseudoStates, negate: boolean);
     negate: boolean;
     state: UnityEngine.Experimental.UIElements.PseudoStates;
   }
@@ -24792,7 +24839,7 @@ declare namespace UnityEngine.Experimental.UIElements.StyleSheets {
 }
 declare namespace UnityEngine.Experimental.UIElements.StyleSheets.StyleSheetCache {
   class SheetHandleKey extends System.ValueType {
-    protected constructor();
+    constructor(sheet: UnityEngine.StyleSheets.StyleSheet, index: number);
     index: number;
     sheetInstanceID: number;
   }
@@ -26855,7 +26902,7 @@ declare namespace UnityEngine.XR.WSA.Input {
 }
 declare namespace UnityEngine.XR.WSA.Input {
   class GestureErrorEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(error: string, hresult: number);
     readonly error: string;
     readonly hresult: number;
   }
@@ -27011,33 +27058,33 @@ declare namespace UnityEngine.XR.WSA.Input {
 }
 declare namespace UnityEngine.XR.WSA.Input {
   class InteractionSourceDetectedEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEngine.XR.WSA.Input.InteractionSourceState);
     readonly state: UnityEngine.XR.WSA.Input.InteractionSourceState;
   }
 }
 declare namespace UnityEngine.XR.WSA.Input {
   class InteractionSourceLostEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEngine.XR.WSA.Input.InteractionSourceState);
     readonly state: UnityEngine.XR.WSA.Input.InteractionSourceState;
   }
 }
 declare namespace UnityEngine.XR.WSA.Input {
   class InteractionSourcePressedEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEngine.XR.WSA.Input.InteractionSourceState, pressType: UnityEngine.XR.WSA.Input.InteractionSourcePressType);
     readonly pressType: UnityEngine.XR.WSA.Input.InteractionSourcePressType;
     readonly state: UnityEngine.XR.WSA.Input.InteractionSourceState;
   }
 }
 declare namespace UnityEngine.XR.WSA.Input {
   class InteractionSourceReleasedEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEngine.XR.WSA.Input.InteractionSourceState, pressType: UnityEngine.XR.WSA.Input.InteractionSourcePressType);
     readonly pressType: UnityEngine.XR.WSA.Input.InteractionSourcePressType;
     readonly state: UnityEngine.XR.WSA.Input.InteractionSourceState;
   }
 }
 declare namespace UnityEngine.XR.WSA.Input {
   class InteractionSourceUpdatedEventArgs extends System.ValueType {
-    protected constructor();
+    constructor(state: UnityEngine.XR.WSA.Input.InteractionSourceState);
     readonly state: UnityEngine.XR.WSA.Input.InteractionSourceState;
   }
 }
@@ -27065,7 +27112,7 @@ declare namespace UnityEngine.XR.WSA {
 }
 declare namespace UnityEngine.XR.WSA {
   class SurfaceData extends System.ValueType {
-    protected constructor();
+    constructor(_id: UnityEngine.XR.WSA.SurfaceId, _outputMesh: UnityEngine.MeshFilter, _outputAnchor: UnityEngine.XR.WSA.WorldAnchor, _outputCollider: UnityEngine.MeshCollider, _trianglesPerCubicMeter: number, _bakeCollider: boolean);
     bakeCollider: boolean;
     id: UnityEngine.XR.WSA.SurfaceId;
     outputAnchor: UnityEngine.XR.WSA.WorldAnchor;
@@ -27113,7 +27160,7 @@ declare namespace UnityEngine.XR.WSA.WebCam {
 }
 declare namespace UnityEngine.XR.WSA.WebCam {
   class CameraParameters extends System.ValueType {
-    protected constructor();
+    constructor(webCamMode: UnityEngine.XR.WSA.WebCam.WebCamMode);
     cameraResolutionHeight: number;
     cameraResolutionWidth: number;
     frameRate: number;
